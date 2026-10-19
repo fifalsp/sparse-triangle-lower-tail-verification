@@ -229,8 +229,10 @@ need not hold up the whole fan. Every original inequality and coverage check
 is retained. Incomplete or malformed proposals are rejected before generation.
 
 `bouchet-apex-array.sbatch REPLAY_SOURCE SHA256 SEARCH_DIRECTORY SEARCH_COMMIT`
-is prepared for fans 2–6, at most two concurrent jobs, four CPUs and 32 GiB
-per job. The explicit search commit may precede the replay implementation;
+is prepared for fans 2–6, at most two concurrent jobs. The current runner
+requests eight CPUs and 64 GiB per job and uses eight single-thread build workers.
+The earlier staged `c8dc8f30` runner requested four CPUs; deployment records
+identify the exact runner checksum used. The explicit search commit may precede the replay implementation;
 both revisions and the actual proposal hash are recorded. The replay still
 checks the actual fan cutoff, every numerical inequality, complete coverage,
 and the unchanged axiom policy. Controlled exits preserve generated sources,
@@ -288,3 +290,29 @@ replays were then submitted as **30062956**, with `afterany:30062473` and at
 most two concurrent tasks, using the resumed result directory. These larger
 replays preserve compiled work on controlled timeout through the existing
 checkpoint mechanism. Search completion is not formal certificate completion.
+
+
+## Reusing completed proof modules
+
+The bounded builder now asks Lake to validate existing compiled modules in
+batches with `lake --no-build build`. A module file alone is never accepted:
+the whole batch must pass Lake's freshness check, and the retained modules
+must include every project dependency. Failed batches follow the usual bounded
+build path. `--no-cache-precheck` restores the earlier scheduling behavior.
+The final theorem build and axiom audit remain required.
+
+A cached root check accepted all 351 project modules in 8.55 seconds. A mixed
+check reused 141 modules and built one new module successfully. A deliberately
+changed source was rejected with exit code 3, without modifying its compiled
+artifact. Six regression tests pass; the unchanged mathematical root still
+passes the standard axiom audit. This improves resumed/cached builds, not the
+cost of a fresh numerical inequality. See
+[`cache-precheck-validation-20261019.json`](cache-precheck-validation-20261019.json).
+
+All 36 nonapex searches now have complete proposals. The last two full replay
+waves are **30063319** (23, 27–29, 32–33) and **30063541** (30–31, 34–35),
+both behind array 30062473 and each limited to two concurrent four-CPU tasks.
+Together with the existing S1 run, every nonapex region has a replay running or
+queued. This scheduling status is not proof completion. Resumed search array
+30063138 completed jobs 30, 31, 34, 35 and fan F2; the remaining F4 search is
+resumed as 30063538. All input/source details remain in the deployment records.

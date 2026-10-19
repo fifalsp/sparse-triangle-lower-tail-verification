@@ -4,8 +4,8 @@
 #SBATCH --partition=day
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=4
-#SBATCH --mem=32G
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=64G
 #SBATCH --time=12:00:00
 #SBATCH --output=sparse-apex-%A_%a.out
 #SBATCH --error=sparse-apex-%A_%a.err
@@ -91,5 +91,5 @@ lean --version | tee "$RUN_DIR/lean-version.txt"
 printf '%s\n' 'Fetching pinned public mathlib dependencies and binary cache.'
 lake exe cache get > "$RUN_DIR/mathlib-cache.log" 2>&1
 printf '%s\n' 'Checking the full apex fan subdivision with bounded build workers.'
-/usr/bin/time -v -o "$RUN_DIR/apex-time.txt" timeout --signal=TERM --kill-after=60s 10h python3 tools/run_apex_cluster.py --fan "$APEX_FAN" --logs "$RUN_DIR" --workers 4 --lean-threads 1
+/usr/bin/time -v -o "$RUN_DIR/apex-time.txt" timeout --signal=TERM --kill-after=60s 10h python3 tools/run_apex_cluster.py --fan "$APEX_FAN" --logs "$RUN_DIR" --workers 8 --lean-threads 1
 printf '%s\n' 'One full apex fan replay and axiom audit passed.' > "$RUN_DIR/SUCCESS.txt"

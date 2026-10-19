@@ -1370,3 +1370,20 @@ the smaller-region array. Fourteen other complete regions are queued as
 30062736 behind the first nonapex array, keeping concurrent workers bounded.
 The smallest running job (25) reported 112/241 build modules completed without
 reported failures; its final ordered-domain theorem and audit remain pending.
+
+
+### 2026-10-19 — Complete nonapex proposals and faster cache validation
+
+Complete search proposals now exist for all 36 nonapex jobs; every full replay
+is running or queued, including the original S1 job. Full region proofs are
+still pending and are not inferred from search completion. Four of the five
+remaining apex searches are complete; F4 is being resumed.
+
+The bounded build scheduler now validates cached project modules in Lake
+batches instead of one Lake process per cached module. It accepts only
+successful batches and a dependency-closed set, and retains the ordinary
+bounded build path for everything else. Warm-root validation covered 351
+modules in 8.55 seconds; a mixed test reused 141 and built one new module.
+A changed-source probe was rejected without rebuilding its artifact. Six
+cache regression tests and the unchanged axiom audit pass. No numerical
+acceptance condition, statement, or mathematical assumption changed.

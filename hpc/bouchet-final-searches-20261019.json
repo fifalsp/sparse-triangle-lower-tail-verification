@@ -1,0 +1,52 @@
+{
+  "source_commit": "38d5c740f691792bd19cf545d18565c5b216bd9a",
+  "runner_commit": "75bc008",
+  "resumed_arrays": [
+    {
+      "job_array_id": 30063138,
+      "tasks": [
+        30,
+        31,
+        34,
+        35,
+        36
+      ],
+      "status": "Complete proposals observed in result archives",
+      "outcomes": [
+        {
+          "task": 30,
+          "nodes": 59405,
+          "frontier": 0
+        },
+        {
+          "task": 31,
+          "nodes": 60713,
+          "frontier": 0
+        },
+        {
+          "task": 34,
+          "nodes": 66403,
+          "frontier": 0
+        },
+        {
+          "task": 35,
+          "nodes": 57043,
+          "frontier": 0
+        },
+        {
+          "task": 36,
+          "nodes": 90557,
+          "frontier": 0
+        }
+      ]
+    },
+    {
+      "job_array_id": 30063538,
+      "tasks": [
+        38
+      ],
+      "status": "Submission confirmed; result pending"
+    }
+  ],
+  "trust_status": "Search proposals only; no full-domain Lean completion asserted."
+}

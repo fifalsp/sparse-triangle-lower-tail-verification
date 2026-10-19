@@ -1,0 +1,34 @@
+{
+  "scope": "Build-cache validation only; no new mathematical theorem",
+  "warm_root": {
+    "phase": "build_complete",
+    "target": "SparseLowerTail",
+    "total": 351,
+    "completed": 351,
+    "cached": 351,
+    "failed": {},
+    "active": [],
+    "seconds": 8.549850291998155,
+    "workers": 2,
+    "trust_status": "Build scheduling only; final axiom audit is separate"
+  },
+  "mixed_cached_and_new": {
+    "phase": "build_complete",
+    "target": "SparseLowerTail.CacheProbe",
+    "total": 142,
+    "completed": 142,
+    "cached": 141,
+    "failed": {},
+    "active": [],
+    "seconds": 10.573090624999168,
+    "workers": 2,
+    "trust_status": "Build scheduling only; final axiom audit is separate"
+  },
+  "stale_source_probe": {
+    "rejected": true,
+    "lake_exit_code": 3,
+    "compiled_artifact_unchanged": true
+  },
+  "unit_tests_passed": 6,
+  "axiom_audit": "Axiom audit passed: 12535 project declarations, 8249 theorems; only propext, Classical.choice, Quot.sound allowed."
+}

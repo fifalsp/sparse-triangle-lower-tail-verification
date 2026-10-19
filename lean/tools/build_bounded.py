@@ -41,6 +41,28 @@ def dependency_graph(target):
     return graph
 
 
+
+def verified_cached_modules(graph, root, check, batch_size=128):
+    """Reuse only modules whose whole batch Lake validates without rebuilding.
+
+    Artifact existence merely selects candidates. A failed batch contributes
+    nothing; those modules use the ordinary bounded build path. Retain a
+    dependency-closed subset so no completed node hides an unchecked import.
+    """
+    candidates = sorted(m for m in graph if
+        (root/'.lake/build/lib/lean'/Path(m.replace('.','/')).with_suffix('.olean')).is_file())
+    accepted = set()
+    for offset in range(0,len(candidates),batch_size):
+        batch = candidates[offset:offset+batch_size]
+        if check(batch):
+            accepted.update(batch)
+    while True:
+        closed = {m for m in accepted if graph[m] <= accepted}
+        if closed == accepted:
+            return accepted
+        accepted = closed
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('target')
@@ -48,6 +70,8 @@ def main():
     p.add_argument('--workers',type=int,default=2)
     p.add_argument('--lean-threads',type=int,default=1)
     p.add_argument('--dry-run',action='store_true')
+    p.add_argument('--no-cache-precheck',action='store_true',
+                   help='Use one bounded Lake invocation per project module, including cached modules')
     args = p.parse_args()
     if not 1 <= args.workers <= 8 or not 1 <= args.lean_threads <= 8:
         p.error('workers and lean-threads must be in 1..8')
@@ -73,13 +97,23 @@ def main():
     env = os.environ.copy()
     env['LEAN_NUM_THREADS'] = str(args.lean_threads)
     start = time.monotonic()
-    completed, failed = set(),{}
+    cache_checks = []
+    def check_cache(batch):
+        filename = logs/f'cache-check-{len(cache_checks):04d}.log'
+        with filename.open('w') as output:
+            rc = subprocess.run(['lake','--no-build','build',*batch],cwd=ROOT,env=env,
+                                stdout=output,stderr=subprocess.STDOUT).returncode
+        cache_checks.append(dict(modules=batch,exit_code=rc,log=filename.name))
+        (logs/'cache-checks.json').write_text(json.dumps(cache_checks,indent=2)+'\n')
+        return rc == 0
+    cached = set() if args.no_cache_precheck else verified_cached_modules(graph,ROOT,check_cache)
+    completed, failed = set(cached),{}
     dependents = {m:[] for m in graph}
-    indegree = {m:len(d) for m,d in graph.items()}
+    indegree = {m:len(d-completed) for m,d in graph.items()}
     for m,deps in graph.items():
         for d in deps:
             dependents[d].append(m)
-    ready = [m for m,d in indegree.items() if d == 0]
+    ready = [m for m,d in indegree.items() if d == 0 and m not in completed]
     heapq.heapify(ready)
     def run(module):
         filename = logs/(module+'.log')
@@ -89,7 +123,7 @@ def main():
         return rc
     def record(phase,active):
         status = {'phase':phase,'target':args.target,'total':len(graph),
-            'completed':len(completed),'failed':failed,'active':sorted(active),
+            'completed':len(completed),'cached':len(cached),'failed':failed,'active':sorted(active),
             'seconds':time.monotonic()-start,'workers':args.workers,
             'trust_status':'Build scheduling only; final axiom audit is separate'}
         (logs/'status.json').write_text(json.dumps(status,indent=2)+'\n')
@@ -112,6 +146,8 @@ def main():
                 else:
                     completed.add(m)
                     for nxt in dependents[m]:
+                        if nxt in completed:
+                            continue
                         indegree[nxt] -= 1
                         if indegree[nxt] == 0:
                             heapq.heappush(ready,nxt)

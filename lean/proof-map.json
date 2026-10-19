@@ -602,7 +602,7 @@
     {
       "paper_label": "thm:smalltail",
       "status": "pending",
-      "checked_scope": "Partial: supporting values and minimizer data, spectral degree/tail estimates, and the final scalar coercivity conclusion are proved. Row reduction, quantitative parameter estimates and graphon equality rigidity remain.",
+      "checked_scope": "Supporting values, spectral estimates, full row reduction, quantitative small-parameter bounds, scalar exclusion and final scalar coercivity are proved. Exact graphon equality rigidity and full assembly remain.",
       "lean_files": [
         "SparseLowerTail/Section07/SmallRigidityCoercivity.lean"
       ],
@@ -663,18 +663,20 @@
     {
       "paper_label": "prop:cover",
       "status": "pending",
-      "checked_scope": "No complete Lean proof claimed for this statement. Actual non-apex S1 vertex-0 certificate positivity is proved on q∈[0,1/1024]^3 and q∈[8,6743/512]^3 with original exact dyadic coefficients and checked critical constants; full-domain coverage and apex proofs remain. An exact eight-leaf subdivision additionally proves positivity on [0,1/32]^3; the sorted tail q3≥8 is checked. The saved full subdivision proposal is untrusted, not imported into Lean.",
+      "checked_scope": "No complete Lean proof claimed for this statement. Actual non-apex S1 vertex-0 certificate positivity is proved on q∈[0,1/1024]^3 and q∈[8,6743/512]^3 with original exact dyadic coefficients and checked critical constants; full-domain coverage and apex proofs remain. An exact eight-leaf subdivision additionally proves positivity on [0,1/32]^3; the sorted tail q3≥8 is checked. The saved full subdivision proposal is untrusted, not imported into Lean. A full nontrivial Taylor2 leaf now has checked exact reification, derivatives, exponential enclosures, segment bounds and positive remainder margin; this is still only a subdomain.",
       "lean_files": [
         "SparseLowerTail/Section05/CoverS1FirstBox.lean",
         "SparseLowerTail/Section05/CoverS1Tail.lean",
-        "SparseLowerTail/Section05/CoverS1Regions.lean"
+        "SparseLowerTail/Section05/CoverS1Regions.lean",
+        "SparseLowerTail/Section05/CoverS1TaylorLeaf.lean"
       ],
       "lean_declarations": [
         "SparseLowerTail.Section05.coverS1_vertex0_first_box",
         "SparseLowerTail.Section05.coverS1Tail_positive",
         "SparseLowerTail.Section05.coverS1NearTree_leafCount",
         "SparseLowerTail.Section05.coverS1_near_cube_positive",
-        "SparseLowerTail.Section05.coverS1_sorted_tail_positive"
+        "SparseLowerTail.Section05.coverS1_sorted_tail_positive",
+        "SparseLowerTail.Section05.coverS1_taylor_leaf_positive"
       ],
       "explicit_inputs": [],
       "baseline": {
@@ -687,11 +689,17 @@
     },
     {
       "paper_label": "prop:family",
-      "status": "pending",
-      "checked_scope": "No complete Lean proof claimed for this statement.",
-      "lean_files": [],
-      "lean_declarations": [],
-      "explicit_inputs": [],
+      "status": "conditional_compact_reduction",
+      "checked_scope": "Analytic tail and exact compact-to-global reduction proved. The compact-domain positivity and zero-set certificate remain an internal hypothesis.",
+      "lean_files": [
+        "SparseLowerTail/Section08/CertificateTail.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Certificate.family_certificate_of_compact_exact"
+      ],
+      "explicit_inputs": [
+        "internal:appA3:compact"
+      ],
       "baseline": {
         "environment": "proposition",
         "statement": "[computer assisted] Let $z\\in[e^{-9.5},e^{-3.9}]$, that is, $L\\in[3.9,9.5]$. Then every $(x,y,w)\\in(0,1]^3$ satisfies $\\Psi_z(x,y,w)\\ge0$. Equality holds if and only if $(x,y,w)=(a,a,a)$ or $(x,y,w)$ is a permutation of $(a,b,b)$.",
@@ -1896,6 +1904,193 @@
         "classical:inverse-transform-sampling",
         "classical:positive-hilbert-schmidt-spectrum"
       ]
+    },
+    {
+      "paper_label": "lem:certtail",
+      "status": "proved",
+      "checked_scope": "All three coordinate derivatives are strictly positive above q_a+2; also strict clipping and compact-to-global family reduction. The compact certificate remains an internal hypothesis.",
+      "lean_files": [
+        "SparseLowerTail/Section08/CertificateTail.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Certificate.deriv_phi_first_pos",
+        "SparseLowerTail.Certificate.deriv_phi_second_pos",
+        "SparseLowerTail.Certificate.deriv_phi_third_pos",
+        "SparseLowerTail.Certificate.phi_clip"
+      ],
+      "explicit_inputs": [],
+      "baseline": {
+        "environment": "lemma",
+        "statement": "Let $0<z\\le1/40$, let $q\\in[0,\\infty)^3$ and let $i\\in\\{1,2,3\\}$ with $q_i\\ge q_a+2$. Then $\\partial_{q_i}\\Phi_z(q)>0$.",
+        "statement_sha256": "d8fd94500a83de54f12599200aab33eef7db7831a4e6379029e8a1e54fb6082f",
+        "proof_sha256": "172aefbb32deffb52e88a33580079f6d307b7a6757d091d2d0e9d133c6d9799b",
+        "source_line": 5453
+      }
+    },
+    {
+      "paper_label": "lem:smallparams",
+      "status": "proved_relative_to_named_inputs",
+      "checked_scope": "All of (a) and (b), with the stronger p0>0.4987. Part (a) is unconditional on 0<z≤8.36e-5. Actual minimizer instantiation of (b) uses KP26, classical sampling and a classical spectral expansion.",
+      "lean_files": [
+        "SparseLowerTail/Section07/SmallParameterBounds.lean",
+        "SparseLowerTail/Section07/SmallParameterErrors.lean",
+        "SparseLowerTail/Section07/PenalizedUpper.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section07.small_parameter_rho_bounds",
+        "SparseLowerTail.Section07.smallTarget_error_bounds",
+        "SparseLowerTail.Section07.penalizedCrossing_lt_smallUpper"
+      ],
+      "explicit_inputs": [
+        "external:KP26:1.6",
+        "classical:inverse-transform-sampling",
+        "classical:positive-hilbert-schmidt-spectrum"
+      ],
+      "baseline": {
+        "environment": "lemma",
+        "statement": "Let $Z=8.36\\cdot10^{-5}$. \\begin{enumerate}[label=(\\alph*)] \\item Let $z\\in(0,Z]$, $m=(a(z)+b(z))/2$, $\\mu=\\mu(z)$ and $t=\\rho(z)^3$. Then $0.4992\\le m\\le\\frac12$, $\\mu\\ge18.6$, $t\\le6.3\\cdot10^{-5}$, $\\mu t\\le0.0012$, $\\mu^2t\\le0.023$ and $\\mu(\\frac12-m)\\le0.0155$. \\item In the setting of Lemma~\\ref{lem:rowreduction}, $\\varepsilon<0.114$, $E_m<0.003$, $\\bar k+1-M^{-2}<1.005$, $p_0>0.498$ and $d\\le0.5006$. \\end{enumerate}",
+        "statement_sha256": "b9039ce32f870f9cdc53cf96a6e54dee41a89eb866f067433f0b1c3bd02fbab9",
+        "proof_sha256": "ea3ea681e3a5384c11c95ee8fb3d5801b2e7f201d64b38de7303338199f66fe4",
+        "source_line": 5103
+      }
+    },
+    {
+      "paper_label": "lem:scalar",
+      "status": "proved",
+      "checked_scope": "Complete scalar exclusion v>0.775 from the manuscript inequalities, using rationally certified logarithms and analytic monotonicity.",
+      "lean_files": [
+        "SparseLowerTail/Section07/ScalarExclusion.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section07.scalar_exclusion"
+      ],
+      "explicit_inputs": [],
+      "baseline": {
+        "environment": "lemma",
+        "statement": "If $0\\le u\\le v\\le1$, $(k(u)+k(v))/2\\le1.005$ and $v\\le e^{-9.3u}+0.13$, then $v>0.775$.",
+        "statement_sha256": "ba1642e3ad1a768ce1692fbedc3d79c08f312718bb7d343d689d0b43676133ef",
+        "proof_sha256": "cb015a7b1303430a961d3a1fe7a1f70d537e3b4836be17f46094bd00304e8eda",
+        "source_line": 5168
+      }
+    },
+    {
+      "paper_label": "lem:rowreduction",
+      "status": "proved_relative_to_named_inputs",
+      "checked_scope": "All three actual minimizer row estimates: means, approximate Euler equations, and Jensen vertex bound.",
+      "lean_files": [
+        "SparseLowerTail/Section07/RowMeans.lean",
+        "SparseLowerTail/Section07/ApproximateEuler.lean",
+        "SparseLowerTail/Section07/RowVertexBound.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section07.smallTarget_rowMeans",
+        "SparseLowerTail.Section07.smallTarget_approximateEuler",
+        "SparseLowerTail.Section07.smallTarget_rowVertex_bound"
+      ],
+      "explicit_inputs": [
+        "external:KP26:1.6",
+        "classical:inverse-transform-sampling",
+        "classical:positive-hilbert-schmidt-spectrum"
+      ],
+      "baseline": {
+        "environment": "lemma",
+        "statement": "With the constants \\eqref{eq:s7errors}, for almost every $x$, \\begin{align} |u_x-(d(x)-\\lambda\\psi(x))|&\\le E_m,\\quad |v_x-(d(x)+\\lambda\\psi(x))|\\le E_m,\\\\ |u_x-e^{-\\mu v_x/2}|&\\le\\varepsilon,\\quad |v_x-e^{-\\mu u_x/2}|\\le\\varepsilon,\\\\ \\frac{k(u_x)+k(v_x)}2&\\le\\bar k+1-M^{-2}. \\end{align}",
+        "statement_sha256": "723006bb0e6991787ec347ed219d268ad7b65f4da3b11ebc3b50d54f962ec605",
+        "proof_sha256": "2b72c5359316aab90f68d012daafad0de563872bbae617d9eafdcbd6e8fb7d92",
+        "source_line": 5023
+      }
+    },
+    {
+      "paper_label": "eq:s7rowmean",
+      "status": "proved_relative_to_named_inputs",
+      "checked_scope": "Actual almost-everywhere estimate for the eigenfunction sign blocks, with all error terms proved.",
+      "lean_files": [
+        "SparseLowerTail/Section07/RowMeans.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section07.smallTarget_rowMeans"
+      ],
+      "explicit_inputs": [
+        "external:KP26:1.6",
+        "classical:inverse-transform-sampling",
+        "classical:positive-hilbert-schmidt-spectrum"
+      ],
+      "baseline": {
+        "environment": "align",
+        "statement": "|u_x-(d(x)-\\lambda\\psi(x))|&\\le E_m,\\quad |v_x-(d(x)+\\lambda\\psi(x))|\\le E_m,\\\\ |u_x-e^{-\\mu v_x/2}|&\\le\\varepsilon,\\quad |v_x-e^{-\\mu u_x/2}|\\le\\varepsilon,\\\\ \\frac{k(u_x)+k(v_x)}2&\\le\\bar k+1-M^{-2}.",
+        "statement_sha256": "5cc45462bf7ee216f74d710114bae15f278fd9141799ec196646032d4e047b7f",
+        "proof_sha256": null,
+        "source_line": 5025
+      }
+    },
+    {
+      "paper_label": "eq:s7approxeuler",
+      "status": "proved_relative_to_named_inputs",
+      "checked_scope": "Actual almost-everywhere estimate for the eigenfunction sign blocks, with all error terms proved.",
+      "lean_files": [
+        "SparseLowerTail/Section07/ApproximateEuler.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section07.smallTarget_approximateEuler"
+      ],
+      "explicit_inputs": [
+        "external:KP26:1.6",
+        "classical:inverse-transform-sampling",
+        "classical:positive-hilbert-schmidt-spectrum"
+      ],
+      "baseline": {
+        "environment": "align",
+        "statement": "|u_x-(d(x)-\\lambda\\psi(x))|&\\le E_m,\\quad |v_x-(d(x)+\\lambda\\psi(x))|\\le E_m,\\\\ |u_x-e^{-\\mu v_x/2}|&\\le\\varepsilon,\\quad |v_x-e^{-\\mu u_x/2}|\\le\\varepsilon,\\\\ \\frac{k(u_x)+k(v_x)}2&\\le\\bar k+1-M^{-2}.",
+        "statement_sha256": "5cc45462bf7ee216f74d710114bae15f278fd9141799ec196646032d4e047b7f",
+        "proof_sha256": null,
+        "source_line": 5025
+      }
+    },
+    {
+      "paper_label": "eq:s7approxk",
+      "status": "proved_relative_to_named_inputs",
+      "checked_scope": "Actual almost-everywhere estimate for the eigenfunction sign blocks, with all error terms proved.",
+      "lean_files": [
+        "SparseLowerTail/Section07/RowVertexBound.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section07.smallTarget_rowVertex_bound"
+      ],
+      "explicit_inputs": [
+        "external:KP26:1.6",
+        "classical:inverse-transform-sampling",
+        "classical:positive-hilbert-schmidt-spectrum"
+      ],
+      "baseline": {
+        "environment": "align",
+        "statement": "|u_x-(d(x)-\\lambda\\psi(x))|&\\le E_m,\\quad |v_x-(d(x)+\\lambda\\psi(x))|\\le E_m,\\\\ |u_x-e^{-\\mu v_x/2}|&\\le\\varepsilon,\\quad |v_x-e^{-\\mu u_x/2}|\\le\\varepsilon,\\\\ \\frac{k(u_x)+k(v_x)}2&\\le\\bar k+1-M^{-2}.",
+        "statement_sha256": "5cc45462bf7ee216f74d710114bae15f278fd9141799ec196646032d4e047b7f",
+        "proof_sha256": null,
+        "source_line": 5025
+      }
+    },
+    {
+      "paper_label": "eq:s7EC",
+      "status": "proved_relative_to_named_inputs",
+      "checked_scope": "Actual almost-everywhere estimate for the eigenfunction sign blocks, with all error terms proved.",
+      "lean_files": [
+        "SparseLowerTail/Section07/CodegreeAverages.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section07.smallTarget_codegree_average_error"
+      ],
+      "explicit_inputs": [
+        "external:KP26:1.6",
+        "classical:inverse-transform-sampling",
+        "classical:positive-hilbert-schmidt-spectrum"
+      ],
+      "baseline": {
+        "environment": "equation",
+        "statement": "\\E_{P_\\pm}\\big[|C_U(x,\\cdot)-c_\\pm(x)|\\big]\\le E_C .",
+        "statement_sha256": "b8d78a5c139f3ea89fc53ca939a6ec1eb1a71e485917a737d33b1e156f2aeb92",
+        "proof_sha256": null,
+        "source_line": 5077
+      }
     }
   ]
 }

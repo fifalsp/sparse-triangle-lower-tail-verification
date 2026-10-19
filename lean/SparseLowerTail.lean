@@ -83,3 +83,16 @@ import SparseLowerTail.Section08.ContinuationAssembly
 import SparseLowerTail.Section07.ResidualCodegree
 import SparseLowerTail.Numerics.ExpEndpoints
 import SparseLowerTail.Section07.SmallRigidityCoercivity
+import SparseLowerTail.Section08.CertificateTail
+import SparseLowerTail.Section07.RowMeans
+import SparseLowerTail.Section07.SmallParameterErrors
+import SparseLowerTail.Section05.CoverS1TaylorLeaf
+import SparseLowerTail.Numerics.DyadicInterval
+
+import SparseLowerTail.Section07.RowVertexBound
+
+import SparseLowerTail.Section07.ApproximateEuler
+
+import SparseLowerTail.Section07.ScalarExclusion
+
+import SparseLowerTail.Numerics.DyadicTaylorAxes

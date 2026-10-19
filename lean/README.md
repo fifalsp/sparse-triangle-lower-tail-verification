@@ -21,8 +21,8 @@ unique and all graphon optimizers have that form, up to null sets and relabeling
 
 [`MainStatement.lean`](SparseLowerTail/MainStatement.lean) encodes these claims
 as the proposition `SparseLowerTail.MainTheorem`. **Defining this proposition
-is not a proof of it.** There is no axiom asserting it and no theorem producing
-an inhabitant of it. The target includes the exact rational bracket for r*;
+is not a proof of it.** There is no axiom asserting it. A conditional theorem constructs
+an inhabitant from three explicitly named, still-unproved internal inputs. The target includes the exact rational bracket for r*;
 the decimal brackets for a* and b* are proved separately in `ThresholdDigits`.
 
 The definitions use Lebesgue measure on [0,1] and its product measures, with
@@ -514,3 +514,27 @@ exponential endpoint checker passed generated checks at 0, 1, 6743/512 and 16;
 its Python generator only proposes data, with all comparisons checked by Lean.
 The remaining major proof obligations keep the effort estimate at about 30%
 (25–40% range), despite completion of the final logical assembly.
+
+### 2026-10-19 — full small-parameter bounds and row reduction
+
+The complete `lem:smallparams` now compiles. Its scalar bounds hold uniformly
+for 0 < z ≤ 8.36×10⁻⁵, and `SmallParameterErrors` instantiates every bound for
+actual minimizers, including ε < 0.114, E_m < 0.003 and p₀ > 0.4987. No upper
+bound on the diverging multiplier was assumed. `PenalizedUpper` directly proves
+the needed z_c upper bound; it does not yet prove every displayed coexistence digit.
+
+`RowMeans`, `ApproximateEuler` and `RowVertexBound` prove all of `lem:rowreduction`
+for the actual eigenfunction sign blocks. `ScalarExclusion` proves `lem:scalar`
+with its exact constants. Small-target exact block rigidity remains in progress.
+
+`CertificateTail` proves all of `lem:certtail` and reduces the full family,
+including its exact zero set, to an explicit internal compact certificate.
+That finite certificate remains unfinished. `CoverS1TaylorLeaf` proves a full
+Taylor2 box using checked expression reification, derivatives, endpoint
+exponentials and remainder bounds. A sound dyadic interval evaluator is now
+available to speed the remaining checks. Search proposals are still untrusted.
+
+The companion shorter-proof document is maintained separately from the paper.
+No mathematical error has been established; the missing formal certificates
+and structural assembly continue to be recorded as gaps, not assumptions of
+classical status. The effort estimate remains about 30% (25–40% uncertainty).

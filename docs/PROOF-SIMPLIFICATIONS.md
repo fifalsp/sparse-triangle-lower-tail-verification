@@ -17,7 +17,8 @@ Explicit external inputs are listed in
 | PS-002 | `lem:spectral`, lower bound in `eq:s7degree` | Positive-part test gives d ≥ m/2 before spectral decomposition | Lean checked; positivity is derived from the proved penalized variation |
 | PS-003 | `thm:rigidity`, Steps 4–5 | Compare the two row equations directly using log monotonicity | Lean checked, including the full local-rigidity assembly |
 | PS-004 | `lem:penalized`, quadratic-form assertion | Evaluate at two opposite perturbations instead of differentiating twice | Lean checked |
-| PS-005 | `thm:smalltail`, Step 4 | A fixed Taylor bound replaces differentiation of the exponential ratio | Lean checked |
+| PS-005 | `prop:structural`, Step 4 | A fixed Taylor bound replaces differentiation of the exponential ratio | Lean checked |
+| PS-006 | `lem:rowreduction`, approximate Euler equations | A polynomial identity proves both surrogate codegrees nonnegative | Lean checked; no extra hypothesis |
 
 ## Compact outline of the final argument
 
@@ -230,7 +231,9 @@ $\nu\zeta+|\nu-\mu|<\eta$. ∎
 $$
 \delta=\min\left\{\eta,\frac a2,1,\frac{\eta}{2(\mu+2)}\right\}>0.
 $$
-The conditions $|p-1/2|<\delta$, $|\nu-\mu|<\delta$,
+Retain the assumptions that U is a graphon, ν≥0, and v,w are measurable
+[0,1]-valued solutions of the displayed row equations. The conditions
+$|p-1/2|<\delta$, $|\nu-\mu|<\delta$,
 $\|U-B\|_\infty\le\delta$, and
 $\|v-g\|_\infty,\|w-g\|_\infty\le\delta$ imply all required hypotheses:
 δ≤a/2<1/2 ensures positive masses and v,w≥a/2; δ≤η gives the upper bounds;
@@ -252,8 +255,9 @@ now compiles in `LocalRigidity.lean`, `eventually_bipodal_of_cutDistance`.
 
 ## PS-004 — the penalized quadratic inequality without a second derivative
 
-Assume U is a constrained minimizer and also globally minimizes
-$F(W)+\gamma t(W)$. Use the already proved multiplier identity
+Assume U is a graphon minimizing the triangle-constrained problem at
+0<r<1 and also globally minimizes $F(W)+\gamma t(W)$, with γ≥0.
+Use the already proved multiplier identity
 $\mu_U=3\gamma$ and Euler equation
 $\log U=-3\gamma C_U$. This note replaces the second-variation step only.
 
@@ -317,7 +321,8 @@ $$
 Subtracting $\mu+\mu^2/4=99+10t+t^2/4$ leaves
 $21+22.4t+4.124t^2>0$. ∎
 
-For the exact use in Step 4, put $a=e^{-0.27\mu}$ and let $p\in[0,1]$.
+For the exact use in Step 4 of `prop:structural` (within the proof of
+`thm:smalltail`), put $a=e^{-0.27\mu}$ and let $p\in[0,1]$.
 The estimate gives $\mu a<1$. For
 $$
 A=a^{-1}-\mu ap,\qquad B=\mu\sqrt{p(1-p)},
@@ -339,8 +344,57 @@ $$
 [`SmallRigidityCoercivity.lean`](../lean/SparseLowerTail/Section07/SmallRigidityCoercivity.lean):
 `exp_486_gt_120`, `small_rigidity_exp_margin`,
 `block_rigidity_determinant`, and `small_rigidity_block_norms_zero`.
-These are unconditional scalar results. Deriving the required blockwise graphon
-bounds and the nonpositive quadratic expression is separate unfinished work.
+These are unconditional scalar results. The required blockwise graphon bounds
+and the nonpositive quadratic expression are separate steps; this scalar
+estimate does not establish them by itself.
+
+## PS-006 — nonnegative surrogate codegrees without square roots
+
+**Statement.** Suppose $0\le\lambda\le m$ and
+$\lambda\psi^2\le2d-m$. Then
+$$
+\lambda^2|\psi|\le md,
+\qquad c_\pm:=md\pm\lambda^2\psi\ge0.
+$$
+No separate assumption on d or the sign of ψ is needed.
+
+**Complete replacement proof.** Put $s=|\psi|$. Multiply the diagonal
+inequality by m≥0 and use the following polynomial identity:
+$$
+\begin{aligned}
+2(md-\lambda^2s)
+&\ge m^2+m\lambda s^2-2\lambda^2s\\
+&=(m-\lambda)(m+\lambda)
+  +\lambda(m-\lambda)s^2+\lambda^2(s-1)^2\ge0.
+\end{aligned}
+$$
+Every term on the final line is nonnegative. Thus
+$c_\pm\ge md-\lambda^2|\psi|\ge0$. ∎
+
+**Use in the manuscript.** In the approximate Euler-equation part of
+`lem:rowreduction`, substitute $m=\int U$, $d=d(x)$,
+$\lambda=\lambda_0$ and $\psi=\psi_0(x)$. The spectral bounds
+$0\le\lambda\le m$ and $\lambda\psi(x)^2\le2d(x)-m$ give the hypotheses
+almost everywhere. This replaces only the AM–GM chain involving
+$m^{3/2}\lambda^{1/2}|\psi|$; it does not replace the diagonal or spectral
+bounds that supply those hypotheses.
+
+It makes the needed domain of the exponential estimate explicit: both
+$C_U$ and $c_\pm$ are nonnegative, so for μ≥0,
+$$
+|e^{-\mu C_U}-e^{-\mu c_\pm}|\le\mu|C_U-c_\pm|.
+$$
+Averaging this inequality over either block then gives the asserted μ times
+its codegree-error bound.
+
+**Lean correspondence.**
+[`ExponentialRowEstimate.lean`](../lean/SparseLowerTail/Section07/ExponentialRowEstimate.lean):
+`surrogate_codegree_bound` proves the scalar statement with exactly the
+hypotheses above; `centered_surrogate_codegrees_nonneg` applies it to an
+actual graphon's centered-kernel spectral expansion.
+`abs_exp_neg_mul_sub_le` and `setAverage_exp_equation_error` prove the
+exponential and averaging steps. No additional classical or numerical input
+is used in this replacement.
 
 ## How to maintain this note
 

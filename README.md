@@ -33,9 +33,10 @@ and the Lean formalization have different scopes.
 | Proved relative to classical sampling | Full insertion lemma: every minimizer row globally minimizes its row functional. The penalized mean-zero L² quadratic inequality is also proved. The complete functional two-well theorem is proved without external inputs. |
 | Proved in Lean | Complete local rigidity (`thm:rigidity`), including measurable row classes, uniform approximation, exact row identification and bijective relabeling transfer, relative only to classical sampling. |
 | Proved with explicit classical spectral input | Centered-kernel positivity, trace/diagonal and degree estimates, exact cubic identity and spectral tail inequalities. The graphon-specific estimates are proved here. |
-| Partially checked | Actual S1 vertex-0 certificate positivity on a checked eight-leaf near-one region and a large logarithmic tail region. Full-domain cover/family certificates remain unfinished. |
+| Partially checked | Actual S1 vertex-0 positivity on checked near-one and tail regions, plus a complete nontrivial Taylor box. The family analytic tail is proved. Full-domain cover/family certificates remain unfinished. |
+| Proved relative to named inputs | All small-parameter bounds, actual row reduction and scalar exclusion (`lem:smallparams`, `lem:rowreduction`, `lem:scalar`). Exact small-target block rigidity remains. |
 | Proved relative to named classical inputs | Sequential stability and openness of the balanced-classification region. The left seed follows conditional on the still-unproved critical certificate. |
-| Remaining | Global optimizer classification, final continuation assembly, small-target equality rigidity, and full cover/family certificate positivity. |
+| Remaining | Discharge the three internal inputs: critical classification, small-target equality rigidity, and the full intermediate certificate. The final conditional continuation assembly is proved. |
 
 The [formalization README](lean/README.md) records the file-to-paper mapping,
 remaining dependencies, build instructions, axiom audit, and dated progress log.

@@ -162,3 +162,22 @@ See `bouchet-family-abb-20261019.json`. Submission is not proof of completion.
 The scheduler then reported ABB **RUNNING** on `c1104u05n03` at 53 seconds;
 the source checksum passed and dependency-cache restoration had started.
 S1 and F1 were still RUNNING on their original node at 31m50s.
+
+
+## Compact-family exterior workload
+
+`bouchet-family-exterior.sbatch` is prepared for the complete 64,646-leaf
+ordered compact-family proposal. It uses four CPUs, 64 GiB, two bounded build
+workers and a ten-hour internal timeout inside a twelve-hour allocation.
+It checks all exact subdivision tables and numerical leaves, then runs the
+unchanged axiom-audit policy. **Even a successful exterior job leaves the
+internal `FamilyABBLocal` premise to be discharged by the separate ABB job.**
+The remaining critical classification is a different obligation again.
+
+The new runner saves generated exterior sources and project build artifacts
+on normal exit, including a controlled timeout, to a job-specific checkpoint
+archive. This avoids discarding completed compilation when a long replay
+needs another allocation. A checkpoint is not a success flag. A scheduler
+kill can still prevent the exit trap; inspect the recorded job state and logs.
+No new dependency cache is duplicated on the desktop. The full workload
+has not yet been submitted at this preparation checkpoint.

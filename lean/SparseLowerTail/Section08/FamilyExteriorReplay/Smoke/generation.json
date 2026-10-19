@@ -1,0 +1,50 @@
+{
+  "trust_status": "Generated, not yet built or audited; ABB remains an internal premise",
+  "mode": "smoke",
+  "leaves": 14,
+  "parameters": 8,
+  "endpoints": 42,
+  "kinds": {
+    "taylor": 10,
+    "ordered-empty": 2,
+    "abb": 1,
+    "aaa": 1
+  },
+  "selected": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    60,
+    2350,
+    2808,
+    17695
+  ],
+  "coverage_chunks": 1,
+  "final_module": "SparseLowerTail.Section08.FamilyExteriorReplay.Smoke.CheckedSubtree",
+  "modules": [
+    "SparseLowerTail.Section08.FamilyExteriorReplay.Smoke.Endpoints0000",
+    "SparseLowerTail.Section08.FamilyExteriorReplay.Smoke.Parameter0000",
+    "SparseLowerTail.Section08.FamilyExteriorReplay.Smoke.Parameter0001",
+    "SparseLowerTail.Section08.FamilyExteriorReplay.Smoke.Parameter0002",
+    "SparseLowerTail.Section08.FamilyExteriorReplay.Smoke.Parameter0003",
+    "SparseLowerTail.Section08.FamilyExteriorReplay.Smoke.Parameter0004",
+    "SparseLowerTail.Section08.FamilyExteriorReplay.Smoke.Parameter0005",
+    "SparseLowerTail.Section08.FamilyExteriorReplay.Smoke.Parameter0006",
+    "SparseLowerTail.Section08.FamilyExteriorReplay.Smoke.Parameter0007",
+    "SparseLowerTail.Section08.FamilyExteriorReplay.Smoke.Leaves0000",
+    "SparseLowerTail.Section08.FamilyExteriorReplay.Smoke.Leaves0003",
+    "SparseLowerTail.Section08.FamilyExteriorReplay.Smoke.Leaves0146",
+    "SparseLowerTail.Section08.FamilyExteriorReplay.Smoke.Leaves0175",
+    "SparseLowerTail.Section08.FamilyExteriorReplay.Smoke.Leaves1105",
+    "SparseLowerTail.Section08.FamilyExteriorReplay.Smoke.Coverage0000",
+    "SparseLowerTail.Section08.FamilyExteriorReplay.Smoke.CheckedSubtree"
+  ],
+  "proposal_sha256": "48420ce188ba0e8993c3febf8b678c86552a43cb8fb94efbd973a5be785d7aa7"
+}

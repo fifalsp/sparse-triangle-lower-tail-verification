@@ -1149,3 +1149,39 @@ Validation: root build **3,457 jobs**; audit **11,605 declarations / 7,509
 theorems**, only the three standard logical axioms; **88 manuscript labels /
 448 declaration links** pass, as do five arithmetic-regression tests and six
 manuscript-map tests. The complete Python proposal replay passes again.
+
+
+### 2026-10-19 — generated exterior replay checks all leaf types
+
+The actual proposal now generates Lean endpoint, parameter, derivative, leaf,
+and coverage proofs with shared data. The small test has **14 actual leaves**:
+ten Taylor, two ordered-empty, one AAA, and one ABB. It includes all three
+quadratic choices and one complete ten-leaf subdivision subtree. All 16
+generated modules compile. The contact and table conclusions explicitly
+retain `FamilyABBLocal`; the ten Taylor positivity checks are unconditional.
+This is not a completed full-domain replay.
+
+From `lean/`:
+
+```sh
+python3 tools/generate_family_exterior_replay.py data/family-exterior-subdivision-proposal.json.gz
+lake build SparseLowerTail.Section08.FamilyExteriorReplay.Smoke.CheckedSubtree
+```
+
+The full generator uses `--full` and is intended for Yale. Its cluster runner
+builds the full conditional compact certificate and applies the unchanged
+axiom audit. A separate proved ABB neighborhood is still needed to remove
+that internal premise. The new Slurm runner checkpoints completed project
+artifacts on a controlled timeout. See `hpc/README.md` for deployment status.
+
+The smoke test exposed two source-generation bugs (a missing namespace import
+and Lean structure-field indentation). Both are fixed; neither was a failed
+mathematical inequality. Six parser tests also reject duplicate, missing,
+misbounded and out-of-scope coverage data; they are not a formal proof.
+
+Validation: root build **3,473 jobs**; audit **12,244 declarations / 8,043
+theorems**, with only the three standard logical axioms; **88 labels / 453
+Lean declaration links** pass. All eleven exterior arithmetic/parser tests
+and six manuscript-map tests pass. Regenerating all sixteen smoke modules
+and their manifest is byte-identical. The full theorem remains conditional
+on the two internal certificates; the effort estimate stays roughly 40–45%.

@@ -81,3 +81,15 @@ memory". The scheduler subsequently still reported both S1 and F1 batch jobs
 RUNNING, with no error in their batch stderr at that observation. The failed
 monitor is not evidence that either certificate succeeded or failed; retain
 and inspect the existing job IDs before any restart.
+
+
+### 2026-10-19: exterior family scope
+
+A complete 64,646-leaf exterior/contact proposal now passes exact Python
+consistency checks. The zero-preserving ordered-to-unordered assembly is
+proved in Lean, and 14 representative generated leaves plus one complete
+subtree compile. These include each quadratic choice and each leaf type.
+The full exterior replay and full ABB local theorem are still required;
+`FamilyABBLocal` remains an explicit internal premise, not an allowed external
+assumption. Source-generation errors found in the smoke test were repaired.
+No new mathematical counterexample or manuscript gap was found.

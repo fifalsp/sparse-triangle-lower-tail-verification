@@ -38,6 +38,16 @@
       "build_elapsed_seconds": 1338.782513849903,
       "active_module": "SparseLowerTail.Section08.FamilyABBReplay.Full.Leaves0598",
       "trust_status": "In progress; no full proof or axiom-audit success yet"
+    },
+    {
+      "scheduler_elapsed": "00:45:48",
+      "scheduler_state": "RUNNING",
+      "last_observed_build_completed_modules": 400,
+      "build_total_modules": 7459,
+      "build_failed_modules": {},
+      "build_elapsed_seconds": 2576.007352077868,
+      "active_module": "SparseLowerTail.Section08.FamilyABBReplay.Full.Leaves0115",
+      "trust_status": "In progress; full build and audit remain pending"
     }
   ]
 }

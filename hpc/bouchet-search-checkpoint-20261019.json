@@ -1,0 +1,51 @@
+{
+  "recorded_at": "2026-10-19T20:12:01.589887+00:00",
+  "source_commit": "38d5c740f691792bd19cf545d18565c5b216bd9a",
+  "search_array": 30060923,
+  "evidence": "Search archives read through the authenticated Yale shell",
+  "proposals": [
+    {
+      "job": 0,
+      "nodes": 31925,
+      "leaves": 15963,
+      "frontier": 0,
+      "status": "complete untrusted proposal"
+    },
+    {
+      "job": 1,
+      "nodes": 21897,
+      "leaves": 10949,
+      "frontier": 0,
+      "status": "complete untrusted proposal"
+    },
+    {
+      "job": 2,
+      "nodes": 23595,
+      "leaves": 11798,
+      "frontier": 0,
+      "status": "complete untrusted proposal"
+    },
+    {
+      "job": 3,
+      "nodes": 11265,
+      "leaves": 5633,
+      "frontier": 0,
+      "status": "complete untrusted proposal"
+    },
+    {
+      "job": 4,
+      "nodes": 15497,
+      "leaves": 7749,
+      "frontier": 0,
+      "status": "complete untrusted proposal"
+    },
+    {
+      "job": 6,
+      "nodes": 9325,
+      "leaves": 4663,
+      "frontier": 0,
+      "status": "complete untrusted proposal"
+    }
+  ],
+  "formal_status": "No full-domain Lean completion asserted. Job 0 is already running as 30060676; jobs 1-4 and 6 are prepared for full replay."
+}

@@ -199,3 +199,13 @@ At most two tasks run at once, each with one CPU, 4 GiB RAM, and a two-minute
 search budget. Every task archives its proposal, unresolved frontier if any,
 source commit, and log. No Lean installation is needed for this search-only
 job, and no result from it is accepted as a formal proof.
+
+`bouchet-cover-array.sbatch SOURCE_ARCHIVE SHA256 SEARCH_RESULTS_DIRECTORY`
+replays completed nonapex proposals from a search array. It requires the
+search results and source archive to record the same source commit, saves the
+input hashes, and preserves the actual proposal in the build checkpoint.
+The initial array covers verified-complete proposals 1–4 and 6, at most four
+jobs concurrently, each with four CPUs and 32 GiB RAM. Four single-thread
+build workers keep process concurrency bounded. Future `--array` overrides
+must name only completed proposals that have not already been submitted.
+Neither queued nor running jobs count as completed formal proofs.

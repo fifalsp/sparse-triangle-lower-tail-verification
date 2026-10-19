@@ -838,3 +838,34 @@ coverage, compiles a full-edge-cube theorem for S1's first parameter vertex,
 and runs the standard axiom audit. The proposed workload is not yet a
 completed proof. Its generated modules stay outside the public root until
 the full build, audit and statement review pass. See `../hpc/README.md`.
+
+### 2026-10-19 — full F1 apex proposal and checked replay entry points
+
+`ApexContactBox.lean` proves an exact rational containment test from a
+subdivision box to any of the twelve already proved contact neighborhoods.
+`ApexCoverAssembly.lean` carries nonnegativity and the zero-to-contact
+implication through coordinate sorting back to the full edge cube, with the
+four required triangle patterns. The full sorted-domain premise is still
+an internal verification obligation.
+
+`tools/propose_apex_cover.py` now produces a complete F1 proposal on the
+published domain: 31,180 exterior Taylor leaves, 14 AAA contact leaves and
+69 ABB contact leaves (62,525 tree nodes). The proposal and its success flag
+are untrusted. It is saved in `data/apex-f1-subdivision-proposal.json`.
+The bounded search can save and resume its frontier; no incomplete proposal
+is accepted by the replay parser.
+
+`tools/generate_apex_replay.py` writes exact box data, exponential endpoint
+proofs, numerical leaf inequalities, geometric coverage proofs and the final
+whole-cube implication. Its `--smoke` mode deliberately omits a global theorem.
+Five representative F1 leaves, including exterior boxes adjacent to both
+contact types, are checked in `ApexReplay/F1Smoke`. The full-cube wrapper was
+separately type-checked with an explicit ordered-domain hypothesis; this
+checks the wrapper, not that hypothesis. The full replay belongs on Bouchet
+through `tools/run_apex_cluster.py`, followed by the unchanged axiom audit.
+
+Validation: full root build passed (3428 jobs); audit passed for 10,171 project
+declarations / 6,485 theorems, using only `propext`, `Classical.choice` and
+`Quot.sound`. Manuscript/map checks and all six mapping tests pass. No new
+manuscript error was established. The global critical and intermediate-family
+certificates remain unfinished; effort estimate remains roughly 40–45%.

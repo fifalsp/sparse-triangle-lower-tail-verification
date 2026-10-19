@@ -15,7 +15,7 @@ umask 077
 SOURCE_ARCHIVE="${1:?source archive required}"
 SOURCE_SHA256="${2:?expected SHA256 required}"
 WORKLOAD="${3:-bootstrap}"
-case "$WORKLOAD" in bootstrap|s1) ;; *) exit 2 ;; esac
+case "$WORKLOAD" in bootstrap|s1|apex1) ;; *) exit 2 ;; esac
 SAVE_ROOT="${SLURM_SUBMIT_DIR:?}"
 JOB_ID="${SLURM_JOB_ID:?}"
 WORK_DIR=$(mktemp -d "${TMPDIR:-/tmp}/sparse-lean-${JOB_ID}.XXXXXX")
@@ -64,7 +64,11 @@ cd "$WORK_DIR/repo/lean"
 lean --version | tee "$RUN_DIR/lean-version.txt"
 printf '%s\n' 'Fetching pinned public mathlib dependencies and binary cache.'
 lake exe cache get > "$RUN_DIR/mathlib-cache.log" 2>&1
-if [[ "$WORKLOAD" == s1 ]]; then
+if [[ "$WORKLOAD" == apex1 ]]; then
+  printf '%s\n' 'Generating and checking the complete F1 apex subdivision.'
+  /usr/bin/time -v -o "$RUN_DIR/apex-time.txt" timeout --signal=TERM --kill-after=60s 10h python3 tools/run_apex_cluster.py --logs "$RUN_DIR"
+  tar -czf "$SAVE_ROOT/sparse-lean-apex-sources-${JOB_ID}.tar.gz" -C "$WORK_DIR/repo" lean/SparseLowerTail/Section05/ApexReplay/F1
+elif [[ "$WORKLOAD" == s1 ]]; then
   printf '%s\n' 'Generating and checking the complete S1 vertex-0 subdivision.'
   /usr/bin/time -v -o "$RUN_DIR/s1-time.txt" timeout --signal=TERM --kill-after=60s 10h python3 tools/run_s1_cluster.py --logs "$RUN_DIR"
   tar -czf "$SAVE_ROOT/sparse-lean-s1-sources-${JOB_ID}.tar.gz" -C "$WORK_DIR/repo" lean/SparseLowerTail/Section05/S1Replay lean/data/s1-replay-index.json lean/data/s1-coverage-index.json
@@ -77,7 +81,9 @@ else
   printf '%s\n' 'Recomputing the 40 refined apex matrix/RHS intervals.'
   /usr/bin/time -v -o "$RUN_DIR/apex-proposal-time.txt" lake env lean tools/ProposeRefinedApexSystem.lean > "$RUN_DIR/apex-system.txt" 2>&1
 fi
-printf '%s\n' 'Saving one reusable toolchain/dependency archive.'
-tar -cf - -C "$WORK_DIR" runtime repo/lean/.lake/packages | gzip -1 > "$CACHE_ARCHIVE.${JOB_ID}.partial"
-mv "$CACHE_ARCHIVE.${JOB_ID}.partial" "$CACHE_ARCHIVE"
+if [[ "$WORKLOAD" == bootstrap ]]; then
+  printf '%s\n' 'Saving one reusable toolchain/dependency archive.'
+  tar -cf - -C "$WORK_DIR" runtime repo/lean/.lake/packages | gzip -1 > "$CACHE_ARCHIVE.${JOB_ID}.partial"
+  mv "$CACHE_ARCHIVE.${JOB_ID}.partial" "$CACHE_ARCHIVE"
+fi
 printf '%s\n' "Requested workload $WORKLOAD completed." > "$RUN_DIR/SUCCESS.txt"

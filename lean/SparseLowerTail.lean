@@ -132,3 +132,6 @@ import SparseLowerTail.Section05.ApexRefinedPrimitives
 
 import SparseLowerTail.Section05.ApexRefinedBoxIntervals
 import SparseLowerTail.Section05.ApexRefinedTaylorBox
+import SparseLowerTail.Section05.ApexContactBox
+import SparseLowerTail.Section05.ApexCoverAssembly
+import SparseLowerTail.Section05.ApexReplay.F1Smoke.CheckedLeaves

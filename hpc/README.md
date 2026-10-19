@@ -101,3 +101,19 @@ is never treated as a proof; all leaves, splitting geometry, table lookups
 and final mathematical conclusions must compile in Lean. The standalone
 full-cube wrapper has been checked with an explicit coverage hypothesis;
 that template check does not establish the missing coverage theorem.
+
+## Full F1 apex workload
+
+The updated runner accepts `apex1`, with the same 12-hour allocation and
+10-hour internal timeout as S1. It generates all 31,263 F1 leaves, checks the
+exact subdivision coverage and full-cube nonnegativity/zero-pattern theorem,
+then applies the standard axiom audit. Only a successful build and audit
+produce `APEX_SUCCESS.txt` and the generated-source archive.
+
+Use an `afterok` dependency on the bootstrap. The updated runner writes the
+shared dependency archive only for `bootstrap`; S1 and apex jobs read it.
+The previously submitted S1 runner still exports its cache atomically, so
+readers see one complete archive. Source, logs and generated artifacts are
+kept separate by job ID. The checked five-leaf smoke test is not a substitute
+for the full replay. F1 is one of six apex fans; all 36 nonapex jobs and the
+intermediate-family certificate remain separate obligations.

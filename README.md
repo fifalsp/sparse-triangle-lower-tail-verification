@@ -50,11 +50,15 @@ and the Lean formalization have different scopes.
 
 The [formalization README](lean/README.md) records the file-to-paper mapping,
 remaining dependencies, build instructions, axiom audit, and dated progress log.
-The current effort estimate is **about 40% complete (roughly 30–55%)**, not a
+The current effort estimate is **about 40–45% complete (roughly 30–55%)**, not a
 measured percentage of theorem coverage. [Proof issues](lean/PROOF-ISSUES.md)
 distinguish missing formal proofs from suspected mathematical errors.
 [Shorter proof notes](docs/PROOF-SIMPLIFICATIONS.md) collect complete replacement
 arguments found during formalization, with stable manuscript labels and Lean links.
+Latest apex progress: a complete F1 subdivision is proposed, and five representative
+leaves plus the sorting/zero-pattern assembly pass Lean. **The full F1 replay is
+still pending**, so this does not close the critical certificate.
+
 The target statement quantifies over all measurable graphons, not just SBMs.
 At the authors' request, external/classical results may be explicit hypotheses;
 [ASSUMPTIONS.md](lean/ASSUMPTIONS.md) distinguishes those inputs from our own

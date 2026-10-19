@@ -95,12 +95,19 @@ reverse value inequality or the above/at-threshold classification.
   bound, Euler–Lagrange equation, and triangle-density hypotheses. The Fubini,
   integrability, and cyclic-symmetry facts are proved in
   [`GraphonIntegration.lean`](SparseLowerTail/Section08/GraphonIntegration.lean).
-  The Euler–Lagrange equation for every minimizer remains a separate obligation.
+  [`MinimizerExpectation.lean`](SparseLowerTail/Section08/MinimizerExpectation.lean)
+  now discharges those analytic hypotheses for actual minimizers. Matching cost
+  and edge data give zero expectation; conditional on certificate nonnegativity,
+  this forces almost-everywhere vanishing. Certificate nonnegativity is still
+  an internal obligation.
 - **`lem:J`, `prop:bipodal`:** the modules `BipodalAlgebra`, `BipodalDefinitions`,
   `BipodalKernel`, and [`BipodalIntegral.lean`](SparseLowerTail/Section04/BipodalIntegral.lean)
   prove positivity of J by the paper's integral method and the resulting
-  scalar stationary-system rigidity. Connecting these equations to every
-  two-block graphon minimizer still requires the graphon first-order conditions.
+  scalar stationary-system rigidity.
+  [`BipodalGraphon.lean`](SparseLowerTail/Section04/BipodalGraphon.lean) handles
+  arbitrary two-block partitions, including zero-mass blocks. Its minimizer
+  interface discharges positivity, the Euler equation and multiplier positivity;
+  the vertex identity is the remaining explicit analytic input.
 
 ## Remaining dependencies of the main theorem
 
@@ -121,8 +128,12 @@ An unchecked item is not supplied as an axiom.
 - [x] Scaling, truncation, rescaled first variation, and the certificate
       expectation identity (`lem:scaling`, `lem:truncation`, `s3:rescale`, `s8:expect`).
 - [x] Scalar two-block rigidity (`lem:J`, `prop:bipodal`).
-- [ ] Boundary comparison (`lem:boundary`), the Euler–Lagrange equation, vertex
-      identity, and their graphon rigidity consequences.
+- [x] Complete Euler–Lagrange proposition (`prop:euler`), including positive
+      unique multiplier and the quantitative upper/lower bounds.
+- [x] Sharp Bregman estimate, mean gap, and downward propagation
+      (`lem:bregman`, `lem:meangap`, `lem:push`).
+- [ ] Boundary comparison (`lem:boundary`), vertex identity, and its graphon
+      rigidity consequences.
 - [x] Analytic bridge and sign estimates for the certificate (`lem:certcoef`).
 - [ ] A Lean proof-producing version of the interval certificates, including
       the cover and family positivity checks (`prop:cover`, `prop:family`).
@@ -266,3 +277,29 @@ mathematical axioms have been added.
   graphon first-order/continuation arguments, and global positivity of the
   cover/family certificates. The numerical threshold bounds alone do not
   establish those positivity statements.
+
+### 2026-10-19 — minimizer Euler equation and threshold reduction
+
+- [`EulerLagrange.lean`](SparseLowerTail/Section04/EulerLagrange.lean) proves
+  every part of `prop:euler` directly from minimizer optimality. The proof uses
+  a toward-one perturbation for positivity and bounded exponential tilts for
+  the first variation. These replace the manuscript's additive cutoff tests;
+  neither route introduces an extra mathematical assumption.
+- [`Bregman.lean`](SparseLowerTail/Section02/Bregman.lean),
+  [`MeanGap.lean`](SparseLowerTail/Section02/MeanGap.lean), and
+  [`Push.lean`](SparseLowerTail/Section02/Push.lean) prove the sharp entropy
+  estimate, actual graphon variance bound, strict mean gap, and downward push.
+- [`ThresholdReduction.lean`](SparseLowerTail/Section05/ThresholdReduction.lean)
+  proves all conclusions of `thm:threshold` **conditional on the internal
+  `CriticalClassification` proposition**. That proposition records `prop:critical`
+  in measurable-partition form and remains unproved. The below-threshold
+  improvement continues to be unconditional. No minimizer-existence assumption
+  is needed for this reduction.
+- Connected the arbitrary two-block graphon construction to scalar rigidity,
+  and the actual minimizer Euler equation to the certificate expectation.
+  The vertex condition, global positivity and zero-pattern rigidity remain
+  necessary before these bridges give global classification.
+- **Still incomplete:** `MainTheorem`, critical classification, vertex
+  variation, global certificate positivity, and the remaining graphon
+  existence/continuation arguments. Conditional deductions are not counted as
+  proofs of their internal premises.

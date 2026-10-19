@@ -407,10 +407,22 @@
     },
     {
       "paper_label": "prop:euler",
-      "status": "pending",
-      "checked_scope": "No complete Lean proof claimed for this statement.",
-      "lean_files": [],
-      "lean_declarations": [],
+      "status": "proved",
+      "checked_scope": "All parts for actual minimizers: positivity, Euler equation, positive unique multiplier and integral identity, quantitative lower/upper bounds. Uses toward-one positivity perturbations and bounded exponential tilts in place of the paper's additive cutoff tests; no additional hypothesis.",
+      "lean_files": [
+        "SparseLowerTail/Section04/EulerLagrange.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section04.minimizer_pos_ae",
+        "SparseLowerTail.Section04.minimizer_log_equation",
+        "SparseLowerTail.Section04.minimizer_multiplier_pos",
+        "SparseLowerTail.Section04.graphonMultiplier_integral_identity",
+        "SparseLowerTail.Section04.minimizer_multiplier_unique",
+        "SparseLowerTail.Section04.minimizer_lower_bound",
+        "SparseLowerTail.Section04.minimizer_codegree_lower_bound",
+        "SparseLowerTail.Section04.minimizer_upper_bound",
+        "SparseLowerTail.Section04.minimizer_upper_constant_lt_one"
+      ],
       "explicit_inputs": [],
       "baseline": {
         "environment": "proposition",
@@ -460,17 +472,26 @@
     },
     {
       "paper_label": "thm:threshold",
-      "status": "partial",
-      "checked_scope": "Part (iii) only: unrestricted value is bounded by the improving balanced branch below threshold; no minimizer there is a.e. constant. The global lower bound and above/at-threshold classification remain unproved.",
+      "status": "partial_conditional",
+      "checked_scope": "Part (iii) proved without additional assumptions. All remaining conclusions deduced from explicit INTERNAL CriticalClassification (prop:critical), still unproved. Conditional reduction is not global threshold verification.",
       "lean_files": [
-        "SparseLowerTail/Section05/StrictImprovement.lean"
+        "SparseLowerTail/Section05/StrictImprovement.lean",
+        "SparseLowerTail/Section05/ThresholdReduction.lean"
       ],
       "lean_declarations": [
         "SparseLowerTail.Section05.value_le_branchCost_lt_entropy",
         "SparseLowerTail.Section05.value_lt_entropy_below_threshold",
-        "SparseLowerTail.Section05.no_constant_minimizer_below_threshold"
+        "SparseLowerTail.Section05.no_constant_minimizer_below_threshold",
+        "SparseLowerTail.Section05.branch_graphon_improves_below",
+        "SparseLowerTail.Section05.value_eq_entropy_above",
+        "SparseLowerTail.Section05.minimizer_above_iff",
+        "SparseLowerTail.Section05.minimizer_at_iff",
+        "SparseLowerTail.Section05.strict_improvement_iff",
+        "SparseLowerTail.Section05.constant_optimal_iff"
       ],
-      "explicit_inputs": [],
+      "explicit_inputs": [
+        "internal:prop:critical"
+      ],
       "baseline": {
         "environment": "theorem",
         "statement": "The following hold. \\begin{enumerate}[label=(\\roman*)] \\item For every $r\\in(r_*,1)$, $V(r)=h(r)$, and every minimizer at $r$ equals $r$ a.e. \\item $V(r_*)=h(r_*)$, and a graphon is a minimizer at $r_*$ if and only if it equals $r_*$ a.e. or is a relabeling of $B_*$. \\item For every $r\\in(0,r_*)$, $V(r)\\le F(B_r)<h(r)$, and no minimizer at $r$ is a.e. constant. \\end{enumerate} Consequently, $V(r)<h(r)$ if and only if $r<r_*$. Moreover, the constant graphon $r$ is a minimizer at $r$ if and only if $r\\ge r_*$.",
@@ -719,10 +740,11 @@
     {
       "paper_label": "s8:expect",
       "status": "proved",
-      "checked_scope": "Exact graphon expectation identity with integrability, triangle-codegree Fubini identity and cyclic symmetry proved internally; expected certificate zero on the branch. Contact identity also follows from individually proved contact values. No certificate positivity or additional external input assumed.",
+      "checked_scope": "Exact graphon expectation identity with integrability, triangle-codegree Fubini identity and cyclic symmetry proved internally; expected certificate zero on the branch. Contact identity also follows from individually proved contact values. No certificate positivity or additional external input assumed. A minimizer interface discharges positivity, Euler equation and activity; matching branch cost/edge data give zero expectation. Nonnegative zero-expectation certificates vanish a.e.; positivity is explicitly conditional and not claimed proved.",
       "lean_files": [
         "SparseLowerTail/Section08/GraphonIntegration.lean",
-        "SparseLowerTail/Section08/CertificateExpectation.lean"
+        "SparseLowerTail/Section08/CertificateExpectation.lean",
+        "SparseLowerTail/Section08/MinimizerExpectation.lean"
       ],
       "lean_declarations": [
         "SparseLowerTail.Certificate.expectation_identity",
@@ -730,7 +752,11 @@
         "SparseLowerTail.Certificate.psi_integrable",
         "SparseLowerTail.triangle_eq_integral_codegree",
         "SparseLowerTail.TriangleIntegration.integral_test_codegree",
-        "SparseLowerTail.TriangleIntegration.integral_cycle"
+        "SparseLowerTail.TriangleIntegration.integral_cycle",
+        "SparseLowerTail.Certificate.minimizer_expectation_identity",
+        "SparseLowerTail.Certificate.multiplier_eq_branch_of_matching_data",
+        "SparseLowerTail.Certificate.minimizer_expectation_zero_of_matching_data",
+        "SparseLowerTail.Certificate.minimizer_certificate_zero_ae"
       ],
       "explicit_inputs": [],
       "baseline": {
@@ -768,16 +794,22 @@
     },
     {
       "paper_label": "cor:bipodalmin",
-      "status": "partial",
-      "checked_scope": "A minimizer already known to have balanced form has the uniquely classified scalar parameters and forces equality of variational values. General bipodal-to-balanced graphon reduction still being assembled from first-order conditions.",
+      "status": "partial_conditional",
+      "checked_scope": "Actual arbitrary two-block graphon reduction, including degenerate masses, to balanced branch and equality of values. The minimizer interface discharges positivity, Euler equation and multiplier positivity; only the unproved vertex identity remains explicit. Relabeling-to-partition equivalence remains separate.",
       "lean_files": [
-        "SparseLowerTail/Section04/BalancedMinimizers.lean"
+        "SparseLowerTail/Section04/BalancedMinimizers.lean",
+        "SparseLowerTail/Section04/BipodalGraphon.lean"
       ],
       "lean_declarations": [
         "SparseLowerTail.IsBalanced.minimizer_bridge",
-        "SparseLowerTail.Section04.balanced_minimizer_below_threshold"
+        "SparseLowerTail.Section04.balanced_minimizer_below_threshold",
+        "SparseLowerTail.Section04.IsBipodal.exists_balanced",
+        "SparseLowerTail.Section04.bipodal_minimizer_below_threshold",
+        "SparseLowerTail.Section04.bipodal_minimizer_of_vertex_identity"
       ],
-      "explicit_inputs": [],
+      "explicit_inputs": [
+        "internal:prop:vertex"
+      ],
       "baseline": {
         "environment": "corollary",
         "statement": "Let $r\\in(0,r_*)$, and let $U$ be a minimizer at $r$ that is a two block SBM graphon. Then $U$ is a relabeling of $B_r$, and $V(r)=\\Vbal(r)$.",
@@ -785,6 +817,86 @@
         "proof_sha256": "396f809f93940d73b8f7a23a921bc10196a9a890a47c6d4c33e38ec511f98c5e",
         "source_line": 3104
       }
+    },
+    {
+      "paper_label": "lem:bregman",
+      "baseline": {
+        "environment": "lemma",
+        "statement": "Let $s\\in(0,1)$. Then $\\beta(s)\\ge\\frac12$, and every $u\\in[0,1]$ satisfies \\begin{equation} h(u)-h(s)-(u-s)\\log s\\ge\\beta(s)(u-s)^2. \\end{equation}",
+        "statement_sha256": "0686165e3f15774f899cf35e71c2f9f5b181d0e8f49e16b66843925827134bc7",
+        "proof_sha256": "cee0343ba89a94837f692318878161cc9025147132f66e1606a64f8b7b5d1fb5",
+        "source_line": 1321
+      },
+      "status": "proved",
+      "checked_scope": "Sharp scalar quadratic entropy bound, including u=0 and beta>=1/2.",
+      "lean_files": [
+        "SparseLowerTail/Section02/Bregman.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section02.entropy_bregman",
+        "SparseLowerTail.Section02.beta_ge_half"
+      ],
+      "explicit_inputs": []
+    },
+    {
+      "paper_label": "lem:meangap",
+      "baseline": {
+        "environment": "lemma",
+        "statement": "Let $r\\in(0,1)$, and let $U$ be a graphon with $F(U)\\le h(r)$. If $U=c$ a.e.\\ for a constant $c$ and $t(U)\\le r^3$, then $c=r$. If $U$ is not a.e.\\ constant, then $m=e(U)$ lies in $(0,1)$, $F(U)\\ge h(m)+\\beta(m)\\|U-m\\|_2^2>h(m)$, and $m>r$.",
+        "statement_sha256": "17aa456914a7cbd39d3b3d7f36e7c9825f10d107af90d9812724a53a9e43e01b",
+        "proof_sha256": "b0796b40c745b5003f09a6b2c4e16d19e865d2768ddf04a9a7065caae67e16fa",
+        "source_line": 1345
+      },
+      "status": "proved",
+      "checked_scope": "Actual graphon mean/variance entropy gap, strictness for nonconstant graphons, edge density above target, and feasible constant uniqueness.",
+      "lean_files": [
+        "SparseLowerTail/Section02/MeanGap.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section02.graphon_mean_gap",
+        "SparseLowerTail.Section02.edgeDensity_gt_target",
+        "SparseLowerTail.Section02.constant_of_cost_le_target"
+      ],
+      "explicit_inputs": []
+    },
+    {
+      "paper_label": "lem:push",
+      "baseline": {
+        "environment": "lemma",
+        "statement": "Let $0<r'<r<1$, and let $U$ be a graphon that is not a.e. constant, with $t(U)\\le r^3$ and $F(U)\\le h(r)$. Then $W=(r'/r)U$ is a graphon with $t(W)\\le r'^3$ and $F(W)<h(r')$. In particular $V(r')<h(r')$.",
+        "statement_sha256": "bb49a100e0dc9424aa49024eba48135af8d27d317783b73498ffa9e57f59d426",
+        "proof_sha256": "5b4ef9a8538855860e6278e58020c3b1bc610538aa638a6b1452f50beb1ed803",
+        "source_line": 3179
+      },
+      "status": "proved",
+      "checked_scope": "Actual scaled graphon construction, feasibility and strict entropy improvement at every smaller positive target.",
+      "lean_files": [
+        "SparseLowerTail/Section02/Push.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section02.push_graphon",
+        "SparseLowerTail.Section02.push_value"
+      ],
+      "explicit_inputs": []
+    },
+    {
+      "paper_label": "prop:critical",
+      "baseline": {
+        "environment": "proposition",
+        "statement": "$V(r_*)=h(r_*)$, and every minimizer at $r_*$ either equals $r_*$ a.e. or is a relabeling of $B_*$.",
+        "statement_sha256": "0cd7c014fa8ba3778d36c46ad8e25302da9129f181402b9a231e1643f79ce2de",
+        "proof_sha256": null,
+        "source_line": 3200
+      },
+      "status": "statement_only",
+      "checked_scope": "Exact internal critical-classification obligation in partition form. Not proved and not an external input.",
+      "lean_files": [
+        "SparseLowerTail/Section05/ThresholdReduction.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section05.CriticalClassification"
+      ],
+      "explicit_inputs": []
     }
   ]
 }

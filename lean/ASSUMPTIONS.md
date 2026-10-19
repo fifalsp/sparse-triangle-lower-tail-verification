@@ -61,6 +61,17 @@ reclassified as classical merely because
 proving them in Lean is difficult. The numerical certificates remain part of the
 new argument and are not covered by the permission to assume external theorems.
 
+## Internal hypotheses are not external results
+
+`SparseLowerTail.Section05.CriticalClassification` in
+[`ThresholdReduction.lean`](SparseLowerTail/Section05/ThresholdReduction.lean)
+is the paper's own `prop:critical`, stated in measurable-partition form. The
+threshold theorem has been deduced from it, but the proposition itself remains
+unproved. It must be discharged, not retained among the final external inputs.
+Likewise the remaining vertex identity, certificate positivity, matching-data
+and continuation hypotheses are internal proof obligations. The completed
+Euler–Lagrange proposition requires none of these hypotheses.
+
 ## Changing the manuscript
 
 [`proof-map.json`](proof-map.json) uses LaTeX labels as identifiers. Displayed

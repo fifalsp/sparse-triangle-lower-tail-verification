@@ -33,3 +33,10 @@ import SparseLowerTail.Section04.BipodalKernel
 import SparseLowerTail.Section04.KernelVariational
 import SparseLowerTail.Section04.BalancedMinimizers
 import SparseLowerTail.Section04.BipodalIntegral
+import SparseLowerTail.Section02.Bregman
+import SparseLowerTail.Section02.MeanGap
+import SparseLowerTail.Section02.Push
+import SparseLowerTail.Section04.EulerLagrange
+import SparseLowerTail.Section04.BipodalGraphon
+import SparseLowerTail.Section05.ThresholdReduction
+import SparseLowerTail.Section08.MinimizerExpectation

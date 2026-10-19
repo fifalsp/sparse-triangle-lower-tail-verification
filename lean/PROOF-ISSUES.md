@@ -103,3 +103,14 @@ replay. A separately proved scale-32 alternative now covers [-32,32], and
 both actual cutoffs pass kernel-checked endpoint tests. Existing scale-16
 certificate data are preserved. The complete B1/B2 positivity jobs are still
 unproved; widening the endpoint range does not discharge those inequalities.
+
+### Generic nonapex replay: implementation bottlenecks, not mathematical gaps
+
+The complete job-0 and job-35 search proposals now have no unresolved frontier,
+but their full Lean replays remain pending. The previously recorded global
+certificate obligations are therefore unchanged. Two implementation issues
+were isolated: slow interpreted lookup of nested finite tables (addressed by
+normalizing the closed exported tables), and expensive inference of a direct
+leaf's coordinate argument (addressed by supplying `edgeCoordinate q`
+explicitly). These do not supply an unproved mathematical premise or weaken a
+statement. Python search/consistency results remain outside the trusted proof.

@@ -50,11 +50,25 @@ and the Lean formalization have different scopes.
 
 The [formalization README](lean/README.md) records the file-to-paper mapping,
 remaining dependencies, build instructions, axiom audit, and dated progress log.
-The current effort estimate is **about 40–45% complete (roughly 30–55%)**, not a
-measured percentage of theorem coverage. [Proof issues](lean/PROOF-ISSUES.md)
+The earlier **40–45% effort estimate** is subjective, not measured theorem
+coverage. The completion gates below are the more useful progress record. [Proof issues](lean/PROOF-ISSUES.md)
 distinguish missing formal proofs from suspected mathematical errors.
 [Shorter proof notes](docs/PROOF-SIMPLIFICATIONS.md) collect complete replacement
 arguments found during formalization, with stable manuscript labels and Lean links.
+Current completion gates (only full imported Lean proofs count):
+
+| Gate | Checked completion | What remains |
+| --- | --- | --- |
+| Main-theorem deduction from the two internal certificates | Proved | Supply both certificates |
+| Critical classification: 36 nonapex full-domain jobs | 0/36 integrated | Full replays; jobs 0 and 35 now have complete search proposals |
+| Critical classification: six apex full-domain jobs | 0/6 integrated | F1 replay on Yale; the other exterior domains still require replay |
+| Compact family: AAA neighborhood | Proved on the full parameter interval | None for this neighborhood |
+| Compact family: ABB neighborhood and exterior | Neither full replay integrated | Both full replays running on Yale |
+
+Search proposals, sample leaves, and job submissions are **not** completed gates.
+The latest source milestone includes a generic full-domain nonapex replay generator;
+its complete job-0 replay is the next deployment target.
+
 Latest apex progress: a complete F1 subdivision is proposed, and five representative
 leaves plus the sorting/zero-pattern assembly pass Lean. **The full F1 replay is
 still pending**, so this does not close the critical certificate.

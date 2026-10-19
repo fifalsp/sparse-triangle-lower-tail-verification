@@ -183,3 +183,19 @@ No new dependency cache is duplicated on the desktop. Full exterior job **300568
 `a9491f266af497c523e6dffabd02b08f558af248` after both uploaded SHA256
 checksums matched. See `bouchet-family-exterior-20261019.json` for provenance.
 Submission is not a completed certificate.
+
+## Generic nonapex replay and bounded search
+
+`bouchet-cover-job.sbatch SOURCE_ARCHIVE SHA256 JOB_INDEX` runs the complete
+nonapex job (0..35), using a complete proposal included in that source archive.
+It generates the full Lean replay, builds with two workers, audits axioms,
+and saves project artifacts on controlled exit. A checkpoint is not a success
+marker. Only `COVER_JOB_SUCCESS.txt` after the full build and audit reports a
+finished individual job; the main theorem still needs the other jobs.
+
+`bouchet-certificate-search.sbatch SOURCE_ARCHIVE SHA256` is a lighter array:
+tasks 0..35 search the nonapex jobs; tasks 36..40 search apex fans F2..F6.
+At most two tasks run at once, each with one CPU, 4 GiB RAM, and a two-minute
+search budget. Every task archives its proposal, unresolved frontier if any,
+source commit, and log. No Lean installation is needed for this search-only
+job, and no result from it is accepted as a formal proof.

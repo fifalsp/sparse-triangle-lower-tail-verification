@@ -1,0 +1,33 @@
+import SparseLowerTail.Numerics.ExpEndpoints
+
+/-! Generated untrusted proposal. Every arithmetic and coverage claim is kernel checked. -/
+namespace SparseLowerTail.Section05.CoverJobReplay.Job00Smoke
+open Numerics
+set_option maxRecDepth 100000
+set_option maxHeartbeats 8000000
+
+def exp0 : ExpEndpointCertificate := ⟨(0/1 : ℚ),20,(1/1 : ℚ),(1/1 : ℚ),(1/1 : ℚ),(1/1 : ℚ)⟩
+theorem exp0_valid : exp0.Valid := by decide +kernel
+
+def exp1 : ExpEndpointCertificate := ⟨(3287/65536 : ℚ),20,(1149313068573003753/1152921504606846976 : ℚ),(574656534286501877/576460752303423488 : ℚ),(1096522183712890003/1152921504606846976 : ℚ),(1096522183712890019/1152921504606846976 : ℚ)⟩
+theorem exp1_valid : exp1.Valid := by decide +kernel
+
+def exp2 : ExpEndpointCertificate := ⟨(3287/32768 : ℚ),20,(1145715926292081531/1152921504606846976 : ℚ),(286428981573020383/288230376151711744 : ℚ),(260720459842688303/288230376151711744 : ℚ),(260720459842688307/288230376151711744 : ℚ)⟩
+theorem exp2_valid : exp2.Valid := by decide +kernel
+
+def exp3 : ExpEndpointCertificate := ⟨(9861/65536 : ℚ),20,(1142130042416673887/1152921504606846976 : ℚ),(35691563825521059/36028797018963968 : ℚ),(30995797071070133/36028797018963968 : ℚ),(991865506274244271/1152921504606846976 : ℚ)⟩
+theorem exp3_valid : exp3.Valid := by decide +kernel
+
+def exp4 : ExpEndpointCertificate := ⟨(3287/16384 : ℚ),20,(1138555381710005393/1152921504606846976 : ℚ),(569277690855002697/576460752303423488 : ℚ),(58959051339546983/72057594037927936 : ℚ),(943344821432751743/1152921504606846976 : ℚ)⟩
+theorem exp4_valid : exp4.Valid := by decide +kernel
+
+def exp5 : ExpEndpointCertificate := ⟨(23009/4096 : ℚ),20,(202891347147838187/288230376151711744 : ℚ),(811565388591352749/1152921504606846976 : ℚ),(4189673461416775/1152921504606846976 : ℚ),(523709182677097/144115188075855872 : ℚ)⟩
+theorem exp5_valid : exp5.Valid := by decide +kernel
+
+def exp6 : ExpEndpointCertificate := ⟨(49305/8192 : ℚ),20,(395733086798587685/576460752303423488 : ℚ),(791466173597175371/1152921504606846976 : ℚ),(1402463734482051/576460752303423488 : ℚ),(2804927468964103/1152921504606846976 : ℚ)⟩
+theorem exp6_valid : exp6.Valid := by decide +kernel
+
+def exp7 : ExpEndpointCertificate := ⟨(3287/512 : ℚ),20,(771864735429192313/1152921504606846976 : ℚ),(385932367714596157/576460752303423488 : ℚ),(938929749371071/576460752303423488 : ℚ),(1877859498742143/1152921504606846976 : ℚ)⟩
+theorem exp7_valid : exp7.Valid := by decide +kernel
+
+end SparseLowerTail.Section05.CoverJobReplay.Job00Smoke

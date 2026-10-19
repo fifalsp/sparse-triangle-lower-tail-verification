@@ -1228,3 +1228,81 @@ the effort estimate is still roughly 40–45%.
 The next step is to check the generic search evaluator against exported Lean
 intervals for all 36 jobs, then generate and formally replay full subdivisions.
 The raw input export is running separately and is not counted as a proof.
+
+### 2026-10-19 — generic full-domain nonapex replay and concrete completion gates
+
+The main README now records completed full-domain gates instead of treating the
+subjective 40–45% effort estimate as a measured progress bar. Neither internal
+certificate is discharged yet. Job submissions and search success do not count.
+
+`tools/ExportCoverJobs.lean` exports the actual common value, three gradients,
+nine Hessian entries, and the refined constants for all 36 nonapex jobs. A
+structurally shared expression DAG has 1,149 nodes; Python reproduces all 36
+Lean near-one reference intervals exactly. This is a regression check for the
+**untrusted search**, not proof of full-domain positivity. The exporter
+normalizes closed finite-table lookups before serialization: interpreted
+nested finite-index evaluation had caused a severe performance bottleneck.
+
+Two bounded searches completed on their entire prescribed domains:
+
+| Job | Paper cell | Cutoff Q | Proposed leaves | Search time |
+| --- | --- | --- | --- | --- |
+| 0 | F1, first nonapex vertex | 3287/512 | 15,963 Taylor | 22.2 seconds |
+| 35 | B2, last nonapex vertex | 4629/256 | 28,486 Taylor + 36 direct | 40.1 seconds |
+
+The data are `data/cover-job-00-subdivision-proposal.json.gz` and
+`data/cover-job-35-subdivision-proposal.json.gz`. Neither has an unresolved
+frontier. **Neither is a completed formal certificate.**
+
+`tools/generate_cover_job_replay.py --full` generates every margin proof,
+finite table, exact subdivision coverage, and the actual full ordered-domain
+positivity theorem for any indexed nonapex job. Default mode checks only a
+small subset plus a complete small subtree. The direct positivity invocation
+now explicitly supplies `edgeCoordinate q`; omitting it caused a costly
+implicit-argument unification search. No theorem statement was weakened.
+
+`tools/run_cover_job_cluster.py` requires the full generated target to build
+and the unchanged axiom audit to pass before writing a success marker.
+`hpc/bouchet-cover-job.sbatch` keeps the bulk replay on a CPU node, with bounded
+workers and a resumable project-build checkpoint. The separate
+`hpc/bouchet-certificate-search.sbatch` searches the remaining 36 nonapex and
+five apex exterior jobs, at most two single-CPU tasks concurrently. Its outputs
+are explicitly untrusted proposals; it does not claim proof success.
+
+Reproduce the two searches and inspect the replay interface:
+
+```sh
+cd lean
+python3 tools/export_cover_jobs.py
+python3 tools/propose_cover_job.py --job 0 --seconds 45 --budget 100000 \
+  --output data/cover-job-00-subdivision-proposal.json.gz
+python3 tools/propose_cover_job.py --job 35 --seconds 45 --budget 100000 \
+  --output data/cover-job-35-subdivision-proposal.json.gz
+python3 tools/generate_cover_job_replay.py data/cover-job-00-subdivision-proposal.json.gz
+# Full generation/build belongs on the cluster:
+python3 tools/run_cover_job_cluster.py --job 0 --logs /path/to/logs
+```
+
+Full critical classification still requires all 36 nonapex and six apex
+full-domain results. Full compact-family positivity still requires the ABB
+and exterior replays. No new mathematical error in the paper was established.
+
+Performance experiment: `CoverJobProgram` proves all thirteen symbolic output
+identities for a 1,149-instruction shared-register program.
+`CoverJobProgramTaylor.margin_eq_job` proves exact equality with the existing
+margin, including diagonal square bounds. On one identical job-0 leaf,
+separate single-thread Lean runs took 5.80 seconds for the register version
+versus 3.69 seconds for the original expression evaluator (including startup).
+This is not a broad benchmark. The full replay generator therefore retains
+the original checker; the proved alternative is kept for reproducibility.
+The fixed direct B2 leaves each compiled in 3.3 seconds after explicit
+coordinate arguments and their three endpoint-bound conversions were supplied.
+
+Validation for this milestone: full root build **3,492 jobs**; axiom audit
+**12,535 project declarations / 8,249 theorems**, with only `propext`,
+`Classical.choice`, and `Quot.sound`. All ten selected nonapex leaves and both
+small coverage subtrees compile. The 13 generated smoke modules reproduce
+byte-for-byte. Nine nonapex regression tests, eleven exterior regression tests,
+and six manuscript-map tests pass. The 88 mapped manuscript statements remain
+unchanged. The full job-0 and job-35 proposals still require full replay.
+Proof-map links also pass: **88 labels / 477 Lean declarations**.

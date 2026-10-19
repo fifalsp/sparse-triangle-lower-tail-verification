@@ -1,0 +1,23 @@
+{
+  "recorded_date": "2026-10-19",
+  "slurm_job_id": 30062475,
+  "array_task": "30062473_25",
+  "source_commit": "38d5c740f691792bd19cf545d18565c5b216bd9a",
+  "target": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Ordered",
+  "scope": "Full actual ordered domain of nonapex job 25",
+  "build_modules": 241,
+  "build_modules_completed": 241,
+  "build_failures": {},
+  "runner_seconds": 1571.1181625688914,
+  "audit_project_declarations": 15043,
+  "audit_project_theorems": 11935,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "evidence": "Read exported logs/cover-job-status.json, logs/COVER_JOB_SUCCESS.txt, logs/cover-build/status.json and logs/cover-job-audit.log through authenticated Yale shell",
+  "remote_results_archive": "sparse-lean-results-30062475.tar.gz",
+  "remote_checkpoint_archive": "sparse-lean-cover-checkpoint-30062475.tar.gz",
+  "status": "Full region theorem and axiom audit passed on Yale; retrieval and root integration pending"
+}

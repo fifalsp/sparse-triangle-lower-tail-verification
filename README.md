@@ -55,12 +55,12 @@ coverage. The completion gates below are the more useful progress record. [Proof
 distinguish missing formal proofs from suspected mathematical errors.
 [Shorter proof notes](docs/PROOF-SIMPLIFICATIONS.md) collect complete replacement
 arguments found during formalization, with stable manuscript labels and Lean links.
-Current completion gates (only full imported Lean proofs count):
+Current completion gates (remote checks and root integration are recorded separately):
 
 | Gate | Checked completion | What remains |
 | --- | --- | --- |
 | Main-theorem deduction from the two internal certificates | Proved | Supply both certificates |
-| Critical classification: 36 nonapex full-domain jobs | 0/36 integrated | Full replays; complete search proposals for all 36 jobs are saved |
+| Critical classification: 36 nonapex full-domain jobs | 1/36 checked on Yale; 0/36 integrated | Job 25 passed its full theorem build and axiom audit; retrieval and root integration pending |
 | Critical classification: six apex full-domain jobs | 0/6 integrated | All six full replays are running or queued; complete proposals are saved |
 | Compact family: AAA neighborhood | Proved on the full parameter interval | None for this neighborhood |
 | Compact family: ABB neighborhood and exterior | Neither full replay integrated | Both full replays running on Yale |
@@ -219,3 +219,8 @@ confirms that all twelve cells match the paper's tables.
   graphon arguments, analytic reductions, and external Kwan–Pham theorem are
   supplied by the paper and its references. It is not a proof-assistant
   formalization of the whole paper.
+
+Full nonapex **job 25** completed on Yale: all 241 modules built and the
+axiom audit passed (15,043 project declarations; 11,935 theorems). This is a
+complete region, not a sample. Retrieval and root integration remain pending;
+see the [completion record](hpc/bouchet-job25-completion-20261019.json).

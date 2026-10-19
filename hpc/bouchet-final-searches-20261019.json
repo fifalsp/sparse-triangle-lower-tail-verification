@@ -45,7 +45,14 @@
       "tasks": [
         38
       ],
-      "status": "Submission confirmed; result pending"
+      "status": "Complete proposal observed; Slurm COMPLETED with exit code 0",
+      "outcomes": [
+        {
+          "task": 38,
+          "nodes": 102457,
+          "frontier": 0
+        }
+      ]
     }
   ],
   "trust_status": "Search proposals only; no full-domain Lean completion asserted."

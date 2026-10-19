@@ -236,13 +236,12 @@ identify the exact runner checksum used. The explicit search commit may precede 
 both revisions and the actual proposal hash are recorded. The replay still
 checks the actual fan cutoff, every numerical inequality, complete coverage,
 and the unchanged axiom policy. Controlled exits preserve generated sources,
-project build artifacts and the actual input proposal. **This apex array has
-not yet been submitted.** The existing F1 job has not been restarted.
+project build artifacts and the actual input proposal. The array was submitted
+as **30064252** from `fd69e283`; the existing F1 job has not been restarted.
 
 
-The bounded apex runner and source commit `c8dc8f30` are uploaded to Yale;
-both remote SHA256 checks passed. They are staged, **not submitted**: the
-F2–F6 searches must finish first. See
+The earlier bounded apex runner and source commit `c8dc8f30` were uploaded
+and verified, but superseded before submission by the deployment below. See
 [`bouchet-apex-array-staged-20261019.json`](bouchet-apex-array-staged-20261019.json).
 A measured full-job-3 batch checked 16 numerical boxes in 67 seconds; the full
 job was still building with four workers. This single-batch timing is recorded
@@ -316,3 +315,24 @@ Together with the existing S1 run, every nonapex region has a replay running or
 queued. This scheduling status is not proof completion. Resumed search array
 30063138 completed jobs 30, 31, 34, 35 and fan F2; the remaining F4 search is
 resumed as 30063538. All input/source details remain in the deployment records.
+
+
+## All critical-region search proposals saved
+
+All 36 nonapex and six apex proposals now have complete subdivision geometry.
+The original and resumed search archives are saved together as
+[`search-results-20261019.tar.gz`](search-results-20261019.tar.gz), with input
+hashes, source revisions, selected complete results and superseded frontiers in
+[`bouchet-complete-searches-20261019.json`](bouchet-complete-searches-20261019.json).
+Existing repository proposals were preserved when the complete geometry matched.
+The proposal files are in `lean/data/`; geometry completeness is not positivity.
+
+The F2–F6 complete archives were consolidated after checking source revision,
+exit code, complete status and empty frontier. Full apex array **30064252**
+was submitted from source **fd69e283** after both upload checksums matched.
+It uses at most two concurrent eight-CPU, 64 GiB jobs, with eight single-thread
+build workers per job and a ten-hour internal timeout. The current bounded
+builder includes the tested cache precheck. Source, runner and input provenance
+are recorded in [`bouchet-apex-array-20261019.json`](bouchet-apex-array-20261019.json).
+The older F1 replay is unchanged. Full numerical builds and axiom audits remain
+pending; no successful search or submission is counted as a formal certificate.

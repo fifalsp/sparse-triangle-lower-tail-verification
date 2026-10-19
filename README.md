@@ -60,8 +60,8 @@ Current completion gates (only full imported Lean proofs count):
 | Gate | Checked completion | What remains |
 | --- | --- | --- |
 | Main-theorem deduction from the two internal certificates | Proved | Supply both certificates |
-| Critical classification: 36 nonapex full-domain jobs | 0/36 integrated | Full replays; complete search proposals for jobs 0–12 and 35 are saved |
-| Critical classification: six apex full-domain jobs | 0/6 integrated | F1 replay on Yale; the other exterior domains still require replay |
+| Critical classification: 36 nonapex full-domain jobs | 0/36 integrated | Full replays; complete search proposals for all 36 jobs are saved |
+| Critical classification: six apex full-domain jobs | 0/6 integrated | All six full replays are running or queued; complete proposals are saved |
 | Compact family: AAA neighborhood | Proved on the full parameter interval | None for this neighborhood |
 | Compact family: ABB neighborhood and exterior | Neither full replay integrated | Both full replays running on Yale |
 
@@ -78,6 +78,12 @@ were submitted as **30062473**. Fourteen more completed proposals are queued
 as **30062736**, dependent on the first full array ending, to keep concurrency
 bounded. Searches 14 and 15 finished after resumption as **30062715**; their
 full replays are queued as **30062956**, behind the smaller-region array.
+
+Complete proposals for all **42 critical-region jobs** are now saved with
+[raw search provenance](hpc/bouchet-complete-searches-20261019.json). Their
+subdivision geometry has been parsed locally; this does not establish positivity.
+Full apex array **30064252** checks fans F2–F6 with at most two concurrent
+eight-CPU jobs. The existing full F1 run remains separate.
 
 Latest apex progress: a complete F1 subdivision is proposed, and five representative
 leaves plus the sorting/zero-pattern assembly pass Lean. **The full F1 replay is

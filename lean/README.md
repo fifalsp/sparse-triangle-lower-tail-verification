@@ -1387,3 +1387,18 @@ modules in 8.55 seconds; a mixed test reused 141 and built one new module.
 A changed-source probe was rejected without rebuilding its artifact. Six
 cache regression tests and the unchanged axiom audit pass. No numerical
 acceptance condition, statement, or mathematical assumption changed.
+
+
+### 2026-10-19 — All 42 complete proposals saved; remaining apex replays submitted
+
+Every critical-region search proposal is now present in `lean/data/`: all 36
+nonapex jobs and all six apex fans. Their full ordered subdivision geometry
+was parsed locally. The downloaded raw archives, source revisions and input
+hashes are preserved in the HPC records. Superseded incomplete searches remain
+in that raw archive; they are not selected for replay. No positivity claim is
+inferred from this geometry check.
+
+Full apex array 30064252 now covers F2–F6 using the tested bounded runner,
+eight single-thread workers per job and at most two concurrent jobs. F1 remains
+on its existing allocation. Every critical-region full replay is now running
+or queued; full theorem builds, audits and integration remain required.

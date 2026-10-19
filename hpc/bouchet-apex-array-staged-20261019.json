@@ -20,7 +20,7 @@
   "remote_directory": "/nfs/roberts/project/pi_sl3363/sl3363",
   "expected_search_source_commit": "38d5c740f691792bd19cf545d18565c5b216bd9a",
   "search_array": 30060923,
-  "status": "Uploaded and remote SHA256 verified; apex array not submitted",
+  "status": "Uploaded and verified, but superseded before submission by the fd69e283 deployment recorded in bouchet-apex-array-20261019.json",
   "screenshot": "/tmp/bouchet-apex-staged-20261019.png",
   "storage_notice": "Bouchet OnDemand notice dated 2026-10-19 reports Roberts nearly full, slowing file operations. Proof compilation remains on node-local temporary storage."
 }

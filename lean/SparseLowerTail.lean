@@ -143,3 +143,4 @@ import SparseLowerTail.Section08.FamilyABBReplay.Smoke.CheckedSubtree
 import SparseLowerTail.Section08.FamilyParameterTaylor
 import SparseLowerTail.Section08.FamilyParameterSmoke
 import SparseLowerTail.Section08.FamilyExteriorTaylor
+import SparseLowerTail.Section08.FamilyExteriorSmoke

@@ -731,3 +731,24 @@ Hessian enclosures, not an assumption of the desired positivity. This keeps
 the analytic argument short while leaving the finite numerical data and
 coverage obligations visible. No change to the paper's mathematical claim is
 proposed, and no complete exterior certificate is claimed yet.
+
+
+### 2026-10-19 — finite exterior data now imply the actual analytic bounds
+
+`FamilyTaylorData` packages the whole parameter interval, a certified parameter
+center, three q-center exponential certificates, derivative tables, and a
+parameter width. Its validity checks are exact rational or dyadic computations.
+The soundness theorem derives the actual value lower bound and both gradient
+magnitude bounds; the center is checked to lie inside the interval, and the
+width is checked to cover both directions.
+
+`FamilyExteriorLeaf` adds the whole q-box, Hessian interval calculation,
+coordinate radii, quadratic choices, and a positive rational margin. Its
+`margin_le` theorem proves the margin bounds the actual certificate everywhere
+in the box. The sample `FamilyExteriorSmoke` checks this entire pipeline on
+L ∈ [39/10,2503/640], qᵢ ∈ [99/100,101/100], with margin greater than 1/1000.
+The full subdivision is not generated or proved by this sample.
+
+This separation makes subsequent numerical searches untrusted proposal
+programs: a proposed box must still instantiate the same finite validity
+checks, and the final tree must separately prove coverage.

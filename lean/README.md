@@ -1043,3 +1043,54 @@ an executable exterior-leaf checker, check its numerical margins, and produce
 a complete covered region. Full critical classification also remains open in
 the formalization. These missing computations are internal obligations, not
 allowed external assumptions.
+
+### 2026-10-19 — first complete checked exterior Taylor leaf
+
+The exterior leaf checker now takes finite numerical data all the way to an
+actual uniform certificate bound:
+
+- `FamilyWeightIntervals` checks the seven signed value and gradient weights
+  from the three q-center exponential certificates.
+- `FamilyTaylorData` checks the parameter center, the whole interval, derivative
+  tables, and both directions of the parameter width. It derives the actual
+  value lower bound and upper/lower gradient magnitude bounds.
+- `FamilyExteriorLeaf.margin_le` combines those bounds with the whole-box
+  Hessian intervals, coordinate radii, and any of the three quadratic choices.
+  An accepted positive margin proves strict positivity everywhere in the box.
+
+`FamilyExteriorSmoke` checks one complete box:
+**L ∈ [39/10,2503/640], q₁,q₂,q₃ ∈ [99/100,101/100]**. Its rational margin is
+**greater than 1/1000**, checked by the Lean kernel. All 21 additional center
+coefficient/derivative intervals are checked independently of their proposal
+program. This box lies away from the prescribed contacts. It verifies the
+complete leaf pipeline, **not coverage of the whole exterior region**.
+
+Reproduce from `lean/`:
+
+```sh
+python3 tools/generate_family_exterior_smoke.py
+lake build SparseLowerTail.Section08.FamilyExteriorSmoke
+```
+
+The temporary `#eval` proposes interval endpoints only; every accepted equality
+and inequality is checked with `decide +kernel`. Regeneration is byte-identical
+(SHA256 `5297eae3e2f527ac6485c8544d0308a262796e16c76b99c3606b9e23e3599e46`).
+No bulk replay or new dependency cache was created on the desktop.
+
+Validation: root build **3,455 jobs**; axiom audit **11,565 project declarations /
+7,482 theorems**, only `propext`, `Classical.choice`, and `Quot.sound`; all
+**88 manuscript labels / 439 Lean declaration links** and six map tests pass.
+No new manuscript gap or mathematical counterexample was found.
+
+Remaining: generate and check a complete exterior subdivision, assemble it
+with both contact neighborhoods, and discharge every critical cover/apex job.
+The two internal hypotheses of the main theorem therefore remain unproved.
+The rough effort estimate is still 40–45%, not a percentage of proposed boxes.
+The next numerical search must reproduce the checked evaluator's arithmetic;
+its proposals and a successful search flag cannot replace the coverage proof.
+
+At the latest cloud check, the ABB bounded build had completed 255/7459 modules
+with no failures reported. The scheduler marked S1, F1 and ABB running at
+elapsed times 00:56:13, 00:56:13 and 00:25:16 respectively. An extra monitoring
+step on the S1/F1 node could not start; this is not evidence that either batch
+job finished or failed. No full cloud certificate is counted as checked yet.

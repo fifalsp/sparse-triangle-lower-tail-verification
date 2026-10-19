@@ -70,7 +70,9 @@ bound are now proved in Lean. A kernel-checked sample encloses all seven
 coefficient derivatives through order three on L ∈ [3.9, 2503/640].
 The gradient parameter bound and complete analytic exterior Taylor inequality
 also compile, including all three scalar quadratic bounds used in the paper.
-Numerical leaf assembly and the full exterior cover are still missing.
+The numerical leaf checker now proves positivity throughout one full box,
+L ∈ [39/10,2503/640] and each qᵢ ∈ [0.99,1.01], with a checked margin
+greater than 1/1000. The complete exterior subdivision is still missing.
 
 The target statement quantifies over all measurable graphons, not just SBMs.
 At the authors' request, external/classical results may be explicit hypotheses;

@@ -8,6 +8,25 @@ start of Appendix A. The table below tells you what is checked and where to find
 the code. The mathematical arguments reducing the main theorem to these checks
 are in the paper.
 
+## Lean 4 progress toward the main theorem
+
+A partial Lean formalization is now in [`lean/`](lean/README.md). **Theorem 1.3
+(`thm:main`) is stated but is not yet proved in Lean.** The Python verification
+and the Lean formalization have different scopes.
+
+| Status | Progress |
+| --- | --- |
+| Proved in Lean | Entropy and triangle integrability, basic bounds, and invariance under changes on null sets. |
+| Proved in Lean | Balanced SBM cost/density formulas for arbitrary measurable equal partitions, existence of a balanced minimizing pair, and **V(r) ≤ V_SBM(r)**. |
+| Proved with explicit hypotheses | The interval continuation argument in the proof of Theorem 1.3; its analytic graphon inputs remain unproved. |
+| Proved algebraically in Lean | The five normalized rational tangency identities in `lem:certcoef`; the analytic substitutions and positivity assertions remain unproved. |
+| Remaining | The reverse inequality, threshold and equality classification, graphon continuation inputs, and Lean proofs of the numerical certificates. |
+
+The [formalization README](lean/README.md) records the file-to-paper mapping,
+remaining dependencies, build instructions, axiom audit, and dated progress log.
+The target statement quantifies over all measurable graphons, not just SBMs.
+The log also records a [survey of graphon/cut-norm libraries](lean/README.md#2026-10-19--graphon-library-survey-user-suggestion), including a promising existing compactness development; no external library has yet been imported.
+
 ## Which parts of the paper does the code verify?
 
 | Statement in the paper | What the computation establishes | Verification code | Saved results |

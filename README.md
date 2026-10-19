@@ -67,7 +67,9 @@ Current completion gates (only full imported Lean proofs count):
 
 Search proposals, sample leaves, and job submissions are **not** completed gates.
 The latest source milestone includes a generic full-domain nonapex replay generator;
-its complete job-0 replay is the next deployment target.
+its complete job-0 replay is running on Yale as job **30060676**. The bounded
+search array **30060923** is exploring the other critical jobs, with at most
+two single-CPU searches at a time. Neither submission is counted as a proof.
 
 Latest apex progress: a complete F1 subdivision is proposed, and five representative
 leaves plus the sorting/zero-pattern assembly pass Lean. **The full F1 replay is

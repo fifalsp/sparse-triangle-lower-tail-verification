@@ -1306,3 +1306,11 @@ byte-for-byte. Nine nonapex regression tests, eleven exterior regression tests,
 and six manuscript-map tests pass. The 88 mapped manuscript statements remain
 unchanged. The full job-0 and job-35 proposals still require full replay.
 Proof-map links also pass: **88 labels / 477 Lean declarations**.
+
+Deployment verified: source commit `38d5c740f691792bd19cf545d18565c5b216bd9a`
+was uploaded with matching archive and runner SHA256 checksums. Full job-0
+replay **30060676** is running on Bouchet. Search array **30060923** has two
+tasks running and the remainder queued. Its 41 tasks cover all nonapex jobs
+and apex fans F2–F6, with bounded CPU use. See
+`hpc/bouchet-cover-jobs-20261019.json` for resource limits and provenance.
+No full-domain certificate completion is claimed from these running states.

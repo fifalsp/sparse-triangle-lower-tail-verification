@@ -26,9 +26,10 @@
   "regenerated_source_files": 106,
   "regeneration": "Exact byte match against current generator and saved proposal",
   "local_cache_check": "lake --no-build build accepted all 3358 target jobs without rebuilding",
-  "root_build_jobs": 3598,
-  "root_audit_project_declarations": 23493,
-  "root_audit_project_theorems": 17100,
+  "root_build_jobs": 3599,
+  "root_audit_project_declarations": 23501,
+  "root_audit_project_theorems": 17106,
   "proof_map_labels": 88,
-  "proof_map_declarations": 478
+  "proof_map_declarations": 482,
+  "assembly": "CheckedCoverJobs supplies the completed job to criticalClassification_of_remaining_ordered_jobs; only 35 nonapex regions remain in its internal premise"
 }

@@ -225,3 +225,7 @@ axiom audit passed (15,043 project declarations; 11,935 theorems). This is a
 complete region, not a sample. Its 106 generated sources are now imported into
 the root project, which passes the combined build and axiom audit;
 see the [completion record](hpc/bouchet-job25-completion-20261019.json).
+
+The stable `CheckedCoverJobs` assembly supplies completed regions automatically:
+its critical-classification theorem requires only the remaining 35 nonapex
+jobs, plus the six apex results and the named classical inputs.

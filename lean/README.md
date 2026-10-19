@@ -1412,10 +1412,17 @@ ordered logarithmic domain of nonapex job 25. All 952 numerical leaves and
 match regeneration from the saved proposal byte for byte. The transferred
 region-only artifacts were accepted by Lake without rebuilding.
 
-The root now imports this theorem. Validation: 3,598 build jobs; the combined
-audit passes for 23,493 project declarations and 17,100 theorems using only
+The root now imports this theorem. Validation: 3,599 build jobs; the combined
+audit passes for 23,501 project declarations and 17,106 theorems using only
 `propext`, `Classical.choice`, and `Quot.sound`. The stable map links
-`prop:cover` to the complete theorem; all 88 labels and 478 declarations pass.
+`prop:cover` to the complete theorem; all 88 labels and 482 declarations pass.
 The manuscript baseline is unchanged. This closes one of 36 nonapex jobs,
 not the entire cover or the main theorem. Archived logs and checksums are in
 `hpc/bouchet-job25-completion-20261019.json`.
+
+`CheckedCoverJobs.lean` provides stable names for the set of completed
+nonapex jobs and the remaining obligations. Its assembly theorem supplies
+job 25 automatically; callers now need only the other 35 nonapex regions.
+It also transfers each completed ordered-domain proof to positivity of the
+original certificate on the entire edge cube. The six full apex results
+and the compact-family certificate are still required.

@@ -336,3 +336,21 @@ builder includes the tested cache precheck. Source, runner and input provenance
 are recorded in [`bouchet-apex-array-20261019.json`](bouchet-apex-array-20261019.json).
 The older F1 replay is unchanged. Full numerical builds and axiom audits remain
 pending; no successful search or submission is counted as a formal certificate.
+
+
+## Completed-region integration and ABB recovery snapshot
+
+Nonapex job 25 passed its full-domain theorem build and axiom audit. Its
+106 generated Lean sources exactly match regeneration, and the region-only
+build cache was accepted locally without rebuilding. The root project now
+imports the theorem through `CheckedCoverJobs`, which supplies completed
+regions and asks only for the unfinished ones. See the checked results and
+archive hashes in `bouchet-job25-completion-20261019.json`.
+
+The older ABB allocation has a separate live snapshot on Yale:
+`sparse-lean-abb-live-checkpoint-30052586.tar.gz` (reported 1.3 GiB).
+The copy completed with exit zero while the build continued. It includes
+generated full-region sources, project build artifacts and `SOURCE_COMMIT`.
+This is only a recovery candidate: files captured during writes must be
+revalidated, and the full theorem build and axiom audit remain mandatory.
+No full ABB completion is asserted.

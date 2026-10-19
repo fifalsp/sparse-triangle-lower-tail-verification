@@ -48,6 +48,27 @@
       "build_elapsed_seconds": 2576.007352077868,
       "active_module": "SparseLowerTail.Section08.FamilyABBReplay.Full.Leaves0115",
       "trust_status": "In progress; full build and audit remain pending"
+    },
+    {
+      "observed_date": "2026-10-19",
+      "build_total_modules": 7459,
+      "last_observed_build_completed_modules": 1285,
+      "build_failed_modules": {},
+      "build_elapsed_seconds": 9667.603647316806,
+      "trust_status": "In progress; no full proof or axiom-audit success yet"
     }
-  ]
+  ],
+  "live_artifact_checkpoint": {
+    "archive": "/nfs/roberts/project/pi_sl3363/sl3363/sparse-lean-abb-live-checkpoint-30052586.tar.gz",
+    "observed_finished_at": "2026-10-19T21:11:00Z",
+    "command_exit_code": 0,
+    "reported_size": "1.3G",
+    "contents": [
+      "lean/SparseLowerTail/Section08/FamilyABBReplay/Full",
+      "lean/.lake/build",
+      "SOURCE_COMMIT"
+    ],
+    "snapshot_while_build_running": true,
+    "validation_required": "Live snapshot may contain files being written. Revalidate every reusable module with Lake and require the final full theorem build plus axiom audit. This is not a completed certificate."
+  }
 }

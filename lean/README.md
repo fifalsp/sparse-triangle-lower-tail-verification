@@ -614,3 +614,10 @@ project declarations / 5445 theorems with only `propext`, `Classical.choice`,
 and `Quot.sound`. All 86 mapped manuscript labels are unchanged; 371 Lean
 links resolve, and all six mapping tests pass. Regeneration reproduces the
 checked AAA source byte-for-byte.
+
+Next numerical issue: a diagnostic with the factored raw Hessian and a
+midpoint rational shear still gives an inconclusive interval margin on the
+whole radius-0.1 mixed-contact box near L=3.9, even at parameter width 0.001.
+This negative lower bound is inconclusive; it supplies neither a counterexample
+nor a proved failure of positive definiteness. Spatial subdivision or a stronger algebraic bound is
+needed; the AAA proof must not be extrapolated to ABB. No bulk job was started.

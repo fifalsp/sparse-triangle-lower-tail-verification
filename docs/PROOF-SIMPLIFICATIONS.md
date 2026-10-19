@@ -20,6 +20,7 @@ Explicit external inputs are listed in
 | PS-005 | `prop:structural`, Step 4 | A fixed Taylor bound replaces differentiation of the exponential ratio | Lean checked |
 | PS-006 | `lem:rowreduction`, approximate Euler equations | A polynomial identity proves both surrogate codegrees nonnegative | Lean checked; no extra hypothesis |
 | PS-007 | `prop:structural`, Step 4 | Direct stationary-row coercivity closes actual small-tail bipodality | Lean checked; no insertion-minimality hypothesis for the row comparison |
+| PS-008 | `prop:family`, local AAA case | Factored Hessian reduces the full parameter range to five interval leaves | Lean checked; local cube only |
 
 ## Compact outline of the final argument
 

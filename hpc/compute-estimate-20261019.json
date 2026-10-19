@@ -1,0 +1,46 @@
+{
+  "recorded_at": "2026-10-19T21:15:47.989968+00:00",
+  "estimate_kind": "Planning range, not a measured remaining-work total or completion promise",
+  "planning_remaining_allocated_core_hours": [
+    1000,
+    2000
+  ],
+  "observed_running_allocated_cores": 68,
+  "ideal_hours_at_observed_parallelism": [
+    14.705882352941176,
+    29.41176470588235
+  ],
+  "practical_elapsed_days": [
+    1,
+    3
+  ],
+  "conditions": [
+    "No mathematical or Lean proof failures requiring changes",
+    "Queue availability and safe resumption of timeout jobs",
+    "Per-box cost differs across certificate families; region 25 is not a representative statistical sample"
+  ],
+  "completed_job25": {
+    "slurm_allocation": 30062475,
+    "nonempty_boxes": 952,
+    "elapsed_seconds": 1677,
+    "allocated_cores": 4,
+    "actual_cpu_seconds": 5894,
+    "allocated_core_seconds": 6708
+  },
+  "running_job3": {
+    "slurm_allocation": 30061434,
+    "observed_elapsed_seconds": 3656,
+    "builder_elapsed_seconds": 3538.90922636725,
+    "allocated_cores": 4,
+    "completed_leaf_modules": 168,
+    "boxes_per_leaf_module": 16,
+    "module_count_scope": "Generated Leaves*.olean files observed, not a full-domain proof"
+  },
+  "total_input_boxes": {
+    "critical_nonapex_and_apex": 629046,
+    "compact_abb": 108452,
+    "compact_exterior": 64646,
+    "combined": 802144
+  },
+  "limitations": "Includes setup, coverage and audit overhead in observed rates. Boxes are heterogeneous; some are direct or empty/contact cases. Existing partial work is not counted as a full-region certificate. The range is deliberately broad and is not a confidence interval."
+}

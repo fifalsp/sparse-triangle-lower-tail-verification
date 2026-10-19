@@ -354,3 +354,22 @@ generated full-region sources, project build artifacts and `SOURCE_COMMIT`.
 This is only a recovery candidate: files captured during writes must be
 revalidated, and the full theorem build and axiom audit remain mandatory.
 No full ABB completion is asserted.
+
+
+## CPU-time planning estimate (2026-10-19)
+
+Budget roughly **1,000–2,000 additional allocated CPU core-hours** for the
+remaining replay work, subject to revision as more full regions finish. This
+is a planning range, not a measured remaining-work count or a deadline.
+Job 25 used 1.64 actual CPU-hours and occupied 1.86 allocated core-hours for
+952 boxes, including setup and final coverage/audit. Job 3's observed
+partial throughput supports a similar order of magnitude. The proposals
+contain 802,144 boxes across critical regions, ABB and the compact exterior;
+their costs differ, and some work is already complete or in progress.
+
+At the observed 68 allocated cores, the range corresponds to roughly
+15–30 hours if parallelism is sustained. Queueing, uneven job lengths and
+resumptions make **1–3 days** a more cautious elapsed-time allowance, assuming
+no proof failures require changes. More CPUs alone do not guarantee this
+speedup: memory pressure and sequential dependencies also matter. Raw
+observations and caveats are in `compute-estimate-20261019.json`.

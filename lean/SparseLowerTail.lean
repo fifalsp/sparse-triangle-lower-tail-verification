@@ -144,3 +144,4 @@ import SparseLowerTail.Section08.FamilyParameterTaylor
 import SparseLowerTail.Section08.FamilyParameterSmoke
 import SparseLowerTail.Section08.FamilyExteriorTaylor
 import SparseLowerTail.Section08.FamilyExteriorSmoke
+import SparseLowerTail.Section08.FamilyCompactReplay

@@ -1094,3 +1094,58 @@ with no failures reported. The scheduler marked S1, F1 and ABB running at
 elapsed times 00:56:13, 00:56:13 and 00:25:16 respectively. An extra monitoring
 step on the S1/F1 node could not start; this is not evidence that either batch
 job finished or failed. No full cloud certificate is counted as checked yet.
+
+### 2026-10-19 — complete exterior proposal and zero-preserving assembly
+
+`FamilyCompactAssembly` proves that a certificate for sorted logarithmic
+coordinates gives exactly `CompactFamilyCertificate`, including all zero
+patterns and ties between coordinates. `FamilyCompactReplay` supplies the
+common leaf property for positive Taylor boxes, local contact boxes, and
+boxes disjoint from the sorted domain. Its final theorem converts a checked
+finite table and subdivision into the required compact-family certificate.
+The ABB local result is an explicit internal premise, still awaiting its full
+remote replay; it has not been introduced as an external axiom.
+
+The new search exports the actual Lean expression trees and shares only
+identical subexpressions (1,568 DAG nodes). Exact dyadic arithmetic reproduces
+all 49 derivative intervals and the baseline margin of the already checked
+exterior sample. No floating-point acceptance criterion is used.
+
+The saved proposal `data/family-exterior-subdivision-proposal.json.gz` covers
+L in [39/10,19/2] and sorted q in [0,12]^3 with an exact midpoint tree:
+
+| Leaf kind | Proposed count |
+| --- | ---: |
+| Positive Taylor | 44,776 |
+| Disjoint from sorted domain | 11,057 |
+| ABB contact | 4,096 |
+| AAA contact | 4,717 |
+| Total | 64,646 |
+
+The tree has 129,291 nodes and no unresolved frontier. The separate Python
+consistency traversal checks every split, box and acceptance, while sharing
+the arithmetic evaluator with the search. It is therefore a consistency
+check, **not an independent proof or a Lean verification**. The smallest
+proposed Taylor margin is 347707219617049/75557863725914323419136000.
+The SHA256 of the uncompressed proposal is
+`48420ce188ba0e8993c3febf8b678c86552a43cb8fb94efbd973a5be785d7aa7`.
+
+Reproduce from `lean/` after building the existing exterior sample:
+
+```sh
+python3 tools/export_family_expressions.py
+python3 tools/propose_family_exterior_cover.py --budget 250000 --seconds 60 --output /tmp/family-exterior-proposal.json.gz
+python3 tools/check_family_exterior_proposal.py data/family-exterior-subdivision-proposal.json.gz
+lake build SparseLowerTail.Section08.FamilyCompactReplay
+```
+
+A time-limited search may leave a frontier; resume with `--resume` and the
+same output path. Search completion is not proof completion. The full Lean
+leaf generation/replay and the full ABB local proof are still required.
+Critical classification also remains open. No new manuscript counterexample
+has been found; the effort estimate remains 40–45%.
+
+Validation: root build **3,457 jobs**; audit **11,605 declarations / 7,509
+theorems**, only the three standard logical axioms; **88 manuscript labels /
+448 declaration links** pass, as do five arithmetic-regression tests and six
+manuscript-map tests. The complete Python proposal replay passes again.

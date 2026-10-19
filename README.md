@@ -72,7 +72,10 @@ The gradient parameter bound and complete analytic exterior Taylor inequality
 also compile, including all three scalar quadratic bounds used in the paper.
 The numerical leaf checker now proves positivity throughout one full box,
 L ∈ [39/10,2503/640] and each qᵢ ∈ [0.99,1.01], with a checked margin
-greater than 1/1000. The complete exterior subdivision is still missing.
+greater than 1/1000. A complete 64,646-leaf subdivision is now proposed and
+passes exact Python consistency checks. Lean proves the general assembly,
+including the equality cases after sorting, but **the full numerical replay
+is still missing**. The proposal is not a completed formal certificate.
 
 The target statement quantifies over all measurable graphons, not just SBMs.
 At the authors' request, external/classical results may be explicit hypotheses;

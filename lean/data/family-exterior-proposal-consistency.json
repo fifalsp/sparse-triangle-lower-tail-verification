@@ -1,0 +1,17 @@
+{
+  "status": "consistent_untrusted_proposal",
+  "complete_proposal": true,
+  "nodes": 129291,
+  "leaves": 64646,
+  "frontier": 0,
+  "counts": {
+    "taylor": 44776,
+    "ordered-empty": 11057,
+    "abb": 4096,
+    "aaa": 4717
+  },
+  "minimum_taylor_margin": "347707219617049/75557863725914323419136000",
+  "seconds": 14.707158291999804,
+  "proposal_sha256": "48420ce188ba0e8993c3febf8b678c86552a43cb8fb94efbd973a5be785d7aa7",
+  "trust_status": "Python consistency only; all leaves, local contacts, and coverage still require Lean"
+}

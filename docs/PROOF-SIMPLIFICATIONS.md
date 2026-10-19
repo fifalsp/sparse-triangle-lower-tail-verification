@@ -752,3 +752,27 @@ The full subdivision is not generated or proved by this sample.
 This separation makes subsequent numerical searches untrusted proposal
 programs: a proposed box must still instantiate the same finite validity
 checks, and the final tree must separately prove coverage.
+
+
+### Compact family: one conclusion for all leaves (`prop:family`)
+
+The global assembly can use a single leaf conclusion: Phi is nonnegative,
+and a zero has one of the prescribed AAA or ABB patterns. Strictly positive
+Taylor leaves satisfy the zero implication vacuously; local contact leaves
+use their unique-zero theorem. Sorting needs no separate strict-order case:
+permutations preserve Phi and the allowed patterns, even when coordinates
+coincide. `SparseLowerTail.Certificate.compactFamilyCertificate_of_ordered`
+formalizes this reduction.
+
+`compactFamilyCertificate_of_table` in the same namespace
+then reduces the whole compact family to a single exact subdivision table.
+Empty leaves are allowed only when an upper coordinate bound is strictly
+below the next coordinate's lower bound; equality is retained in the domain.
+For moving contacts, containment uses the upper contact endpoint to constrain
+the box's lower side, and the lower contact endpoint for its upper side.
+This direction guarantees containment for every parameter in the interval.
+
+These are checked reductions, not a discharge of the numerical premises.
+The 64,646-leaf exterior proposal still needs full Lean replay, and the ABB
+local result remains an explicit internal obligation. The reduction preserves
+the paper's complete conclusion rather than replacing it by positivity alone.

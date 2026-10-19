@@ -26,7 +26,9 @@ and the Lean formalization have different scopes.
 | Proved in Lean | All printed threshold/parameter intervals (`lem:digits`); scaling, truncation and rescaled first variation; the graphon certificate expectation identity; scalar two-block rigidity. |
 | Proved in Lean | Full Euler–Lagrange proposition (`prop:euler`): positivity, unique positive multiplier, and quantitative graphon bounds. Sharp Bregman/mean-gap estimates and downward propagation (`lem:push`). |
 | Proved with an unproved internal hypothesis | The full threshold theorem follows from `CriticalClassification` (`prop:critical`). That critical classification remains to prove; it is not an external assumption. |
-| Remaining | The reverse inequality and global optimizer classification, vertex identity and continuation arguments, and Lean proofs of global cover/family certificate positivity. |
+| Proved relative to classical sampling | Vertex identity, sharp support bounds, and classification of every already-two-block minimizer (`prop:vertex`, `cor:bipodalmin`), in measurable-partition form. |
+| Proved in Lean | Value continuity; quantitative isolation, variance/entropy and Goodman bounds; the full boundary comparison (`lem:boundary`); triangle-pattern-to-partition rigidity. |
+| Remaining | The reverse inequality and global optimizer classification, existence and local continuation arguments, and Lean proofs of global cover/family certificate positivity. |
 
 The [formalization README](lean/README.md) records the file-to-paper mapping,
 remaining dependencies, build instructions, axiom audit, and dated progress log.

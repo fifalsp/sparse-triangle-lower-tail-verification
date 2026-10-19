@@ -21,7 +21,7 @@ An assumed theorem appears as an ordinary hypothesis of the final result; the
 audit alone cannot certify that the hypothesis has been proved. This file and
 the final theorem's type provide that separate provenance information.
 
-## Explicitly encoded external input
+## Explicitly encoded external and classical inputs
 
 ### `external:KP26:1.6`
 
@@ -41,6 +41,25 @@ the final theorem's type provide that separate provenance information.
   r ≤ r₋ using the paper's scalar penalized analysis; prove its equality-case
   rigidity. The transfer lemma does not by itself establish `prop:smalldata`
   or `thm:smalltail` in full.
+
+### `classical:inverse-transform-sampling`
+
+- Classical theorem: every Borel probability measure on the real line is the
+  distribution of a measurable function of a uniform random variable on [0,1]
+  (inverse-transform sampling). This is the probability-integral transport used
+  in the manuscript's proof of `prop:vertex`.
+- Exact Lean proposition: `SparseLowerTail.Section04.UniformSampling` in
+  [`VertexReweighting.lean`](SparseLowerTail/Section04/VertexReweighting.lean):
+  for every probability measure ν on ℝ there exists Q with
+  `MeasurePreserving Q unitMeasure ν`.
+- Status: **assumed classical**, as an ordinary proposition parameter, not an
+  axiom. No graphon optimizer conclusion is included in this assumption.
+- Proved here: the perturbed probability measure, actual reweighted graphon,
+  product-measure transport, all weighted integral identities and derivatives,
+  and the resulting vertex and two-block-minimizer conclusions.
+- Current uses: `prop:vertex`, the measurable-partition version of
+  `cor:bipodalmin`, and their dependents. Relabeling equivalence is still tracked
+  separately; this sampling theorem does not silently supply it.
 
 ## Classical infrastructure eligible to be assumed when needed
 
@@ -68,8 +87,9 @@ new argument and are not covered by the permission to assume external theorems.
 is the paper's own `prop:critical`, stated in measurable-partition form. The
 threshold theorem has been deduced from it, but the proposition itself remains
 unproved. It must be discharged, not retained among the final external inputs.
-Likewise the remaining vertex identity, certificate positivity, matching-data
-and continuation hypotheses are internal proof obligations. The completed
+Likewise certificate positivity, matching-data and continuation hypotheses
+remain internal proof obligations. The vertex identity has now been proved
+relative only to the classical sampling input above. The completed
 Euler–Lagrange proposition requires none of these hypotheses.
 
 ## Changing the manuscript

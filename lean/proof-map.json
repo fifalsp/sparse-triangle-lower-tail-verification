@@ -392,10 +392,17 @@
     },
     {
       "paper_label": "lem:existence",
-      "status": "pending",
-      "checked_scope": "No complete Lean proof claimed for this statement.",
-      "lean_files": [],
-      "lean_declarations": [],
+      "status": "partial",
+      "checked_scope": "Complete part (b): monotonicity, exact scale-loss bound, local Lipschitz bound and continuity of actual unrestricted value. No attainment premise. Existence and strict positivity of the infimum in part (a) remain unproved.",
+      "lean_files": [
+        "SparseLowerTail/Section02/ValueContinuity.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section02.antitoneOn_value",
+        "SparseLowerTail.Section02.value_difference_bounds",
+        "SparseLowerTail.Section02.value_abs_sub_le",
+        "SparseLowerTail.Section02.continuousOn_value"
+      ],
       "explicit_inputs": [],
       "baseline": {
         "environment": "lemma",
@@ -434,11 +441,25 @@
     },
     {
       "paper_label": "prop:vertex",
-      "status": "pending",
-      "checked_scope": "No complete Lean proof claimed for this statement.",
-      "lean_files": [],
-      "lean_declarations": [],
-      "explicit_inputs": [],
+      "status": "proved_relative_classical",
+      "checked_scope": "Full stationary row and degree identities from actual graphon vertex variations. Product transport, weighted integral derivatives, first variation and mean-zero-test argument proved; only classical inverse-transform sampling is explicit.",
+      "lean_files": [
+        "SparseLowerTail/Section04/VertexReweighting.lean",
+        "SparseLowerTail/Section04/VertexIdentity.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section04.UniformSampling",
+        "SparseLowerTail.Section04.vertexVariation_cost",
+        "SparseLowerTail.Section04.vertexVariation_edge",
+        "SparseLowerTail.Section04.vertexVariation_triangle",
+        "SparseLowerTail.Section04.minimizer_vertex_stationary",
+        "SparseLowerTail.Section04.vertexMean_eq",
+        "SparseLowerTail.Section04.minimizer_vertex_identity",
+        "SparseLowerTail.Section04.minimizer_vertex_degree"
+      ],
+      "explicit_inputs": [
+        "classical:inverse-transform-sampling"
+      ],
       "baseline": {
         "environment": "proposition",
         "statement": "Let $U$ be a minimizer at $r\\in(0,1)$. Then $\\bar k_U=1+F(U)-e(U)$. For a.e.\\ $x\\in[0,1]$, \\begin{equation} 2H_U(x)+\\mu_U\\tau_U(x)=\\bar k_U\\quad\\text{and}\\quad \\int_0^1k(U(x,y))\\dd y=\\bar k_U. \\end{equation} Moreover, for a.e.\\ $x\\in[0,1]$, \\begin{equation} \\mu_U\\tau_U(x)+2d_U(x)=\\mu_Ur^3+2e(U). \\end{equation}",
@@ -547,10 +568,14 @@
     },
     {
       "paper_label": "lem:boundary",
-      "status": "pending",
-      "checked_scope": "No complete Lean proof claimed for this statement.",
-      "lean_files": [],
-      "lean_declarations": [],
+      "status": "proved",
+      "checked_scope": "Full boundary comparison with exactly the manuscript interval-value hypothesis. Uses actual scaled-kernel competitors, continuity and right derivative; no extra compactness/attainment hypothesis.",
+      "lean_files": [
+        "SparseLowerTail/Section08/Boundary.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section08.boundary"
+      ],
       "explicit_inputs": [],
       "baseline": {
         "environment": "lemma",
@@ -740,7 +765,7 @@
     {
       "paper_label": "s8:expect",
       "status": "proved",
-      "checked_scope": "Exact graphon expectation identity with integrability, triangle-codegree Fubini identity and cyclic symmetry proved internally; expected certificate zero on the branch. Contact identity also follows from individually proved contact values. No certificate positivity or additional external input assumed. A minimizer interface discharges positivity, Euler equation and activity; matching branch cost/edge data give zero expectation. Nonnegative zero-expectation certificates vanish a.e.; positivity is explicitly conditional and not claimed proved.",
+      "checked_scope": "Exact graphon expectation identity with integrability, triangle-codegree Fubini identity and cyclic symmetry proved internally; expected certificate zero on the branch. Contact identity also follows from individually proved contact values. No certificate positivity or additional external input assumed. A minimizer interface discharges positivity, Euler equation and activity; matching branch cost/edge data give zero expectation. Nonnegative zero-expectation certificates vanish a.e.; positivity is explicitly conditional and not claimed proved. The full certificate-to-partition deduction is checked conditional on global positivity/zero-set and matching-data hypotheses; those internal hypotheses are not discharged.",
       "lean_files": [
         "SparseLowerTail/Section08/GraphonIntegration.lean",
         "SparseLowerTail/Section08/CertificateExpectation.lean",
@@ -756,7 +781,8 @@
         "SparseLowerTail.Certificate.minimizer_expectation_identity",
         "SparseLowerTail.Certificate.multiplier_eq_branch_of_matching_data",
         "SparseLowerTail.Certificate.minimizer_expectation_zero_of_matching_data",
-        "SparseLowerTail.Certificate.minimizer_certificate_zero_ae"
+        "SparseLowerTail.Certificate.minimizer_certificate_zero_ae",
+        "SparseLowerTail.Certificate.minimizer_balanced_of_certificate"
       ],
       "explicit_inputs": [],
       "baseline": {
@@ -794,21 +820,17 @@
     },
     {
       "paper_label": "cor:bipodalmin",
-      "status": "partial_conditional",
-      "checked_scope": "Actual arbitrary two-block graphon reduction, including degenerate masses, to balanced branch and equality of values. The minimizer interface discharges positivity, Euler equation and multiplier positivity; only the unproved vertex identity remains explicit. Relabeling-to-partition equivalence remains separate.",
+      "status": "proved_partition_form",
+      "checked_scope": "Every actual two-block minimizer below threshold has the prescribed balanced branch form and forces equality of values. All internal first-order and rigidity hypotheses discharged. Only classical sampling explicit; equivalence of partition form and relabelings is tracked separately as lem:relabelB.",
       "lean_files": [
-        "SparseLowerTail/Section04/BalancedMinimizers.lean",
-        "SparseLowerTail/Section04/BipodalGraphon.lean"
+        "SparseLowerTail/Section04/BipodalGraphon.lean",
+        "SparseLowerTail/Section04/BipodalMinimizers.lean"
       ],
       "lean_declarations": [
-        "SparseLowerTail.IsBalanced.minimizer_bridge",
-        "SparseLowerTail.Section04.balanced_minimizer_below_threshold",
-        "SparseLowerTail.Section04.IsBipodal.exists_balanced",
-        "SparseLowerTail.Section04.bipodal_minimizer_below_threshold",
-        "SparseLowerTail.Section04.bipodal_minimizer_of_vertex_identity"
+        "SparseLowerTail.Section04.bipodal_minimizer_classification"
       ],
       "explicit_inputs": [
-        "internal:prop:vertex"
+        "classical:inverse-transform-sampling"
       ],
       "baseline": {
         "environment": "corollary",
@@ -897,6 +919,172 @@
         "SparseLowerTail.Section05.CriticalClassification"
       ],
       "explicit_inputs": []
+    },
+    {
+      "paper_label": "lem:isolation",
+      "baseline": {
+        "environment": "lemma",
+        "statement": "Let $r\\in(0,1)$ and $L=-\\log r$, and let $U$ be a graphon with $t(U)\\le r^3$, $F(U)\\le h(r)$ and $|\\{U\\ne r\\}|>0$. Then \\[ \\|U-r\\|_2\\ge\\frac{3\\beta(r)r^2}L\\quad\\text{and}\\quad e(U)\\ge M(r). \\]",
+        "statement_sha256": "57b4bdbf7157373564a3523daff6d667ff6a93926b4b19688011a4e07d222e1d",
+        "proof_sha256": "bb9aed12a94d129028b27a977ce2703679ce62ce4e1ccfde280a79bcc22881a4",
+        "source_line": 1371
+      },
+      "status": "proved",
+      "checked_scope": "Both quantitative norm and mean separation bounds, for actual graphon L2 integrals. Exact centered triangle expansion and signed-kernel L2 estimate proved internally.",
+      "lean_files": [
+        "SparseLowerTail/Section02/TriangleL2.lean",
+        "SparseLowerTail/Section02/Isolation.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section02.abs_signedTriangle_le",
+        "SparseLowerTail.Section02.triangle_centered_expansion",
+        "SparseLowerTail.Section02.isolation",
+        "SparseLowerTail.Section02.isolatedMean_gt",
+        "SparseLowerTail.Section02.continuousOn_isolatedMean"
+      ],
+      "explicit_inputs": []
+    },
+    {
+      "paper_label": "lem:FB1",
+      "baseline": {
+        "environment": "lemma",
+        "statement": "Let $U$ be a graphon with $m=e(U)\\in(0,1)$. Then $\\|U-m\\|_2^2\\ge(m^3-t(U))_+^{2/3}$ and \\[ F(U)\\ge h(m)+\\beta(m)\\big(m^3-t(U)\\big)_+^{2/3}. \\]",
+        "statement_sha256": "ffe32ae5e9bffd26dc6a3fc2cd16fef9377c42c54cb30401f27152dc2a7c2062",
+        "proof_sha256": "83f3a30ae5f930eae50b09a65e5ad484662c2cb3178604bbfec332b35c736a3f",
+        "source_line": 1415
+      },
+      "status": "proved",
+      "checked_scope": "Variance and entropy lower bounds in terms of actual edge/triangle densities, including positive-part real powers.",
+      "lean_files": [
+        "SparseLowerTail/Section02/Isolation.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section02.variance_ge_triangle_deficit",
+        "SparseLowerTail.Section02.cost_ge_entropy_triangle_deficit"
+      ],
+      "explicit_inputs": []
+    },
+    {
+      "paper_label": "lem:goodman",
+      "baseline": {
+        "environment": "lemma",
+        "statement": "Every graphon $U$ satisfies $t(U)\\ge e(U)(2e(U)-1)$, and hence $e(U)\\le\\frac14\\big(1+\\sqrt{1+8t(U)}\\big)$.",
+        "statement_sha256": "d4f3b685c04dde4d183728c68a6e21945763d1dd3c018fac0db5fbd363e219e8",
+        "proof_sha256": "c4c94b9519428b8ea309c3a2358f16864f4b34e9d21c9933d0c30d12bd407104",
+        "source_line": 1398
+      },
+      "status": "proved",
+      "checked_scope": "Actual graphon Goodman inequality and its square-root upper bound on edge density.",
+      "lean_files": [
+        "SparseLowerTail/Section02/Goodman.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section02.goodman",
+        "SparseLowerTail.Section02.goodman_mean_bound"
+      ],
+      "explicit_inputs": []
+    },
+    {
+      "paper_label": "lem:patterns",
+      "baseline": {
+        "environment": "lemma",
+        "statement": "Let $a,b\\in[0,1]$ with $a\\ne b$. \\begin{enumerate}[label=(\\alph*)] \\item The law $\\nu_{B_{a,b}}$ is \\begin{equation} \\nu_{B_{a,b}}=\\frac14\\big(\\delta_{(a,a,a)}+\\delta_{(a,b,b)}+\\delta_{(b,a,b)}+\\delta_{(b,b,a)}\\big). \\end{equation} Moreover, $\\E_{\\nu_{B_{a,b}}}[\\Psi]=\\frac14\\Psi(P_1)+\\frac34\\Psi(P_2)$ for every function $\\Psi$ on $\\{a,b\\}^3$ that is invariant under permutations of the coordinates. \\item Let $G\\subset\\R^3$ be an open set and let $\\Psi:G\\to\\R$. Assume that $G$ and $\\Psi$ are invariant under permutations of the coordinates and that $\\Psi$ is differentiable at $P\\in G$. If $P=(p,p,p)$, then $\\partial_1\\Psi(P)=\\partial_2\\Psi(P)=\\partial_3\\Psi(P)$. If $P=(p,p',p')$, then $\\partial_2\\Psi(P)=\\partial_3\\Psi(P)$. \\item If a graphon $U$ satisfies $\\nu_U(\\mathcal O(P_1)\\cup\\mathcal O(P_2))=1$ and $e(U)=(a+b)/2$, then $U$ is a relabeling of $B_{a,b}$. \\end{enumerate}",
+        "statement_sha256": "5a31dbb7202a5765effb655f224b3024629e23a678a59121a852414d4d0fb1b1",
+        "proof_sha256": "963fd65f9d6467a0395ade2f2a767ca351d1b64813619c0fbabd4f6893c55d3b",
+        "source_line": 3664
+      },
+      "status": "partial",
+      "checked_scope": "Part (c) proved in measurable-partition form: four allowed triangle patterns plus balanced edge density force IsBalanced. Fubini constructs the partition and an actual integral identity forces mass 1/2. Relabeling equivalence and parts (a),(b) are separate obligations.",
+      "lean_files": [
+        "SparseLowerTail/Section02/Patterns.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section02.AllowedPattern",
+        "SparseLowerTail.Section02.bipodal_of_patterns",
+        "SparseLowerTail.Section02.edgeDensity_bipodalGraphon",
+        "SparseLowerTail.Section02.balanced_of_bipodal_edgeDensity",
+        "SparseLowerTail.Section02.balanced_of_patterns"
+      ],
+      "explicit_inputs": []
+    },
+    {
+      "paper_label": "lem:parity",
+      "status": "proved_partition_form",
+      "checked_scope": "Full parity-to-partition and balanced-mass conclusions for actual a.e. graphons, using Nat-valued counts of b edges. Relabeling equivalence remains separate.",
+      "lean_files": [
+        "SparseLowerTail/Section02/Patterns.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section02.countB",
+        "SparseLowerTail.Section02.allowedPattern_of_even",
+        "SparseLowerTail.Section02.patterns_of_even",
+        "SparseLowerTail.Section02.parity_partition"
+      ],
+      "explicit_inputs": [],
+      "baseline": {
+        "environment": "lemma",
+        "statement": "Let $a,b\\in[0,1]$ with $a\\ne b$, and let $U$ be a graphon with $U\\in\\{a,b\\}$ a.e. Let $S=\\{(x,y):U(x,y)=b\\}$, and suppose that $\\1_S(x,y)+\\1_S(y,z)+\\1_S(x,z)$ is even for a.e.\\ $(x,y,z)\\in[0,1]^3$. Then there is a measurable $A\\subset[0,1]$ such that $U=a$ a.e.\\ on $(A\\times A)\\cup(A^c\\times A^c)$ and $U=b$ a.e.\\ elsewhere. If moreover $e(U)=(a+b)/2$, then $|A|=\\frac12$. In this case $U=B^A_{a,b}$ a.e., and $U$ is a relabeling of $B_{a,b}$.",
+        "statement_sha256": "93d92428f45571eb77f2e0ab7f0da5a434ac4a2422c15825965fe73258cc4971",
+        "proof_sha256": "e18d430b031a4b748eb1dbeeec54d9edba29df52c3b41fe454fe7cd9a1275af8",
+        "source_line": 1474
+      }
+    },
+    {
+      "paper_label": "lem:support",
+      "status": "proved_relative_classical",
+      "checked_scope": "Sharp row-square, codegree and graphon support bounds, using proved vertex identity; only classical sampling explicit.",
+      "lean_files": [
+        "SparseLowerTail/Section05/SupportBounds.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section05.minimizer_rowSquare_le",
+        "SparseLowerTail.Section05.minimizer_codegree_le",
+        "SparseLowerTail.Section05.minimizer_support_lower"
+      ],
+      "explicit_inputs": [
+        "classical:inverse-transform-sampling"
+      ],
+      "baseline": {
+        "environment": "lemma",
+        "statement": "Let $U$ be a minimizer at $r\\in(0,1)$, and let $\\ell_U=\\exp(-\\mu_U(2-\\bar k_U)/2)$. Then $\\int_0^1U(x,y)^2\\dd y\\le(2-\\bar k_U)/2$ for a.e.\\ $x$, $C_U\\le(2-\\bar k_U)/2$ a.e., and $U\\ge\\ell_U$ a.e.",
+        "statement_sha256": "aa16eebbe7d4d7eab92c4f1c84978ddf66005eccbefe0d8d27395610c272c25f",
+        "proof_sha256": "2851be950e56e1afc09cb7e276eeee6334a0efac7dddd4809e565debc7b971bd",
+        "source_line": 3346
+      }
+    },
+    {
+      "paper_label": "cor:identities",
+      "status": "proved_relative_classical",
+      "checked_scope": "Cost/mean bounds, constant-case equality characterization, explicit multiplier and vertex formulas, sharp support and its mean inequality, and coordinatewise/strict monotonicity of Lambda.",
+      "lean_files": [
+        "SparseLowerTail/Section05/SupportBounds.lean",
+        "SparseLowerTail/Section04/Rescaling.lean",
+        "SparseLowerTail/Section04/VertexIdentity.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section05.minimizer_cost_bounds",
+        "SparseLowerTail.Section05.minimizer_mean_bounds",
+        "SparseLowerTail.Section05.minimizer_mean_add_cost_lt_one",
+        "SparseLowerTail.Section05.minimizer_mean_eq_target_iff",
+        "SparseLowerTail.Section04.graphonMultiplier",
+        "SparseLowerTail.Section04.vertexMean_eq",
+        "SparseLowerTail.Section05.multiplier_mul_supportCodegreeBound",
+        "SparseLowerTail.Section05.minimizer_supportLambda_lower",
+        "SparseLowerTail.Section05.minimizer_supportLambda_le_mean",
+        "SparseLowerTail.Section05.supportLambda_mono",
+        "SparseLowerTail.Section05.supportLambda_strictMono_mean",
+        "SparseLowerTail.Section05.supportLambda_strictMono_cost"
+      ],
+      "explicit_inputs": [
+        "classical:inverse-transform-sampling"
+      ],
+      "baseline": {
+        "environment": "corollary",
+        "statement": "Let $U$ be a minimizer at $r\\in(0,1)$, and let $m=e(U)$ and $F=F(U)=V(r)$. \\begin{enumerate}[label=(\\alph*)] \\item $0<F\\le h(r)<1$, $m+F<1$, and $r\\le m\\le\\frac14(1+\\sqrt{1+8r^3})$. Moreover, $m=r$ only if $U=r$ a.e. \\item $\\mu_Ur^3=1-F-m$ and $\\bar k_U=1+F-m$. \\item $\\ell_U=\\Lambda_{r^3}(m,F)$. Hence $U\\ge\\Lambda_{r^3}(m,F)$ a.e.\\ and $\\Lambda_{r^3}(m,F)\\le m$. \\item Let $t>0$. If $0\\le m_0\\le m_1$ and $y_0\\le y_1\\le1$, then $\\Lambda_t(m_0,y_0)\\le\\Lambda_t(m_1,y_1)$. Moreover $\\Lambda_t$ is strictly increasing in $m$ on $m>0$ and in $y$ on $y<1$. \\end{enumerate}",
+        "statement_sha256": "9d80807a68778252520511d295b31ae61f72b388cfb46345f93339ed6341ae51",
+        "proof_sha256": "c96e7742b466d3095de4924ec635f1c74b0ad1d69d2931624af000c565412ce3",
+        "source_line": 3373
+      }
     }
   ]
 }

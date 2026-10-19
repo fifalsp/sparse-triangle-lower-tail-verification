@@ -107,7 +107,9 @@ reverse value inequality or the above/at-threshold classification.
   [`BipodalGraphon.lean`](SparseLowerTail/Section04/BipodalGraphon.lean) handles
   arbitrary two-block partitions, including zero-mass blocks. Its minimizer
   interface discharges positivity, the Euler equation and multiplier positivity;
-  the vertex identity is the remaining explicit analytic input.
+  [`BipodalMinimizers.lean`](SparseLowerTail/Section04/BipodalMinimizers.lean)
+  now also discharges the vertex identity. Only the explicit classical sampling
+  theorem remains as an input; the conclusion is in measurable-partition form.
 
 ## Remaining dependencies of the main theorem
 
@@ -132,8 +134,12 @@ An unchecked item is not supplied as an axiom.
       unique multiplier and the quantitative upper/lower bounds.
 - [x] Sharp Bregman estimate, mean gap, and downward propagation
       (`lem:bregman`, `lem:meangap`, `lem:push`).
-- [ ] Boundary comparison (`lem:boundary`), vertex identity, and its graphon
-      rigidity consequences.
+- [x] Boundary comparison (`lem:boundary`), value continuity, quantitative
+      isolation, variance/entropy and Goodman bounds.
+- [x] Vertex identity and two-block minimizer classification in partition
+      form, relative only to classical inverse-transform sampling.
+- [x] Four triangle patterns plus the balanced edge density force an actual
+      equal-measure partition (`lem:patterns`(c), partition form).
 - [x] Analytic bridge and sign estimates for the certificate (`lem:certcoef`).
 - [ ] A Lean proof-producing version of the interval certificates, including
       the cover and family positivity checks (`prop:cover`, `prop:family`).
@@ -303,3 +309,41 @@ mathematical axioms have been added.
   variation, global certificate positivity, and the remaining graphon
   existence/continuation arguments. Conditional deductions are not counted as
   proofs of their internal premises.
+
+### 2026-10-19 — vertex variation, isolation and boundary comparison
+
+- [`VertexReweighting.lean`](SparseLowerTail/Section04/VertexReweighting.lean)
+  constructs the graphon vertex perturbation and proves its weighted integral
+  formulas. [`VertexIdentity.lean`](SparseLowerTail/Section04/VertexIdentity.lean)
+  proves every identity in `prop:vertex`. The single classical input is the
+  exact inverse-transform sampling proposition recorded in `ASSUMPTIONS.md`.
+- [`BipodalMinimizers.lean`](SparseLowerTail/Section04/BipodalMinimizers.lean)
+  completes `cor:bipodalmin` in measurable-partition form, with no unproved
+  internal first-order hypotheses. This classifies a minimizer already known
+  to be two-block; it does not show all minimizers are two-block.
+- [`ValueContinuity.lean`](SparseLowerTail/Section02/ValueContinuity.lean)
+  proves `lem:existence`(b), directly from competitors and infima, without
+  assuming that an unrestricted minimizer exists.
+- [`TriangleL2.lean`](SparseLowerTail/Section02/TriangleL2.lean),
+  [`Isolation.lean`](SparseLowerTail/Section02/Isolation.lean), and
+  [`Goodman.lean`](SparseLowerTail/Section02/Goodman.lean) prove the actual
+  integral bounds required by `lem:isolation`, `lem:FB1`, and `lem:goodman`.
+- [`Boundary.lean`](SparseLowerTail/Section08/Boundary.lean) proves all of
+  `lem:boundary`. A scaled-competitor argument proves both the endpoint cost
+  equality and edge-density comparison, simplifying the manuscript's route by
+  avoiding a separate minimizer-existence or value-continuity premise.
+- [`Patterns.lean`](SparseLowerTail/Section02/Patterns.lean) recovers a
+  measurable partition from the four triangle patterns and forces equal block
+  masses from the edge density. The certificate-to-partition deduction is now
+  connected, but still explicitly requires the unproved global certificate
+  nonnegativity/zero-set and matching-data statements.
+- **Still incomplete:** unrestricted minimizer existence, critical global
+  classification, local rigidity/openness/seed, supporting penalized range,
+  global cover/family certificates, relabeling equivalence, and final assembly.
+
+- The same milestone also completes the sharp support bound (`lem:support`)
+  and the parameter identities and bounds (`cor:identities`) in
+  [`SupportBounds.lean`](SparseLowerTail/Section05/SupportBounds.lean), relative
+  only to classical sampling. The cell interface turns a proved upper bound
+  on Q into the support lower bound needed by the cover; it does not assert
+  any unverified cell bound. The parity lemma is proved in partition form.

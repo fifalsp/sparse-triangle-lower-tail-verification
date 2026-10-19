@@ -40,3 +40,13 @@ import SparseLowerTail.Section04.EulerLagrange
 import SparseLowerTail.Section04.BipodalGraphon
 import SparseLowerTail.Section05.ThresholdReduction
 import SparseLowerTail.Section08.MinimizerExpectation
+import SparseLowerTail.Section02.ValueContinuity
+import SparseLowerTail.Section02.TriangleL2
+import SparseLowerTail.Section02.Isolation
+import SparseLowerTail.Section02.Goodman
+import SparseLowerTail.Section02.Patterns
+import SparseLowerTail.Section04.VertexReweighting
+import SparseLowerTail.Section04.VertexIdentity
+import SparseLowerTail.Section04.BipodalMinimizers
+import SparseLowerTail.Section08.Boundary
+import SparseLowerTail.Section05.SupportBounds

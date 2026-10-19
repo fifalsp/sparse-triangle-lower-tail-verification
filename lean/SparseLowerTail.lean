@@ -118,3 +118,4 @@ import SparseLowerTail.Section05.CoverReplayTable
 import SparseLowerTail.Section08.FamilyLocalScaling
 
 import SparseLowerTail.Section08.FamilyParameterIntervals
+import SparseLowerTail.Section08.FamilyAAACover

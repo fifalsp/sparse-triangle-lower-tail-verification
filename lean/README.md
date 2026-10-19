@@ -585,3 +585,32 @@ progress and is not imported into the release root until checked. The earlier
 seventeen-leaf Taylor slab is already an unconditional checked subregion.
 The main theorem still has two internal certificate inputs. The effort estimate
 remains about 40% (broad range 30–55%); leaf counts are not completion percentages.
+
+### 2026-10-19 — full-parameter local AAA certificate
+
+`FamilyAAACover.local_nonnegative_and_unique_zero` proves that the actual
+family Phi is nonnegative, with equality only at the AAA contact, on the
+closed logarithmic cube of radius 1/10 around that moving contact, for every
+L in [3.9,9.5]. Five exact leaves cover [3.9,4.25], [4.25,4.6], [4.6,5.3],
+[5.3,6.7], and [6.7,9.5]. Each exponential endpoint, coefficient enclosure,
+and Hessian margin is checked by the Lean kernel. The actual Hessian is
+connected to the numerical expression by `FamilyHessianExpr.entry_eval`.
+Factoring q²−4q+2 as (q−2)²−2 gives tighter interval bounds without changing
+the Hessian. See PS-008 in the simplification notes for the argument.
+
+Reproduce the source with `python3 tools/generate_family_aaa_cover.py` from
+this directory, then `lake build SparseLowerTail.Section08.FamilyAAACover`.
+Python only proposes rational data; all proof obligations are checked in Lean.
+The main theorem still needs the two internal certificate inputs. In
+particular, the mixed contact and exterior compact-domain certificate remain.
+The effort estimate remains about 40% (30–55% uncertainty).
+
+**Resource correction:** bulk S1 replay is stopped at the user's request to
+limit storage. Earlier entries describing it as running are historical.
+No parallel agents or bulk replay jobs are used for this milestone.
+
+Validation: full root build passed (3373 jobs); axiom audit passed for 8811
+project declarations / 5445 theorems with only `propext`, `Classical.choice`,
+and `Quot.sound`. All 86 mapped manuscript labels are unchanged; 371 Lean
+links resolve, and all six mapping tests pass. Regeneration reproduces the
+checked AAA source byte-for-byte.

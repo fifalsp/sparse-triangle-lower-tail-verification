@@ -570,6 +570,53 @@ compare insertion values is then unnecessary for this structural step;
 other uses of the insertion result elsewhere in the manuscript are
 unaffected.
 
+## PS-008 — Five interval leaves for the full local AAA family
+
+**Stable paper link:** `prop:family`, local AAA portion of Appendix A.3
+(`appA3:hess` / `appA3:compact`). This is a simplification of one numerical
+subproof, not a proof of the entire family certificate.
+
+**Statement.** Let z>0, L=−log z in [3.9,9.5], and let p=(qA,qA,qA) be the
+moving all-equal contact in logarithmic coordinates. For every q satisfying
+max_i |q_i−p_i|≤1/10, Phi_z(q)≥0, and equality holds exactly when q=p.
+
+**Argument.** Set x_i=exp(−q_i), A=mu*c4, and
+G=x_0*x_1*x_2*(1+2*A−A*(q_0+q_1+q_2)). The actual Hessian entries are
+
+```
+H_ii = x_i*(c1+c2*(2−q_i)+c4*((q_i−2)^2−2))
+       +mu*c3*x_i*sum_{j≠i} x_j + G,
+H_ij = mu*c3*x_i*x_j + G  (i≠j).
+```
+
+This follows from the differentiated expression using
+(q_i−2)^2−2=q_i^2−4*q_i+2 and cancelling x_i from the sum of three
+exponentials. The factored expressions avoid needless interval dependence.
+Subdivide the L interval at 4.25, 4.6, 5.3, and 6.7. On each of these five
+closed intervals, exact exponential endpoint bounds enclose the actual
+parameter coefficients and every coordinate in the moving radius-1/10 cube.
+The generated Lean file checks strict positive diagonal-dominance margins
+for the enclosed symmetric Hessian (identity congruence). Thus vᵀH(q)v>0
+for every nonzero v, throughout that cube and for every permitted L.
+There are no gaps at the four shared subdivision endpoints.
+
+The contact identities give Phi_z(p)=0 and grad Phi_z(p)=0. For q≠p in the
+cube, its segment from p remains in the cube by convexity. The function
+f(t)=Phi_z(p+t*(q−p)) has f(0)=f'(0)=0 and f''(t)>0 for t in [0,1].
+Consequently f'(t)>0 for t>0 and f(1)>0. The case q=p is the contact
+identity. This proves both nonnegativity and the exact local zero set.
+
+**Checked implementation:**
+[`FamilyLocalFactoredIntervals.lean`](../lean/SparseLowerTail/Section08/FamilyLocalFactoredIntervals.lean)
+proves the algebraic bridge;
+[`FamilyAAACover.lean`](../lean/SparseLowerTail/Section08/FamilyAAACover.lean)
+contains the five exact checks and
+`FamilyAAACover.local_nonnegative_and_unique_zero`.
+The generated rational data are proposals; Lean checks their validity with
+`decide +kernel`. No external mathematical inputs are used for this local
+result. The mixed-contact neighborhood and the global exterior still need
+separate certificates.
+
 ## How to maintain this note
 
 For each new simplification, retain its PS identifier, list the stable paper

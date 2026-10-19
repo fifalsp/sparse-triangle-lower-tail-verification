@@ -24,11 +24,15 @@ The full nonlinear cover certificate still requires checked subdivisions coverin
 each logarithmic cube, not merely a digest of accepted boxes. This is separate
 from the two-dimensional geometric cover, which is now fully proved. The first
 128 leaves of the new 15,280-leaf S1 proposal have compiled; a complete replay
-and its exact subdivision coverage are underway. This is one of 36 nonapex
+and its exact subdivision coverage remain unfinished. Bulk replay is stopped
+to respect the storage constraint. This is one of 36 nonapex
 jobs. The six apex jobs also need exact tangency and local/global bounds.
 Neither obligation is an external assumption. Family interval coefficient
 conversion and local Hessian/contact calculus are proved, but the actual
-compact-domain numerical bounds remain.
+compact-domain numerical bounds remain outside the AAA neighborhood. The AAA
+local result is now proved for all L in [3.9,9.5], on the closed logarithmic
+cube of radius 1/10; the mixed-contact neighborhood and exterior are not
+discharged by that result.
 
 New suspected errors should be recorded with the exact statement, counterexample
 or failed mathematical inference, and resolution status. A tactic failure alone

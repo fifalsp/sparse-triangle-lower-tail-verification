@@ -30,6 +30,29 @@ and audit logs, timings and `exit-code.txt`. `SUCCESS.txt` appears only after al
 three checks return success. A Slurm kill can prevent the EXIT trap, so also
 check `sacct -j JOBID --format=JobID,State,ExitCode,Elapsed,MaxRSS`.
 
-Source and logs belong in backed-up project storage. Scratch is temporary and
+Keep source and logs in project storage and a separate copy off-cluster;
+Yale documents that project storage is not backed up. Scratch is temporary and
 subject to Yale's purge policy. Keep a single dependency cache and toolchain;
 submit later certificate jobs against that prepared environment.
+
+## Staged runner (preferred after the first storage test)
+
+A trial source extraction on 2026-10-19 created only 42 files in 144 seconds
+on project storage, with `tar` waiting on filesystem I/O. The staged runner
+avoids the small-file workload on that filesystem:
+
+```bash
+sbatch --account=YOUR_ACCOUNT bouchet-staged.sbatch /absolute/source.tar.gz SHA256
+```
+
+Upload the script and source archive, then submit from their project directory.
+It checks the archive hash, stages source/dependencies on the allocated node's
+temporary disk (requiring at least 25 GiB free), runs the same three checks,
+and saves a single results archive plus one reusable Linux dependency archive
+back to the submission directory. A failed stage produces an error log rather
+than a success claim. The source revision is recorded inside every result.
+
+Do not run concurrent jobs that overwrite the same dependency archive. The
+initial source snapshot is commit `543e02f7`; later proof additions can be
+replayed using a fresh source archive and its SHA256. Temporary working files
+are not a durable record; the results archive and original Git source are.

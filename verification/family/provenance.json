@@ -1,0 +1,33 @@
+{
+  "draft_filename": "arxiv/arxiv_v1.tex",
+  "draft_sha256": "84c55a798a1fc1492f319179eec89f340d27269916acd622d54707da185e17b7",
+  "draft_origin": "Live Overleaf large_deviation_lower_tail export retrieved 2026-10-18",
+  "claims": [
+    "prop:family",
+    "appA3:compact",
+    "appA3:hess",
+    "lem:certcoef (rational identities and signs)",
+    "lem:certtail (rational identities and interval inequalities)"
+  ],
+  "scope": {
+    "L": "exact decimal [3.9,9.5], enclosed by binary64 [3.9,9.5]",
+    "q": "[0,12]^3, ordered q1 >= q2 >= q3",
+    "local_radius": "nearest binary64 0.1",
+    "precision_bits": 128
+  },
+  "original_source_files": {
+    "investigations/sparse-two-block/certificate/verify_apex_family.py": "148ab68a4fbc6e3cd03f1f3741a98444a856d7f6454edd5a4a1e44b934d2805f",
+    "investigations/sparse-two-block/certificate/symbolic_apex_family.py": "dcd9f1930a83612572ec5122cf787353fa2dcab7973614281f85de6d81a005a1",
+    "investigations/sparse-two-block/certificate/verify_apex_large_local.py": "394066c97e3b49a6f0a32f4fc66e17b2ca591296dd5e55ff168bff1e3ee62700",
+    "investigations/sparse-two-block/certificate/verify_apex_compact.py": "f482f4fba02632ed057d1556b8baf2bb54028028eb4ad8cbc239c18d12f07b1e"
+  },
+  "adaptation": [
+    "Closed coefficient formulas and symbolic tangencies retained from original sources.",
+    "New standalone core implements the current live Appendix app:family: order-three normalized L jets, scaled Hessian, exact-binary64 eigenvector congruence with Arb Gershgorin test, and C2 Taylor lower bounds.",
+    "Local displacement and global coordinate symmetry restrictions use separate tightening rules.",
+    "All output files live under a requested results directory. No research directory or stored successful result is a verification input.",
+    "All entrypoints reject disabled assertions. Budgets and undecidable inequalities fail closed.",
+    "Independent FLINT series cross-checks supplement the analytic inclusion arguments."
+  ],
+  "live_overleaf_checked": true
+}

@@ -1,0 +1,18 @@
+{
+  "project_name": "large_deviation_lower_tail",
+  "source": "Authenticated Overleaf source ZIP download",
+  "manuscript": "arxiv/arxiv_v1.tex",
+  "manuscript_sha256": "84c55a798a1fc1492f319179eec89f340d27269916acd622d54707da185e17b7",
+  "source_zip_sha256": "76a4393fa06847a39ee8b2978ea340f4f41ce11c480436a2d1a43db05803ae31",
+  "retrieved_utc": "2026-10-19T04:01:27.489167+00:00",
+  "live_overleaf_checked": true,
+  "computational_claim_labels": [
+    "lem:digits",
+    "lem:penconstants",
+    "prop:cover",
+    "prop:family"
+  ],
+  "earlier_local_notes_sha256": "c4e19043b283130ae7f1bdccf90573c53c7b6caeac4628f9c11f878e04b38328",
+  "note": "The earlier local draft is AI notes/notes_v1.tex in this Overleaf export. The current manuscript adds the parameter-family argument.",
+  "draft_title": "The Sparse Triangle Lower Tail: Threshold and Minimizers"
+}

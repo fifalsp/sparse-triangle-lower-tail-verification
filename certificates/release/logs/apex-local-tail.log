@@ -1,0 +1,6 @@
+{
+  "status": "quick_checks_passed",
+  "scope": "constants, coefficient solve, tail and local Hessians only",
+  "precision_bits": 256,
+  "seconds": 0.0012369169853627682
+}

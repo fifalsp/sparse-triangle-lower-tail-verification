@@ -1,0 +1,136 @@
+{
+  "checks": {
+    "compact": {
+      "L_interval": [
+        3.9,
+        9.5
+      ],
+      "accepted_partition_sha256": "cc14d9b9aea7e8bdaf22197ba6c935550b525678e8f2392cd6f18030ec5d909f",
+      "code_sha256": {
+        "core.py": "1102b70594ca348c3c4ef9f93fff41f3c29b268b109b6abc8aa5b8febfc590cc",
+        "selfcheck.py": "164afa88b5fcdde161b03fec1c4c2252871263ea57d28f0569ad811768fc8f3d",
+        "symbolic.py": "60c4c7125990ca25faa8e95a07a44d6a7536e07e768723b4b332c08286fc2dc3",
+        "verify_family.py": "1593b0ad55a069b39efa9a4ea49953ee59051003ada5f4421a0000dd15c9c0db"
+      },
+      "counts": {
+        "coefficient-split": 7,
+        "local1": 2248,
+        "local2": 2646,
+        "split": 35128,
+        "taylor": 30242
+      },
+      "maxstack": 25,
+      "nodes": 70271,
+      "part": "compact",
+      "pattern": null,
+      "pending": 0,
+      "precision_bits": 128,
+      "q_cube": [
+        0,
+        12
+      ],
+      "radius_binary64": null,
+      "radius_exact_ratio": null,
+      "remaining_boxes": [],
+      "seconds": 2.8974458330776542,
+      "status": "complete"
+    },
+    "local1": {
+      "L_interval": [
+        3.9,
+        9.5
+      ],
+      "accepted_partition_sha256": "f5e7eade1417286c470f5ae979485227ac2566add20d917fe3727c7fa89d0a25",
+      "code_sha256": {
+        "core.py": "1102b70594ca348c3c4ef9f93fff41f3c29b268b109b6abc8aa5b8febfc590cc",
+        "selfcheck.py": "164afa88b5fcdde161b03fec1c4c2252871263ea57d28f0569ad811768fc8f3d",
+        "symbolic.py": "60c4c7125990ca25faa8e95a07a44d6a7536e07e768723b4b332c08286fc2dc3",
+        "verify_family.py": "1593b0ad55a069b39efa9a4ea49953ee59051003ada5f4421a0000dd15c9c0db"
+      },
+      "counts": {
+        "hessian": 30,
+        "split": 29
+      },
+      "maxstack": 8,
+      "nodes": 59,
+      "part": "local1",
+      "pattern": 1,
+      "pending": 0,
+      "precision_bits": 128,
+      "q_cube": null,
+      "radius_binary64": 0.1,
+      "radius_exact_ratio": [
+        3602879701896397,
+        36028797018963968
+      ],
+      "remaining_boxes": [],
+      "seconds": 0.033217040938325226,
+      "status": "complete"
+    },
+    "local2": {
+      "L_interval": [
+        3.9,
+        9.5
+      ],
+      "accepted_partition_sha256": "b1c45cbaa6928412a7935cf2d8eed994206d0a4a874b5b74b310b33bfbb9b211",
+      "code_sha256": {
+        "core.py": "1102b70594ca348c3c4ef9f93fff41f3c29b268b109b6abc8aa5b8febfc590cc",
+        "selfcheck.py": "164afa88b5fcdde161b03fec1c4c2252871263ea57d28f0569ad811768fc8f3d",
+        "symbolic.py": "60c4c7125990ca25faa8e95a07a44d6a7536e07e768723b4b332c08286fc2dc3",
+        "verify_family.py": "1593b0ad55a069b39efa9a4ea49953ee59051003ada5f4421a0000dd15c9c0db"
+      },
+      "counts": {
+        "hessian": 84393,
+        "split": 84392
+      },
+      "maxstack": 23,
+      "nodes": 168785,
+      "part": "local2",
+      "pattern": 2,
+      "pending": 0,
+      "precision_bits": 128,
+      "q_cube": null,
+      "radius_binary64": 0.1,
+      "radius_exact_ratio": [
+        3602879701896397,
+        36028797018963968
+      ],
+      "remaining_boxes": [],
+      "seconds": 5.071417624945752,
+      "status": "complete"
+    },
+    "quick": {
+      "code_sha256": {
+        "core.py": "1102b70594ca348c3c4ef9f93fff41f3c29b268b109b6abc8aa5b8febfc590cc",
+        "selfcheck.py": "164afa88b5fcdde161b03fec1c4c2252871263ea57d28f0569ad811768fc8f3d",
+        "symbolic.py": "60c4c7125990ca25faa8e95a07a44d6a7536e07e768723b4b332c08286fc2dc3",
+        "verify_family.py": "1593b0ad55a069b39efa9a4ea49953ee59051003ada5f4421a0000dd15c9c0db"
+      },
+      "leaves": 15,
+      "nodes": 29,
+      "pending": 0,
+      "qa_plus_two_upper": "[11.664478224089135330642986846741762990 +/- 2.21e-37]",
+      "scope": "symbolic identities, endpoint and tail inequalities, coefficient signs; excludes compact/local Hessian proofs",
+      "series_check": {
+        "comparisons": 383,
+        "method": "independent FLINT arb_series recurrence and directional derivative cross-checks",
+        "status": "passed"
+      },
+      "status": "complete"
+    }
+  },
+  "code_sha256": {
+    "core.py": "1102b70594ca348c3c4ef9f93fff41f3c29b268b109b6abc8aa5b8febfc590cc",
+    "selfcheck.py": "164afa88b5fcdde161b03fec1c4c2252871263ea57d28f0569ad811768fc8f3d",
+    "symbolic.py": "60c4c7125990ca25faa8e95a07a44d6a7536e07e768723b4b332c08286fc2dc3",
+    "verify_family.py": "1593b0ad55a069b39efa9a4ea49953ee59051003ada5f4421a0000dd15c9c0db"
+  },
+  "flint": "3.3.1",
+  "platform": "macOS-26.6.1-arm64-arm-64bit-Mach-O",
+  "precision_bits": 128,
+  "python": "3.14.0 (main, Oct  7 2025, 09:34:52) [Clang 17.0.0 (clang-1700.0.13.3)]",
+  "python_flint": "0.8.0",
+  "scope": "full Proposition prop:family verification",
+  "seconds": 8.883958999998868,
+  "status": "complete"
+}

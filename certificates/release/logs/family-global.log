@@ -1,0 +1,4 @@
+{"part": "local1", "status": "complete", "nodes": 59, "pending": 0, "seconds": 0.033217040938325226}
+{"part": "local2", "status": "complete", "nodes": 168785, "pending": 0, "seconds": 5.071417624945752}
+{"part": "compact", "status": "complete", "nodes": 70271, "pending": 0, "seconds": 2.8974458330776542}
+{"status": "complete", "scope": "full Proposition prop:family verification", "seconds": 8.883958999998868}

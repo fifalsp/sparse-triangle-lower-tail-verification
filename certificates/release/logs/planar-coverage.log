@@ -1,0 +1,14 @@
+{
+  "verified": true,
+  "region_intervals": 179,
+  "region_interval_counts": [
+    6,
+    32,
+    141
+  ],
+  "fan_orientation_checks": 35,
+  "apex_orientation_checks": 28,
+  "omega_rectangles": 2,
+  "sha256": "b344d85dafade43cb53e6351e1b6261e4652d2e7531baa5118927c5d405a1ba9",
+  "seconds": 0.023900958010926843
+}

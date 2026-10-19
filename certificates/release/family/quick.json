@@ -1,0 +1,19 @@
+{
+  "code_sha256": {
+    "core.py": "1102b70594ca348c3c4ef9f93fff41f3c29b268b109b6abc8aa5b8febfc590cc",
+    "selfcheck.py": "164afa88b5fcdde161b03fec1c4c2252871263ea57d28f0569ad811768fc8f3d",
+    "symbolic.py": "60c4c7125990ca25faa8e95a07a44d6a7536e07e768723b4b332c08286fc2dc3",
+    "verify_family.py": "1593b0ad55a069b39efa9a4ea49953ee59051003ada5f4421a0000dd15c9c0db"
+  },
+  "leaves": 15,
+  "nodes": 29,
+  "pending": 0,
+  "qa_plus_two_upper": "[11.664478224089135330642986846741762990 +/- 2.21e-37]",
+  "scope": "symbolic identities, endpoint and tail inequalities, coefficient signs; excludes compact/local Hessian proofs",
+  "series_check": {
+    "comparisons": 383,
+    "method": "independent FLINT arb_series recurrence and directional derivative cross-checks",
+    "status": "passed"
+  },
+  "status": "complete"
+}

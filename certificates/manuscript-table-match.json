@@ -1,0 +1,9 @@
+{
+  "draft_sha256": "84c55a798a1fc1492f319179eec89f340d27269916acd622d54707da185e17b7",
+  "match": true,
+  "cells": 12,
+  "theta_slots": 144,
+  "exact_solve_slots": 24,
+  "cover_json_sha256": "3ed04f33d63269f03ea2e283ab4b482ba6e9cf340389a2545209c7773cea7b77",
+  "comparison_script_sha256": "163de1d744d64eaa21cc113f55e061ad3abe11c9edeb48ba3f32ba4c85f57962"
+}

@@ -1,0 +1,718 @@
+{
+  "status": "complete",
+  "mode": "full",
+  "started_utc": "2026-10-19T04:05:36.864875+00:00",
+  "python": "3.14.0",
+  "platform": "macOS-26.6.1-arm64-arm-64bit-Mach-O",
+  "dependencies": {
+    "python-flint": "0.8.0",
+    "numpy": "2.3.3",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "source_sha256": {
+    "data/cover-provenance.json": "812da9f4ec1666601ec050d7fd939b578703fbacf6888873bc1a19874b496eba",
+    "data/cover.json": "3ed04f33d63269f03ea2e283ab4b482ba6e9cf340389a2545209c7773cea7b77",
+    "data/manuscript.json": "391b4a9f3ded1f63012a520ea60e10030b6fbaba2316676c81beab0e72e47566",
+    "requirements.txt": "2ab99d4d03d28169081821047f295c060839d05d7ffac76349c6f093a13ce8a4",
+    "verification/apex/core.py": "5599bce9c7ac3121e2f1bf10106c333239c796d9227c0b797ec6e7b9a8985f95",
+    "verification/apex/provenance.json": "61136049cd30275c2847a146588c581b8266bec641e13c06f68a21c9983577cf",
+    "verification/apex/symbolic.py": "fb58219d7545a9c0a2426779ae51d9a21307be7059495457a60201363e9053f1",
+    "verification/apex/verify_apex.py": "a5ead955d5996f4ca3c8d96890e5338340bd9a7c69e4f2b793cff089fcc5d2d4",
+    "verification/check_fail_closed.py": "83a5df0aa3a58766df334d0b096ca067749cd8bcf6a48af42e92af0cd2aacaff",
+    "verification/cover/build_templates.py": "b4e3d1fe9f46480d4157b091f9bb1d06153838b6281cb5b9e87097f73e09c8e7",
+    "verification/cover/endpoint_common.py": "6b9ac2a2648c382eeed63944445c452d535e4052c8d4ae03af2147e5a44cf47b",
+    "verification/cover/generated_templates.py": "de80bf4f1361e77a3a022f1267895380de8aedc3d83d73239c0dd2419dc981f6",
+    "verification/cover/planar_coverage.py": "08d7acc0e3060bff13d1583acfb6429023e4542c2278a641f670053f479e2ee1",
+    "verification/cover/template_manifest.json": "d84a2b0801d5044f6126de46b0af803643df0105c25a3ae246901e802dd4f2c9",
+    "verification/cover/verify_endpoint.py": "8c4e7e6451f577362663c70316c1da6ea53c0045612085fc12c7fe39d4ad1323",
+    "verification/cover/verify_penalized_constants.py": "3671b49c6935feb62c6821b3c569c919583da988cfee87c5bf601f39eb20fe57",
+    "verification/family/core.py": "1102b70594ca348c3c4ef9f93fff41f3c29b268b109b6abc8aa5b8febfc590cc",
+    "verification/family/provenance.json": "ec0b2620157911765ac4bbefe898e99a467e408b73fb7ee5bdf1b525526a354e",
+    "verification/family/selfcheck.py": "164afa88b5fcdde161b03fec1c4c2252871263ea57d28f0569ad811768fc8f3d",
+    "verification/family/symbolic.py": "60c4c7125990ca25faa8e95a07a44d6a7536e07e768723b4b332c08286fc2dc3",
+    "verification/family/verify_family.py": "1593b0ad55a069b39efa9a4ea49953ee59051003ada5f4421a0000dd15c9c0db",
+    "verify.py": "93b68a132290f057071811ba3d31c0ba29bda81743f59fd2ab18cc0ce779ea48"
+  },
+  "steps": [
+    {
+      "name": "template-check",
+      "arguments": [
+        "verification/cover/build_templates.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.9863499170169234,
+      "log": "logs/template-check.log"
+    },
+    {
+      "name": "crossing-support-tangency",
+      "arguments": [
+        "verification/cover/endpoint_common.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.07800779200624675,
+      "log": "logs/crossing-support-tangency.log"
+    },
+    {
+      "name": "penalized-constants",
+      "arguments": [
+        "verification/cover/verify_penalized_constants.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.1358295000391081,
+      "log": "logs/penalized-constants.log"
+    },
+    {
+      "name": "planar-coverage",
+      "arguments": [
+        "verification/cover/planar_coverage.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.0943822090048343,
+      "log": "logs/planar-coverage.log"
+    },
+    {
+      "name": "planar-replay",
+      "arguments": [
+        "verification/cover/planar_coverage.py",
+        "verify"
+      ],
+      "exit_code": 0,
+      "seconds": 0.09399162500631064,
+      "log": "logs/planar-replay.log"
+    },
+    {
+      "name": "apex-symbolic",
+      "arguments": [
+        "verification/apex/symbolic.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.8566222919616848,
+      "log": "logs/apex-symbolic.log"
+    },
+    {
+      "name": "apex-local-tail",
+      "arguments": [
+        "verification/apex/verify_apex.py",
+        "--quick",
+        "--output-dir",
+        "$RESULTS/apex"
+      ],
+      "exit_code": 0,
+      "seconds": 0.09071108303032815,
+      "log": "logs/apex-local-tail.log"
+    },
+    {
+      "name": "family-preliminary",
+      "arguments": [
+        "verification/family/verify_family.py",
+        "--quick",
+        "--output-dir",
+        "$RESULTS/family"
+      ],
+      "exit_code": 0,
+      "seconds": 1.002559334039688,
+      "log": "logs/family-preliminary.log"
+    },
+    {
+      "name": "fail-closed-controls",
+      "arguments": [
+        "verification/check_fail_closed.py"
+      ],
+      "exit_code": 0,
+      "seconds": 2.2809634580044076,
+      "log": "logs/fail-closed-controls.log"
+    },
+    {
+      "name": "apex-global",
+      "arguments": [
+        "verification/apex/verify_apex.py",
+        "--max-nodes",
+        "2000000",
+        "--output-dir",
+        "$RESULTS/apex"
+      ],
+      "exit_code": 0,
+      "seconds": 0.3998679999494925,
+      "log": "logs/apex-global.log"
+    },
+    {
+      "name": "family-global",
+      "arguments": [
+        "verification/family/verify_family.py",
+        "--max-nodes",
+        "2000000",
+        "--output-dir",
+        "$RESULTS/family"
+      ],
+      "exit_code": 0,
+      "seconds": 9.004196083988063,
+      "log": "logs/family-global.log"
+    }
+  ],
+  "cover_jobs": [
+    {
+      "name": "cover-F1-1",
+      "arguments": [
+        "verification/cover/verify_endpoint.py",
+        "F1",
+        "1",
+        "2000000"
+      ],
+      "exit_code": 0,
+      "seconds": 10.18848358397372,
+      "log": "logs/cover-F1-1.log"
+    },
+    {
+      "name": "cover-F1-0",
+      "arguments": [
+        "verification/cover/verify_endpoint.py",
+        "F1",
+        "0",
+        "2000000"
+      ],
+      "exit_code": 0,
+      "seconds": 15.858314582961611,
+      "log": "logs/cover-F1-0.log"
+    },
+    {
+      "name": "cover-F2-0",
+      "arguments": [
+        "verification/cover/verify_endpoint.py",
+        "F2",
+        "0",
+        "2000000"
+      ],
+      "exit_code": 0,
+      "seconds": 10.1011029999936,
+      "log": "logs/cover-F2-0.log"
+    },
+    {
+      "name": "cover-F2-1",
+      "arguments": [
+        "verification/cover/verify_endpoint.py",
+        "F2",
+        "1",
+        "2000000"
+      ],
+      "exit_code": 0,
+      "seconds": 4.769354333984666,
+      "log": "logs/cover-F2-1.log"
+    },
+    {
+      "name": "cover-F3-1",
+      "arguments": [
+        "verification/cover/verify_endpoint.py",
+        "F3",
+        "1",
+        "2000000"
+      ],
+      "exit_code": 0,
+      "seconds": 4.693527041003108,
+      "log": "logs/cover-F3-1.log"
+    },
+    {
+      "name": "cover-F3-0",
+      "arguments": [
+        "verification/cover/verify_endpoint.py",
+        "F3",
+        "0",
+        "2000000"
+      ],
+      "exit_code": 0,
+      "seconds": 7.611863249912858,
+      "log": "logs/cover-F3-0.log"
+    },
+    {
+      "name": "cover-F4-0",
+      "arguments": [
+        "verification/cover/verify_endpoint.py",
+        "F4",
+        "0",
+        "2000000"
+      ],
+      "exit_code": 0,
+      "seconds": 3.5504236669512466,
+      "log": "logs/cover-F4-0.log"
+    },
+    {
+      "name": "cover-F4-1",
+      "arguments": [
+        "verification/cover/verify_endpoint.py",
+        "F4",
+        "1",
+        "2000000"
+      ],
+      "exit_code": 0,
+      "seconds": 2.4214043749962,
+      "log": "logs/cover-F4-1.log"
+    },
+    {
+      "name": "cover-F5-0",
+      "arguments": [
+        "verification/cover/verify_endpoint.py",
+        "F5",
+        "0",
+        "2000000"
+      ],
+      "exit_code": 0,
+      "seconds": 2.7941984169883654,
+      "log": "logs/cover-F5-0.log"
+    },
+    {
+      "name": "cover-F6-0",
+      "arguments": [
+        "verification/cover/verify_endpoint.py",
+        "F6",
+        "0",
+        "2000000"
+      ],
+      "exit_code": 0,
+      "seconds": 4.696336958091706,
+      "log": "logs/cover-F6-0.log"
+    },
+    {
+      "name": "cover-F5-1",
+      "arguments": [
+        "verification/cover/verify_endpoint.py",
+        "F5",
+        "1",
+        "2000000"
+      ],
+      "exit_code": 0,
+      "seconds": 6.120067249983549,
+      "log": "logs/cover-F5-1.log"
+    },
+    {
+      "name": "cover-F6-1",
+      "arguments": [
+        "verification/cover/verify_endpoint.py",
+        "F6",
+        "1",
+        "2000000"
+      ],
+      "exit_code": 0,
+      "seconds": 3.5724999589147046,
+      "log": "logs/cover-F6-1.log"
+    },
+    {
+      "name": "cover-S1-1",
+      "arguments": [
+        "verification/cover/verify_endpoint.py",
+        "S1",
+        "1",
+        "2000000"
+      ],
+      "exit_code": 0,
+      "seconds": 20.181035333080217,
+      "log": "logs/cover-S1-1.log"
+    },
+    {
+      "name": "cover-S1-0",
+      "arguments": [
+        "verification/cover/verify_endpoint.py",
+        "S1",
+        "0",
+        "2000000"
+      ],
+      "exit_code": 0,
+      "seconds": 27.49421229097061,
+      "log": "logs/cover-S1-0.log"
+    },
+    {
+      "name": "cover-S1-2",
+      "arguments": [
+        "verification/cover/verify_endpoint.py",
+        "S1",
+        "2",
+        "2000000"
+      ],
+      "exit_code": 0,
+      "seconds": 25.940416916040704,
+      "log": "logs/cover-S1-2.log"
+    },
+    {
+      "name": "cover-S2-0",
+      "arguments": [
+        "verification/cover/verify_endpoint.py",
+        "S2",
+        "0",
+        "2000000"
+      ],
+      "exit_code": 0,
+      "seconds": 7.981484208023176,
+      "log": "logs/cover-S2-0.log"
+    },
+    {
+      "name": "cover-S2-1",
+      "arguments": [
+        "verification/cover/verify_endpoint.py",
+        "S2",
+        "1",
+        "2000000"
+      ],
+      "exit_code": 0,
+      "seconds": 8.437657291069627,
+      "log": "logs/cover-S2-1.log"
+    },
+    {
+      "name": "cover-S1-3",
+      "arguments": [
+        "verification/cover/verify_endpoint.py",
+        "S1",
+        "3",
+        "2000000"
+      ],
+      "exit_code": 0,
+      "seconds": 41.59998816601001,
+      "log": "logs/cover-S1-3.log"
+    },
+    {
+      "name": "cover-S2-2",
+      "arguments": [
+        "verification/cover/verify_endpoint.py",
+        "S2",
+        "2",
+        "2000000"
+      ],
+      "exit_code": 0,
+      "seconds": 16.534206875017844,
+      "log": "logs/cover-S2-2.log"
+    },
+    {
+      "name": "cover-S2-3",
+      "arguments": [
+        "verification/cover/verify_endpoint.py",
+        "S2",
+        "3",
+        "2000000"
+      ],
+      "exit_code": 0,
+      "seconds": 16.867281165905297,
+      "log": "logs/cover-S2-3.log"
+    },
+    {
+      "name": "cover-S3-0",
+      "arguments": [
+        "verification/cover/verify_endpoint.py",
+        "S3",
+        "0",
+        "2000000"
+      ],
+      "exit_code": 0,
+      "seconds": 3.6049305830383673,
+      "log": "logs/cover-S3-0.log"
+    },
+    {
+      "name": "cover-S3-1",
+      "arguments": [
+        "verification/cover/verify_endpoint.py",
+        "S3",
+        "1",
+        "2000000"
+      ],
+      "exit_code": 0,
+      "seconds": 4.214112166897394,
+      "log": "logs/cover-S3-1.log"
+    },
+    {
+      "name": "cover-S3-2",
+      "arguments": [
+        "verification/cover/verify_endpoint.py",
+        "S3",
+        "2",
+        "2000000"
+      ],
+      "exit_code": 0,
+      "seconds": 10.6510034580715,
+      "log": "logs/cover-S3-2.log"
+    },
+    {
+      "name": "cover-R1-0",
+      "arguments": [
+        "verification/cover/verify_endpoint.py",
+        "R1",
+        "0",
+        "2000000"
+      ],
+      "exit_code": 0,
+      "seconds": 1.456975125009194,
+      "log": "logs/cover-R1-0.log"
+    },
+    {
+      "name": "cover-S3-3",
+      "arguments": [
+        "verification/cover/verify_endpoint.py",
+        "S3",
+        "3",
+        "2000000"
+      ],
+      "exit_code": 0,
+      "seconds": 8.757004625047557,
+      "log": "logs/cover-S3-3.log"
+    },
+    {
+      "name": "cover-R1-1",
+      "arguments": [
+        "verification/cover/verify_endpoint.py",
+        "R1",
+        "1",
+        "2000000"
+      ],
+      "exit_code": 0,
+      "seconds": 0.7505659169983119,
+      "log": "logs/cover-R1-1.log"
+    },
+    {
+      "name": "cover-R1-2",
+      "arguments": [
+        "verification/cover/verify_endpoint.py",
+        "R1",
+        "2",
+        "2000000"
+      ],
+      "exit_code": 0,
+      "seconds": 0.730142250075005,
+      "log": "logs/cover-R1-2.log"
+    },
+    {
+      "name": "cover-R1-3",
+      "arguments": [
+        "verification/cover/verify_endpoint.py",
+        "R1",
+        "3",
+        "2000000"
+      ],
+      "exit_code": 0,
+      "seconds": 1.2961317079607397,
+      "log": "logs/cover-R1-3.log"
+    },
+    {
+      "name": "cover-B1-0",
+      "arguments": [
+        "verification/cover/verify_endpoint.py",
+        "B1",
+        "0",
+        "2000000"
+      ],
+      "exit_code": 0,
+      "seconds": 8.418081458075903,
+      "log": "logs/cover-B1-0.log"
+    },
+    {
+      "name": "cover-B1-1",
+      "arguments": [
+        "verification/cover/verify_endpoint.py",
+        "B1",
+        "1",
+        "2000000"
+      ],
+      "exit_code": 0,
+      "seconds": 8.941582957981154,
+      "log": "logs/cover-B1-1.log"
+    },
+    {
+      "name": "cover-B1-2",
+      "arguments": [
+        "verification/cover/verify_endpoint.py",
+        "B1",
+        "2",
+        "2000000"
+      ],
+      "exit_code": 0,
+      "seconds": 28.365336749935523,
+      "log": "logs/cover-B1-2.log"
+    },
+    {
+      "name": "cover-B2-0",
+      "arguments": [
+        "verification/cover/verify_endpoint.py",
+        "B2",
+        "0",
+        "2000000"
+      ],
+      "exit_code": 0,
+      "seconds": 7.763007291010581,
+      "log": "logs/cover-B2-0.log"
+    },
+    {
+      "name": "cover-B1-3",
+      "arguments": [
+        "verification/cover/verify_endpoint.py",
+        "B1",
+        "3",
+        "2000000"
+      ],
+      "exit_code": 0,
+      "seconds": 35.922595874988474,
+      "log": "logs/cover-B1-3.log"
+    },
+    {
+      "name": "cover-B2-1",
+      "arguments": [
+        "verification/cover/verify_endpoint.py",
+        "B2",
+        "1",
+        "2000000"
+      ],
+      "exit_code": 0,
+      "seconds": 9.082734916941263,
+      "log": "logs/cover-B2-1.log"
+    },
+    {
+      "name": "cover-B2-2",
+      "arguments": [
+        "verification/cover/verify_endpoint.py",
+        "B2",
+        "2",
+        "2000000"
+      ],
+      "exit_code": 0,
+      "seconds": 46.140830749995075,
+      "log": "logs/cover-B2-2.log"
+    },
+    {
+      "name": "cover-B2-3",
+      "arguments": [
+        "verification/cover/verify_endpoint.py",
+        "B2",
+        "3",
+        "2000000"
+      ],
+      "exit_code": 0,
+      "seconds": 44.85735604201909,
+      "log": "logs/cover-B2-3.log"
+    },
+    {
+      "name": "cover-F1-apex",
+      "arguments": [
+        "verification/cover/verify_endpoint.py",
+        "F1",
+        "apex",
+        "2000000"
+      ],
+      "exit_code": 0,
+      "seconds": 21.76353845896665,
+      "log": "logs/cover-F1-apex.log"
+    },
+    {
+      "name": "cover-F2-apex",
+      "arguments": [
+        "verification/cover/verify_endpoint.py",
+        "F2",
+        "apex",
+        "2000000"
+      ],
+      "exit_code": 0,
+      "seconds": 21.43614508304745,
+      "log": "logs/cover-F2-apex.log"
+    },
+    {
+      "name": "cover-F3-apex",
+      "arguments": [
+        "verification/cover/verify_endpoint.py",
+        "F3",
+        "apex",
+        "2000000"
+      ],
+      "exit_code": 0,
+      "seconds": 12.804620750015602,
+      "log": "logs/cover-F3-apex.log"
+    },
+    {
+      "name": "cover-F5-apex",
+      "arguments": [
+        "verification/cover/verify_endpoint.py",
+        "F5",
+        "apex",
+        "2000000"
+      ],
+      "exit_code": 0,
+      "seconds": 7.826047167065553,
+      "log": "logs/cover-F5-apex.log"
+    },
+    {
+      "name": "cover-F6-apex",
+      "arguments": [
+        "verification/cover/verify_endpoint.py",
+        "F6",
+        "apex",
+        "2000000"
+      ],
+      "exit_code": 0,
+      "seconds": 2.983123250072822,
+      "log": "logs/cover-F6-apex.log"
+    },
+    {
+      "name": "cover-F4-apex",
+      "arguments": [
+        "verification/cover/verify_endpoint.py",
+        "F4",
+        "apex",
+        "2000000"
+      ],
+      "exit_code": 0,
+      "seconds": 22.037643250077963,
+      "log": "logs/cover-F4-apex.log"
+    }
+  ],
+  "elapsed_seconds": 293.14276345900726,
+  "scope": "All four current-manuscript computational assertion groups, including 42 cover jobs and the parameter family, plus the independent single-apex check.",
+  "cover_jobs_completed": 42,
+  "artifact_sha256": {
+    "apex/apex.json": "80a0ab0b8b520c0c654435c0fe3854e7a7321edaccd84c30da9eb715aad92a2a",
+    "apex/quick.json": "34c0d8aca9e014a51801d0758c24c1ffd0b3dcb474fb96ed0efc9b00de5fbb4e",
+    "cover/endpoint_inputs_verified.json": "0dec9aba5412e2bf1b8c377ebf731f69bd8914aa0613d3cb337ec3bb3cd937ba",
+    "cover/penalized_constants_verified.json": "704fc781fb6fa7e79013339b44374cf61a95fef3ad389c3839e0677bb70b5e8d",
+    "cover/planar_coverage.json": "723e912c53dfd9226ff085cd64e3680df8713a2331166a203e9f7bbfc93c1ee9",
+    "cover/planar_coverage.replay.json": "59f59a973c9ab97a3822921c13e5e7852450d20c0ef58db5b9fa7da39ffc09a1",
+    "cover/verified_B1_0.json": "4e390700b0c760aeaaf25f200021cc0b61b990fc79b7fef6cc67061554dc1032",
+    "cover/verified_B1_1.json": "de3c0555407fb041e5d495f20f09c7499735a22376abc147ea6f357f6ff9d926",
+    "cover/verified_B1_2.json": "a8a0ca9a591a2fd5fed94f1fe25f49a412db1b5960ed9a3ebe6bafc63cfb5a52",
+    "cover/verified_B1_3.json": "df86ee511481424c0737da5bb1d598bdbd4a7ca665a14179ca82899be90e5971",
+    "cover/verified_B2_0.json": "41d9d47d3861cd389f7c08c6650f42d75f743c82f5d34521892abf9f6cdf3e4f",
+    "cover/verified_B2_1.json": "11bc225c0793d5acb1cff1d8d4208a15530c8127336658bd03dab6a251ac17fb",
+    "cover/verified_B2_2.json": "e23c55fb98e204bef30f2018ae099254db90b87309f7c5c4d8e369c61b9eaa32",
+    "cover/verified_B2_3.json": "ee0c76b44684a7da8c8ebe9b30f69d87b8fddcd17772bc1731de1dbd6fef4be0",
+    "cover/verified_F1_0.json": "aff2d4abe3cdc9daef270f31804f718e74f77ed46160fca9c30363eb7aece601",
+    "cover/verified_F1_1.json": "9b31147849d3a913939029b40f841c812c279f3659752402a6ad8d35b2dd70f8",
+    "cover/verified_F1_apex.json": "f11db2a27876283aead06dc58b08154a53e64dab1853f1e8a30f0bbf3ad0e0e5",
+    "cover/verified_F2_0.json": "68081d4f686ff34a43a1ca2283111eebe06b6abd9343106757d2574d10d798f2",
+    "cover/verified_F2_1.json": "1391ea2ecc2496821d9890e6a39e3be6480f045c8c4051812f62df32b1911742",
+    "cover/verified_F2_apex.json": "c9450634e8798bb6a6e3d35f263e58265445cdc147820be1f1bfd291fc7f2ca5",
+    "cover/verified_F3_0.json": "f9acac52fdae87612b119d4c4af7fbf060ba6a3d794c681b6d0313c7c8e22d78",
+    "cover/verified_F3_1.json": "8ca0087d52168e0d1bcb9dbdb8a857fe7900858fe844d8974ea449047a5d05f8",
+    "cover/verified_F3_apex.json": "f9163658f25b46e0aea87d761d241b7c54f41eaaab94c3baa32cf9b20aaefe1f",
+    "cover/verified_F4_0.json": "5a19c2505f1c7cd166045385c8322306e5f604e7ff34b1592ae3a6f240b9711a",
+    "cover/verified_F4_1.json": "154d5e3d33e6f12ca91ec763908325dc795a2e67e1f1b630016297b529ce3f25",
+    "cover/verified_F4_apex.json": "b85d6d3140625a57dd11217370ff7f3c16225d5eda961022c0cfb6f4b39acfde",
+    "cover/verified_F5_0.json": "bc970d108bde90014ff1e9614181cb791c08cf17a563e95665109ad48494325e",
+    "cover/verified_F5_1.json": "cd91d9260762dd9109b4b380b514f2667d369825f56c720da2ffcdabc26c340f",
+    "cover/verified_F5_apex.json": "b2fbfe2bbbd59f82d6a4b89168ebbfb374f6b06ecd9b8b92036e3fecbafe81b7",
+    "cover/verified_F6_0.json": "6c44c545eea481abb44bbb8d330c361ac3d3b57f1547560b8e7182a592467b33",
+    "cover/verified_F6_1.json": "b32bb383b78c8d1aa073da74973c6b684fc813f5d1c528252bbd1d232bc248d7",
+    "cover/verified_F6_apex.json": "47d113a3e747335efef951f847dca50fa6a99e2e06d8cdf22e59baaadc3c0a83",
+    "cover/verified_R1_0.json": "0afaf83d08221f9c6d08bb808eef8568a4a69688cbd57b00adccb18fb7a7b9fb",
+    "cover/verified_R1_1.json": "2ada4606a57106cf1e2fb10230c95ea02d37de80ad1353a784c7d26f2c422ecd",
+    "cover/verified_R1_2.json": "fbf6fd041a84400bd509808ed4c211ac0f06ed0323a32d85427deca9f05bc68d",
+    "cover/verified_R1_3.json": "37ccccc666f4e6607ad06a7775dfdf825da7cf85c3cefc42090346f16b217222",
+    "cover/verified_S1_0.json": "07442eb7369331b0228b9d2a29e2b2455d408ab4e4e700643f13fd4ffa5c2217",
+    "cover/verified_S1_1.json": "ec3f0d10a8b238dac52f861c2f7322fbb24397fc066d4d3175300c4ecd3b13b2",
+    "cover/verified_S1_2.json": "b197c3d087b4c3b60b04cdfc98e7f6dbf54a26fb924695effcea05f8b1b055c0",
+    "cover/verified_S1_3.json": "e11fb6b5bbbbbd4f42df617309ef90c70a9e81050952cd555406d009cdedb409",
+    "cover/verified_S2_0.json": "da946946684b160b909f21279e5c84b8e376449d1c08d5364d7de0fdbbb79565",
+    "cover/verified_S2_1.json": "4c6ed7baf62f9f42f2c1dab7f26530ba71b35122c3ca72227fb099070c87d21a",
+    "cover/verified_S2_2.json": "8a7b212c2ddb45a5abbca50ec92169787b35611ece89f4ebe747f45b8a5cfe64",
+    "cover/verified_S2_3.json": "7a5454aeff5a36b4c4f052c2171a5a1173936182392db83bd4082f9ceb07145e",
+    "cover/verified_S3_0.json": "018bd7d69eca91e4c887615847852a7a97f6f1523188f5cd18366872b49d78ab",
+    "cover/verified_S3_1.json": "7120c34d3360f70997c71226abe47be05ddafcddea65efc99bf83196a707bb97",
+    "cover/verified_S3_2.json": "d8749815bed48f1ed5ffd925431cc2d3f9e175097daaa140cafad60434e4de82",
+    "cover/verified_S3_3.json": "34b19a237a39ca2894e6e11a144711bab76f6127a7f20e52de58783758229890",
+    "family/compact.json": "2ff32cde5c022d6594b42e22c33c4768460d963d1ca50017b9c81b5c6c6aed2d",
+    "family/family.json": "5fdbc8d3045f6d2ee7da48906dcd07c5c6d8f62c7d2859e62c8e104259da45c4",
+    "family/local1.json": "ecfcdc84347172cc8877d6521a8867bc77e17164ee1c40e9a1bfd5ac2c8de6b8",
+    "family/local2.json": "6916de11b1bd48bf669f2f61b5e72804b0b63b3457376aaf6599ba064184e5fa",
+    "family/quick.json": "ae6e9547397f28efead1e2aeff657a18bf4a526ffe778753d3e74e8445698915"
+  }
+}

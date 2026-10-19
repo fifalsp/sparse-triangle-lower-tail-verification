@@ -1,0 +1,14 @@
+{
+  "status": "complete",
+  "method": "Symbolic arithmetic adapter applied to actual runtime Jet, weights and Hessian functions; no copied numerical implementation.",
+  "checks": [
+    "normalized Taylor product recurrence",
+    "normalized Taylor quotient recurrence",
+    "normalized Taylor exponential recurrence",
+    "coefficient/weight phi decomposition",
+    "all21 weight qderivatives",
+    "all9 unscaled Hessian entries",
+    "all9 scaled Hessian entries"
+  ],
+  "core_sha256": "1102b70594ca348c3c4ef9f93fff41f3c29b268b109b6abc8aa5b8febfc590cc"
+}

@@ -1,0 +1,50 @@
+{
+  "status": "passed",
+  "controls": [
+    {
+      "test": "assertions-enabled guard",
+      "script": "verification/cover/endpoint_common.py",
+      "passed": true
+    },
+    {
+      "test": "assertions-enabled guard",
+      "script": "verification/cover/build_templates.py",
+      "passed": true
+    },
+    {
+      "test": "assertions-enabled guard",
+      "script": "verification/apex/verify_apex.py",
+      "passed": true
+    },
+    {
+      "test": "assertions-enabled guard",
+      "script": "verification/apex/symbolic.py",
+      "passed": true
+    },
+    {
+      "test": "assertions-enabled guard",
+      "script": "verification/family/verify_family.py",
+      "passed": true
+    },
+    {
+      "test": "assertions-enabled guard",
+      "script": "verification/family/symbolic.py",
+      "passed": true
+    },
+    {
+      "test": "unfinished search rejection",
+      "script": "verification/cover/verify_endpoint.py",
+      "passed": true
+    },
+    {
+      "test": "unfinished search rejection",
+      "script": "verification/apex/verify_apex.py",
+      "passed": true
+    },
+    {
+      "test": "unfinished search rejection",
+      "script": "verification/family/verify_family.py",
+      "passed": true
+    }
+  ]
+}

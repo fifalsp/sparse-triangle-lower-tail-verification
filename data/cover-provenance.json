@@ -1,0 +1,49 @@
+{
+  "original_files": {
+    "endpoint_common.py": {
+      "source": "investigations/dense-triangle/experiments/explicit_p0_endpoint_rebuild/endpoint_common.py",
+      "sha256": "0bdae63515a3f41a66088ee9995fdb03c9f43b8101246644ee7e3244991b398c"
+    },
+    "verify_endpoint.py": {
+      "source": "investigations/dense-triangle/experiments/explicit_p0_endpoint_rebuild/verify_endpoint.py",
+      "sha256": "e88d9a20e14048f4b8a442062fdefa65099046ebee83f1a78a055c6b468c95fe"
+    },
+    "planar_coverage.py": {
+      "source": "investigations/dense-triangle/experiments/explicit_p0_endpoint_rebuild/planar_coverage.py",
+      "sha256": "392572923a869379143786ee6ea98f4a8f335919c2aaee2b5503bfba43bcc991"
+    },
+    "verify_penalized_constants.py": {
+      "source": "investigations/dense-triangle/experiments/explicit_p0_endpoint_rebuild/verify_penalized_constants.py",
+      "sha256": "4c1b178f2fc3dc971340a1db0d5bbb529cf5eb25562aa7bf516326ad9c8d74d1"
+    },
+    "verify_coercivity.py": {
+      "source": "investigations/dense-triangle/experiments/explicit_p0_endpoint_rebuild/verify_coercivity.py",
+      "sha256": "c55eb809b452967d6c4844ed6836b7c9c97d78f896ba6d1e057427db95f535e3"
+    },
+    "build_templates.py": {
+      "source": "investigations/dense-triangle/experiments/explicit_p0_endpoint_rebuild/build_templates.py",
+      "sha256": "c770954ebd4203329bdbdf99b678510665cd3f10e578ce8b844c94ab86f41cd6"
+    },
+    "generated_templates.py": {
+      "source": "investigations/dense-triangle/experiments/explicit_p0_endpoint_rebuild/generated_templates.py",
+      "sha256": "de80bf4f1361e77a3a022f1267895380de8aedc3d83d73239c0dd2419dc981f6"
+    },
+    "template_manifest.json": {
+      "source": "investigations/dense-triangle/experiments/explicit_p0_endpoint_rebuild/template_manifest.json",
+      "sha256": "570c1b95dbaf3a8e06da6b0b1523dc34c7c415e08461ddef1cd9f24b716405bb"
+    }
+  },
+  "changes": [
+    "Replace obsolete manuscript parser with exact, draft-matched JSON inputs.",
+    "Write generated verification results outside source directories.",
+    "Refuse optimized Python because assertions are proof gates.",
+    "Rename result source hash to inputs hash to identify its actual referent.",
+    "Assert all four printed crossing enclosures explicitly.",
+    "Require the published local radii without automatic shrinkage.",
+    "Interpret the fan apex target as exact nearest binary64.",
+    "Add read-only exact template regeneration check."
+  ],
+  "earlier_local_draft_sha256": "c4e19043b283130ae7f1bdccf90573c53c7b6caeac4628f9c11f878e04b38328",
+  "current_manuscript_sha256": "84c55a798a1fc1492f319179eec89f340d27269916acd622d54707da185e17b7",
+  "current_manuscript_tables_match": true
+}

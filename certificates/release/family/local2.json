@@ -1,0 +1,32 @@
+{
+  "L_interval": [
+    3.9,
+    9.5
+  ],
+  "accepted_partition_sha256": "b1c45cbaa6928412a7935cf2d8eed994206d0a4a874b5b74b310b33bfbb9b211",
+  "code_sha256": {
+    "core.py": "1102b70594ca348c3c4ef9f93fff41f3c29b268b109b6abc8aa5b8febfc590cc",
+    "selfcheck.py": "164afa88b5fcdde161b03fec1c4c2252871263ea57d28f0569ad811768fc8f3d",
+    "symbolic.py": "60c4c7125990ca25faa8e95a07a44d6a7536e07e768723b4b332c08286fc2dc3",
+    "verify_family.py": "1593b0ad55a069b39efa9a4ea49953ee59051003ada5f4421a0000dd15c9c0db"
+  },
+  "counts": {
+    "hessian": 84393,
+    "split": 84392
+  },
+  "maxstack": 23,
+  "nodes": 168785,
+  "part": "local2",
+  "pattern": 2,
+  "pending": 0,
+  "precision_bits": 128,
+  "q_cube": null,
+  "radius_binary64": 0.1,
+  "radius_exact_ratio": [
+    3602879701896397,
+    36028797018963968
+  ],
+  "remaining_boxes": [],
+  "seconds": 5.071417624945752,
+  "status": "complete"
+}

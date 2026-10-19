@@ -20,8 +20,8 @@ namespace SparseLowerTail
 for the transition target. This structure is a proof-obligation inventory;
 no inhabitant has yet been constructed. -/
 structure MainTheorem : Prop where
-  threshold_bounds : (2096696762 : ℝ) / 10000000000 < threshold ∧
-    threshold < (2096696763 : ℝ) / 10000000000
+  threshold_bounds : (2096696762 : ℝ) / 10000000000 ≤ threshold ∧
+    threshold ≤ (2096696763 : ℝ) / 10000000000
   value_reduction : ∀ r ∈ Ioo (0 : ℝ) 1, value r = balancedValue r
   strict_improvement : ∀ r ∈ Ioo (0 : ℝ) 1, value r < entropy r ↔ r < threshold
   above_transition : ∀ r ∈ Ioo threshold 1, ∀ U : Graphon,

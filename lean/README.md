@@ -6,6 +6,11 @@ The target is the variational theorem `thm:main` in the manuscript recorded in
 2026 PDF. This is Theorem **1.3**, not Theorem 1.8. The probabilistic sparse-LDP
 and conditional-structure results are additional, later formalization tasks.
 
+At the authors' request, the intended proof may use **explicitly stated external
+and classical results as hypotheses**. Our own arguments remain obligations.
+See [ASSUMPTIONS.md](ASSUMPTIONS.md) for the exact scope and named inputs.
+Passing an axiom audit does not discharge an external hypothesis.
+
 ## What the target actually says
 
 For every target 0 < r < 1, the infimum of the sparse entropy over **all
@@ -38,6 +43,12 @@ measure-preserving-relabeling formulation still requires `lem:relabelB`.
 | Attainment in the balanced problem | [`BalancedExistence.lean`](SparseLowerTail/BalancedExistence.lean): `exists_balancedMinimizer`, `balancedValue_attained` | Compactness gives a minimizing pair. This establishes neither uniqueness nor existence of an unrestricted graphon minimizer. |
 | Section 8, proof of `thm:main`, Steps 1–4 | [`Continuation.lean`](SparseLowerTail/Continuation.lean): `classification_on_interval` | The infimum/continuation argument is proved with explicit assumptions for the small-target range, openness, seed near the transition, and boundary exclusion. Those graphon-specific assumptions remain to be discharged. |
 | Rational tangency calculations in `lem:certcoef` | [`CertificateAlgebra.lean`](SparseLowerTail/CertificateAlgebra.lean): `value_aaa`, `gradient_aaa`, `value_abb`, `gradient_abb_a`, `gradient_abb_b` | All five exact normalized identities, with explicit nonzero-denominator assumptions. The coefficients match `verification/family/symbolic.py`. |
+| `lem:branch`, `s4:eq:EL` | [`Branch.lean`](SparseLowerTail/Section04/Branch.lean), [`Codegree.lean`](SparseLowerTail/Section04/Codegree.lean), [`BalancedStationary.lean`](SparseLowerTail/Section04/BalancedStationary.lean) | Both directions of the explicit stationary branch parametrization, connected to the a.e. graphon equation. Codegrees are computed for any measurable equal partition. |
+| `lem:ray`, parts (a)–(d) | [`Ray.lean`](SparseLowerTail/Section04/Ray.lean) | Ray normalization and its converse, cost scaling, positivity, regularity, and the exact derivative of the ray cost gap. |
+| Geometric reduction in `cor:Vbal` | [`EntropyGeometry.lean`](SparseLowerTail/Section04/EntropyGeometry.lean) | Strict entropy convexity; a ≥ b cannot beat the constant; an ordered feasible pair can be saturated, with equality conditions. The crossing classification is still pending. |
+| `lem:active` | [`ActiveConstraint.lean`](SparseLowerTail/Section04/ActiveConstraint.lean): `minimizer_triangle_eq` | Every unrestricted graphon minimizer at 0 < r < 1 has triangle density exactly r³. No external hypothesis is needed. |
+| `eq:Bdens` for edge density; `lem:Bderivative`(a) | [`BalancedStationary.lean`](SparseLowerTail/Section04/BalancedStationary.lean) | Edge-density formula and the multiplier identity μt = 1 − F − e. Differentiability in the target remains separate. |
+| Transfer step in `prop:smalldata` | [`ExternalReduction.lean`](SparseLowerTail/Section07/ExternalReduction.lean) | Given the explicitly assumed KP26 reduction and a supporting balanced penalized minimizer, prove constrained global optimality and its value. Identifying the supported range and equality rigidity remain open obligations. |
 
 The tangency calculation treats z and L as independent reals. It does **not**
 yet prove the logarithm substitutions, actual derivative identities, coefficient
@@ -50,12 +61,15 @@ The goal is to connect these components in the same order as the paper's proof.
 An unchecked item is not supplied as an axiom.
 
 - [ ] Unrestricted graphon minimizer existence, compactness, and regularity.
-- [ ] Section 4: balanced branch, unique crossing, scalar optimizer classification,
+- [x] Section 4: stationary branch, ray calculus, entropy geometric reduction,
+      and activity of the graphon triangle constraint.
+- [ ] Section 4: unimodality, unique crossing, scalar optimizer classification,
       and the certified threshold intervals (`cor:Vbal`, `lem:digits`).
 - [ ] Threshold global inequality and equality classification (`thm:threshold`).
 - [ ] Openness and the seed near the transition (`cor:open`, `cor:seed`).
-- [ ] Small-target classification (`thm:smalltail`), including the external
-      theorem invoked from KP26; this dependency cannot be silently assumed away.
+- [ ] Small-target classification (`thm:smalltail`). KP26 is now an explicit
+      external hypothesis; the paper's supporting-branch and rigidity arguments
+      must still be proved.
 - [ ] Boundary comparison (`lem:boundary`), the Euler–Lagrange equation, and the
       certificate expectation identity (`s8:expect`).
 - [ ] Analytic bridge and sign estimates for the certificate (`lem:certcoef`).
@@ -69,6 +83,27 @@ An unchecked item is not supplied as an axiom.
 conditions. The existing Python/Arb reports are computational evidence used by
 the paper, but are not Lean proof terms. Loading their success flags would not
 close the missing Lean obligations.
+
+## Stable links to the manuscript
+
+[`proof-map.json`](proof-map.json) records 31 stable LaTeX labels, their statement
+and proof fingerprints, checked scope, Lean declarations, and explicit inputs.
+Displayed theorem numbers are historical metadata, not identifiers. Thus a
+renumbering does not require renaming Lean declarations.
+
+From the repository root:
+
+```sh
+python3 tools/check_manuscript_map.py /path/to/revised/arxiv_v1.tex
+python3 tools/check_lean_map.py
+python3 -m unittest discover -s tests -p test_manuscript_map.py
+```
+
+The first command flags changed statements, changed adjacent proofs, and missing
+labels for review without accepting them automatically. The second checks the
+mapped files and asks Lean to resolve every mapped declaration. Neither check
+establishes that a mathematical translation is faithful. Shared macro changes
+and unmapped statements also require review; see the assumptions guide.
 
 ## Build and audit
 
@@ -119,7 +154,7 @@ There are, however, separate libraries built **on top of Mathlib**:
 | Candidate | Useful components | Verification / compatibility status |
 | --- | --- | --- |
 | [Cameron Freer's `graphon`](https://github.com/cameronfreer/graphon/tree/9f7be59fa754d260a544b4cfd83d6a5b94f7552e) | `Graphon.Basic` uses a.e. equivalence classes; `Graphon.CutNorm`, `CutDistance`, `Counting`, `Regularity`, `Compactness` provide the relevant infrastructure. | Source inspected at commit `9f7be59fa754d260a544b4cfd83d6a5b94f7552e`. Lean/Mathlib **4.32.0**, Apache-2.0. Its audit list includes `Graphon.complete` and `Graphon.compact`; upstream reports only the three standard axioms for those audited declarations. **Not yet built or independently axiom-audited here; not yet a dependency.** |
-| [`math-commons/graphons`](https://github.com/math-commons/graphons) | Cut norm/distance, counting, weak regularity, step graphons. | Its [axiom audit](https://github.com/math-commons/graphons/blob/main/AXIOM_AUDIT.md) explicitly retains additional mathematical axioms, including two used by compactness/completeness. Such results cannot close our obligations under the current standard-axioms-only policy. |
+| [`math-commons/graphons`](https://github.com/math-commons/graphons) | Cut norm/distance, counting, weak regularity, step graphons. | Its [axiom audit](https://github.com/math-commons/graphons/blob/main/AXIOM_AUDIT.md) explicitly retains additional mathematical axioms, including two used by compactness/completeness. Those global axioms would fail our audit; classical results may instead be stated as explicit hypotheses under the authors' revised scope. |
 
 The preferred candidate for further evaluation is Freer's library. The inspected
 source gives sequential compactness as `Graphon.compact` and supplies cut-distance
@@ -134,3 +169,17 @@ needed to turn compactness into existence of a minimizer. The version difference
 requires a controlled toolchain upgrade, not an untested change of the current pin.
 No external source files have been copied into this repository and no external
 mathematical axioms have been added.
+
+### 2026-10-19 — branch analysis and explicit assumptions
+
+- Integrated the cooperatively developed entropy, branch, ray, codegree and
+  graphon stationary modules, plus the full active-constraint lemma.
+- Proved the constrained consequence of the named external KP26 reduction.
+  The external theorem is an explicit parameter, not a project axiom.
+- Added stable-label tracking, manuscript change detection, and Lean declaration
+  link checks. Changing statement numbers alone does not invalidate the map.
+- Corrected the target's threshold enclosure to a **closed** rational interval,
+  matching the wording of `lem:digits`. This is a statement correction, not a
+  newly proved numerical bound.
+- **Still incomplete:** unique crossing, global lower bound, equality rigidity,
+  proof-producing numerical certificates, and assembly of `MainTheorem`.

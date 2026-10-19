@@ -18,6 +18,8 @@ and the Lean formalization have different scopes.
 | --- | --- |
 | Proved in Lean | Entropy and triangle integrability, basic bounds, and invariance under changes on null sets. |
 | Proved in Lean | Balanced SBM cost/density formulas for arbitrary measurable equal partitions, existence of a balanced minimizing pair, and **V(r) ≤ V_SBM(r)**. |
+| Proved in Lean | Explicit stationary branch and graphon codegrees, normalized-ray identities and derivatives, entropy comparison/saturation, and the active triangle constraint (`lem:active`). |
+| Proved from a named external input | Transfer from the KP26 penalized reduction to constrained global optimality at a supported target. Determining the supported range and rigidity remain to prove. |
 | Proved with explicit hypotheses | The interval continuation argument in the proof of Theorem 1.3; its analytic graphon inputs remain unproved. |
 | Proved algebraically in Lean | The five normalized rational tangency identities in `lem:certcoef`; the analytic substitutions and positivity assertions remain unproved. |
 | Remaining | The reverse inequality, threshold and equality classification, graphon continuation inputs, and Lean proofs of the numerical certificates. |
@@ -25,6 +27,11 @@ and the Lean formalization have different scopes.
 The [formalization README](lean/README.md) records the file-to-paper mapping,
 remaining dependencies, build instructions, axiom audit, and dated progress log.
 The target statement quantifies over all measurable graphons, not just SBMs.
+At the authors' request, external/classical results may be explicit hypotheses;
+[ASSUMPTIONS.md](lean/ASSUMPTIONS.md) distinguishes those inputs from our own
+unproved obligations. The [stable-label proof map](lean/proof-map.json) and
+[change-checking instructions](lean/README.md#stable-links-to-the-manuscript)
+keep the code linked to the paper when its statements or numbering change.
 The log also records a [survey of graphon/cut-norm libraries](lean/README.md#2026-10-19--graphon-library-survey-user-suggestion), including a promising existing compactness development; no external library has yet been imported.
 
 ## Which parts of the paper does the code verify?

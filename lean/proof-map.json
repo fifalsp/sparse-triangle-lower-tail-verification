@@ -1,0 +1,568 @@
+{
+  "schema_version": 1,
+  "scope": "Main variational theorem relative to explicit cited external/classical inputs; own-paper obligations must be proved.",
+  "manuscript": {
+    "file": "arxiv/arxiv_v1.tex",
+    "sha256": "84c55a798a1fc1492f319179eec89f340d27269916acd622d54707da185e17b7",
+    "snapshot_date": "2026-10-19",
+    "display_number_snapshot": {
+      "thm:main": "1.3"
+    }
+  },
+  "entries": [
+    {
+      "paper_label": "thm:main",
+      "status": "statement_only",
+      "checked_scope": "Main variational target; not yet proved. Closed target interval matches lem:digits.",
+      "lean_files": [
+        "SparseLowerTail/MainStatement.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.MainTheorem"
+      ],
+      "explicit_inputs": [],
+      "baseline": {
+        "environment": "theorem",
+        "statement": "We have $r_*=0.2096\\ldots$, and the following hold. \\begin{enumerate}[label=(\\alph*)] \\item $V(r)=\\Vbal(r)$ for every $r\\in(0,1)$. In particular, $V(r)<h(r)$ if and only if $r<r_*$. \\item For $r\\in(r_*,1)$, the constant graphon $r$ is the unique minimizer. \\item At $r=r_*$, the minimizers are exactly the constant graphon $r_*$ and the relabelings of $B_*=B_{a_*,b_*}$, where $a_*=0.01703\\ldots$ and $b_*=0.8493\\ldots$. \\item Let $r\\in(0,r_*)$. The minimum in \\eqref{eq:Vbal} is attained at a unique pair $(a_r,b_r)$, which satisfies $0<a_r<r<b_r<1$. The minimizers at $r$ are exactly the relabelings of $B_{a_r,b_r}$. \\end{enumerate}",
+        "statement_sha256": "c14cb980c240b0cffc30b3af41653aac2be9b91fae7d9b4e4f3dea6be2659d14",
+        "proof_sha256": null,
+        "source_line": 767
+      }
+    },
+    {
+      "paper_label": "eq:Bdens",
+      "status": "proved_graphon",
+      "checked_scope": "Cost, triangle and edge-density formulas for actual equal-measure partitions with graphon values in [0,1].",
+      "lean_files": [
+        "SparseLowerTail/Balanced.lean",
+        "SparseLowerTail/Section04/BalancedStationary.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.cost_twoBlock",
+        "SparseLowerTail.triangle_twoBlock",
+        "SparseLowerTail.edgeDensity_twoBlock",
+        "SparseLowerTail.IsBalanced.edgeDensity_eq"
+      ],
+      "explicit_inputs": [],
+      "baseline": {
+        "environment": "equation",
+        "statement": "e(B_{a,b})=\\frac{a+b}2,\\quad t(B_{a,b})=\\frac{a^3+3ab^2}4,\\quad F(B_{a,b})=\\frac{h(a)+h(b)}2,",
+        "statement_sha256": "22e4c1e5bf6d8a10cb9eff6dd512c1d87aaac0e28db550a9949ebe0948f0d30f",
+        "proof_sha256": null,
+        "source_line": 497
+      }
+    },
+    {
+      "paper_label": "lem:Bcodegree",
+      "status": "partial",
+      "checked_scope": "Codegree formula and cube identity; graphon values restricted to [0,1] in the current constructor. Scalar cube identity holds for all real a,b.",
+      "lean_files": [
+        "SparseLowerTail/Section04/Codegree.lean",
+        "SparseLowerTail/Section04/EntropyGeometry.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.codegree_twoBlock",
+        "SparseLowerTail.Section04.mean_cube_sub_balancedTriangle"
+      ],
+      "explicit_inputs": [],
+      "baseline": {
+        "environment": "lemma",
+        "statement": "Let $a,b\\ge0$. The codegree function $C_{B_{a,b}}(x,y)$ equals $(a^2+b^2)/2$ if $x$ and $y$ lie in the same one of the blocks $[0,\\frac12)$ and $[\\frac12,1]$, and equals $ab$ otherwise. Moreover, for all real numbers $a$ and $b$, \\begin{equation} \\Big(\\frac{a+b}2\\Big)^3-\\frac{a^3+3ab^2}4=\\frac{(b-a)^3}8. \\end{equation}",
+        "statement_sha256": "bc1b12d3fe867c230534bc1c419811f0639138bfbe3306dc3946347100edad8a",
+        "proof_sha256": "533b4454b9e893bbc1e29289e4702945f5a4d2c51f6285b2fa869e6e4685c741",
+        "source_line": 2391
+      }
+    },
+    {
+      "paper_label": "s4:eq:EL",
+      "status": "proved_bridge",
+      "checked_scope": "Equivalence between scalar equations and the a.e. graphon equation for positive values in [0,1].",
+      "lean_files": [
+        "SparseLowerTail/Section04/Codegree.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.twoBlock_ae_log_equation_iff"
+      ],
+      "explicit_inputs": [],
+      "baseline": {
+        "environment": "equation",
+        "statement": "\\log a=-\\mu\\frac{a^2+b^2}2,\\quad \\log b=-\\mu ab.",
+        "statement_sha256": "f9dd0f88c70d870db4aa1192c97e2ca503ada3cc2560f6a821adde1603bcbf7a",
+        "proof_sha256": null,
+        "source_line": 2413
+      }
+    },
+    {
+      "paper_label": "eq:branch",
+      "status": "definitions",
+      "checked_scope": "Exact explicit branch formulas.",
+      "lean_files": [
+        "SparseLowerTail/Section04/Branch.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section04.branchA",
+        "SparseLowerTail.Section04.branchB",
+        "SparseLowerTail.Section04.branchMu"
+      ],
+      "explicit_inputs": [],
+      "baseline": {
+        "environment": "equation",
+        "statement": "b(z)=\\exp\\Big(-\\frac{2zL}{(1-z)^2}\\Big),\\quad a(z)=zb(z),\\quad \\mu(z)=\\frac{2L}{(1-z)^2b(z)^2},",
+        "statement_sha256": "fc98f39af0e53a58b0508cbdf705b46b280b68ee95b15ed4cdf3df459623f3f6",
+        "proof_sha256": null,
+        "source_line": 2436
+      }
+    },
+    {
+      "paper_label": "lem:branch",
+      "status": "proved",
+      "checked_scope": "Both directions of the scalar parametrization and their actual-graphon versions, including the a.e. stationary equation.",
+      "lean_files": [
+        "SparseLowerTail/Section04/Branch.lean",
+        "SparseLowerTail/Section04/BalancedStationary.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section04.branch_spec",
+        "SparseLowerTail.Section04.balancedEL_parametrization",
+        "SparseLowerTail.Section04.branchGraphon_ae_log_equation",
+        "SparseLowerTail.Section04.balancedGraphon_parametrization"
+      ],
+      "explicit_inputs": [],
+      "baseline": {
+        "environment": "lemma",
+        "statement": "\\begin{enumerate}[label=(\\alph*)] \\item Let $z\\in(0,1)$. Then $0<a(z)<b(z)<1$ and $\\mu(z)>0$. Moreover, $(a(z),b(z),\\mu(z))$ satisfies \\eqref{s4:eq:EL}. Equivalently, $\\log B_z=-\\mu(z)C_{B_z}$ at every point of $[0,1]^2$. \\item Let $a,b>0$ with $a\\ne b$ and $(a^3+3ab^2)/4<1$, and let $\\mu\\in\\R$ be such that $(a,b,\\mu)$ satisfies \\eqref{s4:eq:EL}. Then $a<b$ and $(a,b,\\mu)=(a(z),b(z),\\mu(z))$ with $z=a/b\\in(0,1)$. \\end{enumerate}",
+        "statement_sha256": "91d461b7be9f27468eb3c7f4b1278fc91a9275665e134119a2f29e2430e370b7",
+        "proof_sha256": "fb5b2d8c1a6dff5a26686227164235b8564147b28b3a0195fa05dbaeea90fb91",
+        "source_line": 2451
+      }
+    },
+    {
+      "paper_label": "lem:ray",
+      "status": "proved",
+      "checked_scope": "All four scalar parts: normalized rays and converse, scaling and branch identities, regularity, positivity and exact derivative formula.",
+      "lean_files": [
+        "SparseLowerTail/Section04/Ray.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section04.scaled_ray_triangle",
+        "SparseLowerTail.Section04.scaled_ray_cost",
+        "SparseLowerTail.Section04.saturated_pair_ray",
+        "SparseLowerTail.Section04.branchDifference_eq",
+        "SparseLowerTail.Section04.rayExcess_pos",
+        "SparseLowerTail.Section04.continuousOn_rayGap",
+        "SparseLowerTail.Section04.contDiffOn_rayGap",
+        "SparseLowerTail.Section04.deriv_rayExcess_neg",
+        "SparseLowerTail.Section04.deriv_rayGap"
+      ],
+      "explicit_inputs": [],
+      "baseline": {
+        "environment": "lemma",
+        "statement": "The following hold. \\begin{enumerate}[label=(\\alph*)] \\item For $z\\in(0,1]$ and $r\\in(0,1)$, we have $t(rY_z)=r^3$ and $F(rY_z)=h(r)+rg_r(z)$. Conversely, if $0\\le a<b$ and $t(B_{a,b})=r^3$ with $r\\in(0,1)$, then $a>0$ and $B_{a,b}=rY_{a/b}$. \\item We have $A(1)=F(Y_1)=0$. Moreover, $A>0$ and $A'<0$ on $(0,1)$. For $r\\in(0,1)$, the function $g_r$ is continuous on $(0,1]$ and continuously differentiable on $(0,1)$, with $g_r(1)=0$. \\item For $r\\in(0,1)$ and $z\\in(0,1)$, $g_r'(z)=A'(z)(\\log r-\\log\\rho(z))$. \\item For $z\\in(0,1)$, we have $\\rho(z)\\in(0,1)$, $B_z=\\rho(z)Y_z$ and $D(z)=-\\rho(z)g_{\\rho(z)}(z)$. \\end{enumerate}",
+        "statement_sha256": "479a509475e6647775a0c865bbedbebbf9074cc654e3e8091392da02f04924b9",
+        "proof_sha256": "7a19a2f2557728dbb19bd27bae5d5741998f9196d01de6a640258c5b473f472d",
+        "source_line": 2537
+      }
+    },
+    {
+      "paper_label": "cor:Vbal",
+      "status": "partial",
+      "checked_scope": "Geometric reduction: a>=b cannot improve the constant; a<b can be saturated. Scalar crossing classification still pending.",
+      "lean_files": [
+        "SparseLowerTail/Section04/EntropyGeometry.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section04.balancedCost_eq_entropy_iff",
+        "SparseLowerTail.Section04.exists_saturated_pair",
+        "SparseLowerTail.Section04.balancedMinimizer_diagonal_or_saturated"
+      ],
+      "explicit_inputs": [],
+      "baseline": {
+        "environment": "corollary",
+        "statement": "Let $r\\in(0,1)$. \\begin{enumerate}[label=(\\alph*)] \\item If $r<r_*$, then $\\Vbal(r)=F(B_r)=h(r)+r\\delta(r)<h(r)$, and $(a_r,b_r)$ is the only minimizing pair at $r$. \\item $\\Vbal(r_*)=h(r_*)$, and the minimizing pairs at $r_*$ are exactly $(r_*,r_*)$ and $(a_*,b_*)$. \\item If $r>r_*$, then $\\Vbal(r)=h(r)$, and $(r,r)$ is the only minimizing pair at $r$. \\end{enumerate}",
+        "statement_sha256": "b1d12cd112c7bcf432622d020d8896422683e367fcc3d41e25d84921201caed2",
+        "proof_sha256": "f0b980c171832ff037d9db1caa9b8c11579ec6b0e53a7b16c30230bdff75244e",
+        "source_line": 2668
+      }
+    },
+    {
+      "paper_label": "eq:KP",
+      "status": "assumed_external",
+      "checked_scope": "Explicit proposition for KP26 Theorem1.6, specialized to the positive triangle penalty.",
+      "lean_files": [
+        "SparseLowerTail/Section07/ExternalReduction.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section07.KP26PenalizedReduction"
+      ],
+      "explicit_inputs": [
+        "external:KP26:1.6"
+      ],
+      "baseline": {
+        "environment": "equation",
+        "statement": "\\min\\{F(W)+\\gamma t(W):W\\text{ a graphon}\\}=C(\\gamma)\\quad\\text{for every }\\gamma>0 .",
+        "statement_sha256": "878939a27e3f6105eb52e1fc974f86ba3bf17e8c4a8ba457f993f424381b0cb4",
+        "proof_sha256": null,
+        "source_line": 4798
+      }
+    },
+    {
+      "paper_label": "prop:smalldata",
+      "status": "partial_conditional",
+      "checked_scope": "Transfer from a supporting balanced penalized minimizer to constrained global optimality; supporting branch/range, edge density and multiplier identities remain.",
+      "lean_files": [
+        "SparseLowerTail/Section07/ExternalReduction.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section07.constrained_minimizer_of_KP26",
+        "SparseLowerTail.Section07.value_eq_of_KP26",
+        "SparseLowerTail.Section07.any_minimizer_penalized_of_KP26"
+      ],
+      "explicit_inputs": [
+        "external:KP26:1.6"
+      ],
+      "baseline": {
+        "environment": "proposition",
+        "statement": "Let $r\\in(0,r_-]$. Then $z_r\\in(0,z_c]$, $\\mu_r\\ge3\\gamma_c$ and $V(r)=F(B_r)$. Every minimizer $U$ at $r$ satisfies $t(U)=r^3$, $e(U)=m_r$, $F(U)=F(B_r)$ and $\\mu_U=\\mu_r$. Moreover, every such $U$ minimizes $F+\\frac{\\mu_r}3t$ over all graphons.",
+        "statement_sha256": "3bbaf044dd4cbf3ba0c7581bd03811c34e5b34fa772bfa2f7db172de926caf34",
+        "proof_sha256": "6fffe80bf48870faeb2359781a99dd2800c92b9795329ef890387c65b706cd47",
+        "source_line": 4856
+      }
+    },
+    {
+      "paper_label": "lem:certcoef",
+      "status": "partial",
+      "checked_scope": "Five exact normalized rational tangency identities; analytic substitutions, derivative bridge and signs pending.",
+      "lean_files": [
+        "SparseLowerTail/CertificateAlgebra.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Certificate.value_aaa",
+        "SparseLowerTail.Certificate.gradient_aaa",
+        "SparseLowerTail.Certificate.value_abb",
+        "SparseLowerTail.Certificate.gradient_abb_a",
+        "SparseLowerTail.Certificate.gradient_abb_b"
+      ],
+      "explicit_inputs": [],
+      "baseline": {
+        "environment": "lemma",
+        "statement": "Let $0<z\\le1/40$. Then $\\Gamma<0$, $c_1,c_2,c_4>0$, $c_3<0$, and \\[ \\bar c:=c_1+c_2+\\frac{c_3m^2}{t_z}<0 . \\] Moreover $\\Psi_z$ and its gradient vanish at $(a,a,a)$ and at the three permutations of $(a,b,b)$.",
+        "statement_sha256": "dde82bc350ec7f725f25c8f8ed308880fda33ffcbc8e9065419a0845151ecc2d",
+        "proof_sha256": "7c4cd0c7778f03482fcefeb1c31014185a307294e1aea51dd1456f98dc25f89f",
+        "source_line": 5354
+      }
+    },
+    {
+      "paper_label": "lem:unimodal",
+      "status": "pending",
+      "checked_scope": "No complete Lean proof claimed for this statement.",
+      "lean_files": [],
+      "lean_declarations": [],
+      "explicit_inputs": [],
+      "baseline": {
+        "environment": "lemma",
+        "statement": "The function $\\rho$ is continuously differentiable on $(0,1)$. Moreover, $\\rho(z)\\to0$ as $z\\to0$ and as $z\\to1$. There is $z_{\\mathrm{sp}}\\in(0,1)$ such that $\\rho'>0$ on $(0,z_{\\mathrm{sp}})$ and $\\rho'<0$ on $(z_{\\mathrm{sp}},1)$.",
+        "statement_sha256": "1d9449e177b803e024ce49aae45c8471b84c09947a07fdf8feb45a82df906107",
+        "proof_sha256": "1607f6ba32bf1bc162752acfc1ca63e0973b5eb9ce701f4c65e2217b6974de2e",
+        "source_line": 2484
+      }
+    },
+    {
+      "paper_label": "thm:crossing",
+      "status": "pending",
+      "checked_scope": "No complete Lean proof claimed for this statement.",
+      "lean_files": [],
+      "lean_declarations": [],
+      "explicit_inputs": [],
+      "baseline": {
+        "environment": "theorem",
+        "statement": "The following hold. \\begin{enumerate}[label=(\\alph*)] \\item The function $\\delta$ is continuous and strictly increasing on $(0,r_{\\mathrm{sp}}]$. Moreover, $\\delta(r)\\to-\\infty$ as $r\\to0$, $\\delta(r_{\\mathrm{sp}})>0$, and $\\delta'(r)=A(z_1(r))/r$ for $r\\in(0,r_{\\mathrm{sp}})$. Let $r_*\\in(0,r_{\\mathrm{sp}})$ be the unique zero of $\\delta$, and let $z_*=z_1(r_*)$. \\item For $r\\in(0,r_*)$, the minimum of $g_r$ over $(0,1)$ equals $\\delta(r)<0$ and is attained only at $z_1(r)$. The function $g_{r_*}$ is nonnegative on $(0,1)$ and vanishes only at $z_*$. For $r\\in(r_*,1)$, we have $g_r>0$ on $(0,1)$. \\item $D>0$ on $(0,z_*)$, $D(z_*)=0$, and $D<0$ on $(z_*,1)$. \\end{enumerate}",
+        "statement_sha256": "9d9fd039cca60b828a912678265f12109aa562682fd6b529caf3cb0c95394e71",
+        "proof_sha256": "d08b2602733a64f643e61265d17c6fe6cd94b727fbae20dab7afc800b469ab08",
+        "source_line": 2590
+      }
+    },
+    {
+      "paper_label": "lem:digits",
+      "status": "pending",
+      "checked_scope": "No complete Lean proof claimed for this statement.",
+      "lean_files": [],
+      "lean_declarations": [],
+      "explicit_inputs": [],
+      "baseline": {
+        "environment": "lemma",
+        "statement": "Let $z_-=0.02005543105488$ and $z_+=0.02005543105489$. Then $D(z_-)>0>D(z_+)$, and hence $z_*\\in(z_-,z_+)$. Moreover \\begin{align*} a_*&\\in[0.01703401908,0.01703401909], & b_*&\\in[0.8493469443,0.8493469444],\\\\ \\mu_*&\\in[11.28627816,11.28627817], & r_*&\\in[0.2096696762,0.2096696763]. \\end{align*}",
+        "statement_sha256": "734371a2e4d7d539a9f03adbcee9f4ff1d31331e86137f490f62a3fe0783f721",
+        "proof_sha256": "706f8727db8e3774f30c85c80a3a62b9acca012cae898568c017ae4aa49f7f09",
+        "source_line": 2794
+      }
+    },
+    {
+      "paper_label": "lem:active",
+      "status": "proved",
+      "checked_scope": "Every unrestricted graphon minimizer at 0<r<1 satisfies triangle U = r^3. Proved by interpolation toward one, with an explicit triangle perturbation bound.",
+      "lean_files": [
+        "SparseLowerTail/Section04/ActiveConstraint.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section04.cost_pos_of_feasible",
+        "SparseLowerTail.Section04.cost_towardOne_le",
+        "SparseLowerTail.Section04.triangle_towardOne_le",
+        "SparseLowerTail.Section04.minimizer_triangle_eq"
+      ],
+      "explicit_inputs": [],
+      "baseline": {
+        "environment": "lemma",
+        "statement": "Let $r\\in(0,1)$. Every minimizer $U$ at $r$ satisfies $t(U)=r^3$.",
+        "statement_sha256": "d63d2b42ec946316341ac547750af2d0de51affa530a0705d405bcb7f5541c2a",
+        "proof_sha256": "766bb1817dda6bb866b1f9ddfdb21e38f61c3d37785968cd44ca34833991816e",
+        "source_line": 2254
+      }
+    },
+    {
+      "paper_label": "lem:Bderivative",
+      "status": "partial",
+      "checked_scope": "Part (a): the multiplier identity for balanced stationary graphons. Part (b), differentiability in the target, remains pending.",
+      "lean_files": [
+        "SparseLowerTail/Section04/BalancedStationary.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section04.balancedEL_multiplier_triangle",
+        "SparseLowerTail.Section04.balancedEL_multiplier_cost",
+        "SparseLowerTail.Section04.balancedGraphon_multiplier_identity"
+      ],
+      "explicit_inputs": [],
+      "baseline": {
+        "environment": "lemma",
+        "statement": "The following hold. \\begin{enumerate}[label=(\\alph*)] \\item For $z\\in(0,1)$, we have $\\mu(z)\\rho(z)^3=-\\frac12(a(z)\\log a(z)+b(z)\\log b(z))=1-F(B_z)-e(B_z)$. In particular, $\\mu_r=(1-F(B_r)-m_r)/r^3$ for $r\\in(0,r_*]$. Hence, if $B_r$ is a minimizer at $r$, then its multiplier \\eqref{eq:mult} is $\\mu_{B_r}=\\mu_r$. \\item The function $r\\mapsto F(B_{z_1(r)})$ is continuously differentiable on $(0,r_{\\mathrm{sp}})$, and its derivative is $-\\mu(z_1(r))r^2$. In particular, $\\frac{\\dd}{\\dd r}F(B_r)=-\\mu_rr^2$ for $r\\in(0,r_*]$. \\end{enumerate}",
+        "statement_sha256": "6815957aba09c6ce82778f3f38e94e976a68ad96d17839d7447aaed1a505e797",
+        "proof_sha256": "ae4f1545d2d0b77aa2eb2dc205c192799cf7e2d05499f361d8085f93aa1c6c37",
+        "source_line": 2758
+      }
+    },
+    {
+      "paper_label": "lem:existence",
+      "status": "pending",
+      "checked_scope": "No complete Lean proof claimed for this statement.",
+      "lean_files": [],
+      "lean_declarations": [],
+      "explicit_inputs": [],
+      "baseline": {
+        "environment": "lemma",
+        "statement": "\\begin{enumerate}[label=(\\alph*)] \\item Let $r\\in(0,1)$. Every graphon $U$ with $t(U)\\le r^3$ satisfies $F(U)>0$. The infimum in \\eqref{eq:V} is attained. Moreover, $0<V(r)\\le h(r)<1$. \\item For $0<s<r<1$ we have $0\\le V(s)-V(r)\\le1-s/r$. In particular $V$ is nonincreasing and continuous on $(0,1)$. \\end{enumerate}",
+        "statement_sha256": "bf3dbb17963fcbbe9c5a12baf51f12e7766f19d8af3b25af8733fac4234a338b",
+        "proof_sha256": "7b1f0b689b742a88c6d345379dc35476ce481738d23f32f0f2ebd38aa659e309",
+        "source_line": 1274
+      }
+    },
+    {
+      "paper_label": "prop:euler",
+      "status": "pending",
+      "checked_scope": "No complete Lean proof claimed for this statement.",
+      "lean_files": [],
+      "lean_declarations": [],
+      "explicit_inputs": [],
+      "baseline": {
+        "environment": "proposition",
+        "statement": "Let $U$ be a minimizer at $r\\in(0,1)$, with multiplier $\\mu_U$. \\begin{enumerate}[label=(\\alph*)] \\item $U>0$ a.e. \\item $U$ satisfies the \\emph{Euler--Lagrange equation} \\begin{equation} \\log U=-\\mu_UC_U\\quad\\text{a.e.} \\end{equation} \\item $\\mu_U>0$ and $\\mu_Ur^3=-\\iint U\\log U$. Moreover, $\\mu_U$ is the only real number $\\mu$ for which $\\log U=-\\mu C_U$ a.e. \\item $e^{-\\mu_U}\\le U\\le\\exp(-\\mu_Ue^{-2\\mu_U})<1$ and $C_U\\ge e^{-2\\mu_U}$ a.e. \\end{enumerate}",
+        "statement_sha256": "c804c5420bfb5193b701f2d95580cdb6e0075076e81efa4fc4440902f72a9845",
+        "proof_sha256": "248dcba76f1b2120b71fbc81cd0a4b8e34d9066a152cf354977f489ceb5979de",
+        "source_line": 2308
+      }
+    },
+    {
+      "paper_label": "prop:vertex",
+      "status": "pending",
+      "checked_scope": "No complete Lean proof claimed for this statement.",
+      "lean_files": [],
+      "lean_declarations": [],
+      "explicit_inputs": [],
+      "baseline": {
+        "environment": "proposition",
+        "statement": "Let $U$ be a minimizer at $r\\in(0,1)$. Then $\\bar k_U=1+F(U)-e(U)$. For a.e.\\ $x\\in[0,1]$, \\begin{equation} 2H_U(x)+\\mu_U\\tau_U(x)=\\bar k_U\\quad\\text{and}\\quad \\int_0^1k(U(x,y))\\dd y=\\bar k_U. \\end{equation} Moreover, for a.e.\\ $x\\in[0,1]$, \\begin{equation} \\mu_U\\tau_U(x)+2d_U(x)=\\mu_Ur^3+2e(U). \\end{equation}",
+        "statement_sha256": "b8169de161b4ae4425ab20c422b0beeb87646b04d947da67da5b0206209d0687",
+        "proof_sha256": "15475ba0d4462250fdaa1b16c42cfddb3723a988d9f6e3a614cb28fe63bb2226",
+        "source_line": 2893
+      }
+    },
+    {
+      "paper_label": "prop:bipodal",
+      "status": "pending",
+      "checked_scope": "No complete Lean proof claimed for this statement.",
+      "lean_files": [],
+      "lean_declarations": [],
+      "explicit_inputs": [],
+      "baseline": {
+        "environment": "proposition",
+        "statement": "Let $c\\in(0,1)$, $\\mu>0$ and $a,d,b\\in(0,1)$ satisfy \\eqref{s4:eq:bipsys}, and suppose that $a,d,b$ are not all equal. Then $a=d<b$ and $c=\\frac12$.",
+        "statement_sha256": "0be89f671f2dd79e8d663bfe39df534c21dee5435f11619057fcf1aa13fb2bd2",
+        "proof_sha256": "f688c12105cb692af217f8316e52e58f3bfcc8889599279241741eaa3e04a118",
+        "source_line": 3039
+      }
+    },
+    {
+      "paper_label": "thm:threshold",
+      "status": "pending",
+      "checked_scope": "No complete Lean proof claimed for this statement.",
+      "lean_files": [],
+      "lean_declarations": [],
+      "explicit_inputs": [],
+      "baseline": {
+        "environment": "theorem",
+        "statement": "The following hold. \\begin{enumerate}[label=(\\roman*)] \\item For every $r\\in(r_*,1)$, $V(r)=h(r)$, and every minimizer at $r$ equals $r$ a.e. \\item $V(r_*)=h(r_*)$, and a graphon is a minimizer at $r_*$ if and only if it equals $r_*$ a.e. or is a relabeling of $B_*$. \\item For every $r\\in(0,r_*)$, $V(r)\\le F(B_r)<h(r)$, and no minimizer at $r$ is a.e. constant. \\end{enumerate} Consequently, $V(r)<h(r)$ if and only if $r<r_*$. Moreover, the constant graphon $r$ is a minimizer at $r$ if and only if $r\\ge r_*$.",
+        "statement_sha256": "59041c2a3ec4b14fb8ec58c30d883489b605c5f222d96d3af37878925793e980",
+        "proof_sha256": "e672247f9a12c6db1e2cf554ae81e60b34192f086b232e4a5814c1b00e16133d",
+        "source_line": 3205
+      }
+    },
+    {
+      "paper_label": "cor:open",
+      "status": "pending",
+      "checked_scope": "No complete Lean proof claimed for this statement.",
+      "lean_files": [],
+      "lean_declarations": [],
+      "explicit_inputs": [],
+      "baseline": {
+        "environment": "corollary",
+        "statement": "Let $r_0\\in(0,r_*)$ be such that the minimizers at $r_0$ are exactly the relabelings of $B_{r_0}$. Then there is $\\delta>0$ with $(r_0-\\delta,r_0+\\delta)\\subset(0,r_*)$ such that for every $r\\in(r_0-\\delta,r_0+\\delta)$, the minimizers at $r$ are exactly the relabelings of $B_r$.",
+        "statement_sha256": "b5f0c21b8021a93aef84fd7fd2cae6a0dea2b6ea3a227c434205af271028b4af",
+        "proof_sha256": "8505b4ea9ca95ffb779d7dc8d9ec9a8bf775ddc804a227d4f26c382886efe2a1",
+        "source_line": 4514
+      }
+    },
+    {
+      "paper_label": "cor:seed",
+      "status": "pending",
+      "checked_scope": "No complete Lean proof claimed for this statement.",
+      "lean_files": [],
+      "lean_declarations": [],
+      "explicit_inputs": [],
+      "baseline": {
+        "environment": "corollary",
+        "statement": "There is $\\delta>0$ such that for every $r\\in(r_*-\\delta,r_*)$, the minimizers at $r$ are exactly the relabelings of $B_r$.",
+        "statement_sha256": "a4fb4adf3c5cd3fbb1dca2552acce082ae439eb47607880dd5c2a43915f9da35",
+        "proof_sha256": "1e29bab485a09b735bd3346250e81933ae3b68e5fcd5388fcd64397e5de36f97",
+        "source_line": 4532
+      }
+    },
+    {
+      "paper_label": "thm:smalltail",
+      "status": "pending",
+      "checked_scope": "No complete Lean proof claimed for this statement.",
+      "lean_files": [],
+      "lean_declarations": [],
+      "explicit_inputs": [],
+      "baseline": {
+        "environment": "theorem",
+        "statement": "For every $r\\in(0,r_-]$, the minimizers at $r$ are exactly the relabelings of $B_r$.",
+        "statement_sha256": "1d667d60bcd1678b4db3d0e12b06a5ba1dc42bf9d7580d155a75bbed9f54a96d",
+        "proof_sha256": null,
+        "source_line": 4550
+      }
+    },
+    {
+      "paper_label": "lem:boundary",
+      "status": "pending",
+      "checked_scope": "No complete Lean proof claimed for this statement.",
+      "lean_files": [],
+      "lean_declarations": [],
+      "explicit_inputs": [],
+      "baseline": {
+        "environment": "lemma",
+        "statement": "Let $0<r_0<r_1\\le r_*$ be such that $V(r)=F(B_r)$ for every $r\\in(r_0,r_1)$. Then every minimizer $U$ at $r_0$ satisfies $F(U)=F(B_{r_0})$ and $e(U)\\ge m_{r_0}$.",
+        "statement_sha256": "7d68d28e9177cf4e2c143d94c494f3343b9413903dceba280012d827245f4193",
+        "proof_sha256": "273d87db3dcb201c97493aa2223fafc85dfed862da3538d9286db2a0d8ca08fe",
+        "source_line": 5584
+      }
+    },
+    {
+      "paper_label": "lem:tieexclusion",
+      "status": "pending",
+      "checked_scope": "No complete Lean proof claimed for this statement.",
+      "lean_files": [],
+      "lean_declarations": [],
+      "explicit_inputs": [],
+      "baseline": {
+        "environment": "lemma",
+        "statement": "Let $r\\in[r_-,r_*]$, and let $U$ be a minimizer at $r$ with $F(U)=F(B_r)$ and $e(U)\\ge m_r$. Then $U$ is a relabeling of $B_r$.",
+        "statement_sha256": "114712bd45ec4ed50e2e182040984b3e19e635f6288bee534845f8deb4943a5a",
+        "proof_sha256": "b3a09cd948a80dd2a7d6377e0307d7869bbcbaa87e4c0e7bc4916c8594d35585",
+        "source_line": 5549
+      }
+    },
+    {
+      "paper_label": "prop:cover",
+      "status": "pending",
+      "checked_scope": "No complete Lean proof claimed for this statement.",
+      "lean_files": [],
+      "lean_declarations": [],
+      "explicit_inputs": [],
+      "baseline": {
+        "environment": "proposition",
+        "statement": "[The cover, computer assisted] For each of the triangles $K=\\mathrm{F1},\\dots,\\mathrm{F6}$, the tangency equations \\eqref{s5:tangency} for $\\Psi_{\\theta_K,\\lambda_K}(\\cdot;\\pi_*)$ have exactly one solution $(\\theta_{K,0},\\theta_{K,2},\\theta_{K,3},\\theta_{K,4})$. Moreover, the following hold. \\begin{enumerate}[label=(\\roman*)] \\item $\\Omega\\subset\\bigcup_{K\\in\\mathcal K}K$. \\item For every $K\\in\\mathcal K$, $m_K>0$, $F_K<1$ and $((1-F_K)^2-m_K^2)/(2t_*)\\le Q_K$. \\item For every $K\\in\\mathcal K$ and every $v\\in\\mathcal V(K)$ with $v\\ne\\pi_*$, $\\Psi_K(u;v)>0$ for all $u\\in[e^{-Q_K},1]^3$. \\item The cells $K\\in\\mathcal K$ with $\\pi_*\\in\\mathcal V(K)$ are the six triangles $\\mathrm{F1},\\dots,\\mathrm{F6}$. For each of them, $\\Psi_K(u;\\pi_*)\\ge0$ for all $u\\in[e^{-Q_K},1]^3$, with equality if and only if $u\\in\\mathcal O(P_1)\\cup\\mathcal O(P_2)$. \\end{enumerate}",
+        "statement_sha256": "9388f22ca1d7ff31c57426a1381a80d1a6ac1c40e3f6061a7f9c08a67481d0f7",
+        "proof_sha256": null,
+        "source_line": 3987
+      }
+    },
+    {
+      "paper_label": "prop:family",
+      "status": "pending",
+      "checked_scope": "No complete Lean proof claimed for this statement.",
+      "lean_files": [],
+      "lean_declarations": [],
+      "explicit_inputs": [],
+      "baseline": {
+        "environment": "proposition",
+        "statement": "[computer assisted] Let $z\\in[e^{-9.5},e^{-3.9}]$, that is, $L\\in[3.9,9.5]$. Then every $(x,y,w)\\in(0,1]^3$ satisfies $\\Psi_z(x,y,w)\\ge0$. Equality holds if and only if $(x,y,w)=(a,a,a)$ or $(x,y,w)$ is a permutation of $(a,b,b)$.",
+        "statement_sha256": "baa06478c39aa114121a4b481bcd7466bc618b314a449f1500a420f9c6a661cd",
+        "proof_sha256": "c2c47991a1af413b4cf2c185cf38428bff2d10bf1355e3f73e5fcedff1638869",
+        "source_line": 5511
+      }
+    },
+    {
+      "paper_label": "lem:relabelB",
+      "status": "pending",
+      "checked_scope": "No complete Lean proof claimed for this statement.",
+      "lean_files": [],
+      "lean_declarations": [],
+      "explicit_inputs": [],
+      "baseline": {
+        "environment": "lemma",
+        "statement": "Let $a,b\\in[0,1]$, and let $U$ be a graphon. Then $U$ is a relabeling of $B_{a,b}$ if and only if $U=B^A_{a,b}$ a.e.\\ for some measurable $A\\subset[0,1]$ with $|A|=\\frac12$.",
+        "statement_sha256": "5aca6c8e76860d70941262f2d4cf76936a510960a9d8cfe5b2ae000362f52d97",
+        "proof_sha256": "1b8d5d54d144df0385993ce222b325e6d8e119583c88fbd5c0e14ad1d9f7c042",
+        "source_line": 1441
+      }
+    },
+    {
+      "paper_label": "lem:cut",
+      "status": "pending",
+      "checked_scope": "No complete Lean proof claimed for this statement.",
+      "lean_files": [],
+      "lean_declarations": [],
+      "explicit_inputs": [],
+      "baseline": {
+        "environment": "lemma",
+        "statement": "\\begin{enumerate}[label=(\\alph*)] \\item Let $D$ be a bounded measurable function on $[0,1]^2$. For all measurable $f,g:[0,1]\\to[0,1]$, \\[ \\Big|\\iint D(x,y)f(x)g(y)\\dd x\\dd y\\Big|\\le\\|D\\|_\\cut. \\] \\item For all graphons $U$ and $W$, $|e(U)-e(W)|\\le\\|U-W\\|_\\cut$ and $|t(U)-t(W)|\\le3\\|U-W\\|_\\cut$. \\item Every sequence of graphons has a subsequence $(U_n)$ for which there are measure preserving bijections $\\varphi_n$ of $[0,1]$ and a graphon $U$ with $\\|U_n^{\\varphi_n}-U\\|_\\cut\\to0$. \\item For all kernels $U$, $Y$ and $W$ and every measure preserving $\\varphi$, we have $\\delta_\\cut(U,W)=\\delta_\\cut(W,U)\\le\\delta_\\cut(U,Y) +\\delta_\\cut(Y,W)$ and $\\delta_\\cut(W^\\varphi,W)=0$. \\end{enumerate}",
+        "statement_sha256": "b2f6aca9e5352e480be80b74c3e77e8d96405eb6d29cd37b1dc2cb84f16e9b4c",
+        "proof_sha256": "a96c27c341699324cb3d5fd17e194a2e3ce371a016ea3b3b5b145cdc80fa7397",
+        "source_line": 1112
+      }
+    },
+    {
+      "paper_label": "lem:lsc",
+      "status": "pending",
+      "checked_scope": "No complete Lean proof claimed for this statement.",
+      "lean_files": [],
+      "lean_declarations": [],
+      "explicit_inputs": [],
+      "baseline": {
+        "environment": "lemma",
+        "statement": "\\begin{enumerate}[label=(\\alph*)] \\item For every graphon $W$ and $k\\ge0$, $A_kW$ is a graphon with $F(A_kW)\\le F(W)$, and $\\|A_kW-W\\|_1\\to0$ as $k\\to\\infty$. \\item If $U_n$ and $U$ are graphons with $\\|U_n-U\\|_\\cut\\to0$, then $F(U)\\le\\liminf_nF(U_n)$. \\end{enumerate}",
+        "statement_sha256": "eb953d7a0132cde66bd1c195e825cae66de3884a3446857752bbff768a6208cc",
+        "proof_sha256": "6513bc7136e6a0b4b5503a50faaa729ab16e0df72d3ef29e45043d051541f558",
+        "source_line": 1195
+      }
+    }
+  ]
+}

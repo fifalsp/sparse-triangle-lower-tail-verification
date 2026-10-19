@@ -6,3 +6,10 @@ import SparseLowerTail.BalancedExistence
 import SparseLowerTail.Continuation
 import SparseLowerTail.CertificateAlgebra
 import SparseLowerTail.MainStatement
+import SparseLowerTail.Section04.EntropyGeometry
+import SparseLowerTail.Section04.Branch
+import SparseLowerTail.Section04.Codegree
+import SparseLowerTail.Section07.ExternalReduction
+import SparseLowerTail.Section04.Ray
+import SparseLowerTail.Section04.BalancedStationary
+import SparseLowerTail.Section04.ActiveConstraint

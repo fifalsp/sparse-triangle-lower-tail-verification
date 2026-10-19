@@ -7,7 +7,8 @@ noncomputable section
 open MeasureTheory Set
 namespace SparseLowerTail
 
-private def blockValue (P : Set ℝ) (a b : ℝ) (p : ℝ × ℝ) : ℝ := by
+/-- Kernel values of the symmetric two-block model on a measurable partition. -/
+def blockValue (P : Set ℝ) (a b : ℝ) (p : ℝ × ℝ) : ℝ := by
   classical
   exact if p.1 ∈ P then (if p.2 ∈ P then a else b)
     else (if p.2 ∈ P then b else a)
@@ -33,7 +34,8 @@ def twoBlock (P : Set ℝ) (hP : MeasurableSet P) (a b : ℝ)
     simp only [blockValue]
     split_ifs <;> assumption)
 
-private theorem integral_half_partition {P : Set ℝ} [DecidablePred (· ∈ P)] (hP : MeasurableSet P)
+/-- Integration of a two-valued function over a partition of probability one half. -/
+theorem integral_half_partition {P : Set ℝ} [DecidablePred (· ∈ P)] (hP : MeasurableSet P)
     (hm : unitMeasure P = (1 / 2 : ENNReal)) (a b : ℝ) :
     (∫ x, (if x ∈ P then a else b) ∂unitMeasure) = (a+b)/2 := by
   classical

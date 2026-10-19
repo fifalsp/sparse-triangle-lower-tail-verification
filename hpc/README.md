@@ -72,3 +72,7 @@ squeue -j 30048468
 sacct -j 30048468 --format=JobID,State,ExitCode,Elapsed,MaxRSS
 tail -n 20 /nfs/roberts/project/pi_sl3363/sl3363/sparse-lean-30048468.out
 ```
+
+The job was subsequently observed **RUNNING** on compute node `a1132u11n04`;
+the source checksum passed there and official elan setup started. Remote
+build/audit completion remains unverified.

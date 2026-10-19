@@ -11,7 +11,7 @@
   "runner_commit": "fb5682dfd7405fccb1d06d448a4af3848fe18d2c",
   "runner_sha256": "d7826c711eb6d92aeed4e4ae25920737b6781f4eacb9accd64f4c6f4c1b9bf7f",
   "remote_directory": "/nfs/roberts/project/pi_sl3363/sl3363",
-  "status": "submitted; completion not yet verified",
+  "status": "observed RUNNING on compute node a1132u11n04; setup in progress, completion not yet verified",
   "workload": [
     "full Lean root build",
     "project axiom audit",
@@ -22,5 +22,6 @@
     "Initial slow extraction deliberately terminated before any job submission.",
     "Build uses compute-node temporary storage; one result archive and dependency cache are copied back.",
     "No GitHub credentials were copied to the cluster."
-  ]
+  ],
+  "observed_node": "a1132u11n04"
 }

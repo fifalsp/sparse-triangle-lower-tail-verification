@@ -250,3 +250,23 @@ and is not a reliable end-to-end extrapolation.
 The portal's updated October 19 notice reports that Roberts is nearly full
 and slowing file operations. Node-local compilation avoids its small-file
 workload; initial archive staging and result export can still be affected.
+
+
+Full nonapex array **30062473** was submitted for jobs 24–26 after all three
+search archives reported complete subdivisions with no frontier (3221, 1903,
+and 1729 nodes respectively). It uses the already verified `46296bd` runner
+and `38d5c740` replay source, with two concurrent four-CPU jobs. These are
+additional required regions, not replacements for the other pending jobs.
+
+`bouchet-certificate-search-resume.sbatch SOURCE_ARCHIVE SHA256 PREVIOUS_RESULTS`
+continues incomplete search archives on the same source revision. It verifies
+the previous source, preserves the prior archive hash, and saves the extended
+preorder and remaining frontier in a new array-specific result directory.
+The default tasks are 14 and 15, with one CPU/4 GiB each and a ten-minute search
+budget inside a fifteen-minute allocation. The original archives are retained.
+A resumed search is still untrusted and must finish before full Lean replay.
+
+A four-leaf local test of precomputed constant tables took 7.53 seconds versus
+7.89 seconds for the existing checker, including startup. The exact environment
+and margin equality compiled, but this small single-run difference does not
+justify replacing live replays; the existing checker is retained.

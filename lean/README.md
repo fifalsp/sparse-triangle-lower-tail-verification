@@ -1346,3 +1346,19 @@ paper labels and 477 Lean links pass, with unchanged mapped manuscript statement
 Five apex parser tests and nine nonapex tests pass. The main theorem still needs
 both internal certificate inputs; this is an execution improvement and a durable
 record of search results, not a new full-domain theorem.
+
+
+### 2026-10-19 — Smaller complete regions and incomplete search frontiers
+
+Yale searches for jobs 24–26 produced complete subdivisions with 1611, 952,
+and 865 leaves. Their full Lean replays were submitted as array 30062473,
+with two concurrent four-CPU tasks. No completed region is claimed yet.
+Jobs 14 and 15 instead retained six and ten frontier boxes after their first
+bounded searches; they need resumption rather than formal replay of an
+incomplete tree. The new resume runner keeps the previous proposal and source
+provenance, and writes a fresh result directory.
+
+A literal-constant checker was proved equal to the existing numerical margin
+in a local experiment. A four-leaf timing comparison showed only a small
+single-run difference, so it was not adopted or added to the public proof
+root. This experiment did not identify a mathematical error or close a region.

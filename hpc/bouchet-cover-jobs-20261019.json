@@ -62,6 +62,20 @@
       "runner_commit": "46296bd",
       "runner_sha256": "55c88ad2551c001480377c4d935575f0c491172561be85d94ff328fd82fe5530",
       "formal_result": "Pending full kernel builds and axiom audits"
+    },
+    {
+      "job_array_id": 30062473,
+      "tasks": "24-26",
+      "scope": "Full ordered-domain proofs for three completed R1-region proposals",
+      "status": "Submission confirmed; no completed formal result",
+      "max_concurrent_tasks": 2,
+      "cpus_per_task": 4,
+      "memory_gib_per_task": 32,
+      "build_workers_per_task": 4,
+      "lean_threads_per_worker": 1,
+      "source_commit": "38d5c740f691792bd19cf545d18565c5b216bd9a",
+      "runner_commit": "46296bd",
+      "formal_result": "Pending full kernel builds and axiom audits"
     }
   ],
   "validation": {

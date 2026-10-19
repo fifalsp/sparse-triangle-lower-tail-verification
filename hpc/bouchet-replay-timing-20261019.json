@@ -16,5 +16,20 @@
   "first_leaf_module_boxes": 16,
   "first_leaf_module_build_seconds": 67,
   "formal_status": "Individual numerical module passed; full ordered theorem and axiom audit pending",
-  "interpretation": "One measured batch; not a throughput guarantee or a percentage of the main theorem."
+  "interpretation": "One measured batch; not a throughput guarantee or a percentage of the main theorem.",
+  "local_constant_precomputation_benchmark": {
+    "job": 0,
+    "leaves": [
+      0,
+      1,
+      2,
+      15962
+    ],
+    "original_seconds": 7.89,
+    "precomputed_seconds": 7.53,
+    "threads": 1,
+    "scope": "Four kernel-checked margins, includes startup; equality to original environment and margin compiled",
+    "decision": "Not adopted: small single-run difference does not justify changing live replays",
+    "diagnostic_source": "/tmp/CoverLiteralBench.lean"
+  }
 }

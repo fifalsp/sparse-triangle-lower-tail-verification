@@ -179,5 +179,7 @@ on normal exit, including a controlled timeout, to a job-specific checkpoint
 archive. This avoids discarding completed compilation when a long replay
 needs another allocation. A checkpoint is not a success flag. A scheduler
 kill can still prevent the exit trap; inspect the recorded job state and logs.
-No new dependency cache is duplicated on the desktop. The full workload
-has not yet been submitted at this preparation checkpoint.
+No new dependency cache is duplicated on the desktop. Full exterior job **30056868** was submitted from checked commit
+`a9491f266af497c523e6dffabd02b08f558af248` after both uploaded SHA256
+checksums matched. See `bouchet-family-exterior-20261019.json` for provenance.
+Submission is not a completed certificate.

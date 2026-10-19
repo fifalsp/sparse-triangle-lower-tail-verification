@@ -1185,3 +1185,12 @@ Lean declaration links** pass. All eleven exterior arithmetic/parser tests
 and six manuscript-map tests pass. Regenerating all sixteen smoke modules
 and their manifest is byte-identical. The full theorem remains conditional
 on the two internal certificates; the effort estimate stays roughly 40–45%.
+
+The full exterior workload is now submitted on Yale as **30056868**, from
+checked commit `a9491f2`, with four CPUs and 64 GiB. Both uploaded checksums
+matched. The job must finish its complete Lean build and axiom audit before
+any full exterior result is counted; its ABB premise remains separate.
+The scheduler subsequently reported the new job RUNNING at 13 seconds,
+with the source hash accepted and dependency-cache restoration underway.
+The original S1, F1 and ABB jobs were still RUNNING at 1h26m58s, 1h26m58s
+and 56m01s respectively. No full cloud success is asserted.

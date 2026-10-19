@@ -869,3 +869,11 @@ declarations / 6,485 theorems, using only `propext`, `Classical.choice` and
 `Quot.sound`. Manuscript/map checks and all six mapping tests pass. No new
 manuscript error was established. The global critical and intermediate-family
 certificates remain unfinished; effort estimate remains roughly 40–45%.
+
+`criticalApexCertificate_of_ordered` now also discharges the support cutoff
+and multiplier sign, connecting a complete fan replay directly to the apex
+hypothesis in `criticalClassification_of_verifiedCover`. Its sorted-domain
+premise remains unproved until a full replay succeeds.
+Final validation after the support bridge: root build 3428 jobs; audit 10,172
+project declarations / 6,486 theorems, standard three axioms only; 88 labels
+and 404 distinct declaration links pass.

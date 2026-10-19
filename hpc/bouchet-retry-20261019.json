@@ -14,14 +14,14 @@
       "id": "30049190",
       "workload": "bootstrap",
       "time_limit": "04:00:00",
-      "status": "observed RUNNING on a1114u28n01; Lean 4.24.0 installed, cache download in progress; build/audit unverified"
+      "status": "observed RUNNING at 11m18s on a1114u28n01; root build and 10067-declaration/6410-theorem axiom audit passed; refined interval proposal finished; dependency archive export in progress; terminal success unverified"
     },
     {
       "id": "30049194",
       "workload": "s1",
       "time_limit": "12:00:00",
       "dependency": "afterok:30049190",
-      "status": "observed PENDING (Dependency); proof replay has not started"
+      "status": "observed PENDING (Dependency); full S1 proof replay has not started"
     }
   ],
   "proof_status": "No new complete certificate established by these submissions."

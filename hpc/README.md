@@ -117,3 +117,8 @@ readers see one complete archive. Source, logs and generated artifacts are
 kept separate by job ID. The checked five-leaf smoke test is not a substitute
 for the full replay. F1 is one of six apex fans; all 36 nonapex jobs and the
 intermediate-family certificate remain separate obligations.
+
+F1 job **30049908** was submitted on 2026-10-19 with dependency
+`afterok:30049190`. The source archive and runner hashes passed verification
+in the authenticated shell. See `bouchet-apex-20261019.json`; submission alone
+is not evidence of a completed certificate.

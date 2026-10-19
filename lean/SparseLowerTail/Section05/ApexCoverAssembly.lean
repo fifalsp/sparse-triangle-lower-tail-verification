@@ -81,4 +81,22 @@ theorem apex_nonneg_patterns_of_ordered (i : Fin 6) (Q : ℝ)
   rw [logBoxEdges_permutation,he] at hp
   exact (criticalPatterns_permutationWord w u).mp hp
 
+/-- A complete fan replay supplies the precise apex input to critical rigidity.
+The support cutoff and sign of the multiplier are discharged here. -/
+theorem criticalApexCertificate_of_ordered (i : Fin 6)
+    (h : ∀ q ∈ orderedLogDomain (cellQ (i.castAdd 6)), ApexLeafConclusion i q) :
+    CriticalApexCertificate (apexFanTheta i) (cellLambda (i.castAdd 6))
+      (Real.exp (-cellQ (i.castAdd 6))) := by
+  have hv : criticalPoint ∈ cellVertices (i.castAdd 6) := by
+    fin_cases i <;> simp [cellVertices]
+  have hb := cell_coordinate_lower (i.castAdd 6) criticalPoint hv
+  have ht : 0 < criticalTriangle := pow_pos Section04.threshold_mem_Ioo.1 3
+  have hcost : criticalCost ≤ 1 := criticalCost_lt.le.trans (by norm_num)
+  have hmono := supportLambda_mono ht (cellMeanLower_pos (i.castAdd 6)).le
+    hb.1 hb.2 hcost
+  have hc := apex_nonneg_patterns_of_ordered i _ h
+  exact ⟨cellLambda_nonneg _,
+    (Real.exp_le_exp.mpr (neg_le_neg (cell_supportExponent_le _))).trans hmono,
+    fun u hu => (hc u hu).1, fun u hu => (hc u hu).2⟩
+
 end SparseLowerTail.Section05

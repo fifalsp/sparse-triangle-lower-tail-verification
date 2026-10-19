@@ -966,3 +966,7 @@ Validation of this milestone: root build **3,441 jobs**, axiom audit
 **11,195 project declarations / 7,230 theorems**, only the standard three axioms;
 88 manuscript labels and 418 declaration links pass, with six map tests.
 The generator reproduces the checked smoke source byte-for-byte.
+
+Full ABB deployment: Yale job **30052586**, source `7bbeae8`, is running on
+a separate node with four CPUs and bounded build concurrency. Its full proof
+and audit remain pending; deployment details are recorded under `hpc/`.

@@ -152,3 +152,13 @@ the bounded builder locally. This is evidence about the runner and replay
 interface, not proof of the whole neighborhood. A successful full run must
 produce `FAMILY_ABB_SUCCESS.txt` after the exact final theorem and axiom audit.
 The exterior family certificate remains a separate obligation even on success.
+
+Full ABB job **30052586** was submitted on 2026-10-19 from checked source
+commit `7bbeae831aec605a701697dcb233c0e35be137e9`. Both uploaded SHA256
+checksums matched. The allocation requests four CPUs and 64 GiB for up to
+12 hours and excludes `a1130u35n03`, where the earlier memory-heavy jobs run.
+See `bouchet-family-abb-20261019.json`. Submission is not proof of completion.
+
+The scheduler then reported ABB **RUNNING** on `c1104u05n03` at 53 seconds;
+the source checksum passed and dependency-cache restoration had started.
+S1 and F1 were still RUNNING on their original node at 31m50s.

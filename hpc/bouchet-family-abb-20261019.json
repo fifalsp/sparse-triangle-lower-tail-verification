@@ -1,0 +1,22 @@
+{
+  "source_commit": "7bbeae831aec605a701697dcb233c0e35be137e9",
+  "archive": "sparse-lean-family-abb-7bbeae83.tar.gz",
+  "archive_sha256": "d37f8e028471779b141c335d45ecad0585dec7379e94545f2d72befc55c784c5",
+  "archive_bytes": 8102398,
+  "runner": "bouchet-family-abb-7bbeae83.sbatch",
+  "runner_sha256": "3869e6755e5a0f79bfa3642ee2c7fd1f65466b50bc88feae5fcb85e8bd83629f",
+  "cluster": "Bouchet",
+  "account": "pi_sl3363",
+  "job_id": "30052586",
+  "partition": "day",
+  "cpus": 4,
+  "memory": "64G",
+  "time_limit": "12:00:00",
+  "build_workers": 2,
+  "lean_threads_per_worker": 2,
+  "excluded_node": "a1130u35n03",
+  "status": "observed RUNNING at 53 seconds; dependency cache restoration; full build and audit pending",
+  "remote_directory": "/nfs/roberts/project/pi_sl3363/sl3363",
+  "scope": "Full ABB logarithmic neighborhood radius 1/10 for L in [3.9,9.5]; exterior family remains separate",
+  "node": "c1104u05n03"
+}

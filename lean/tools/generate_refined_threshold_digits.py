@@ -52,4 +52,5 @@ def main():
  output.write_text(text)
  print('Proposed crossing bracket:',zlo,zhi,'width',zhi-zlo)
  print('Proposed widths: a',float(A.hi-A.lo),'b',float(B.hi-B.lo),'mu',float(mu.hi-mu.lo))
+ return env | {'tightA':A,'tightB':B,'tightMu':mu}
 if __name__=='__main__':main()

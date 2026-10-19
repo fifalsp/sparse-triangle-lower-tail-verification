@@ -51,3 +51,14 @@ untrusted diagnostic is `data/apex-exterior-precision-diagnostic.json`; the
 next remedy is sharper constant enclosures or a tangency-preserving evaluator.
 No large apex subdivision should be treated as sufficient merely because its
 spatial boxes are small.
+
+
+### 2026-10-19: refined apex precision
+
+The actual crossing bounds have now been propagated through all nine primitives,
+the common matrix, all six right-hand sides, and all 24 solved coefficients,
+with Lean kernel checks. The widest coefficient enclosure is below 4.77e-14.
+All twelve previously recorded exterior diagnostic samples now have positive
+Python interval lower bounds. This resolves the observed precision limitation
+at those samples, not the full-domain certificate obligation. No manuscript
+mathematical error or counterexample has been established.

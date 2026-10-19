@@ -783,3 +783,41 @@ declarations / 6295 theorems using only the standard three axioms. All 88
 manuscript anchors and 390 declaration links pass, along with six mapping
 tests. Regeneration is byte-identical and leaves the original digit source
 unchanged.
+
+
+### 2026-10-19 — refined nine-constant apex environment
+
+[`ApexRefinedPrimitives.lean`](SparseLowerTail/Section05/ApexRefinedPrimitives.lean)
+proves enclosures for all nine actual primitives from the refined crossing:
+`qa, qb, a, b, triangle, omega, multiplier, mean, cost`. It uses exact branch
+logarithm identities and the exact critical balanced-pair cost/triangle
+identities, so it does not re-round a and b to the older printed decimal bounds.
+The interval widths are approximately 1.81e-16, 3.17e-17, 3.09e-18,
+2.69e-17, 2.26e-18, 1.12e-16, 1.22e-15, 1.50e-17, and 3.85e-17,
+respectively.
+
+Regenerate with `python3 tools/generate_apex_refined_primitives.py` from
+`lean/`. The accompanying JSON is proposal data; the Lean theorem establishes
+containment of the actual constants. The existing coarse interval tables and
+the twelve checked local certificates remain available. The refined matrix, right-hand-side and all 24 solved-coefficient enclosures
+now also pass kernel checks in `ApexRefinedSystem.lean` and
+`ApexRefinedFanIntervals.lean`. The largest solved-coefficient interval width
+is below 4.77e-14. `ApexRefinedBoxIntervals.lean` connects these tables to
+the same actual certificate and proves a generic interval-box positivity
+implication. Full exterior coverage remains unfinished.
+
+Regenerate the system tables with `python3 tools/generate_refined_apex_intervals.py`.
+To independently repropose the matrix/RHS tables, first run
+`lake env lean tools/ProposeRefinedApexSystem.lean > /tmp/apex-system.txt`,
+then pass that file to the generator. The proposal calculation is not trusted.
+
+`python3 tools/diagnose_apex_precision.py --refined` compares the same twelve
+exterior samples used by the coarse diagnostic. All now have positive interval
+lower bounds (smallest about 1.345e-9), with widths around 2e-14. This Python
+diagnostic is not a Lean proof of any exterior region; it shows that the
+previous constant-precision obstruction is removed at these samples.
+
+Validation: root build passed (3417 jobs); axiom audit passed for 10065
+project declarations / 6409 theorems, with only the standard three axioms.
+All 88 manuscript anchors / 394 declaration links and six mapping tests pass.
+Generated refined Lean sources reproduce byte-for-byte.

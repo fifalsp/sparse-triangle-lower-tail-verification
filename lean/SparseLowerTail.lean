@@ -127,3 +127,7 @@ import SparseLowerTail.Section05.CoverNearOne
 import SparseLowerTail.Section05.CoverJobTaylorBox
 
 import SparseLowerTail.Section04.RefinedThresholdDigits
+
+import SparseLowerTail.Section05.ApexRefinedPrimitives
+
+import SparseLowerTail.Section05.ApexRefinedBoxIntervals

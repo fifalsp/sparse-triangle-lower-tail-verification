@@ -125,3 +125,5 @@ import SparseLowerTail.Section05.ApexFanLocal
 
 import SparseLowerTail.Section05.CoverNearOne
 import SparseLowerTail.Section05.CoverJobTaylorBox
+
+import SparseLowerTail.Section04.RefinedThresholdDigits

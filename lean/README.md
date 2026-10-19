@@ -757,3 +757,29 @@ Validation: full root build passed (3412 jobs). The axiom audit checked
 9914 declarations / 6271 theorems with only the three standard axioms;
 88 manuscript anchors and 388 declaration links pass, as do all six mapping
 tests. No bulk replay or additional agent was started.
+
+
+### 2026-10-19 — refined crossing bracket
+
+[`RefinedThresholdDigits.lean`](SparseLowerTail/Section04/RefinedThresholdDigits.lean)
+proves that the actual unique crossing parameter lies strictly between
+`5013857763720581 / 250000000000000000` and
+`20055431054882327 / 1000000000000000000`: a bracket of width `3e-18`.
+The proof rechecks the opposite endpoint signs and uses the already proved
+crossing classification. It also proves tighter branch ranges on this entire
+bracket: widths approximately `3.09e-18` for a, `2.69e-17` for b, and
+`1.22e-15` for the multiplier.
+
+Regenerate with `python3 tools/generate_refined_threshold_digits.py` from
+`lean/`. Decimal bisection only proposes endpoints; Lean verifies all signs,
+logarithm/exponential bounds and rational arithmetic. The existing printed
+digit theorem and its source generator are preserved. This is the first step
+toward removing the recorded apex interval-precision limitation; the refined
+ranges still need to be propagated through the nine primitive constants,
+common matrix and six coefficient vectors before an exterior replay benefits.
+
+Validation: full root build passed (3413 jobs); audit passed for 9940 project
+declarations / 6295 theorems using only the standard three axioms. All 88
+manuscript anchors and 390 declaration links pass, along with six mapping
+tests. Regeneration is byte-identical and leaves the original digit source
+unchanged.

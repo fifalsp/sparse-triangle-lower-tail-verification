@@ -340,18 +340,21 @@
     {
       "paper_label": "lem:digits",
       "status": "proved",
-      "checked_scope": "Both strict D-sign tests, strict parameter bracket and all four printed a,b,mu,r intervals. Includes rational bounds for actual threshold. Generated proposals are checked by Lean using proved Taylor estimates; generator determinism checked.",
+      "checked_scope": "Both strict D-sign tests, strict parameter bracket and all four printed a,b,mu,r intervals. Includes rational bounds for actual threshold. Generated proposals are checked by Lean using proved Taylor estimates; generator determinism checked. An additional kernel-checked crossing bracket of width 3e-18 and tighter branch a/b/mu ranges are now available; these refinements are not yet propagated through the apex coefficient interval tables.",
       "lean_files": [
         "SparseLowerTail/Numerics/Intervals.lean",
         "SparseLowerTail/Section04/ThresholdDefinitions.lean",
-        "SparseLowerTail/Section04/ThresholdDigits.lean"
+        "SparseLowerTail/Section04/ThresholdDigits.lean",
+        "SparseLowerTail/Section04/RefinedThresholdDigits.lean"
       ],
       "lean_declarations": [
         "SparseLowerTail.Section04.digit_D_lower",
         "SparseLowerTail.Section04.digit_D_upper",
         "SparseLowerTail.Section04.transitionParameter_digits",
         "SparseLowerTail.Section04.transition_digits",
-        "SparseLowerTail.Section04.threshold_digits"
+        "SparseLowerTail.Section04.threshold_digits",
+        "SparseLowerTail.Section04.Refined.transitionParameter_digits",
+        "SparseLowerTail.Section04.Refined.tight_branch_ranges"
       ],
       "explicit_inputs": [],
       "baseline": {

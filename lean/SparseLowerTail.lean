@@ -13,3 +13,14 @@ import SparseLowerTail.Section07.ExternalReduction
 import SparseLowerTail.Section04.Ray
 import SparseLowerTail.Section04.BalancedStationary
 import SparseLowerTail.Section04.ActiveConstraint
+import SparseLowerTail.Section04.Unimodal
+import SparseLowerTail.Section04.BranchInverse
+import SparseLowerTail.Section04.BalancedDerivative
+import SparseLowerTail.Section04.CrossingShape
+import SparseLowerTail.Section04.CrossingDelta
+import SparseLowerTail.Section04.Crossing
+import SparseLowerTail.Section04.BalancedClassification
+import SparseLowerTail.Section04.BalancedPhase
+import SparseLowerTail.Section05.StrictImprovement
+import SparseLowerTail.Section08.CertificateBridge
+import SparseLowerTail.Section08.CertificateSigns

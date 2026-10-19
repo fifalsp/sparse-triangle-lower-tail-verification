@@ -18,10 +18,11 @@ and the Lean formalization have different scopes.
 | --- | --- |
 | Proved in Lean | Entropy and triangle integrability, basic bounds, and invariance under changes on null sets. |
 | Proved in Lean | Balanced SBM cost/density formulas for arbitrary measurable equal partitions, existence of a balanced minimizing pair, and **V(r) ≤ V_SBM(r)**. |
-| Proved in Lean | Explicit stationary branch and graphon codegrees, normalized-ray identities and derivatives, entropy comparison/saturation, and the active triangle constraint (`lem:active`). |
+| Proved in Lean | Full balanced phase classification (`cor:Vbal`), including stationary branch, unimodality, actual inverse branches, unique crossing, and identification with the supremum threshold. |
+| Proved for unrestricted graphons | Active constraint (`lem:active`); strict improvement below the threshold and exclusion of all constant minimizers there (`thm:threshold`(iii)). |
 | Proved from a named external input | Transfer from the KP26 penalized reduction to constrained global optimality at a supported target. Determining the supported range and rigidity remain to prove. |
 | Proved with explicit hypotheses | The interval continuation argument in the proof of Theorem 1.3; its analytic graphon inputs remain unproved. |
-| Proved algebraically in Lean | The five normalized rational tangency identities in `lem:certcoef`; the analytic substitutions and positivity assertions remain unproved. |
+| Proved in Lean | Complete coefficient signs and value/derivative tangencies (`lem:certcoef`), including analytic substitutions and the required log 40 bounds. **Global certificate positivity remains unproved.** |
 | Remaining | The reverse inequality, threshold and equality classification, graphon continuation inputs, and Lean proofs of the numerical certificates. |
 
 The [formalization README](lean/README.md) records the file-to-paper mapping,

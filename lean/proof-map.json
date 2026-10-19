@@ -165,15 +165,25 @@
     },
     {
       "paper_label": "cor:Vbal",
-      "status": "partial",
-      "checked_scope": "Geometric reduction: a>=b cannot improve the constant; a<b can be saturated. Scalar crossing classification still pending.",
+      "status": "proved",
+      "checked_scope": "Complete balanced value and optimizer classification below, at, and above the actual crossing. The crossing equals the supremum threshold used by MainTheorem. This does not identify the unrestricted graphon value.",
       "lean_files": [
-        "SparseLowerTail/Section04/EntropyGeometry.lean"
+        "SparseLowerTail/Section04/EntropyGeometry.lean",
+        "SparseLowerTail/Section04/BalancedClassification.lean",
+        "SparseLowerTail/Section04/BalancedPhase.lean"
       ],
       "lean_declarations": [
         "SparseLowerTail.Section04.balancedCost_eq_entropy_iff",
         "SparseLowerTail.Section04.exists_saturated_pair",
-        "SparseLowerTail.Section04.balancedMinimizer_diagonal_or_saturated"
+        "SparseLowerTail.Section04.balancedMinimizer_diagonal_or_saturated",
+        "SparseLowerTail.Section04.balancedMinimizer_below_transition",
+        "SparseLowerTail.Section04.balancedValue_below_transition",
+        "SparseLowerTail.Section04.balancedMinimizer_at_transition",
+        "SparseLowerTail.Section04.balancedValue_at_transition",
+        "SparseLowerTail.Section04.balancedMinimizer_above_transition",
+        "SparseLowerTail.Section04.balancedValue_above_transition",
+        "SparseLowerTail.Section04.threshold_eq_transitionTarget",
+        "SparseLowerTail.Section04.balanced_strict_improvement_iff_threshold"
       ],
       "explicit_inputs": [],
       "baseline": {
@@ -230,17 +240,22 @@
     },
     {
       "paper_label": "lem:certcoef",
-      "status": "partial",
-      "checked_scope": "Five exact normalized rational tangency identities; analytic substitutions, derivative bridge and signs pending.",
+      "status": "proved",
+      "checked_scope": "Complete stated conclusion for 0<z<=1/40: Gamma and coefficient signs, negative cbar, and genuine value/partial-derivative tangencies at all four contacts. Logarithmic numerical bounds are proved. The determinant uniqueness assertion inside the prose proof is not separately formalized; global positivity remains separate.",
       "lean_files": [
-        "SparseLowerTail/CertificateAlgebra.lean"
+        "SparseLowerTail/CertificateAlgebra.lean",
+        "SparseLowerTail/Section08/CertificateBridge.lean",
+        "SparseLowerTail/Section08/CertificateSigns.lean"
       ],
       "lean_declarations": [
         "SparseLowerTail.Certificate.value_aaa",
         "SparseLowerTail.Certificate.gradient_aaa",
         "SparseLowerTail.Certificate.value_abb",
         "SparseLowerTail.Certificate.gradient_abb_a",
-        "SparseLowerTail.Certificate.gradient_abb_b"
+        "SparseLowerTail.Certificate.gradient_abb_b",
+        "SparseLowerTail.Certificate.log_forty_bounds",
+        "SparseLowerTail.Certificate.certificate_signs",
+        "SparseLowerTail.Certificate.certificate_contacts"
       ],
       "explicit_inputs": [],
       "baseline": {
@@ -253,10 +268,17 @@
     },
     {
       "paper_label": "lem:unimodal",
-      "status": "pending",
-      "checked_scope": "No complete Lean proof claimed for this statement.",
-      "lean_files": [],
-      "lean_declarations": [],
+      "status": "proved",
+      "checked_scope": "C1 regularity, both zero endpoint limits, a unique stationary point with the prescribed derivative signs. Actual inverse branches are constructed, continuous, and differentiable away from the spinodal.",
+      "lean_files": [
+        "SparseLowerTail/Section04/Unimodal.lean",
+        "SparseLowerTail/Section04/BranchInverse.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section04.branchRho_unimodal",
+        "SparseLowerTail.Section04.branchRho_level_signs",
+        "SparseLowerTail.Section04.branchRho_eq_iff_branches"
+      ],
       "explicit_inputs": [],
       "baseline": {
         "environment": "lemma",
@@ -268,10 +290,25 @@
     },
     {
       "paper_label": "thm:crossing",
-      "status": "pending",
-      "checked_scope": "No complete Lean proof claimed for this statement.",
-      "lean_files": [],
-      "lean_declarations": [],
+      "status": "proved",
+      "checked_scope": "All three parts: actual delta and unique crossing, exact global ray-gap minima and signs, and sign change of branchDifference. No internal crossing hypotheses remain.",
+      "lean_files": [
+        "SparseLowerTail/Section04/CrossingShape.lean",
+        "SparseLowerTail/Section04/CrossingDelta.lean",
+        "SparseLowerTail/Section04/Crossing.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section04.contDiffOn_crossingDelta",
+        "SparseLowerTail.Section04.strictMonoOn_crossingDelta_Ioc",
+        "SparseLowerTail.Section04.tendsto_crossingDelta_zero",
+        "SparseLowerTail.Section04.existsUnique_crossingDelta_zero",
+        "SparseLowerTail.Section04.rayGap_unique_min_below_transition",
+        "SparseLowerTail.Section04.rayGap_at_transition",
+        "SparseLowerTail.Section04.rayGap_pos_above_transition",
+        "SparseLowerTail.Section04.branchDifference_zero_iff",
+        "SparseLowerTail.Section04.branchDifference_pos_before_transition",
+        "SparseLowerTail.Section04.branchDifference_neg_after_transition"
+      ],
       "explicit_inputs": [],
       "baseline": {
         "environment": "theorem",
@@ -320,15 +357,19 @@
     },
     {
       "paper_label": "lem:Bderivative",
-      "status": "partial",
-      "checked_scope": "Part (a): the multiplier identity for balanced stationary graphons. Part (b), differentiability in the target, remains pending.",
+      "status": "proved",
+      "checked_scope": "Multiplier identity and continuously differentiable cost along the actual increasing inverse branch, with derivative -mu*r^2.",
       "lean_files": [
-        "SparseLowerTail/Section04/BalancedStationary.lean"
+        "SparseLowerTail/Section04/BalancedStationary.lean",
+        "SparseLowerTail/Section04/BalancedDerivative.lean",
+        "SparseLowerTail/Section04/CrossingDelta.lean"
       ],
       "lean_declarations": [
         "SparseLowerTail.Section04.balancedEL_multiplier_triangle",
         "SparseLowerTail.Section04.balancedEL_multiplier_cost",
-        "SparseLowerTail.Section04.balancedGraphon_multiplier_identity"
+        "SparseLowerTail.Section04.balancedGraphon_multiplier_identity",
+        "SparseLowerTail.Section04.hasDerivAt_leftBranchCost",
+        "SparseLowerTail.Section04.contDiffOn_leftBranchCost"
       ],
       "explicit_inputs": [],
       "baseline": {
@@ -401,10 +442,16 @@
     },
     {
       "paper_label": "thm:threshold",
-      "status": "pending",
-      "checked_scope": "No complete Lean proof claimed for this statement.",
-      "lean_files": [],
-      "lean_declarations": [],
+      "status": "partial",
+      "checked_scope": "Part (iii) only: unrestricted value is bounded by the improving balanced branch below threshold; no minimizer there is a.e. constant. The global lower bound and above/at-threshold classification remain unproved.",
+      "lean_files": [
+        "SparseLowerTail/Section05/StrictImprovement.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section05.value_le_branchCost_lt_entropy",
+        "SparseLowerTail.Section05.value_lt_entropy_below_threshold",
+        "SparseLowerTail.Section05.no_constant_minimizer_below_threshold"
+      ],
       "explicit_inputs": [],
       "baseline": {
         "environment": "theorem",
@@ -562,6 +609,25 @@
         "statement_sha256": "eb953d7a0132cde66bd1c195e825cae66de3884a3446857752bbff768a6208cc",
         "proof_sha256": "6513bc7136e6a0b4b5503a50faaa729ab16e0df72d3ef29e45043d051541f558",
         "source_line": 1195
+      }
+    },
+    {
+      "paper_label": "s4:eq:arbr",
+      "status": "proved",
+      "checked_scope": "The branch values satisfy 0<a<r<b<1 at their triangle target.",
+      "lean_files": [
+        "SparseLowerTail/Section04/BalancedClassification.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section04.branch_pair_target_bounds"
+      ],
+      "explicit_inputs": [],
+      "baseline": {
+        "environment": "equation",
+        "statement": "0<a_r<r<b_r<1\\quad\\text{for every }r\\in(0,r_*].",
+        "statement_sha256": "63ebe8746f8492d471df0e84a77c62d72f54d98e823fafaa19ace3c61330cfb9",
+        "proof_sha256": null,
+        "source_line": 2660
       }
     }
   ]

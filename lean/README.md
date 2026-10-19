@@ -45,15 +45,33 @@ measure-preserving-relabeling formulation still requires `lem:relabelB`.
 | Rational tangency calculations in `lem:certcoef` | [`CertificateAlgebra.lean`](SparseLowerTail/CertificateAlgebra.lean): `value_aaa`, `gradient_aaa`, `value_abb`, `gradient_abb_a`, `gradient_abb_b` | All five exact normalized identities, with explicit nonzero-denominator assumptions. The coefficients match `verification/family/symbolic.py`. |
 | `lem:branch`, `s4:eq:EL` | [`Branch.lean`](SparseLowerTail/Section04/Branch.lean), [`Codegree.lean`](SparseLowerTail/Section04/Codegree.lean), [`BalancedStationary.lean`](SparseLowerTail/Section04/BalancedStationary.lean) | Both directions of the explicit stationary branch parametrization, connected to the a.e. graphon equation. Codegrees are computed for any measurable equal partition. |
 | `lem:ray`, parts (a)–(d) | [`Ray.lean`](SparseLowerTail/Section04/Ray.lean) | Ray normalization and its converse, cost scaling, positivity, regularity, and the exact derivative of the ray cost gap. |
-| Geometric reduction in `cor:Vbal` | [`EntropyGeometry.lean`](SparseLowerTail/Section04/EntropyGeometry.lean) | Strict entropy convexity; a ≥ b cannot beat the constant; an ordered feasible pair can be saturated, with equality conditions. The crossing classification is still pending. |
+| Complete `cor:Vbal` | [`BalancedPhase.lean`](SparseLowerTail/Section04/BalancedPhase.lean), using [`BalancedClassification.lean`](SparseLowerTail/Section04/BalancedClassification.lean) and [`EntropyGeometry.lean`](SparseLowerTail/Section04/EntropyGeometry.lean) | Values and all minimizing balanced pairs below, at, and above the transition; the crossing equals the main statement's supremum threshold. This is the balanced problem only. |
 | `lem:active` | [`ActiveConstraint.lean`](SparseLowerTail/Section04/ActiveConstraint.lean): `minimizer_triangle_eq` | Every unrestricted graphon minimizer at 0 < r < 1 has triangle density exactly r³. No external hypothesis is needed. |
-| `eq:Bdens` for edge density; `lem:Bderivative`(a) | [`BalancedStationary.lean`](SparseLowerTail/Section04/BalancedStationary.lean) | Edge-density formula and the multiplier identity μt = 1 − F − e. Differentiability in the target remains separate. |
+| `eq:Bdens` for edge density; full `lem:Bderivative` | [`BalancedStationary.lean`](SparseLowerTail/Section04/BalancedStationary.lean), [`BalancedDerivative.lean`](SparseLowerTail/Section04/BalancedDerivative.lean), [`CrossingDelta.lean`](SparseLowerTail/Section04/CrossingDelta.lean) | Edge-density and multiplier identities; C¹ cost on the actual inverse branch, with derivative −μr². |
 | Transfer step in `prop:smalldata` | [`ExternalReduction.lean`](SparseLowerTail/Section07/ExternalReduction.lean) | Given the explicitly assumed KP26 reduction and a supporting balanced penalized minimizer, prove constrained global optimality and its value. Identifying the supported range and equality rigidity remain open obligations. |
 
-The tangency calculation treats z and L as independent reals. It does **not**
-yet prove the logarithm substitutions, actual derivative identities, coefficient
-signs, uniqueness of the linear-system solution, or global nonnegativity of Ψ.
-In particular, it is not a formalization of all of `lem:certcoef` or `prop:family`.
+The normalized rational tangency identities are now connected to the actual
+logarithms, coefficients, and derivatives by
+[`CertificateBridge.lean`](SparseLowerTail/Section08/CertificateBridge.lean).
+[`CertificateSigns.lean`](SparseLowerTail/Section08/CertificateSigns.lean)
+completes the **stated conclusion of `lem:certcoef`** for every 0 < z ≤ 1/40:
+the coefficient signs, negative c̄, and all contact values and partial derivatives.
+The required decimal bounds on log 40 are proved in Lean. The determinant
+uniqueness assertion inside the paper's proof is not separately formalized;
+it is unnecessary for this conclusion. **Global certificate positivity is still
+unproved in Lean.**
+
+[`Unimodal.lean`](SparseLowerTail/Section04/Unimodal.lean),
+[`BranchInverse.lean`](SparseLowerTail/Section04/BranchInverse.lean), and
+[`Crossing.lean`](SparseLowerTail/Section04/Crossing.lean), together with
+`CrossingDelta.lean` and `CrossingShape.lean`, prove the complete unimodality and
+crossing theorems. The inverses and unique crossing are constructed from proved
+facts, not supplied as hypotheses.
+
+[`StrictImprovement.lean`](SparseLowerTail/Section05/StrictImprovement.lean)
+proves `thm:threshold`(iii): below the threshold, the unrestricted value is strictly
+less than h(r), and every minimizer is nonconstant. It does not establish the
+reverse value inequality or the above/at-threshold classification.
 
 ## Remaining dependencies of the main theorem
 
@@ -63,8 +81,9 @@ An unchecked item is not supplied as an axiom.
 - [ ] Unrestricted graphon minimizer existence, compactness, and regularity.
 - [x] Section 4: stationary branch, ray calculus, entropy geometric reduction,
       and activity of the graphon triangle constraint.
-- [ ] Section 4: unimodality, unique crossing, scalar optimizer classification,
-      and the certified threshold intervals (`cor:Vbal`, `lem:digits`).
+- [x] Section 4: unimodality, actual inverse branches, unique crossing, and the
+      full balanced optimizer classification (`cor:Vbal`).
+- [ ] Certified threshold intervals (`lem:digits`).
 - [ ] Threshold global inequality and equality classification (`thm:threshold`).
 - [ ] Openness and the seed near the transition (`cor:open`, `cor:seed`).
 - [ ] Small-target classification (`thm:smalltail`). KP26 is now an explicit
@@ -72,7 +91,7 @@ An unchecked item is not supplied as an axiom.
       must still be proved.
 - [ ] Boundary comparison (`lem:boundary`), the Euler–Lagrange equation, and the
       certificate expectation identity (`s8:expect`).
-- [ ] Analytic bridge and sign estimates for the certificate (`lem:certcoef`).
+- [x] Analytic bridge and sign estimates for the certificate (`lem:certcoef`).
 - [ ] A Lean proof-producing version of the interval certificates, including
       the cover and family positivity checks (`prop:cover`, `prop:family`).
 - [ ] Tie exclusion and equality-case rigidity (`lem:tieexclusion`).
@@ -86,7 +105,7 @@ close the missing Lean obligations.
 
 ## Stable links to the manuscript
 
-[`proof-map.json`](proof-map.json) records 31 stable LaTeX labels, their statement
+[`proof-map.json`](proof-map.json) records 32 stable LaTeX labels, their statement
 and proof fingerprints, checked scope, Lean declarations, and explicit inputs.
 Displayed theorem numbers are historical metadata, not identifiers. Thus a
 renumbering does not require renaming Lean declarations.
@@ -183,3 +202,19 @@ mathematical axioms have been added.
   newly proved numerical bound.
 - **Still incomplete:** unique crossing, global lower bound, equality rigidity,
   proof-producing numerical certificates, and assembly of `MainTheorem`.
+
+### 2026-10-19 — complete balanced phase classification
+
+- Proved the complete unimodality, inverse-branch, and crossing analysis. The
+  endpoint limits, unique crossing, and cost-gap signs all have Lean proofs.
+- Completed `cor:Vbal` and identified its transition with `threshold`. Proved
+  the strict order of the two branch values around their triangle target.
+- Completed `lem:Bderivative` for the actual inverse branch.
+- Completed the stated coefficient-sign and tangency conclusion of
+  `lem:certcoef`, including kernel-checked logarithmic numerical bounds.
+- Derived the unrestricted strict improvement and exclusion of constant
+  minimizers below the threshold (`thm:threshold`(iii)).
+- **Still incomplete:** the unrestricted global lower bound and rigidity,
+  numerical threshold brackets, global certificate positivity, and the main
+  theorem assembly. The scalar classification alone does not prove the main
+  graphon theorem.

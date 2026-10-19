@@ -56,7 +56,8 @@ written and reviewed at the point of use.
 
 The paper's own Euler–Lagrange/vertex arguments, branch and crossing analysis,
 rigidity, boundary comparison, certificate verification, and final assembly
-remain proof obligations. They are not reclassified as classical merely because
+must be proved here; completed items are recorded in the proof map. They are not
+reclassified as classical merely because
 proving them in Lean is difficult. The numerical certificates remain part of the
 new argument and are not covered by the permission to assume external theorems.
 

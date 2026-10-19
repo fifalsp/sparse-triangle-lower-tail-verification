@@ -61,10 +61,52 @@ the final theorem's type provide that separate provenance information.
   `cor:bipodalmin`, and their dependents. Relabeling equivalence is still tracked
   separately; this sampling theorem does not silently supply it.
 
+### `classical:dyadic-l1-approximation`
+
+- Exact input: `Section02.ClassicalDyadicL1Approximation` in
+  [BlockAveraging.lean](SparseLowerTail/Section02/BlockAveraging.lean).
+- Every integrable real kernel on the unit square converges in L¹ to its
+  averages over the defined dyadic square partitions. This is the standard
+  dyadic conditional-expectation approximation theorem, used in `lem:lsc`.
+- It contains no entropy, graphon minimizer, or optimization conclusion.
+  Finite-block Jensen, entropy continuity, lower semicontinuity, and the
+  minimizing-sequence argument are proved here.
+
+### `classical:graphon-cut-compactness`
+
+- Exact input: `Section02.ClassicalGraphonCompactness` in
+  [Relabeling.lean](SparseLowerTail/Section02/Relabeling.lean).
+- Every graphon sequence admits a subsequence and measure-preserving vertex
+  maps whose pullbacks converge in the actual rectangle cut norm.
+- This is the weaker vertex-map consequence of the bijective compactness in
+  `lem:cut`(c), citing BCLSV08 Proposition 3.6, LS07 Theorem 5.1 and Lov12
+  Theorem 9.23. It assumes no cost or minimizer conclusion.
+
+### `classical:counting-lemma`
+
+- Exact input: `Section02.ClassicalTriangleCounting` in
+  [Relabeling.lean](SparseLowerTail/Section02/Relabeling.lean): for all actual
+  graphons U, W, `|triangle U - triangle W| ≤ 3 * cutNorm (U - W)`.
+- This is the triangle specialization of `lem:cut`(b), citing Lov12 Lemma
+  10.23. Its convergence consequence is proved here.
+
+### `classical:nonatomic-cdf-transport`
+
+- Exact input: `Section02.ClassicalCDFTransport` in
+  [RelabelBalanced.lean](SparseLowerTail/Section02/RelabelBalanced.lean).
+- For any finite nonatomic real measure ν and real c, the function
+  `x ↦ c + ν.real (Iic x)` transports ν to Lebesgue measure restricted to
+  `[c, c + ν.real univ]`. This is the probability-integral transform, with
+  scaling and translation; it includes the zero-mass case.
+- The paper uses this CDF construction in `lem:relabelB`. The actual piecewise
+  map for a half partition, its preservation of unit measure, its a.e. block
+  membership, and both directions of the graphon equivalence are proved here.
+  No graphon relabeling conclusion is assumed as part of this classical input.
+
 ## Classical infrastructure eligible to be assumed when needed
 
-These inputs have not all been encoded yet. Their exact Lean types must be
-written and reviewed at the point of use.
+Compactness and triangle counting are now encoded above. Remaining optional
+inputs require exact Lean statements and review at the point of use.
 
 | Stable identifier | Classical result and paper location | References in the paper |
 | --- | --- | --- |
@@ -85,8 +127,9 @@ new argument and are not covered by the permission to assume external theorems.
 `SparseLowerTail.Section05.CriticalClassification` in
 [`ThresholdReduction.lean`](SparseLowerTail/Section05/ThresholdReduction.lean)
 is the paper's own `prop:critical`, stated in measurable-partition form. The
-threshold theorem has been deduced from it, but the proposition itself remains
-unproved. It must be discharged, not retained among the final external inputs.
+threshold theorem has been deduced from it. `CriticalAssembly` now derives it
+from explicit finite-cover and apex-certificate hypotheses, but these internal
+positivity/geometric obligations remain unproved. It must be discharged, not retained among the final external inputs.
 Likewise certificate positivity, matching-data and continuation hypotheses
 remain internal proof obligations. The vertex identity has now been proved
 relative only to the classical sampling input above. The completed

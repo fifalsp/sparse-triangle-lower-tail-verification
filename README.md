@@ -28,10 +28,15 @@ and the Lean formalization have different scopes.
 | Proved with an unproved internal hypothesis | The full threshold theorem follows from `CriticalClassification` (`prop:critical`). That critical classification remains to prove; it is not an external assumption. |
 | Proved relative to classical sampling | Vertex identity, sharp support bounds, and classification of every already-two-block minimizer (`prop:vertex`, `cor:bipodalmin`), in measurable-partition form. |
 | Proved in Lean | Value continuity; quantitative isolation, variance/entropy and Goodman bounds; the full boundary comparison (`lem:boundary`); triangle-pattern-to-partition rigidity. |
-| Remaining | The reverse inequality and global optimizer classification, existence and local continuation arguments, and Lean proofs of global cover/family certificate positivity. |
+| Proved relative to named classical inputs | Unrestricted minimizer existence and entropy lower semicontinuity; balanced partition/pullback equivalence; minimizer, cost, mean and multiplier convergence in cut distance. |
+| Proved in Lean | Critical parameter region; actual triangle-law symmetry and Hoeffding decomposition; certificate expectation/weak duality and parameter concavity; penalized stationary, tie and fold lemmas. Relaxed-law validity uses classical sampling. |
+| Remaining | The reverse inequality and global optimizer classification, local rigidity/continuation, supporting penalized range, and Lean proofs of global cover/family certificate positivity. |
 
 The [formalization README](lean/README.md) records the file-to-paper mapping,
 remaining dependencies, build instructions, axiom audit, and dated progress log.
+The current effort estimate is **about 25% complete (roughly 20–30%)**, not a
+measured percentage of theorem coverage. [Proof issues](lean/PROOF-ISSUES.md)
+distinguish missing formal proofs from suspected mathematical errors.
 The target statement quantifies over all measurable graphons, not just SBMs.
 At the authors' request, external/classical results may be explicit hypotheses;
 [ASSUMPTIONS.md](lean/ASSUMPTIONS.md) distinguishes those inputs from our own

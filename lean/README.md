@@ -23,13 +23,13 @@ unique and all graphon optimizers have that form, up to null sets and relabeling
 as the proposition `SparseLowerTail.MainTheorem`. **Defining this proposition
 is not a proof of it.** There is no axiom asserting it and no theorem producing
 an inhabitant of it. The target includes the exact rational bracket for r*;
-the decimal brackets for a* and b* have not yet been encoded.
+the decimal brackets for a* and b* are proved separately in `ThresholdDigits`.
 
 The definitions use Lebesgue measure on [0,1] and its product measures, with
 almost-everywhere symmetry and bounds. Graphons are not restricted to block
 models. `IsBalanced` uses a measurable partition of mass one half. Its
-integral formulas are proved; its equivalence to the paper's
-measure-preserving-relabeling formulation still requires `lem:relabelB`.
+integral formulas and equivalence to measure-preserving pullbacks are proved;
+the latter uses the explicit classical CDF transform in `lem:relabelB`.
 
 ## Completed proof components
 
@@ -116,7 +116,9 @@ reverse value inequality or the above/at-threshold classification.
 The goal is to connect these components in the same order as the paper's proof.
 An unchecked item is not supplied as an axiom.
 
-- [ ] Unrestricted graphon minimizer existence, compactness, and regularity.
+- [x] Unrestricted minimizer existence and entropy lower semicontinuity,
+      relative to the named classical dyadic approximation, compactness and
+      counting inputs. Full cut-distance infrastructure is still partial.
 - [x] Section 4: stationary branch, ray calculus, entropy geometric reduction,
       and activity of the graphon triangle constraint.
 - [x] Section 4: unimodality, actual inverse branches, unique crossing, and the
@@ -144,7 +146,8 @@ An unchecked item is not supplied as an axiom.
 - [ ] A Lean proof-producing version of the interval certificates, including
       the cover and family positivity checks (`prop:cover`, `prop:family`).
 - [ ] Tie exclusion and equality-case rigidity (`lem:tieexclusion`).
-- [ ] Equivalence between balanced partitions and relabelings (`lem:relabelB`).
+- [x] Equivalence between balanced partitions and relabelings (`lem:relabelB`),
+      relative to the explicit classical nonatomic CDF transform.
 - [ ] Assemble the graphon-specific inputs and prove `MainTheorem`.
 
 **Next mathematical bottleneck:** prove the global lower bound and its equality
@@ -154,7 +157,7 @@ close the missing Lean obligations.
 
 ## Stable links to the manuscript
 
-[`proof-map.json`](proof-map.json) records 38 stable LaTeX labels, their statement
+[`proof-map.json`](proof-map.json) records 66 stable LaTeX labels, their statement
 and proof fingerprints, checked scope, Lean declarations, and explicit inputs.
 Displayed theorem numbers are historical metadata, not identifiers. Thus a
 renumbering does not require renaming Lean declarations.
@@ -347,3 +350,58 @@ mathematical axioms have been added.
   only to classical sampling. The cell interface turns a proved upper bound
   on Q into the support lower bound needed by the cover; it does not assert
   any unverified cell bound. The parity lemma is proved in partition form.
+
+### 2026-10-19 — existence, triangle-law relaxation and penalized calculus
+
+- [Existence.lean](SparseLowerTail/Section02/Existence.lean) proves attainment
+  over unrestricted graphons. The actual finite-block Jensen, entropy L¹
+  continuity and cut lower-semicontinuity proofs are in the adjacent Section02
+  modules. Three exact classical inputs are recorded in `ASSUMPTIONS.md`.
+- [RelabelBalanced.lean](SparseLowerTail/Section02/RelabelBalanced.lean)
+  proves full partition/pullback equivalence using a constructed piecewise CDF.
+  [CutDistance.lean](SparseLowerTail/Section02/CutDistance.lean) defines the
+  actual bijective-relabeling infimum and selects converging representatives.
+- [MinimizerLimits.lean](SparseLowerTail/Section05/MinimizerLimits.lean)
+  proves minimizer, cost, mean and multiplier convergence under cut-distance
+  convergence. The critical left-limit conclusion still explicitly depends
+  on the unproved `CriticalClassification`; it is not a completed premise.
+- [CriticalRegion.lean](SparseLowerTail/Section05/CriticalRegion.lean) proves
+  every part of `lem:region`, including the numerical bounds and compactness.
+  The actual triangle pushforward law, all permutation symmetries, Hoeffding
+  decomposition and all T1–T5 conditions are proved in `TriangleLaw`,
+  `TriangleLawSymmetry`, `Hoeffding`, and `RelaxedLaw`. The vertex moment
+  argument uses only the classical sampling input already recorded.
+- [CoverCertificate.lean](SparseLowerTail/Section05/CoverCertificate.lean)
+  proves full `lem:weakdual` for arbitrary relaxed laws, including integrability,
+  exclusion and the measure-one zero set. [CertificateConcavity.lean](SparseLowerTail/Section05/CertificateConcavity.lean)
+  proves the exact mixing identity and finite-vertex interpolation. These
+  results do not assume or prove the still-pending numerical positivity checks.
+- Section07 `PenalizedScalar`, `ConstantRootCalculus`, `PenalizedGap`, `Fold`
+  and `PenalizedHessian` prove `lem:stationary`, `lem:tie`, and `lem:fold`.
+  The Hessian condition follows from actual line variations at a minimum;
+  numerical sign tests use Lean proofs, not imported Python success flags.
+- **Still incomplete:** global cover/family positivity, critical classification,
+  local rigidity and continuation inputs, the full supporting penalized range,
+  and assembly of `MainTheorem`. Classical inputs remain hypotheses, and
+  internal conditional results remain distinguished from completed proofs.
+
+### 2026-10-19 — critical assembly and unique penalized crossing
+
+- `SingleCrossing` and `PenalizedCrossing` prove `lem:zc` with no internal
+  transversality or numerical hypotheses: the unique crossing lies below
+  1/1000 and the gap signs hold through the fold endpoint.
+- `FiniteCover` proves the convex-cell argument in `cor:cover`; `CriticalAssembly`
+  connects it to unrestricted minimizer existence and actual triangle-law
+  patterns, yielding critical classification **conditional on the remaining
+  cover and apex certificate obligations**. These are own-paper obligations,
+  not permitted external inputs. No completed critical classification is claimed.
+- Approximate completion estimate: **25% of total effort (20–30% range)**.
+  This is a subjective planning estimate, not theorem coverage or mathematical
+  certainty. The global certificate and local rigidity work remains substantial.
+- Gaps and potential manuscript issues are tracked in [PROOF-ISSUES.md](PROOF-ISSUES.md).
+
+Validation for this checkpoint: full root build passed (3215 jobs); axiom audit
+passed for 1909 project declarations (including generated/private declarations),
+allowing only `propext`, `Classical.choice`, and `Quot.sound`. All 66 stable-label
+entries and 274 declaration links resolve; manuscript fingerprints and six map
+tests pass. These counts are not a percentage of mathematical completion.

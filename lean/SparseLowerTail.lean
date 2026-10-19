@@ -50,3 +50,15 @@ import SparseLowerTail.Section04.VertexIdentity
 import SparseLowerTail.Section04.BipodalMinimizers
 import SparseLowerTail.Section08.Boundary
 import SparseLowerTail.Section05.SupportBounds
+import SparseLowerTail.Section02.Existence
+import SparseLowerTail.Section02.CutDistance
+import SparseLowerTail.Section05.MinimizerLimits
+import SparseLowerTail.Section05.RelaxedLaw
+import SparseLowerTail.Section05.CoverCertificate
+import SparseLowerTail.Section05.CertificateConcavity
+import SparseLowerTail.Section07.PenalizedGap
+import SparseLowerTail.Section07.PenalizedHessian
+import SparseLowerTail.Section02.RelabelBalanced
+import SparseLowerTail.Section05.CoverSymmetry
+import SparseLowerTail.Section05.CriticalAssembly
+import SparseLowerTail.Section07.PenalizedCrossing

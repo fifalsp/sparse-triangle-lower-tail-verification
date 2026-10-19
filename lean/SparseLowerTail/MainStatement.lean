@@ -8,7 +8,8 @@ no axiom asserting it. Its graphon semantics use Lebesgue integrals, and its
 optimizer clauses quantify over every graphon, not just finite SBMs.
 
 The partition formulation of relabeling follows the paper's `lem:relabelB`;
-that equivalence still needs formalization. The displayed rational enclosures
+that equivalence is proved in Section02.RelabelBalanced, relative to the
+explicit classical nonatomic CDF transform. The displayed rational enclosures
 are the more precise intervals in `lem:digits` for the transition target;
 a* and b* are characterized here by the crossing minimizer, without decimals.
 -/

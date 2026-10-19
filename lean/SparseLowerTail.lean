@@ -131,3 +131,4 @@ import SparseLowerTail.Section04.RefinedThresholdDigits
 import SparseLowerTail.Section05.ApexRefinedPrimitives
 
 import SparseLowerTail.Section05.ApexRefinedBoxIntervals
+import SparseLowerTail.Section05.ApexRefinedTaylorBox

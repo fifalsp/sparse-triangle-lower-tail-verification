@@ -821,3 +821,11 @@ Validation: root build passed (3417 jobs); axiom audit passed for 10065
 project declarations / 6409 theorems, with only the standard three axioms.
 All 88 manuscript anchors / 394 declaration links and six mapping tests pass.
 Generated refined Lean sources reproduce byte-for-byte.
+
+`ApexRefinedTaylorBox.lean` additionally proves the factored Taylor leaf rule
+for all six actual apex fans using the refined intervals. This reuses the
+shared endpoint/box geometry and actual first/second derivative identities.
+Its numerical margin must still be discharged for every exterior leaf and
+the leaves must be proved to cover the required domain.
+Validation of the Taylor addition: root build 3418 jobs; axiom audit 10067
+project declarations / 6410 theorems, using only the standard three axioms.

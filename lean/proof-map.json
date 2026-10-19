@@ -2173,7 +2173,7 @@
     {
       "paper_label": "s5:tangency",
       "status": "proved_exact_logarithmic_tangencies",
-      "checked_scope": "Exact four-equation tangency construction in logarithmic coordinates, as used by Appendix app:cover. A common determinant enclosure proves invertibility for every fan RHS. Fixed slots retain their published rational values; the four missing slots are exact Cramer values. Both contact values and all logarithmic derivatives vanish. This proves tangency, not local/global nonnegativity. No separate edge-coordinate derivative API is asserted. Refined enclosures for all nine actual primitive constants are proved from the tighter crossing bracket. Refined matrix, RHS, determinant and all 24 solved-coefficient enclosures are kernel checked and bound the same exact tangency coefficients. A generic refined box positivity implication is proved; full exterior coverage remains unfinished.",
+      "checked_scope": "Exact four-equation tangency construction in logarithmic coordinates, as used by Appendix app:cover. A common determinant enclosure proves invertibility for every fan RHS. Fixed slots retain their published rational values; the four missing slots are exact Cramer values. Both contact values and all logarithmic derivatives vanish. This proves tangency, not local/global nonnegativity. No separate edge-coordinate derivative API is asserted. Refined enclosures for all nine actual primitive constants are proved from the tighter crossing bracket. Refined matrix, RHS, determinant and all 24 solved-coefficient enclosures are kernel checked and bound the same exact tangency coefficients. A generic refined box positivity implication is proved; full exterior coverage remains unfinished. A factored Taylor box positivity implication also uses these refined bounds for every actual apex fan.",
       "lean_files": [
         "SparseLowerTail/Section05/ApexTangency.lean",
         "SparseLowerTail/Section05/ApexContactValues.lean",
@@ -2185,7 +2185,8 @@
         "SparseLowerTail/Section05/ApexRefinedPrimitives.lean",
         "SparseLowerTail/Section05/ApexRefinedSystem.lean",
         "SparseLowerTail/Section05/ApexRefinedFanIntervals.lean",
-        "SparseLowerTail/Section05/ApexRefinedBoxIntervals.lean"
+        "SparseLowerTail/Section05/ApexRefinedBoxIntervals.lean",
+        "SparseLowerTail/Section05/ApexRefinedTaylorBox.lean"
       ],
       "lean_declarations": [
         "SparseLowerTail.Section05.apexTangencyMatrix_det_ne_zero",
@@ -2198,7 +2199,8 @@
         "SparseLowerTail.Section05.apexRefinedPrimitiveBounds_contains",
         "SparseLowerTail.Section05.RefinedApex.apexFanSolutionIntervals_contains",
         "SparseLowerTail.Section05.apexRefinedBoxIntervals_contains",
-        "SparseLowerTail.Section05.apexRefinedBox_positive"
+        "SparseLowerTail.Section05.apexRefinedBox_positive",
+        "SparseLowerTail.Section05.S1TaylorBoxData.apexRefined_positive"
       ],
       "explicit_inputs": [],
       "baseline": {

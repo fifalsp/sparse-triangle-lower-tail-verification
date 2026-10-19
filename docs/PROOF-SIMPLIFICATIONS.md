@@ -15,7 +15,8 @@ Explicit external inputs are listed in
 | --- | --- | --- | --- |
 | PS-001 | `lem:cut`(a) | Two positive-set selections instead of layer cake | Lean checked; no extra external input |
 | PS-002 | `lem:spectral`, lower bound in `eq:s7degree` | Positive-part test gives d ≥ m/2 before spectral decomposition | Lean checked; positivity is derived from the proved penalized variation |
-| PS-003 | `thm:rigidity`, Steps 4–5 | Compare the two row equations directly using log monotonicity | Local stationary-row uniqueness Lean checked; final graphon assembly remains |
+| PS-003 | `thm:rigidity`, Steps 4–5 | Compare the two row equations directly using log monotonicity | Lean checked, including the full local-rigidity assembly |
+| PS-004 | `lem:penalized`, quadratic-form assertion | Evaluate at two opposite perturbations instead of differentiating twice | Lean checked |
 
 ## PS-001 — the weighted cut-norm bound
 
@@ -211,7 +212,59 @@ for bounded profiles, which covers the actual row differences; the displayed
 Cauchy–Schwarz calculation also applies to arbitrary L² functions. Lean uses
 the common denominator 1/2+η directly, so its intermediate coercivity step
 does not need positive block masses. The final passage from equality of
-rows within each class to a two-block graphon is a separate assembly step.
+rows within each class to a two-block graphon is proved in `RowsBipodal.lean`.
+The complete sequential theorem, including the bijective relabeling step,
+now compiles in `LocalRigidity.lean`, `eventually_bipodal_of_cutDistance`.
+
+## PS-004 — the penalized quadratic inequality without a second derivative
+
+Assume U is a constrained minimizer and also globally minimizes
+\(F(W)+\gamma t(W)\). Use the already proved multiplier identity
+\(\mu_U=3\gamma\) and Euler equation
+\(\log U=-3\gamma C_U\). This note replaces the second-variation step only.
+
+Take a bounded measurable mean-zero test ψ, scaled so that |ψ|≤1.
+Reweight the vertex probability measure by 1+εψ and realize the resulting
+kernel as a graphon \(U^\varepsilon\), for |ε|≤1/2. The entropy and triangle
+integrals give the exact cubic polynomial
+\[
+P(\varepsilon):=F(U^\varepsilon)+\gamma t(U^\varepsilon)
+ =P(0)+A\varepsilon+B\varepsilon^2+C\varepsilon^3,
+\]
+whose quadratic coefficient, by cyclic symmetry of the triangle integral, is
+\[
+B=\iint\{h(U(x,y))+3\gamma U(x,y)C_U(x,y)\}\psi(x)\psi(y)\,dx\,dy.
+\]
+Global optimality gives \(P(1/2),P(-1/2)\ge P(0)\). Adding cancels both
+odd terms, so
+\[
+0\le P(1/2)+P(-1/2)-2P(0)=\frac12B.
+\]
+Since \(h(u)=u\log u-u+1\), the Euler equation makes the expression in
+braces equal to 1−U. Therefore
+\[
+0\le B=(\textstyle\int\psi)^2-\langle\psi,T_U\psi\rangle
+ =-\langle\psi,T_U\psi\rangle.
+\]
+Scaling proves the assertion for all bounded mean-zero tests. For an
+arbitrary mean-zero f in L², put
+\(f_n=\max\{-n,\min\{n,f\}\}-\int\max\{-n,\min\{n,f\}\}\).
+Then f_n is bounded and mean zero, and f_n→f in L² by dominated convergence.
+Because 0≤U≤1,
+\[
+|Q_U(f_n)-Q_U(f)|
+ \le\|f_n-f\|_1(\|f_n\|_1+\|f\|_1)\longrightarrow0.
+\]
+Thus \(Q_U(f)\le0\). ∎
+
+**Lean correspondence.**
+[`Section07/PenalizedSecondVariation.lean`](../lean/SparseLowerTail/Section07/PenalizedSecondVariation.lean):
+`pair_weight_symmetric_sum`, `triple_weight_symmetric_sum`,
+`penalized_vertex_quadratic_nonneg`, `penalized_quadratic_nonpos_unit`.
+[`Section07/PenalizedQuadratic.lean`](../lean/SparseLowerTail/Section07/PenalizedQuadratic.lean)
+proves the bounded-test extension, the centered truncation argument, and the
+full L² conclusion. The actual reweighted graphons use only the recorded
+classical sampling input. No differentiability of this polynomial is needed.
 
 ## How to maintain this note
 

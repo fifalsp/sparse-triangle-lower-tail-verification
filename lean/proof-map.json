@@ -535,11 +535,22 @@
     },
     {
       "paper_label": "cor:open",
-      "status": "pending",
-      "checked_scope": "No complete Lean proof claimed for this statement.",
-      "lean_files": [],
-      "lean_declarations": [],
-      "explicit_inputs": [],
+      "status": "proved_relative_classical",
+      "checked_scope": "Exact balanced classification is open below the threshold; also an actual IsOpen theorem.",
+      "lean_files": [
+        "SparseLowerTail/Section06/Stability.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section06.branchClassification_open",
+        "SparseLowerTail.Section06.branchClassification_region_open"
+      ],
+      "explicit_inputs": [
+        "classical:uniform-sampling",
+        "classical:dyadic-l1-approximation",
+        "classical:graphon-cut-compactness",
+        "classical:pullback-approximation",
+        "classical:triangle-counting"
+      ],
       "baseline": {
         "environment": "corollary",
         "statement": "Let $r_0\\in(0,r_*)$ be such that the minimizers at $r_0$ are exactly the relabelings of $B_{r_0}$. Then there is $\\delta>0$ with $(r_0-\\delta,r_0+\\delta)\\subset(0,r_*)$ such that for every $r\\in(r_0-\\delta,r_0+\\delta)$, the minimizers at $r$ are exactly the relabelings of $B_r$.",
@@ -550,11 +561,22 @@
     },
     {
       "paper_label": "cor:seed",
-      "status": "pending",
-      "checked_scope": "No complete Lean proof claimed for this statement.",
-      "lean_files": [],
-      "lean_declarations": [],
-      "explicit_inputs": [],
+      "status": "conditional_on_internal_critical_classification",
+      "checked_scope": "Left-neighborhood seed, conditional on CriticalClassification; this internal obligation is not assumed classical.",
+      "lean_files": [
+        "SparseLowerTail/Section06/Stability.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section06.branchClassification_seed"
+      ],
+      "explicit_inputs": [
+        "classical:uniform-sampling",
+        "classical:dyadic-l1-approximation",
+        "classical:graphon-cut-compactness",
+        "classical:pullback-approximation",
+        "classical:triangle-counting",
+        "internal:CriticalClassification"
+      ],
       "baseline": {
         "environment": "corollary",
         "statement": "There is $\\delta>0$ such that for every $r\\in(r_*-\\delta,r_*)$, the minimizers at $r$ are exactly the relabelings of $B_r$.",
@@ -615,14 +637,18 @@
     {
       "paper_label": "prop:cover",
       "status": "pending",
-      "checked_scope": "No complete Lean proof claimed for this statement. Actual non-apex S1 vertex-0 certificate positivity is proved on q∈[0,1/1024]^3 and q∈[8,6743/512]^3 with original exact dyadic coefficients and checked critical constants; full-domain coverage and apex proofs remain.",
+      "checked_scope": "No complete Lean proof claimed for this statement. Actual non-apex S1 vertex-0 certificate positivity is proved on q∈[0,1/1024]^3 and q∈[8,6743/512]^3 with original exact dyadic coefficients and checked critical constants; full-domain coverage and apex proofs remain. An exact eight-leaf subdivision additionally proves positivity on [0,1/32]^3; the sorted tail q3≥8 is checked. The saved full subdivision proposal is untrusted, not imported into Lean.",
       "lean_files": [
         "SparseLowerTail/Section05/CoverS1FirstBox.lean",
-        "SparseLowerTail/Section05/CoverS1Tail.lean"
+        "SparseLowerTail/Section05/CoverS1Tail.lean",
+        "SparseLowerTail/Section05/CoverS1Regions.lean"
       ],
       "lean_declarations": [
         "SparseLowerTail.Section05.coverS1_vertex0_first_box",
-        "SparseLowerTail.Section05.coverS1Tail_positive"
+        "SparseLowerTail.Section05.coverS1Tail_positive",
+        "SparseLowerTail.Section05.coverS1NearTree_leafCount",
+        "SparseLowerTail.Section05.coverS1_near_cube_positive",
+        "SparseLowerTail.Section05.coverS1_sorted_tail_positive"
       ],
       "explicit_inputs": [],
       "baseline": {
@@ -1688,14 +1714,17 @@
         "proof_sha256": "4277d296e134ee2bb859188eaa068aee3cb9ea54e236da3c8976991f972ebeeb",
         "source_line": 4317
       },
-      "status": "partial",
-      "checked_scope": "Steps 1–3: uniform cut-norm row-functional bound; every minimizing row is close to one of the two wells; measurable row partition; uniform approximation via Euler–Lagrange and quantitative block-mass control. Local stationary-row uniqueness is proved by direct log monotonicity. Final sequence/bipodal assembly remains.",
+      "status": "proved_relative_classical",
+      "checked_scope": "Complete local rigidity for unrestricted graphon minimizers: actual cut-distance representatives, uniform row approximation, asymptotically balanced measurable row partition, exact stationary-row uniqueness and bijective relabeling transfer. Only classical inverse-transform sampling is assumed.",
       "lean_files": [
         "SparseLowerTail/Section06/RowStability.lean",
         "SparseLowerTail/Section06/RowPartition.lean",
         "SparseLowerTail/Section06/UniformApproximation.lean",
         "SparseLowerTail/Section06/BlockBalance.lean",
-        "SparseLowerTail/Section06/RowRigidity.lean"
+        "SparseLowerTail/Section06/RowRigidity.lean",
+        "SparseLowerTail/Section06/RigidityApproximation.lean",
+        "SparseLowerTail/Section06/RowsBipodal.lean",
+        "SparseLowerTail/Section06/LocalRigidity.lean"
       ],
       "lean_declarations": [
         "SparseLowerTail.Section06.rowFunctional_cut_bound",
@@ -1704,7 +1733,12 @@
         "SparseLowerTail.Section06.minimizer_uniform_approximation",
         "SparseLowerTail.Section06.row_partition_mass_bound",
         "SparseLowerTail.Section06.exists_uniform_row_partition",
-        "SparseLowerTail.Section06.exists_stationary_row_radius"
+        "SparseLowerTail.Section06.exists_stationary_row_radius",
+        "SparseLowerTail.Section06.exists_convergent_row_partitions",
+        "SparseLowerTail.Section06.bipodal_of_row_class_eq",
+        "SparseLowerTail.Section06.isBipodal_relabel_iff",
+        "SparseLowerTail.Section06.eventually_bipodal_of_cutConverges",
+        "SparseLowerTail.Section06.eventually_bipodal_of_cutDistance"
       ],
       "explicit_inputs": [
         "classical:uniform-sampling"
@@ -1719,19 +1753,55 @@
         "proof_sha256": "0fc6c6743582dc5dc0f2ab9088e5623baa3788729ae8abeee51f16255e77db28",
         "source_line": 4937
       },
-      "status": "partial",
-      "checked_scope": "Actual centered kernel positive quadratic form and zero row; direct positive-part proof of lower degree bound; upper degree and L1/L2 deviation bounds. Spectral decomposition/trace/tail work is not included in this checkpoint.",
+      "status": "proved_kernel_form_relative_classical",
+      "checked_scope": "Kernel/spectral-sum formulation of positivity, zero row, trace and diagonal bounds, degree estimates, exact cubic identity and both tail inequalities. Generic positive Hilbert–Schmidt spectral expansion is an explicit classical input; every graphon-specific bound is proved internally. No general Lean trace-class operator API is claimed.",
       "lean_files": [
         "SparseLowerTail/Section07/CenteredKernel.lean",
-        "SparseLowerTail/Section07/DegreeBounds.lean"
+        "SparseLowerTail/Section07/DegreeBounds.lean",
+        "SparseLowerTail/Section07/ClassicalKernelSpectrum.lean",
+        "SparseLowerTail/Section07/SpectralDiagonal.lean",
+        "SparseLowerTail/Section07/CenteredCubic.lean"
       ],
       "lean_declarations": [
         "SparseLowerTail.Section07.penalized_centeredKernel_positive",
         "SparseLowerTail.Section07.penalized_degree_lower",
-        "SparseLowerTail.Section07.penalized_degree_estimates"
+        "SparseLowerTail.Section07.penalized_degree_estimates",
+        "SparseLowerTail.Section07.PositiveKernelSpectralTheorem",
+        "SparseLowerTail.Section07.centeredKernel_trace_bound",
+        "SparseLowerTail.Section07.centeredKernel_diagonal_bound",
+        "SparseLowerTail.Section07.centered_cubic_identity",
+        "SparseLowerTail.Section07.centeredSpectrum_tail_inequalities",
+        "SparseLowerTail.Section07.smallTarget_spectral_data"
       ],
       "explicit_inputs": [
-        "classical:uniform-sampling"
+        "classical:uniform-sampling",
+        "classical:positive-hilbert-schmidt-spectrum",
+        "external:KP26:1.6"
+      ]
+    },
+    {
+      "paper_label": "prop:stability",
+      "baseline": {
+        "environment": "proposition",
+        "statement": "Let $r_0\\in(0,r_*]$, and let $(r_n)$ be a sequence in $(0,r_*)$ with $r_n\\to r_0$. Suppose that for every choice of minimizers $U_n$ at $r_n$, every limit in cut distance of a subsequence of $(U_n)$ is a relabeling of $B_{r_0}$. Then there is $n_0$ such that for every $n\\ge n_0$, every minimizer at $r_n$ is a relabeling of $B_{r_n}$.",
+        "statement_sha256": "7e251fe17d35fea3a6e2831703e9621f620de1c8e263e550831fba50344ec8da",
+        "proof_sha256": "28356fc20430661c4cdbc597b2086aedccf6064e8354d41c44b16f2bf4f0a4ba",
+        "source_line": 4480
+      },
+      "status": "proved_relative_classical",
+      "checked_scope": "Full sequential stability proposition for actual cut-distance limits of arbitrary minimizers.",
+      "lean_files": [
+        "SparseLowerTail/Section06/Stability.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section06.eventually_branchClassification_of_subsequence_limits"
+      ],
+      "explicit_inputs": [
+        "classical:uniform-sampling",
+        "classical:dyadic-l1-approximation",
+        "classical:graphon-cut-compactness",
+        "classical:pullback-approximation",
+        "classical:triangle-counting"
       ]
     }
   ]

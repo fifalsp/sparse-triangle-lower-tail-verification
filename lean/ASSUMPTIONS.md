@@ -37,9 +37,8 @@ the final theorem's type provide that separate provenance information.
   KP26), transfer to constrained optimality at a supported target, the value
   identity, and the active constraint/penalized optimality of every constrained
   minimizer at that target.
-- Remaining internal obligations: identify the supporting pair and range
-  r ≤ r₋ using the paper's scalar penalized analysis; prove its equality-case
-  rigidity. The transfer lemma does not by itself establish `prop:smalldata`
+- The supporting pair and full range r ≤ r₋ are now proved in
+  `SmallData.lean`. Remaining internal obligation: equality-case rigidity. The transfer lemma does not by itself establish `prop:smalldata`
   or `thm:smalltail` in full.
 
 ### `classical:inverse-transform-sampling`
@@ -114,6 +113,29 @@ the final theorem's type provide that separate provenance information.
   pullback assertion in `lem:cut`(d). It assumes no entropy or optimization
   claim. Norm invariance, distance symmetry, the triangle inequality and the
   deduction of zero cut distance are proved here.
+
+### `classical:positive-hilbert-schmidt-spectrum`
+
+- Exact input: `Section07.PositiveKernelSpectralTheorem`, returning
+  `KernelSpectralExpansion`, in
+  [ClassicalKernelSpectrum.lean](SparseLowerTail/Section07/ClassicalKernelSpectrum.lean).
+- For every symmetric positive real L² kernel on the atomless unit interval,
+  supplies measurable orthonormal eigenfunctions, nonnegative decreasing
+  eigenvalues, genuine integral eigen-equations, square-summability, L²
+  convergence of finite kernel sums, positive residual quadratic forms, and
+  the standard square/cube trace identities. Its rowwise Parseval formulation
+  is the corresponding classical almost-everywhere L²-section identity.
+- This is the compact positive self-adjoint spectral theorem and its
+  Hilbert–Schmidt kernel realization, the classical decomposition invoked in
+  `lem:spectral`. The pinned mathlib spectrum module explicitly lists compact
+  self-adjoint spectral theory as future work.
+- It asserts **no** trace-class conclusion, bound on the sum of eigenvalues,
+  graphon diagonal/degree bound, leading-eigenvalue estimate, residual bound,
+  or optimizer classification. Those are paper-specific deductions proved
+  internally. In particular, the trace bound follows from positivity and
+  Lebesgue differentiation, using mathlib's differentiation theorem.
+- Concrete kernel/spectral-sum statements encode the estimates; this does not
+  claim a new fully formalized general trace-class operator API.
 
 ## Classical infrastructure eligible to be assumed when needed
 

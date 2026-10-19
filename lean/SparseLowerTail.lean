@@ -73,3 +73,9 @@ import SparseLowerTail.Section07.DegreeBounds
 import SparseLowerTail.Section05.CoverS1FirstBox
 import SparseLowerTail.Section05.CoverS1Tail
 import SparseLowerTail.Section06.RowRigidity
+import SparseLowerTail.Section06.LocalRigidity
+import SparseLowerTail.Section07.CenteredCubic
+import SparseLowerTail.Section05.CoverS1Regions
+import SparseLowerTail.Section05.OrderedBoxTightening
+import SparseLowerTail.Numerics.TaylorBounds
+import SparseLowerTail.Section06.Stability

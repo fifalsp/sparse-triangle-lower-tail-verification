@@ -51,7 +51,7 @@ arguments separately for future manuscript revisions.
 | Complete `cor:Vbal` | [`BalancedPhase.lean`](SparseLowerTail/Section04/BalancedPhase.lean), using [`BalancedClassification.lean`](SparseLowerTail/Section04/BalancedClassification.lean) and [`EntropyGeometry.lean`](SparseLowerTail/Section04/EntropyGeometry.lean) | Values and all minimizing balanced pairs below, at, and above the transition; the crossing equals the main statement's supremum threshold. This is the balanced problem only. |
 | `lem:active` | [`ActiveConstraint.lean`](SparseLowerTail/Section04/ActiveConstraint.lean): `minimizer_triangle_eq` | Every unrestricted graphon minimizer at 0 < r < 1 has triangle density exactly r³. No external hypothesis is needed. |
 | `eq:Bdens` for edge density; full `lem:Bderivative` | [`BalancedStationary.lean`](SparseLowerTail/Section04/BalancedStationary.lean), [`BalancedDerivative.lean`](SparseLowerTail/Section04/BalancedDerivative.lean), [`CrossingDelta.lean`](SparseLowerTail/Section04/CrossingDelta.lean) | Edge-density and multiplier identities; C¹ cost on the actual inverse branch, with derivative −μr². |
-| Transfer step in `prop:smalldata` | [`ExternalReduction.lean`](SparseLowerTail/Section07/ExternalReduction.lean) | Given the explicitly assumed KP26 reduction and a supporting balanced penalized minimizer, prove constrained global optimality and its value. Identifying the supported range and equality rigidity remain open obligations. |
+| Transfer step in `prop:smalldata` | [`ExternalReduction.lean`](SparseLowerTail/Section07/ExternalReduction.lean) | Given the explicitly assumed KP26 reduction and a supporting balanced penalized minimizer, prove constrained global optimality and its value. The supporting range is now proved in `SmallData.lean`; equality rigidity remains separate. |
 
 The normalized rational tangency identities are now connected to the actual
 logarithms, coefficients, and derivatives by
@@ -128,13 +128,16 @@ An unchecked item is not supplied as an axiom.
       full balanced optimizer classification (`cor:Vbal`).
 - [x] Certified threshold intervals (`lem:digits`), including a*, b*, μ*, r*.
 - [ ] Threshold global inequality and equality classification (`thm:threshold`).
-- [ ] Openness and the seed near the transition (`cor:open`, `cor:seed`).
+- [x] Sequential stability and openness (`prop:stability`, `cor:open`).
+- [ ] Unconditional seed near the transition (`cor:seed`): the assembly is proved, but critical classification remains internal.
 - [ ] Small-target classification (`thm:smalltail`). KP26 is now an explicit
-      external hypothesis; the paper's supporting-branch and rigidity arguments
-      must still be proved.
+      external hypothesis; its supporting range and spectral estimates are proved,
+      while the remaining equality rigidity must still be proved.
 - [x] Scaling, truncation, rescaled first variation, and the certificate
       expectation identity (`lem:scaling`, `lem:truncation`, `s3:rescale`, `s8:expect`).
 - [x] Scalar two-block rigidity (`lem:J`, `prop:bipodal`).
+- [x] Full insertion lemma, functional two-well theorem and local graphon
+      rigidity (`lem:insertion`, `thm:twowell`, `thm:rigidity`).
 - [x] Complete Euler–Lagrange proposition (`prop:euler`), including positive
       unique multiplier and the quantitative upper/lower bounds.
 - [x] Sharp Bregman estimate, mean gap, and downward propagation
@@ -160,7 +163,7 @@ close the missing Lean obligations.
 
 ## Stable links to the manuscript
 
-[`proof-map.json`](proof-map.json) records 66 stable LaTeX labels, their statement
+[`proof-map.json`](proof-map.json) records 73 stable LaTeX labels, their statement
 and proof fingerprints, checked scope, Lean declarations, and explicit inputs.
 Displayed theorem numbers are historical metadata, not identifiers. Thus a
 renumbering does not require renaming Lean declarations.
@@ -460,3 +463,38 @@ are not trusted assumptions. No new mathematical error has been established.
 log monotonicity and a positive quadratic form. The full shorter proof is
 recorded as PS-003 in the companion note. Final sequence/bipodal assembly is
 still separate; this checkpoint does not claim `thm:rigidity` in full.
+
+### 2026-10-19 — complete local rigidity; spectral estimates; larger S1 regions
+
+`Section06/LocalRigidity.lean` now proves the full `thm:rigidity` for unrestricted
+graphon minimizers, relative only to classical inverse-transform sampling.
+The sequential approximation, exact row-class identification and bijective
+relabeling transfer are all proved. No internal rigidity hypothesis remains.
+
+`Section07/CenteredCubic.lean` completes the kernel form of `lem:spectral`:
+all graphon-specific trace, diagonal, degree, cubic and spectral-tail estimates
+are proved. The generic Hilbert–Schmidt spectral expansion is an explicit
+classical hypothesis, precisely described in ASSUMPTIONS.md. This development
+uses concrete kernels, integrals and convergent spectral sums; it does not claim
+that mathlib now has a general trace-class operator library.
+
+`CoverS1Regions.lean` checks the full eight-leaf partition of [0,1/32]³,
+proving Ψ>1/2 there. It also proves Ψ>1/100 on the sorted-domain region q₃≥8.
+The complete 55,873-leaf search proposal is preserved for reproducibility in
+`lean/data/s1-vertex0-subdivision-proposal.json`; it remains **untrusted**, is
+not imported by Lean, and its unproved Taylor leaves do not count as verified.
+Scalable checked Taylor evaluation remains necessary for full-domain S1.
+
+The current effort estimate is **about 30%, with a 25–40% range**, not measured
+statement coverage. Full cover/family certificates, small-target equality
+rigidity, openness/seed and final main-theorem assembly remain. No mathematical
+error has been established. Four complete shorter-proof arguments are recorded
+in the companion note; the latest is the symmetric ±ε penalized variation.
+
+### 2026-10-19 — stability and openness assembled
+
+`Section06/Stability.lean` proves the manuscript sequential stability proposition
+and openness of exact balanced classification among all graphons. The left seed
+is proved conditional on `CriticalClassification`; its finite certificates are
+still internal obligations. Compactness, dyadic approximation, triangle counting,
+pullback approximation and sampling are the recorded classical inputs.

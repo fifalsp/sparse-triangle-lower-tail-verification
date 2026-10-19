@@ -42,5 +42,18 @@
     "compact_exterior": 64646,
     "combined": 802144
   },
-  "limitations": "Includes setup, coverage and audit overhead in observed rates. Boxes are heterogeneous; some are direct or empty/contact cases. Existing partial work is not counted as a full-region certificate. The range is deliberately broad and is not a confidence interval."
+  "limitations": "Includes setup, coverage and audit overhead in observed rates. Boxes are heterogeneous; some are direct or empty/contact cases. Existing partial work is not counted as a full-region certificate. The range is deliberately broad and is not a confidence interval.",
+  "aggressive_parallel_scenario": {
+    "eligible_cores": 200,
+    "ideal_elapsed_hours": [
+      5,
+      10
+    ],
+    "provisional_elapsed_hours": [
+      12,
+      36
+    ],
+    "status": "Confirmed RUNNING: 43 jobs, 200 allocated cores, no pending jobs",
+    "limitations": "No guaranteed proportional speedup: long per-job critical paths, memory, scheduling and failed/restarted checks can dominate."
+  }
 }

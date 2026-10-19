@@ -1,0 +1,57 @@
+{
+  "recorded_at": "2026-10-19T21:24:24.298719+00:00",
+  "authorization": "User explicitly requested aggressive parallel CPU deployment on Yale",
+  "cluster": "Bouchet",
+  "account": "pi_sl3363",
+  "running_allocated_cores_before": 68,
+  "eligible_core_capacity_after": 200,
+  "updates": [
+    {
+      "array_id": 30062736,
+      "previous_throttle": 4,
+      "new_throttle": 14,
+      "scheduling_only_dependency_removed": true
+    },
+    {
+      "array_id": 30062956,
+      "previous_throttle": 2,
+      "new_throttle": 2,
+      "scheduling_only_dependency_removed": true
+    },
+    {
+      "array_id": 30063319,
+      "previous_throttle": 2,
+      "new_throttle": 6,
+      "scheduling_only_dependency_removed": true
+    },
+    {
+      "array_id": 30063541,
+      "previous_throttle": 2,
+      "new_throttle": 4,
+      "scheduling_only_dependency_removed": true
+    },
+    {
+      "array_id": 30061427,
+      "previous_throttle": 4,
+      "new_throttle": 5,
+      "scheduling_only_dependency_removed": false
+    },
+    {
+      "array_id": 30064252,
+      "previous_throttle": 2,
+      "new_throttle": 5,
+      "scheduling_only_dependency_removed": false
+    }
+  ],
+  "verification": "squeue showed the requested array throttle for every updated array and null dependencies after scontrol updates",
+  "allocation_limits_observed": "User association and normal QOS query returned no explicit limits in the selected fields; this does not establish absence of inherited limits or resource contention",
+  "preservation": "Existing job IDs, source archives, resource requests per task and live proof processes retained. No duplicate replay submitted.",
+  "formal_status": "Scheduling changes do not certify any new theorem; one complete nonapex region remains integrated.",
+  "allocation_observation": {
+    "recorded_at": "2026-10-19T21:24:52.999193+00:00",
+    "running_jobs": 43,
+    "running_allocated_cores": 200,
+    "pending_jobs": 0,
+    "evidence": "squeue -r expanded all user jobs; aggregation returned RUNNING 43 jobs, 200 cores and no PENDING group"
+  }
+}

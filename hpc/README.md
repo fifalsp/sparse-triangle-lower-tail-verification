@@ -373,3 +373,26 @@ resumptions make **1–3 days** a more cautious elapsed-time allowance, assuming
 no proof failures require changes. More CPUs alone do not guarantee this
 speedup: memory pressure and sequential dependencies also matter. Raw
 observations and caveats are in `compute-estimate-20261019.json`.
+
+
+## Aggressive parallel scheduling (2026-10-19)
+
+At the user's explicit request, the existing independent proof arrays were
+released for concurrent scheduling. Throttles are now 14 for array 30062736,
+2 for 30062956, 6 for 30063319, 4 for 30063541, 5 for 30061427, and 5 for
+apex array 30064252. The four scheduling-only dependencies were removed.
+Slurm confirmed each updated throttle and empty dependency. The total
+eligible allocation rises from the observed 68 running cores to up to 200.
+No running proof was restarted, and no duplicate replay was submitted.
+
+If 200 cores are sustained, the 1,000–2,000 core-hour planning range means
+5–10 ideal elapsed hours. A provisional **12–36 hour** completion allowance
+is more cautious because individual long jobs, queueing, resumptions and
+final assembly can dominate. This remains a rough forecast conditional on
+no proof failures, not a deadline. See `bouchet-parallel-scaleup-20261019.json`
+for queue evidence and `compute-estimate-20261019.json` for measured inputs.
+
+A subsequent expanded queue check confirmed **43 jobs RUNNING, 200 cores
+allocated, and no pending jobs**. The increased concurrency is now an
+observed allocation, not merely a request. It does not establish additional
+proof completion; full target builds and axiom audits remain required.

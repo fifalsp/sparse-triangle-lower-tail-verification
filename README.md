@@ -82,7 +82,7 @@ full replays are queued as **30062956**, behind the smaller-region array.
 Complete proposals for all **42 critical-region jobs** are now saved with
 [raw search provenance](hpc/bouchet-complete-searches-20261019.json). Their
 subdivision geometry has been parsed locally; this does not establish positivity.
-Full apex array **30064252** checks fans F2–F6 with at most two concurrent
+Full apex array **30064252** checks fans F2–F6 with at most five concurrent
 eight-CPU jobs. The existing full F1 run remains separate.
 
 Latest apex progress: a complete F1 subdivision is proposed, and five representative
@@ -229,3 +229,9 @@ see the [completion record](hpc/bouchet-job25-completion-20261019.json).
 The stable `CheckedCoverJobs` assembly supplies completed regions automatically:
 its critical-classification theorem requires only the remaining 35 nonapex
 jobs, plus the six apex results and the named classical inputs.
+
+At the user's request, all independent full-region jobs are now eligible
+for concurrent scheduling: array throttles were raised and scheduling-only
+dependencies removed, allowing up to **200 allocated cores** across the
+remaining work. A subsequent scheduler check confirmed **43 jobs RUNNING
+with 200 cores allocated and no pending jobs**. See the [scale-up record](hpc/bouchet-parallel-scaleup-20261019.json).

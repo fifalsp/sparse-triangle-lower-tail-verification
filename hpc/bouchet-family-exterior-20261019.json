@@ -21,5 +21,17 @@
   "trust_status": "Pending full Lean build and axiom audit",
   "job_id": "30056868",
   "initial_scheduler_elapsed": "00:00:13",
-  "initial_scheduler_state": "RUNNING"
+  "initial_scheduler_state": "RUNNING",
+  "monitoring_checkpoints": [
+    {
+      "scheduler_state": "RUNNING",
+      "scheduler_elapsed": "00:09:02",
+      "generation_seconds": 42.070277605205774,
+      "build_total_modules": 12872,
+      "build_completed_modules": 157,
+      "build_failed_modules": {},
+      "build_elapsed_seconds": 389.8204018548131,
+      "trust_status": "In progress; full build and audit pending"
+    }
+  ]
 }

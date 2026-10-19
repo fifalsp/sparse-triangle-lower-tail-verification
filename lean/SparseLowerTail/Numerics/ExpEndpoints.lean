@@ -1,6 +1,6 @@
 import SparseLowerTail.Numerics.IntervalArithmetic
 
-/-! Rational endpoint certificates for exp(-q), -16 ≤ q ≤ 16.
+/-! Rational endpoint certificates for exp(-q), -32 ≤ q ≤ 32.
 The Taylor arithmetic is performed in ℚ and then transported to ℝ by the
 proved cast identities. Every rounding comparison remains a kernel-checked
 hypothesis; this module introduces no numerical oracle. -/
@@ -55,6 +55,24 @@ theorem exp_neg_bounds_of_rat_taylor_signed {q l u L U : ℚ} {n : ℕ}
   exact ⟨(by exact_mod_cast hL : (L : ℝ)≤(l : ℝ)^16).trans h.1,
     h.2.trans (by exact_mod_cast hU : (u : ℝ)^16≤(U : ℝ))⟩
 
+/-- Range reduction, rational rounding and power thirty-two certify a full endpoint. -/
+theorem exp_neg_bounds_of_rat_taylor_signed32 {q l u L U : ℚ} {n : ℕ}
+    (hqlo : -32≤q) (hq32 : q≤32) (hn : 0<n) (hl0 : 0≤l)
+    (hl : l ≤ expTaylorRat (-q/32) n - expRemainderRat (-q/32) n)
+    (hu : expTaylorRat (-q/32) n + expRemainderRat (-q/32) n ≤ u)
+    (hL : L≤l^32) (hU : u^32≤U) :
+    Bounds (Real.exp (-(q : ℝ))) (L : ℝ) (U : ℝ) := by
+  have hx : |(-q/32 : ℚ)|≤1 := by
+    apply abs_le.mpr
+    constructor <;> linarith
+  have h := (exp_bounds_of_rat_taylor hx hn hl hu).exp_scale_pow
+    (by exact_mod_cast hl0) 32
+  have heq : (32 : ℝ)*((-q/32 : ℚ) : ℝ) = -(q : ℝ) := by push_cast; ring
+  norm_num only [Nat.cast_ofNat] at h
+  rw [heq] at h
+  exact ⟨(by exact_mod_cast hL : (L : ℝ)≤(l : ℝ)^32).trans h.1,
+    h.2.trans (by exact_mod_cast hU : (u : ℝ)^32≤(U : ℝ))⟩
+
 /-- Backwards-compatible nonnegative-domain statement. -/
 theorem exp_neg_bounds_of_rat_taylor {q l u L U : ℚ} {n : ℕ}
     (hq0 : 0≤q) (hq16 : q≤16) (hn : 0<n) (hl0 : 0≤l)
@@ -83,22 +101,32 @@ structure ExpEndpointCertificate where
 
 namespace ExpEndpointCertificate
 
-def Valid (c : ExpEndpointCertificate) : Prop :=
-  -16≤c.q ∧ c.q≤16 ∧ 0<c.order ∧ 0≤c.baseLower ∧
-  c.baseLower≤expTaylorRat (-c.q/16) c.order-expRemainderRat (-c.q/16) c.order ∧
-  expTaylorRat (-c.q/16) c.order+expRemainderRat (-c.q/16) c.order≤c.baseUpper ∧
-  c.lower≤c.baseLower^16 ∧ c.baseUpper^16≤c.upper
+/-- Either of two proved range reductions. Existing sixteen-scale data remain valid. -/
+def ValidAt (c : ExpEndpointCertificate) (m : ℕ) : Prop :=
+  -(m:ℚ)≤c.q ∧ c.q≤(m:ℚ) ∧ 0<c.order ∧ 0≤c.baseLower ∧
+  c.baseLower≤expTaylorRat (-c.q/m) c.order-expRemainderRat (-c.q/m) c.order ∧
+  expTaylorRat (-c.q/m) c.order+expRemainderRat (-c.q/m) c.order≤c.baseUpper ∧
+  c.lower≤c.baseLower^m ∧ c.baseUpper^m≤c.upper
 
-instance (c : ExpEndpointCertificate) : Decidable c.Valid := inferInstanceAs (Decidable (
-  -16≤c.q ∧ c.q≤16 ∧ 0<c.order ∧ 0≤c.baseLower ∧
-  c.baseLower≤expTaylorRat (-c.q/16) c.order-expRemainderRat (-c.q/16) c.order ∧
-  expTaylorRat (-c.q/16) c.order+expRemainderRat (-c.q/16) c.order≤c.baseUpper ∧
-  c.lower≤c.baseLower^16 ∧ c.baseUpper^16≤c.upper))
+instance (c : ExpEndpointCertificate) (m : ℕ) : Decidable (c.ValidAt m) :=
+  inferInstanceAs (Decidable (
+    -(m:ℚ)≤c.q ∧ c.q≤(m:ℚ) ∧ 0<c.order ∧ 0≤c.baseLower ∧
+    c.baseLower≤expTaylorRat (-c.q/m) c.order-expRemainderRat (-c.q/m) c.order ∧
+    expTaylorRat (-c.q/m) c.order+expRemainderRat (-c.q/m) c.order≤c.baseUpper ∧
+    c.lower≤c.baseLower^m ∧ c.baseUpper^m≤c.upper))
+
+def Valid (c : ExpEndpointCertificate) : Prop := c.ValidAt 16 ∨ c.ValidAt 32
+
+instance (c : ExpEndpointCertificate) : Decidable c.Valid :=
+  inferInstanceAs (Decidable (c.ValidAt 16 ∨ c.ValidAt 32))
 
 theorem bounds (c : ExpEndpointCertificate) (h : c.Valid) :
     Bounds (Real.exp (-(c.q : ℝ))) (c.lower : ℝ) (c.upper : ℝ) := by
-  rcases h with ⟨h0,h16,hn,hl0,hl,hu,hL,hU⟩
-  exact exp_neg_bounds_of_rat_taylor_signed h0 h16 hn hl0 hl hu hL hU
+  rcases h with h | h
+  · rcases h with ⟨h0,h16,hn,hl0,hl,hu,hL,hU⟩
+    exact exp_neg_bounds_of_rat_taylor_signed h0 h16 hn hl0 hl hu hL hU
+  · rcases h with ⟨h0,h32,hn,hl0,hl,hu,hL,hU⟩
+    exact exp_neg_bounds_of_rat_taylor_signed32 h0 h32 hn hl0 hl hu hL hU
 
 end ExpEndpointCertificate
 

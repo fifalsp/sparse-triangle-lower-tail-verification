@@ -93,3 +93,13 @@ The full exterior replay and full ABB local theorem are still required;
 `FamilyABBLocal` remains an explicit internal premise, not an allowed external
 assumption. Source-generation errors found in the smoke test were repaired.
 No new mathematical counterexample or manuscript gap was found.
+
+
+### 2026-10-19: endpoint range required by the bottom cells
+
+The previous numerical endpoint interface stopped at q=16, while the actual
+B1/B2 support cutoffs are 9009/512 and 4629/256. This prevented their full-domain
+replay. A separately proved scale-32 alternative now covers [-32,32], and
+both actual cutoffs pass kernel-checked endpoint tests. Existing scale-16
+certificate data are preserved. The complete B1/B2 positivity jobs are still
+unproved; widening the endpoint range does not discharge those inequalities.

@@ -12,11 +12,12 @@ from pathlib import Path
 
 
 def endpoint(q: Fraction, order: int, bits: int):
-    if not -16 <= q <= 16:
-        raise ValueError('Every endpoint must lie in [-16,16]')
+    if not -32 <= q <= 32:
+        raise ValueError('Every endpoint must lie in [-32,32]')
     if order < 1 or bits < 1:
         raise ValueError('order and bits must be positive')
-    x = -q / 16
+    reduction = 16 if -16 <= q <= 16 else 32
+    x = -q / reduction
     polynomial = sum((x**m / factorial(m) for m in range(order)), Fraction())
     remainder = abs(x)**order * Fraction(order + 1, factorial(order) * order)
     scale = 2**bits
@@ -30,7 +31,7 @@ def endpoint(q: Fraction, order: int, bits: int):
     lo, hi = lower(polynomial - remainder), upper(polynomial + remainder)
     if lo < 0:
         raise ValueError('Increase the Taylor order to get a nonnegative base lower bound')
-    return q, order, lo, hi, lower(lo**16), upper(hi**16)
+    return q, order, lo, hi, lower(lo**reduction), upper(hi**reduction)
 
 
 def rat(value):

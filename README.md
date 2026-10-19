@@ -80,6 +80,12 @@ types and quadratic choices, and one complete small subtree. Contact and
 coverage conclusions still require the internal ABB local theorem. The
 proposal is not a completed formal certificate.
 
+The exact 36-job nonapex and six-fan apex results now have a direct checked
+assembly into critical classification. Sharper interval bounds are available
+for every nonapex job. The endpoint checker also covers all cell cutoffs,
+including B1/B2 beyond 16, through a proved scale-32 alternative. **These
+reductions do not discharge the full numerical jobs.**
+
 The target statement quantifies over all measurable graphons, not just SBMs.
 At the authors' request, external/classical results may be explicit hypotheses;
 [ASSUMPTIONS.md](lean/ASSUMPTIONS.md) distinguishes those inputs from our own

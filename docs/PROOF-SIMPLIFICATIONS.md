@@ -776,3 +776,20 @@ These are checked reductions, not a discharge of the numerical premises.
 The 64,646-leaf exterior proposal still needs full Lean replay, and the ABB
 local result remains an explicit internal obligation. The reduction preserves
 the paper's complete conclusion rather than replacing it by positivity alone.
+
+
+### Critical classification: a precise finite interface (`prop:cover`, `prop:critical`)
+
+`SparseLowerTail.Section05.criticalClassification_of_ordered_jobs` now takes
+exactly the full sorted-domain conclusions for the 36 nonapex jobs and six
+apex fans, plus the four named classical inputs already used by the paper.
+The proof derives the complete cover from the actual cell/vertex inventory.
+Every nonapex vertex has a checked job index; an exceptional apex is either
+in a fan cell or already accounted for by that inventory. No additional
+geometric or support assertions need to be supplied by the numerical program.
+One fan's zero-pattern conclusion then gives the critical rigidity input.
+
+This is a simplification of the proof interface. All 42 full-domain numerical
+conclusions still need Lean proofs; successful search proposals and individual
+boxes do not meet this requirement. The wider endpoint checker repairs the
+B1/B2 range restriction without changing the certificate formulas.

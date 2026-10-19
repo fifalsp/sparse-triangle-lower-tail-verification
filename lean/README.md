@@ -1194,3 +1194,37 @@ The scheduler subsequently reported the new job RUNNING at 13 seconds,
 with the source hash accepted and dependency-cache restoration underway.
 The original S1, F1 and ABB jobs were still RUNNING at 1h26m58s, 1h26m58s
 and 56m01s respectively. No full cloud success is asserted.
+
+
+### 2026-10-19 — all-job critical assembly and wider endpoints
+
+`CoverJobsAssembly.criticalClassification_of_ordered_jobs` (declaration
+namespace `SparseLowerTail.Section05`) connects the exact **36 nonapex jobs
+and six apex fans** to critical classification. It checks the actual vertex
+inventory, including which cells contain the exceptional apex, then applies
+the proved cover, support and zero-pattern arguments. The job results remain
+explicit internal premises. This does not assert that those jobs have passed.
+
+`CoverRefinedJobIntervals` and `CoverRefinedJobTaylorBox` provide the sharper
+proved critical constants and solved fan coefficients to every nonapex job.
+The mathematical certificates are unchanged. In particular, missing fan
+coefficient slots never become the table's zero placeholders.
+
+A genuine implementation limitation was found: B1 and B2 require logarithmic
+cutoffs 9009/512 and 4629/256, exceeding the endpoint checker's former limit 16.
+A proved thirty-two-scale alternative now handles [-32,32]. The old
+sixteen-scale data remain accepted unchanged. `WideExpSmoke` kernel-checks
+both B-cell cutoffs and -32, 0, 16, 32. `all_cell_cutoffs_in_wide_range` checks
+that all twelve actual cutoffs fit the new range. This is a repaired verifier
+restriction, not a counterexample to the manuscript.
+
+Validation: the complete 336-module project dependency closure passed with
+at most two build workers. The axiom audit passed **12,299 declarations /
+8,079 theorems**, with only the standard three logical axioms. All **88
+labels / 463 declaration links** and the eleven exterior-regression and
+six manuscript-map tests pass. The numerical job premises remain unproved;
+the effort estimate is still roughly 40–45%.
+
+The next step is to check the generic search evaluator against exported Lean
+intervals for all 36 jobs, then generate and formally replay full subdivisions.
+The raw input export is running separately and is not counted as a proof.

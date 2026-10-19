@@ -736,7 +736,7 @@
     {
       "paper_label": "prop:family",
       "status": "conditional_compact_reduction",
-      "checked_scope": "Analytic tail and exact compact-to-global reduction proved. The compact-domain positivity and zero-set certificate remain an internal hypothesis. The actual parameter interval [3.9,9.5] is proved for every intermediate target, and compact-to-middle-family assembly is complete. Exact Phi reification, local Hessian/contact calculus, congruence and diagonal scaling, and parameter-to-coefficient interval enclosure are proved; numerical compact-domain margins remain to replay. Full-parameter local AAA nonnegativity and unique zero are now proved on the closed logarithmic cube of radius 1/10, using five exact interval leaves. This does not prove the mixed-contact neighborhoods or the exterior compact domain. Signed exponential endpoints, scaled-Hessian interval replay, exact four-dimensional subdivision soundness, moving-ABB-contact enclosures and the local ABB assembly are now proved. Two selected mixed-contact boxes pass the complete Lean checker. The proposed full 108452-leaf ABB cover is not yet replayed in Lean; the full mixed neighborhood and exterior remain open formal obligations. The shared-parameter replay generator now has a checked 21-leaf smoke target, including one complete subdivision subtree. The full generator and bounded-concurrency cluster runner are prepared, but no full ABB result is asserted. Actual L-derivatives and the signed parameter Taylor bound are proved from checked rational coefficient expressions; all seven derivatives through order three are kernel checked on [39/10,2503/640]. This does not discharge the exterior cover.",
+      "checked_scope": "Analytic tail and exact compact-to-global reduction proved. The compact-domain positivity and zero-set certificate remain an internal hypothesis. The actual parameter interval [3.9,9.5] is proved for every intermediate target, and compact-to-middle-family assembly is complete. Exact Phi reification, local Hessian/contact calculus, congruence and diagonal scaling, and parameter-to-coefficient interval enclosure are proved; numerical compact-domain margins remain to replay. Full-parameter local AAA nonnegativity and unique zero are now proved on the closed logarithmic cube of radius 1/10, using five exact interval leaves. This does not prove the mixed-contact neighborhoods or the exterior compact domain. Signed exponential endpoints, scaled-Hessian interval replay, exact four-dimensional subdivision soundness, moving-ABB-contact enclosures and the local ABB assembly are now proved. Two selected mixed-contact boxes pass the complete Lean checker. The proposed full 108452-leaf ABB cover is not yet replayed in Lean; the full mixed neighborhood and exterior remain open formal obligations. The shared-parameter replay generator now has a checked 21-leaf smoke target, including one complete subdivision subtree. The full generator and bounded-concurrency cluster runner are prepared, but no full ABB result is asserted. Actual L-derivatives and the signed parameter Taylor bound are proved from checked rational coefficient expressions; all seven derivatives through order three are kernel checked on [39/10,2503/640]. This does not discharge the exterior cover. The actual q-gradient parameter variation and complete analytic exterior Taylor assembly (including the three scalar quadratic candidates) are proved. Numerical leaf assembly and full exterior coverage remain missing.",
       "lean_files": [
         "SparseLowerTail/Section08/CertificateTail.lean",
         "SparseLowerTail/Section08/FamilyParameterRange.lean",
@@ -762,7 +762,10 @@
         "SparseLowerTail/Numerics/DyadicFiniteSum.lean",
         "SparseLowerTail/Section08/FamilyParameterCalculus.lean",
         "SparseLowerTail/Section08/FamilyParameterTaylor.lean",
-        "SparseLowerTail/Section08/FamilyParameterSmoke.lean"
+        "SparseLowerTail/Section08/FamilyParameterSmoke.lean",
+        "SparseLowerTail/Numerics/QuadraticAxisBounds.lean",
+        "SparseLowerTail/Section08/FamilyGradientParameter.lean",
+        "SparseLowerTail/Section08/FamilyExteriorTaylor.lean"
       ],
       "lean_declarations": [
         "SparseLowerTail.Certificate.family_certificate_of_compact_exact",
@@ -793,7 +796,12 @@
         "SparseLowerTail.Certificate.FamilyCoeff.coefficientDerivative_hasDerivAt",
         "SparseLowerTail.Certificate.FamilyCoeff.phi_parameter_taylor_lower",
         "SparseLowerTail.Certificate.FamilyParameterSmoke.intervals_checked",
-        "SparseLowerTail.Certificate.FamilyParameterSmoke.derivative_contains"
+        "SparseLowerTail.Certificate.FamilyParameterSmoke.derivative_contains",
+        "SparseLowerTail.Numerics.parameter_variation2",
+        "SparseLowerTail.Numerics.quadratic_axis_chosen",
+        "SparseLowerTail.Certificate.FamilyCoeff.gradientParameterDerivative_zero",
+        "SparseLowerTail.Certificate.FamilyCoeff.gradient_parameter_variation",
+        "SparseLowerTail.Certificate.familyPhi_exterior_lower"
       ],
       "explicit_inputs": [
         "internal:appA3:compact"

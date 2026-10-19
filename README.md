@@ -68,7 +68,9 @@ boxes. **The full ABB replay remains pending.** See the
 The actual parameter-derivative chain and the paper's signed Taylor lower
 bound are now proved in Lean. A kernel-checked sample encloses all seven
 coefficient derivatives through order three on L ∈ [3.9, 2503/640].
-This supplies the analytic parameter step; the full exterior cover is still missing.
+The gradient parameter bound and complete analytic exterior Taylor inequality
+also compile, including all three scalar quadratic bounds used in the paper.
+Numerical leaf assembly and the full exterior cover are still missing.
 
 The target statement quantifies over all measurable graphons, not just SBMs.
 At the authors' request, external/classical results may be explicit hypotheses;

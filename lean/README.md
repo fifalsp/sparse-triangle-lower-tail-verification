@@ -1009,3 +1009,37 @@ jobs. The three Yale jobs were still running at the last scheduler check; no
 full certificate success is claimed. No mathematical counterexample or new
 manuscript error was found in this step. The effort estimate remains roughly
 40–45%; additional helper theorems do not by themselves discharge a certificate.
+
+### 2026-10-19 — gradient variation and analytic exterior-leaf assembly
+
+`FamilyGradientParameter.gradientParameterDerivative_zero` identifies the
+weighted coefficient expression with the actual q-gradient for each coordinate.
+Its `gradient_parameter_variation` theorem gives the paper's L-error bound:
+the center first derivative times the parameter width, plus a uniformly
+bounded second derivative times half the width squared. Both signs of the
+parameter displacement are covered.
+
+`QuadraticAxisBounds` proves all three scalar choices in `compact_test`:
+
+- The interval-safe bound, valid for any sign of the diagonal curvature.
+- The unconstrained minimum when the diagonal curvature is positive.
+- The interval-endpoint bound when a certified lower bound on the gradient
+  magnitude places the stationary point outside the allowed interval.
+
+`familyPhi_exterior_lower` assembles the actual center value, coordinate
+gradients, signed diagonal Hessian lower bounds, and absolute cross-term
+bounds along the segment. It permits any numerically certified choice of the
+three scalar bounds. Thus the analytic exterior-leaf inequality is now proved;
+its explicit scalar enclosure hypotheses still require checked numerical data.
+**No complete exterior cover or final family certificate is claimed.**
+
+Validation: root build **3,450 jobs**; axiom audit **11,344 project declarations /
+7,346 theorems**, only the standard three axioms; stable map **88 labels / 430
+Lean declarations**. The earlier manuscript snapshot and six map tests remain
+unchanged. No manuscript counterexample or mathematical error was found.
+
+Next work is to assemble the parameter-center and q-center interval data into
+an executable exterior-leaf checker, check its numerical margins, and produce
+a complete covered region. Full critical classification also remains open in
+the formalization. These missing computations are internal obligations, not
+allowed external assumptions.

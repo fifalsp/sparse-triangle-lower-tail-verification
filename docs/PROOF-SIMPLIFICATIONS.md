@@ -712,3 +712,22 @@ all 28 coefficient/order combinations on [39/10,2503/640].
 Scope: this simplifies the formal verification architecture, not the
 mathematical statement of Proposition `prop:family`. The full q-dependent
 exterior certificate and its complete cover still need to be discharged.
+
+
+### 2026-10-19 — separate the exterior estimate into reusable scalar bounds
+
+`FamilyGradientParameter` identifies each actual q-gradient as a weighted sum
+of the same seven coefficient functions, and proves its parameter variation
+using a second-order remainder. `QuadraticAxisBounds` proves the three choices
+made in `compact_test`: the interval-safe quadratic bound, the unconstrained
+positive-curvature minimum, and the sharper interval-endpoint value when the
+stationary point lies outside the allowed interval. The endpoint test needs a
+**lower bound** on the gradient magnitude as well as the usual upper bound.
+
+`familyPhi_exterior_lower` assembles these pieces using the actual Hessian
+along the q segment. Diagonal curvature keeps its sign; only off-diagonal
+terms are bounded in absolute value. Its input is explicit value/gradient/
+Hessian enclosures, not an assumption of the desired positivity. This keeps
+the analytic argument short while leaving the finite numerical data and
+coverage obligations visible. No change to the paper's mathematical claim is
+proposed, and no complete exterior certificate is claimed yet.

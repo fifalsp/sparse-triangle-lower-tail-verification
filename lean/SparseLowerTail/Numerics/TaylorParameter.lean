@@ -68,4 +68,50 @@ theorem parameter_taylor3_lower {f f₁ f₂ f₃ : ℝ → ℝ} {c d w M : ℝ}
   have ht := (abs_le.mp (parameter_taylor3_abs h₁ h₂ h₃ hM)).1
   linarith
 
+/-- First-order Taylor expansion with an absolute second-order remainder. -/
+theorem parameter_taylor2_abs {f f₁ f₂ : ℝ → ℝ} {c d M : ℝ}
+    (h₁ : ∀ s ∈ Icc (0:ℝ) 1, HasDerivAt f (f₁ (c+s*d)) (c+s*d))
+    (h₂ : ∀ s ∈ Icc (0:ℝ) 1, HasDerivAt f₁ (f₂ (c+s*d)) (c+s*d))
+    (hM : ∀ s ∈ Icc (0:ℝ) 1, |f₂ (c+s*d)| ≤ M) :
+    |f (c+d)-f c-d*f₁ c| ≤ M*d^2/2 := by
+  have hp (s : ℝ) : HasDerivAt (fun u : ℝ => c+u*d) d s := by
+    simpa using ((hasDerivAt_id s).mul_const d).const_add c
+  have hd₁ : ∀ s ∈ Icc (0:ℝ) 1,
+      HasDerivAt (fun u => f (c+u*d)) (d*f₁ (c+s*d)) s := by
+    intro s hs
+    simpa [mul_comm] using (h₁ s hs).comp s (hp s)
+  have hd₂ : ∀ s ∈ Icc (0:ℝ) 1,
+      HasDerivAt (fun u => d*f₁ (c+u*d)) (d^2*f₂ (c+s*d)) s := by
+    intro s hs
+    convert ((h₂ s hs).comp s (hp s)).const_mul d using 1 <;> ring
+  have hb : ∀ s ∈ Icc (0:ℝ) 1, |d^2*f₂ (c+s*d)| ≤ M*d^2 := by
+    intro s hs
+    rw [abs_mul,abs_of_nonneg (sq_nonneg d),mul_comm M]
+    exact mul_le_mul_of_nonneg_left (hM s hs) (sq_nonneg d)
+  have hlo := segment_taylor_lower hd₁ hd₂
+    (fun s hs => (neg_le_neg (hb s hs)).trans (neg_abs_le _))
+  have hhi := segment_taylor_lower (fun s hs => (hd₁ s hs).neg)
+    (fun s hs => (hd₂ s hs).neg)
+    (fun s hs => neg_le_neg ((le_abs_self _).trans (hb s hs)))
+  simp only [Pi.neg_apply,zero_mul,add_zero,one_mul] at hlo hhi
+  exact abs_le.mpr ⟨by linarith,by linarith⟩
+
+/-- Parameter variation bound used for the gradient error in `compact_test`. -/
+theorem parameter_variation2 {f f₁ f₂ : ℝ → ℝ} {c d w M : ℝ}
+    (h₁ : ∀ s ∈ Icc (0:ℝ) 1, HasDerivAt f (f₁ (c+s*d)) (c+s*d))
+    (h₂ : ∀ s ∈ Icc (0:ℝ) 1, HasDerivAt f₁ (f₂ (c+s*d)) (c+s*d))
+    (hM : ∀ s ∈ Icc (0:ℝ) 1, |f₂ (c+s*d)| ≤ M)
+    (hd : |d|≤w) :
+    |f (c+d)-f c| ≤ |f₁ c| * w+M*w^2/2 := by
+  have hM0 : 0≤M := (abs_nonneg _).trans (hM 0 (by norm_num))
+  have hd2 : d^2≤w^2 := by
+    simpa only [sq_abs] using pow_le_pow_left₀ (abs_nonneg d) hd 2
+  have ht := parameter_taylor2_abs h₁ h₂ hM
+  have ha := abs_add_le (f (c+d)-f c-d*f₁ c) (d*f₁ c)
+  have hl := mul_le_mul_of_nonneg_left hd (abs_nonneg (f₁ c))
+  rw [abs_mul] at ha
+  have hq := mul_le_mul_of_nonneg_left hd2 hM0
+  simp only [sub_add_cancel] at ha
+  nlinarith
+
 end SparseLowerTail.Numerics

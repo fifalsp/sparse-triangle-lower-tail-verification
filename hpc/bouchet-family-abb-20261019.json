@@ -18,5 +18,16 @@
   "status": "observed RUNNING at 53 seconds; dependency cache restoration; full build and audit pending",
   "remote_directory": "/nfs/roberts/project/pi_sl3363/sl3363",
   "scope": "Full ABB logarithmic neighborhood radius 1/10 for L in [3.9,9.5]; exterior family remains separate",
-  "node": "c1104u05n03"
+  "node": "c1104u05n03",
+  "monitoring_checkpoints": [
+    {
+      "scheduler_elapsed": "00:16:06",
+      "scheduler_state": "RUNNING",
+      "last_observed_build_completed_modules": 133,
+      "build_total_modules": 7459,
+      "build_failed_modules": {},
+      "build_elapsed_seconds": 590.28765328601,
+      "trust_status": "In progress; no full proof or axiom-audit success yet"
+    }
+  ]
 }

@@ -76,3 +76,24 @@ tail -n 20 /nfs/roberts/project/pi_sl3363/sl3363/sparse-lean-30048468.out
 The job was subsequently observed **RUNNING** on compute node `a1132u11n04`;
 the source checksum passed there and official elan setup started. Remote
 build/audit completion remains unverified.
+
+## Full S1 certificate workload
+
+The staged runner accepts a third argument `s1`. This experimental workload
+generates all 15,280 Taylor leaves, 385 geometric coverage chunks, their
+positive-coverage assembly and a final full-edge-cube theorem for the **first
+parameter vertex of S1**. It then runs the unchanged project axiom-audit policy
+on that theorem's entire dependency closure. It is one of the 36 nonapex jobs;
+it does not discharge the whole cover or the main theorem.
+
+Submit with `--time=12:00:00` and `--dependency=afterok:BOOTSTRAP_JOB_ID`.
+The Python/Lean computation has an internal ten-hour timeout to leave time
+for logs and cache export. Dependency ordering prevents two writers to the
+same cache. Generated sources are exported only after build and audit success;
+failed builds retain their diagnostic logs in the results archive.
+
+The proposal JSON and generators are untrusted inputs. A successful proposal
+is never treated as a proof; all leaves, splitting geometry, table lookups
+and final mathematical conclusions must compile in Lean. The standalone
+full-cube wrapper has been checked with an explicit coverage hypothesis;
+that template check does not establish the missing coverage theorem.

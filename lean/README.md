@@ -829,3 +829,12 @@ Its numerical margin must still be discharged for every exterior leaf and
 the leaves must be proved to cover the required domain.
 Validation of the Taylor addition: root build 3418 jobs; axiom audit 10067
 project declarations / 6410 theorems, using only the standard three axioms.
+
+### Bouchet full S1 replay preparation
+
+The untrusted S1 subdivision proposal and its generators are now versioned
+for remote replay. `tools/run_s1_cluster.py` generates all leaves and exact
+coverage, compiles a full-edge-cube theorem for S1's first parameter vertex,
+and runs the standard axiom audit. The proposed workload is not yet a
+completed proof. Its generated modules stay outside the public root until
+the full build, audit and statement review pass. See `../hpc/README.md`.

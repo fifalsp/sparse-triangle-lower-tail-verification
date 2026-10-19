@@ -11,7 +11,7 @@ are in the paper.
 ## Lean 4 progress toward the main theorem
 
 A partial Lean formalization is now in [`lean/`](lean/README.md). **Theorem 1.3
-(`thm:main`) is stated but is not yet proved in Lean.** The Python verification
+(`thm:main`) has a checked conditional assembly but is not yet fully proved in Lean.** The Python verification
 and the Lean formalization have different scopes.
 
 | Status | Progress |
@@ -21,7 +21,7 @@ and the Lean formalization have different scopes.
 | Proved in Lean | Full balanced phase classification (`cor:Vbal`), including stationary branch, unimodality, actual inverse branches, unique crossing, and identification with the supremum threshold. |
 | Proved for unrestricted graphons | Active constraint (`lem:active`); strict improvement below the threshold and exclusion of all constant minimizers there (`thm:threshold`(iii)). |
 | Proved from a named external input | The full supporting range 0 < r ≤ r_−, value equality and optimizer data follow from the explicit KP26 input. Equality rigidity remains to prove. |
-| Proved with explicit hypotheses | The interval continuation argument in the proof of Theorem 1.3; its analytic graphon inputs remain unproved. |
+| Conditional main theorem | The actual graphon continuation and final theorem assembly compile. Three internal inputs remain: critical classification, small-target classification, and the intermediate certificate family. |
 | Proved in Lean | Complete coefficient signs and value/derivative tangencies (`lem:certcoef`), including analytic substitutions and the required log 40 bounds. **Global certificate positivity remains unproved.** |
 | Proved in Lean | All printed threshold/parameter intervals (`lem:digits`); scaling, truncation and rescaled first variation; the graphon certificate expectation identity; scalar two-block rigidity. |
 | Proved in Lean | Full Euler–Lagrange proposition (`prop:euler`): positivity, unique positive multiplier, and quantitative graphon bounds. Sharp Bregman/mean-gap estimates and downward propagation (`lem:push`). |

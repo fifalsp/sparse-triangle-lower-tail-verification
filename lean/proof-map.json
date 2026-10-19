@@ -12,15 +12,29 @@
   "entries": [
     {
       "paper_label": "thm:main",
-      "status": "statement_only",
-      "checked_scope": "Main variational target; not yet proved. Closed target interval matches lem:digits.",
+      "status": "conditional_assembly_three_internal_obligations",
+      "checked_scope": "Exact MainTheorem structure assembled via actual graphon continuation. CriticalClassification, SmallRangeClassification and MiddleFamilyCertificate remain INTERNAL hypotheses; not a completed proof.",
       "lean_files": [
-        "SparseLowerTail/MainStatement.lean"
+        "SparseLowerTail/MainStatement.lean",
+        "SparseLowerTail/MainTheoremAssembly.lean",
+        "SparseLowerTail/Section08/ContinuationAssembly.lean"
       ],
       "lean_declarations": [
-        "SparseLowerTail.MainTheorem"
+        "SparseLowerTail.MainTheorem",
+        "SparseLowerTail.mainTheorem_of_classifications",
+        "SparseLowerTail.Section08.mainTheorem_of_remaining_inputs",
+        "SparseLowerTail.Section08.branchClassification_all_subcritical"
       ],
-      "explicit_inputs": [],
+      "explicit_inputs": [
+        "internal:prop:critical",
+        "internal:thm:smalltail",
+        "internal:prop:family",
+        "classical:inverse-transform-sampling",
+        "classical:dyadic-l1-approximation",
+        "classical:graphon-cut-compactness",
+        "classical:pullback-l1-approximation",
+        "classical:counting-lemma"
+      ],
       "baseline": {
         "environment": "theorem",
         "statement": "We have $r_*=0.2096\\ldots$, and the following hold. \\begin{enumerate}[label=(\\alph*)] \\item $V(r)=\\Vbal(r)$ for every $r\\in(0,1)$. In particular, $V(r)<h(r)$ if and only if $r<r_*$. \\item For $r\\in(r_*,1)$, the constant graphon $r$ is the unique minimizer. \\item At $r=r_*$, the minimizers are exactly the constant graphon $r_*$ and the relabelings of $B_*=B_{a_*,b_*}$, where $a_*=0.01703\\ldots$ and $b_*=0.8493\\ldots$. \\item Let $r\\in(0,r_*)$. The minimum in \\eqref{eq:Vbal} is attained at a unique pair $(a_r,b_r)$, which satisfies $0<a_r<r<b_r<1$. The minimizers at $r$ are exactly the relabelings of $B_{a_r,b_r}$. \\end{enumerate}",
@@ -545,11 +559,11 @@
         "SparseLowerTail.Section06.branchClassification_region_open"
       ],
       "explicit_inputs": [
-        "classical:uniform-sampling",
+        "classical:inverse-transform-sampling",
         "classical:dyadic-l1-approximation",
         "classical:graphon-cut-compactness",
-        "classical:pullback-approximation",
-        "classical:triangle-counting"
+        "classical:pullback-l1-approximation",
+        "classical:counting-lemma"
       ],
       "baseline": {
         "environment": "corollary",
@@ -570,12 +584,12 @@
         "SparseLowerTail.Section06.branchClassification_seed"
       ],
       "explicit_inputs": [
-        "classical:uniform-sampling",
+        "classical:inverse-transform-sampling",
         "classical:dyadic-l1-approximation",
         "classical:graphon-cut-compactness",
-        "classical:pullback-approximation",
-        "classical:triangle-counting",
-        "internal:CriticalClassification"
+        "classical:pullback-l1-approximation",
+        "classical:counting-lemma",
+        "internal:prop:critical"
       ],
       "baseline": {
         "environment": "corollary",
@@ -588,9 +602,14 @@
     {
       "paper_label": "thm:smalltail",
       "status": "pending",
-      "checked_scope": "No complete Lean proof claimed for this statement.",
-      "lean_files": [],
-      "lean_declarations": [],
+      "checked_scope": "Partial: supporting values and minimizer data, spectral degree/tail estimates, and the final scalar coercivity conclusion are proved. Row reduction, quantitative parameter estimates and graphon equality rigidity remain.",
+      "lean_files": [
+        "SparseLowerTail/Section07/SmallRigidityCoercivity.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section07.small_rigidity_exp_margin",
+        "SparseLowerTail.Section07.small_rigidity_block_norms_zero"
+      ],
       "explicit_inputs": [],
       "baseline": {
         "environment": "theorem",
@@ -621,11 +640,18 @@
     },
     {
       "paper_label": "lem:tieexclusion",
-      "status": "pending",
-      "checked_scope": "No complete Lean proof claimed for this statement.",
-      "lean_files": [],
-      "lean_declarations": [],
-      "explicit_inputs": [],
+      "status": "proved_conditional_family_certificate",
+      "checked_scope": "Full actual graphon tie exclusion, with exact coefficient range and explicit pointwise certificate positivity/zero-set input. Fubini, Jensen, multiplier difference, expectation bound and final classification proved internally.",
+      "lean_files": [
+        "SparseLowerTail/Section08/TieExclusion.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Certificate.minimizer_balanced_of_tie_certificate",
+        "SparseLowerTail.Certificate.tie_edgeDensity_eq"
+      ],
+      "explicit_inputs": [
+        "internal:prop:family"
+      ],
       "baseline": {
         "environment": "lemma",
         "statement": "Let $r\\in[r_-,r_*]$, and let $U$ be a minimizer at $r$ with $F(U)=F(B_r)$ and $e(U)\\ge m_r$. Then $U$ is a relabeling of $B_r$.",
@@ -1610,7 +1636,7 @@
         "SparseLowerTail.Section06.minimizer_rows_minimize"
       ],
       "explicit_inputs": [
-        "classical:uniform-sampling"
+        "classical:inverse-transform-sampling"
       ]
     },
     {
@@ -1702,7 +1728,7 @@
         "SparseLowerTail.Section07.penalized_minimizer_data"
       ],
       "explicit_inputs": [
-        "classical:uniform-sampling"
+        "classical:inverse-transform-sampling"
       ]
     },
     {
@@ -1741,7 +1767,7 @@
         "SparseLowerTail.Section06.eventually_bipodal_of_cutDistance"
       ],
       "explicit_inputs": [
-        "classical:uniform-sampling"
+        "classical:inverse-transform-sampling"
       ]
     },
     {
@@ -1774,7 +1800,7 @@
         "SparseLowerTail.Section07.smallTarget_spectral_data"
       ],
       "explicit_inputs": [
-        "classical:uniform-sampling",
+        "classical:inverse-transform-sampling",
         "classical:positive-hilbert-schmidt-spectrum",
         "external:KP26:1.6"
       ]
@@ -1797,11 +1823,78 @@
         "SparseLowerTail.Section06.eventually_branchClassification_of_subsequence_limits"
       ],
       "explicit_inputs": [
-        "classical:uniform-sampling",
+        "classical:inverse-transform-sampling",
         "classical:dyadic-l1-approximation",
         "classical:graphon-cut-compactness",
-        "classical:pullback-approximation",
-        "classical:triangle-counting"
+        "classical:pullback-l1-approximation",
+        "classical:counting-lemma"
+      ]
+    },
+    {
+      "paper_label": "eq:s7mass",
+      "baseline": {
+        "environment": "equation",
+        "statement": "p_0\\le p_\\pm\\le1-p_0,\\quad \\|\\sigma-\\psi\\|_2^2=2-2\\|\\psi\\|_1\\le2-\\frac2M .",
+        "statement_sha256": "5c9a27fe050cff0e4924c2be69a044dc576fa8a0fe7775afb3271aaa680abfee",
+        "proof_sha256": null,
+        "source_line": 5007
+      },
+      "status": "proved_relative_explicit_inputs",
+      "checked_scope": "Actual measurable sign partition, both block mass bounds, exact L² sign-error identity and bound.",
+      "lean_files": [
+        "SparseLowerTail/Section07/EigenfunctionBlocks.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section07.smallTarget_eigenfunction_blocks"
+      ],
+      "explicit_inputs": [
+        "classical:inverse-transform-sampling",
+        "classical:positive-hilbert-schmidt-spectrum",
+        "external:KP26:1.6"
+      ]
+    },
+    {
+      "paper_label": "eq:s7Rrow",
+      "baseline": {
+        "environment": "equation",
+        "statement": "|\\psi(x)|\\le M,\\quad \\|R(x,\\cdot)\\|_2^2=\\sum_{j\\ge2}\\lambda_j^2e_j(x)^2\\le sR(x,x)\\le sA .",
+        "statement_sha256": "97121a871dfe5def9ea80b08f7b2a9d1d16009f2aeeb40d54826459f9e38e084",
+        "proof_sha256": null,
+        "source_line": 5001
+      },
+      "status": "proved_relative_explicit_inputs",
+      "checked_scope": "Actual residual Parseval and uniform row-square bound; generic classical spectral expansion is an explicit parameter.",
+      "lean_files": [
+        "SparseLowerTail/Section07/SpectralRemainder.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section07.minimizer_spectralRemainder_row_bound"
+      ],
+      "explicit_inputs": [
+        "classical:inverse-transform-sampling",
+        "classical:positive-hilbert-schmidt-spectrum"
+      ]
+    },
+    {
+      "paper_label": "eq:s7codeg",
+      "baseline": {
+        "environment": "align",
+        "statement": "C_U(x,y)-c_\\pm(x)&=\\|D\\|_2^2-\\lambda\\beta(\\psi(x)+\\psi(y))-(T_RD)(x)+d(x)D(y)\\notag\\\\ &\\quad-(T_RD)(y)+\\lambda^2\\psi(x)(\\psi(y)-\\sigma(y))+R^{(2)}(x,y).",
+        "statement_sha256": "b6252d45d972d2e06e17fbb63df4bda64ed8c7d316371ee5540359d947dd84b0",
+        "proof_sha256": null,
+        "source_line": 5065
+      },
+      "status": "proved_relative_explicit_inputs",
+      "checked_scope": "Exact seven-term codegree expansion using the leading eigenfunction and actual spectral remainder.",
+      "lean_files": [
+        "SparseLowerTail/Section07/ResidualCodegree.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section07.codegree_spectral_error_identity"
+      ],
+      "explicit_inputs": [
+        "classical:inverse-transform-sampling",
+        "classical:positive-hilbert-schmidt-spectrum"
       ]
     }
   ]

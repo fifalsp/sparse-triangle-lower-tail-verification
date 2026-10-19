@@ -11,11 +11,16 @@ project = root/'lean'
 mapping = json.loads((project/'proof-map.json').read_text())
 names = set()
 labels = set()
+ledger = (project/'ASSUMPTIONS.md').read_text()
+recorded_inputs = set(re.findall(r'`((?:classical|external):[^`]+)`', ledger))
 for entry in mapping['entries']:
     label = entry['paper_label']
     if label in labels:
         raise SystemExit(f'Duplicate map label: {label}')
     labels.add(label)
+    for dependency in entry['explicit_inputs']:
+        if dependency.startswith(('classical:', 'external:')) and dependency not in recorded_inputs:
+            raise SystemExit(f'Unrecorded external input for {label}: {dependency}')
     for name in entry['lean_declarations']:
         if not re.fullmatch(r'[A-Za-z_][A-Za-z_0-9.]*', name):
             raise SystemExit(f'Unsupported declaration name: {name}')

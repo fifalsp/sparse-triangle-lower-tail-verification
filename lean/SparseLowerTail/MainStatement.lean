@@ -19,7 +19,8 @@ namespace SparseLowerTail
 
 /-- Parts (a)--(d) of the main variational theorem, plus the certified interval
 for the transition target. This structure is a proof-obligation inventory;
-no inhabitant has yet been constructed. -/
+an inhabitant is constructed conditionally in MainTheoremAssembly and
+Section08.ContinuationAssembly. The internal hypotheses remain unproved. -/
 structure MainTheorem : Prop where
   threshold_bounds : (2096696762 : ℝ) / 10000000000 ≤ threshold ∧
     threshold ≤ (2096696763 : ℝ) / 10000000000

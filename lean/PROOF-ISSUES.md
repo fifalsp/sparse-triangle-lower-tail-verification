@@ -2,6 +2,10 @@
 
 Updated 2026-10-19. **No mathematical error in the paper has been established
 by the checks recorded here. The main theorem is not yet formally proved.**
+The final assembly is now `Section08.mainTheorem_of_remaining_inputs`. Its three
+internal hypotheses are `CriticalClassification`, `SmallRangeClassification`,
+and `MiddleFamilyCertificate`; none may be treated as a classical result.
+
 A successful Lean build verifies the encoded statements under their explicit
 hypotheses; it does not by itself establish fidelity to every manuscript claim.
 

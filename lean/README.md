@@ -498,3 +498,19 @@ and openness of exact balanced classification among all graphons. The left seed
 is proved conditional on `CriticalClassification`; its finite certificates are
 still internal obligations. Compactness, dyadic approximation, triangle counting,
 pullback approximation and sampling are the recorded classical inputs.
+
+### 2026-10-19 — exact conditional main-theorem assembly
+
+`Section08.mainTheorem_of_remaining_inputs` now constructs the existing
+`MainTheorem` structure from the actual graphon continuation argument, relative
+to three remaining internal propositions: critical classification, small-target
+classification, and the pointwise intermediate certificate. No axiom asserts
+these propositions. The complete tie-exclusion deduction is proved. The shorter
+proof note now also gives a compact narrative of this final argument.
+
+The spectral development additionally proves sign-block masses, residual
+row/action estimates and the exact codegree expansion. A reusable rational
+exponential endpoint checker passed generated checks at 0, 1, 6743/512 and 16;
+its Python generator only proposes data, with all comparisons checked by Lean.
+The remaining major proof obligations keep the effort estimate at about 30%
+(25–40% range), despite completion of the final logical assembly.

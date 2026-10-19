@@ -79,3 +79,7 @@ import SparseLowerTail.Section05.CoverS1Regions
 import SparseLowerTail.Section05.OrderedBoxTightening
 import SparseLowerTail.Numerics.TaylorBounds
 import SparseLowerTail.Section06.Stability
+import SparseLowerTail.Section08.ContinuationAssembly
+import SparseLowerTail.Section07.ResidualCodegree
+import SparseLowerTail.Numerics.ExpEndpoints
+import SparseLowerTail.Section07.SmallRigidityCoercivity

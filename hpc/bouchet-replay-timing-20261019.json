@@ -1,0 +1,20 @@
+{
+  "recorded_at": "2026-10-19T20:26:26.646281+00:00",
+  "evidence": "Authenticated Yale shell, per-job builder status and leaf build log",
+  "job_array_id": 30061427,
+  "array_task": 3,
+  "allocation_job_id": 30061434,
+  "source_commit": "38d5c740f691792bd19cf545d18565c5b216bd9a",
+  "target": "SparseLowerTail.Section05.CoverJobReplay.Job03Full.Ordered",
+  "total_modules": 749,
+  "completed_modules": 147,
+  "failed_modules": {},
+  "builder_seconds": 554.4580745291896,
+  "workers": 4,
+  "lean_threads_per_worker": 1,
+  "first_leaf_module": "SparseLowerTail.Section05.CoverJobReplay.Job03Full.Leaves00000",
+  "first_leaf_module_boxes": 16,
+  "first_leaf_module_build_seconds": 67,
+  "formal_status": "Individual numerical module passed; full ordered theorem and axiom audit pending",
+  "interpretation": "One measured batch; not a throughput guarantee or a percentage of the main theorem."
+}

@@ -236,3 +236,17 @@ checks the actual fan cutoff, every numerical inequality, complete coverage,
 and the unchanged axiom policy. Controlled exits preserve generated sources,
 project build artifacts and the actual input proposal. **This apex array has
 not yet been submitted.** The existing F1 job has not been restarted.
+
+
+The bounded apex runner and source commit `c8dc8f30` are uploaded to Yale;
+both remote SHA256 checks passed. They are staged, **not submitted**: the
+F2–F6 searches must finish first. See
+[`bouchet-apex-array-staged-20261019.json`](bouchet-apex-array-staged-20261019.json).
+A measured full-job-3 batch checked 16 numerical boxes in 67 seconds; the full
+job was still building with four workers. This single-batch timing is recorded
+in [`bouchet-replay-timing-20261019.json`](bouchet-replay-timing-20261019.json),
+and is not a reliable end-to-end extrapolation.
+
+The portal's updated October 19 notice reports that Roberts is nearly full
+and slowing file operations. Node-local compilation avoids its small-file
+workload; initial archive staging and result export can still be affected.

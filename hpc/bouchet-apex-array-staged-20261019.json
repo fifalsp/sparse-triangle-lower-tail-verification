@@ -1,0 +1,26 @@
+{
+  "source_commit": "c8dc8f30b6f58fa0b6344ccb13d8b011577b976d",
+  "files": [
+    {
+      "bytes": 11810436,
+      "sha256": "83e8f74b446b84e41ac4be5dce1bb35931edfd6c311bc49942d3d9bc1965f131",
+      "filename": "sparse-lean-apex-c8dc8f30.tar.gz",
+      "remote_sha256_verified": true
+    },
+    {
+      "bytes": 4846,
+      "sha256": "45150bd3da3dc531d4278f706e8939f419320720947042f6aff4186cff33e22a",
+      "filename": "bouchet-apex-array-c8dc8f30.sbatch",
+      "remote_sha256_verified": true
+    }
+  ],
+  "recorded_at": "2026-10-19T20:27:34.368787+00:00",
+  "cluster": "Bouchet",
+  "account": "pi_sl3363",
+  "remote_directory": "/nfs/roberts/project/pi_sl3363/sl3363",
+  "expected_search_source_commit": "38d5c740f691792bd19cf545d18565c5b216bd9a",
+  "search_array": 30060923,
+  "status": "Uploaded and remote SHA256 verified; apex array not submitted",
+  "screenshot": "/tmp/bouchet-apex-staged-20261019.png",
+  "storage_notice": "Bouchet OnDemand notice dated 2026-10-19 reports Roberts nearly full, slowing file operations. Proof compilation remains on node-local temporary storage."
+}

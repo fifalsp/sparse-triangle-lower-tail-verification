@@ -1,0 +1,43 @@
+{
+  "recorded_at": "2026-10-19T20:36:13.194942+00:00",
+  "cluster": "Bouchet",
+  "account": "pi_sl3363",
+  "array_job_id": 30062715,
+  "tasks": [
+    14,
+    15
+  ],
+  "status": "Both tasks completed; exit codes 0; complete proposals with no frontier, observed through archive reads",
+  "source_commit": "38d5c740f691792bd19cf545d18565c5b216bd9a",
+  "runner_commit": "75bc008",
+  "runner_filename": "bouchet-search-resume-75bc008.sbatch",
+  "runner_sha256": "b2a63c12b271d0614354382f2407dfe8ec35c4b97db09faefaa5341c038a22d4",
+  "runner_remote_sha256_verified": true,
+  "source_archive": "sparse-lean-cover-38d5c740.tar.gz",
+  "source_sha256": "4c073096f2add1e91991bd684a9ea3ec201dac32f23707c1a42fc7b123b27670",
+  "previous_results_directory": "/nfs/roberts/project/pi_sl3363/sl3363/certificate-search-30060923",
+  "result_directory": "/nfs/roberts/project/pi_sl3363/sl3363/certificate-search-30062715",
+  "previous_unresolved_frontier": {
+    "14": 6,
+    "15": 10
+  },
+  "search_seconds": 600,
+  "max_concurrent_tasks": 2,
+  "cpus_per_task": 1,
+  "memory_gib_per_task": 4,
+  "trust_status": "Search proposals only; all numerical inequalities and full-domain coverage require Lean.",
+  "outcomes": [
+    {
+      "job": 14,
+      "nodes": 62205,
+      "frontier": 0,
+      "status": "complete untrusted proposal"
+    },
+    {
+      "job": 15,
+      "nodes": 72687,
+      "frontier": 0,
+      "status": "complete untrusted proposal"
+    }
+  ]
+}

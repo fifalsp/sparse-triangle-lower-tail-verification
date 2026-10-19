@@ -73,7 +73,11 @@ two single-CPU searches at a time. Full nonapex array **30061427** additionally
 checks jobs 1–4 and 6, with at most four jobs running together. Thirteen search
 results from Yale have been downloaded, checked for complete subdivision geometry,
 and saved with source/hash provenance. None of these submissions or search
-results is counted as a proof.
+results is counted as a proof. Three smaller complete regions (jobs 24–26)
+were submitted as **30062473**. Fourteen more completed proposals are queued
+as **30062736**, dependent on the first full array ending, to keep concurrency
+bounded. Searches 14 and 15 finished after resumption as **30062715**; their
+full replays are queued as **30062956**, behind the smaller-region array.
 
 Latest apex progress: a complete F1 subdivision is proposed, and five representative
 leaves plus the sorting/zero-pattern assembly pass Lean. **The full F1 replay is

@@ -76,6 +76,37 @@
       "source_commit": "38d5c740f691792bd19cf545d18565c5b216bd9a",
       "runner_commit": "46296bd",
       "formal_result": "Pending full kernel builds and axiom audits"
+    },
+    {
+      "job_array_id": 30062736,
+      "tasks": "5,7-11,13,16-22",
+      "scope": "Full ordered-domain proofs for fourteen more complete nonapex proposals",
+      "status": "Submission confirmed with afterany dependency on 30061427",
+      "dependency": "afterany:30061427",
+      "max_concurrent_tasks": 4,
+      "cpus_per_task": 4,
+      "memory_gib_per_task": 32,
+      "build_workers_per_task": 4,
+      "lean_threads_per_worker": 1,
+      "source_commit": "38d5c740f691792bd19cf545d18565c5b216bd9a",
+      "runner_commit": "46296bd",
+      "formal_result": "Pending full kernel builds and axiom audits"
+    },
+    {
+      "job_array_id": 30062956,
+      "tasks": "14-15",
+      "scope": "Full ordered-domain proofs for the two completed resumed proposals",
+      "status": "Submission confirmed with afterany dependency on 30062473",
+      "dependency": "afterany:30062473",
+      "search_results_directory": "/nfs/roberts/project/pi_sl3363/sl3363/certificate-search-30062715",
+      "max_concurrent_tasks": 2,
+      "cpus_per_task": 4,
+      "memory_gib_per_task": 32,
+      "build_workers_per_task": 4,
+      "lean_threads_per_worker": 1,
+      "source_commit": "38d5c740f691792bd19cf545d18565c5b216bd9a",
+      "runner_commit": "46296bd",
+      "formal_result": "Pending full kernel builds and axiom audits"
     }
   ],
   "validation": {
@@ -92,5 +123,7 @@
     "tests_passed": 26
   },
   "screenshot": "/tmp/bouchet-cover-jobs-20261019.png",
-  "trust_status": "Submission and running states are not completed formal certificates."
+  "trust_status": "Submission and running states are not completed formal certificates.",
+  "updated_at": "2026-10-19T20:39:08.041649+00:00",
+  "latest_scheduler_screenshot": "/tmp/bouchet-full-replay-wave-20261019.png"
 }

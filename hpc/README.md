@@ -270,3 +270,21 @@ A four-leaf local test of precomputed constant tables took 7.53 seconds versus
 7.89 seconds for the existing checker, including startup. The exact environment
 and margin equality compiled, but this small single-run difference does not
 justify replacing live replays; the existing checker is retained.
+
+
+The resumed searches were accepted as **30062715** after the uploaded runner's
+SHA256 matched. See [`bouchet-search-resume-20261019.json`](bouchet-search-resume-20261019.json).
+Full replay of fourteen further complete proposals (jobs 5, 7–11, 13, 16–22)
+was submitted as **30062736**, with `afterany:30061427` and at most four
+concurrent tasks. These independent regions can proceed after the current array
+ends even if one of its jobs fails; any failed region still needs repair.
+This dependency keeps the next wave from adding simultaneous proof workers.
+No submission or queue state discharges a mathematical obligation.
+
+
+Both resumed searches exited 0 with complete proposals and empty frontiers:
+job 14 has 62,205 subdivision nodes, and job 15 has 72,687. Their full Lean
+replays were then submitted as **30062956**, with `afterany:30062473` and at
+most two concurrent tasks, using the resumed result directory. These larger
+replays preserve compiled work on controlled timeout through the existing
+checkpoint mechanism. Search completion is not formal certificate completion.

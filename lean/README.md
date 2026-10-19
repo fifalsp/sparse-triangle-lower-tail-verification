@@ -1359,6 +1359,14 @@ incomplete tree. The new resume runner keeps the previous proposal and source
 provenance, and writes a fresh result directory.
 
 A literal-constant checker was proved equal to the existing numerical margin
-in a local experiment. A four-leaf timing comparison showed only a small
+for job 0 in a local experiment. A four-leaf timing comparison showed only a small
 single-run difference, so it was not adopted or added to the public proof
 root. This experiment did not identify a mathematical error or close a region.
+
+
+The resumed searches subsequently finished with no frontier: 62,205 nodes for
+job 14 and 72,687 for job 15. Their full replays are queued as 30062956 behind
+the smaller-region array. Fourteen other complete regions are queued as
+30062736 behind the first nonapex array, keeping concurrent workers bounded.
+The smallest running job (25) reported 112/241 build modules completed without
+reported failures; its final ordered-domain theorem and audit remain pending.

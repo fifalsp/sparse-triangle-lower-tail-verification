@@ -19,5 +19,16 @@
   "evidence": "Read exported logs/cover-job-status.json, logs/COVER_JOB_SUCCESS.txt, logs/cover-build/status.json and logs/cover-job-audit.log through authenticated Yale shell",
   "remote_results_archive": "sparse-lean-results-30062475.tar.gz",
   "remote_checkpoint_archive": "sparse-lean-cover-checkpoint-30062475.tar.gz",
-  "status": "Full region theorem and axiom audit passed on Yale; retrieval and root integration pending"
+  "status": "Integrated into root Lean project; full root build, axiom audit and stable proof map checks passed",
+  "local_results_archive": "hpc/results-job25-30062475.tar.gz",
+  "results_archive_sha256": "214bc8e97efa74642c2fb1900ce56a37ae92ab72e87aa08abc226f706b265290",
+  "checkpoint_archive_sha256": "36dda9f1a654f5c97efcb20c0698e4a2dc36f55c5670631ccaed26b26fda164e",
+  "regenerated_source_files": 106,
+  "regeneration": "Exact byte match against current generator and saved proposal",
+  "local_cache_check": "lake --no-build build accepted all 3358 target jobs without rebuilding",
+  "root_build_jobs": 3598,
+  "root_audit_project_declarations": 23493,
+  "root_audit_project_theorems": 17100,
+  "proof_map_labels": 88,
+  "proof_map_declarations": 478
 }

@@ -1402,3 +1402,20 @@ Full apex array 30064252 now covers F2–F6 using the tested bounded runner,
 eight single-thread workers per job and at most two concurrent jobs. F1 remains
 on its existing allocation. Every critical-region full replay is now running
 or queued; full theorem builds, audits and integration remain required.
+
+
+### 2026-10-19 — First complete critical-region proof integrated
+
+`CoverJobReplay.Job25Full.ordered` proves positivity throughout the actual
+ordered logarithmic domain of nonapex job 25. All 952 numerical leaves and
+43 coverage chunks were checked on Yale. Its 106 generated source files
+match regeneration from the saved proposal byte for byte. The transferred
+region-only artifacts were accepted by Lake without rebuilding.
+
+The root now imports this theorem. Validation: 3,598 build jobs; the combined
+audit passes for 23,493 project declarations and 17,100 theorems using only
+`propext`, `Classical.choice`, and `Quot.sound`. The stable map links
+`prop:cover` to the complete theorem; all 88 labels and 478 declarations pass.
+The manuscript baseline is unchanged. This closes one of 36 nonapex jobs,
+not the entire cover or the main theorem. Archived logs and checksums are in
+`hpc/bouchet-job25-completion-20261019.json`.

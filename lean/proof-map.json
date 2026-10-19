@@ -675,8 +675,8 @@
     },
     {
       "paper_label": "prop:cover",
-      "status": "partial_geometry_support_and_apex_local_complete",
-      "checked_scope": "Actual twelve-cell geometry, all 179 curved-boundary checks, and every support cutoff are proved. verifiedCover_of_positivity reduces the cover to nonlinear nonapex positivity and apex nonnegativity. S1 vertex-0 positivity is checked on near/tail subregions and a seventeen-leaf Taylor slab. The six fan coefficient vectors are solved uniquely in their four missing slots, enclosed by exact intervals, and satisfy both contact values and all six logarithmic gradient equations. Local nonnegativity and a unique contact zero are proved on all twelve published contact cubes. Global apex positivity outside those cubes and complete nonapex positivity remain unproved. A common actual-environment and Taylor-leaf checker now covers every nonapex job, using solved fan coefficients where required. All 36 jobs have checked positivity on the logarithmic cube [0,1/512]^3 only; this is not full-domain coverage. Exact rational inclusion tests now certify subdivision boxes wholly inside any of the twelve proved contact neighborhoods; they preserve the unique-zero conclusion. The sorted-to-full-cube zero-pattern implication is proved. A complete F1 subdivision has been proposed; five representative leaves pass Lean. Full coverage and all remaining leaf inequalities still require kernel replay. The support cutoff and multiplier sign are also discharged: a successful complete fan replay supplies CriticalApexCertificate directly. Refined actual primitives and solved fan coefficients now support the common checker for all 36 nonapex jobs. The exact 42-job assembly is proved, with the full numerical job results still explicit. A proved alternative range reduction extends endpoint certificates to [-32,32], covering every cell cutoff including B1/B2; old sixteen-scale data remain valid. The generic nonapex replay is exercised on ten leaves and two exact subtrees from jobs 0 and 35, including direct/Taylor leaves and the B2 cutoff above 16. Full-domain replay remains pending.",
+      "status": "partial_full_nonapex_replay_and_apex_local_complete",
+      "checked_scope": "Actual twelve-cell geometry, all 179 curved-boundary checks, and every support cutoff are proved. verifiedCover_of_positivity reduces the cover to nonlinear nonapex positivity and apex nonnegativity. S1 vertex-0 positivity is checked on near/tail subregions and a seventeen-leaf Taylor slab. The six fan coefficient vectors are solved uniquely in their four missing slots, enclosed by exact intervals, and satisfy both contact values and all six logarithmic gradient equations. Local nonnegativity and a unique contact zero are proved on all twelve published contact cubes. Global apex positivity outside those cubes and complete nonapex positivity remain unproved. A common actual-environment and Taylor-leaf checker now covers every nonapex job, using solved fan coefficients where required. All 36 jobs have checked positivity on the logarithmic cube [0,1/512]^3 only; this is not full-domain coverage. Exact rational inclusion tests now certify subdivision boxes wholly inside any of the twelve proved contact neighborhoods; they preserve the unique-zero conclusion. The sorted-to-full-cube zero-pattern implication is proved. A complete F1 subdivision has been proposed; five representative leaves pass Lean. Full coverage and all remaining leaf inequalities still require kernel replay. The support cutoff and multiplier sign are also discharged: a successful complete fan replay supplies CriticalApexCertificate directly. Refined actual primitives and solved fan coefficients now support the common checker for all 36 nonapex jobs. The exact 42-job assembly is proved, with the full numerical job results still explicit. A proved alternative range reduction extends endpoint certificates to [-32,32], covering every cell cutoff including B1/B2; old sixteen-scale data remain valid. The generic nonapex replay is exercised on ten leaves and two exact subtrees from jobs 0 and 35, including direct/Taylor leaves and the B2 cutoff above 16. Full-domain replay remains pending. Full nonapex job 25 is now kernel checked on its entire actual ordered logarithmic domain: 952 numerical leaves, 43 coverage chunks, and the final ordered theorem; its axiom audit passed on Yale. The other 35 nonapex jobs and all six full apex fans remain unintegrated.",
       "lean_files": [
         "SparseLowerTail/Section05/CoverS1FirstBox.lean",
         "SparseLowerTail/Section05/CoverS1Tail.lean",
@@ -702,7 +702,8 @@
         "SparseLowerTail/Numerics/ExpEndpoints.lean",
         "SparseLowerTail/Section05/CoverJobReplay/Job00Smoke/CheckedSubtree.lean",
         "SparseLowerTail/Section05/CoverJobReplay/Job35Smoke/CheckedSubtree.lean",
-        "SparseLowerTail/Section05/CoverJobProgramTaylor.lean"
+        "SparseLowerTail/Section05/CoverJobProgramTaylor.lean",
+        "SparseLowerTail/Section05/CoverJobReplay/Job25Full/Ordered.lean"
       ],
       "lean_declarations": [
         "SparseLowerTail.Section05.coverS1_vertex0_first_box",
@@ -753,7 +754,8 @@
         "SparseLowerTail.Section05.CoverJobReplay.Job35Smoke.positive28521",
         "SparseLowerTail.Section05.CoverJobReplay.Job35Smoke.Coverage00000.covered",
         "SparseLowerTail.Section05.CoverJobProgram.margin_eq_job",
-        "SparseLowerTail.Section05.CoverJobProgram.positive"
+        "SparseLowerTail.Section05.CoverJobProgram.positive",
+        "SparseLowerTail.Section05.CoverJobReplay.Job25Full.ordered"
       ],
       "explicit_inputs": [],
       "baseline": {

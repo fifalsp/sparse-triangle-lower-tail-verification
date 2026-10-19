@@ -148,6 +148,7 @@ import SparseLowerTail.Section08.FamilyCompactReplay
 import SparseLowerTail.Section08.FamilyExteriorReplay.Smoke.CheckedSubtree
 import SparseLowerTail.Section05.CoverRefinedJobTaylorBox
 import SparseLowerTail.Section05.CoverJobsAssembly
+import SparseLowerTail.Section05.CoverJobReplay.Job25Full.Ordered
 import SparseLowerTail.Numerics.WideExpSmoke
 import SparseLowerTail.Section05.CoverJobReplay.Job00Smoke.CheckedSubtree
 import SparseLowerTail.Section05.CoverJobReplay.Job35Smoke.CheckedSubtree

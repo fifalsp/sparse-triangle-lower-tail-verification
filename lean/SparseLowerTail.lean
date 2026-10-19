@@ -24,3 +24,12 @@ import SparseLowerTail.Section04.BalancedPhase
 import SparseLowerTail.Section05.StrictImprovement
 import SparseLowerTail.Section08.CertificateBridge
 import SparseLowerTail.Section08.CertificateSigns
+import SparseLowerTail.Section04.Rescaling
+import SparseLowerTail.Section04.ThresholdDigits
+import SparseLowerTail.Section08.GraphonIntegration
+import SparseLowerTail.Section08.CertificateExpectation
+import SparseLowerTail.Section04.BipodalAlgebra
+import SparseLowerTail.Section04.BipodalKernel
+import SparseLowerTail.Section04.KernelVariational
+import SparseLowerTail.Section04.BalancedMinimizers
+import SparseLowerTail.Section04.BipodalIntegral

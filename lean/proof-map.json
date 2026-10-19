@@ -320,10 +320,20 @@
     },
     {
       "paper_label": "lem:digits",
-      "status": "pending",
-      "checked_scope": "No complete Lean proof claimed for this statement.",
-      "lean_files": [],
-      "lean_declarations": [],
+      "status": "proved",
+      "checked_scope": "Both strict D-sign tests, strict parameter bracket and all four printed a,b,mu,r intervals. Includes rational bounds for actual threshold. Generated proposals are checked by Lean using proved Taylor estimates; generator determinism checked.",
+      "lean_files": [
+        "SparseLowerTail/Numerics/Intervals.lean",
+        "SparseLowerTail/Section04/ThresholdDefinitions.lean",
+        "SparseLowerTail/Section04/ThresholdDigits.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section04.digit_D_lower",
+        "SparseLowerTail.Section04.digit_D_upper",
+        "SparseLowerTail.Section04.transitionParameter_digits",
+        "SparseLowerTail.Section04.transition_digits",
+        "SparseLowerTail.Section04.threshold_digits"
+      ],
       "explicit_inputs": [],
       "baseline": {
         "environment": "lemma",
@@ -427,10 +437,18 @@
     },
     {
       "paper_label": "prop:bipodal",
-      "status": "pending",
-      "checked_scope": "No complete Lean proof claimed for this statement.",
-      "lean_files": [],
-      "lean_declarations": [],
+      "status": "proved",
+      "checked_scope": "Complete scalar first-order-system rigidity: nonconstant positive solutions have a=d<b and c=1/2. The internal J positivity hypothesis is discharged.",
+      "lean_files": [
+        "SparseLowerTail/Section04/BipodalAlgebra.lean",
+        "SparseLowerTail/Section04/BipodalIntegral.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section04.BipodalStationary.ordered",
+        "SparseLowerTail.Section04.BipodalStationary.J_zero",
+        "SparseLowerTail.Section04.bipodal_rigidity_of_J",
+        "SparseLowerTail.Section04.bipodal_rigidity"
+      ],
       "explicit_inputs": [],
       "baseline": {
         "environment": "proposition",
@@ -628,6 +646,144 @@
         "statement_sha256": "63ebe8746f8492d471df0e84a77c62d72f54d98e823fafaa19ace3c61330cfb9",
         "proof_sha256": null,
         "source_line": 2660
+      }
+    },
+    {
+      "paper_label": "lem:scaling",
+      "status": "proved",
+      "checked_scope": "Triangle, edge-density, entropy-cost scaling and scaled entropy-gap identity for bounded measurable symmetric nonnegative kernels; integrability is derived.",
+      "lean_files": [
+        "SparseLowerTail/Section04/Rescaling.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.NonnegativeKernel.triangle_scale",
+        "SparseLowerTail.NonnegativeKernel.edgeDensity_scale",
+        "SparseLowerTail.NonnegativeKernel.cost_scale",
+        "SparseLowerTail.NonnegativeKernel.cost_scale_sub_entropy"
+      ],
+      "explicit_inputs": [],
+      "baseline": {
+        "environment": "lemma",
+        "statement": "Let $a>0$, $s\\ge0$, and let $W$ be a nonnegative kernel. Then $t(aW)=a^3t(W)$, \\begin{align} F(aW)&=aF(W)+(a\\log a)e(W)+1-a,\\\\ F(aW)-h(as)&=a\\big(F(W)-h(s)\\big)+(a\\log a)\\big(e(W)-s\\big). \\end{align}",
+        "statement_sha256": "c1ebe758102340e51d249a229a7a01808650f011910a79b57afbd2d2061d1c74",
+        "proof_sha256": "c349f0d48b46b4ee3e9622415f8aa7bd084771a737a9a2d2cc8f13497137c70e",
+        "source_line": 1236
+      }
+    },
+    {
+      "paper_label": "lem:truncation",
+      "status": "proved",
+      "checked_scope": "Full truncation statement: graphon realization, triangle/cost inequalities, strictness, equality rigidity, and equality of the graphon and bounded nonnegative-kernel infima.",
+      "lean_files": [
+        "SparseLowerTail/Section04/Rescaling.lean",
+        "SparseLowerTail/Section04/KernelVariational.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.NonnegativeKernel.triangle_truncate_le",
+        "SparseLowerTail.NonnegativeKernel.cost_truncate_le",
+        "SparseLowerTail.NonnegativeKernel.cost_truncate_lt",
+        "SparseLowerTail.NonnegativeKernel.cost_truncate_eq_iff",
+        "SparseLowerTail.NonnegativeKernel.value_le_cost",
+        "SparseLowerTail.NonnegativeKernel.bounded_of_cost_eq_value",
+        "SparseLowerTail.NonnegativeKernel.variationalValue_eq_value"
+      ],
+      "explicit_inputs": [],
+      "baseline": {
+        "environment": "lemma",
+        "statement": "Let $W$ be a nonnegative kernel and $W'=\\min(W,1)$. Then $W'$ is a graphon, $t(W')\\le t(W)$, and $F(W')\\le F(W)$ with strict inequality if $|\\{W>1\\}|>0$. Hence, for $r\\in(0,1)$, every nonnegative kernel $W$ with $t(W)\\le r^3$ satisfies $F(W)\\ge V(r)$, with equality only if $W\\le1$ a.e. Thus $V(r)$ is also the infimum of $F$ over such kernels.",
+        "statement_sha256": "16fb29d49443a33e34044fa464bee8de40ff23d083e5b1a190b87035efef8eb3",
+        "proof_sha256": "00c3918a30be6912bc2b082c46b04b7c567500120fae270df3abb81475e98a19",
+        "source_line": 1255
+      }
+    },
+    {
+      "paper_label": "s3:rescale",
+      "status": "proved",
+      "checked_scope": "Actual cube-root normalization, its derivative, truncation-based minimality, and first-variation inequality/equality on the literal [0,c] and [-c,c] intervals.",
+      "lean_files": [
+        "SparseLowerTail/Section04/Rescaling.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section04.rescaling_firstVariation_right_interval",
+        "SparseLowerTail.Section04.rescaling_firstVariation_interval"
+      ],
+      "explicit_inputs": [],
+      "baseline": {
+        "environment": "lemma",
+        "statement": "Let $U$ be a minimizer at $r\\in(0,1)$, and let $(W_s)_{s\\in I}$ be nonnegative kernels with $W_0=U$. Suppose that $F(W_s)$, $e(W_s)$ and $t(W_s)$ are differentiable at $s=0$, from the right if $I=[0,c]$. Then $F'_0+\\frac{\\mu_U}3t'_0\\ge0$, with equality if $I=[-c,c]$.",
+        "statement_sha256": "297e27b0775020b1bdefeacf964c0b5724f05210084284c2c50d55a833bcd594",
+        "proof_sha256": "fedb311603dcb4e850c0c769fbda62f3a97ce7b85cd7d205bb754b1756a90ac8",
+        "source_line": 2280
+      }
+    },
+    {
+      "paper_label": "s8:expect",
+      "status": "proved",
+      "checked_scope": "Exact graphon expectation identity with integrability, triangle-codegree Fubini identity and cyclic symmetry proved internally; expected certificate zero on the branch. Contact identity also follows from individually proved contact values. No certificate positivity or additional external input assumed.",
+      "lean_files": [
+        "SparseLowerTail/Section08/GraphonIntegration.lean",
+        "SparseLowerTail/Section08/CertificateExpectation.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Certificate.expectation_identity",
+        "SparseLowerTail.Certificate.expectation_branch_zero",
+        "SparseLowerTail.Certificate.psi_integrable",
+        "SparseLowerTail.triangle_eq_integral_codegree",
+        "SparseLowerTail.TriangleIntegration.integral_test_codegree",
+        "SparseLowerTail.TriangleIntegration.integral_cycle"
+      ],
+      "explicit_inputs": [],
+      "baseline": {
+        "environment": "lemma",
+        "statement": "Let $z\\in(0,1)$ with $\\Gamma\\ne0$. Let $U$ be a graphon with $t(U)=t_z$. Assume that $U\\ge\\ell$ a.e.\\ for some $\\ell>0$ and that $\\log U=-\\tilde\\mu C_U$ a.e.\\ for some $\\tilde\\mu\\in\\R$. Let $X,Y,Z$ be as in \\eqref{s8:rewrite}. Then \\begin{align} \\E[\\Psi_z(X,Y,Z)]&=3c_1\\big(e(U)-m\\big)\\notag\\\\ &\\quad+3(\\mu-\\tilde\\mu)\\Big[c_2t_z+c_3\\iint C_U+c_4\\iint U\\log U C_U\\Big]. \\end{align} In particular $\\Psi_z(a,a,a)+3\\Psi_z(a,b,b)=0$.",
+        "statement_sha256": "635958295e67e9193f8ed277a3a734ddea18c8fa7a3471b48ef4cf8241152236",
+        "proof_sha256": "4c55983b1ee6e3644a1158b898e5ff120217c28dbdb6a5705535f4e81e6106b0",
+        "source_line": 5316
+      }
+    },
+    {
+      "paper_label": "lem:J",
+      "status": "proved",
+      "checked_scope": "Full strict logarithmic positivity, by the explicit integral representation and pointwise positive kernel. The single-integral term is strictly positive and the double integral nonnegative.",
+      "lean_files": [
+        "SparseLowerTail/Section04/BipodalDefinitions.lean",
+        "SparseLowerTail/Section04/BipodalKernel.lean",
+        "SparseLowerTail/Section04/BipodalIntegral.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section04.bipodalOmega_nonneg",
+        "SparseLowerTail.Section04.bipodalOmega_pos",
+        "SparseLowerTail.Section04.bipodalOmega_single_pos",
+        "SparseLowerTail.Section04.bipodalJ_integral_representation",
+        "SparseLowerTail.Section04.bipodalJ_pos"
+      ],
+      "explicit_inputs": [],
+      "baseline": {
+        "environment": "lemma",
+        "statement": "For all $0<x<y<1$, $J(x,y)>0$.",
+        "statement_sha256": "5d18522165a2ba2f2d5969c422962cc810d71c0de4c68a837672a7d80267eac4",
+        "proof_sha256": "3ff898efe645f23524bcbf0ce25169b6a3483714f77c450bed3acbe7b36ce7f2",
+        "source_line": 2961
+      }
+    },
+    {
+      "paper_label": "cor:bipodalmin",
+      "status": "partial",
+      "checked_scope": "A minimizer already known to have balanced form has the uniquely classified scalar parameters and forces equality of variational values. General bipodal-to-balanced graphon reduction still being assembled from first-order conditions.",
+      "lean_files": [
+        "SparseLowerTail/Section04/BalancedMinimizers.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.IsBalanced.minimizer_bridge",
+        "SparseLowerTail.Section04.balanced_minimizer_below_threshold"
+      ],
+      "explicit_inputs": [],
+      "baseline": {
+        "environment": "corollary",
+        "statement": "Let $r\\in(0,r_*)$, and let $U$ be a minimizer at $r$ that is a two block SBM graphon. Then $U$ is a relabeling of $B_r$, and $V(r)=\\Vbal(r)$.",
+        "statement_sha256": "6a36b42eda4cf685f1a8f33326de77cc884208663e1140cdac07bccab28af2ed",
+        "proof_sha256": "396f809f93940d73b8f7a23a921bc10196a9a890a47c6d4c33e38ec511f98c5e",
+        "source_line": 3104
       }
     }
   ]

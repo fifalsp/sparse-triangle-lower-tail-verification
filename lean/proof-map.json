@@ -672,8 +672,8 @@
     },
     {
       "paper_label": "prop:cover",
-      "status": "partial_geometry_support_complete",
-      "checked_scope": "Actual twelve-cell geometric coverage, including all 179 curved-boundary interval checks, and all support/cutoff fields are proved. verifiedCover_of_positivity reduces the cover to nonlinear nonapex positivity and apex nonnegativity. Actual S1 vertex-0 positivity is checked on near/tail subregions and a seventeen-leaf Taylor slab. Full-domain positivity and apex zero-set proofs remain unfinished. The shared apex tangency determinant is certified nonzero. All six exact fan coefficient vectors now satisfy both contact values and all six logarithmic gradient equations, preserve the published fixed slots, and have unique four-coordinate corrections. Apex/global positivity still remains.",
+      "status": "partial_geometry_support_and_apex_local_complete",
+      "checked_scope": "Actual twelve-cell geometry, all 179 curved-boundary checks, and every support cutoff are proved. verifiedCover_of_positivity reduces the cover to nonlinear nonapex positivity and apex nonnegativity. S1 vertex-0 positivity is checked on near/tail subregions and a seventeen-leaf Taylor slab. The six fan coefficient vectors are solved uniquely in their four missing slots, enclosed by exact intervals, and satisfy both contact values and all six logarithmic gradient equations. Local nonnegativity and a unique contact zero are proved on all twelve published contact cubes. Global apex positivity outside those cubes and complete nonapex positivity remain unproved.",
       "lean_files": [
         "SparseLowerTail/Section05/CoverS1FirstBox.lean",
         "SparseLowerTail/Section05/CoverS1Tail.lean",
@@ -683,7 +683,9 @@
         "SparseLowerTail/Section05/CoverSupportData.lean",
         "SparseLowerTail/Section05/CoverS1TaylorSlab.lean",
         "SparseLowerTail/Section05/ApexFanTangency.lean",
-        "SparseLowerTail/Section05/ApexTangencyDeterminant.lean"
+        "SparseLowerTail/Section05/ApexTangencyDeterminant.lean",
+        "SparseLowerTail/Section05/ApexFanIntervals.lean",
+        "SparseLowerTail/Section05/ApexFanLocal.lean"
       ],
       "lean_declarations": [
         "SparseLowerTail.Section05.coverS1_vertex0_first_box",
@@ -696,7 +698,9 @@
         "SparseLowerTail.Section05.CoverGeometry.cell_supportExponent_le",
         "SparseLowerTail.Section05.CoverGeometry.verifiedCover_of_positivity",
         "SparseLowerTail.Section05.apexTangencyMatrix_det_ne_zero",
-        "SparseLowerTail.Section05.apexFanTheta_contacts"
+        "SparseLowerTail.Section05.apexFanTheta_contacts",
+        "SparseLowerTail.Section05.apexFanCoefficientIntervals_contains",
+        "SparseLowerTail.Section05.apexFan_local_nonneg_zero_iff"
       ],
       "explicit_inputs": [],
       "baseline": {
@@ -2166,7 +2170,8 @@
         "SparseLowerTail/Section05/ApexContactGradients.lean",
         "SparseLowerTail/Section05/ApexPrimitiveIntervals.lean",
         "SparseLowerTail/Section05/ApexTangencyDeterminant.lean",
-        "SparseLowerTail/Section05/ApexFanTangency.lean"
+        "SparseLowerTail/Section05/ApexFanTangency.lean",
+        "SparseLowerTail/Section05/ApexFanIntervals.lean"
       ],
       "lean_declarations": [
         "SparseLowerTail.Section05.apexTangencyMatrix_det_ne_zero",
@@ -2174,7 +2179,8 @@
         "SparseLowerTail.Section05.apexFanTheta_tangent",
         "SparseLowerTail.Section05.apexFanTheta_contacts",
         "SparseLowerTail.Section05.apexFanTheta_fixed",
-        "SparseLowerTail.Section05.apexFanTheta_unknown"
+        "SparseLowerTail.Section05.apexFanTheta_unknown",
+        "SparseLowerTail.Section05.apexFanSolutionIntervals_contains"
       ],
       "explicit_inputs": [],
       "baseline": {
@@ -2183,6 +2189,31 @@
         "statement_sha256": "b3a6c0badd8973c6bba6fbe37bfa56cf63e1b6a2b1d7611648aee905770bf9af",
         "proof_sha256": null,
         "source_line": 3776
+      }
+    },
+    {
+      "paper_label": "lem:taylor",
+      "status": "proved_actual_apex_application",
+      "checked_scope": "Proves the strict-positivity and unique-zero consequence for the actual apex expression on a logarithmic cube, using its exact derivatives, a center Hessian lower bound, and uniform third-partial bounds with radius times their sum less than three times the Hessian bound. Integer interval checks discharge all numerical hypotheses for twelve published fan/contact neighborhoods. This is the application's conclusion, not a formalization of the lemma for an arbitrary C3 function or its displayed infinity-norm quantitative bound.",
+      "lean_files": [
+        "SparseLowerTail/Section05/ApexTaylorLocal.lean",
+        "SparseLowerTail/Section05/ApexTaylorIntervals.lean",
+        "SparseLowerTail/Section05/ApexFanLocal.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section05.apexThirdForm_bound",
+        "SparseLowerTail.Section05.apexPhi_local_of_third_bounds",
+        "SparseLowerTail.Section05.apexHessian_lower_of_shifted_interval",
+        "SparseLowerTail.Section05.apexPhi_local_of_interval_taylor",
+        "SparseLowerTail.Section05.apexFan_local_nonneg_zero_iff"
+      ],
+      "explicit_inputs": [],
+      "baseline": {
+        "environment": "lemma",
+        "statement": "Let $\\Phi:\\R^3\\to\\R$ be three times continuously differentiable, let $P\\in\\R^3$ and $\\delta>0$, and let $\\mathcal C_\\delta=\\{q\\in\\R^3:|q-P|_\\infty\\le\\delta\\}$. Assume that $\\Phi(P)=0$ and $\\nabla\\Phi(P)=0$. Assume also that $\\nabla^2\\Phi(P)-\\lambda_0I$ is positive semidefinite for some $\\lambda_0>0$, and that \\[ S_3\\ge\\sum_{i,j,k=1}^3\\max_{q\\in \\mathcal C_\\delta}|\\partial_i\\partial_j\\partial_k\\Phi(q)|,\\quad \\delta S_3<3\\lambda_0 . \\] Then for every $y\\in\\R^3$ with $0<|y|_\\infty\\le\\delta$, \\[ \\Phi(P+y)\\ge\\frac{\\lambda_0}2|y|_2^2-\\frac{S_3}6|y|_\\infty^3 \\ge\\Big(\\frac{\\lambda_0}2-\\frac{\\delta S_3}6\\Big)|y|_\\infty^2>0 . \\]",
+        "statement_sha256": "e81b6cf2468ca640c1903331fc767a999edb4a79250a5b2c910965670bde35ad",
+        "proof_sha256": "15e0731eeb8f85102d960c44660b8f0ea1c2833d6cd5770d50d8517293d765d4",
+        "source_line": 3785
       }
     }
   ]

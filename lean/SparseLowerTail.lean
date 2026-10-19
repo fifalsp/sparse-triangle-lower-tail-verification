@@ -120,3 +120,5 @@ import SparseLowerTail.Section08.FamilyLocalScaling
 import SparseLowerTail.Section08.FamilyParameterIntervals
 import SparseLowerTail.Section08.FamilyAAACover
 import SparseLowerTail.Section05.ApexFanTangency
+
+import SparseLowerTail.Section05.ApexFanLocal

@@ -667,3 +667,26 @@ For each new simplification, retain its PS identifier, list the stable paper
 label, state every hypothesis, write the complete mathematical argument, and
 link the compiled Lean declaration. Record whether it replaces an entire
 proof or only one step. Keep proposals separate from checked replacements.
+
+
+## Local apex certificate: compact implementation record
+
+All twelve contact cubes in the six fan cells are now handled by one proof
+schema, implemented in `apexPhi_local_of_interval_taylor` in
+`SparseLowerTail.Section05.ApexTaylorIntervals.lean`. This follows
+`lem:taylor`; it is not an additional mathematical simplification or a new
+proof of global positivity.
+
+For each exact fan coefficient vector, let `ell` be a positive rational and
+let `C[i,j,k]` bound the absolute third partial throughout the published cube.
+Certify the symmetric center Hessian minus `ell I` by a rational congruence,
+and check `delta * sum(C) < 3 ell`. Along the segment from the contact to q,
+the third derivative is bounded in absolute value by
+`sum(C) * delta * ||q-contact||_2^2`. Taylor's theorem and exact zero value
+and gradient give
+
+`Phi(q) >= (ell/2 - delta*sum(C)/6) * ||q-contact||_2^2`.
+
+Thus the entire cube is nonnegative and the contact is its only zero.
+The twelve numerical checks use the full published radii. Everything outside
+these neighborhoods remains a separate certificate obligation.

@@ -39,6 +39,7 @@ and the Lean formalization have different scopes.
 | Proved relative to named inputs | All small-parameter bounds, actual row reduction and scalar exclusion (`lem:smallparams`, `lem:rowreduction`, `lem:scalar`). Exact small-target block rigidity and the full classification are now proved. |
 | Proved relative to named classical inputs | Sequential stability and openness of the balanced-classification region. The left seed follows conditional on the still-unproved critical certificate. |
 | Proved in Lean | Exact tangency coefficients for all six fan cells: one certified common determinant, unique corrections in the four missing slots, and zero values/gradients at both contacts. Positivity remains separate. |
+| Proved in Lean | All twelve apex contact neighborhoods (AAA and ABB for each fan F1–F6), at the full published radii: exact coefficient enclosures, positive shifted center Hessians, third-derivative bounds, nonnegativity and a unique contact zero. Global positivity outside these neighborhoods remains unfinished. |
 | Remaining | Discharge the two internal certificate inputs: critical classification and the compact intermediate certificate. The final conditional continuation assembly is proved. |
 
 The [formalization README](lean/README.md) records the file-to-paper mapping,

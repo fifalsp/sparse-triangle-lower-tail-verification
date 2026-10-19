@@ -653,3 +653,68 @@ Validation: full root build passed (3387 jobs). Axiom audit passed for
 377 declaration links resolve, and all six mapping tests pass. Regenerating
 `CoverCoefficientData.lean` reproduces its source byte-for-byte. The local
 build directory is about 767 MiB; bulk replay remains stopped.
+
+
+### 2026-10-19 — all twelve apex contact neighborhoods
+
+[`ApexFanLocal.lean`](SparseLowerTail/Section05/ApexFanLocal.lean),
+`apexFan_local_nonneg_zero_iff`, proves local nonnegativity and a unique
+contact zero for **each of F1–F6, at both AAA and ABB**, on the entire closed
+logarithmic cube with the radius recorded in `data/cover.json`. The radii
+have not been reduced to make verification easier.
+
+The proof follows the paper's `lem:taylor` application:
+
+1. [`ApexFanIntervals.lean`](SparseLowerTail/Section05/ApexFanIntervals.lean)
+   encloses all 24 exactly solved coefficients using the already certified
+   common determinant, actual right-hand sides, and Cramer's rule. The remaining
+   coefficient slots retain their published rational values.
+2. [`ApexTaylorLocal.lean`](SparseLowerTail/Section05/ApexTaylorLocal.lean)
+   proves the actual directional third derivative and the local Taylor argument.
+   It derives positivity from a center Hessian lower bound and uniform absolute
+   bounds on all 27 third partials throughout the stated cube.
+3. [`ApexTaylorIntervals.lean`](SparseLowerTail/Section05/ApexTaylorIntervals.lean)
+   turns these into exact integer interval obligations. A rational congruence
+   certifies positivity of the symmetric center Hessian minus `ell * I`;
+   the third-partial bounds satisfy `radius * S3 < 3 * ell`.
+4. The twelve files in [`ApexLocalReplay/`](SparseLowerTail/Section05/ApexLocalReplay/)
+   check those obligations with `decide +kernel`, certified exponential endpoint
+   bounds, and the actual critical constants and fan coefficients. The final
+   statements require only membership in the contact cube.
+
+The Taylor formalization proves the consequence needed here for the actual
+apex expression. It does not claim the full generic C³ lemma or every displayed
+quantitative inequality in `lem:taylor`. The proof map records that distinction.
+No new manuscript error was identified. The complete critical cover and
+compact intermediate family remain internal proof obligations; **the main
+theorem is still incomplete**. These twelve neighborhoods do not certify
+positivity on their complements.
+
+Reproduce the proposed source data from `lean/`:
+
+```bash
+python3 tools/generate_apex_fan_intervals.py
+python3 tools/propose_apex_local_boxes.py
+python3 tools/generate_apex_local_taylor.py
+lake build SparseLowerTail.Section05.ApexFanLocal
+```
+
+The first command reuses the saved right-hand-side proposals. To regenerate
+those proposals from the expressions instead, run
+`lake env lean tools/ProposeApexFanRhs.lean > /tmp/apex-rhs.txt`, then pass
+`/tmp/apex-rhs.txt` to `generate_apex_fan_intervals.py`. These scripts are
+untrusted proposal generators: every number used by the theorems is checked
+again by Lean. No Python floating-point eigenvalue estimate is a proof premise.
+The Python diagnostics can fail to certify a whole-box Hessian even when the
+Taylor certificate succeeds; this is not evidence of a mathematical error.
+
+All fourteen generated Lean files reproduce byte for byte from the saved
+proposals. Local neighborhood builds were run sequentially to limit resource
+use; the large unfinished S1 replay was not resumed.
+
+Validation for this milestone: full root build passed (3406 jobs); the axiom
+audit checked 9798 project declarations / 6177 theorems and allowed only
+`propext`, `Classical.choice`, and `Quot.sound`. All 88 stable manuscript
+anchors remain unchanged, all 384 declaration links resolve, and the six
+mapping tests pass. Local build artifacts total about 793 MiB, compared with
+about 767 MiB before this milestone.

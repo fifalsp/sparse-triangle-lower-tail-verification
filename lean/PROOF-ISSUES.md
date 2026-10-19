@@ -27,7 +27,9 @@ from the two-dimensional geometric cover, which is now fully proved. The first
 and its exact subdivision coverage remain unfinished. Bulk replay is stopped
 to respect the storage constraint. This is one of 36 nonapex
 jobs. The six apex tangency systems are now solved exactly with a common checked
-nonzero determinant. Their local/global positivity bounds still remain.
+nonzero determinant. All twelve local contact cubes now have proved positivity
+and exact zero classification at the published radii. The global apex bounds
+outside those cubes still remain.
 Neither obligation is an external assumption. Family interval coefficient
 conversion and local Hessian/contact calculus are proved, but the actual
 compact-domain numerical bounds remain outside the AAA neighborhood. The AAA

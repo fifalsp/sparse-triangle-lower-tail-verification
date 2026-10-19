@@ -33,6 +33,11 @@ finish() {
 trap finish EXIT
 hostname > "$RUN_DIR/host.txt"
 date -u +%FT%TZ > "$RUN_DIR/started.txt"
+# Bouchet's system curl is older than mathlib's minimum. Without this module,
+# mathlib downloads a static curl that fails with OpenSSL STORE errors here.
+# Use Yale's supported module, keeping normal TLS certificate validation.
+module load cURL/8.7.1-GCCcore-13.3.0
+curl --version > "$RUN_DIR/curl-version.txt"
 df -h "$WORK_DIR" > "$RUN_DIR/local-storage.txt"
 free_kib=$(df -Pk "$WORK_DIR" | awk 'END { print $4 }')
 if (( free_kib < 25*1024*1024 )); then

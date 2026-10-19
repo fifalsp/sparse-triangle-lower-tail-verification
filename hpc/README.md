@@ -59,23 +59,27 @@ are not a durable record; the results archive and original Git source are.
 
 ## Current deployment
 
-Job `30048468` was submitted on 2026-10-19 under account `pi_sl3363`.
-The source archive passed SHA256 verification in the authenticated web shell.
-See `bouchet-run-20261019.json` for exact source/runner revisions and hashes.
-Submission is not a successful build or audit; verify the result archive and
-Slurm terminal state before recording a pass.
+The initial job `30048468` was cancelled after mathlib's downloaded static
+curl failed with OpenSSL STORE errors. No Lean verification completed in that
+run. Its diagnostic archive is a partial snapshot of the active log; see
+`bouchet-run-20261019.json` for provenance.
+
+The corrected runner loads Yale's `cURL/8.7.1-GCCcore-13.3.0` module. An HTTPS
+request from the compute node returned HTTP 200 with normal certificate
+validation. The runner and source archive checksums were verified before
+submission. Replacement bootstrap job **30049190** and dependent S1 job
+**30049194** use source commit `f038dc5269b16415d6e46270acaa8a04ddc8220e`.
+The S1 job starts only if the bootstrap succeeds; neither submission is proof
+of a successful build or certificate. Exact deployment hashes are recorded in
+`bouchet-retry-20261019.json`.
 
 Monitor through Bouchet Shell Access:
 
 ```bash
-squeue -j 30048468
-sacct -j 30048468 --format=JobID,State,ExitCode,Elapsed,MaxRSS
-tail -n 20 /nfs/roberts/project/pi_sl3363/sl3363/sparse-lean-30048468.out
+squeue -j 30049190,30049194
+sacct -j 30049190,30049194 --format=JobID,State,ExitCode,Elapsed,MaxRSS
+tail -n 20 /nfs/roberts/project/pi_sl3363/sl3363/sparse-lean-30049190.out
 ```
-
-The job was subsequently observed **RUNNING** on compute node `a1132u11n04`;
-the source checksum passed there and official elan setup started. Remote
-build/audit completion remains unverified.
 
 ## Full S1 certificate workload
 

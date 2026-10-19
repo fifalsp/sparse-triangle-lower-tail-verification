@@ -1,0 +1,28 @@
+{
+  "cluster": "Bouchet",
+  "account": "pi_sl3363",
+  "source_commit": "f038dc5269b16415d6e46270acaa8a04ddc8220e",
+  "source_archive": "sparse-lean-s1-f038dc52.tar.gz",
+  "source_archive_sha256": "396bef27e5ea1b4c614eb618bef7520758fbeff1772ac811b7344e0d8a97410a",
+  "runner": "bouchet-staged-curl871.sbatch",
+  "runner_sha256": "d3d0dbbb18df0070a49924639272bd12768f177cdadd6a09c06fa7f3cb22f30d",
+  "cpus_per_job": 8,
+  "memory_per_job": "64G",
+  "remote_directory": "/nfs/roberts/project/pi_sl3363/sl3363",
+  "jobs": [
+    {
+      "id": "30049190",
+      "workload": "bootstrap",
+      "time_limit": "04:00:00",
+      "status": "observed RUNNING on a1114u28n01; Lean 4.24.0 installed, cache download in progress; build/audit unverified"
+    },
+    {
+      "id": "30049194",
+      "workload": "s1",
+      "time_limit": "12:00:00",
+      "dependency": "afterok:30049190",
+      "status": "observed PENDING (Dependency); proof replay has not started"
+    }
+  ],
+  "proof_status": "No new complete certificate established by these submissions."
+}

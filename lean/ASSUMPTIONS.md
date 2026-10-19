@@ -37,9 +37,11 @@ the final theorem's type provide that separate provenance information.
   KP26), transfer to constrained optimality at a supported target, the value
   identity, and the active constraint/penalized optimality of every constrained
   minimizer at that target.
-- The supporting pair and full range r ≤ r₋ are now proved in
-  `SmallData.lean`. Remaining internal obligation: equality-case rigidity. The transfer lemma does not by itself establish `prop:smalldata`
-  or `thm:smalltail` in full.
+- The supporting pair and full range r ≤ r₋ are proved in
+  `SmallData.lean`. Equality-case rigidity is now proved in
+  `SmallTailAssembly.lean`, using the separately recorded classical sampling
+  and positive-kernel spectral inputs. The KP26 transfer lemma alone does
+  not supply that rigidity.
 
 ### `classical:inverse-transform-sampling`
 
@@ -192,3 +194,24 @@ name as an alias in the map rather than silently treating it as a new theorem.
 This is a focused textual tracker, not a full TeX parser or semantic-equivalence
 checker. Changes to shared macro definitions or unmapped statements also require
 manual review. A clean comparison does not prove that a revised paper is correct.
+
+
+## Main theorem: exact remaining replay inputs
+
+`SparseLowerTail.mainTheorem_of_remaining_replays` in
+[`MainReplayAssembly.lean`](SparseLowerTail/MainReplayAssembly.lean) separates
+seven permitted external/classical inputs from four internal inputs:
+
+- `RemainingNonapexJobResults`: every full nonapex domain except the proved
+  job 25, supplied by `CheckedCoverJobs`.
+- `ApexJobResults`: all six full apex domains, including their zero patterns.
+- `FamilyABBLocal`: the full moving ABB neighborhood and its unique zero.
+- `FamilyABBLocal → CompactFamilyCertificate`: exactly the conditional output
+  of the complete exterior replay; applying it to the preceding input removes
+  the ABB premise.
+
+This theorem proves the deduction, not these four inputs. The two corollaries
+in [`MainRelabeling.lean`](SparseLowerTail/MainRelabeling.lean) express the
+at-transition and subcritical classifications as actual measure-preserving
+pullbacks up to almost-everywhere equality. They additionally take
+`ClassicalCDFTransport`, as does the existing partition-to-pullback bridge.

@@ -1426,3 +1426,35 @@ job 25 automatically; callers now need only the other 35 nonapex regions.
 It also transfers each completed ordered-domain proof to positivity of the
 original certificate on the entire edge cube. The six full apex results
 and the compact-family certificate are still required.
+
+
+### 2026-10-19 — Direct replay-to-main assembly and literal relabeling clauses
+
+[`MainReplayAssembly.lean`](SparseLowerTail/MainReplayAssembly.lean) proves
+`mainTheorem_of_remaining_replays`. The seven recorded external/classical
+inputs stay separate from four internal replay inputs: the remaining 35
+nonapex regions, all six apex regions, the full ABB neighborhood, and the
+full exterior replay conditional on ABB. The checked job-25 import is applied
+automatically. This connects the numerical job outputs directly to the target
+`MainTheorem`; it does not discharge an unfinished numerical proof.
+
+[`MainRelabeling.lean`](SparseLowerTail/MainRelabeling.lean) proves the literal
+at-transition and subcritical relabeling conclusions from `MainTheorem` and
+`ClassicalCDFTransport`. They retain both directions of the optimizer
+characterization, all parameter inequalities, and uniqueness of the scalar
+pair below the transition. This makes the paper-to-Lean formulation bridge
+explicit at the main theorem, beyond the existing general partition lemma.
+
+Validation: full root build **3,601 jobs**; transitive axiom audit **23,504
+project declarations / 17,109 theorems**, allowing only the three standard
+axioms. The stable map passes for **88 labels / 485 declarations**; the
+manuscript baseline is unchanged. No whole-region completion count increased.
+The assumptions ledger also corrects an outdated note: small-target
+rigidity is already proved relative to the recorded external/classical inputs.
+
+Browser-control requests currently time out, so remote jobs cannot be observed
+or their outputs retrieved. The latest successful Slurm observation remains
+**2026-10-19 21:25 UTC, 43 running jobs and 200 allocated cores**. This is not
+a current-state claim. No job was resubmitted or stopped because of the
+connection failure. Local storage remains at about 21 GiB free; no bulk replay
+or full remote-cache download was started locally.

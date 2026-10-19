@@ -13,19 +13,24 @@
     {
       "paper_label": "thm:main",
       "status": "conditional_assembly_two_internal_certificates",
-      "checked_scope": "Exact MainTheorem assembled with small-target classification discharged. Remaining INTERNAL hypotheses are CriticalClassification (cover/apex) and CompactFamilyCertificate. All named classical/external inputs remain explicit. Not a completed main theorem.",
+      "checked_scope": "Exact MainTheorem assembled with small-target classification discharged. The replay-level assembly supplies checked nonapex job 25 and exposes the remaining 35 nonapex regions, six apex fans, ABB neighborhood, and full exterior replay as INTERNAL inputs. Relabeling clauses follow using the explicit classical CDF theorem. Not a completed main theorem.",
       "lean_files": [
         "SparseLowerTail/MainStatement.lean",
         "SparseLowerTail/MainTheoremAssembly.lean",
         "SparseLowerTail/Section08/ContinuationAssembly.lean",
-        "SparseLowerTail/Section08/FiniteCertificateAssembly.lean"
+        "SparseLowerTail/Section08/FiniteCertificateAssembly.lean",
+        "SparseLowerTail/MainReplayAssembly.lean",
+        "SparseLowerTail/MainRelabeling.lean"
       ],
       "lean_declarations": [
         "SparseLowerTail.MainTheorem",
         "SparseLowerTail.mainTheorem_of_classifications",
         "SparseLowerTail.Section08.mainTheorem_of_remaining_inputs",
         "SparseLowerTail.Section08.branchClassification_all_subcritical",
-        "SparseLowerTail.Section08.mainTheorem_of_finite_certificates"
+        "SparseLowerTail.Section08.mainTheorem_of_finite_certificates",
+        "SparseLowerTail.mainTheorem_of_remaining_replays",
+        "SparseLowerTail.MainTheorem.at_transition_relabeling",
+        "SparseLowerTail.MainTheorem.below_transition_relabeling"
       ],
       "explicit_inputs": [
         "internal:prop:critical",
@@ -36,7 +41,8 @@
         "classical:counting-lemma",
         "internal:appA3:compact",
         "external:KP26:1.6",
-        "classical:positive-hilbert-schmidt-spectrum"
+        "classical:positive-hilbert-schmidt-spectrum",
+        "classical:nonatomic-cdf-transport"
       ],
       "baseline": {
         "environment": "theorem",

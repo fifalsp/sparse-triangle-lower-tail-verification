@@ -61,23 +61,17 @@ Current completion gates (remote checks and root integration are recorded separa
 | --- | --- | --- |
 | Main-theorem deduction from the two internal certificates | Proved | Supply both certificates |
 | Critical classification: 36 nonapex full-domain jobs | **1/36 integrated** | Job 25 is proved on its full ordered domain; the remaining 35 jobs still require integration |
-| Critical classification: six apex full-domain jobs | 0/6 integrated | All six full replays are running or queued; complete proposals are saved |
+| Critical classification: six apex full-domain jobs | 0/6 integrated | All six were running at the last scheduler check; complete proposals are saved |
 | Compact family: AAA neighborhood | Proved on the full parameter interval | None for this neighborhood |
-| Compact family: ABB neighborhood and exterior | Neither full replay integrated | Both full replays running on Yale |
+| Compact family: ABB neighborhood and exterior | Neither full replay integrated | Both were running at the last scheduler check |
 
 Search proposals, sample leaves, and job submissions are **not** completed gates.
-The latest source milestone includes a generic full-domain nonapex replay generator;
-its complete job-0 replay is running on Yale as job **30060676**. The bounded
-search array **30060923** is exploring the other critical jobs, with at most
-two single-CPU searches at a time. Full nonapex array **30061427** additionally
-checks jobs 1–4 and 6, with at most four jobs running together. Thirteen search
-results from Yale have been downloaded, checked for complete subdivision geometry,
-and saved with source/hash provenance. None of these submissions or search
-results is counted as a proof. Three smaller complete regions (jobs 24–26)
-were submitted as **30062473**. Fourteen more completed proposals are queued
-as **30062736**, dependent on the first full array ending, to keep concurrency
-bounded. Searches 14 and 15 finished after resumption as **30062715**; their
-full replays are queued as **30062956**, behind the smaller-region array.
+The latest successful scheduler observation was **2026-10-19 21:25 UTC**:
+43 jobs were running with 200 allocated cores. Browser access subsequently
+stopped responding, so this is a timestamped observation, not a live status.
+No job has been restarted because of that observation failure. The scheduling
+changes and job IDs are recorded in
+[the scale-up record](hpc/bouchet-parallel-scaleup-20261019.json).
 
 Complete proposals for all **42 critical-region jobs** are now saved with
 [raw search provenance](hpc/bouchet-complete-searches-20261019.json). Their
@@ -235,3 +229,20 @@ for concurrent scheduling: array throttles were raised and scheduling-only
 dependencies removed, allowing up to **200 allocated cores** across the
 remaining work. A subsequent scheduler check confirmed **43 jobs RUNNING
 with 200 cores allocated and no pending jobs**. See the [scale-up record](hpc/bouchet-parallel-scaleup-20261019.json).
+
+
+### 2026-10-19 — Main theorem connected to the remaining replay obligations
+
+[`MainReplayAssembly.lean`](lean/SparseLowerTail/MainReplayAssembly.lean)
+connects the actual `MainTheorem` to the remaining 35 nonapex proofs, all six
+apex proofs, the ABB neighborhood and the full exterior replay. Job 25 is
+supplied automatically by the checked imports. The AAA neighborhood was
+already proved. These are still internal obligations, not assumed external
+results. Completion counts have not increased.
+
+[`MainRelabeling.lean`](lean/SparseLowerTail/MainRelabeling.lean) checks the
+manuscript's literal relabeling conclusions at and below the transition,
+conditional on `MainTheorem` and the recorded classical CDF transport theorem.
+Both directions of the optimizer characterization and uniqueness of the
+subcritical scalar pair are retained. The stable `thm:main` map links these
+results independently of printed theorem numbers.

@@ -20,7 +20,7 @@ and the Lean formalization have different scopes.
 | Proved in Lean | Balanced SBM cost/density formulas for arbitrary measurable equal partitions, existence of a balanced minimizing pair, and **V(r) ≤ V_SBM(r)**. |
 | Proved in Lean | Full balanced phase classification (`cor:Vbal`), including stationary branch, unimodality, actual inverse branches, unique crossing, and identification with the supremum threshold. |
 | Proved for unrestricted graphons | Active constraint (`lem:active`); strict improvement below the threshold and exclusion of all constant minimizers there (`thm:threshold`(iii)). |
-| Proved from a named external input | Transfer from the KP26 penalized reduction to constrained global optimality at a supported target. Determining the supported range and rigidity remain to prove. |
+| Proved from a named external input | The full supporting range 0 < r ≤ r_−, value equality and optimizer data follow from the explicit KP26 input. Equality rigidity remains to prove. |
 | Proved with explicit hypotheses | The interval continuation argument in the proof of Theorem 1.3; its analytic graphon inputs remain unproved. |
 | Proved in Lean | Complete coefficient signs and value/derivative tangencies (`lem:certcoef`), including analytic substitutions and the required log 40 bounds. **Global certificate positivity remains unproved.** |
 | Proved in Lean | All printed threshold/parameter intervals (`lem:digits`); scaling, truncation and rescaled first variation; the graphon certificate expectation identity; scalar two-block rigidity. |
@@ -29,8 +29,9 @@ and the Lean formalization have different scopes.
 | Proved relative to classical sampling | Vertex identity, sharp support bounds, and classification of every already-two-block minimizer (`prop:vertex`, `cor:bipodalmin`), in measurable-partition form. |
 | Proved in Lean | Value continuity; quantitative isolation, variance/entropy and Goodman bounds; the full boundary comparison (`lem:boundary`); triangle-pattern-to-partition rigidity. |
 | Proved relative to named classical inputs | Unrestricted minimizer existence and entropy lower semicontinuity; balanced partition/pullback equivalence; minimizer, cost, mean and multiplier convergence in cut distance. |
-| Proved in Lean | Critical parameter region; actual triangle-law symmetry and Hoeffding decomposition; certificate expectation/weak duality and parameter concavity; penalized stationary, tie and fold lemmas. Relaxed-law validity uses classical sampling. |
-| Remaining | The reverse inequality and global optimizer classification, local rigidity/continuation, supporting penalized range, and Lean proofs of global cover/family certificate positivity. |
+| Proved in Lean | Critical parameter region; actual triangle-law symmetry and Hoeffding decomposition; certificate expectation/weak duality and parameter concavity; full scalar penalized classification and values. Relaxed-law validity uses classical sampling. |
+| Proved relative to classical sampling | Full insertion lemma: every minimizer row globally minimizes its row functional. The penalized mean-zero L² quadratic inequality is also proved. Scalar two-well coercivity is proved without external inputs. |
+| Remaining | Global optimizer classification, local rigidity/continuation, small-target equality rigidity, and Lean proofs of global cover/family certificate positivity. |
 
 The [formalization README](lean/README.md) records the file-to-paper mapping,
 remaining dependencies, build instructions, axiom audit, and dated progress log.

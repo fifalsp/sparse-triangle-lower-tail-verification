@@ -405,3 +405,30 @@ passed for 1909 project declarations (including generated/private declarations),
 allowing only `propext`, `Classical.choice`, and `Quot.sound`. All 66 stable-label
 entries and 274 declaration links resolve; manuscript fingerprints and six map
 tests pass. These counts are not a percentage of mathematical completion.
+
+### 2026-10-19 — insertion, two wells and the penalized supporting range
+
+- `Section06/InsertionLemma.lean` proves all of `lem:insertion`: construct an
+  actual inserted graphon, compute entropy/edge/triangle polynomials, take the
+  constrained one-sided variation, and obtain global minimality of almost
+  every row. Null-set representatives are handled explicitly. The only input
+  is the recorded classical inverse-transform sampling theorem.
+- `Section06/TwoWellGrowth.lean` proves scalar two-well quadratic growth on
+  the whole unit square. Boundary points and the diagonal critical point are
+  excluded; strict Hessian positivity and compactness give a uniform constant.
+  Functional coercivity and local graphon rigidity are still in progress.
+- `Section07/PenalizedPhase.lean` and `PenalizedValue.lean` prove `prop:pen`,
+  including the actual attained infimum and all phase values. `SmallData.lean`
+  proves `lem:order` and `prop:smalldata` relative to the explicit KP26 input.
+  This establishes the entire supported range, not only a conditional transfer
+  at an unspecified supporting point. It does not prove `thm:smalltail` rigidity.
+- `Section07/PenalizedQuadratic.lean` proves `lem:penalized` for every mean-zero
+  L² function, using actual vertex variations and centered truncations.
+- `Section02/CutDistanceIdentities.lean` proves the pseudometric identities;
+  its general measure-preserving pullback result has the precisely recorded
+  classical L¹ approximation input.
+
+No mathematical error in the manuscript has been established in this checkpoint.
+[PROOF-ISSUES.md](PROOF-ISSUES.md) lists the unresolved formal obligations.
+The effort estimate remains about **25% (20–30%)**; remaining certificate and
+rigidity proofs carry substantial work, so declaration counts are not coverage.

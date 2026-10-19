@@ -62,3 +62,9 @@ import SparseLowerTail.Section02.RelabelBalanced
 import SparseLowerTail.Section05.CoverSymmetry
 import SparseLowerTail.Section05.CriticalAssembly
 import SparseLowerTail.Section07.PenalizedCrossing
+import SparseLowerTail.Section02.CutDistanceIdentities
+import SparseLowerTail.Section06.InsertionLemma
+import SparseLowerTail.Section06.TwoWellGrowth
+import SparseLowerTail.Section07.PenalizedValue
+import SparseLowerTail.Section07.SmallData
+import SparseLowerTail.Section07.PenalizedQuadratic

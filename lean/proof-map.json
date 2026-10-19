@@ -217,15 +217,17 @@
     },
     {
       "paper_label": "prop:smalldata",
-      "status": "partial_conditional",
-      "checked_scope": "Transfer from a supporting balanced penalized minimizer to constrained global optimality; supporting branch/range, edge density and multiplier identities remain.",
+      "status": "proved_relative_external",
+      "checked_scope": "Identifies the entire supporting range 0<r≤r_-, proves value equality and balanced attainment, and gives active triangle, cost, multiplier and edge data for every unrestricted minimizer. Equality rigidity is separate thm:smalltail.",
       "lean_files": [
-        "SparseLowerTail/Section07/ExternalReduction.lean"
+        "SparseLowerTail/Section07/SmallData.lean"
       ],
       "lean_declarations": [
-        "SparseLowerTail.Section07.constrained_minimizer_of_KP26",
-        "SparseLowerTail.Section07.value_eq_of_KP26",
-        "SparseLowerTail.Section07.any_minimizer_penalized_of_KP26"
+        "SparseLowerTail.Section07.smallTarget_support",
+        "SparseLowerTail.Section07.smallTarget_data",
+        "SparseLowerTail.Section07.smallTarget_branch_minimizer",
+        "SparseLowerTail.Section07.smallTarget_value_eq_balancedValue",
+        "SparseLowerTail.Section07.smallTarget_optimizer_data"
       ],
       "explicit_inputs": [
         "external:KP26:1.6"
@@ -667,22 +669,30 @@
     {
       "paper_label": "lem:cut",
       "status": "partial",
-      "checked_scope": "Actual rectangle cut norm and bijective-relabeling infimum cut distance; convergence representatives are selected from the infimum. Triangle counting and compactness via vertex maps are explicit classical inputs. Weighted-test bound, full distance pseudometric identities, and bijective compactness as stated are not all formalized.",
+      "checked_scope": "Actual rectangle norm and bijective cut distance; norm pullback invariance, symmetry, triangle inequality and zero distance under AE equality proved. General measure-preserving pullback has zero distance relative to explicit classical L1 approximation by bijections. Weighted test bound remains to prove; compactness currently uses the weaker vertex-map consequence.",
       "lean_files": [
         "SparseLowerTail/Section02/CutNorm.lean",
         "SparseLowerTail/Section02/Relabeling.lean",
-        "SparseLowerTail/Section02/CutDistance.lean"
+        "SparseLowerTail/Section02/CutDistance.lean",
+        "SparseLowerTail/Section02/CutDistanceIdentities.lean"
       ],
       "lean_declarations": [
         "SparseLowerTail.Section02.cutNorm",
         "SparseLowerTail.Section02.ClassicalGraphonCompactness",
         "SparseLowerTail.Section02.ClassicalTriangleCounting",
         "SparseLowerTail.Section02.cutDistance",
-        "SparseLowerTail.Section02.exists_relabel_cutConverges"
+        "SparseLowerTail.Section02.exists_relabel_cutConverges",
+        "SparseLowerTail.Section02.cutNorm_pullback",
+        "SparseLowerTail.Section02.cutDistance_symm",
+        "SparseLowerTail.Section02.cutDistance_triangle",
+        "SparseLowerTail.Section02.cutDistance_eq_zero_of_ae",
+        "SparseLowerTail.Section02.ClassicalPullbackApproximation",
+        "SparseLowerTail.Section02.cutDistance_relabel_zero"
       ],
       "explicit_inputs": [
         "classical:graphon-cut-compactness",
-        "classical:counting-lemma"
+        "classical:counting-lemma",
+        "classical:pullback-l1-approximation"
       ],
       "baseline": {
         "environment": "lemma",
@@ -1540,6 +1550,122 @@
       ],
       "explicit_inputs": [
         "internal:prop:cover"
+      ]
+    },
+    {
+      "paper_label": "lem:insertion",
+      "baseline": {
+        "environment": "lemma",
+        "statement": "Let $U$ be a minimizer at $r\\in(0,1)$. Then $J_U(v)\\ge\\bar k_U$ for every measurable $v:[0,1]\\to[0,1]$. Moreover, for a.e.\\ $x\\in[0,1]$ the row $u_x=U(x,\\cdot)$ satisfies $J_U(u_x)=\\bar k_U$ and $\\log u_x+\\mu_UT_Uu_x=0$ a.e.\\ on $[0,1]$.",
+        "statement_sha256": "ea293139557f0a2c2176a1a3f8917423e102c89c6d3b639f72c35473e78d8206",
+        "proof_sha256": "6f15d7accbf9d01d77d6192c58e47c81bc7e9a2345c628c99276eb339de075e0",
+        "source_line": 4128
+      },
+      "status": "proved_relative_classical",
+      "checked_scope": "Actual inserted graphon, exact entropy/edge/triangle formulas, arbitrary-profile lower bound, row equality and row Euler equation, and global row minimality. Uses only classical inverse-transform sampling.",
+      "lean_files": [
+        "SparseLowerTail/Section06/InsertionLemma.lean",
+        "SparseLowerTail/Section06/VertexInsertion.lean",
+        "SparseLowerTail/Section06/InsertionTriangle.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section06.insertedGraphon_cost",
+        "SparseLowerTail.Section06.insertedGraphon_triangle",
+        "SparseLowerTail.Section06.rowFunctional_ge_vertexMean",
+        "SparseLowerTail.Section06.minimizer_row_functional",
+        "SparseLowerTail.Section06.minimizer_rows_minimize"
+      ],
+      "explicit_inputs": [
+        "classical:uniform-sampling"
+      ]
+    },
+    {
+      "paper_label": "thm:twowell",
+      "baseline": {
+        "environment": "theorem",
+        "statement": "Let $0<a<b<1$ and $\\mu>0$ satisfy \\eqref{s4:eq:EL}. Then the following hold. \\begin{enumerate}[label=(\\alph*)] \\item The matrix $M_B$ is positive definite. \\item We have $J_B(f_1)=J_B(f_2)=\\min J_B$, where the minimum is over all measurable $v:[0,1]\\to[0,1]$. Every minimizer of $J_B$ equals $f_1$ or $f_2$ a.e. \\item There is $c_B>0$ such that for every measurable $v:[0,1]\\to[0,1]$, \\[ J_B(v)-J_B(f_1)\\ge c_B\\min_{i=1,2}\\|v-f_i\\|_2^2 . \\] \\end{enumerate}",
+        "statement_sha256": "65c510a25a9ea805517c965342a93e8e1080314e7dafe29562e20139821f6129",
+        "proof_sha256": null,
+        "source_line": 4179
+      },
+      "status": "partial",
+      "checked_scope": "Scalar two-well Hessian, global minima and quantitative quadratic growth proved. Transfer to the full row functional and functional Hessian remains under development.",
+      "lean_files": [
+        "SparseLowerTail/Section06/TwoWellGrowth.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section06.scalarWell_quadratic_growth"
+      ],
+      "explicit_inputs": []
+    },
+    {
+      "paper_label": "prop:pen",
+      "baseline": {
+        "environment": "proposition",
+        "statement": "We have $r_-<r_+$, and the following hold for $\\gamma>0$. \\begin{enumerate}[label=(\\alph*)] \\item If $\\gamma<\\gamma_c$, then $(s_\\gamma,s_\\gamma)$ is the unique minimizer of $\\Phi_\\gamma$, and $C(\\gamma)=C_0(\\gamma)$. \\item If $\\gamma=\\gamma_c$, then the minimizers of $\\Phi_\\gamma$ are exactly $(r_+,r_+)$ and $(a(z_c),b(z_c))$. Moreover, $C(\\gamma_c)=C_0(\\gamma_c)=\\Phi_{\\gamma_c}(a(z_c),b(z_c))$. \\item If $\\gamma>\\gamma_c$, then there is exactly one $z\\in(0,z_c)$ with $\\mu(z)=3\\gamma$, and $(a(z),b(z))$ is the unique minimizer of $\\Phi_\\gamma$. \\end{enumerate}",
+        "statement_sha256": "f78576773b87595e6e061503b395c551412ce94517f5ca1bb467b17078c15495",
+        "proof_sha256": "199ee985683a23b06c38f4a7fbcd87cca995f90f359aa2de3ba374662c217e86",
+        "source_line": 4733
+      },
+      "status": "proved",
+      "checked_scope": "Full scalar penalized phase classification and attained infimum values below, at and above the critical penalty. No KP26 reduction is used for this scalar result.",
+      "lean_files": [
+        "SparseLowerTail/Section07/PenalizedPhase.lean",
+        "SparseLowerTail/Section07/PenalizedValue.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section07.penalizedMinimizer_below_critical",
+        "SparseLowerTail.Section07.penalizedMinimizer_at_critical",
+        "SparseLowerTail.Section07.penalizedMinimizer_above_critical",
+        "SparseLowerTail.Section07.penalizedValue_below_critical",
+        "SparseLowerTail.Section07.penalizedValue_at_critical",
+        "SparseLowerTail.Section07.penalizedValue_above_critical",
+        "SparseLowerTail.Section07.penalizedValue_zero"
+      ],
+      "explicit_inputs": []
+    },
+    {
+      "paper_label": "lem:order",
+      "baseline": {
+        "environment": "lemma",
+        "statement": "$r_-<r_*$.",
+        "statement_sha256": "0b1e2f7b8ccefacc5e0f7209753388508ef82d941d1009fe83aa3ea2e04c14b6",
+        "proof_sha256": "cea65b072ad87c01f20767f70fdba6a4d1bda0094039f66d22c1c0410a491233",
+        "source_line": 4778
+      },
+      "status": "proved",
+      "checked_scope": "The strict ordering r_-<r_* follows from the penalized tie and proved balanced classification, without numerical brackets.",
+      "lean_files": [
+        "SparseLowerTail/Section07/SmallData.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section07.smallTarget_lt_threshold"
+      ],
+      "explicit_inputs": []
+    },
+    {
+      "paper_label": "lem:penalized",
+      "baseline": {
+        "environment": "lemma",
+        "statement": "Let $U$ be a minimizer at $r\\in(0,1)$, and let $\\gamma>0$. Suppose that $F(U)+\\gamma t(U)\\le F(W)+\\gamma t(W)$ for every graphon $W$. Then $\\mu_U=3\\gamma$, and $\\langle f,T_Uf\\rangle\\le0$ for every $f\\in L^2([0,1])$ with $\\int_0^1f=0$.",
+        "statement_sha256": "be81d54fb7b867f5a26302e960f968d342cb82f1ba6980723e0458af2052c57e",
+        "proof_sha256": "cb25cc93ebe6a97629b052299e5b31fb39915d7dea815c2f42dbc9e59636b172",
+        "source_line": 4811
+      },
+      "status": "proved_relative_classical",
+      "checked_scope": "Actual first and second vertex variations give μ=3γ and nonpositivity of the quadratic form for every mean-zero L² function. The extension uses centered truncations and dominated convergence.",
+      "lean_files": [
+        "SparseLowerTail/Section07/PenalizedMultiplier.lean",
+        "SparseLowerTail/Section07/PenalizedQuadratic.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section07.minimizer_multiplier_eq_three_penalty",
+        "SparseLowerTail.Section07.penalized_quadratic_nonpos_integrable",
+        "SparseLowerTail.Section07.penalized_quadratic_nonpos_L2",
+        "SparseLowerTail.Section07.penalized_minimizer_data"
+      ],
+      "explicit_inputs": [
+        "classical:uniform-sampling"
       ]
     }
   ]

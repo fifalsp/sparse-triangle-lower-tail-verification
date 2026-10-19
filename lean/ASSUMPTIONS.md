@@ -103,6 +103,18 @@ the final theorem's type provide that separate provenance information.
   membership, and both directions of the graphon equivalence are proved here.
   No graphon relabeling conclusion is assumed as part of this classical input.
 
+### `classical:pullback-l1-approximation`
+
+- Exact input: `Section02.ClassicalPullbackApproximation` in
+  [CutDistanceIdentities.lean](SparseLowerTail/Section02/CutDistanceIdentities.lean).
+- For every integrable real kernel K, every measure-preserving vertex map φ,
+  and ε > 0, there is a measure-preserving measurable bijection ψ such that
+  the L¹ distance between K pulled back by ψ and by φ is less than ε.
+- This is the standard approximation underlying the zero-cut-distance
+  pullback assertion in `lem:cut`(d). It assumes no entropy or optimization
+  claim. Norm invariance, distance symmetry, the triangle inequality and the
+  deduction of zero cut distance are proved here.
+
 ## Classical infrastructure eligible to be assumed when needed
 
 Compactness and triangle counting are now encoded above. Remaining optional

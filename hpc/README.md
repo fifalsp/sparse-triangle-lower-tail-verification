@@ -209,3 +209,30 @@ jobs concurrently, each with four CPUs and 32 GiB RAM. Four single-thread
 build workers keep process concurrency bounded. Future `--array` overrides
 must name only completed proposals that have not already been submitted.
 Neither queued nor running jobs count as completed formal proofs.
+
+
+The initial full nonapex array was submitted as **30061427**. Tasks 1–4
+were observed running and task 6 queued. Their replay source remains
+`38d5c740`; the uploaded runner is from `46296bd`. See
+[`bouchet-cover-jobs-20261019.json`](bouchet-cover-jobs-20261019.json).
+Downloaded search results for jobs 0–12 are recorded in
+[`bouchet-search-checkpoint-20261019.json`](bouchet-search-checkpoint-20261019.json).
+Their geometry is complete, but their positivity is not yet a full Lean result.
+
+## Bounded apex replay for all six fans
+
+`run_apex_cluster.py --fan N --logs DIRECTORY --workers 4 --lean-threads 1`
+checks a complete fan proposal. The runner now bounds concurrent builds and
+works for every fan. The generator splits endpoint proofs into groups of 64
+and numerical leaf proofs into groups of 16, so a single large endpoint module
+need not hold up the whole fan. Every original inequality and coverage check
+is retained. Incomplete or malformed proposals are rejected before generation.
+
+`bouchet-apex-array.sbatch REPLAY_SOURCE SHA256 SEARCH_DIRECTORY SEARCH_COMMIT`
+is prepared for fans 2–6, at most two concurrent jobs, four CPUs and 32 GiB
+per job. The explicit search commit may precede the replay implementation;
+both revisions and the actual proposal hash are recorded. The replay still
+checks the actual fan cutoff, every numerical inequality, complete coverage,
+and the unchanged axiom policy. Controlled exits preserve generated sources,
+project build artifacts and the actual input proposal. **This apex array has
+not yet been submitted.** The existing F1 job has not been restarted.

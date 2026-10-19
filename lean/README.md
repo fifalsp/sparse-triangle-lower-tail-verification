@@ -1314,3 +1314,35 @@ tasks running and the remainder queued. Its 41 tasks cover all nonapex jobs
 and apex fans F2–F6, with bounded CPU use. See
 `hpc/bouchet-cover-jobs-20261019.json` for resource limits and provenance.
 No full-domain certificate completion is claimed from these running states.
+
+
+### 2026-10-19 — Full replay progress and bounded remaining apex fans
+
+Thirteen completed nonapex search proposals (jobs 0–12) were downloaded from
+Yale array 30060923. Their recorded source, exit status, expression export,
+entire ordered subdivision geometry and first/last arithmetic classifications
+were checked locally. The existing job-0 proposal was preserved after confirming
+identical geometry. Job 35 was already saved. These are untrusted proposals,
+not completed full-domain Lean proofs; provenance is in the HPC search record.
+
+Full nonapex array 30061427 was confirmed submitted; tasks 1–4 were running
+and task 6 queued. A diagnostic snapshot of job 0 had 136/1873 modules built,
+ABB had 943/7459, and the exterior had 1165/12872, without reported failures.
+Counts are heterogeneous build modules, not percentages of the main theorem.
+The older S1/F1 jobs remained running with increasing CPU consumption; a failed
+diagnostic step is not evidence that the jobs stopped. No full region is
+claimed integrated here.
+
+The apex runner now accepts all six fans and uses bounded build workers.
+Endpoint/leaf modules are split into smaller independent groups, and malformed
+or incomplete proposals fail before generation. The same five F1 sample leaves
+compile under this layout. The direct-leaf application supplies the three
+coordinate bounds explicitly, avoiding the expensive implicit conversion seen
+in the nonapex generator. No positivity obligation has been removed.
+
+Validation: root build passes (3492 jobs); audit still reports 12535 declarations
+and 8249 theorems with only the three permitted foundational axioms. All 88
+paper labels and 477 Lean links pass, with unchanged mapped manuscript statements.
+Five apex parser tests and nine nonapex tests pass. The main theorem still needs
+both internal certificate inputs; this is an execution improvement and a durable
+record of search results, not a new full-domain theorem.

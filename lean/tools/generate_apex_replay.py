@@ -15,26 +15,42 @@ from generate_s1_replay_coverage import Node, table, padded, tree, leaves, box
 from generate_s1_replay_positive_coverage import pair, pad
 
 ROOT = Path(__file__).resolve().parents[1]
+LEAF_BATCH = 16
+ENDPOINT_BATCH = 64
 
 
 def parse(proposal):
+    if proposal.get('status') != 'complete proposal' or proposal.get('frontier'):
+        raise ValueError('A complete proposal with no frontier is required')
+    if F(proposal['Q']) <= 0:
+        raise ValueError('Nonpositive cutoff')
     iterator, leaf_data = iter(proposal['preorder']), []
 
     def go(lo, hi):
         lo, hi = [max(lo), max(lo[1:]), lo[2]], [hi[0], min(hi[:2]), min(hi)]
-        code = next(iterator)
+        try:
+            code = next(iterator)
+        except StopIteration as exc:
+            raise ValueError('Truncated subdivision') from exc
         n = Node(lo, hi, code)
         if code in (5, 6, 7):
             axis = code-5
             mid = (lo[axis]+hi[axis])/2
+            if not lo[axis] < mid < hi[axis]:
+                raise ValueError('Degenerate split')
             lh, rl = hi.copy(), lo.copy()
             lh[axis] = rl[axis] = mid
             n.children = (go(lo, lh), go(rl, hi))
             n.count = sum(c.count for c in n.children)
         elif code in (0, 1, 2, 3):
+            if any(l > u for l,u in zip(lo,hi)):
+                raise ValueError('Inverted nonempty leaf')
             n.code, n.leaf, n.count = 2, len(leaf_data), 1
             leaf_data.append((lo, hi, code))
-        elif code != 4:
+        elif code == 4:
+            if not any(l > u for l,u in zip(lo,hi)):
+                raise ValueError('False empty leaf')
+        else:
             raise ValueError('Unknown leaf code')
         return n
 
@@ -51,9 +67,13 @@ def main():
     args = p.parse_args()
     proposal = json.loads(args.proposal.read_text())
     root, data = parse(proposal)
-    fan = int(proposal['fan'])-1
-    if not 0 <= fan < 6:
+    fan_number = proposal['fan']
+    if type(fan_number) is not int or not 1 <= fan_number <= 6:
         raise ValueError('Fan index outside 1..6')
+    fan = fan_number-1
+    cell = json.loads((ROOT.parent/'data/cover.json').read_text())['cells'][f'F{fan_number}']
+    if F(proposal['Q']) != F(cell['Q']):
+        raise ValueError('Wrong fan cutoff')
     name = f'F{fan+1}'+('Smoke' if args.smoke else '')
     ns = f'SparseLowerTail.Section05.ApexReplay.{name}'
     out = ROOT / 'SparseLowerTail/Section05/ApexReplay' / name
@@ -84,12 +104,13 @@ set_option maxHeartbeats 8000000
     vals = sorted({q for i in ids if data[i][2] >= 2
                    for q in data[i][0]+data[i][1]+[(a+b)/2 for a, b in zip(*data[i][:2])]})
     index = {q: i for i, q in enumerate(vals)}
-    text = header(['SparseLowerTail.Numerics.ExpEndpoints'])
-    for i, q in enumerate(vals):
-        qq, n, l, u, lower, upper = endpoint(q, 20, 60)
-        text += f'\ndef exp{i} : ExpEndpointCertificate := ⟨{rat(qq)},{n},{rat(l)},{rat(u)},{rat(lower)},{rat(upper)}⟩\n'
-        text += f'theorem exp{i}_valid : exp{i}.Valid := by decide +kernel\n'
-    save('Endpoints', text)
+    for batch in range((len(vals)+ENDPOINT_BATCH-1)//ENDPOINT_BATCH):
+        text = header(['SparseLowerTail.Numerics.ExpEndpoints'])
+        for i in range(batch*ENDPOINT_BATCH,min(len(vals),(batch+1)*ENDPOINT_BATCH)):
+            qq, n, l, u, lower, upper = endpoint(vals[i], 20, 60)
+            text += f'\ndef exp{i} : ExpEndpointCertificate := ⟨{rat(qq)},{n},{rat(l)},{rat(u)},{rat(lower)},{rat(upper)}⟩\n'
+            text += f'theorem exp{i}_valid : exp{i}.Valid := by decide +kernel\n'
+        save(f'Endpoints{batch:04d}', text)
     for b in sorted({i//256 for i in ids}):
         text = header(['SparseLowerTail.Section05.LogBoxSubdivision'])
         for i in ids:
@@ -97,10 +118,13 @@ set_option maxHeartbeats 8000000
                 lo, hi, _ = data[i]
                 text += f'\ndef box{i} : LogBox := '+box(Node(lo, hi, 2))+'\n'
         save(f'Boxes{b:03d}', text)
-    batches = sorted({i//64 for i in ids})
+    batches = sorted({i//LEAF_BATCH for i in ids})
     for b in batches:
-        selected = [i for i in ids if i//64 == b]
-        text = header([ns+'.Endpoints', 'SparseLowerTail.Section05.ApexCoverAssembly',
+        selected = [i for i in ids if i//LEAF_BATCH == b]
+        endpoints = {index[q]//ENDPOINT_BATCH for i in selected if data[i][2] >= 2
+                     for q in data[i][0]+data[i][1]+[(a+b)/2 for a,b in zip(*data[i][:2])]}
+        text = header([ns+f'.Endpoints{k:04d}' for k in sorted(endpoints)] +
+                      ['SparseLowerTail.Section05.ApexCoverAssembly',
                        'SparseLowerTail.Section05.ApexRefinedTaylorBox'] +
                       [ns+f'.Boxes{k:03d}' for k in sorted({i//256 for i in selected})])
         for i in selected:
@@ -136,7 +160,12 @@ theorem conclusion{i} {{q : EdgeTriple}} (hq : q ∈ box{i}.region) :
     {conclusion} := by
   apply apexLeafConclusion_of_positive
   exact apexRefinedBox_positive data{i}.jobWholeBox
-    ⟨data{i}_lower_valid, data{i}_upper_valid⟩ {fan} margin{i} hq
+    ⟨data{i}_lower_valid, data{i}_upper_valid⟩ {fan} margin{i} (q := edgeCoordinate q) (by
+      intro k
+      fin_cases k
+      · exact hq 0
+      · exact hq 1
+      · exact hq 2)
 '''
         save(f'Leaves{b:03d}', text)
     if args.smoke:
@@ -156,13 +185,13 @@ theorem conclusion{i} {{q : EdgeTriple}} (hq : q ∈ box{i}.region) :
     for k, n in enumerate(chunks):
         local = leaves(n)
         text = header(['SparseLowerTail.Section05.CoverReplayTable']+
-                      [ns+f'.Leaves{b:03d}' for b in sorted({i//64 for i in local})])
+                      [ns+f'.Leaves{b:03d}' for b in sorted({i//LEAF_BATCH for i in local})])
         text += f'\nnamespace Coverage{k:03d}\ndef initialBox : LogBox := {box(n)}\n'
-        text += 'def leafTable : RegisterTree (Option LogBox) := '+table(padded([f'some box{i}' for i in local]))+'\n'
+        text += 'def leafTable : RegisterTree (Option LogBox) := '+table(padded([f'some box{i}' for i in local] or ['none']))+'\n'
         text += 'def subdivision : CoverReplayTree := '+tree(n, {i: j for j, i in enumerate(local)})+'\n'
         text += 'theorem valid : subdivision.Valid leafTable.get initialBox := by decide +kernel\n'
         text += f'theorem leaf_proofs (Q : ℝ) : leafTable.All (CoverBoxProperty Q (ApexLeafConclusion {fan})) :=\n  '
-        text += pair(pad([f'(fun _ hq _ => conclusion{i} hq)' for i in local]))+'\n'
+        text += pair(pad([f'(fun _ hq _ => conclusion{i} hq)' for i in local] or ['True.intro']))+'\n'
         text += f'''theorem covered {{Q : ℝ}} : ∀ q ∈ initialBox.region,
     q ∈ orderedLogDomain Q → ApexLeafConclusion {fan} q :=
   subdivision.sound_table (leaf_proofs Q) valid

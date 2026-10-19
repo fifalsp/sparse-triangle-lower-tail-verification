@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate, compile and audit the full F1 apex subdivision on a CPU node."""
+"""Generate, compile and audit the full apex subdivision for any of the six fans on a CPU node."""
 import argparse
 import json
 from pathlib import Path
@@ -13,11 +13,15 @@ ROOT = Path(__file__).resolve().parents[1]
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--logs', required=True, type=Path)
+    parser.add_argument('--fan', type=int, choices=range(1, 7), default=1)
+    parser.add_argument('--workers', type=int, default=2)
+    parser.add_argument('--lean-threads', type=int, default=1)
     args = parser.parse_args()
     logs = args.logs.resolve()
     logs.mkdir(parents=True, exist_ok=True)
     start = time.monotonic()
-    status = {'scope': 'F1 full apex cube, nonnegativity and zero-to-pattern implication',
+    target = f'SparseLowerTail.Section05.ApexReplay.F{args.fan}.FullCube'
+    status = {'fan': args.fan, 'scope': f'F{args.fan} full apex cube, nonnegativity and zero-to-pattern implication',
               'phase': 'generate', 'trust_status': 'Pending Lean build and axiom audit'}
 
     def record():
@@ -31,23 +35,25 @@ def main():
 
     record()
     run([sys.executable, 'tools/generate_apex_replay.py',
-         'data/apex-f1-subdivision-proposal.json'], 'apex-generation.log')
-    status['phase'] = 'kernel_build'
+         f'data/apex-f{args.fan}-subdivision-proposal.json'], 'apex-generation.log')
+    status['phase'] = 'bounded_kernel_build'
     record()
-    run(['lake', 'build', 'SparseLowerTail.Section05.ApexReplay.F1.FullCube'], 'apex-build.log')
+    run([sys.executable, 'tools/build_bounded.py', target,
+         '--logs', str(logs/'apex-build'), '--workers', str(args.workers),
+         '--lean-threads', str(args.lean_threads)], 'apex-build.log')
     status['phase'] = 'axiom_audit'
     record()
     audit = (ROOT/'Audit.lean').read_text()
     if not audit.startswith('import SparseLowerTail\n'):
         raise ValueError('Unexpected audit header; do not weaken the audit')
     audit = audit.replace('import SparseLowerTail\n',
-        'import SparseLowerTail.Section05.ApexReplay.F1.FullCube\n', 1)
+        'import '+target+'\n', 1)
     audit_path = logs/'AuditApex.lean'
     audit_path.write_text(audit)
     run(['lake', 'env', 'lean', str(audit_path)], 'apex-audit.log')
-    status.update(phase='complete', trust_status='Full F1 apex theorem compiled and axiom audit passed')
+    status.update(phase='complete', trust_status=f'Full F{args.fan} apex theorem compiled and axiom audit passed')
     record()
-    (logs/'APEX_SUCCESS.txt').write_text('Full F1 apex cube theorem and axiom audit passed.\n')
+    (logs/'APEX_SUCCESS.txt').write_text(target+' compiled and axiom audit passed.\n')
 
 
 if __name__ == '__main__':

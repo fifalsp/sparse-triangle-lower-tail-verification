@@ -60,7 +60,7 @@ Current completion gates (only full imported Lean proofs count):
 | Gate | Checked completion | What remains |
 | --- | --- | --- |
 | Main-theorem deduction from the two internal certificates | Proved | Supply both certificates |
-| Critical classification: 36 nonapex full-domain jobs | 0/36 integrated | Full replays; jobs 0 and 35 now have complete search proposals |
+| Critical classification: 36 nonapex full-domain jobs | 0/36 integrated | Full replays; complete search proposals for jobs 0–12 and 35 are saved |
 | Critical classification: six apex full-domain jobs | 0/6 integrated | F1 replay on Yale; the other exterior domains still require replay |
 | Compact family: AAA neighborhood | Proved on the full parameter interval | None for this neighborhood |
 | Compact family: ABB neighborhood and exterior | Neither full replay integrated | Both full replays running on Yale |
@@ -69,7 +69,11 @@ Search proposals, sample leaves, and job submissions are **not** completed gates
 The latest source milestone includes a generic full-domain nonapex replay generator;
 its complete job-0 replay is running on Yale as job **30060676**. The bounded
 search array **30060923** is exploring the other critical jobs, with at most
-two single-CPU searches at a time. Neither submission is counted as a proof.
+two single-CPU searches at a time. Full nonapex array **30061427** additionally
+checks jobs 1–4 and 6, with at most four jobs running together. Thirteen search
+results from Yale have been downloaded, checked for complete subdivision geometry,
+and saved with source/hash provenance. None of these submissions or search
+results is counted as a proof.
 
 Latest apex progress: a complete F1 subdivision is proposed, and five representative
 leaves plus the sorting/zero-pattern assembly pass Lean. **The full F1 replay is

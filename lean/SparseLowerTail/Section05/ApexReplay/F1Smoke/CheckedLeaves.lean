@@ -1,6 +1,6 @@
 import SparseLowerTail.Section05.ApexReplay.F1Smoke.Leaves000
-import SparseLowerTail.Section05.ApexReplay.F1Smoke.Leaves230
-import SparseLowerTail.Section05.ApexReplay.F1Smoke.Leaves476
+import SparseLowerTail.Section05.ApexReplay.F1Smoke.Leaves920
+import SparseLowerTail.Section05.ApexReplay.F1Smoke.Leaves1907
 
 /-! Generated from untrusted proposal data. All assertions require kernel checks. -/
 namespace SparseLowerTail.Section05.ApexReplay.F1Smoke

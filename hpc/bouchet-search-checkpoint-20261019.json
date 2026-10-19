@@ -1,51 +1,140 @@
 {
-  "recorded_at": "2026-10-19T20:12:01.589887+00:00",
+  "recorded_at": "2026-10-19T20:19:41.651275+00:00",
   "source_commit": "38d5c740f691792bd19cf545d18565c5b216bd9a",
   "search_array": 30060923,
-  "evidence": "Search archives read through the authenticated Yale shell",
+  "evidence": "Downloaded search archives; exact complete coverage tree parsed locally; not Lean verification",
+  "bundle_sha256": "33361297270f5c632ed8f7400301662a4227e189b6a806b7845339821ed59a56",
   "proposals": [
     {
       "job": 0,
       "nodes": 31925,
       "leaves": 15963,
       "frontier": 0,
-      "status": "complete untrusted proposal"
+      "status": "complete untrusted proposal",
+      "search_archive_sha256": "09be7fad73e76501c121c081d634359cdafb4ee499f61c3dff2439c741b2a6fb",
+      "proposal_sha256": "f319f26e3ec843c00b582f4cbfbac0e850ec8530f788709efceda5721073c33c",
+      "repository_proposal_sha256": "c72082e9626b4a9911d88744039fa7cd8525fdc7bffda7153e3e1929a97014b2"
     },
     {
       "job": 1,
       "nodes": 21897,
       "leaves": 10949,
       "frontier": 0,
-      "status": "complete untrusted proposal"
+      "status": "complete untrusted proposal",
+      "search_archive_sha256": "4d9833c0686701aea48a79f14f543c647d6819c3e7c9f2e29fdd3a911a3cca52",
+      "proposal_sha256": "70a43c6360f44336d8e1b5f57e2bb47f2e557442a8138794730ac9950c64b888",
+      "repository_proposal_sha256": "70a43c6360f44336d8e1b5f57e2bb47f2e557442a8138794730ac9950c64b888"
     },
     {
       "job": 2,
       "nodes": 23595,
       "leaves": 11798,
       "frontier": 0,
-      "status": "complete untrusted proposal"
+      "status": "complete untrusted proposal",
+      "search_archive_sha256": "4e18781e74686f843aa919d617257f6e377bb2bdd62cebd4c5819a0ae2b8a70c",
+      "proposal_sha256": "f955443ae13a87e125604d653eb0d6b1e9febaf38e8e2b052eb1deafb7601bf8",
+      "repository_proposal_sha256": "f955443ae13a87e125604d653eb0d6b1e9febaf38e8e2b052eb1deafb7601bf8"
     },
     {
       "job": 3,
       "nodes": 11265,
       "leaves": 5633,
       "frontier": 0,
-      "status": "complete untrusted proposal"
+      "status": "complete untrusted proposal",
+      "search_archive_sha256": "52f5f62a9801121a81547164738c6a184b98e5f50493b997f5cbe0c5e8bcb230",
+      "proposal_sha256": "f867f7cb364ca2403ee2fce589b311470d2835c7fd0fa554d133418e60c18822",
+      "repository_proposal_sha256": "f867f7cb364ca2403ee2fce589b311470d2835c7fd0fa554d133418e60c18822"
     },
     {
       "job": 4,
       "nodes": 15497,
       "leaves": 7749,
       "frontier": 0,
-      "status": "complete untrusted proposal"
+      "status": "complete untrusted proposal",
+      "search_archive_sha256": "79a66fc03e4a02e4f45feb2f5bbb5573f34b0c7819de5c21dd90446e2f1b38f1",
+      "proposal_sha256": "88b52daa8b3638911e590512fc2ee1444f7040ce34104c9a2fa20de38f5e80da",
+      "repository_proposal_sha256": "88b52daa8b3638911e590512fc2ee1444f7040ce34104c9a2fa20de38f5e80da"
+    },
+    {
+      "job": 5,
+      "nodes": 8411,
+      "leaves": 4206,
+      "frontier": 0,
+      "status": "complete untrusted proposal",
+      "search_archive_sha256": "aa12d5edd9d22ff3be2c0a0f8f95577fe3a5ff8da50cfcf21e0d7e0248812ca6",
+      "proposal_sha256": "3dc3c72f02de401a4fb16d5e01f1ffcebe352ff2ba98c455562d6da3223a3b47",
+      "repository_proposal_sha256": "3dc3c72f02de401a4fb16d5e01f1ffcebe352ff2ba98c455562d6da3223a3b47"
     },
     {
       "job": 6,
       "nodes": 9325,
       "leaves": 4663,
       "frontier": 0,
-      "status": "complete untrusted proposal"
+      "status": "complete untrusted proposal",
+      "search_archive_sha256": "bb84019f280c5a5de0440e129a270562b7ba22b76529a75b76276738ae8fbbe4",
+      "proposal_sha256": "028d9a7f8fd8c8e2b624637958f0598e18b8b1a2cff5708554745d53a36b1563",
+      "repository_proposal_sha256": "028d9a7f8fd8c8e2b624637958f0598e18b8b1a2cff5708554745d53a36b1563"
+    },
+    {
+      "job": 7,
+      "nodes": 7349,
+      "leaves": 3675,
+      "frontier": 0,
+      "status": "complete untrusted proposal",
+      "search_archive_sha256": "eccf5dcc190ba3b891645795b081c76f659d949932f016ae9d5d6de03b732919",
+      "proposal_sha256": "dd72f4ca888c768aa70af6fd19b583f8a3ad1d72578af91857651c57f5bd5e71",
+      "repository_proposal_sha256": "dd72f4ca888c768aa70af6fd19b583f8a3ad1d72578af91857651c57f5bd5e71"
+    },
+    {
+      "job": 8,
+      "nodes": 12903,
+      "leaves": 6452,
+      "frontier": 0,
+      "status": "complete untrusted proposal",
+      "search_archive_sha256": "0b29032da32b2c87f90bf88ca4ea771dfd7fd82a7c2dd059e1b819c27956748b",
+      "proposal_sha256": "94c1f1598cd921521500cb7ff1837c94ad9b8cace44de7ed1a58a729dc84cd69",
+      "repository_proposal_sha256": "94c1f1598cd921521500cb7ff1837c94ad9b8cace44de7ed1a58a729dc84cd69"
+    },
+    {
+      "job": 9,
+      "nodes": 28129,
+      "leaves": 14065,
+      "frontier": 0,
+      "status": "complete untrusted proposal",
+      "search_archive_sha256": "90ee67af6394a067e221f448e5266f547841f2796fe90dd8754fef80f322a7e6",
+      "proposal_sha256": "921869a99de12c53797ec5678466814f0d2055fca035e899cd14c28d838f6207",
+      "repository_proposal_sha256": "921869a99de12c53797ec5678466814f0d2055fca035e899cd14c28d838f6207"
+    },
+    {
+      "job": 10,
+      "nodes": 13247,
+      "leaves": 6624,
+      "frontier": 0,
+      "status": "complete untrusted proposal",
+      "search_archive_sha256": "b778e852122abac8b3bb6a68a5f2d84f67116e569bb4c24de6126391c006835c",
+      "proposal_sha256": "3f53ef032dfb9a69f1a1f339616da706b59bf6e15e8f77fbaca97384d9358161",
+      "repository_proposal_sha256": "3f53ef032dfb9a69f1a1f339616da706b59bf6e15e8f77fbaca97384d9358161"
+    },
+    {
+      "job": 11,
+      "nodes": 10307,
+      "leaves": 5154,
+      "frontier": 0,
+      "status": "complete untrusted proposal",
+      "search_archive_sha256": "861997b62ec6aebe925f2f892691afa535d54c2f3b2b9f918575c2c8f3620f56",
+      "proposal_sha256": "b326f47506b76ba4ca6190fe126fca33cdd92d04395dad054c5f5fbd1f328eb2",
+      "repository_proposal_sha256": "b326f47506b76ba4ca6190fe126fca33cdd92d04395dad054c5f5fbd1f328eb2"
+    },
+    {
+      "job": 12,
+      "nodes": 49079,
+      "leaves": 24540,
+      "frontier": 0,
+      "status": "complete untrusted proposal",
+      "search_archive_sha256": "477c3dd3fdfe999ec84fe3fea626619b65acc4c4360de9a9038b891357b0ad34",
+      "proposal_sha256": "a564619083f76215a0556b3a491e7ece833be0fc11cf4dc4524cfadc05a03c16",
+      "repository_proposal_sha256": "a564619083f76215a0556b3a491e7ece833be0fc11cf4dc4524cfadc05a03c16"
     }
   ],
-  "formal_status": "No full-domain Lean completion asserted. Job 0 is already running as 30060676; jobs 1-4 and 6 are prepared for full replay."
+  "formal_status": "No full-domain Lean completion asserted. Full job 0 runs as 30060676; jobs 1-4 and 6 were submitted as array 30061427."
 }

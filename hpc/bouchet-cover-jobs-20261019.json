@@ -1,5 +1,5 @@
 {
-  "recorded_at": "2026-10-19T20:05:07.003295+00:00",
+  "recorded_at": "2026-10-19T20:23:36.238901+00:00",
   "cluster": "Bouchet",
   "account": "pi_sl3363",
   "source_commit": "38d5c740f691792bd19cf545d18565c5b216bd9a",
@@ -46,6 +46,22 @@
       "memory_gib_per_task": 4,
       "seconds_per_search": 120,
       "formal_result": "Search proposals only; no proof acceptance"
+    },
+    {
+      "job_array_id": 30061427,
+      "tasks": "1-4,6",
+      "scope": "Full ordered-domain proofs for five nonapex jobs",
+      "status": "Tasks 1-4 observed RUNNING; task 6 pending",
+      "max_concurrent_tasks": 4,
+      "cpus_per_task": 4,
+      "memory_gib_per_task": 32,
+      "build_workers_per_task": 4,
+      "lean_threads_per_worker": 1,
+      "wall_limit_hours": 12,
+      "controlled_run_limit_hours": 10,
+      "runner_commit": "46296bd",
+      "runner_sha256": "55c88ad2551c001480377c4d935575f0c491172561be85d94ff328fd82fe5530",
+      "formal_result": "Pending full kernel builds and axiom audits"
     }
   ],
   "validation": {

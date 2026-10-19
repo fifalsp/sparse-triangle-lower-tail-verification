@@ -122,3 +122,8 @@ F1 job **30049908** was submitted on 2026-10-19 with dependency
 `afterok:30049190`. The source archive and runner hashes passed verification
 in the authenticated shell. See `bouchet-apex-20261019.json`; submission alone
 is not evidence of a completed certificate.
+
+The bootstrap subsequently reported exit code 0 with logs archived. Both
+S1 (`30049194`) and F1 (`30049908`) were then observed RUNNING on compute
+node `a1130u35n03`, each with eight CPUs. Their full certificate results
+remain unverified.

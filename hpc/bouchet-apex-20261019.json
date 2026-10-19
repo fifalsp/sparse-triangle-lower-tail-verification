@@ -10,7 +10,7 @@
   "source_commit": "90a547977eb459a3e740d51d9f63eed82ff78c46",
   "source_archive_sha256": "74eebc5c1c282c3afa259c940cd4326456d2376968523862920c24952654cd57",
   "runner_sha256": "c62acf9870efd92e3f8151a517b0e0e66dd74d9ba930517068f2d689e9571e83",
-  "status": "observed PENDING (Dependency); full replay and audit have not started",
+  "status": "observed RUNNING at 53s on a1130u35n03; full certificate build/audit unverified",
   "workload": "F1 apex full cube: 31180 exterior Taylor leaves, 14 AAA contact leaves, 69 ABB contact leaves, exact coverage, zero-pattern conclusion and axiom audit",
   "remote_directory": "/nfs/roberts/project/pi_sl3363/sl3363"
 }

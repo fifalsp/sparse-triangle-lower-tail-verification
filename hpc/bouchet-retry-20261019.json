@@ -14,14 +14,14 @@
       "id": "30049190",
       "workload": "bootstrap",
       "time_limit": "04:00:00",
-      "status": "observed RUNNING at 11m18s on a1114u28n01; root build and 10067-declaration/6410-theorem axiom audit passed; refined interval proposal finished; dependency archive export in progress; terminal success unverified"
+      "status": "runner reported exit code 0 and logs archived; root build, axiom audit and refined interval computation passed"
     },
     {
       "id": "30049194",
       "workload": "s1",
       "time_limit": "12:00:00",
       "dependency": "afterok:30049190",
-      "status": "observed PENDING (Dependency); full S1 proof replay has not started"
+      "status": "observed RUNNING at 53s on a1130u35n03; full certificate build/audit unverified"
     }
   ],
   "proof_status": "No new complete certificate established by these submissions."

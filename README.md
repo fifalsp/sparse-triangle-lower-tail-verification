@@ -1,36 +1,51 @@
-# Sparse triangle lower tail: verification code
+# The Sparse Triangle Lower Tail: computational verification
 
-Reproducible computational checks for *The Sparse Triangle Lower Tail: Threshold and Minimizers*
-by Dong Huang and Shuangping Li, from the Overleaf project
-`large_deviation_lower_tail`. The source snapshot is identified by SHA-256 in
-[`data/manuscript.json`](data/manuscript.json). The manuscript itself is not
-distributed in this code repository.
+This repository contains the numerical verification used in **The Sparse Triangle
+Lower Tail: Threshold and Minimizers**, by Dong Huang and Shuangping Li.
 
-The current manuscript identifies four computer-assisted assertions:
+The paper identifies **four statements that require finite computations** at the
+start of Appendix A. The table below tells you what is checked and where to find
+the code. The mathematical arguments reducing the main theorem to these checks
+are in the paper.
 
-| Manuscript label | Check | Code |
-| --- | --- | --- |
-| `lem:digits` | Crossing bracket and the four printed enclosures | `verification/cover/endpoint_common.py` |
-| `lem:penconstants` | Penalized coexistence constants | `verification/cover/verify_penalized_constants.py` |
-| `prop:cover` | Twelve-cell cover, support bounds, exact tangency solves, and 42 positivity jobs | `verification/cover/` |
-| `prop:family` | Certificate family on the parameter interval, including local Hessians and compact-domain positivity | `verification/family/` |
+## Which parts of the paper does the code verify?
 
-The additional `verification/apex/` module verifies the single crossing-point
-certificate separately. It also checks exact symbolic identities used by the
-family. It is useful as an independent special-case check, but does not replace
-the parameter-family verification.
+| Statement in the paper | What the computation establishes | Verification code | Saved results |
+| --- | --- | --- | --- |
+| **Lemma 4.12** — threshold constants (`lem:digits`; Appendix A.4) | Brackets the crossing point and certifies the displayed intervals for a\*, b\*, μ\*, and r\*, including **0.2096696762 < r\* < 0.2096696763**. | [`endpoint_common.py`](verification/cover/endpoint_common.py), function `setup_constants()` | [Constant enclosures](certificates/release/cover/endpoint_inputs_verified.json) |
+| **Lemma 7.7** — penalized coexistence constants (`lem:penconstants`; Appendix A.4) | Brackets the coexistence parameter and certifies the displayed values of γ_c, C(γ_c), r_−, and r_+. | [`verify_penalized_constants.py`](verification/cover/verify_penalized_constants.py) | [Penalized constants](certificates/release/cover/penalized_constants_verified.json) |
+| **Proposition 5.19** — the twelve-cell cover (`prop:cover`; Appendix A.2) | Checks that the cells cover the required region, validates their support bounds and tangency coefficients, and proves the required positivity inequalities. | [`endpoint_common.py`](verification/cover/endpoint_common.py), [`planar_coverage.py`](verification/cover/planar_coverage.py), and [`verify_endpoint.py`](verification/cover/verify_endpoint.py) | [Cover reports](certificates/release/cover/) |
+| **Proposition 8.4** — the certificate family (`prop:family`; Appendix A.3) | Verifies the certificate uniformly for **every L ∈ [3.9, 9.5]**, including its prescribed zero patterns. | [`verify_family.py`](verification/family/verify_family.py), with formulas in [`core.py`](verification/family/core.py) and exact identities in [`symbolic.py`](verification/family/symbolic.py) | [Family report](certificates/release/family/family.json) |
 
-The recorded full release run passed in 293 seconds on the recorded environment:
-all 42 cover jobs, both family Hessian checks, the family compact-domain check,
-and the additional apex check completed with zero unresolved boxes. See
-[`certificates/release/run.json`](certificates/release/run.json) for the source
-hashes, dependency versions, commands, and individual reports. The independent
-input comparison and runtime-formula audit are also stored under `certificates/`.
+The statement numbers were checked against the Overleaf PDF on October 19, 2026.
+The LaTeX labels are included so that the correspondence remains clear if the
+paper is renumbered. The exact manuscript snapshot is recorded in
+[`data/manuscript.json`](data/manuscript.json).
 
-## Run the checks
+### What is inside the two proposition checks?
 
-Use Python 3.11 or newer. The recorded release run uses Python 3.14; dependency
-versions are pinned to the versions used in that run.
+**Proposition 5.19** requires **42 positivity jobs**: 36 checks at the nonapex
+vertices and six checks at the fan apex. Each job has its own
+`verified_CELL_VERTEX.json` report in the [cover results directory](certificates/release/cover/).
+The exact twelve-cell inputs are in [`data/cover.json`](data/cover.json).
+The geometric covering check is recorded separately in
+[`planar_coverage.json`](certificates/release/cover/planar_coverage.json).
+
+**Proposition 8.4** includes the following two computations from Appendix A.3.
+Both are performed by [`verify_family.py`](verification/family/verify_family.py).
+
+| Appendix statement | What is verified | Relevant functions | Saved results |
+| --- | --- | --- | --- |
+| **Lemma A.6** (`appA3:hess`) | The Hessian is positive definite throughout the neighborhoods of both moving zero patterns, uniformly in L. | `local_check()` and `subdivide('local', ...)`; matrix formulas and tests in `core.hessian()` and `core.positive_definite()` | [`local1.json`](certificates/release/family/local1.json), [`local2.json`](certificates/release/family/local2.json) |
+| **Proposition A.5** (`appA3:compact`) | Nonnegativity and the exact zero set throughout L ∈ [3.9, 9.5] and 0 ≤ q₃ ≤ q₂ ≤ q₁ ≤ 12. | `subdivide('compact', ...)` and `core.compact_test()` | [`compact.json`](certificates/release/family/compact.json) |
+
+The family verifier also checks the symbolic identities and the numerical
+inequalities used in the paper's reduction from the unbounded domain to this
+compact region. See the [family guide](verification/family/README.md) for details.
+
+## Reproduce all checks
+
+After cloning or downloading this repository, open a terminal in its directory:
 
 ```sh
 python3 -m venv .venv
@@ -39,78 +54,52 @@ python -m pip install -r requirements.txt
 python verify.py --jobs 2
 ```
 
-Each run creates a fresh directory under `results/` with `run.json`, detailed
-JSON reports, and command logs. A completed full run ends with
-`"status": "complete"`. An unresolved box, exhausted node budget, failed
-inequality, changed input, or subprocess error prevents this success status.
-The output directory cannot be reused, so old reports cannot silently supply
-missing checks. Source and input hashes are recorded in the run manifest.
+Use Python 3.11 or newer; the recorded run used Python 3.14. The dependency
+versions are pinned in [`requirements.txt`](requirements.txt).
 
-For preliminary checks only:
+The last command runs **all four groups above**, together with additional
+consistency checks. It creates a new directory under `results/`, containing a
+`run.json` summary, detailed reports, and logs. A successful full run ends with:
 
-```sh
-python verify.py --quick
+```json
+"status": "complete"
 ```
 
-The quick command does **not** verify the global positivity statements. Its
-status is `quick_checks_passed`, never `complete`. Do not run verification with
-`python -O`, `python -OO`, or `PYTHONOPTIMIZE`: assertions are verification
-conditions, and optimized modes are explicitly rejected.
+Any unresolved box, exhausted search budget, or failed inequality prevents this
+success status. Saved reports are not used to bypass computations. Do not use
+`python -O`, `python -OO`, or `PYTHONOPTIMIZE`, which disable assertions.
 
-The failure controls can also be run separately:
+For a short installation/preliminary check, use `python verify.py --quick`.
+**Quick mode does not verify the full positivity statements.**
 
-```sh
-python verification/check_fail_closed.py
-```
+## Results of the recorded run
 
-An additional independent symbolic check applies exact arithmetic to the actual
-family runtime functions, checking their Taylor recurrences, weight derivatives,
-and Hessians:
+The [full run report](certificates/release/run.json) records a successful run in
+**293 seconds** on the recorded environment. All **42 cover jobs**, both family
+Hessian checks, the full family compact-domain check, and the additional
+single-apex check finished with **zero unresolved boxes**. Runtime and node
+counts may differ on another machine.
 
-```sh
-python tools/audit_family_runtime.py
-```
+The reports include source and input hashes so the results can be traced to the
+exact files used. The independent [manuscript input comparison](certificates/manuscript-table-match.json)
+confirms that all twelve cells match the paper's tables.
 
-## Inputs and arithmetic
+## Further details
 
-[`data/cover.json`](data/cover.json) contains the twelve cells. Each printed
-binary64 input is stored as its exact rational value; the support bounds
-`Q=N/1024` are exact rationals. The 24 starred coefficient slots are solved
-from exact tangency conditions with validated ball linear algebra. They are
-not replaced by rounded decimal approximations.
-
-The release uses FLINT/Arb ball arithmetic for numerical inclusions and exact
-rational arithmetic for planar geometry. NumPy supplies candidate eigenvalue
-bounds or support points in the cover code; every acceptance condition is
-then checked with Arb. SymPy generates exact derivative templates and checks
-the symbolic identities. A template regeneration check compares the generated
-source with the shipped file before positivity checks run.
-
-The cover templates evaluate `3*Psi`, and the numerical positivity targets
-are multiplied by three accordingly. Local neighborhoods are checked using
-the radii printed in the manuscript. See the module READMEs for the precise
-local and Taylor tests and their relationship to the manuscript's presentation.
-
-To compare the certificate tables with a later manuscript export:
-
-```sh
-python tools/compare_draft.py /path/to/arxiv_v1.tex
-```
-
-This checks the exact table data; it is not an audit of changes to the surrounding
-mathematical argument. The original research code and historical reports were
-traced before packaging. Their source hashes and the portable changes are
-recorded in the provenance files. The release reports are fresh computations
-from this repository, not relabeled historical output.
-
-## Scope
-
-These programs verify the finite computational assertions used by the paper.
-The graphon arguments, analytic reductions, equality arguments, and external
-Kwan–Pham theorem remain mathematical inputs supplied by the manuscript and
-its cited references. This is a computer-assisted verification package, not
-a proof-assistant formalization of the full theorem.
-
-Exploratory optimization, dense-case investigations, unrelated notes, and
-manuscript drafts are outside this repository. Generated working results are
-ignored by Git; the designated release reports are stored under `certificates/`.
+- **How the numerical bounds are rigorous:** the programs use FLINT/Arb interval
+  enclosures and exact rational geometry. Floating-point proposals are accepted
+  only after validated arithmetic checks. See the [cover guide](verification/cover/README.md)
+  and [family guide](verification/family/README.md), including the documented
+  differences between the implementation and the paper's presentation.
+- **Additional checks:** [`verification/apex/`](verification/apex/) checks the
+  single crossing-point certificate separately. It is an extra check, not a
+  substitute for Proposition 8.4. [`check_fail_closed.py`](verification/check_fail_closed.py)
+  deliberately tests failure cases, and [`audit_family_runtime.py`](tools/audit_family_runtime.py)
+  checks the runtime formulas symbolically. See [AUDIT.md](AUDIT.md).
+- **Comparing a later paper draft:** run
+  `python tools/compare_draft.py /path/to/arxiv_v1.tex` to compare the exact
+  certificate tables. Introductory prose edits do not change these inputs.
+- **Scope:** this repository supplies the computational part of the proof. The
+  graphon arguments, analytic reductions, and external Kwan–Pham theorem are
+  supplied by the paper and its references. It is not a proof-assistant
+  formalization of the whole paper.

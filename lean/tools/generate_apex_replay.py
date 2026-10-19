@@ -184,7 +184,8 @@ theorem conclusion{i} {{q : EdgeTriple}} (hq : q ∈ box{i}.region) :
     cut(root)
     for k, n in enumerate(chunks):
         local = leaves(n)
-        text = header(['SparseLowerTail.Section05.CoverReplayTable']+
+        text = header(['SparseLowerTail.Section05.CoverReplayTable',
+                       'SparseLowerTail.Section05.ApexCoverAssembly']+
                       [ns+f'.Leaves{b:03d}' for b in sorted({i//LEAF_BATCH for i in local})])
         text += f'\nnamespace Coverage{k:03d}\ndef initialBox : LogBox := {box(n)}\n'
         text += 'def leafTable : RegisterTree (Option LogBox) := '+table(padded([f'some box{i}' for i in local] or ['none']))+'\n'

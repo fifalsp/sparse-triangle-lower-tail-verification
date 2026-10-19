@@ -41,3 +41,13 @@ New suspected errors should be recorded with the exact statement, counterexample
 or failed mathematical inference, and resolution status. A tactic failure alone
 is not evidence of a mathematical error. Check the versioned proof map for exact
 completed declarations and source statement/proof fingerprints.
+
+
+Numerical formalization limitation (2026-10-19): direct interval evaluation
+with the current apex primitive/solved-coefficient bounds fails to separate
+zero at sampled rational points just outside five ABB contact cubes. This is
+an interval-precision limitation, not a manuscript counterexample. The recorded
+untrusted diagnostic is `data/apex-exterior-precision-diagnostic.json`; the
+next remedy is sharper constant enclosures or a tangency-preserving evaluator.
+No large apex subdivision should be treated as sufficient merely because its
+spatial boxes are small.

@@ -122,3 +122,6 @@ import SparseLowerTail.Section08.FamilyAAACover
 import SparseLowerTail.Section05.ApexFanTangency
 
 import SparseLowerTail.Section05.ApexFanLocal
+
+import SparseLowerTail.Section05.CoverNearOne
+import SparseLowerTail.Section05.CoverJobTaylorBox

@@ -673,7 +673,7 @@
     {
       "paper_label": "prop:cover",
       "status": "partial_geometry_support_and_apex_local_complete",
-      "checked_scope": "Actual twelve-cell geometry, all 179 curved-boundary checks, and every support cutoff are proved. verifiedCover_of_positivity reduces the cover to nonlinear nonapex positivity and apex nonnegativity. S1 vertex-0 positivity is checked on near/tail subregions and a seventeen-leaf Taylor slab. The six fan coefficient vectors are solved uniquely in their four missing slots, enclosed by exact intervals, and satisfy both contact values and all six logarithmic gradient equations. Local nonnegativity and a unique contact zero are proved on all twelve published contact cubes. Global apex positivity outside those cubes and complete nonapex positivity remain unproved.",
+      "checked_scope": "Actual twelve-cell geometry, all 179 curved-boundary checks, and every support cutoff are proved. verifiedCover_of_positivity reduces the cover to nonlinear nonapex positivity and apex nonnegativity. S1 vertex-0 positivity is checked on near/tail subregions and a seventeen-leaf Taylor slab. The six fan coefficient vectors are solved uniquely in their four missing slots, enclosed by exact intervals, and satisfy both contact values and all six logarithmic gradient equations. Local nonnegativity and a unique contact zero are proved on all twelve published contact cubes. Global apex positivity outside those cubes and complete nonapex positivity remain unproved. A common actual-environment and Taylor-leaf checker now covers every nonapex job, using solved fan coefficients where required. All 36 jobs have checked positivity on the logarithmic cube [0,1/512]^3 only; this is not full-domain coverage.",
       "lean_files": [
         "SparseLowerTail/Section05/CoverS1FirstBox.lean",
         "SparseLowerTail/Section05/CoverS1Tail.lean",
@@ -685,7 +685,10 @@
         "SparseLowerTail/Section05/ApexFanTangency.lean",
         "SparseLowerTail/Section05/ApexTangencyDeterminant.lean",
         "SparseLowerTail/Section05/ApexFanIntervals.lean",
-        "SparseLowerTail/Section05/ApexFanLocal.lean"
+        "SparseLowerTail/Section05/ApexFanLocal.lean",
+        "SparseLowerTail/Section05/CoverJobIntervals.lean",
+        "SparseLowerTail/Section05/CoverJobTaylorBox.lean",
+        "SparseLowerTail/Section05/CoverNearOne.lean"
       ],
       "lean_declarations": [
         "SparseLowerTail.Section05.coverS1_vertex0_first_box",
@@ -700,7 +703,11 @@
         "SparseLowerTail.Section05.apexTangencyMatrix_det_ne_zero",
         "SparseLowerTail.Section05.apexFanTheta_contacts",
         "SparseLowerTail.Section05.apexFanCoefficientIntervals_contains",
-        "SparseLowerTail.Section05.apexFan_local_nonneg_zero_iff"
+        "SparseLowerTail.Section05.apexFan_local_nonneg_zero_iff",
+        "SparseLowerTail.Section05.coverCellThetaIntervals_contains",
+        "SparseLowerTail.Section05.nonapexBoxIntervals_contains",
+        "SparseLowerTail.Section05.S1TaylorBoxData.job_positive",
+        "SparseLowerTail.Section05.CoverNearOne.all_jobs_positive"
       ],
       "explicit_inputs": [],
       "baseline": {

@@ -718,3 +718,42 @@ audit checked 9798 project declarations / 6177 theorems and allowed only
 anchors remain unchanged, all 384 declaration links resolve, and the six
 mapping tests pass. Local build artifacts total about 793 MiB, compared with
 about 767 MiB before this milestone.
+
+
+### 2026-10-19 — shared checker for all nonapex jobs
+
+[`CoverJobIntervals.lean`](SparseLowerTail/Section05/CoverJobIntervals.lean)
+provides actual environment enclosures for all 36 nonapex jobs. Fan vertices
+use `apexFanTheta`, including the exact four solved coefficients; the stored
+zero placeholders are never substituted for those coefficients. Mean and cost
+are the exact rational vertex coordinates, and the multiplier enclosure is
+proved using `(1 - cost - mean) / criticalTriangle`.
+
+[`CoverJobTaylorBox.lean`](SparseLowerTail/Section05/CoverJobTaylorBox.lean)
+proves one reusable Taylor-leaf theorem for all 36 jobs. It shares the symbolic
+expression and derivatives through `CoverGenericEnvironment`,
+`CoverGenericCalculus`, and `CoverGenericTaylor`. The historical
+`S1TaylorBoxData` type is reused only for its box geometry and exponential
+endpoint data; the theorem itself uses each requested job's actual parameters.
+
+[`CoverNearOne.lean`](SparseLowerTail/Section05/CoverNearOne.lean) kernel-checks
+all 36 jobs on `[0,1/512]^3` in logarithmic coordinates. Regenerate it with
+`python3 tools/generate_cover_near_one.py`. This is a checked starting region,
+not a completed cover of any job's full domain.
+
+**Precision finding before bulk apex replay:**
+`python3 tools/diagnose_apex_precision.py` reproduces the untrusted diagnostic
+in `data/apex-exterior-precision-diagnostic.json`. At a single rational sample
+two published ABB radii away in the first coordinate, the current direct
+interval evaluation straddles zero for F1–F5. For example, F1 gives roughly
+[-1.52e-7, 1.60e-7]. This does not show that the function is negative, nor does
+it contradict the proved local certificates. It shows that these enclosures
+cannot certify the sampled points using direct evaluation alone. Subdivision
+of the spatial box cannot eliminate the uncertainty in the fixed coefficients.
+Next work should tighten the critical-constant/solved-coefficient bounds or
+preserve tangency cancellations in the exterior evaluator before bulk replay.
+
+Validation: full root build passed (3412 jobs). The axiom audit checked
+9914 declarations / 6271 theorems with only the three standard axioms;
+88 manuscript anchors and 388 declaration links pass, as do all six mapping
+tests. No bulk replay or additional agent was started.

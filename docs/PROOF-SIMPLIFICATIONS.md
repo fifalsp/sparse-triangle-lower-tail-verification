@@ -21,6 +21,7 @@ Explicit external inputs are listed in
 | PS-006 | `lem:rowreduction`, approximate Euler equations | A polynomial identity proves both surrogate codegrees nonnegative | Lean checked; no extra hypothesis |
 | PS-007 | `prop:structural`, Step 4 | Direct stationary-row coercivity closes actual small-tail bipodality | Lean checked; no insertion-minimality hypothesis for the row comparison |
 | PS-008 | `prop:family`, local AAA case | Factored Hessian reduces the full parameter range to five interval leaves | Lean checked; local cube only |
+| PS-009 | `s5:tangency`, `prop:cover` | One common determinant solves all six fan tangency systems | Lean checked; tangency only |
 
 ## Compact outline of the final argument
 
@@ -617,6 +618,48 @@ The generated rational data are proposals; Lean checks their validity with
 `decide +kernel`. No external mathematical inputs are used for this local
 result. The mixed-contact neighborhood and the global exterior still need
 separate certificates.
+
+## PS-009 — One determinant for all six fan tangency systems
+
+**Stable paper links:** `s5:tangency`, the tangency paragraph of `app:cover`,
+and the coefficient construction in `prop:cover`. This proves the exact
+coefficient construction; positivity remains a separate obligation.
+
+Write R(theta,lambda) for the four residuals: the AAA value, its first
+logarithmic derivative, and the two inequivalent ABB derivatives. Each is
+linear jointly in theta and lambda, since the original certificate is
+linear in those parameters and differentiation preserves linearity. Let
+E_j be the coefficient basis vectors at positions 0,2,3,4, and set
+M_ij=R(E_j,0)_i. For the published fixed coefficient vector b_K (zero in
+those four positions), the required correction x therefore satisfies
+
+```
+R(b_K + sum_j x_j E_j, lambda_K)
+    = R(b_K,lambda_K) + M x = 0.
+```
+
+The matrix M is independent of K and lambda_K: only the right-hand side
+changes. Bounds on the actual nine primitive constants give bounds on its
+sixteen entries. Exact interval arithmetic then encloses det M in
+[5186330326774856, 5186330397267159]/2^60, which is strictly positive.
+Thus Cramer's rule gives a unique correction for every one of the six fan
+rows. Adding this correction preserves every fixed coefficient, and the
+four previously unspecified coefficients are the exact Cramer values.
+
+The already proved weighted identity
+Psi(AAA)+3*Psi(ABB)=0 gives the second zero value from the first.
+Coordinate symmetry makes all three AAA derivatives equal and the two
+repeated-coordinate ABB derivatives equal. Hence the four residual
+equations imply zero value and all three logarithmic derivatives at both
+contacts. This is exactly the coordinate formulation used in the Appendix;
+it does not assert any Hessian or global positivity estimate.
+
+**Lean checked:**
+[`ApexTangencyDeterminant.lean`](../lean/SparseLowerTail/Section05/ApexTangencyDeterminant.lean)
+and [`ApexFanTangency.lean`](../lean/SparseLowerTail/Section05/ApexFanTangency.lean).
+The determinant proof uses separately checked entry enclosures so the
+symbolic expressions need not be replayed at every determinant occurrence.
+No external mathematical premise is used for these statements.
 
 ## How to maintain this note
 

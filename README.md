@@ -38,6 +38,7 @@ and the Lean formalization have different scopes.
 | Partially checked | Actual S1 vertex-0 positivity on near-one, tail and a seventeen-leaf Taylor slab. Family local Hessian/contact calculus and exact parameter-to-coefficient enclosures are proved. Five exact interval leaves prove local nonnegativity and the unique AAA zero in a logarithmic cube of radius 0.1 for every L in [3.9,9.5]. Full-domain cover/family certificates remain unfinished. |
 | Proved relative to named inputs | All small-parameter bounds, actual row reduction and scalar exclusion (`lem:smallparams`, `lem:rowreduction`, `lem:scalar`). Exact small-target block rigidity and the full classification are now proved. |
 | Proved relative to named classical inputs | Sequential stability and openness of the balanced-classification region. The left seed follows conditional on the still-unproved critical certificate. |
+| Proved in Lean | Exact tangency coefficients for all six fan cells: one certified common determinant, unique corrections in the four missing slots, and zero values/gradients at both contacts. Positivity remains separate. |
 | Remaining | Discharge the two internal certificate inputs: critical classification and the compact intermediate certificate. The final conditional continuation assembly is proved. |
 
 The [formalization README](lean/README.md) records the file-to-paper mapping,

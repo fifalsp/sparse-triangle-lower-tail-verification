@@ -621,3 +621,35 @@ whole radius-0.1 mixed-contact box near L=3.9, even at parameter width 0.001.
 This negative lower bound is inconclusive; it supplies neither a counterexample
 nor a proved failure of positive definiteness. Spatial subdivision or a stronger algebraic bound is
 needed; the AAA proof must not be extrapolated to ABB. No bulk job was started.
+
+### 2026-10-19 — common apex determinant and all six exact tangencies
+
+`ApexTangencyDeterminant` checks the sixteen entries of the actual tangency
+matrix and encloses its determinant in
+[5186330326774856, 5186330397267159] / 2^60, approximately
+[0.004498424486, 0.004498424548]. This positive enclosure removes the
+invertibility hypothesis. The nine primitive bounds follow from proved
+critical digits and endpoint logarithm bounds.
+
+`ApexFanTangency` defines the exact coefficients for F1–F6 from the published
+fixed rational slots and Cramer's rule. It proves uniqueness of the four
+corrections, preservation of every fixed slot, and zero value and gradient
+at both actual logarithmic contacts. The coefficient data generator reads
+`data/cover.json`; null slots are placeholders only until the exact solve.
+The added proof-map anchor `s5:tangency` records the logarithmic-coordinate
+scope explicitly. This follows the Appendix's coordinate convention.
+
+Each costly symbolic matrix entry is interval-checked once; `MatrixInterval4`
+then checks the determinant from the sixteen small interval bounds. This
+reduces repeated symbolic evaluation and avoids bulk replay. The full main
+theorem still needs critical/family global certificates; neither their
+positivity nor their exact zero sets follows from tangency alone. No new
+mathematical error was established. Effort estimate remains about 40%
+(30–55% uncertainty), not measured theorem coverage.
+
+Validation: full root build passed (3387 jobs). Axiom audit passed for
+9181 project declarations / 5728 theorems, using only `propext`,
+`Classical.choice`, and `Quot.sound`. All 87 manuscript anchors are unchanged,
+377 declaration links resolve, and all six mapping tests pass. Regenerating
+`CoverCoefficientData.lean` reproduces its source byte-for-byte. The local
+build directory is about 767 MiB; bulk replay remains stopped.

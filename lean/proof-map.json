@@ -673,7 +673,7 @@
     {
       "paper_label": "prop:cover",
       "status": "partial_geometry_support_complete",
-      "checked_scope": "Actual twelve-cell geometric coverage, including all 179 curved-boundary interval checks, and all support/cutoff fields are proved. verifiedCover_of_positivity reduces the cover to nonlinear nonapex positivity and apex nonnegativity. Actual S1 vertex-0 positivity is checked on near/tail subregions and a seventeen-leaf Taylor slab. Full-domain positivity and apex zero-set proofs remain unfinished.",
+      "checked_scope": "Actual twelve-cell geometric coverage, including all 179 curved-boundary interval checks, and all support/cutoff fields are proved. verifiedCover_of_positivity reduces the cover to nonlinear nonapex positivity and apex nonnegativity. Actual S1 vertex-0 positivity is checked on near/tail subregions and a seventeen-leaf Taylor slab. Full-domain positivity and apex zero-set proofs remain unfinished. The shared apex tangency determinant is certified nonzero. All six exact fan coefficient vectors now satisfy both contact values and all six logarithmic gradient equations, preserve the published fixed slots, and have unique four-coordinate corrections. Apex/global positivity still remains.",
       "lean_files": [
         "SparseLowerTail/Section05/CoverS1FirstBox.lean",
         "SparseLowerTail/Section05/CoverS1Tail.lean",
@@ -681,7 +681,9 @@
         "SparseLowerTail/Section05/CoverS1TaylorLeaf.lean",
         "SparseLowerTail/Section05/CriticalCoverGeometry.lean",
         "SparseLowerTail/Section05/CoverSupportData.lean",
-        "SparseLowerTail/Section05/CoverS1TaylorSlab.lean"
+        "SparseLowerTail/Section05/CoverS1TaylorSlab.lean",
+        "SparseLowerTail/Section05/ApexFanTangency.lean",
+        "SparseLowerTail/Section05/ApexTangencyDeterminant.lean"
       ],
       "lean_declarations": [
         "SparseLowerTail.Section05.coverS1_vertex0_first_box",
@@ -692,7 +694,9 @@
         "SparseLowerTail.Section05.coverS1_taylor_leaf_positive",
         "SparseLowerTail.Section05.CoverGeometry.criticalRegion_covered",
         "SparseLowerTail.Section05.CoverGeometry.cell_supportExponent_le",
-        "SparseLowerTail.Section05.CoverGeometry.verifiedCover_of_positivity"
+        "SparseLowerTail.Section05.CoverGeometry.verifiedCover_of_positivity",
+        "SparseLowerTail.Section05.apexTangencyMatrix_det_ne_zero",
+        "SparseLowerTail.Section05.apexFanTheta_contacts"
       ],
       "explicit_inputs": [],
       "baseline": {
@@ -2150,6 +2154,35 @@
         "statement_sha256": "84f3b68ae1708335b383c10765bfbd92fe1ce279e3bc2b4f9365b1af81e43790",
         "proof_sha256": "c7973ccc266baba364fdde264bcb17c300446322d36c536b4db3591f023f4f60",
         "source_line": 4908
+      }
+    },
+    {
+      "paper_label": "s5:tangency",
+      "status": "proved_exact_logarithmic_tangencies",
+      "checked_scope": "Exact four-equation tangency construction in logarithmic coordinates, as used by Appendix app:cover. A common determinant enclosure proves invertibility for every fan RHS. Fixed slots retain their published rational values; the four missing slots are exact Cramer values. Both contact values and all logarithmic derivatives vanish. This proves tangency, not local/global nonnegativity. No separate edge-coordinate derivative API is asserted.",
+      "lean_files": [
+        "SparseLowerTail/Section05/ApexTangency.lean",
+        "SparseLowerTail/Section05/ApexContactValues.lean",
+        "SparseLowerTail/Section05/ApexContactGradients.lean",
+        "SparseLowerTail/Section05/ApexPrimitiveIntervals.lean",
+        "SparseLowerTail/Section05/ApexTangencyDeterminant.lean",
+        "SparseLowerTail/Section05/ApexFanTangency.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section05.apexTangencyMatrix_det_ne_zero",
+        "SparseLowerTail.Section05.apexTangencySolution_unique",
+        "SparseLowerTail.Section05.apexFanTheta_tangent",
+        "SparseLowerTail.Section05.apexFanTheta_contacts",
+        "SparseLowerTail.Section05.apexFanTheta_fixed",
+        "SparseLowerTail.Section05.apexFanTheta_unknown"
+      ],
+      "explicit_inputs": [],
+      "baseline": {
+        "environment": "equation",
+        "statement": "\\Psi(P_1)=0,\\quad \\partial_{u_1}\\Psi(P_1)=0,\\quad \\partial_{u_1}\\Psi(P_2)=0,\\quad \\partial_{u_2}\\Psi(P_2)=0 .",
+        "statement_sha256": "b3a6c0badd8973c6bba6fbe37bfa56cf63e1b6a2b1d7611648aee905770bf9af",
+        "proof_sha256": null,
+        "source_line": 3776
       }
     }
   ]

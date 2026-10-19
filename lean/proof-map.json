@@ -235,7 +235,7 @@
     {
       "paper_label": "prop:smalldata",
       "status": "proved_relative_external",
-      "checked_scope": "Identifies the entire supporting range 0<r\u2264r_-, proves value equality and balanced attainment, and gives active triangle, cost, multiplier and edge data for every unrestricted minimizer. Equality rigidity is separate thm:smalltail.",
+      "checked_scope": "Identifies the entire supporting range 0<r≤r_-, proves value equality and balanced attainment, and gives active triangle, cost, multiplier and edge data for every unrestricted minimizer. Equality rigidity is separate thm:smalltail.",
       "lean_files": [
         "SparseLowerTail/Section07/SmallData.lean"
       ],
@@ -608,7 +608,7 @@
     {
       "paper_label": "thm:smalltail",
       "status": "proved_relative_to_named_inputs",
-      "checked_scope": "Complete exact classification for all graphon minimizers on 0<r\u2264smallTarget. Bipodality is derived, then balanced classification and the converse are proved. The relabeling formulation additionally uses classical nonatomic CDF transport.",
+      "checked_scope": "Complete exact classification for all graphon minimizers on 0<r≤smallTarget. Bipodality is derived, then balanced classification and the converse are proved. The relabeling formulation additionally uses classical nonatomic CDF transport.",
       "lean_files": [
         "SparseLowerTail/Section07/SmallTargetBipodal.lean",
         "SparseLowerTail/Section07/SmallTailAssembly.lean"
@@ -736,7 +736,7 @@
     {
       "paper_label": "prop:family",
       "status": "conditional_compact_reduction",
-      "checked_scope": "Analytic tail and exact compact-to-global reduction proved. The compact-domain positivity and zero-set certificate remain an internal hypothesis. The actual parameter interval [3.9,9.5] is proved for every intermediate target, and compact-to-middle-family assembly is complete. Exact Phi reification, local Hessian/contact calculus, congruence and diagonal scaling, and parameter-to-coefficient interval enclosure are proved; numerical compact-domain margins remain to replay. Full-parameter local AAA nonnegativity and unique zero are now proved on the closed logarithmic cube of radius 1/10, using five exact interval leaves. This does not prove the mixed-contact neighborhoods or the exterior compact domain.",
+      "checked_scope": "Analytic tail and exact compact-to-global reduction proved. The compact-domain positivity and zero-set certificate remain an internal hypothesis. The actual parameter interval [3.9,9.5] is proved for every intermediate target, and compact-to-middle-family assembly is complete. Exact Phi reification, local Hessian/contact calculus, congruence and diagonal scaling, and parameter-to-coefficient interval enclosure are proved; numerical compact-domain margins remain to replay. Full-parameter local AAA nonnegativity and unique zero are now proved on the closed logarithmic cube of radius 1/10, using five exact interval leaves. This does not prove the mixed-contact neighborhoods or the exterior compact domain. Signed exponential endpoints, scaled-Hessian interval replay, exact four-dimensional subdivision soundness, moving-ABB-contact enclosures and the local ABB assembly are now proved. Two selected mixed-contact boxes pass the complete Lean checker. The proposed full 108452-leaf ABB cover is not yet replayed in Lean; the full mixed neighborhood and exterior remain open formal obligations.",
       "lean_files": [
         "SparseLowerTail/Section08/CertificateTail.lean",
         "SparseLowerTail/Section08/FamilyParameterRange.lean",
@@ -748,7 +748,12 @@
         "SparseLowerTail/Section08/FamilyLocalBoxIntervals.lean",
         "SparseLowerTail/Section08/FamilyLocalContacts.lean",
         "SparseLowerTail/Section08/FamilyLocalFactoredIntervals.lean",
-        "SparseLowerTail/Section08/FamilyAAACover.lean"
+        "SparseLowerTail/Section08/FamilyAAACover.lean",
+        "SparseLowerTail/Numerics/ExpEndpoints.lean",
+        "SparseLowerTail/Numerics/BoxReplay.lean",
+        "SparseLowerTail/Section08/FamilyScaledIntervals.lean",
+        "SparseLowerTail/Section08/FamilyOffsetCover.lean",
+        "SparseLowerTail/Section08/FamilyScaledSmoke.lean"
       ],
       "lean_declarations": [
         "SparseLowerTail.Certificate.family_certificate_of_compact_exact",
@@ -758,7 +763,16 @@
         "SparseLowerTail.Certificate.FamilyParameterCertificate.coefficient_contains",
         "SparseLowerTail.Certificate.FamilyAAACover.parameter_covered",
         "SparseLowerTail.Certificate.FamilyAAACover.hessian_positive",
-        "SparseLowerTail.Certificate.FamilyAAACover.local_nonnegative_and_unique_zero"
+        "SparseLowerTail.Certificate.FamilyAAACover.local_nonnegative_and_unique_zero",
+        "SparseLowerTail.Numerics.exp_neg_bounds_of_rat_taylor_signed",
+        "SparseLowerTail.Numerics.BoxReplay.sound",
+        "SparseLowerTail.Certificate.FamilyScaledBoxCertificate.hessianIntervals_contains",
+        "SparseLowerTail.Certificate.FamilyScaledBoxCertificate.hessian_positive",
+        "SparseLowerTail.Certificate.FamilyBoxCertificate.bounds_of_offsets",
+        "SparseLowerTail.Certificate.FamilyScaledBoxCertificate.abb_offset_hessian_positive",
+        "SparseLowerTail.Certificate.familyABB_local_of_replay",
+        "SparseLowerTail.Certificate.FamilyScaledSmoke.Leaf0.offset_hessian_positive",
+        "SparseLowerTail.Certificate.FamilyScaledSmoke.Leaf1.offset_hessian_positive"
       ],
       "explicit_inputs": [
         "internal:appA3:compact"
@@ -1787,7 +1801,7 @@
         "source_line": 4811
       },
       "status": "proved_relative_classical",
-      "checked_scope": "Actual first and second vertex variations give \u03bc=3\u03b3 and nonpositivity of the quadratic form for every mean-zero L\u00b2 function. The extension uses centered truncations and dominated convergence.",
+      "checked_scope": "Actual first and second vertex variations give μ=3γ and nonpositivity of the quadratic form for every mean-zero L² function. The extension uses centered truncations and dominated convergence.",
       "lean_files": [
         "SparseLowerTail/Section07/PenalizedMultiplier.lean",
         "SparseLowerTail/Section07/PenalizedQuadratic.lean"
@@ -1851,7 +1865,7 @@
         "source_line": 4937
       },
       "status": "proved_kernel_form_relative_classical",
-      "checked_scope": "Kernel/spectral-sum formulation of positivity, zero row, trace and diagonal bounds, degree estimates, exact cubic identity and both tail inequalities. Generic positive Hilbert\u2013Schmidt spectral expansion is an explicit classical input; every graphon-specific bound is proved internally. No general Lean trace-class operator API is claimed.",
+      "checked_scope": "Kernel/spectral-sum formulation of positivity, zero row, trace and diagonal bounds, degree estimates, exact cubic identity and both tail inequalities. Generic positive Hilbert–Schmidt spectral expansion is an explicit classical input; every graphon-specific bound is proved internally. No general Lean trace-class operator API is claimed.",
       "lean_files": [
         "SparseLowerTail/Section07/CenteredKernel.lean",
         "SparseLowerTail/Section07/DegreeBounds.lean",
@@ -1911,7 +1925,7 @@
         "source_line": 5007
       },
       "status": "proved_relative_explicit_inputs",
-      "checked_scope": "Actual measurable sign partition, both block mass bounds, exact L\u00b2 sign-error identity and bound.",
+      "checked_scope": "Actual measurable sign partition, both block mass bounds, exact L² sign-error identity and bound.",
       "lean_files": [
         "SparseLowerTail/Section07/EigenfunctionBlocks.lean"
       ],
@@ -1993,7 +2007,7 @@
     {
       "paper_label": "lem:smallparams",
       "status": "proved_relative_to_named_inputs",
-      "checked_scope": "All of (a) and (b), with the stronger p0>0.4987. Part (a) is unconditional on 0<z\u22648.36e-5. Actual minimizer instantiation of (b) uses KP26, classical sampling and a classical spectral expansion.",
+      "checked_scope": "All of (a) and (b), with the stronger p0>0.4987. Part (a) is unconditional on 0<z≤8.36e-5. Actual minimizer instantiation of (b) uses KP26, classical sampling and a classical spectral expansion.",
       "lean_files": [
         "SparseLowerTail/Section07/SmallParameterBounds.lean",
         "SparseLowerTail/Section07/SmallParameterErrors.lean",

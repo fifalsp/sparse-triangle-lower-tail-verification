@@ -127,3 +127,12 @@ The bootstrap subsequently reported exit code 0 with logs archived. Both
 S1 (`30049194`) and F1 (`30049908`) were then observed RUNNING on compute
 node `a1130u35n03`, each with eight CPUs. Their full certificate results
 remain unverified.
+
+At the next diagnostic checkpoint both batch jobs were still RUNNING (18m43s).
+S1 had compiled its subdivision `Coverage` module, but its full positive
+leaf replay was not complete. F1 had compiled `ApexCoverAssembly`; its full
+replay remained pending. Both reported MaxRSS close to the 64 GiB allocation.
+An extra `srun` monitoring step failed to create its cgroup with `Cannot
+allocate memory`; the original batch jobs remained RUNNING and had empty
+batch stderr at that check. Do not infer a failed or successful proof from the
+monitoring step. Preserve the current jobs and consult `sacct` before restarting.

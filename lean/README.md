@@ -877,3 +877,60 @@ premise remains unproved until a full replay succeeds.
 Final validation after the support bridge: root build 3428 jobs; audit 10,172
 project declarations / 6,486 theorems, standard three axioms only; 88 labels
 and 404 distinct declaration links pass.
+
+### 2026-10-19 — full ABB proposal and checked scaled-Hessian replay
+
+A complete **untrusted** subdivision now covers L in [3.9,9.5] and all three
+ABB offsets in [-1/10,1/10]: 216,903 nodes and 108,452 leaves, no frontier.
+The compressed proposal is
+[`data/family-abb-subdivision-proposal.json.gz`](data/family-abb-subdivision-proposal.json.gz).
+It occupies about 7.2 MB; the much larger generated Lean replay has not been
+created on the desktop. A separate Python consistency pass reconstructed every
+split, moving-contact enclosure and rational congruence margin. Its
+[report](data/family-abb-proposal-consistency.json) is **not a Lean proof**.
+
+New kernel-checked components:
+
+- `ExpEndpoints`: exp(-q) certificates now work on [-16,16], with the same
+  proved Taylor remainder and exact rational comparisons. Negative coordinates
+  are needed for the full local ABB cube near the large-L endpoint.
+- `FamilyScaledIntervals`: enclosures of the actual exponentially scaled
+  Hessian, including separately checked half-sum exponential endpoints and
+  the transfer from positive congruence margins to the actual Hessian form.
+- `Numerics/BoxReplay`: exact midpoint-tree coverage in arbitrary dimension;
+  missing leaf indices are rejected, and every root-box point reaches a
+  proved leaf. The family uses four dimensions (L and three offsets).
+- `FamilyOffsetCover`: checks that each offset box encloses the moving ABB
+  contact, then assembles local nonnegativity and the unique contact zero
+  **conditional on the complete checked leaf table and coverage tree**.
+- `FamilyScaledSmoke`: two selected boxes pass endpoint, coefficient,
+  congruence-margin and moving-contact-enclosure checks. The second has
+  L in [9.49,9.5] and negative small logarithmic coordinates. These two boxes
+  are not the full local certificate.
+
+Reproduce the small checked milestone from `lean/`:
+
+```sh
+python3 tools/generate_family_scaled_smoke.py
+lake build
+lake env lean Audit.lean
+```
+
+Reconstruct the complete proposal and its separate consistency check:
+
+```sh
+python3 tools/propose_family_abb_cover.py --scaled --budget 250000 --seconds 180 --output /tmp/family-abb.json.gz
+python3 tools/check_family_abb_proposal.py data/family-abb-subdivision-proposal.json.gz --report /tmp/family-abb-check.json
+```
+
+The search may be resumed with `--resume`; its budget is the total node count.
+Floating-point arithmetic only proposes the rational change of basis. All
+accepted formal leaves must pass Lean's integer arithmetic and analytic bridge.
+The experimental `--factored` search is untrusted and has no Lean replay yet.
+
+Validation: full root build **3,432 jobs**, axiom audit **10,486 project
+declarations / 6,673 theorems**, with only `propext`, `Classical.choice`, and
+`Quot.sound`. The stable map checks pass for 88 labels and 413 declaration links, and all
+six map tests pass. Full ABB replay, all critical cover jobs, and the exterior
+family remain unfinished. The effort estimate remains about **40–45%**, not a count
+of declarations or proposed boxes.

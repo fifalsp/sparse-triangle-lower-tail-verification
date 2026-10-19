@@ -59,6 +59,12 @@ Latest apex progress: a complete F1 subdivision is proposed, and five representa
 leaves plus the sorting/zero-pattern assembly pass Lean. **The full F1 replay is
 still pending**, so this does not close the critical certificate.
 
+Latest family progress: a complete 108,452-box ABB neighborhood subdivision
+is proposed for every L in [3.9,9.5]. Lean checks the scaled-Hessian verifier,
+four-dimensional coverage theorem, moving-contact bridge and two selected
+boxes. **The full ABB replay remains pending.** See the
+[dated progress record](lean/README.md#2026-10-19--full-abb-proposal-and-checked-scaled-hessian-replay).
+
 The target statement quantifies over all measurable graphons, not just SBMs.
 At the authors' request, external/classical results may be explicit hypotheses;
 [ASSUMPTIONS.md](lean/ASSUMPTIONS.md) distinguishes those inputs from our own

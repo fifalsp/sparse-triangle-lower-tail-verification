@@ -12,8 +12,8 @@ from pathlib import Path
 
 
 def endpoint(q: Fraction, order: int, bits: int):
-    if not 0 <= q <= 16:
-        raise ValueError('Every endpoint must lie in [0,16]')
+    if not -16 <= q <= 16:
+        raise ValueError('Every endpoint must lie in [-16,16]')
     if order < 1 or bits < 1:
         raise ValueError('order and bits must be positive')
     x = -q / 16

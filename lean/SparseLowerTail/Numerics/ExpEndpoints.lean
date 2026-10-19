@@ -1,6 +1,6 @@
 import SparseLowerTail.Numerics.IntervalArithmetic
 
-/-! Rational endpoint certificates for exp(-q), 0 ≤ q ≤ 16.
+/-! Rational endpoint certificates for exp(-q), -16 ≤ q ≤ 16.
 The Taylor arithmetic is performed in ℚ and then transported to ℝ by the
 proved cast identities. Every rounding comparison remains a kernel-checked
 hypothesis; this module introduces no numerical oracle. -/
@@ -38,15 +38,15 @@ theorem exp_bounds_of_rat_taylor {x l u : ℚ} {n : ℕ}
   exact ⟨hl'.trans h.1,h.2.trans hu'⟩
 
 /-- Range reduction, rational rounding and power sixteen certify a full endpoint. -/
-theorem exp_neg_bounds_of_rat_taylor {q l u L U : ℚ} {n : ℕ}
-    (hq0 : 0≤q) (hq16 : q≤16) (hn : 0<n) (hl0 : 0≤l)
+theorem exp_neg_bounds_of_rat_taylor_signed {q l u L U : ℚ} {n : ℕ}
+    (hqlo : -16≤q) (hq16 : q≤16) (hn : 0<n) (hl0 : 0≤l)
     (hl : l ≤ expTaylorRat (-q/16) n - expRemainderRat (-q/16) n)
     (hu : expTaylorRat (-q/16) n + expRemainderRat (-q/16) n ≤ u)
     (hL : L≤l^16) (hU : u^16≤U) :
     Bounds (Real.exp (-(q : ℝ))) (L : ℝ) (U : ℝ) := by
   have hx : |(-q/16 : ℚ)|≤1 := by
-    rw [abs_of_nonpos (by linarith)]
-    linarith
+    apply abs_le.mpr
+    constructor <;> linarith
   have h := (exp_bounds_of_rat_taylor hx hn hl hu).exp_scale_pow
     (by exact_mod_cast hl0) 16
   have heq : (16 : ℝ)*((-q/16 : ℚ) : ℝ) = -(q : ℝ) := by push_cast; ring
@@ -54,6 +54,15 @@ theorem exp_neg_bounds_of_rat_taylor {q l u L U : ℚ} {n : ℕ}
   rw [heq] at h
   exact ⟨(by exact_mod_cast hL : (L : ℝ)≤(l : ℝ)^16).trans h.1,
     h.2.trans (by exact_mod_cast hU : (u : ℝ)^16≤(U : ℝ))⟩
+
+/-- Backwards-compatible nonnegative-domain statement. -/
+theorem exp_neg_bounds_of_rat_taylor {q l u L U : ℚ} {n : ℕ}
+    (hq0 : 0≤q) (hq16 : q≤16) (hn : 0<n) (hl0 : 0≤l)
+    (hl : l ≤ expTaylorRat (-q/16) n - expRemainderRat (-q/16) n)
+    (hu : expTaylorRat (-q/16) n + expRemainderRat (-q/16) n ≤ u)
+    (hL : L≤l^16) (hU : u^16≤U) :
+    Bounds (Real.exp (-(q : ℝ))) (L : ℝ) (U : ℝ) :=
+  exp_neg_bounds_of_rat_taylor_signed (by linarith) hq16 hn hl0 hl hu hL hU
 
 /-- Two endpoint enclosures certify exp(-x) throughout a logarithmic interval. -/
 theorem exp_neg_bounds_on_interval {x a b L U : ℝ}
@@ -75,13 +84,13 @@ structure ExpEndpointCertificate where
 namespace ExpEndpointCertificate
 
 def Valid (c : ExpEndpointCertificate) : Prop :=
-  0≤c.q ∧ c.q≤16 ∧ 0<c.order ∧ 0≤c.baseLower ∧
+  -16≤c.q ∧ c.q≤16 ∧ 0<c.order ∧ 0≤c.baseLower ∧
   c.baseLower≤expTaylorRat (-c.q/16) c.order-expRemainderRat (-c.q/16) c.order ∧
   expTaylorRat (-c.q/16) c.order+expRemainderRat (-c.q/16) c.order≤c.baseUpper ∧
   c.lower≤c.baseLower^16 ∧ c.baseUpper^16≤c.upper
 
 instance (c : ExpEndpointCertificate) : Decidable c.Valid := inferInstanceAs (Decidable (
-  0≤c.q ∧ c.q≤16 ∧ 0<c.order ∧ 0≤c.baseLower ∧
+  -16≤c.q ∧ c.q≤16 ∧ 0<c.order ∧ 0≤c.baseLower ∧
   c.baseLower≤expTaylorRat (-c.q/16) c.order-expRemainderRat (-c.q/16) c.order ∧
   expTaylorRat (-c.q/16) c.order+expRemainderRat (-c.q/16) c.order≤c.baseUpper ∧
   c.lower≤c.baseLower^16 ∧ c.baseUpper^16≤c.upper))
@@ -89,7 +98,7 @@ instance (c : ExpEndpointCertificate) : Decidable c.Valid := inferInstanceAs (De
 theorem bounds (c : ExpEndpointCertificate) (h : c.Valid) :
     Bounds (Real.exp (-(c.q : ℝ))) (c.lower : ℝ) (c.upper : ℝ) := by
   rcases h with ⟨h0,h16,hn,hl0,hl,hu,hL,hU⟩
-  exact exp_neg_bounds_of_rat_taylor h0 h16 hn hl0 hl hu hL hU
+  exact exp_neg_bounds_of_rat_taylor_signed h0 h16 hn hl0 hl hu hL hU
 
 end ExpEndpointCertificate
 

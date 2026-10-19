@@ -24,9 +24,9 @@ The full nonlinear cover certificate still requires checked subdivisions coverin
 each logarithmic cube, not merely a digest of accepted boxes. This is separate
 from the two-dimensional geometric cover, which is now fully proved. The first
 128 leaves of the new 15,280-leaf S1 proposal have compiled; a complete replay
-and its exact subdivision coverage remain unfinished. Bulk replay is stopped
-to respect the storage constraint. This is one of 36 nonapex
-jobs. The six apex tangency systems are now solved exactly with a common checked
+and its exact subdivision coverage remain unfinished. Bulk replay on the
+desktop remains stopped to respect the storage constraint; the full S1 job
+is now running on Yale Bouchet. This is one of 36 nonapex jobs. The six apex tangency systems are now solved exactly with a common checked
 nonzero determinant. All twelve local contact cubes now have proved positivity
 and exact zero classification at the published radii. The global apex bounds
 outside those cubes still remain.
@@ -62,3 +62,22 @@ All twelve previously recorded exterior diagnostic samples now have positive
 Python interval lower bounds. This resolves the observed precision limitation
 at those samples, not the full-domain certificate obligation. No manuscript
 mathematical error or counterexample has been established.
+
+### 2026-10-19: intermediate ABB replay scope
+
+The original endpoint checker accepted only q≥0. The full ABB neighborhood
+extends below zero at large L. This implementation restriction is resolved by
+a proved extension to -16≤q≤16; the full root build and audit pass.
+
+The full scaled-Hessian ABB subdivision is now proposed (108,452 leaves), and
+its complete Python tree/enclosure/margin consistency check passes. Lean proves
+the numerical-to-analytic checker, moving-contact enclosure and four-dimensional
+coverage/assembly, plus two selected leaves. **The full leaf replay is missing.**
+This does not establish the whole ABB neighborhood, nor the exterior family.
+No mathematical counterexample or manuscript error was found in this work.
+
+A monitoring step on Bouchet failed to create a cgroup with "Cannot allocate
+memory". The scheduler subsequently still reported both S1 and F1 batch jobs
+RUNNING, with no error in their batch stderr at that observation. The failed
+monitor is not evidence that either certificate succeeded or failed; retain
+and inspect the existing job IDs before any restart.

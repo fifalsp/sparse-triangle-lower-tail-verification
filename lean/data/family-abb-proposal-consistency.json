@@ -1,0 +1,9 @@
+{
+  "status": "Python consistency check passed; full Lean replay remains unproved",
+  "proposal_sha256": "e9db598485fd924dc5bbe5e0104c39ab45e05a47c7af3d763cf43acd6fc091cf",
+  "nodes": 216903,
+  "leaves": 108452,
+  "min_dyadic_margin_numerator": 5462028320952,
+  "dyadic_scale": 1152921504606846976,
+  "seconds": 31.947861290998844
+}

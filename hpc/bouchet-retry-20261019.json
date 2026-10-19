@@ -21,7 +21,9 @@
       "workload": "s1",
       "time_limit": "12:00:00",
       "dependency": "afterok:30049190",
-      "status": "observed RUNNING at 53s on a1130u35n03; full certificate build/audit unverified"
+      "status": "observed RUNNING at 18m43s; full certificate build/audit unverified",
+      "last_build_observation": "3650/4157 build tasks; subdivision Coverage compiled, positive leaf replay not yet complete",
+      "observed_max_rss_kib": 67107664
     }
   ],
   "proof_status": "No new complete certificate established by these submissions."

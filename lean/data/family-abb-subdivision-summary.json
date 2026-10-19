@@ -1,0 +1,14 @@
+{
+  "status": "UNTRUSTED complete proposal; full Lean replay pending",
+  "parameter_range": [
+    "39/10",
+    "19/2"
+  ],
+  "offset_radius": "1/10",
+  "leaves": 108452,
+  "nodes": 216903,
+  "pending": 0,
+  "proposal_sha256": "e9db598485fd924dc5bbe5e0104c39ab45e05a47c7af3d763cf43acd6fc091cf",
+  "compressed_bytes": 7234448,
+  "method": "scaled Hessian, exact dyadic proposal arithmetic, rational congruences; interval comparisons require Lean replay"
+}

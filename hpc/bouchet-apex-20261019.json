@@ -10,7 +10,10 @@
   "source_commit": "90a547977eb459a3e740d51d9f63eed82ff78c46",
   "source_archive_sha256": "74eebc5c1c282c3afa259c940cd4326456d2376968523862920c24952654cd57",
   "runner_sha256": "c62acf9870efd92e3f8151a517b0e0e66dd74d9ba930517068f2d689e9571e83",
-  "status": "observed RUNNING at 53s on a1130u35n03; full certificate build/audit unverified",
+  "status": "observed RUNNING at 18m43s; full certificate build/audit unverified",
   "workload": "F1 apex full cube: 31180 exterior Taylor leaves, 14 AAA contact leaves, 69 ABB contact leaves, exact coverage, zero-pattern conclusion and axiom audit",
-  "remote_directory": "/nfs/roberts/project/pi_sl3363/sl3363"
+  "remote_directory": "/nfs/roberts/project/pi_sl3363/sl3363",
+  "last_build_observation": "3411/4703 build tasks; ApexCoverAssembly built; full F1 endpoint/leaf replay pending",
+  "monitoring_issue": "Additional srun monitor step failed with cgroup Cannot allocate memory; original batch remains RUNNING",
+  "observed_max_rss_kib": 67107288
 }

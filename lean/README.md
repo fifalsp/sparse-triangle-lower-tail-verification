@@ -22,7 +22,7 @@ unique and all graphon optimizers have that form, up to null sets and relabeling
 [`MainStatement.lean`](SparseLowerTail/MainStatement.lean) encodes these claims
 as the proposition `SparseLowerTail.MainTheorem`. **Defining this proposition
 is not a proof of it.** There is no axiom asserting it. A conditional theorem constructs
-an inhabitant from three explicitly named, still-unproved internal inputs. The target includes the exact rational bracket for r*;
+an inhabitant from two explicitly named, still-unproved internal certificate inputs. The target includes the exact rational bracket for r*;
 the decimal brackets for a* and b* are proved separately in `ThresholdDigits`.
 
 The definitions use Lebesgue measure on [0,1] and its product measures, with
@@ -130,9 +130,9 @@ An unchecked item is not supplied as an axiom.
 - [ ] Threshold global inequality and equality classification (`thm:threshold`).
 - [x] Sequential stability and openness (`prop:stability`, `cor:open`).
 - [ ] Unconditional seed near the transition (`cor:seed`): the assembly is proved, but critical classification remains internal.
-- [ ] Small-target classification (`thm:smalltail`). KP26 is now an explicit
-      external hypothesis; its supporting range and spectral estimates are proved,
-      while the remaining equality rigidity must still be proved.
+- [x] Complete small-target classification (`thm:smalltail`), relative to KP26,
+      classical sampling and the positive Hilbert–Schmidt spectral theorem.
+      The relabeling formulation additionally uses classical CDF transport.
 - [x] Scaling, truncation, rescaled first variation, and the certificate
       expectation identity (`lem:scaling`, `lem:truncation`, `s3:rescale`, `s8:expect`).
 - [x] Scalar two-block rigidity (`lem:J`, `prop:bipodal`).
@@ -538,3 +538,28 @@ The companion shorter-proof document is maintained separately from the paper.
 No mathematical error has been established; the missing formal certificates
 and structural assembly continue to be recorded as gaps, not assumptions of
 classical status. The effort estimate remains about 30% (25–40% uncertainty).
+
+### 2026-10-19 — small-target theorem complete; two certificate inputs remain
+
+`SmallTargetBipodal` derives actual bipodality from the spectral sign classes,
+using certified row separation, the same-block cap and exact stationary-row
+rigidity. `SmallTailAssembly.smallTarget_classification` proves both directions
+of the balanced classification for every 0 < r ≤ r₋. Its relabeling wrapper
+also compiles. The only inputs are the recorded KP26, sampling, spectral and
+(for the wrapper) CDF theorems. This closes `prop:structural` and `thm:smalltail`.
+
+`FamilyParameterRange` proves the needed [3.9,9.5] logarithmic parameter range.
+`FiniteCertificateAssembly.mainTheorem_of_finite_certificates` reduces the main
+theorem to only two internal inputs: critical classification via the cover/apex,
+and the compact family certificate. Both numerical obligations remain unproved
+in Lean; they must not be treated as classical assumptions.
+
+The proof note now contains seven complete replacements, including the direct
+small-tail row comparison. Cooperative review found no new mathematical gap.
+`CoverTreeReplay` also proves a data-only subdivision checker sound: all leaf
+boxes must exactly match separately proved table entries, and sorted-domain
+normalization and midpoint coverage are justified at every node.
+
+Updated subjective effort estimate: about **40% (30–55% range)**. This is not
+a count of proved statements; the remaining numerical proof replay may dominate
+runtime and development. Earlier dated estimates above describe earlier states.

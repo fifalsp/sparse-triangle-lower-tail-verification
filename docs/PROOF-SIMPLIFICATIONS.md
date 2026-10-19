@@ -19,20 +19,33 @@ Explicit external inputs are listed in
 | PS-004 | `lem:penalized`, quadratic-form assertion | Evaluate at two opposite perturbations instead of differentiating twice | Lean checked |
 | PS-005 | `prop:structural`, Step 4 | A fixed Taylor bound replaces differentiation of the exponential ratio | Lean checked |
 | PS-006 | `lem:rowreduction`, approximate Euler equations | A polynomial identity proves both surrogate codegrees nonnegative | Lean checked; no extra hypothesis |
+| PS-007 | `prop:structural`, Step 4 | Direct stationary-row coercivity closes actual small-tail bipodality | Lean checked; no insertion-minimality hypothesis for the row comparison |
 
 ## Compact outline of the final argument
 
 The following **conditional outline is Lean checked** in
-[`ContinuationAssembly.lean`](../lean/SparseLowerTail/Section08/ContinuationAssembly.lean).
+[`ContinuationAssembly.lean`](../lean/SparseLowerTail/Section08/ContinuationAssembly.lean),
+with the discharged small-target and parameter-range inputs assembled in
+[`FiniteCertificateAssembly.lean`](../lean/SparseLowerTail/Section08/FiniteCertificateAssembly.lean).
 It follows the paper and makes the remaining work explicit; it is not a new
-unconditional proof. Three internal statements remain to be discharged:
+unconditional proof. Two internal statements remain to be discharged:
 
 1. **Critical classification** (`prop:critical`), reduced elsewhere to the
-   cover and apex certificates.
-2. **Small-target classification** (`thm:smalltail`): all minimizers are the
-   balanced branch for 0 < r ≤ r₋.
-3. **Intermediate certificate** (`prop:family`): nonnegativity of Ψ and its
-   allowed-pattern zero set at the branch parameters for r₋ ≤ r ≤ r*.
+   cover and apex certificates (`CriticalClassification`).
+2. **Compact intermediate certificate**: nonnegativity and the allowed-pattern
+   zero set on the explicit compact box, for branch-log parameter
+   3.9 ≤ L ≤ 9.5 (`CompactFamilyCertificate`). The inclusion of the actual
+   intermediate branch parameters in this interval is now proved by
+   `middle_branch_log_range`, and the analytic tail beyond the compact box
+   is already assembled.
+
+**Small-target classification is now proved** in
+[`SmallTailAssembly.lean`](../lean/SparseLowerTail/Section07/SmallTailAssembly.lean),
+`smallTarget_classification`: among all graphons, minimizers are exactly
+balanced graphons with the branch values for 0 < r ≤ r₋. Its explicit inputs
+are the recorded KP26 penalized reduction and the classical sampling and
+positive-kernel spectral theorems. In particular, `SmallRangeClassification`
+is no longer an unfinished internal hypothesis of the latest assembly.
 
 Given these inputs, let G be the set of subcritical targets at which every
 minimizer is the balanced branch. The proved local rigidity and compactness
@@ -47,11 +60,13 @@ remaining interval. Above and at r*, the already checked threshold reduction
 uses critical classification. The balanced scalar analysis supplies the value
 formula, uniqueness of the balanced pair, and certified transition interval. ∎
 
-Exact final declaration: `Section08.mainTheorem_of_remaining_inputs`.
-Its classical parameters are sampling, dyadic L¹ approximation, cut compactness,
-pullback approximation and triangle counting. These are distinct from the three
-unfinished internal inputs above. In particular, the new assembly does **not**
-mean that `thm:main` is finished.
+Exact latest declaration: `Section08.mainTheorem_of_finite_certificates`.
+It takes the named external/classical parameters `KP26PenalizedReduction`,
+`UniformSampling`, `PositiveKernelSpectralTheorem`,
+`ClassicalDyadicL1Approximation`, `ClassicalGraphonCompactness`,
+`ClassicalPullbackApproximation`, and `ClassicalTriangleCounting`.
+These are distinct from the two unfinished internal inputs above. The
+assembly does **not** mean that `thm:main` is finished.
 
 ## PS-001 — the weighted cut-norm bound
 
@@ -395,6 +410,162 @@ actual graphon's centered-kernel spectral expansion.
 `abs_exp_neg_mul_sub_le` and `setAverage_exp_equation_error` prove the
 exponential and averaging steps. No additional classical or numerical input
 is used in this replacement.
+
+## PS-007 — small-tail rigidity directly from the row equations
+
+**Manuscript anchor and scope.** This replaces Step 4 of
+`prop:structural` in the proof of `thm:smalltail`. Together with the already
+checked Steps 1–3 and the measurable row criterion in Step 5, it now closes
+the actual small-target bipodality assertion. It is a different coercivity
+regime from PS-003: the partition need not be balanced or close to balanced,
+and no approximation to a fixed nonconstant balanced graphon is assumed.
+
+**Precise statement.** Let U be a measurable symmetric graphon on a
+probability space, let P be measurable, let μ≥18, and put
+$a=e^{-0.27\mu}$. Assume
+$$
+0\le U\le a\quad\text{a.e. on }P^2\cup(P^c)^2,
+\qquad 0\le U\le1\quad\text{a.e. everywhere}.
+$$
+Let v,w be measurable profiles with a common lower bound ℓ>0, satisfying
+$$
+\ell\le v,w\le1\quad\text{a.e.},\qquad
+v,w\le a\quad\text{a.e. on }P,
+$$
+and suppose their actual row equations hold almost everywhere:
+$$
+\log v+\mu T_Uv=0,\qquad \log w+\mu T_Uw=0,
+\qquad (T_Uv)(x)=\int U(x,y)v(y)\,dy.
+$$
+Then v=w almost everywhere. There is no hypothesis that these profiles
+minimize an insertion functional. The assertion also permits |P|=0 or 1;
+positive masses are needed later when extracting the two row types.
+
+**Complete replacement proof.** Set f=v−w, p=|P|, and
+$$
+X=\left(\int_P f^2\right)^{1/2},\qquad
+Y=\left(\int_{P^c} f^2\right)^{1/2},
+\qquad Q_U(f)=\iint f(x)U(x,y)f(y)\,dx\,dy.
+$$
+For any 0<s,t≤b, integration of the derivative 1/u gives
+$$
+(s-t)(\log s-\log t)\ge\frac{(s-t)^2}{b}.
+$$
+Apply this with b=a on P and b=1 on its complement. Subtract the two row
+equations, multiply by f, and integrate. All quantities are integrable:
+the profiles are bounded, their logarithms are bounded by the common
+positive lower bound, and U is bounded. Fubini gives
+$$
+a^{-1}X^2+Y^2
+\le\int f(\log v-\log w)
+=-\mu Q_U(f).
+\tag{1}
+$$
+Let L=∫_P|f| and H=∫_{P^c}|f|. Since U is nonnegative and obeys the stated
+block bounds,
+$$
+Q_U(f)\ge-a(L^2+H^2)-2LH.
+$$
+Cauchy–Schwarz gives L≤√p X and H≤√(1−p) Y. Consequently,
+$$
+Q_U(f)\ge-apX^2-2\sqrt{p(1-p)}XY-a(1-p)Y^2.
+\tag{2}
+$$
+Combining (1) and (2) yields
+$$
+AX^2-2BXY+CY^2\le0,
+\qquad
+A=a^{-1}-\mu ap,\quad B=\mu\sqrt{p(1-p)},\quad
+C=1-\mu a(1-p).
+\tag{3}
+$$
+By PS-005, $a^{-1}>\mu+\mu^2/4$, so μa<1 and C>0. Moreover,
+$$
+\begin{aligned}
+AC-B^2
+&=a^{-1}-\mu(1-p)-\mu ap+\mu^2p(1-p)(a^2-1)\\
+&\ge a^{-1}-\mu-\mu^2/4>0.
+\end{aligned}
+$$
+Multiplying (3) by C and completing the square gives
+$$
+0\ge(CY-BX)^2+(AC-B^2)X^2\ge0.
+$$
+Thus X=Y=0, and f=0 almost everywhere. ∎
+
+**Application to the actual small-target minimizer.** Let ψ be the leading
+centered-kernel eigenfunction, put P={ψ≥0}, and let μ be the actual Euler
+multiplier. The proved small-parameter bound gives μ≥18.6. Steps 1–2 give
+opposite-block row average >0.775. Step 3 then gives, for almost every pair
+in the same block,
+$$
+C_U(x,y)>0.498\cdot(2\cdot0.775-1)>0.27,
+\qquad U(x,y)=e^{-\mu C_U(x,y)}\le e^{-0.27\mu}.
+$$
+The actual Euler equation also gives U≥e^(−μ)>0 almost everywhere because
+0≤C_U≤1. By Fubini, choose a common conull set of row indices on which the
+row equations, these upper and lower bounds, and row measurability all
+hold. Two rows indexed by P then meet the precise hypotheses above, so
+they coincide almost everywhere. Apply the same argument with P replaced
+by its complement for the other class; the graphon envelope is unchanged
+under this replacement.
+
+Both block masses are positive: the proved spectral mass estimate and
+certified parameter bound give
+$$
+|P|,|P^c|\ge\frac1{2M^2}>0.4987.
+$$
+The measurable row criterion, using symmetry of U, therefore gives three
+constants a₀,d₀,b₀∈[0,1] with U equal almost everywhere to the corresponding
+two-block kernel. This is actual bipodality on a measurable partition, not
+an optimization restricted to bipodal candidates. Balancedness and the
+identification of these values with the scalar branch are subsequent
+classification steps.
+
+**Null sets and sign convention.** The definition P={ψ≥0} makes P and Pᶜ
+an exact measurable partition before any zero-set assertion is needed.
+The row separation argument separately proves ψ≠0 almost everywhere, so
+this convention agrees modulo null sets with the manuscript's positive
+and negative sign blocks. The proof does not divide by a potentially zero
+mass: positivity is established before conditional averages and before
+representative rows are selected. No choice of representatives of U is
+claimed to satisfy all bounds pointwise; each use of a row equation or cap
+is made on the common conull set supplied by Fubini.
+
+**Lean correspondence.**
+[`SmallRowRigidity.lean`](../lean/SparseLowerTail/Section07/SmallRowRigidity.lean):
+`rowQuadratic_lower_envelope`, `rowQuadratic_lower_blockcap`, and
+`small_stationary_rows_eq` prove the precise statement above. This generic
+row-uniqueness argument has no external theorem parameter.
+[`RowSeparation.lean`](../lean/SparseLowerTail/Section07/RowSeparation.lean)
+proves `smallTarget_row_means_separate` and
+`smallTarget_oppositeBlock_means`;
+[`SameBlockCap.lean`](../lean/SparseLowerTail/Section07/SameBlockCap.lean)
+proves `smallTarget_sameBlock_codegree` and `smallTarget_sameBlock_cap`.
+[`SmallTargetBipodal.lean`](../lean/SparseLowerTail/Section07/SmallTargetBipodal.lean),
+`smallTarget_isBipodal`, combines these with
+`Section06.bipodal_of_row_class_eq` and concludes
+`∃ c a d b, IsBipodal U c a d b` for every actual minimizer at
+0<r≤smallTarget.
+
+The last declaration takes the recorded KP26 penalized reduction, classical
+sampling, and an actual centered-kernel spectral expansion as explicit
+inputs. The expansion is supplied separately by the recorded generic
+classical spectral theorem. No row-separation estimate, block cap,
+coercivity inequality, or bipodality assertion is assumed. The build and
+selected declaration audits passed; `#print axioms` lists only
+`propext`, `Classical.choice`, and `Quot.sound`. This audit does not discharge
+explicit classical input propositions or establish the remaining
+intermediate and critical certificate arguments.
+
+**Editorial use.** Replace the interpolation paragraph in Step 4 by (1),
+then retain the existing blockwise quadratic estimate and determinant
+argument (or use PS-005 for the scalar exponential estimate). At the start
+of the structural proof, include the row Euler equation and positive lower
+bound in the list of properties holding outside N. Its use of (F3) to
+compare insertion values is then unnecessary for this structural step;
+other uses of the insertion result elsewhere in the manuscript are
+unaffected.
 
 ## How to maintain this note
 

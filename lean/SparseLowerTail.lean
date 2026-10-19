@@ -96,3 +96,7 @@ import SparseLowerTail.Section07.ApproximateEuler
 import SparseLowerTail.Section07.ScalarExclusion
 
 import SparseLowerTail.Numerics.DyadicTaylorAxes
+
+import SparseLowerTail.Section08.FiniteCertificateAssembly
+
+import SparseLowerTail.Section05.CoverTreeReplay

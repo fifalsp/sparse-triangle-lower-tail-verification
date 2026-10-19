@@ -20,8 +20,8 @@ and the Lean formalization have different scopes.
 | Proved in Lean | Balanced SBM cost/density formulas for arbitrary measurable equal partitions, existence of a balanced minimizing pair, and **V(r) ≤ V_SBM(r)**. |
 | Proved in Lean | Full balanced phase classification (`cor:Vbal`), including stationary branch, unimodality, actual inverse branches, unique crossing, and identification with the supremum threshold. |
 | Proved for unrestricted graphons | Active constraint (`lem:active`); strict improvement below the threshold and exclusion of all constant minimizers there (`thm:threshold`(iii)). |
-| Proved from a named external input | The full supporting range 0 < r ≤ r_−, value equality and optimizer data follow from the explicit KP26 input. Equality rigidity remains to prove. |
-| Conditional main theorem | The actual graphon continuation and final theorem assembly compile. Three internal inputs remain: critical classification, small-target classification, and the intermediate certificate family. |
+| Proved from a named external input | The full supporting range 0 < r ≤ r_−, value equality and optimizer data follow from the explicit KP26 input. |
+| Conditional main theorem | The actual graphon continuation and final theorem assembly compile. Two internal inputs remain: critical classification (cover/apex certificates) and the compact intermediate certificate family. |
 | Proved in Lean | Complete coefficient signs and value/derivative tangencies (`lem:certcoef`), including analytic substitutions and the required log 40 bounds. **Global certificate positivity remains unproved.** |
 | Proved in Lean | All printed threshold/parameter intervals (`lem:digits`); scaling, truncation and rescaled first variation; the graphon certificate expectation identity; scalar two-block rigidity. |
 | Proved in Lean | Full Euler–Lagrange proposition (`prop:euler`): positivity, unique positive multiplier, and quantitative graphon bounds. Sharp Bregman/mean-gap estimates and downward propagation (`lem:push`). |
@@ -32,15 +32,16 @@ and the Lean formalization have different scopes.
 | Proved in Lean | Critical parameter region; actual triangle-law symmetry and Hoeffding decomposition; certificate expectation/weak duality and parameter concavity; full scalar penalized classification and values. Relaxed-law validity uses classical sampling. |
 | Proved relative to classical sampling | Full insertion lemma: every minimizer row globally minimizes its row functional. The penalized mean-zero L² quadratic inequality is also proved. The complete functional two-well theorem is proved without external inputs. |
 | Proved in Lean | Complete local rigidity (`thm:rigidity`), including measurable row classes, uniform approximation, exact row identification and bijective relabeling transfer, relative only to classical sampling. |
+| Proved relative to named inputs | Full small-target theorem (`thm:smalltail`): every minimizer is the balanced branch, and conversely, for all 0 < r ≤ r_−. The proof derives bipodality from actual rows. |
 | Proved with explicit classical spectral input | Centered-kernel positivity, trace/diagonal and degree estimates, exact cubic identity and spectral tail inequalities. The graphon-specific estimates are proved here. |
 | Partially checked | Actual S1 vertex-0 positivity on checked near-one and tail regions, plus a complete nontrivial Taylor box. The family analytic tail is proved. Full-domain cover/family certificates remain unfinished. |
-| Proved relative to named inputs | All small-parameter bounds, actual row reduction and scalar exclusion (`lem:smallparams`, `lem:rowreduction`, `lem:scalar`). Exact small-target block rigidity remains. |
+| Proved relative to named inputs | All small-parameter bounds, actual row reduction and scalar exclusion (`lem:smallparams`, `lem:rowreduction`, `lem:scalar`). Exact small-target block rigidity and the full classification are now proved. |
 | Proved relative to named classical inputs | Sequential stability and openness of the balanced-classification region. The left seed follows conditional on the still-unproved critical certificate. |
-| Remaining | Discharge the three internal inputs: critical classification, small-target equality rigidity, and the full intermediate certificate. The final conditional continuation assembly is proved. |
+| Remaining | Discharge the two internal certificate inputs: critical classification and the compact intermediate certificate. The final conditional continuation assembly is proved. |
 
 The [formalization README](lean/README.md) records the file-to-paper mapping,
 remaining dependencies, build instructions, axiom audit, and dated progress log.
-The current effort estimate is **about 30% complete (roughly 25–40%)**, not a
+The current effort estimate is **about 40% complete (roughly 30–55%)**, not a
 measured percentage of theorem coverage. [Proof issues](lean/PROOF-ISSUES.md)
 distinguish missing formal proofs from suspected mathematical errors.
 [Shorter proof notes](docs/PROOF-SIMPLIFICATIONS.md) collect complete replacement

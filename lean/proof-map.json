@@ -12,28 +12,31 @@
   "entries": [
     {
       "paper_label": "thm:main",
-      "status": "conditional_assembly_three_internal_obligations",
-      "checked_scope": "Exact MainTheorem structure assembled via actual graphon continuation. CriticalClassification, SmallRangeClassification and MiddleFamilyCertificate remain INTERNAL hypotheses; not a completed proof.",
+      "status": "conditional_assembly_two_internal_certificates",
+      "checked_scope": "Exact MainTheorem assembled with small-target classification discharged. Remaining INTERNAL hypotheses are CriticalClassification (cover/apex) and CompactFamilyCertificate. All named classical/external inputs remain explicit. Not a completed main theorem.",
       "lean_files": [
         "SparseLowerTail/MainStatement.lean",
         "SparseLowerTail/MainTheoremAssembly.lean",
-        "SparseLowerTail/Section08/ContinuationAssembly.lean"
+        "SparseLowerTail/Section08/ContinuationAssembly.lean",
+        "SparseLowerTail/Section08/FiniteCertificateAssembly.lean"
       ],
       "lean_declarations": [
         "SparseLowerTail.MainTheorem",
         "SparseLowerTail.mainTheorem_of_classifications",
         "SparseLowerTail.Section08.mainTheorem_of_remaining_inputs",
-        "SparseLowerTail.Section08.branchClassification_all_subcritical"
+        "SparseLowerTail.Section08.branchClassification_all_subcritical",
+        "SparseLowerTail.Section08.mainTheorem_of_finite_certificates"
       ],
       "explicit_inputs": [
         "internal:prop:critical",
-        "internal:thm:smalltail",
-        "internal:prop:family",
         "classical:inverse-transform-sampling",
         "classical:dyadic-l1-approximation",
         "classical:graphon-cut-compactness",
         "classical:pullback-l1-approximation",
-        "classical:counting-lemma"
+        "classical:counting-lemma",
+        "internal:appA3:compact",
+        "external:KP26:1.6",
+        "classical:positive-hilbert-schmidt-spectrum"
       ],
       "baseline": {
         "environment": "theorem",
@@ -601,16 +604,23 @@
     },
     {
       "paper_label": "thm:smalltail",
-      "status": "pending",
-      "checked_scope": "Supporting values, spectral estimates, full row reduction, quantitative small-parameter bounds, scalar exclusion and final scalar coercivity are proved. Exact graphon equality rigidity and full assembly remain.",
+      "status": "proved_relative_to_named_inputs",
+      "checked_scope": "Complete exact classification for all graphon minimizers on 0<r≤smallTarget. Bipodality is derived, then balanced classification and the converse are proved. The relabeling formulation additionally uses classical nonatomic CDF transport.",
       "lean_files": [
-        "SparseLowerTail/Section07/SmallRigidityCoercivity.lean"
+        "SparseLowerTail/Section07/SmallTargetBipodal.lean",
+        "SparseLowerTail/Section07/SmallTailAssembly.lean"
       ],
       "lean_declarations": [
-        "SparseLowerTail.Section07.small_rigidity_exp_margin",
-        "SparseLowerTail.Section07.small_rigidity_block_norms_zero"
+        "SparseLowerTail.Section07.smallTarget_isBipodal",
+        "SparseLowerTail.Section07.smallTarget_classification",
+        "SparseLowerTail.Section07.smallTarget_relabel_classification"
       ],
-      "explicit_inputs": [],
+      "explicit_inputs": [
+        "external:KP26:1.6",
+        "classical:inverse-transform-sampling",
+        "classical:positive-hilbert-schmidt-spectrum",
+        "classical:nonatomic-cdf-transport"
+      ],
       "baseline": {
         "environment": "theorem",
         "statement": "For every $r\\in(0,r_-]$, the minimizers at $r$ are exactly the relabelings of $B_r$.",
@@ -690,12 +700,16 @@
     {
       "paper_label": "prop:family",
       "status": "conditional_compact_reduction",
-      "checked_scope": "Analytic tail and exact compact-to-global reduction proved. The compact-domain positivity and zero-set certificate remain an internal hypothesis.",
+      "checked_scope": "Analytic tail and exact compact-to-global reduction proved. The compact-domain positivity and zero-set certificate remain an internal hypothesis. The actual parameter interval [3.9,9.5] is proved for every intermediate target, and compact-to-middle-family assembly is complete.",
       "lean_files": [
-        "SparseLowerTail/Section08/CertificateTail.lean"
+        "SparseLowerTail/Section08/CertificateTail.lean",
+        "SparseLowerTail/Section08/FamilyParameterRange.lean",
+        "SparseLowerTail/Section08/FiniteCertificateAssembly.lean"
       ],
       "lean_declarations": [
-        "SparseLowerTail.Certificate.family_certificate_of_compact_exact"
+        "SparseLowerTail.Certificate.family_certificate_of_compact_exact",
+        "SparseLowerTail.Section08.middle_branch_log_range",
+        "SparseLowerTail.Section08.middleFamilyCertificate_of_compact"
       ],
       "explicit_inputs": [
         "internal:appA3:compact"
@@ -2090,6 +2104,33 @@
         "statement_sha256": "b8d78a5c139f3ea89fc53ca939a6ec1eb1a71e485917a737d33b1e156f2aeb92",
         "proof_sha256": null,
         "source_line": 5077
+      }
+    },
+    {
+      "paper_label": "prop:structural",
+      "status": "proved_relative_to_named_inputs",
+      "checked_scope": "Actual measurable bipodal structure derived from spectral sign blocks, scalar separation, same-block cap and exact stationary-row rigidity. No block ansatz assumed.",
+      "lean_files": [
+        "SparseLowerTail/Section07/SmallTargetBipodal.lean",
+        "SparseLowerTail/Section07/SmallRowRigidity.lean",
+        "SparseLowerTail/Section07/SameBlockCap.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section07.smallTarget_isBipodal",
+        "SparseLowerTail.Section07.small_stationary_rows_eq",
+        "SparseLowerTail.Section07.smallTarget_sameBlock_cap"
+      ],
+      "explicit_inputs": [
+        "external:KP26:1.6",
+        "classical:inverse-transform-sampling",
+        "classical:positive-hilbert-schmidt-spectrum"
+      ],
+      "baseline": {
+        "environment": "proposition",
+        "statement": "Let $r\\in(0,r_-]$ and let $U$ be a minimizer at $r$. Then $U$ is a two block SBM graphon.",
+        "statement_sha256": "84f3b68ae1708335b383c10765bfbd92fe1ce279e3bc2b4f9365b1af81e43790",
+        "proof_sha256": "c7973ccc266baba364fdde264bcb17c300446322d36c536b4db3591f023f4f60",
+        "source_line": 4908
       }
     }
   ]

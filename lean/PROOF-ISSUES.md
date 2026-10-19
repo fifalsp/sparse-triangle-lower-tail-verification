@@ -2,9 +2,9 @@
 
 Updated 2026-10-19. **No mathematical error in the paper has been established
 by the checks recorded here. The main theorem is not yet formally proved.**
-The final assembly is now `Section08.mainTheorem_of_remaining_inputs`. Its three
-internal hypotheses are `CriticalClassification`, `SmallRangeClassification`,
-and `MiddleFamilyCertificate`; none may be treated as a classical result.
+The latest assembly is `Section08.mainTheorem_of_finite_certificates`. Its two
+internal hypotheses are `CriticalClassification` and `CompactFamilyCertificate`;
+neither may be treated as a classical result. Small-range classification is proved.
 
 A successful Lean build verifies the encoded statements under their explicit
 hypotheses; it does not by itself establish fidelity to every manuscript claim.
@@ -15,7 +15,7 @@ hypotheses; it does not by itself establish fidelity to every manuscript claim.
 | `prop:critical` | Conditional assembly | The graphon deduction now compiles, conditional on the cover and apex certificate. No result may silently retain those hypotheses in a claimed completed main theorem. |
 | `thm:rigidity`, `thm:twowell` | Resolved formal gap | Complete functional two-well theorem and full sequential local rigidity now compile. Local rigidity uses only the recorded classical sampling input. |
 | `prop:stability`, `cor:open`, `cor:seed` | Stability/open resolved; seed conditional | Actual compactness, limit and local-rigidity assembly compiles. Openness uses only recorded classical inputs. The left seed still requires `CriticalClassification`, an internal obligation. |
-| `thm:smalltail` | Missing formal proof | Full scalar penalized classification and supporting-range data now compile. The latter uses the explicit KP26 input. Mean-zero quadratic and spectral/degree/tail estimates are proved; the latter uses a precisely stated generic classical spectral theorem. Full row reduction, all small-parameter error bounds and scalar exclusion are now proved. Graphon equality rigidity remains. |
+| `thm:smalltail`, `prop:structural` | Resolved formal gap | Full unrestricted small-target classification now compiles, relative to the named KP26, sampling and spectral inputs. The exact relabeling formulation uses classical CDF transport. All row separation, same-block caps and equality rigidity are proved internally. |
 | `lem:cut` | Partial translation / infrastructure | Actual norm and bijective distance are defined. Classical compactness is currently the weaker vertex-map consequence of the paper's bijective version. Pseudometric identities are proved for actual graphons. General pullback zero-distance uses an explicit classical L¹ approximation input. The sharp weighted test bound is now proved for arbitrary integrable kernels. |
 | `lem:relabelB` | Explicit classical dependency | Partition-to-pullback equivalence is proved using the finite nonatomic CDF transport hypothesis, precisely recorded in ASSUMPTIONS.md. It does not assert invertibility of the CDF map. |
 | `lem:zc` | Alternative proved argument | Lean uses a compact-superlevel crossing argument instead of the paper's isolated finite-zero-set argument. This is a proof-route change, not evidence of a manuscript error. |

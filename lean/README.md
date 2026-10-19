@@ -970,3 +970,42 @@ The generator reproduces the checked smoke source byte-for-byte.
 Full ABB deployment: Yale job **30052586**, source `7bbeae8`, is running on
 a separate node with four CPUs and bounded build concurrency. Its full proof
 and audit remain pending; deployment details are recorded under `hpc/`.
+
+### 2026-10-19 — checked parameter calculus for the exterior family bound
+
+`FamilyParameterCalculus` now proves the actual L-derivative chain for all seven
+coefficients. The primitive curve is `(exp(-L), L, b(exp(-L)))`; its velocity is
+rational in the same variables. `RationalExprCalculus` proves the chain rule
+once for every rational expression, and successful interval evaluation proves
+all denominator nonvanishing obligations. No numerical derivative oracle or
+new hypothesis about our coefficients is introduced.
+
+`TaylorParameter` proves the second-order Taylor expansion with an absolute
+third-order remainder for a displacement of either sign. The lower-bound
+variant retains `min(0,f''(center))*width²/2`, matching the signed quadratic
+term in the paper's code. `FamilyParameterTaylor.phi_parameter_taylor_lower`
+applies this result to the actual logarithmic certificate, combining the seven
+coefficient contributions before taking the absolute remainder bound.
+
+`FamilyParameterSmoke` kernel-checks **all seven coefficients through derivative
+order three** (28 intervals) uniformly for L in [39/10,2503/640]. These are
+bounds on actual derivatives. It is a diagnostic interval, not a full exterior
+cover. To reproduce the untrusted numerical proposal, from `lean/` run:
+
+```sh
+lake env lean tools/FamilyParameterProposal.lean
+lake build SparseLowerTail.Section08.FamilyParameterSmoke
+```
+
+The proposed integers are independently checked by `decide +kernel`. The
+full checked root build has **3,447 jobs**; the axiom audit passes for
+**11,319 project declarations / 7,324 theorems**, with only `propext`,
+`Classical.choice`, and `Quot.sound`. All 88 mapped manuscript statements are
+unchanged; 425 declaration links and all six map tests pass.
+
+Remaining work: parameter variation of q-gradients, numerical assembly of the
+exterior Taylor leaves, their complete cover, and the full critical certificate
+jobs. The three Yale jobs were still running at the last scheduler check; no
+full certificate success is claimed. No mathematical counterexample or new
+manuscript error was found in this step. The effort estimate remains roughly
+40–45%; additional helper theorems do not by themselves discharge a certificate.

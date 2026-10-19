@@ -690,3 +690,25 @@ and gradient give
 Thus the entire cube is nonnegative and the contact is its only zero.
 The twelve numerical checks use the full published radii. Everything outside
 these neighborhoods remains a separate certificate obligation.
+
+
+### 2026-10-19 — one rational chain rule for all family parameter derivatives
+
+The seven coefficient formulas depend on the three primitive variables
+`z = exp(-L)`, `L`, and `b = exp(-2*z*L/(1-z)^2)`. Their velocity is rational
+in those same variables. Rather than prove separate derivative formulas for
+every coefficient and every order, `RationalExprCalculus` proves one chain
+rule by induction on expressions. A successful interval evaluation also proves
+every denominator is nonzero; repeated differentiation therefore remains
+within the existing checked evaluator.
+
+`FamilyParameterTaylor.phi_parameter_taylor_lower` then combines the
+coefficients with the fixed-q weights **before** taking the absolute remainder
+bound. It retains the signed second derivative and handles L on either side
+of the center. This follows the computation in `verification/family/core.py`
+while reducing the analytic proof to one reusable theorem. A sample checks
+all 28 coefficient/order combinations on [39/10,2503/640].
+
+Scope: this simplifies the formal verification architecture, not the
+mathematical statement of Proposition `prop:family`. The full q-dependent
+exterior certificate and its complete cover still need to be discharged.

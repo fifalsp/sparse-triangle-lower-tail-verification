@@ -139,3 +139,6 @@ import SparseLowerTail.Section05.ApexReplay.F1Smoke.CheckedLeaves
 import SparseLowerTail.Section08.FamilyScaledSmoke
 
 import SparseLowerTail.Section08.FamilyABBReplay.Smoke.CheckedSubtree
+
+import SparseLowerTail.Section08.FamilyParameterTaylor
+import SparseLowerTail.Section08.FamilyParameterSmoke

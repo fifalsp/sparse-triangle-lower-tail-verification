@@ -65,6 +65,11 @@ four-dimensional coverage theorem, moving-contact bridge and two selected
 boxes. **The full ABB replay remains pending.** See the
 [dated progress record](lean/README.md#2026-10-19--full-abb-proposal-and-checked-scaled-hessian-replay).
 
+The actual parameter-derivative chain and the paper's signed Taylor lower
+bound are now proved in Lean. A kernel-checked sample encloses all seven
+coefficient derivatives through order three on L ∈ [3.9, 2503/640].
+This supplies the analytic parameter step; the full exterior cover is still missing.
+
 The target statement quantifies over all measurable graphons, not just SBMs.
 At the authors' request, external/classical results may be explicit hypotheses;
 [ASSUMPTIONS.md](lean/ASSUMPTIONS.md) distinguishes those inputs from our own

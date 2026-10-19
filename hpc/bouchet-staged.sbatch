@@ -15,7 +15,7 @@ umask 077
 SOURCE_ARCHIVE="${1:?source archive required}"
 SOURCE_SHA256="${2:?expected SHA256 required}"
 WORKLOAD="${3:-bootstrap}"
-case "$WORKLOAD" in bootstrap|s1|apex1) ;; *) exit 2 ;; esac
+case "$WORKLOAD" in bootstrap|s1|apex1|familyabb) ;; *) exit 2 ;; esac
 SAVE_ROOT="${SLURM_SUBMIT_DIR:?}"
 JOB_ID="${SLURM_JOB_ID:?}"
 WORK_DIR=$(mktemp -d "${TMPDIR:-/tmp}/sparse-lean-${JOB_ID}.XXXXXX")
@@ -64,7 +64,11 @@ cd "$WORK_DIR/repo/lean"
 lean --version | tee "$RUN_DIR/lean-version.txt"
 printf '%s\n' 'Fetching pinned public mathlib dependencies and binary cache.'
 lake exe cache get > "$RUN_DIR/mathlib-cache.log" 2>&1
-if [[ "$WORKLOAD" == apex1 ]]; then
+if [[ "$WORKLOAD" == familyabb ]]; then
+  printf '%s\n' 'Checking the complete ABB neighborhood with two bounded build workers.'
+  /usr/bin/time -v -o "$RUN_DIR/family-abb-time.txt" timeout --signal=TERM --kill-after=60s 10h python3 tools/run_family_abb_cluster.py --logs "$RUN_DIR" --workers 2 --lean-threads 2
+  tar -czf "$SAVE_ROOT/sparse-lean-family-abb-sources-${JOB_ID}.tar.gz" -C "$WORK_DIR/repo" lean/SparseLowerTail/Section08/FamilyABBReplay/Full
+elif [[ "$WORKLOAD" == apex1 ]]; then
   printf '%s\n' 'Generating and checking the complete F1 apex subdivision.'
   /usr/bin/time -v -o "$RUN_DIR/apex-time.txt" timeout --signal=TERM --kill-after=60s 10h python3 tools/run_apex_cluster.py --logs "$RUN_DIR"
   tar -czf "$SAVE_ROOT/sparse-lean-apex-sources-${JOB_ID}.tar.gz" -C "$WORK_DIR/repo" lean/SparseLowerTail/Section05/ApexReplay/F1

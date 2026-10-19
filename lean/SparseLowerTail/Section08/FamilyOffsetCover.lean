@@ -1,4 +1,4 @@
-import SparseLowerTail.Numerics.BoxReplay
+import SparseLowerTail.Numerics.BoxReplayTable
 import SparseLowerTail.Section08.FamilyScaledIntervals
 import SparseLowerTail.Section08.FamilyAAACover
 
@@ -129,5 +129,31 @@ theorem familyABB_local_of_replay (table : ℕ → Option (ReplayBox 4))
     intro i B hi x hx q' he
     exact hleaf i B hi z hz hz1 q' (he ▸ hx) v hv
   exact ht _ (familyABBInitialBox_contains hL hq') q' rfl
+
+/-- Uniform leaf conclusion, expressed as a predicate on the four coordinates
+so that checked subtrees can be reused as leaves of the final tree. -/
+def familyABBOffsetProperty (x : Fin 4 → ℝ) : Prop :=
+  ∀z : ℝ,0<z → z<1 → ∀q : FamilyVector,x=familyABBOffsetCoordinates z q →
+    ∀v : FamilyVector,v≠0 → 0<familyHessianForm z q v
+
+theorem FamilyScaledBoxCertificate.abb_offset_property
+    (C : FamilyScaledBoxCertificate) (hC : C.Valid) (T : FamilyRationalMatrix)
+    (hpos : FamilyIntervalPositive (familyIntervalCongruence C.hessianIntervals T))
+    {B : ReplayBox 4} (hB : C.box.EnclosesABBOffsets B) :
+    ∀x,B.Contains x → familyABBOffsetProperty x := by
+  intro x hx z hz hz1 q he v hv
+  exact C.abb_offset_hessian_positive hC T hpos hB hz hz1 (he ▸ hx) hv
+
+theorem familyABB_local_of_table (table : RegisterTree (Option (ReplayBox 4)))
+    (tree : BoxReplay 4) (htree : tree.Valid table.get familyABBInitialBox)
+    (hleaf : table.All (ReplayBoxProperty familyABBOffsetProperty))
+    {z : ℝ} (hz : 0<z) (hL : Bounds (branchLog z) (39/10) (19/2))
+    {q : FamilyVector} (hq : q∈familyCube (familyContactABB z) (1/10)) :
+    0≤familyPhi z q ∧ (familyPhi z q=0 ↔ q=familyContactABB z) := by
+  apply familyABB_local_of_replay table.get tree htree _ hz hL hq
+  intro i B hi z hz hz1 q hq v hv
+  have hh := hleaf.get i
+  rw [hi] at hh
+  exact hh _ hq z hz hz1 q rfl v hv
 
 end SparseLowerTail.Certificate

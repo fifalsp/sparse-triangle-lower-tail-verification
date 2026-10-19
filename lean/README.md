@@ -934,3 +934,35 @@ declarations / 6,673 theorems**, with only `propext`, `Classical.choice`, and
 six map tests pass. Full ABB replay, all critical cover jobs, and the exterior
 family remain unfinished. The effort estimate remains about **40–45%**, not a count
 of declarations or proposed boxes.
+
+### 2026-10-19 — shared ABB replay and bounded build driver
+
+The full ABB generator now shares the **93 distinct parameter intervals** and
+reuses exponential endpoint proofs. Only a small smoke target is generated
+on the desktop: 21 actual proposal leaves, one complete subdivision subtree,
+and the final leaf at the large-L end. Its leaf margins, moving-contact boxes,
+lookup table and exact coverage all compile. This checks the generation and
+assembly path, **not the full 108,452-leaf neighborhood**.
+
+`tools/build_bounded.py` builds project modules in import order, with at most
+two Lake processes by default. It waits for each dependency to succeed, stops
+scheduling after a failure, and records per-module logs. The 97-module smoke
+closure passed with two workers in about 112 seconds, including cached imports.
+This is not an estimate for the full workload.
+
+```sh
+python3 tools/generate_family_abb_replay.py data/family-abb-subdivision-proposal.json.gz --smoke
+python3 tools/build_bounded.py SparseLowerTail.Section08.FamilyABBReplay.Smoke.CheckedSubtree --logs /tmp/abb-smoke --workers 2
+```
+
+For the full cloud workload, `tools/run_family_abb_cluster.py` generates every
+leaf and coverage chunk, runs the bounded builder, and applies the unchanged
+axiom audit to `FamilyABBReplay.Full.FullNeighborhood`. It reports success only
+after both checks pass. The `familyabb` workload of the staged Bouchet runner
+uses two build workers with two Lean threads each. Full generated sources are
+exported only on success. See `hpc/README.md` for deployment state.
+
+Validation of this milestone: root build **3,441 jobs**, axiom audit
+**11,195 project declarations / 7,230 theorems**, only the standard three axioms;
+88 manuscript labels and 418 declaration links pass, with six map tests.
+The generator reproduces the checked smoke source byte-for-byte.

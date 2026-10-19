@@ -1,0 +1,19 @@
+{
+  "trust_status": "Generated, not yet built or audited",
+  "mode": "smoke",
+  "leaves": 21,
+  "parameters": 3,
+  "endpoints": 55,
+  "coverage_chunks": 1,
+  "final_module": "SparseLowerTail.Section08.FamilyABBReplay.Smoke.CheckedSubtree",
+  "modules": [
+    "SparseLowerTail.Section08.FamilyABBReplay.Smoke.Endpoints0000",
+    "SparseLowerTail.Section08.FamilyABBReplay.Smoke.Parameter0000",
+    "SparseLowerTail.Section08.FamilyABBReplay.Smoke.Parameter0001",
+    "SparseLowerTail.Section08.FamilyABBReplay.Smoke.Parameter0002",
+    "SparseLowerTail.Section08.FamilyABBReplay.Smoke.Leaves0000",
+    "SparseLowerTail.Section08.FamilyABBReplay.Smoke.Leaves3389",
+    "SparseLowerTail.Section08.FamilyABBReplay.Smoke.Coverage0000",
+    "SparseLowerTail.Section08.FamilyABBReplay.Smoke.CheckedSubtree"
+  ]
+}

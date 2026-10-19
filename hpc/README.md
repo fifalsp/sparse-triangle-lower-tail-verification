@@ -136,3 +136,19 @@ An extra `srun` monitoring step failed to create its cgroup with `Cannot
 allocate memory`; the original batch jobs remained RUNNING and had empty
 batch stderr at that check. Do not infer a failed or successful proof from the
 monitoring step. Preserve the current jobs and consult `sacct` before restarting.
+
+## Full intermediate-family ABB neighborhood
+
+The new `familyabb` workload checks the full logarithmic ABB contact cube of
+radius 1/10 for every L in [3.9,9.5]. It generates the 108,452-leaf proposal with
+93 shared parameter certificates and shared exponential endpoint certificates.
+The build driver processes the actual import graph with at most two Lake
+processes and two Lean threads per process. Request four CPUs and 64 GiB; the
+job uses the same 10-hour internal timeout and 12-hour allocation limit.
+
+Unlike the earlier aggregate builds, generated leaf modules cannot all start
+at once. A 21-leaf test, including a complete small coverage subtree, passes
+the bounded builder locally. This is evidence about the runner and replay
+interface, not proof of the whole neighborhood. A successful full run must
+produce `FAMILY_ABB_SUCCESS.txt` after the exact final theorem and axiom audit.
+The exterior family certificate remains a separate obligation even on success.

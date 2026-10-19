@@ -100,3 +100,21 @@ import SparseLowerTail.Numerics.DyadicTaylorAxes
 import SparseLowerTail.Section08.FiniteCertificateAssembly
 
 import SparseLowerTail.Section05.CoverTreeReplay
+
+import SparseLowerTail.Numerics.DyadicTaylorFactored
+
+import SparseLowerTail.Section05.CoverS1TaylorSlab
+
+import SparseLowerTail.Section05.CoverS1ProgramTaylor
+
+import SparseLowerTail.Numerics.TaylorThird
+
+import SparseLowerTail.Section05.CoverSupportData
+
+import SparseLowerTail.Section05.CoverS1ConstantTaylor
+
+import SparseLowerTail.Section05.CoverReplayTable
+
+import SparseLowerTail.Section08.FamilyLocalScaling
+
+import SparseLowerTail.Section08.FamilyParameterIntervals

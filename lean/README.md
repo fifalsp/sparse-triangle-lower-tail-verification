@@ -563,3 +563,25 @@ normalization and midpoint coverage are justified at every node.
 Updated subjective effort estimate: about **40% (30–55% range)**. This is not
 a count of proved statements; the remaining numerical proof replay may dominate
 runtime and development. Earlier dated estimates above describe earlier states.
+
+
+### 2026-10-19 — full cover geometry and support; family interval bridge
+
+The actual twelve-cell geometric cover now compiles in `CriticalCoverGeometry`,
+including all 179 curved-boundary leaves and boundary points. `CoverSupportData`
+proves the support and cutoff fields for all twelve exact cells and assembles
+`VerifiedCertificateCover` from the remaining nonlinear positivity inputs.
+These proofs are unconditional and use only the standard Lean foundations.
+
+The family branch now has exact Phi/Hessian reification, local contact calculus,
+finite-dimensional congruence and exponential diagonal scaling. The checked
+`FamilyParameterCertificate.coefficient_contains` converts an L interval,
+certified exponential endpoint enclosures, and rational interval calculations
+into bounds on the actual seven coefficient combinations. These bridges do
+not yet prove the numerical margins on the complete compact domain.
+
+The first S1 replay batch (128 leaves) passed; a full 15,280-leaf replay is in
+progress and is not imported into the release root until checked. The earlier
+seventeen-leaf Taylor slab is already an unconditional checked subregion.
+The main theorem still has two internal certificate inputs. The effort estimate
+remains about 40% (broad range 30–55%); leaf counts are not completion percentages.

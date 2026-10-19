@@ -34,7 +34,8 @@ and the Lean formalization have different scopes.
 | Proved in Lean | Complete local rigidity (`thm:rigidity`), including measurable row classes, uniform approximation, exact row identification and bijective relabeling transfer, relative only to classical sampling. |
 | Proved relative to named inputs | Full small-target theorem (`thm:smalltail`): every minimizer is the balanced branch, and conversely, for all 0 < r ≤ r_−. The proof derives bipodality from actual rows. |
 | Proved with explicit classical spectral input | Centered-kernel positivity, trace/diagonal and degree estimates, exact cubic identity and spectral tail inequalities. The graphon-specific estimates are proved here. |
-| Partially checked | Actual S1 vertex-0 positivity on checked near-one and tail regions, plus a complete nontrivial Taylor box. The family analytic tail is proved. Full-domain cover/family certificates remain unfinished. |
+| Proved in Lean | The actual twelve-cell geometric cover, all 179 curved-boundary checks, and every support cutoff. Nonlinear certificate positivity remains separate. |
+| Partially checked | Actual S1 vertex-0 positivity on near-one, tail and a seventeen-leaf Taylor slab. Family local Hessian/contact calculus and exact parameter-to-coefficient enclosures are proved. Full-domain cover/family certificates remain unfinished. |
 | Proved relative to named inputs | All small-parameter bounds, actual row reduction and scalar exclusion (`lem:smallparams`, `lem:rowreduction`, `lem:scalar`). Exact small-target block rigidity and the full classification are now proved. |
 | Proved relative to named classical inputs | Sequential stability and openness of the balanced-classification region. The left seed follows conditional on the still-unproved critical certificate. |
 | Remaining | Discharge the two internal certificate inputs: critical classification and the compact intermediate certificate. The final conditional continuation assembly is proved. |

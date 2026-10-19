@@ -672,13 +672,16 @@
     },
     {
       "paper_label": "prop:cover",
-      "status": "pending",
-      "checked_scope": "No complete Lean proof claimed for this statement. Actual non-apex S1 vertex-0 certificate positivity is proved on q∈[0,1/1024]^3 and q∈[8,6743/512]^3 with original exact dyadic coefficients and checked critical constants; full-domain coverage and apex proofs remain. An exact eight-leaf subdivision additionally proves positivity on [0,1/32]^3; the sorted tail q3≥8 is checked. The saved full subdivision proposal is untrusted, not imported into Lean. A full nontrivial Taylor2 leaf now has checked exact reification, derivatives, exponential enclosures, segment bounds and positive remainder margin; this is still only a subdomain.",
+      "status": "partial_geometry_support_complete",
+      "checked_scope": "Actual twelve-cell geometric coverage, including all 179 curved-boundary interval checks, and all support/cutoff fields are proved. verifiedCover_of_positivity reduces the cover to nonlinear nonapex positivity and apex nonnegativity. Actual S1 vertex-0 positivity is checked on near/tail subregions and a seventeen-leaf Taylor slab. Full-domain positivity and apex zero-set proofs remain unfinished.",
       "lean_files": [
         "SparseLowerTail/Section05/CoverS1FirstBox.lean",
         "SparseLowerTail/Section05/CoverS1Tail.lean",
         "SparseLowerTail/Section05/CoverS1Regions.lean",
-        "SparseLowerTail/Section05/CoverS1TaylorLeaf.lean"
+        "SparseLowerTail/Section05/CoverS1TaylorLeaf.lean",
+        "SparseLowerTail/Section05/CriticalCoverGeometry.lean",
+        "SparseLowerTail/Section05/CoverSupportData.lean",
+        "SparseLowerTail/Section05/CoverS1TaylorSlab.lean"
       ],
       "lean_declarations": [
         "SparseLowerTail.Section05.coverS1_vertex0_first_box",
@@ -686,7 +689,10 @@
         "SparseLowerTail.Section05.coverS1NearTree_leafCount",
         "SparseLowerTail.Section05.coverS1_near_cube_positive",
         "SparseLowerTail.Section05.coverS1_sorted_tail_positive",
-        "SparseLowerTail.Section05.coverS1_taylor_leaf_positive"
+        "SparseLowerTail.Section05.coverS1_taylor_leaf_positive",
+        "SparseLowerTail.Section05.CoverGeometry.criticalRegion_covered",
+        "SparseLowerTail.Section05.CoverGeometry.cell_supportExponent_le",
+        "SparseLowerTail.Section05.CoverGeometry.verifiedCover_of_positivity"
       ],
       "explicit_inputs": [],
       "baseline": {
@@ -700,16 +706,20 @@
     {
       "paper_label": "prop:family",
       "status": "conditional_compact_reduction",
-      "checked_scope": "Analytic tail and exact compact-to-global reduction proved. The compact-domain positivity and zero-set certificate remain an internal hypothesis. The actual parameter interval [3.9,9.5] is proved for every intermediate target, and compact-to-middle-family assembly is complete.",
+      "checked_scope": "Analytic tail and exact compact-to-global reduction proved. The compact-domain positivity and zero-set certificate remain an internal hypothesis. The actual parameter interval [3.9,9.5] is proved for every intermediate target, and compact-to-middle-family assembly is complete. Exact Phi reification, local Hessian/contact calculus, congruence and diagonal scaling, and parameter-to-coefficient interval enclosure are proved; numerical compact-domain margins remain to replay.",
       "lean_files": [
         "SparseLowerTail/Section08/CertificateTail.lean",
         "SparseLowerTail/Section08/FamilyParameterRange.lean",
-        "SparseLowerTail/Section08/FiniteCertificateAssembly.lean"
+        "SparseLowerTail/Section08/FiniteCertificateAssembly.lean",
+        "SparseLowerTail/Section08/FamilyLocalScaling.lean",
+        "SparseLowerTail/Section08/FamilyParameterIntervals.lean"
       ],
       "lean_declarations": [
         "SparseLowerTail.Certificate.family_certificate_of_compact_exact",
         "SparseLowerTail.Section08.middle_branch_log_range",
-        "SparseLowerTail.Section08.middleFamilyCertificate_of_compact"
+        "SparseLowerTail.Section08.middleFamilyCertificate_of_compact",
+        "SparseLowerTail.Certificate.familyHessian_pos_of_scaled_congruence_dominance",
+        "SparseLowerTail.Certificate.FamilyParameterCertificate.coefficient_contains"
       ],
       "explicit_inputs": [
         "internal:appA3:compact"
@@ -1620,7 +1630,7 @@
         "source_line": 4031
       },
       "status": "partial_conditional",
-      "checked_scope": "Full finite-convex-cover deduction from explicit VerifiedCertificateCover data. Actual twelve-cell geometry, support and positivity checks remain unfilled internal obligations.",
+      "checked_scope": "Full finite-convex-cover deduction. Actual twelve-cell geometry and support fields are now supplied internally; nonlinear vertex and apex certificate inequalities remain explicit internal obligations.",
       "lean_files": [
         "SparseLowerTail/Section05/FiniteCover.lean"
       ],

@@ -31,7 +31,10 @@ It follows the paper and makes the remaining work explicit; it is not a new
 unconditional proof. Two internal statements remain to be discharged:
 
 1. **Critical classification** (`prop:critical`), reduced elsewhere to the
-   cover and apex certificates (`CriticalClassification`).
+   cover and apex certificates (`CriticalClassification`). The actual twelve-cell
+   geometric coverage and all support cutoffs are now proved; the remaining
+   work here is the nonlinear inequalities at the vertices/apexes, including
+   the required equality cases.
 2. **Compact intermediate certificate**: nonnegativity and the allowed-pattern
    zero set on the explicit compact box, for branch-log parameter
    3.9 ≤ L ≤ 9.5 (`CompactFamilyCertificate`). The inclusion of the actual

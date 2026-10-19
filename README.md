@@ -8,6 +8,11 @@ start of Appendix A. The table below tells you what is checked and where to find
 the code. The mathematical arguments reducing the main theorem to these checks
 are in the paper.
 
+A bounded CPU verification job is also deployed on Yale Bouchet. See
+[`hpc/`](hpc/README.md) for the runner and
+[deployment record](hpc/bouchet-run-20261019.json). Submission is not evidence
+that the remote checks have passed.
+
 ## Lean 4 progress toward the main theorem
 
 A partial Lean formalization is now in [`lean/`](lean/README.md). **Theorem 1.3

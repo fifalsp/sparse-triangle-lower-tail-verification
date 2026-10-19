@@ -56,3 +56,19 @@ Do not run concurrent jobs that overwrite the same dependency archive. The
 initial source snapshot is commit `543e02f7`; later proof additions can be
 replayed using a fresh source archive and its SHA256. Temporary working files
 are not a durable record; the results archive and original Git source are.
+
+## Current deployment
+
+Job `30048468` was submitted on 2026-10-19 under account `pi_sl3363`.
+The source archive passed SHA256 verification in the authenticated web shell.
+See `bouchet-run-20261019.json` for exact source/runner revisions and hashes.
+Submission is not a successful build or audit; verify the result archive and
+Slurm terminal state before recording a pass.
+
+Monitor through Bouchet Shell Access:
+
+```bash
+squeue -j 30048468
+sacct -j 30048468 --format=JobID,State,ExitCode,Elapsed,MaxRSS
+tail -n 20 /nfs/roberts/project/pi_sl3363/sl3363/sparse-lean-30048468.out
+```

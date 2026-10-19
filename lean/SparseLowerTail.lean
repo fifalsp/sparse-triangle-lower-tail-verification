@@ -68,3 +68,8 @@ import SparseLowerTail.Section06.TwoWellGrowth
 import SparseLowerTail.Section07.PenalizedValue
 import SparseLowerTail.Section07.SmallData
 import SparseLowerTail.Section07.PenalizedQuadratic
+import SparseLowerTail.Section06.BlockBalance
+import SparseLowerTail.Section07.DegreeBounds
+import SparseLowerTail.Section05.CoverS1FirstBox
+import SparseLowerTail.Section05.CoverS1Tail
+import SparseLowerTail.Section06.RowRigidity

@@ -7,12 +7,12 @@ hypotheses; it does not by itself establish fidelity to every manuscript claim.
 
 | Stable label | Kind | Current finding / required work |
 | --- | --- | --- |
-| `prop:cover`, `prop:family` | Missing formal proof | Python/Arb reports are available, but full-domain positivity and exact zero sets have not been converted to Lean proofs. These are internal obligations. |
+| `prop:cover`, `prop:family` | Missing formal proof | Python/Arb reports are available. Actual S1 vertex-0 positivity is now proved in two subdomains with exact coefficients. Full-domain positivity and exact zero sets remain internal obligations. |
 | `prop:critical` | Conditional assembly | The graphon deduction now compiles, conditional on the cover and apex certificate. No result may silently retain those hypotheses in a claimed completed main theorem. |
-| `thm:rigidity`, `thm:twowell` | Missing formal proof | Full insertion lemma and scalar two-well coercivity now compile. The functional coercivity bridge and local rigidity remain. |
+| `thm:rigidity`, `thm:twowell` | Missing formal proof | Full insertion lemma and the complete functional two-well theorem now compile. Local rigidity Steps 1–3 and local stationary-row uniqueness are proved; final sequence/bipodal assembly remains. |
 | `cor:open`, `cor:seed` | Missing formal proof | Depend on local rigidity and the appropriate compactness/limit arguments. |
 | `thm:smalltail` | Missing formal proof | Full scalar penalized classification and supporting-range data now compile. The latter uses the explicit KP26 input. Every minimizer satisfies the mean-zero quadratic inequality; graphon equality rigidity remains. |
-| `lem:cut` | Partial translation / infrastructure | Actual norm and bijective distance are defined. Classical compactness is currently the weaker vertex-map consequence of the paper's bijective version. Pseudometric identities are proved for actual graphons. General pullback zero-distance uses an explicit classical L¹ approximation input. Weighted test bound remains under development. |
+| `lem:cut` | Partial translation / infrastructure | Actual norm and bijective distance are defined. Classical compactness is currently the weaker vertex-map consequence of the paper's bijective version. Pseudometric identities are proved for actual graphons. General pullback zero-distance uses an explicit classical L¹ approximation input. The sharp weighted test bound is now proved for arbitrary integrable kernels. |
 | `lem:relabelB` | Explicit classical dependency | Partition-to-pullback equivalence is proved using the finite nonatomic CDF transport hypothesis, precisely recorded in ASSUMPTIONS.md. It does not assert invertibility of the CDF map. |
 | `lem:zc` | Alternative proved argument | Lean uses a compact-superlevel crossing argument instead of the paper's isolated finite-zero-set argument. This is a proof-route change, not evidence of a manuscript error. |
 

@@ -30,7 +30,8 @@ and the Lean formalization have different scopes.
 | Proved in Lean | Value continuity; quantitative isolation, variance/entropy and Goodman bounds; the full boundary comparison (`lem:boundary`); triangle-pattern-to-partition rigidity. |
 | Proved relative to named classical inputs | Unrestricted minimizer existence and entropy lower semicontinuity; balanced partition/pullback equivalence; minimizer, cost, mean and multiplier convergence in cut distance. |
 | Proved in Lean | Critical parameter region; actual triangle-law symmetry and Hoeffding decomposition; certificate expectation/weak duality and parameter concavity; full scalar penalized classification and values. Relaxed-law validity uses classical sampling. |
-| Proved relative to classical sampling | Full insertion lemma: every minimizer row globally minimizes its row functional. The penalized mean-zero L² quadratic inequality is also proved. Scalar two-well coercivity is proved without external inputs. |
+| Proved relative to classical sampling | Full insertion lemma: every minimizer row globally minimizes its row functional. The penalized mean-zero L² quadratic inequality is also proved. The complete functional two-well theorem is proved without external inputs. |
+| Proved in Lean | Sharp weighted cut bound, measurable row partition and uniform graphon approximation (local rigidity Steps 1–3); actual S1 certificate positivity on two explicitly bounded subdomains. The full rigidity and cover proofs remain incomplete. |
 | Remaining | Global optimizer classification, local rigidity/continuation, small-target equality rigidity, and Lean proofs of global cover/family certificate positivity. |
 
 The [formalization README](lean/README.md) records the file-to-paper mapping,
@@ -38,6 +39,8 @@ remaining dependencies, build instructions, axiom audit, and dated progress log.
 The current effort estimate is **about 25% complete (roughly 20–30%)**, not a
 measured percentage of theorem coverage. [Proof issues](lean/PROOF-ISSUES.md)
 distinguish missing formal proofs from suspected mathematical errors.
+[Shorter proof notes](docs/PROOF-SIMPLIFICATIONS.md) collect complete replacement
+arguments found during formalization, with stable manuscript labels and Lean links.
 The target statement quantifies over all measurable graphons, not just SBMs.
 At the authors' request, external/classical results may be explicit hypotheses;
 [ASSUMPTIONS.md](lean/ASSUMPTIONS.md) distinguishes those inputs from our own

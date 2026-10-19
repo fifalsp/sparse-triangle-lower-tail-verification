@@ -31,6 +31,9 @@ models. `IsBalanced` uses a measurable partition of mass one half. Its
 integral formulas and equivalence to measure-preserving pullbacks are proved;
 the latter uses the explicit classical CDF transform in `lem:relabelB`.
 
+[Proof-simplification notes](../docs/PROOF-SIMPLIFICATIONS.md) record shorter
+arguments separately for future manuscript revisions.
+
 ## Completed proof components
 
 | Paper content | Lean file / declarations | Scope |
@@ -432,3 +435,28 @@ No mathematical error in the manuscript has been established in this checkpoint.
 [PROOF-ISSUES.md](PROOF-ISSUES.md) lists the unresolved formal obligations.
 The effort estimate remains about **25% (20–30%)**; remaining certificate and
 rigidity proofs carry substantial work, so declaration counts are not coverage.
+
+### 2026-10-19 — complete two-well theorem and recorded shorter proofs
+
+`TwoWellRows.lean` now proves all of `thm:twowell` for actual measurable
+profiles. `WeightedCut.lean` proves the sharp cut test bound by two positive-set
+selections. `RowStability`, `RowPartition`, `UniformApproximation` and
+`BlockBalance` prove Steps 1–3 of local rigidity, including an actual measurable
+partition and the uniform graphon/mass estimates. Exact row identification
+and final sequence assembly are still required.
+
+`DegreeBounds.lean` proves the degree estimates using a direct positive-part
+test. Both shorter arguments are written out in
+[PROOF-SIMPLIFICATIONS.md](../docs/PROOF-SIMPLIFICATIONS.md), with stable labels,
+complete hypotheses and Lean links for future manuscript revisions.
+
+`CoverS1FirstBox` proves the actual first S1 vertex certificate is >3 on
+[0,1/1024]³ in logarithmic coordinates. `CoverS1Tail` proves it is >0.01 on
+[8,6743/512]³. These are genuine subdomain proofs, not a full-domain certificate.
+The generators produce rational proofs checked by Lean; numerical proposals
+are not trusted assumptions. No new mathematical error has been established.
+
+`RowRigidity.lean` also proves local stationary-row uniqueness using direct
+log monotonicity and a positive quadratic form. The full shorter proof is
+recorded as PS-003 in the companion note. Final sequence/bipodal assembly is
+still separate; this checkpoint does not claim `thm:rigidity` in full.

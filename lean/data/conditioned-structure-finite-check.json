@@ -1,0 +1,132 @@
+{
+  "checked_at_utc": "2026-10-20T08:39:57.336860+00:00",
+  "source_parent_commit": "16e2a3ef7c8812d062674b7075a5a0073fb31b25",
+  "paper_label": "thm:reduction",
+  "scope": "Finite conditioned-structure bound with all four actual bad-event estimates discharged. The original normalized adjacency kernel is close to an actual minimizer after a measure-preserving bijection on the intersection of the good events. The failure probability is at most β/ζ + ω/γ + 384ω/ε² + exp(-αpn²), under the displayed finite parameter conditions. Includes an explicit relaxed cube-root target/slack choice. Asymptotic parameter assembly is unfinished.",
+  "sources": [
+    {
+      "path": "SparseLowerTail/Section03/GraphEdgeEndpoints.lean",
+      "sha256": "ecfc165da49e5ecf899363eda95bf826e44bc0c8d20d0d7cd346bd3a05db969d"
+    },
+    {
+      "path": "SparseLowerTail/Section03/GraphEdgeMatrices.lean",
+      "sha256": "6f4642c3edac2ec883702a8dfb2f711da23fadccc724ed8efddf7e56e05de04f"
+    },
+    {
+      "path": "SparseLowerTail/Section03/MatrixCutBounds.lean",
+      "sha256": "78142b3d244dd05ba12495f291eef37605974763ccda07e8062db6104a71c86e"
+    },
+    {
+      "path": "SparseLowerTail/Section03/RevealedCutConcentration.lean",
+      "sha256": "71016aa6338b4ee61b48c6a7b9bce240a4390a41f2e8f7d1ac1629229cb6541a"
+    },
+    {
+      "path": "SparseLowerTail/Section03/RevealedCutMatrices.lean",
+      "sha256": "423afd068169b8299ef6eaea91ef0ce5c4b886f5e186225c9e5c8f665f8e4b1a"
+    },
+    {
+      "path": "SparseLowerTail/Section03/RevealedEdgeTail.lean",
+      "sha256": "12fd518481113aed0c35c53fc33a413d77eff1ccd0c88304ad8c0ae643529595"
+    },
+    {
+      "path": "SparseLowerTail/Section03/RevealedGraphon.lean",
+      "sha256": "9e51d7aa56f7d039b246781c5a54cfc5112b118bd132dbe93ecc18c4a57fe8ac"
+    },
+    {
+      "path": "SparseLowerTail/Section03/ConditionedStructureFinite.lean",
+      "sha256": "ec6df868b50345063b76d1725e862bc82509c3f1066a20717008fdd8f7a28edf"
+    },
+    {
+      "path": "SparseLowerTail/Section03/ReductionSlack.lean",
+      "sha256": "b24931fc8cfd69671e9c55016daf2d26c420b87b0cd773157814040dbba72496"
+    }
+  ],
+  "explicit_inputs": [
+    "classical:dyadic-l1-approximation",
+    "classical:graphon-cut-compactness",
+    "classical:pullback-l1-approximation",
+    "classical:counting-lemma",
+    "classical:harris-positive-association"
+  ],
+  "checks": [
+    {
+      "command": "lake build SparseLowerTail.Section03.ReductionSlack SparseLowerTail.Section03.ConditionedStructureFinite",
+      "exit_code": 0,
+      "output": "Build completed successfully (3201 jobs)."
+    },
+    {
+      "command": "lake env lean tools/audit_conditioned_structure_finite.lean",
+      "exit_code": 0,
+      "output": "'SparseLowerTail.Section03.graphEdgeCoordinate_exists_ordered_pair' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.graphEdgeEndpoints_ordered' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.graphEdgeEndpoints_pair' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.graphEdgeEndpoints_injective' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.unrevealedEdgeEndpoints_injective' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.unrevealedEdgeEndpoints_ordered' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.graphEdgeEndpoints_eq_of_ordered_pair' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.symmetricEdgeMatrix_graphEdgeEndpoints_ordered' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.symmetricEdgeMatrix_graphEdgeEndpoints' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.symmetricEdgeMatrix_restrict' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.graphEdgeMatrix_extend_sub' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.symmetricEdgeMatrix_cutNorm_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.graphEdgeMatrix_div' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.matrixRectangleSum_add' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteMatrixCutNorm_add_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteMatrixCutNorm_div_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.stepKernel_close_of_matrix_and_graphon' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.triangle_unrevealed_product_cut_bound' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.triangle_conditioned_cut_error_probability' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.unrevealed_cut_matrix_eq' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.revealedFamilyEvent_cut_eq' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.erasedBooleanCoordinates_cut_difference' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.normalized_graph_matrix_close' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.revealedEdgeCount_monotone' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.revealedEdgeCount_product_exp_moment' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.revealedEdgeCount_product_tail' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.revealedEdgeCount_conditioned_tail' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.normalizedEdgeWeight_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.normalizedEdgeStepGraphon_cost_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.normalizedEdgeStepGraphon_triangle_le' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.triangleConditionalGraphon_cost_le' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.triangle_good_events_stability' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.patternLift_mass' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.triangle_far_probability_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.triangle_far_probability_estimate' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.exists_reduction_cube_slack' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake build SparseLowerTail",
+      "exit_code": 0,
+      "output": "Built SparseLowerTail (2.8s). Build completed successfully (3652 jobs). Existing cached linter warnings were replayed."
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean Audit.lean",
+      "exit_code": 0,
+      "output": "Axiom audit passed: 24267 project declarations, 17767 theorems; only propext, Classical.choice, Quot.sound allowed.\n"
+    },
+    {
+      "command": "python3 tools/check_lean_map.py",
+      "exit_code": 0,
+      "output": "Proof-map links passed: 100 labels, 693 Lean declarations.\n"
+    }
+  ],
+  "audited_public_theorems": 36,
+  "root_project_modules": 510,
+  "root_project_declarations": 24267,
+  "root_project_theorems": 17767,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "base_source_manifest": "revealed-transfer-check.json",
+  "source_manifest_changes": [
+    {
+      "module": "SparseLowerTail",
+      "sha256": "f7a184ef3dc1811a52af14511ac42c4f145bc2abb891a4d3839121d8b253e73c"
+    },
+    {
+      "module": "SparseLowerTail.Section03.ConditionedStructureFinite",
+      "sha256": "ec6df868b50345063b76d1725e862bc82509c3f1066a20717008fdd8f7a28edf"
+    },
+    {
+      "module": "SparseLowerTail.Section03.GraphEdgeEndpoints",
+      "sha256": "ecfc165da49e5ecf899363eda95bf826e44bc0c8d20d0d7cd346bd3a05db969d"
+    },
+    {
+      "module": "SparseLowerTail.Section03.GraphEdgeMatrices",
+      "sha256": "6f4642c3edac2ec883702a8dfb2f711da23fadccc724ed8efddf7e56e05de04f"
+    },
+    {
+      "module": "SparseLowerTail.Section03.MatrixCutBounds",
+      "sha256": "78142b3d244dd05ba12495f291eef37605974763ccda07e8062db6104a71c86e"
+    },
+    {
+      "module": "SparseLowerTail.Section03.ReductionSlack",
+      "sha256": "b24931fc8cfd69671e9c55016daf2d26c420b87b0cd773157814040dbba72496"
+    },
+    {
+      "module": "SparseLowerTail.Section03.RevealedCutConcentration",
+      "sha256": "71016aa6338b4ee61b48c6a7b9bce240a4390a41f2e8f7d1ac1629229cb6541a"
+    },
+    {
+      "module": "SparseLowerTail.Section03.RevealedCutMatrices",
+      "sha256": "423afd068169b8299ef6eaea91ef0ce5c4b886f5e186225c9e5c8f665f8e4b1a"
+    },
+    {
+      "module": "SparseLowerTail.Section03.RevealedEdgeTail",
+      "sha256": "12fd518481113aed0c35c53fc33a413d77eff1ccd0c88304ad8c0ae643529595"
+    },
+    {
+      "module": "SparseLowerTail.Section03.RevealedGraphon",
+      "sha256": "9e51d7aa56f7d039b246781c5a54cfc5112b118bd132dbe93ecc18c4a57fe8ac"
+    }
+  ],
+  "source_manifest_sha256": "e24c0fc3036412022ea6f27d87e9fc8c1687b7a991befb1285862605297e13d0",
+  "manuscript_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+}

@@ -1,0 +1,39 @@
+import SparseLowerTail.Section03.ConditionedStructureFinite
+import SparseLowerTail.Section03.ReductionSlack
+
+#print axioms SparseLowerTail.Section03.graphEdgeCoordinate_exists_ordered_pair
+#print axioms SparseLowerTail.Section03.graphEdgeEndpoints_ordered
+#print axioms SparseLowerTail.Section03.graphEdgeEndpoints_pair
+#print axioms SparseLowerTail.Section03.graphEdgeEndpoints_injective
+#print axioms SparseLowerTail.Section03.unrevealedEdgeEndpoints_injective
+#print axioms SparseLowerTail.Section03.unrevealedEdgeEndpoints_ordered
+#print axioms SparseLowerTail.Section03.graphEdgeEndpoints_eq_of_ordered_pair
+#print axioms SparseLowerTail.Section03.symmetricEdgeMatrix_graphEdgeEndpoints_ordered
+#print axioms SparseLowerTail.Section03.symmetricEdgeMatrix_graphEdgeEndpoints
+#print axioms SparseLowerTail.Section03.symmetricEdgeMatrix_restrict
+#print axioms SparseLowerTail.Section03.graphEdgeMatrix_extend_sub
+#print axioms SparseLowerTail.Section03.symmetricEdgeMatrix_cutNorm_le
+#print axioms SparseLowerTail.Section03.graphEdgeMatrix_div
+#print axioms SparseLowerTail.Section03.matrixRectangleSum_add
+#print axioms SparseLowerTail.Section03.finiteMatrixCutNorm_add_le
+#print axioms SparseLowerTail.Section03.finiteMatrixCutNorm_div_le
+#print axioms SparseLowerTail.Section03.stepKernel_close_of_matrix_and_graphon
+#print axioms SparseLowerTail.Section03.triangle_unrevealed_product_cut_bound
+#print axioms SparseLowerTail.Section03.triangle_conditioned_cut_error_probability
+#print axioms SparseLowerTail.Section03.unrevealed_cut_matrix_eq
+#print axioms SparseLowerTail.Section03.revealedFamilyEvent_cut_eq
+#print axioms SparseLowerTail.Section03.erasedBooleanCoordinates_cut_difference
+#print axioms SparseLowerTail.Section03.normalized_graph_matrix_close
+#print axioms SparseLowerTail.Section03.revealedEdgeCount_monotone
+#print axioms SparseLowerTail.Section03.revealedEdgeCount_product_exp_moment
+#print axioms SparseLowerTail.Section03.revealedEdgeCount_product_tail
+#print axioms SparseLowerTail.Section03.revealedEdgeCount_conditioned_tail
+#print axioms SparseLowerTail.Section03.normalizedEdgeWeight_bounds
+#print axioms SparseLowerTail.Section03.normalizedEdgeStepGraphon_cost_le
+#print axioms SparseLowerTail.Section03.normalizedEdgeStepGraphon_triangle_le
+#print axioms SparseLowerTail.Section03.triangleConditionalGraphon_cost_le
+#print axioms SparseLowerTail.Section03.triangle_good_events_stability
+#print axioms SparseLowerTail.Section03.patternLift_mass
+#print axioms SparseLowerTail.Section03.triangle_far_probability_le
+#print axioms SparseLowerTail.Section03.triangle_far_probability_estimate
+#print axioms SparseLowerTail.Section03.exists_reduction_cube_slack

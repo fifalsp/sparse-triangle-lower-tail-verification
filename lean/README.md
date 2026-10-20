@@ -1573,3 +1573,24 @@ to a bound under the conditioned law in terms of its mean dependence
 entropy. The constants give the manuscript's 384ω/ε² estimate. Its six
 public theorem audits are in the [transfer check](data/revealed-transfer-check.json).
 The cut-event specialization to matrix concentration remains.
+
+
+### 2026-10-20 — Finite conditioned-structure probability bound
+
+The actual matrix cut-error estimate and the revealed-edge exponential tail
+are now proved. Ordered endpoint sums equal the unordered-edge adjacency
+matrices, including deletion of the revealed edges. The actual conditional
+mean graphon satisfies the required triangle and entropy bounds.
+
+On the four good events, the normalized adjacency kernel is within ε of
+an actual minimizer after a genuine measure-preserving bijection. In the
+original conditioned edge space, the probability of failure is at most
+β/ζ + ω/γ + 384ω/ε² + exp(−αpn²), under the displayed finite parameter
+conditions. An explicit choice of the relaxed cube-root target also
+satisfies both required slack bounds.
+
+All 36 new public theorem audits are recorded in the
+[finite structure check](data/conditioned-structure-finite-check.json).
+The remaining tolerance choices and eventual scalar bounds must still be
+combined to conclude asymptotic part (b); rounding and manuscript review
+also remain.

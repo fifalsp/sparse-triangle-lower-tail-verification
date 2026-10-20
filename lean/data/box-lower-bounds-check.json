@@ -1,0 +1,70 @@
+{
+  "checked_at_utc": "2026-10-20T10:02:04.219975+00:00",
+  "source_parent_commit": "2b618953b647f3541c43dc6409e7baf13fa15300",
+  "paper_label": "lem:comp-box",
+  "scope": "All four box lower bounds L0/L1/L2/L3 for an actual function on any convex subset of R^3, with its genuine gradient and symmetric Hessian. Proves first and second chain rules on the center-to-point segment, exact mean-value and second-order Taylor formulas by Rolle, the radius bounds for all linear/diagonal/off-diagonal terms, the exact quadratic supporting-plane identity, and minimization of each affine coordinate at its two endpoints. Includes the three unconditional bounds for the L3=-infinity branch. The L3 input is exactly the manuscript uniform numerical support-expression inequality; no function lower bound or own Taylor conclusion is assumed.",
+  "sources": [
+    {
+      "path": "SparseLowerTail/Numerics/BoxLowerBounds.lean",
+      "sha256": "9536531c5d5baef9c0b7ac296ea01246531d41df413ae93d59117ffb19b4420e"
+    }
+  ],
+  "explicit_inputs": [],
+  "checks": [
+    {
+      "command": "LEAN_NUM_THREADS=1 lake build SparseLowerTail",
+      "exit_code": 0,
+      "output": "Build completed successfully (3706 jobs). Existing cached linter warnings were replayed."
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean tools/audit_box_lower_bounds.lean",
+      "exit_code": 0,
+      "output": "'SparseLowerTail.Numerics.segment_taylor_exact' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Numerics.segment_mean_exact' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Numerics.abs_le_intervalAbs' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Numerics.linear_radius_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Numerics.diagonal_radius_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Numerics.dot3_radius_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Numerics.qform3_radius_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Numerics.qform3_support_identity' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Numerics.affine_endpoint_min' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Numerics.qform3_box_support_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Numerics.qform3_nonneg_of_positive' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Numerics.box_three_lower_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Numerics.box_lower_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Numerics.linearForm3_apply' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Numerics.box_segment_first' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Numerics.box_segment_second' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Numerics.box_lower_bounds_on_box' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Numerics.box_three_lower_bounds_on_box' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean tools/audit_manuscript_reviews.lean",
+      "exit_code": 0,
+      "output": "'SparseLowerTail.Section07.smallTarget_support' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.smallTarget_data' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.smallTarget_branch_minimizer' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.smallTarget_value_eq_balancedValue' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section07.smallTarget_optimizer_data' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section06.branchClassification_open' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section06.branchClassification_region_open' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section06.branchClassification_seed' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.smallTarget_lt_threshold' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.minimizer_multiplier_eq_three_penalty' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section07.penalized_quadratic_nonpos_integrable' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section07.penalized_quadratic_nonpos_L2' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.penalized_minimizer_data' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section06.branchClassification_relabel_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean Audit.lean",
+      "exit_code": 0,
+      "output": "Axiom audit passed: 24584 project declarations, 18023 theorems; only propext, Classical.choice, Quot.sound allowed.\n"
+    },
+    {
+      "command": "python3 tools/check_lean_map.py",
+      "exit_code": 0,
+      "output": "Proof-map links passed: 110 labels, 823 Lean declarations."
+    }
+  ],
+  "audited_public_theorems": 18,
+  "audited_review_theorems": 14,
+  "manuscript_reviews": {
+    "prop:smalldata": "Current supporting range, scalar branch penalty, KP26 transfer, all-minimizer active triangle/cost/multiplier/edge data and supporting global penalty agree with the five mapped theorems; KP26 remains the stated external input.",
+    "lem:order": "The current strict-penalty-gap argument is proved by smallTarget_lt_threshold using the actual penalized tie, strict constant minimum and balanced classification, without numerical brackets.",
+    "lem:penalized": "Both current conclusions are checked: the multiplier from a genuine two-sided exponential tilt and the quadratic inequality from vertex variations, centered clipping and dominated convergence for all L1 tests, hence every L2 test.",
+    "cor:open": "The current compactness, minimizer-limit and local rigidity argument is checked; the theorem supplies an actual open target interval and exact balanced/relabeling classification.",
+    "cor:seed": "The same left-limit compactness argument supplies the left neighborhood. The existing internal CriticalClassification hypothesis is retained; this review does not discharge it."
+  },
+  "root_project_modules": 531,
+  "root_project_declarations": 24584,
+  "root_project_theorems": 18023,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "base_source_manifest": "cholesky-check.json",
+  "source_manifest_changes": [
+    {
+      "module": "SparseLowerTail",
+      "sha256": "82a941497a766f5f4d6f47b8a2cb8ce7d7cf773ac925de401f59a003b34b3d06"
+    },
+    {
+      "module": "SparseLowerTail.Numerics.BoxLowerBounds",
+      "sha256": "9536531c5d5baef9c0b7ac296ea01246531d41df413ae93d59117ffb19b4420e"
+    }
+  ],
+  "source_manifest_sha256": "426f4f78b45c21017f845447adeb4a348dbac75add5ad90f997409846fc29315",
+  "manuscript_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+}

@@ -1,0 +1,20 @@
+import SparseLowerTail.Numerics.BoxLowerBounds
+
+#print axioms SparseLowerTail.Numerics.segment_taylor_exact
+#print axioms SparseLowerTail.Numerics.segment_mean_exact
+#print axioms SparseLowerTail.Numerics.abs_le_intervalAbs
+#print axioms SparseLowerTail.Numerics.linear_radius_lower
+#print axioms SparseLowerTail.Numerics.diagonal_radius_lower
+#print axioms SparseLowerTail.Numerics.dot3_radius_lower
+#print axioms SparseLowerTail.Numerics.qform3_radius_lower
+#print axioms SparseLowerTail.Numerics.qform3_support_identity
+#print axioms SparseLowerTail.Numerics.affine_endpoint_min
+#print axioms SparseLowerTail.Numerics.qform3_box_support_lower
+#print axioms SparseLowerTail.Numerics.qform3_nonneg_of_positive
+#print axioms SparseLowerTail.Numerics.box_three_lower_bounds
+#print axioms SparseLowerTail.Numerics.box_lower_bounds
+#print axioms SparseLowerTail.Numerics.linearForm3_apply
+#print axioms SparseLowerTail.Numerics.box_segment_first
+#print axioms SparseLowerTail.Numerics.box_segment_second
+#print axioms SparseLowerTail.Numerics.box_lower_bounds_on_box
+#print axioms SparseLowerTail.Numerics.box_three_lower_bounds_on_box

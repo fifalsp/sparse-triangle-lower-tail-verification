@@ -257,10 +257,15 @@
       ],
       "baseline": {
         "environment": "proposition",
-        "statement": "Let $r\\in(0,r_-]$. Then $z_r\\in(0,z_c]$, $\\mu_r\\ge3\\gamma_c$ and $V(r)=F(B_r)$. Every minimizer $U$ at $r$ satisfies $t(U)=r^3$, $e(U)=m_r$, $F(U)=F(B_r)$ and $\\mu_U=\\mu_r$. Moreover, every such $U$ minimizes $F+\\frac{\\mu_r}3t$ over all graphons.",
         "statement_sha256": "3bbaf044dd4cbf3ba0c7581bd03811c34e5b34fa772bfa2f7db172de926caf34",
-        "proof_sha256": "6fffe80bf48870faeb2359781a99dd2800c92b9795329ef890387c65b706cd47",
-        "source_line": 4856
+        "proof_sha256": "766954b6a54a5e82d77316b41498f42a7d018faec73980e37160c5c55ae9380a",
+        "source_line": 4766,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      },
+      "latest_manuscript_review": {
+        "checked_at_utc": "2026-10-20T10:02:04.219975+00:00",
+        "note": "Current supporting range, scalar branch penalty, KP26 transfer, all-minimizer active triangle/cost/multiplier/edge data and supporting global penalty agree with the five mapped theorems; KP26 remains the stated external input.",
+        "audit_record": "data/box-lower-bounds-check.json"
       }
     },
     {
@@ -580,10 +585,15 @@
       ],
       "baseline": {
         "environment": "corollary",
-        "statement": "Let $r_0\\in(0,r_*)$ be such that the minimizers at $r_0$ are exactly the relabelings of $B_{r_0}$. Then there is $\\delta>0$ with $(r_0-\\delta,r_0+\\delta)\\subset(0,r_*)$ such that for every $r\\in(r_0-\\delta,r_0+\\delta)$, the minimizers at $r$ are exactly the relabelings of $B_r$.",
         "statement_sha256": "b5f0c21b8021a93aef84fd7fd2cae6a0dea2b6ea3a227c434205af271028b4af",
-        "proof_sha256": "8505b4ea9ca95ffb779d7dc8d9ec9a8bf775ddc804a227d4f26c382886efe2a1",
-        "source_line": 4514
+        "proof_sha256": null,
+        "source_line": 4435,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      },
+      "latest_manuscript_review": {
+        "checked_at_utc": "2026-10-20T10:02:04.219975+00:00",
+        "note": "The current compactness, minimizer-limit and local rigidity argument is checked; the theorem supplies an actual open target interval and exact balanced/relabeling classification.",
+        "audit_record": "data/box-lower-bounds-check.json"
       }
     },
     {
@@ -606,10 +616,15 @@
       ],
       "baseline": {
         "environment": "corollary",
-        "statement": "There is $\\delta>0$ such that for every $r\\in(r_*-\\delta,r_*)$, the minimizers at $r$ are exactly the relabelings of $B_r$.",
         "statement_sha256": "a4fb4adf3c5cd3fbb1dca2552acce082ae439eb47607880dd5c2a43915f9da35",
-        "proof_sha256": "1e29bab485a09b735bd3346250e81933ae3b68e5fcd5388fcd64397e5de36f97",
-        "source_line": 4532
+        "proof_sha256": "30662ad47f0354485bde2036dd0157a0c6281a4c232bb768f45dc3b4481dfb2c",
+        "source_line": 4443,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      },
+      "latest_manuscript_review": {
+        "checked_at_utc": "2026-10-20T10:02:04.219975+00:00",
+        "note": "The same left-limit compactness argument supplies the left neighborhood. The existing internal CriticalClassification hypothesis is retained; this review does not discharge it.",
+        "audit_record": "data/box-lower-bounds-check.json"
       }
     },
     {
@@ -1910,10 +1925,10 @@
       "paper_label": "lem:order",
       "baseline": {
         "environment": "lemma",
-        "statement": "$r_-<r_*$.",
         "statement_sha256": "0b1e2f7b8ccefacc5e0f7209753388508ef82d941d1009fe83aa3ea2e04c14b6",
-        "proof_sha256": "cea65b072ad87c01f20767f70fdba6a4d1bda0094039f66d22c1c0410a491233",
-        "source_line": 4778
+        "proof_sha256": "c658f06d8387181413ad7779249eb7f684a925cfc50ac68a54761d71b76b1b9e",
+        "source_line": 4702,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
       },
       "status": "proved",
       "checked_scope": "The strict ordering r_-<r_* follows from the penalized tie and proved balanced classification, without numerical brackets.",
@@ -1923,16 +1938,21 @@
       "lean_declarations": [
         "SparseLowerTail.Section07.smallTarget_lt_threshold"
       ],
-      "explicit_inputs": []
+      "explicit_inputs": [],
+      "latest_manuscript_review": {
+        "checked_at_utc": "2026-10-20T10:02:04.219975+00:00",
+        "note": "The current strict-penalty-gap argument is proved by smallTarget_lt_threshold using the actual penalized tie, strict constant minimum and balanced classification, without numerical brackets.",
+        "audit_record": "data/box-lower-bounds-check.json"
+      }
     },
     {
       "paper_label": "lem:penalized",
       "baseline": {
         "environment": "lemma",
-        "statement": "Let $U$ be a minimizer at $r\\in(0,1)$, and let $\\gamma>0$. Suppose that $F(U)+\\gamma t(U)\\le F(W)+\\gamma t(W)$ for every graphon $W$. Then $\\mu_U=3\\gamma$, and $\\langle f,T_Uf\\rangle\\le0$ for every $f\\in L^2([0,1])$ with $\\int_0^1f=0$.",
         "statement_sha256": "be81d54fb7b867f5a26302e960f968d342cb82f1ba6980723e0458af2052c57e",
-        "proof_sha256": "cb25cc93ebe6a97629b052299e5b31fb39915d7dea815c2f42dbc9e59636b172",
-        "source_line": 4811
+        "proof_sha256": "52addb71af03c8a34ac2c4c0ce5b42d966f8c682f06f3a962238b39790642cc9",
+        "source_line": 4731,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
       },
       "status": "proved_relative_classical",
       "checked_scope": "Actual first and second vertex variations give μ=3γ and nonpositivity of the quadratic form for every mean-zero L² function. The extension uses centered truncations and dominated convergence.",
@@ -1948,7 +1968,12 @@
       ],
       "explicit_inputs": [
         "classical:inverse-transform-sampling"
-      ]
+      ],
+      "latest_manuscript_review": {
+        "checked_at_utc": "2026-10-20T10:02:04.219975+00:00",
+        "note": "Both current conclusions are checked: the multiplier from a genuine two-sided exponential tilt and the quadratic inequality from vertex variations, centered clipping and dominated convergence for all L1 tests, hence every L2 test.",
+        "audit_record": "data/box-lower-bounds-check.json"
+      }
     },
     {
       "paper_label": "thm:rigidity",
@@ -3264,6 +3289,44 @@
         "statement_sha256": "616153b3bf04454fb096ad7c1367a77083972e4b6433106f8528e7c2b427dcfe",
         "proof_sha256": "e9e5223b3243388f9d827ac2f025a1dc2cb91e07ced9c655b4c904d5a66026be",
         "source_line": 5705,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      }
+    },
+    {
+      "paper_label": "lem:comp-box",
+      "status": "proved",
+      "checked_scope": "All four box lower bounds L0/L1/L2/L3 for an actual function on any convex subset of R^3, with its genuine gradient and symmetric Hessian. Proves first and second chain rules on the center-to-point segment, exact mean-value and second-order Taylor formulas by Rolle, the radius bounds for all linear/diagonal/off-diagonal terms, the exact quadratic supporting-plane identity, and minimization of each affine coordinate at its two endpoints. Includes the three unconditional bounds for the L3=-infinity branch. The L3 input is exactly the manuscript uniform numerical support-expression inequality; no function lower bound or own Taylor conclusion is assumed.",
+      "lean_files": [
+        "SparseLowerTail/Numerics/BoxLowerBounds.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Numerics.segment_taylor_exact",
+        "SparseLowerTail.Numerics.segment_mean_exact",
+        "SparseLowerTail.Numerics.abs_le_intervalAbs",
+        "SparseLowerTail.Numerics.linear_radius_lower",
+        "SparseLowerTail.Numerics.diagonal_radius_lower",
+        "SparseLowerTail.Numerics.dot3_radius_lower",
+        "SparseLowerTail.Numerics.qform3_radius_lower",
+        "SparseLowerTail.Numerics.qform3_support_identity",
+        "SparseLowerTail.Numerics.affine_endpoint_min",
+        "SparseLowerTail.Numerics.qform3_box_support_lower",
+        "SparseLowerTail.Numerics.qform3_nonneg_of_positive",
+        "SparseLowerTail.Numerics.box_three_lower_bounds",
+        "SparseLowerTail.Numerics.box_lower_bounds",
+        "SparseLowerTail.Numerics.linearForm3_apply",
+        "SparseLowerTail.Numerics.box_segment_first",
+        "SparseLowerTail.Numerics.box_segment_second",
+        "SparseLowerTail.Numerics.box_lower_bounds_on_box",
+        "SparseLowerTail.Numerics.box_three_lower_bounds_on_box"
+      ],
+      "explicit_inputs": [],
+      "remaining_application": [],
+      "verification_record": "data/box-lower-bounds-check.json",
+      "baseline": {
+        "environment": "lemma",
+        "statement_sha256": "2f848ec44caf26a418eb0e57509c5ed195f8ce658d436750f3f2043e808851ba",
+        "proof_sha256": "e3c2c4d2f4fde01ca593e670110b99bc9f3fe02070ef35b31c67c616bcdbe951",
+        "source_line": 5680,
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
       }
     }

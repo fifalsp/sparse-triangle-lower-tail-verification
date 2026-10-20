@@ -1666,3 +1666,15 @@ LDL checker are proved; every accepted box certifies every matrix inside it.
 Kernel-evaluated examples accept the identity and reject a zero pivot and
 an indefinite matrix. The [check record](data/cholesky-check.json) contains
 15 public audits and the full root audit of 17,994 theorems.
+
+
+### 2026-10-20 — Box lower bounds
+
+`lem:comp-box` is checked for an actual function on a convex subset of ℝ³.
+The first and second segment chain rules give genuine Taylor remainders;
+component bounds give L₁/L₂, and an exact quadratic supporting-plane identity
+plus endpoint minima gives L₃. The three unconditional bounds also apply
+when the Hessian enclosure is not positive definite. The
+[check record](data/box-lower-bounds-check.json) includes 18 public audits,
+14 audits for five manuscript reviews, and the full root audit of 18,023 theorems.
+The seed corollary retains its recorded internal critical-classification input.

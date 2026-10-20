@@ -1,0 +1,18 @@
+import SparseLowerTail.Section07.SmallData
+import SparseLowerTail.Section07.PenalizedQuadratic
+import SparseLowerTail.Section06.Stability
+
+#print axioms SparseLowerTail.Section07.smallTarget_support
+#print axioms SparseLowerTail.Section07.smallTarget_data
+#print axioms SparseLowerTail.Section07.smallTarget_branch_minimizer
+#print axioms SparseLowerTail.Section07.smallTarget_value_eq_balancedValue
+#print axioms SparseLowerTail.Section07.smallTarget_optimizer_data
+#print axioms SparseLowerTail.Section06.branchClassification_open
+#print axioms SparseLowerTail.Section06.branchClassification_region_open
+#print axioms SparseLowerTail.Section06.branchClassification_seed
+#print axioms SparseLowerTail.Section07.smallTarget_lt_threshold
+#print axioms SparseLowerTail.Section07.minimizer_multiplier_eq_three_penalty
+#print axioms SparseLowerTail.Section07.penalized_quadratic_nonpos_integrable
+#print axioms SparseLowerTail.Section07.penalized_quadratic_nonpos_L2
+#print axioms SparseLowerTail.Section07.penalized_minimizer_data
+#print axioms SparseLowerTail.Section06.branchClassification_relabel_iff

@@ -1,0 +1,8 @@
+import SparseLowerTail.Section03.RevealedEntropyTransfer
+
+#print axioms SparseLowerTail.Section03.productMarginals_eq_productBernoulliMass
+#print axioms SparseLowerTail.Section03.revealedFamilyEvent_mass
+#print axioms SparseLowerTail.Section03.unrevealedConditionalLaw_event_exp_bound
+#print axioms SparseLowerTail.Section03.revealed_event_exp_bound
+#print axioms SparseLowerTail.Section03.revealedFamilyEvent_exp_bound
+#print axioms SparseLowerTail.Section03.revealedFamilyEvent_cut_transfer

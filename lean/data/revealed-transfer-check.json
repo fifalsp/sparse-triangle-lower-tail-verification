@@ -1,0 +1,55 @@
+{
+  "checked_at_utc": "2026-10-20T08:13:23.918145+00:00",
+  "source_parent_commit": "a3a160bf3abd6e341854f51b8981d3f525782908",
+  "paper_label": "thm:reduction",
+  "scope": "Supporting part (b): exact event disintegration for the actual revealed-pattern law, identification of its product marginals with a Bernoulli product, exponential entropy transfer and the constant 384 in the cut-error estimate. The product matrix-concentration specialization and full conditioned-structure conclusion remain.",
+  "sources": [
+    {
+      "path": "SparseLowerTail/Section03/RevealedEntropyTransfer.lean",
+      "sha256": "a418efabf619cec076d2ec0d583ffc5a81baf97875fcce072e4f31348eb3bab0"
+    }
+  ],
+  "checks": [
+    {
+      "command": "LEAN_NUM_THREADS=1 lake build SparseLowerTail",
+      "exit_code": 0,
+      "output": "Built RevealedEntropyTransfer (2.0s) and SparseLowerTail (2.5s). Build completed successfully (3643 jobs). Existing cached linter warnings were replayed."
+    },
+    {
+      "command": "lake env lean tools/audit_revealed_transfer.lean",
+      "exit_code": 0,
+      "output": "'SparseLowerTail.Section03.productMarginals_eq_productBernoulliMass' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.revealedFamilyEvent_mass' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.unrevealedConditionalLaw_event_exp_bound' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.revealed_event_exp_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.revealedFamilyEvent_exp_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.revealedFamilyEvent_cut_transfer' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean Audit.lean",
+      "exit_code": 0,
+      "output": "Axiom audit passed: 24164 project declarations, 17679 theorems; only propext, Classical.choice, Quot.sound allowed.\n"
+    },
+    {
+      "command": "python3 tools/check_lean_map.py",
+      "exit_code": 0,
+      "output": "Proof-map links passed: 100 labels, 657 Lean declarations.\n"
+    }
+  ],
+  "audited_public_theorems": 6,
+  "root_project_modules": 501,
+  "root_project_declarations": 24164,
+  "root_project_theorems": 17679,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "base_source_manifest": "revealed-laws-check.json",
+  "source_manifest_changes": [
+    {
+      "module": "SparseLowerTail",
+      "sha256": "82796bba4c1461e747b7d877d5d43e8341fb67a7526e2f5fd9085713aebf497c"
+    },
+    {
+      "module": "SparseLowerTail.Section03.RevealedEntropyTransfer",
+      "sha256": "a418efabf619cec076d2ec0d583ffc5a81baf97875fcce072e4f31348eb3bab0"
+    }
+  ],
+  "source_manifest_sha256": "6fb71532e689599ba5ac00e3b12ce918c5d87519851311f93b582846661ef90a"
+}

@@ -1564,3 +1564,12 @@ conditions.
 All 40 public theorems are audited in the
 [revealed-law check](data/revealed-laws-check.json). The full conditioned
 cut-distance conclusion, parameter-limit choices, and rounding remain.
+
+
+`RevealedEntropyTransfer.lean` additionally proves the exact disintegration
+of events in the original edge space over the revealed-pattern law. An
+exponential event bound under each actual product marginal law transfers
+to a bound under the conditioned law in terms of its mean dependence
+entropy. The constants give the manuscript's 384ω/ε² estimate. Its six
+public theorem audits are in the [transfer check](data/revealed-transfer-check.json).
+The cut-event specialization to matrix concentration remains.

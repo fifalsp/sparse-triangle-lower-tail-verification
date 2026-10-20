@@ -168,3 +168,4 @@ import SparseLowerTail.Section03.DiscreteComparison
 import SparseLowerTail.Section03.LowerTailRate
 import SparseLowerTail.Section03.ConditionalCostBounds
 import SparseLowerTail.Section03.RevealedCostConcentration
+import SparseLowerTail.Section03.RevealedEntropyTransfer

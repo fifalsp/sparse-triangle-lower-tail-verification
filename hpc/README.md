@@ -9,43 +9,39 @@ all 4,929 build tasks and its full declaration audit passed.
 
 F4 completed after 9:06:47 on 8 cores, using about 35.4 GiB maximum RSS.
 [F4 completion record](f4-completion-20261020.json).
-The older Yale F1 and cover-12 jobs reached their 64 GiB memory limits;
-both have queued recovery with 192 GiB.
-[Failure and recovery record](yale-f1-failure-20261020.json).
-The ABB job reached its ten-hour limit after 4,528 of 7,459 build tasks.
-Its saved checkpoint is available to recovery. [ABB record](abb-timeout-20261020.json).
-The exterior job reached its ten-hour limit after 11,755 of 12,872 build tasks.
-Its 2.7 GiB checkpoint is saved. [Exterior record](exterior-timeout-20261020.json).
-Cover 0 reached its ten-hour limit after 1,681 of 1,873 build tasks. Its
-510 MiB checkpoint is saved. [Cover-0 record](cover0-timeout-20261020.json).
-Recovery array `30068465` is waiting for Yale’s maintenance reservation to
-clear; combined assembly `30068466` waits on that array. Completed F4 is
-validated and skipped by recovery.
+The saved Yale checkpoints contain partial ABB, exterior and cover-0 builds.
+All **88 transferred archive hashes match** on Delta. The encrypted Globus
+transfer copied 89 files (28.24 GB) in 2 minutes 12 seconds.
 
-Delta job **23029964** replaces job `23029368`, which reached its setup
-timeout while installing Lean on project storage. The replacement installs
-Lean on node-local disk and retains sources and build artifacts in project
-storage. [Recovery record](delta-recovery-20261019.json).
-The [Delta runner](delta-replay.sbatch) checks the full F1 apex theorem with
-four single-thread Lean workers. Its allocation is 16 CPUs, 30,000 MiB and
-5.5 hours, capped at 88 CPU core-hours on `biah-delta-cpu`; 95 core-hours
-were available before submission. The replacement remains pending for priority.
+All remaining stages are now submitted to `biah-delta-cpu`:
 
-The approved Delta allocation now shows **500 CPU hours** in ACCESS. Current
-source family jobs **23046543 (ABB)** and **23046544 (exterior)** are eligible
-without user holds and are waiting for priority. Their combined cap is 360
-allocation hours; including the two earlier jobs gives 454 hours. The two
-superseded held copies were cancelled before starting.
-[Deployment record](delta-family-deployment-20261020.json).
+| Stage | Delta job | Time cap | Maximum allocation hours |
+|---|---:|---:|---:|
+| Existing F1 replay | 23029964 | 5.5 hours | 88 |
+| Earlier author-root check | 23040802 | 2 hours | 6 |
+| ABB, resuming Yale cache | 23047530 | 6 hours | 90 |
+| Exterior, resuming Yale cache | 23047539 | 6 hours | 90 |
+| Nonapex 0, resuming Yale cache | 23047540 | 4 hours | 24 |
+| Nonapex 12 | 23047541 | 12 hours | 72 |
+| Full binary64 ABB padding and current-source combined integration | 23047560 | 4 hours | 120 |
 
-A full F1 laptop fallback started at 14:09 UTC with one low-priority worker,
-one Lean thread and an 8 GiB cap. Its live status is
-`results/laptop-f1-full-20261020/status.json`. This run is still in progress.
+The accepted caps total **490 of the approved 500 hours**. Regional jobs are
+pending scheduler priority. Final integration has normal `afterok` dependencies
+on F1 and the four migrated regional stages. There are no user holds or start-time
+estimates. The unstarted Yale recovery/assembly and older Delta family copies
+were cancelled after migration checks; no running job was cancelled.
+[Deployment, hashes and accepted resources](delta-migration-plan-20261020.json).
 
-The current assembler imports the project root alongside all regional
-certificates, so the combined build includes the latest author proofs.
-[Seven runner checks passed](assembly-root-check-20261020.json). Queued job
-`30068466` uses the earlier `98cbcb3` snapshot; latest-source integration follows.
+Delta was busy at the latest check: 14,797 CPU cores allocated, 2,227 idle
+cores on partially occupied nodes, and 128 reserved idle cores.
+[Queue diagnostic](delta-queue-diagnostic-20261020.json).
+
+The full F1 laptop fallback continues with one low-priority worker, one Lean
+thread and an 8 GiB cap. Its live status is
+`results/laptop-f1-full-20261020/status.json`.
+
+Final integration includes the latest author-proof root, all regional
+certificates, the exact binary64 ABB neighborhood, and the unchanged axiom audit.
 
 ## Yale setup and deployment history
 
@@ -493,9 +489,9 @@ Submission is not a successful proof. The newer ABB live snapshot is about
 3.9 GiB and reported directory changes during capture; Lake must revalidate it.
 
 
-### Latest author-proof root on Delta — October 20
+### Earlier author-proof root on Delta — October 20
 
-Job **23040802** checks source **8473e61**: the current `SparseLowerTail`
+Job **23040802** checks source **8473e61**: the then-current `SparseLowerTail`
 root and its full axiom audit. Both uploaded hashes were checked before
 submission. It requests one CPU, 6000 MiB and two hours, with a maximum
 memory-weighted charge of six allocation hours. Together with the existing

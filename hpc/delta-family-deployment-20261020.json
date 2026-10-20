@@ -32,16 +32,16 @@
       "job_id": 23046543,
       "kind": "abb",
       "name": "triangle-abb",
-      "observed_state": "PENDING",
-      "reason": "Priority",
+      "observed_state": "CANCELLED",
+      "reason": "Replaced while PENDING by checkpoint-resuming migration jobs.",
       "user_hold": false
     },
     {
       "job_id": 23046544,
       "kind": "exterior",
       "name": "triangle-exterior",
-      "observed_state": "PENDING",
-      "reason": "Priority",
+      "observed_state": "CANCELLED",
+      "reason": "Replaced while PENDING by checkpoint-resuming migration jobs.",
       "user_hold": false
     }
   ],
@@ -69,7 +69,7 @@
       "max_allocation_hours": 6
     }
   ],
-  "verification_status": "Submitted without holds and eligible; pending scheduler priority, with no start estimate. The full padded ABB replay and current-source combined integration remain subsequent obligations.",
+  "verification_status": "Historical unstarted family copies 23046543/23046544 were replaced by checkpoint-resuming jobs 23047530/23047539 after the Yale archive transfer passed all SHA256 checks.",
   "remote_script": "delta-family-approved.sbatch",
   "superseded_held_jobs": [
     {
@@ -106,5 +106,6 @@
     "lean_memory_cap_mib": 8192,
     "time_limit_hours": 24,
     "verification_status": "Running; require full build, unchanged axiom audit and unchanged source manifest before success."
-  }
+  },
+  "superseded_by": "delta-migration-plan-20261020.json"
 }

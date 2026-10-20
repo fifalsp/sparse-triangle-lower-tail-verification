@@ -1,0 +1,59 @@
+{
+  "checked_at_utc": "2026-10-20T15:16:31.188550+00:00",
+  "source": "Authenticated user Google Chrome Delta shell: sinfo, scontrol show job, sprio",
+  "cpu_partition": {
+    "allocated_cores": 14797,
+    "idle_cores_on_partially_allocated_nodes": 2227,
+    "reserved_idle_cores": 128,
+    "booting_cores": 128,
+    "down_cores": 128,
+    "partially_allocated_nodes": 82,
+    "fully_allocated_nodes": 51
+  },
+  "jobs": [
+    {
+      "job_id": 23029964,
+      "state": "PENDING",
+      "reason": "Priority",
+      "start_time": "Unknown",
+      "priority": 611,
+      "cpus": 16,
+      "memory_mib": 30000,
+      "walltime": "05:30:00"
+    },
+    {
+      "job_id": 23040802,
+      "state": "PENDING",
+      "reason": "Priority",
+      "start_time": "Unknown",
+      "priority": 479,
+      "cpus": 1,
+      "memory_mib": 6000,
+      "walltime": "02:00:00"
+    },
+    {
+      "job_id": 23046543,
+      "state": "PENDING",
+      "reason": "Priority",
+      "start_time": "Unknown",
+      "priority": 387,
+      "cpus": 4,
+      "memory_mib": 30000,
+      "walltime": "12:00:00"
+    },
+    {
+      "job_id": 23046544,
+      "state": "PENDING",
+      "reason": "Priority",
+      "start_time": "Unknown",
+      "priority": 387,
+      "cpus": 4,
+      "memory_mib": 30000,
+      "walltime": "12:00:00"
+    }
+  ],
+  "account": "biah-delta-cpu",
+  "user_holds": false,
+  "interpretation": "Delta is occupied. Jobs report scheduler Priority; these observations do not identify a start time or prove idle CPU fragments satisfy memory and scheduling reservations.",
+  "official_scheduler_reference": "https://slurm.schedmd.com/sched_config.html"
+}

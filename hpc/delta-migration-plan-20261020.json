@@ -1,22 +1,98 @@
 {
-  "status": "Prepared; waiting for transfer authentication before submission",
+  "status": "All remaining Delta stages submitted; regional jobs pending scheduler priority and final integration pending afterok dependencies",
   "account": "biah-delta-cpu",
   "approved_pool_hours": 500,
   "yale_staging_directory": "/nfs/roberts/project/pi_sl3363/sl3363/triangle-migration-20261020",
   "staging_reported_size": "27 GiB",
   "staging_method": "Hard links to the existing verification checkpoints and result archives; original files preserved.",
-  "transfer": "Globus direct transfer to Delta, pending account-creation approval. Terms accepted with explicit user approval; creating the new Yale Globus account requires separate approval after automatic review rejected that action.",
+  "transfer": "Approved Yale account creation, Globus web-app scopes, NCSA identity link and Delta data access completed in user Google Chrome. Encrypted direct transfer accepted; file-integrity verification enabled.",
   "planned_resources": [
-    {"stage": "existing F1", "job_id": 23029964, "maximum_allocation_hours": 88},
-    {"stage": "existing author-root check", "job_id": 23040802, "maximum_allocation_hours": 6},
-    {"stage": "ABB with saved Yale cache", "cpus": 4, "memory_mib": 30000, "wall_hours": 6, "workers": 3, "maximum_allocation_hours": 90},
-    {"stage": "exterior with saved Yale cache", "cpus": 4, "memory_mib": 30000, "wall_hours": 6, "workers": 3, "maximum_allocation_hours": 90},
-    {"stage": "nonapex 0 with saved Yale cache", "cpus": 2, "memory_mib": 12000, "wall_hours": 4, "workers": 1, "maximum_allocation_hours": 24},
-    {"stage": "nonapex 12", "cpus": 2, "memory_mib": 12000, "wall_hours": 12, "workers": 1, "maximum_allocation_hours": 72},
-    {"stage": "padded ABB and latest-source combined integration", "cpus": 4, "memory_mib": 60000, "wall_hours": 4, "workers": 1, "maximum_allocation_hours": 120}
+    {
+      "stage": "existing F1",
+      "job_id": 23029964,
+      "maximum_allocation_hours": 88,
+      "observed_billing_tres": 16000,
+      "observed_state": "PENDING",
+      "reason": "Priority",
+      "user_hold": false
+    },
+    {
+      "stage": "existing author-root check",
+      "job_id": 23040802,
+      "maximum_allocation_hours": 6,
+      "observed_billing_tres": 3000,
+      "observed_state": "PENDING",
+      "reason": "Priority",
+      "user_hold": false
+    },
+    {
+      "stage": "ABB with saved Yale cache",
+      "cpus": 4,
+      "memory_mib": 30000,
+      "wall_hours": 6,
+      "workers": 3,
+      "maximum_allocation_hours": 90,
+      "job_id": 23047530,
+      "observed_billing_tres": 15000,
+      "observed_state": "PENDING",
+      "reason": "Priority",
+      "user_hold": false
+    },
+    {
+      "stage": "exterior with saved Yale cache",
+      "cpus": 4,
+      "memory_mib": 30000,
+      "wall_hours": 6,
+      "workers": 3,
+      "maximum_allocation_hours": 90,
+      "job_id": 23047539,
+      "observed_billing_tres": 15000,
+      "observed_state": "PENDING",
+      "reason": "Priority",
+      "user_hold": false
+    },
+    {
+      "stage": "nonapex 0 with saved Yale cache",
+      "cpus": 2,
+      "memory_mib": 12000,
+      "wall_hours": 4,
+      "workers": 1,
+      "maximum_allocation_hours": 24,
+      "job_id": 23047540,
+      "observed_billing_tres": 6000,
+      "observed_state": "PENDING",
+      "reason": "Priority",
+      "user_hold": false
+    },
+    {
+      "stage": "nonapex 12",
+      "cpus": 2,
+      "memory_mib": 12000,
+      "wall_hours": 12,
+      "workers": 1,
+      "maximum_allocation_hours": 72,
+      "job_id": 23047541,
+      "observed_billing_tres": 6000,
+      "observed_state": "PENDING",
+      "reason": "Priority",
+      "user_hold": false
+    },
+    {
+      "stage": "padded ABB and latest-source combined integration",
+      "cpus": 4,
+      "memory_mib": 60000,
+      "wall_hours": 4,
+      "workers": 1,
+      "maximum_allocation_hours": 120,
+      "job_id": 23047560,
+      "observed_billing_tres": 30000,
+      "observed_state": "PENDING",
+      "reason": "Dependency",
+      "user_hold": false
+    }
   ],
   "maximum_total_allocation_hours": 490,
-  "resource_notes": "Delta bills the greater of CPU and memory-weighted requests. Verify ReqTRES after submission; revise the plan if scheduler billing differs. These are maximum caps, not runtime predictions.",
+  "resource_notes": "Accepted ReqTRES billing values were checked on all stages (1000 units per normalized allocation core). Their time caps total 490 hours, including the original F1 and older author-root checks. Caps are maximum charges, not runtime estimates.",
   "submission_policy": "After transfer validation, resume ABB/exterior with the saved caches and replace only their unstarted copies. Submit both remaining nonapex jobs in parallel and final integration with afterok dependencies. Cancel the unstarted Yale recovery and assembly only after the Delta replacement submissions are accepted. Never cancel running healthy work.",
   "verification_gates": [
     "Transfer SHA256SUMS match selected archives.",
@@ -28,8 +104,56 @@
     "shell_syntax": "passed",
     "python_compilation": "passed",
     "existing_result_gate_tests_passed": 7,
-    "transfer_checksum_cases_passed": ["valid", "missing", "changed", "duplicate"],
+    "transfer_checksum_cases_passed": [
+      "valid",
+      "missing",
+      "changed",
+      "duplicate"
+    ],
     "delta_profile_and_bounded_plan": "passed; exactly the package configuration plus one-thread memory limits"
   },
-  "full_lean_status": "No new full theorem claimed. Existing checked author root is unchanged; the quiet full F1 laptop fallback continues while migration is prepared."
+  "full_lean_status": "No new full theorem claimed. Existing checked author root is unchanged; the quiet full F1 laptop fallback continues while migration is prepared.",
+  "globus_transfer": {
+    "task_id": "0c55e729-cc99-11f1-9108-02ffc3fa75e1",
+    "source_collection": "Yale CRC Bouchet HA",
+    "source_collection_id": "a2bf0df9-5633-4565-b083-b8907423bb77",
+    "destination_collection": "NCSA Delta",
+    "destination_collection_id": "2d66a243-4a3f-4578-9d7f-1935fb5fba8f",
+    "destination_directory": "/projects/biah/sli54/triangle-verification/triangle-migration-20261020",
+    "files": 89,
+    "verification_archives": 88,
+    "estimated_bytes_display": "28.24 GB",
+    "integrity_verification": true,
+    "encrypted": true,
+    "status": "SUCCEEDED",
+    "retired_yale_endpoint": "1415f57f-3237-480f-8886-3844abfdfa97",
+    "retired_endpoint_note": "The OnDemand link uses the deprecated Yale CRC Bouchet endpoint. The current HA mapped collection is accessible.",
+    "files_transferred": 89,
+    "bytes_transferred_display": "28.24 GB",
+    "duration_seconds": 132,
+    "all_archive_sha256_values_match": true,
+    "hash_check_output": "Validated 88 transferred archives."
+  },
+  "checked_at_utc": "2026-10-20T15:22:10.033840+00:00",
+  "source_commit": "6fd1a56fbc6901566ffc7aa0cbdf19c2f89960a7",
+  "source_archive_sha256": "9130db79c604d47779856c05bf5a09ba630c9409800017ac1e032b1edd4c23fe",
+  "runner_sha256": "f6779cf83847af6713dfedf1f453938d24abb9c8282767e8831b70c8898ceb66",
+  "source_note": "Subsequent commit 3a774f9 updates manuscript comparison and PDF references only; the Lean proof sources remain the same.",
+  "assembly_afterok": [
+    23029964,
+    23047530,
+    23047539,
+    23047540,
+    23047541
+  ],
+  "superseded_unstarted_delta_jobs": [
+    23046543,
+    23046544
+  ],
+  "retired_unstarted_yale_jobs": [
+    30068465,
+    30068466
+  ],
+  "replacement_safety": "Fresh states were PENDING. scancel --state=PENDING restricted cancellation to unstarted copies. All replacement submissions and their accepted resources were verified before cancelling Yale recovery/assembly. Yale queue is empty.",
+  "uncommitted_pool_hours": 10
 }

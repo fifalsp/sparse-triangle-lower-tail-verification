@@ -1,0 +1,13 @@
+import SparseLowerTail.Section03.ConditionedPhases
+
+#print axioms SparseLowerTail.Section03.finiteMatrixCutNorm_mul_le
+#print axioms SparseLowerTail.Section03.matrix_rescale_error
+#print axioms SparseLowerTail.Section03.triangle_close_constant
+#print axioms SparseLowerTail.Section03.triangle_close_bipod
+#print axioms SparseLowerTail.Section03.triangle_conditional_event_tendsto
+#print axioms SparseLowerTail.Section03.exists_structure_tolerance
+#print axioms SparseLowerTail.Section03.triangle_constant_structure_tendsto
+#print axioms SparseLowerTail.Section03.triangle_bipod_structure_tendsto
+#print axioms SparseLowerTail.Section03.triangle_phase_structure_tendsto
+#print axioms SparseLowerTail.Section03.triangle_conditioned_phases
+#print axioms SparseLowerTail.Section03.triangle_conditioned_phases_of_remaining_replays

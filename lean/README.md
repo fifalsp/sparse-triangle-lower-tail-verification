@@ -1631,3 +1631,16 @@ the entropy-value asymptotic holds exactly when η≥threshold³. A direct
 wrapper takes the same remaining numerical replays as the main theorem's
 assembly. The [check record](data/probability-rate-check.json) contains four
 public theorem audits and a full root audit of 17,900 theorems.
+
+
+### 2026-10-20 — Conditioned matrix structures
+
+All three cases of `thm:structure` are deduced from the main classification
+and the complete reduction. The actual conditional probability tends to one
+for the constant matrix above threshold³, the unique minimizing balanced
+bipod below it, and their union at coexistence. The matrix errors are εp
+and the partition imbalance is εn. The direct assembly wrapper exposes
+the same remaining numerical replays as the main theorem.
+
+The [check record](data/conditioned-phases-check.json) contains 11 public
+theorem audits and the full root audit of 17,923 theorems.

@@ -2973,9 +2973,7 @@
         "SparseLowerTail.Section03.matrix_bipod_rounding"
       ],
       "explicit_inputs": [],
-      "remaining_application": [
-        "Apply the finite rounding result in the conditioned-structure corollary."
-      ],
+      "remaining_application": [],
       "verification_record": "data/rounding-check.json",
       "baseline": {
         "environment": "lemma",
@@ -3020,6 +3018,56 @@
         "statement_sha256": "13878f9c0c93bad240456e3542e72cc3146db1b8b333c16cc1b0e9d3d2dc845c",
         "proof_sha256": null,
         "source_line": 404,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      }
+    },
+    {
+      "paper_label": "thm:structure",
+      "status": "proved_deduction_conditional_on_remaining_replays",
+      "checked_scope": "Full deduction of thm:structure: under the actual triangle-conditioned law and for every ε>0, the constant-matrix event has probability tending to one above threshold³; the rounded balanced-bipod event with the unique minimizing pair has probability tending to one below threshold³; the union of the two events has probability tending to one at threshold³. Includes the exact unnormalized εp matrix error and εn partition imbalance, and direct assembly from remaining numerical replays.",
+      "lean_files": [
+        "SparseLowerTail/Section03/StructureMatrices.lean",
+        "SparseLowerTail/Section03/StructureEvents.lean",
+        "SparseLowerTail/Section03/ConditionedPhases.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section03.finiteMatrixCutNorm_mul_le",
+        "SparseLowerTail.Section03.matrix_rescale_error",
+        "SparseLowerTail.Section03.triangle_close_constant",
+        "SparseLowerTail.Section03.triangle_close_bipod",
+        "SparseLowerTail.Section03.triangle_conditional_event_tendsto",
+        "SparseLowerTail.Section03.exists_structure_tolerance",
+        "SparseLowerTail.Section03.triangle_constant_structure_tendsto",
+        "SparseLowerTail.Section03.triangle_bipod_structure_tendsto",
+        "SparseLowerTail.Section03.triangle_phase_structure_tendsto",
+        "SparseLowerTail.Section03.triangle_conditioned_phases",
+        "SparseLowerTail.Section03.triangle_conditioned_phases_of_remaining_replays"
+      ],
+      "explicit_inputs": [
+        "external:KS23:theorem5",
+        "external:KS23:theorem6",
+        "external:KP26:1.6",
+        "classical:inverse-transform-sampling",
+        "classical:positive-hilbert-schmidt-spectrum",
+        "classical:dyadic-l1-approximation",
+        "classical:graphon-cut-compactness",
+        "classical:pullback-l1-approximation",
+        "classical:counting-lemma",
+        "internal:prop:critical",
+        "internal:appA3:compact",
+        "external:KS23:lemma18",
+        "external:KS23:eq33",
+        "classical:harris-positive-association"
+      ],
+      "remaining_application": [
+        "Discharge remaining finite certificate replays and integrate the latest combined build."
+      ],
+      "verification_record": "data/conditioned-phases-check.json",
+      "baseline": {
+        "environment": "theorem",
+        "statement_sha256": "b8b348ad6f308de709d13e9a28cb89bdcf77b3a575724e70d44696bb351bdb9f",
+        "proof_sha256": null,
+        "source_line": 414,
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
       }
     }

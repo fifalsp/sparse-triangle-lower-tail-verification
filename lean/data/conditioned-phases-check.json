@@ -1,0 +1,93 @@
+{
+  "checked_at_utc": "2026-10-20T09:12:11.254059+00:00",
+  "source_parent_commit": "80c09a4bdd4b6d36aaaf257a2edcedb82c123214",
+  "paper_label": "thm:structure",
+  "scope": "Full deduction of thm:structure: under the actual triangle-conditioned law and for every ε>0, the constant-matrix event has probability tending to one above threshold³; the rounded balanced-bipod event with the unique minimizing pair has probability tending to one below threshold³; the union of the two events has probability tending to one at threshold³. Includes the exact unnormalized εp matrix error and εn partition imbalance, and direct assembly from remaining numerical replays.",
+  "sources": [
+    {
+      "path": "SparseLowerTail/Section03/StructureMatrices.lean",
+      "sha256": "fe8a0d75eea8f6a2419f0047701643c3c55197d315d79d3dfab0c9d1e5741707"
+    },
+    {
+      "path": "SparseLowerTail/Section03/StructureEvents.lean",
+      "sha256": "b297488ea081fad3491c996a18f810bcc92093c04ec69f47581de3130704be8c"
+    },
+    {
+      "path": "SparseLowerTail/Section03/ConditionedPhases.lean",
+      "sha256": "8b0bb342831b59787cdf0330739ea1daeb920034178ba9735edc41f96ae5e9c5"
+    }
+  ],
+  "explicit_inputs": [
+    "external:KS23:theorem5",
+    "external:KS23:theorem6",
+    "external:KP26:1.6",
+    "classical:inverse-transform-sampling",
+    "classical:positive-hilbert-schmidt-spectrum",
+    "classical:dyadic-l1-approximation",
+    "classical:graphon-cut-compactness",
+    "classical:pullback-l1-approximation",
+    "classical:counting-lemma",
+    "internal:prop:critical",
+    "internal:appA3:compact",
+    "external:KS23:lemma18",
+    "external:KS23:eq33",
+    "classical:harris-positive-association"
+  ],
+  "checks": [
+    {
+      "command": "LEAN_NUM_THREADS=1 lake build SparseLowerTail.Section03.ConditionedPhases",
+      "exit_code": 0,
+      "output": "Build completed successfully (3566 jobs). Existing cached linter warnings were replayed."
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake build SparseLowerTail",
+      "exit_code": 0,
+      "output": "Build completed successfully (3666 jobs). Existing cached linter warnings were replayed."
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean tools/audit_conditioned_phases.lean",
+      "exit_code": 0,
+      "output": "'SparseLowerTail.Section03.finiteMatrixCutNorm_mul_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.matrix_rescale_error' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.triangle_close_constant' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.triangle_close_bipod' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.triangle_conditional_event_tendsto' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.exists_structure_tolerance' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.triangle_constant_structure_tendsto' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.triangle_bipod_structure_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.triangle_phase_structure_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.triangle_conditioned_phases' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.triangle_conditioned_phases_of_remaining_replays' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean Audit.lean",
+      "exit_code": 0,
+      "output": "Axiom audit passed: 24461 project declarations, 17923 theorems; only propext, Classical.choice, Quot.sound allowed.\n"
+    },
+    {
+      "command": "python3 tools/check_lean_map.py",
+      "exit_code": 0,
+      "output": "Proof-map links passed: 103 labels, 756 Lean declarations.\n"
+    }
+  ],
+  "audited_public_theorems": 11,
+  "root_project_modules": 524,
+  "root_project_declarations": 24461,
+  "root_project_theorems": 17923,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "base_source_manifest": "probability-rate-check.json",
+  "source_manifest_changes": [
+    {
+      "module": "SparseLowerTail",
+      "sha256": "bab0b48dcaa43cdf240381ff8df3ef9e9b454c1af62054ab51aab485f3ccbd94"
+    },
+    {
+      "module": "SparseLowerTail.Section03.StructureMatrices",
+      "sha256": "fe8a0d75eea8f6a2419f0047701643c3c55197d315d79d3dfab0c9d1e5741707"
+    },
+    {
+      "module": "SparseLowerTail.Section03.StructureEvents",
+      "sha256": "b297488ea081fad3491c996a18f810bcc92093c04ec69f47581de3130704be8c"
+    },
+    {
+      "module": "SparseLowerTail.Section03.ConditionedPhases",
+      "sha256": "8b0bb342831b59787cdf0330739ea1daeb920034178ba9735edc41f96ae5e9c5"
+    }
+  ],
+  "source_manifest_sha256": "ae14e35118164d89cd1e0805d403449b7d739ed1902cd5031c232c8339ef897a",
+  "manuscript_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+}

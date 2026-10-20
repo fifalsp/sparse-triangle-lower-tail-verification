@@ -2,12 +2,13 @@
 
 ## Latest verified results — October 20, 2026
 
-**32 full-region Lean builds and axiom audits have passed:** 28 nonapex
-regions and apex fans F2, F3, F5 and F6. The new completion is nonapex job
-35. [Evidence](results-20261020-0000/verified-regions.json).
+**33 full-region Lean builds and axiom audits have passed:** 29 nonapex
+regions and apex fans F2, F3, F5 and F6. The new completions are nonapex jobs
+13 and 35. [Evidence](results-20261020-0010/verified-regions.json).
 
-Eleven original Yale jobs were running on 52 cores at the latest check.
-The older Yale F1 job reached its 64 GiB memory limit.
+Nine original Yale jobs were running on 40 cores at the latest check.
+The older Yale F1 and cover-12 jobs reached their 64 GiB memory limits;
+both have queued recovery with 192 GiB.
 [Failure and recovery record](yale-f1-failure-20261020.json).
 Recovery array `30068465` and combined assembly `30068466` remain queued.
 

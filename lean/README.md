@@ -3,7 +3,7 @@
 The project formalizes the authors' arguments in the paper, with cited external
 and standard classical results supplied as explicit hypotheses.
 
-**Verified:** 28 nonapex full-domain certificates and apex fans F2, F3, F5 and
+**Verified:** 29 nonapex full-domain certificates and apex fans F2, F3, F5 and
 F6 have passed Lean builds and axiom audits. The main variational theorem's
 assembly and the proof components below are checked; the remaining certificates
 and combined integration are in progress.

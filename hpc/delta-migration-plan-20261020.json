@@ -155,11 +155,11 @@
     "additional_core_hours": 500,
     "status": "Under Review; fresh ACCESS approved balance remains 500 hours"
   },
-  "queue_checked_at_utc": "2026-10-20T21:45:14.817220+00:00",
+  "queue_checked_at_utc": "2026-10-20T22:46:41.455706+00:00",
   "queue_observation": "Exterior RUNNING on cn055; F1 and three retries PENDING Priority; integration PENDING Dependency.",
   "live_accounting_observation": {
-    "checked_at_utc": "2026-10-20T21:45:14.817220+00:00",
-    "remaining_hours": 419,
+    "checked_at_utc": "2026-10-20T22:46:41.455706+00:00",
+    "remaining_hours": 404,
     "deposited_hours": 500,
     "note": "Fresh Delta accounts Balance(Hours) and Deposited(Hours); only biah-delta-cpu is authorized."
   },
@@ -231,16 +231,16 @@
   "runner_remote": "delta-remaining-tls.sbatch",
   "recovery_record": "delta-tls-recovery-20261020.json",
   "exterior_progress": {
-    "checked_at_utc": "2026-10-20T21:45:14.817220+00:00",
+    "checked_at_utc": "2026-10-20T22:46:41.455706+00:00",
     "job_id": 23047539,
-    "elapsed_observed": "4:38:09",
+    "elapsed_observed": "5:39:35",
     "phase": "bounded kernel build: restored-cache validation",
     "mathlib_cache_files_downloaded": 7335,
     "mathlib_cache_status": "Completed successfully",
     "planned_project_modules": 12872,
-    "finished_cache_validation_batches": 5,
+    "finished_cache_validation_batches": 21,
     "accepted_cache_batches": 0,
-    "note": "Cache batches that Lake cannot validate are scheduled for ordinary bounded builds; no full theorem or audit success yet."
+    "note": "Batch 21 was active; 21 earlier batches finished without reusable entries. This is cache validation, not a Lean proof failure. Six-hour cap ends about 23:03 UTC; preserve the persistent checkout on timeout."
   },
   "all_current_job_accounts_checked": {
     "checked_at_utc": "2026-10-20T21:45:14.817220+00:00",
@@ -254,5 +254,21 @@
       23050651,
       23050654
     ]
+  },
+  "prepared_exterior_resumption": {
+    "status": "Prepared and locally checked; not submitted or charged",
+    "runner": "delta-exterior-resume.sbatch",
+    "scheduler": "build_ready_batches.py",
+    "runner_sha256": "f08aac1ef4dc1937516a8655894ebd51f75665419f97dc2d45b36e2a14a321f6",
+    "scheduler_sha256": "5be576ad146a7d8d85ae4abc6642ad6e4b23056bca898153dfe2d05b8a58ffea",
+    "audit_sha256": "956129721ba7190769a93bd755dde91ac7b4fcd15326656721cc822308cc9014",
+    "method": "Reuse the ended Delta job checkout. Validate only dependency-ready cache batches; build every failed/missing batch normally, then rebuild full target, run unchanged namespace audit and compare all dependency source hashes. No Yale extraction or proof regeneration.",
+    "checks": [
+      "bash -n passed",
+      "Python syntax passed",
+      "5 scheduling gate tests passed"
+    ],
+    "submission_gate": "Only after previous job is confirmed terminal, fresh balance covers all outstanding caps plus the new request, and no concurrent resume owns this checkout. Current 500-hour pool has only a small uncommitted margin; wait for actual freed commitments or provider approval of the extra 500.",
+    "after_success": "Replace only a still-pending failed-dependency integration job with the new exterior job in its afterok dependencies, after verifying resources and budget. Never cancel a healthy running job."
   }
 }

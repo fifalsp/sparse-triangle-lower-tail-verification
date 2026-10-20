@@ -31,9 +31,13 @@ download cache per job. Corrected retries are queued; integration has normal
 job was preserved; all 7,335 mathlib cache files downloaded successfully and
 its bounded build has entered restored-cache validation. [Recovery and validation](delta-tls-recovery-20261020.json).
 
-Live accounting shows **419 of 500 hours remaining**. Actual failed-job charges
+Live accounting shows **404 of 500 hours remaining**. Actual failed-job charges
 and all remaining commitments fit this balance. The additional 500-hour ACCESS
 exchange remains **under review**.
+An exterior resume runner is prepared to reuse its Delta checkout and validate
+cache entries after their imports pass. It has not been submitted; new work
+must fit the live balance after existing commitments.
+[Resume runner](delta-exterior-resume.sbatch) · [Scheduler checks](test_ready_batches.py).
 [Deployment and resources](delta-migration-plan-20261020.json) ·
 [Exchange request](delta-extra-500-exchange-20261020.json).
 

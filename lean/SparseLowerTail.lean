@@ -186,3 +186,4 @@ import SparseLowerTail.Numerics.TaylorCube
 import SparseLowerTail.Section05.CriticalApex
 import SparseLowerTail.Section05.BalancedTriangleLaw
 import SparseLowerTail.Section05.PatternDerivatives
+import SparseLowerTail.Section05.PaperCertificateSummary

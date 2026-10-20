@@ -1,0 +1,97 @@
+{
+  "checked_at_utc": "2026-10-20T10:59:28.352265+00:00",
+  "source_parent_commit": "9ea20b844c1590de61f36b6b564b88382c171bfe",
+  "scope": "Literal combined current weak duality (all four conclusions), combined current minimizer support data, unrestricted real-block codegree formula, and branch certificate contact identity deduced through the actual four-atom law. Reviews current weak-duality/support/expectation/stationary statements and reconciles four old anchors with their current locations. Every previously linked declaration is preserved in the active map; historical entries retain hash-only baselines and migration metadata.",
+  "sources": [
+    {
+      "path": "SparseLowerTail/Section05/PaperCertificateSummary.lean",
+      "sha256": "2415f6784a82cd68c5b04381dad5219ae910a7c156c452d2b73c575af890ebd7"
+    }
+  ],
+  "explicit_inputs": [
+    "classical:counting-lemma",
+    "classical:dyadic-l1-approximation",
+    "classical:graphon-cut-compactness",
+    "classical:inverse-transform-sampling",
+    "classical:pullback-l1-approximation"
+  ],
+  "checks": [
+    {
+      "command": "LEAN_NUM_THREADS=1 lake build SparseLowerTail",
+      "exit_code": 0,
+      "output": "Build completed successfully (3715 jobs). Existing cached linter warnings were replayed."
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean tools/audit_certificate_summary.lean",
+      "exit_code": 0,
+      "output": "'SparseLowerTail.codegree_twoBlock' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section04.mean_cube_sub_balancedTriangle' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Certificate.expectation_identity' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Certificate.expectation_branch_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Certificate.psi_integrable' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.triangle_eq_integral_codegree' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.TriangleIntegration.integral_test_codegree' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.TriangleIntegration.integral_cycle' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Certificate.minimizer_expectation_identity' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Certificate.multiplier_eq_branch_of_matching_data' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.minimizer_expectation_zero_of_matching_data' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.minimizer_certificate_zero_ae' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Certificate.minimizer_balanced_of_certificate' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section05.minimizer_rowSquare_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.minimizer_codegree_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.minimizer_support_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.minimizer_cost_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.minimizer_mean_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.minimizer_mean_add_cost_lt_one' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.minimizer_mean_eq_target_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section04.graphonMultiplier' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section04.vertexMean_eq' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.multiplier_mul_supportCodegreeBound' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section05.minimizer_supportLambda_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.minimizer_supportLambda_le_mean' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.supportLambda_mono' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.supportLambda_strictMono_mean' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.supportLambda_strictMono_cost' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.penalizedMinimizer_interior' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.penalizedMinimizer_balancedEL' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.penalizedMinimizer_secondVariation' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section07.penalized_stationary_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.penalized_stationary_identity' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.constantRoot_strictAnti' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.contDiffOn_constantRoot' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.tendsto_constantRoot_atTop' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.constantPenalty_strict_min' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.hasDerivAt_constantMinimum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.coverCertificate_mix' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.coverCertificate_concave' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.coverCertificate_le_map_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.RelaxedLaw.feature_expectation' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.RelaxedLaw.hoeffding_expectation_nonneg' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section05.RelaxedLaw.certificate_expectation' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section05.RelaxedLaw.certificate_expectation_nonpos' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section05.no_relaxedLaw_of_certificate_pos' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.RelaxedLaw.certificate_zero_set_measure' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section06.eventually_branchClassification_of_subsequence_limits' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section05.weak_duality_all' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.minimizer_support_data' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.codegree_blockValue_real' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.branch_certificate_contact_identity' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean Audit.lean",
+      "exit_code": 0,
+      "output": "Axiom audit passed: 24658 project declarations, 18086 theorems; only propext, Classical.choice, Quot.sound allowed.\n"
+    },
+    {
+      "command": "python3 tools/check_lean_map.py",
+      "exit_code": 0,
+      "output": "Proof-map links passed: 108 labels, 870 Lean declarations."
+    }
+  ],
+  "audited_public_declarations": 52,
+  "new_public_theorems": 4,
+  "manuscript_reviews": {
+    "lem:weakdual": "Current parts (a)-(d) are checked together, including exact expectation, exclusion by strict positivity, measure-one zero set and concavity on the full parameter plane. The former separate concavity lemma is now part (d); all old interpolation proofs remain linked.",
+    "lem:support": "Current mean, positive multiplier, vertex-level identities and sharp support conclusion are checked together. The former identities corollary has moved into this lemma and its surrounding parameter discussion. Stronger cost/mean, Lambda monotonicity and mean-support inequalities remain linked.",
+    "s8:expect": "Current actual graphon expectation identity is checked with integrability and Euler assumptions discharged as stated. Its last contact identity now also follows directly from the actual four-atom law and zero branch expectation; individual zero contact values are not assumed in that deduction.",
+    "lem:stationary": "All three current conclusions are checked: interiority and actual positive-semidefinite second variation at a minimum, complete stationary list, and stationary cost/mean identity. Surrounding constant-root differentiability, monotonicity, global minimum and derivative statements remain linked."
+  },
+  "historical_anchor_migrations": {
+    "lem:concave": {
+      "replaced_by": [
+        "lem:weakdual"
+      ],
+      "current_location": "part (d), with finite-vertex interpolation used in the cover argument"
+    },
+    "cor:identities": {
+      "replaced_by": [
+        "lem:support"
+      ],
+      "current_location": "support lemma and surrounding parameter formulas; stronger prior identities retained"
+    },
+    "prop:stability": {
+      "replaced_by": [
+        "cor:open",
+        "cor:seed"
+      ],
+      "current_location": "shared compactness/local-rigidity proof of the two corollaries"
+    },
+    "lem:Bcodegree": {
+      "replaced_by": [
+        "s4:eq:cube"
+      ],
+      "current_location": "unnumbered codegree paragraph immediately before the cube identity in subsection s4:sec:euler"
+    }
+  },
+  "preserves_all_previously_linked_declarations": true,
+  "root_project_modules": 536,
+  "root_project_declarations": 24658,
+  "root_project_theorems": 18086,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "base_source_manifest": "patterns-check.json",
+  "source_manifest_changes": [
+    {
+      "module": "SparseLowerTail",
+      "sha256": "40dd0516ff1732ac23c43aa0a471983662b8d996c5fea886bac53e709861863c"
+    },
+    {
+      "module": "SparseLowerTail.Section05.PaperCertificateSummary",
+      "sha256": "2415f6784a82cd68c5b04381dad5219ae910a7c156c452d2b73c575af890ebd7"
+    }
+  ],
+  "source_manifest_sha256": "5607b59b68c0e73f349a28e6e60326c4c9496f8d270c7abd9a896f9549a024a5",
+  "manuscript_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+}

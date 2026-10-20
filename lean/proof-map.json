@@ -76,27 +76,6 @@
       }
     },
     {
-      "paper_label": "lem:Bcodegree",
-      "status": "partial",
-      "checked_scope": "Codegree formula and cube identity; graphon values restricted to [0,1] in the current constructor. Scalar cube identity holds for all real a,b.",
-      "lean_files": [
-        "SparseLowerTail/Section04/Codegree.lean",
-        "SparseLowerTail/Section04/EntropyGeometry.lean"
-      ],
-      "lean_declarations": [
-        "SparseLowerTail.codegree_twoBlock",
-        "SparseLowerTail.Section04.mean_cube_sub_balancedTriangle"
-      ],
-      "explicit_inputs": [],
-      "baseline": {
-        "environment": "lemma",
-        "statement": "Let $a,b\\ge0$. The codegree function $C_{B_{a,b}}(x,y)$ equals $(a^2+b^2)/2$ if $x$ and $y$ lie in the same one of the blocks $[0,\\frac12)$ and $[\\frac12,1]$, and equals $ab$ otherwise. Moreover, for all real numbers $a$ and $b$, \\begin{equation} \\Big(\\frac{a+b}2\\Big)^3-\\frac{a^3+3ab^2}4=\\frac{(b-a)^3}8. \\end{equation}",
-        "statement_sha256": "bc1b12d3fe867c230534bc1c419811f0639138bfbe3306dc3946347100edad8a",
-        "proof_sha256": "533b4454b9e893bbc1e29289e4702945f5a4d2c51f6285b2fa869e6e4685c741",
-        "source_line": 2391
-      }
-    },
-    {
       "paper_label": "s4:eq:EL",
       "status": "proved_bridge",
       "checked_scope": "Equivalence between scalar equations and the a.e. graphon equation for positive values in [0,1].",
@@ -574,7 +553,8 @@
       ],
       "lean_declarations": [
         "SparseLowerTail.Section06.branchClassification_open",
-        "SparseLowerTail.Section06.branchClassification_region_open"
+        "SparseLowerTail.Section06.branchClassification_region_open",
+        "SparseLowerTail.Section06.eventually_branchClassification_of_subsequence_limits"
       ],
       "explicit_inputs": [
         "classical:inverse-transform-sampling",
@@ -594,7 +574,8 @@
         "checked_at_utc": "2026-10-20T10:02:04.219975+00:00",
         "note": "The current compactness, minimizer-limit and local rigidity argument is checked; the theorem supplies an actual open target interval and exact balanced/relabeling classification.",
         "audit_record": "data/box-lower-bounds-check.json"
-      }
+      },
+      "historical_anchor": "prop:stability"
     },
     {
       "paper_label": "cor:seed",
@@ -604,7 +585,8 @@
         "SparseLowerTail/Section06/Stability.lean"
       ],
       "lean_declarations": [
-        "SparseLowerTail.Section06.branchClassification_seed"
+        "SparseLowerTail.Section06.branchClassification_seed",
+        "SparseLowerTail.Section06.eventually_branchClassification_of_subsequence_limits"
       ],
       "explicit_inputs": [
         "classical:inverse-transform-sampling",
@@ -625,7 +607,8 @@
         "checked_at_utc": "2026-10-20T10:02:04.219975+00:00",
         "note": "The same left-limit compactness argument supplies the left neighborhood. The existing internal CriticalClassification hypothesis is retained; this review does not discharge it.",
         "audit_record": "data/box-lower-bounds-check.json"
-      }
+      },
+      "historical_anchor": "prop:stability"
     },
     {
       "paper_label": "thm:smalltail",
@@ -1110,11 +1093,12 @@
     {
       "paper_label": "s8:expect",
       "status": "proved",
-      "checked_scope": "Exact graphon expectation identity with integrability, triangle-codegree Fubini identity and cyclic symmetry proved internally; expected certificate zero on the branch. Contact identity also follows from individually proved contact values. No certificate positivity or additional external input assumed. A minimizer interface discharges positivity, Euler equation and activity; matching branch cost/edge data give zero expectation. Nonnegative zero-expectation certificates vanish a.e.; positivity is explicitly conditional and not claimed proved. The full certificate-to-partition deduction is checked conditional on global positivity/zero-set and matching-data hypotheses; those internal hypotheses are not discharged.",
+      "checked_scope": "Exact graphon expectation identity with integrability, triangle-codegree Fubini identity and cyclic symmetry proved internally; expected certificate zero on the branch. Contact identity also follows from individually proved contact values. No certificate positivity or additional external input assumed. A minimizer interface discharges positivity, Euler equation and activity; matching branch cost/edge data give zero expectation. Nonnegative zero-expectation certificates vanish a.e.; positivity is explicitly conditional and not claimed proved. The full certificate-to-partition deduction is checked conditional on global positivity/zero-set and matching-data hypotheses; those internal hypotheses are not discharged. The literal weighted contact identity is additionally deduced from the actual four-atom pushforward law and zero branch expectation.",
       "lean_files": [
         "SparseLowerTail/Section08/GraphonIntegration.lean",
         "SparseLowerTail/Section08/CertificateExpectation.lean",
-        "SparseLowerTail/Section08/MinimizerExpectation.lean"
+        "SparseLowerTail/Section08/MinimizerExpectation.lean",
+        "SparseLowerTail/Section05/PaperCertificateSummary.lean"
       ],
       "lean_declarations": [
         "SparseLowerTail.Certificate.expectation_identity",
@@ -1127,16 +1111,23 @@
         "SparseLowerTail.Certificate.multiplier_eq_branch_of_matching_data",
         "SparseLowerTail.Certificate.minimizer_expectation_zero_of_matching_data",
         "SparseLowerTail.Certificate.minimizer_certificate_zero_ae",
-        "SparseLowerTail.Certificate.minimizer_balanced_of_certificate"
+        "SparseLowerTail.Certificate.minimizer_balanced_of_certificate",
+        "SparseLowerTail.Section05.branch_certificate_contact_identity"
       ],
       "explicit_inputs": [],
       "baseline": {
         "environment": "lemma",
-        "statement": "Let $z\\in(0,1)$ with $\\Gamma\\ne0$. Let $U$ be a graphon with $t(U)=t_z$. Assume that $U\\ge\\ell$ a.e.\\ for some $\\ell>0$ and that $\\log U=-\\tilde\\mu C_U$ a.e.\\ for some $\\tilde\\mu\\in\\R$. Let $X,Y,Z$ be as in \\eqref{s8:rewrite}. Then \\begin{align} \\E[\\Psi_z(X,Y,Z)]&=3c_1\\big(e(U)-m\\big)\\notag\\\\ &\\quad+3(\\mu-\\tilde\\mu)\\Big[c_2t_z+c_3\\iint C_U+c_4\\iint U\\log U C_U\\Big]. \\end{align} In particular $\\Psi_z(a,a,a)+3\\Psi_z(a,b,b)=0$.",
-        "statement_sha256": "635958295e67e9193f8ed277a3a734ddea18c8fa7a3471b48ef4cf8241152236",
-        "proof_sha256": "4c55983b1ee6e3644a1158b898e5ff120217c28dbdb6a5705535f4e81e6106b0",
-        "source_line": 5316
-      }
+        "statement_sha256": "c95500319f405356c6a8e960b2991cc4d9a0855fe532084ea3792321ea1ba76f",
+        "proof_sha256": "cc100c83643753907ab27e1d0ce6f81a00494492ff61e656cadf4df70267ae3b",
+        "source_line": 5216,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      },
+      "latest_manuscript_review": {
+        "checked_at_utc": "2026-10-20T10:59:28.352265+00:00",
+        "note": "Current actual graphon expectation identity is checked with integrability and Euler assumptions discharged as stated. Its last contact identity now also follows directly from the actual four-atom law and zero branch expectation; individual zero contact values are not assumed in that deduction.",
+        "audit_record": "data/certificate-summary-check.json"
+      },
+      "verification_record": "data/certificate-summary-check.json"
     },
     {
       "paper_label": "lem:J",
@@ -1413,36 +1404,17 @@
     {
       "paper_label": "lem:support",
       "status": "proved_relative_classical",
-      "checked_scope": "Sharp row-square, codegree and graphon support bounds, using proved vertex identity; only classical sampling explicit.",
+      "checked_scope": "The full current support lemma: mean at least the target, positive multiplier identity, explicit vertex level and actual sharp Lambda support bound. Also retains the cost/mean inequalities, constant-case characterization, mean-support comparison and coordinatewise/strict Lambda monotonicity.",
       "lean_files": [
-        "SparseLowerTail/Section05/SupportBounds.lean"
+        "SparseLowerTail/Section05/SupportBounds.lean",
+        "SparseLowerTail/Section04/Rescaling.lean",
+        "SparseLowerTail/Section04/VertexIdentity.lean",
+        "SparseLowerTail/Section05/PaperCertificateSummary.lean"
       ],
       "lean_declarations": [
         "SparseLowerTail.Section05.minimizer_rowSquare_le",
         "SparseLowerTail.Section05.minimizer_codegree_le",
-        "SparseLowerTail.Section05.minimizer_support_lower"
-      ],
-      "explicit_inputs": [
-        "classical:inverse-transform-sampling"
-      ],
-      "baseline": {
-        "environment": "lemma",
-        "statement": "Let $U$ be a minimizer at $r\\in(0,1)$, and let $\\ell_U=\\exp(-\\mu_U(2-\\bar k_U)/2)$. Then $\\int_0^1U(x,y)^2\\dd y\\le(2-\\bar k_U)/2$ for a.e.\\ $x$, $C_U\\le(2-\\bar k_U)/2$ a.e., and $U\\ge\\ell_U$ a.e.",
-        "statement_sha256": "aa16eebbe7d4d7eab92c4f1c84978ddf66005eccbefe0d8d27395610c272c25f",
-        "proof_sha256": "2851be950e56e1afc09cb7e276eeee6334a0efac7dddd4809e565debc7b971bd",
-        "source_line": 3346
-      }
-    },
-    {
-      "paper_label": "cor:identities",
-      "status": "proved_relative_classical",
-      "checked_scope": "Cost/mean bounds, constant-case equality characterization, explicit multiplier and vertex formulas, sharp support and its mean inequality, and coordinatewise/strict monotonicity of Lambda.",
-      "lean_files": [
-        "SparseLowerTail/Section05/SupportBounds.lean",
-        "SparseLowerTail/Section04/Rescaling.lean",
-        "SparseLowerTail/Section04/VertexIdentity.lean"
-      ],
-      "lean_declarations": [
+        "SparseLowerTail.Section05.minimizer_support_lower",
         "SparseLowerTail.Section05.minimizer_cost_bounds",
         "SparseLowerTail.Section05.minimizer_mean_bounds",
         "SparseLowerTail.Section05.minimizer_mean_add_cost_lt_one",
@@ -1454,18 +1426,25 @@
         "SparseLowerTail.Section05.minimizer_supportLambda_le_mean",
         "SparseLowerTail.Section05.supportLambda_mono",
         "SparseLowerTail.Section05.supportLambda_strictMono_mean",
-        "SparseLowerTail.Section05.supportLambda_strictMono_cost"
+        "SparseLowerTail.Section05.supportLambda_strictMono_cost",
+        "SparseLowerTail.Section05.minimizer_support_data"
       ],
       "explicit_inputs": [
         "classical:inverse-transform-sampling"
       ],
       "baseline": {
-        "environment": "corollary",
-        "statement": "Let $U$ be a minimizer at $r\\in(0,1)$, and let $m=e(U)$ and $F=F(U)=V(r)$. \\begin{enumerate}[label=(\\alph*)] \\item $0<F\\le h(r)<1$, $m+F<1$, and $r\\le m\\le\\frac14(1+\\sqrt{1+8r^3})$. Moreover, $m=r$ only if $U=r$ a.e. \\item $\\mu_Ur^3=1-F-m$ and $\\bar k_U=1+F-m$. \\item $\\ell_U=\\Lambda_{r^3}(m,F)$. Hence $U\\ge\\Lambda_{r^3}(m,F)$ a.e.\\ and $\\Lambda_{r^3}(m,F)\\le m$. \\item Let $t>0$. If $0\\le m_0\\le m_1$ and $y_0\\le y_1\\le1$, then $\\Lambda_t(m_0,y_0)\\le\\Lambda_t(m_1,y_1)$. Moreover $\\Lambda_t$ is strictly increasing in $m$ on $m>0$ and in $y$ on $y<1$. \\end{enumerate}",
-        "statement_sha256": "9d80807a68778252520511d295b31ae61f72b388cfb46345f93339ed6341ae51",
-        "proof_sha256": "c96e7742b466d3095de4924ec635f1c74b0ad1d69d2931624af000c565412ce3",
-        "source_line": 3373
-      }
+        "environment": "lemma",
+        "statement_sha256": "0075b5e0662203748edff9d44d9a3f4d96418a690781631978d1b4f2ecde7d0f",
+        "proof_sha256": "cf0673fe259b7689d803c4a514f8833115830f96e3fd2e32e5e9729bd26cff52",
+        "source_line": 3378,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      },
+      "latest_manuscript_review": {
+        "checked_at_utc": "2026-10-20T10:59:28.352265+00:00",
+        "note": "Current mean, positive multiplier, vertex-level identities and sharp support conclusion are checked together. The former identities corollary has moved into this lemma and its surrounding parameter discussion. Stronger cost/mean, Lambda monotonicity and mean-support inequalities remain linked.",
+        "audit_record": "data/certificate-summary-check.json"
+      },
+      "verification_record": "data/certificate-summary-check.json"
     },
     {
       "paper_label": "lem:region",
@@ -1623,13 +1602,13 @@
       "paper_label": "lem:stationary",
       "baseline": {
         "environment": "lemma",
-        "statement": "Let $\\gamma>0$. \\begin{enumerate}[label=(\\alph*)] \\item Every minimizer of $\\Phi_\\gamma$ on $[0,1]^2$ lies in $(0,1)^2$ and is a stationary point of $\\Phi_\\gamma$ with positive semidefinite Hessian matrix. \\item The stationary points of $\\Phi_\\gamma$ in $(0,1)^2$ are $(s_\\gamma,s_\\gamma)$ and the pairs $(a(z),b(z))$ with $z\\in(0,1)$ and $\\mu(z)=3\\gamma$. \\item Every stationary point $(a,b)\\in(0,1)^2$ of $\\Phi_\\gamma$ satisfies $F(B_{a,b})+3\\gamma t(B_{a,b})=1-e(B_{a,b})$. \\item The map $\\gamma\\mapsto s_\\gamma$ is continuously differentiable and strictly decreasing on $(0,\\infty)$, and $s_\\gamma\\to0$ as $\\gamma\\to\\infty$. Moreover, $C_0(\\gamma)=\\min_{s\\in[0,1]}(h(s)+\\gamma s^3)$, the minimum is attained only at $s_\\gamma$, and $C_0'(\\gamma)=s_\\gamma^3$. \\end{enumerate}",
-        "statement_sha256": "8aec94004ff7079d52473b8de853646e4b5d94888dbf2725731e021c5f0c194b",
-        "proof_sha256": "e4ef0c8da5929ac77dbf64fe4c3c22c99b6b2ac4fee5c8cf5cda8505a6ee0b73",
-        "source_line": 4626
+        "statement_sha256": "58f85424b1475732f0ac44cd049cc9915b8b2226cf6235d6e076dd5d89030999",
+        "proof_sha256": "cf8adb18f7f3f7ebcc50dd8408d4255025774689d814f6ed14beb33b89307ce3",
+        "source_line": 4563,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
       },
       "status": "proved",
-      "checked_scope": "All four conclusions: interiority and stationary equations, actual nonnegative second variation in every direction, complete scalar stationary list, stationary identity, and C1 decreasing constant root with global scalar minimum and derivative.",
+      "checked_scope": "All three current conclusions, with surrounding constant-root calculus: interiority and stationary equations, actual nonnegative second variation in every direction, complete scalar stationary list, stationary identity, and C1 decreasing constant root with global scalar minimum and derivative.",
       "lean_files": [
         "SparseLowerTail/Section07/PenalizedScalar.lean",
         "SparseLowerTail/Section07/ConstantRootCalculus.lean",
@@ -1647,7 +1626,12 @@
         "SparseLowerTail.Section07.constantPenalty_strict_min",
         "SparseLowerTail.Section07.hasDerivAt_constantMinimum"
       ],
-      "explicit_inputs": []
+      "explicit_inputs": [],
+      "latest_manuscript_review": {
+        "checked_at_utc": "2026-10-20T10:59:28.352265+00:00",
+        "note": "All three current conclusions are checked: interiority and actual positive-semidefinite second variation at a minimum, complete stationary list, and stationary cost/mean identity. Surrounding constant-root differentiability, monotonicity, global minimum and derivative statements remain linked.",
+        "audit_record": "data/certificate-summary-check.json"
+      }
     },
     {
       "paper_label": "lem:tie",
@@ -1788,39 +1772,20 @@
       "explicit_inputs": []
     },
     {
-      "paper_label": "lem:concave",
-      "baseline": {
-        "environment": "lemma",
-        "statement": "Let $\\theta\\in\\R^{12}$, $\\lambda\\ge0$ and $u\\in(0,\\infty)^3$. The map $\\pi\\mapsto\\Psi_{\\theta,\\lambda}(u;\\pi)$ is concave on $\\R^2$. In particular, if $\\pi=\\sum_{v\\in\\mathcal V}\\alpha_vv$ for a finite set $\\mathcal V\\subset\\R^2$ and weights $\\alpha_v\\ge0$ of sum one, then $\\Psi_{\\theta,\\lambda}(u;\\pi)\\ge\\sum_{v\\in\\mathcal V}\\alpha_v\\Psi_{\\theta,\\lambda}(u;v)$.",
-        "statement_sha256": "cf259085c0a2c47cc372095b18a26e2c31b1fa31d8353b89c49758eaf8403578",
-        "proof_sha256": "4bd761c43d658952aef8bf063bf2b6165a77f9f83fbc4042ba77a84778965650",
-        "source_line": 3642
-      },
-      "status": "proved",
-      "checked_scope": "Exact quadratic mixing identity, concavity on the full parameter plane, and finite weighted-vertex interpolation inequality.",
-      "lean_files": [
-        "SparseLowerTail/Section05/CertificateConcavity.lean"
-      ],
-      "lean_declarations": [
-        "SparseLowerTail.Section05.coverCertificate_mix",
-        "SparseLowerTail.Section05.coverCertificate_concave",
-        "SparseLowerTail.Section05.coverCertificate_le_map_sum"
-      ],
-      "explicit_inputs": []
-    },
-    {
       "paper_label": "lem:weakdual",
       "baseline": {
         "environment": "lemma",
-        "statement": "Let $\\pi\\in\\Pi$, $\\theta\\in\\R^{12}$, $\\lambda\\ge0$ and $0<\\ell_0\\le\\ell(\\pi)$. \\begin{enumerate}[label=(\\alph*)] \\item Every $\\nu\\in\\mathcal T(\\pi)$ satisfies $\\E_\\nu[\\mathcal H_*(\\cdot;\\pi)]\\ge0$ and $\\E_\\nu[\\mathcal E_i(\\cdot;\\pi)]=0$ for $i=0,\\dots,11$. Hence $\\E_\\nu[\\Psi_{\\theta,\\lambda}(\\cdot;\\pi)]=-\\lambda\\E_\\nu[\\mathcal H_*(\\cdot;\\pi)]\\le0$. \\item If $\\Psi_{\\theta,\\lambda}(u;\\pi)>0$ for every $u\\in[\\ell_0,1]^3$, then $\\mathcal T(\\pi)=\\emptyset$. \\item If $\\Psi_{\\theta,\\lambda}(u;\\pi)\\ge0$ for every $u\\in[\\ell_0,1]^3$, then every $\\nu\\in\\mathcal T(\\pi)$ satisfies $\\nu(\\{u\\in[\\ell_0,1]^3:\\Psi_{\\theta,\\lambda}(u;\\pi)=0\\})=1$. \\end{enumerate}",
-        "statement_sha256": "5820ddff9eaa522dcd56d115fdd7d4f6a492db40807c0059aeaf2b3ec4a27091",
-        "proof_sha256": "c23b4f2e134e37799ec10f727d3e9c96fdc3ec81d31bef9f8d25926557dfd28c",
-        "source_line": 3601
+        "statement_sha256": "dabde4c7ee465c6b073c5bf09ae63c7202fec6d8c151d5b254c351d31f78df73",
+        "proof_sha256": "50a3e691a7be978611448b43cb51a2bdc60fad733d759331452d19418255e5a8",
+        "source_line": 3591,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
       },
       "status": "proved",
-      "checked_scope": "For every relaxed law: all feature expectations vanish, Hoeffding expectation is nonnegative, certificate expectation is nonpositive; strict positivity excludes a law and nonnegativity implies measure-one zero set. Integrability is proved from support.",
+      "checked_scope": "All four current conclusions: exact certificate expectation and nonpositivity under every relaxed law, exclusion by strict positivity, literal measure-one zero set under nonnegativity, and parameter-plane concavity. Includes exact quadratic mixing and finite-vertex interpolation.",
       "lean_files": [
-        "SparseLowerTail/Section05/CoverCertificate.lean"
+        "SparseLowerTail/Section05/CoverCertificate.lean",
+        "SparseLowerTail/Section05/CertificateConcavity.lean",
+        "SparseLowerTail/Section05/PaperCertificateSummary.lean"
       ],
       "lean_declarations": [
         "SparseLowerTail.Section05.RelaxedLaw.feature_expectation",
@@ -1828,9 +1793,19 @@
         "SparseLowerTail.Section05.RelaxedLaw.certificate_expectation",
         "SparseLowerTail.Section05.RelaxedLaw.certificate_expectation_nonpos",
         "SparseLowerTail.Section05.no_relaxedLaw_of_certificate_pos",
-        "SparseLowerTail.Section05.RelaxedLaw.certificate_zero_set_measure"
+        "SparseLowerTail.Section05.RelaxedLaw.certificate_zero_set_measure",
+        "SparseLowerTail.Section05.coverCertificate_mix",
+        "SparseLowerTail.Section05.coverCertificate_concave",
+        "SparseLowerTail.Section05.coverCertificate_le_map_sum",
+        "SparseLowerTail.Section05.weak_duality_all"
       ],
-      "explicit_inputs": []
+      "explicit_inputs": [],
+      "latest_manuscript_review": {
+        "checked_at_utc": "2026-10-20T10:59:28.352265+00:00",
+        "note": "Current parts (a)-(d) are checked together, including exact expectation, exclusion by strict positivity, measure-one zero set and concavity on the full parameter plane. The former separate concavity lemma is now part (d); all old interpolation proofs remain linked.",
+        "audit_record": "data/certificate-summary-check.json"
+      },
+      "verification_record": "data/certificate-summary-check.json"
     },
     {
       "paper_label": "lem:zc",
@@ -2080,31 +2055,6 @@
         "classical:inverse-transform-sampling",
         "classical:positive-hilbert-schmidt-spectrum",
         "external:KP26:1.6"
-      ]
-    },
-    {
-      "paper_label": "prop:stability",
-      "baseline": {
-        "environment": "proposition",
-        "statement": "Let $r_0\\in(0,r_*]$, and let $(r_n)$ be a sequence in $(0,r_*)$ with $r_n\\to r_0$. Suppose that for every choice of minimizers $U_n$ at $r_n$, every limit in cut distance of a subsequence of $(U_n)$ is a relabeling of $B_{r_0}$. Then there is $n_0$ such that for every $n\\ge n_0$, every minimizer at $r_n$ is a relabeling of $B_{r_n}$.",
-        "statement_sha256": "7e251fe17d35fea3a6e2831703e9621f620de1c8e263e550831fba50344ec8da",
-        "proof_sha256": "28356fc20430661c4cdbc597b2086aedccf6064e8354d41c44b16f2bf4f0a4ba",
-        "source_line": 4480
-      },
-      "status": "proved_relative_classical",
-      "checked_scope": "Full sequential stability proposition for actual cut-distance limits of arbitrary minimizers.",
-      "lean_files": [
-        "SparseLowerTail/Section06/Stability.lean"
-      ],
-      "lean_declarations": [
-        "SparseLowerTail.Section06.eventually_branchClassification_of_subsequence_limits"
-      ],
-      "explicit_inputs": [
-        "classical:inverse-transform-sampling",
-        "classical:dyadic-l1-approximation",
-        "classical:graphon-cut-compactness",
-        "classical:pullback-l1-approximation",
-        "classical:counting-lemma"
       ]
     },
     {
@@ -3413,7 +3363,164 @@
         "source_line": 3701,
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
       }
+    },
+    {
+      "paper_label": "s4:eq:cube",
+      "status": "proved",
+      "checked_scope": "The cube identity for all real a,b and the immediately preceding actual integral codegree computation for every measurable half partition and arbitrary real block values. The prior graphon specialization remains linked.",
+      "lean_files": [
+        "SparseLowerTail/Section04/Codegree.lean",
+        "SparseLowerTail/Section04/EntropyGeometry.lean",
+        "SparseLowerTail/Section05/PaperCertificateSummary.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.codegree_twoBlock",
+        "SparseLowerTail.Section04.mean_cube_sub_balancedTriangle",
+        "SparseLowerTail.Section05.codegree_blockValue_real"
+      ],
+      "explicit_inputs": [],
+      "baseline": {
+        "environment": "equation",
+        "statement_sha256": "7afd8fd93f2ddf5cc3bbc6e5f5d69ea0026b121cae4ac3fa4b8abd88221fa316",
+        "proof_sha256": null,
+        "source_line": 2446,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      },
+      "verification_record": "data/certificate-summary-check.json",
+      "historical_anchor": "lem:Bcodegree"
     }
   ],
-  "current_manuscript_inventory": "manuscript-coverage.json"
+  "current_manuscript_inventory": "manuscript-coverage.json",
+  "historical_anchors": [
+    {
+      "paper_label": "lem:concave",
+      "baseline": {
+        "environment": "lemma",
+        "statement_sha256": "cf259085c0a2c47cc372095b18a26e2c31b1fa31d8353b89c49758eaf8403578",
+        "proof_sha256": "4bd761c43d658952aef8bf063bf2b6165a77f9f83fbc4042ba77a84778965650",
+        "source_line": 3642
+      },
+      "status": "proved",
+      "checked_scope": "Exact quadratic mixing identity, concavity on the full parameter plane, and finite weighted-vertex interpolation inequality.",
+      "lean_files": [
+        "SparseLowerTail/Section05/CertificateConcavity.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section05.coverCertificate_mix",
+        "SparseLowerTail.Section05.coverCertificate_concave",
+        "SparseLowerTail.Section05.coverCertificate_le_map_sum"
+      ],
+      "explicit_inputs": [],
+      "migration": {
+        "replaced_by": [
+          "lem:weakdual"
+        ],
+        "current_location": "part (d), with finite-vertex interpolation used in the cover argument"
+      },
+      "reviewed_at_utc": "2026-10-20T10:59:28.352265+00:00",
+      "current_source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+    },
+    {
+      "paper_label": "cor:identities",
+      "status": "proved_relative_classical",
+      "checked_scope": "Cost/mean bounds, constant-case equality characterization, explicit multiplier and vertex formulas, sharp support and its mean inequality, and coordinatewise/strict monotonicity of Lambda.",
+      "lean_files": [
+        "SparseLowerTail/Section05/SupportBounds.lean",
+        "SparseLowerTail/Section04/Rescaling.lean",
+        "SparseLowerTail/Section04/VertexIdentity.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section05.minimizer_cost_bounds",
+        "SparseLowerTail.Section05.minimizer_mean_bounds",
+        "SparseLowerTail.Section05.minimizer_mean_add_cost_lt_one",
+        "SparseLowerTail.Section05.minimizer_mean_eq_target_iff",
+        "SparseLowerTail.Section04.graphonMultiplier",
+        "SparseLowerTail.Section04.vertexMean_eq",
+        "SparseLowerTail.Section05.multiplier_mul_supportCodegreeBound",
+        "SparseLowerTail.Section05.minimizer_supportLambda_lower",
+        "SparseLowerTail.Section05.minimizer_supportLambda_le_mean",
+        "SparseLowerTail.Section05.supportLambda_mono",
+        "SparseLowerTail.Section05.supportLambda_strictMono_mean",
+        "SparseLowerTail.Section05.supportLambda_strictMono_cost"
+      ],
+      "explicit_inputs": [
+        "classical:inverse-transform-sampling"
+      ],
+      "baseline": {
+        "environment": "corollary",
+        "statement_sha256": "9d80807a68778252520511d295b31ae61f72b388cfb46345f93339ed6341ae51",
+        "proof_sha256": "c96e7742b466d3095de4924ec635f1c74b0ad1d69d2931624af000c565412ce3",
+        "source_line": 3373
+      },
+      "migration": {
+        "replaced_by": [
+          "lem:support"
+        ],
+        "current_location": "support lemma and surrounding parameter formulas; stronger prior identities retained"
+      },
+      "reviewed_at_utc": "2026-10-20T10:59:28.352265+00:00",
+      "current_source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+    },
+    {
+      "paper_label": "prop:stability",
+      "baseline": {
+        "environment": "proposition",
+        "statement_sha256": "7e251fe17d35fea3a6e2831703e9621f620de1c8e263e550831fba50344ec8da",
+        "proof_sha256": "28356fc20430661c4cdbc597b2086aedccf6064e8354d41c44b16f2bf4f0a4ba",
+        "source_line": 4480
+      },
+      "status": "proved_relative_classical",
+      "checked_scope": "Full sequential stability proposition for actual cut-distance limits of arbitrary minimizers.",
+      "lean_files": [
+        "SparseLowerTail/Section06/Stability.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section06.eventually_branchClassification_of_subsequence_limits"
+      ],
+      "explicit_inputs": [
+        "classical:inverse-transform-sampling",
+        "classical:dyadic-l1-approximation",
+        "classical:graphon-cut-compactness",
+        "classical:pullback-l1-approximation",
+        "classical:counting-lemma"
+      ],
+      "migration": {
+        "replaced_by": [
+          "cor:open",
+          "cor:seed"
+        ],
+        "current_location": "shared compactness/local-rigidity proof of the two corollaries"
+      },
+      "reviewed_at_utc": "2026-10-20T10:59:28.352265+00:00",
+      "current_source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+    },
+    {
+      "paper_label": "lem:Bcodegree",
+      "status": "partial",
+      "checked_scope": "Codegree formula and cube identity; graphon values restricted to [0,1] in the current constructor. Scalar cube identity holds for all real a,b.",
+      "lean_files": [
+        "SparseLowerTail/Section04/Codegree.lean",
+        "SparseLowerTail/Section04/EntropyGeometry.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.codegree_twoBlock",
+        "SparseLowerTail.Section04.mean_cube_sub_balancedTriangle"
+      ],
+      "explicit_inputs": [],
+      "baseline": {
+        "environment": "lemma",
+        "statement_sha256": "bc1b12d3fe867c230534bc1c419811f0639138bfbe3306dc3946347100edad8a",
+        "proof_sha256": "533b4454b9e893bbc1e29289e4702945f5a4d2c51f6285b2fa869e6e4685c741",
+        "source_line": 2391
+      },
+      "migration": {
+        "replaced_by": [
+          "s4:eq:cube"
+        ],
+        "current_location": "unnumbered codegree paragraph immediately before the cube identity in subsection s4:sec:euler"
+      },
+      "reviewed_at_utc": "2026-10-20T10:59:28.352265+00:00",
+      "current_source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+    }
+  ]
 }

@@ -1,13 +1,11 @@
 {
   "scope": "All arguments proved by the authors, including probabilistic deductions. Cited external and standard classical theorems may be explicit hypotheses; their paper-specific applications remain obligations.",
   "overleaf_url": "https://www.overleaf.com/project/6acd7ee98a5fed7d56897586",
-  "checked_at_utc": "2026-10-20T10:40:29.041872+00:00",
+  "checked_at_utc": "2026-10-20T10:59:28.352265+00:00",
   "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9",
   "certificate_tables_match": true,
   "mapped_label_changes": {
-    "missing_or_renamed": 4,
-    "proof_changed": 15,
-    "statement_changed": 4
+    "proof_changed": 15
   },
   "items": [
     {
@@ -651,7 +649,7 @@
       "proof_sha256": "cf0673fe259b7689d803c4a514f8833115830f96e3fd2e32e5e9729bd26cff52",
       "mapping_status": "mapped",
       "recorded_status": "proved_relative_classical",
-      "latest_manuscript_review": "statement_changed",
+      "latest_manuscript_review": "current_statement_and_argument_checked",
       "ownership": "author_argument_or_specialization_to_review"
     },
     {
@@ -681,7 +679,7 @@
       "proof_sha256": "50a3e691a7be978611448b43cb51a2bdc60fad733d759331452d19418255e5a8",
       "mapping_status": "mapped",
       "recorded_status": "proved",
-      "latest_manuscript_review": "statement_changed",
+      "latest_manuscript_review": "current_statement_and_argument_checked",
       "ownership": "author_argument_or_specialization_to_review"
     },
     {
@@ -811,7 +809,7 @@
       "proof_sha256": "cf8adb18f7f3f7ebcc50dd8408d4255025774689d814f6ed14beb33b89307ce3",
       "mapping_status": "mapped",
       "recorded_status": "proved",
-      "latest_manuscript_review": "statement_changed",
+      "latest_manuscript_review": "current_statement_and_argument_checked",
       "ownership": "author_argument_or_specialization_to_review"
     },
     {
@@ -941,7 +939,7 @@
       "proof_sha256": "cc100c83643753907ab27e1d0ce6f81a00494492ff61e656cadf4df70267ae3b",
       "mapping_status": "mapped",
       "recorded_status": "proved",
-      "latest_manuscript_review": "statement_changed",
+      "latest_manuscript_review": "current_statement_and_argument_checked",
       "ownership": "author_argument_or_specialization_to_review"
     },
     {

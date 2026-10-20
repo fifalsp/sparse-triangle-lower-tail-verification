@@ -1,0 +1,103 @@
+{
+  "status": "review_required",
+  "checked_labels": 108,
+  "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9",
+  "baseline_source_sha256": "84c55a798a1fc1492f319179eec89f340d27269916acd622d54707da185e17b7",
+  "changes": [
+    {
+      "paper_label": "lem:certcoef",
+      "status": "proof_changed"
+    },
+    {
+      "paper_label": "lem:digits",
+      "status": "proof_changed"
+    },
+    {
+      "paper_label": "prop:euler",
+      "status": "proof_changed"
+    },
+    {
+      "paper_label": "thm:threshold",
+      "status": "proof_changed"
+    },
+    {
+      "paper_label": "lem:tieexclusion",
+      "status": "proof_changed"
+    },
+    {
+      "paper_label": "prop:family",
+      "status": "proof_changed"
+    },
+    {
+      "paper_label": "lem:cut",
+      "status": "proof_changed"
+    },
+    {
+      "paper_label": "cor:bipodalmin",
+      "status": "proof_changed"
+    },
+    {
+      "paper_label": "lem:tie",
+      "status": "proof_changed"
+    },
+    {
+      "paper_label": "lem:zc",
+      "status": "proof_changed"
+    },
+    {
+      "paper_label": "cor:cover",
+      "status": "proof_changed"
+    },
+    {
+      "paper_label": "prop:pen",
+      "status": "proof_changed"
+    },
+    {
+      "paper_label": "thm:rigidity",
+      "status": "proof_changed"
+    },
+    {
+      "paper_label": "lem:smallparams",
+      "status": "proof_changed"
+    },
+    {
+      "paper_label": "lem:rowreduction",
+      "status": "proof_changed"
+    }
+  ],
+  "scope": "Only mapped statements and adjacent proofs are checked; this is not mathematical verification.",
+  "reviewed_in_this_check": [
+    "lem:weakdual",
+    "lem:support",
+    "s8:expect",
+    "lem:stationary",
+    "s4:eq:cube"
+  ],
+  "reconciled_historical_anchors": {
+    "lem:concave": {
+      "replaced_by": [
+        "lem:weakdual"
+      ],
+      "current_location": "part (d), with finite-vertex interpolation used in the cover argument"
+    },
+    "cor:identities": {
+      "replaced_by": [
+        "lem:support"
+      ],
+      "current_location": "support lemma and surrounding parameter formulas; stronger prior identities retained"
+    },
+    "prop:stability": {
+      "replaced_by": [
+        "cor:open",
+        "cor:seed"
+      ],
+      "current_location": "shared compactness/local-rigidity proof of the two corollaries"
+    },
+    "lem:Bcodegree": {
+      "replaced_by": [
+        "s4:eq:cube"
+      ],
+      "current_location": "unnumbered codegree paragraph immediately before the cube identity in subsection s4:sec:euler"
+    }
+  }
+}

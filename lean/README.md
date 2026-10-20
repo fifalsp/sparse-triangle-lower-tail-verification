@@ -1709,3 +1709,15 @@ AAA/ABB contacts, and the relabeling conclusion from pattern support and
 balanced edge density. The last step uses the recorded classical nonatomic
 CDF transport. The [record](data/patterns-check.json) contains 20 public
 audits and the full root audit of 18,082 theorems.
+
+
+### 2026-10-20 — Current certificate and support statements
+
+The current weak-duality lemma is checked with all four conclusions, including
+parameter concavity. The current support lemma is stated with its exact mean,
+multiplier, vertex-level and sharp-support conclusions. Balanced codegrees are
+checked for arbitrary real block values, and the branch contact identity follows
+from its actual four-atom law. Four historical anchors are reconciled with their
+current locations; every previously linked declaration remains in the active map.
+The [record](data/certificate-summary-check.json) contains 52 public audits
+and the full root audit of 18,086 theorems.

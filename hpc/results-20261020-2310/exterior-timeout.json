@@ -1,0 +1,18 @@
+{
+  "checked_at_utc": "2026-10-20T23:16:22.249651+00:00",
+  "job_id": 23047539,
+  "account": "biah-delta-cpu",
+  "state": "TIMEOUT",
+  "elapsed_seconds": 21607,
+  "billing_cores": 15,
+  "computed_core_hours": 90.02916666666667,
+  "full_verification_passed": false,
+  "phase_at_timeout": "Restored-cache validation; 32 finished failed no-build checks, batch32 interrupted",
+  "mathlib_cache_files_installed": 7335,
+  "persistent_checkout": "/projects/biah/sli54/triangle-verification/remaining-exterior-23047539/repo",
+  "archive": "hpc/results-20261020-2310/sparse-lean-exterior-timeout-23047539.tar.gz",
+  "archive_sha256": "5c1b6d3d44d101e182adbc2e591c126bb1225ca342e2d3724d64bef39c54aad1",
+  "audit_source_sha256": "956129721ba7190769a93bd755dde91ac7b4fcd15326656721cc822308cc9014",
+  "retry_job": 23065285,
+  "retry_method": "Reuse persistent checkout without Yale extraction or proof regeneration. Check dependency-ready cache batches, ordinary builds for misses, full target and unchanged audit, dependency source hashes."
+}

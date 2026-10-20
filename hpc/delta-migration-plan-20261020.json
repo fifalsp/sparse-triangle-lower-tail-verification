@@ -1,5 +1,5 @@
 {
-  "status": "Exterior running; corrected ABB and nonapex retries queued; replacement integration waits for afterok dependencies",
+  "status": "Five regional jobs pending Priority; exterior retry reuses its Delta checkout; integration awaits sufficient budget",
   "account": "biah-delta-cpu",
   "approved_pool_hours": 500,
   "yale_staging_directory": "/nfs/roberts/project/pi_sl3363/sl3363/triangle-migration-20261020",
@@ -31,17 +31,18 @@
       "previous_job_id": 23047530
     },
     {
-      "stage": "exterior with saved Yale cache",
+      "stage": "exterior from its existing Delta checkout",
       "cpus": 4,
       "memory_mib": 30000,
       "wall_hours": 6,
       "workers": 3,
       "maximum_allocation_hours": 90,
-      "job_id": 23047539,
+      "job_id": 23065285,
       "observed_billing_tres": 15000,
-      "observed_state": "RUNNING",
-      "reason": null,
-      "user_hold": false
+      "observed_state": "PENDING",
+      "reason": "Priority",
+      "user_hold": false,
+      "previous_job_id": 23047539
     },
     {
       "stage": "nonapex 0 with saved Yale cache",
@@ -78,16 +79,16 @@
       "wall_hours": 4,
       "workers": 1,
       "maximum_allocation_hours": 120,
-      "job_id": 23050654,
+      "job_id": null,
       "observed_billing_tres": 30000,
-      "observed_state": "PENDING",
-      "reason": "Dependency",
+      "observed_state": "NOT_SUBMITTED",
+      "reason": "Await approved balance or freed commitments for a 120-hour cap",
       "user_hold": false,
-      "previous_job_id": 23047560
+      "previous_job_id": 23050654
     }
   ],
-  "maximum_total_allocation_hours": 484,
-  "resource_notes": "Accepted full time caps now total 484 hours. The recovery ledger subtracts elapsed running-job charges and includes failed-job charges before any retry; maximum outstanding 476.4833 fits live remaining 481. The extra 500 requested hours remain under review.",
+  "maximum_total_allocation_hours": 364,
+  "resource_notes": "Five accepted regional caps total 364 hours within live balance398/500. The prior blocked integration was cancelled only while PENDING and unstarted. Its replacement needs a separate120-hour cap; do not submit while total outstanding would exceed balance. Extra500 remains Under Review.",
   "submission_policy": "After transfer validation, resume ABB/exterior with the saved caches and replace only their unstarted copies. Submit both remaining nonapex jobs in parallel and final integration with afterok dependencies. Cancel the unstarted Yale recovery and assembly only after the Delta replacement submissions are accepted. Never cancel running healthy work.",
   "verification_gates": [
     "Transfer SHA256SUMS match selected archives.",
@@ -137,7 +138,7 @@
   "assembly_afterok": [
     23029964,
     23050607,
-    23047539,
+    23065285,
     23050626,
     23050651
   ],
@@ -155,11 +156,11 @@
     "additional_core_hours": 500,
     "status": "Under Review; fresh ACCESS approved balance remains 500 hours"
   },
-  "queue_checked_at_utc": "2026-10-20T22:46:41.455706+00:00",
-  "queue_observation": "Exterior RUNNING on cn055; F1 and three retries PENDING Priority; integration PENDING Dependency.",
+  "queue_checked_at_utc": "2026-10-20T23:16:22.249651+00:00",
+  "queue_observation": "F1, ABB, nonapex0, nonapex12 and exterior retry all PENDING Priority. No accepted integration job.",
   "live_accounting_observation": {
-    "checked_at_utc": "2026-10-20T22:46:41.455706+00:00",
-    "remaining_hours": 404,
+    "checked_at_utc": "2026-10-20T23:16:22.249651+00:00",
+    "remaining_hours": 398,
     "deposited_hours": 500,
     "note": "Fresh Delta accounts Balance(Hours) and Deposited(Hours); only biah-delta-cpu is authorized."
   },
@@ -231,32 +232,37 @@
   "runner_remote": "delta-remaining-tls.sbatch",
   "recovery_record": "delta-tls-recovery-20261020.json",
   "exterior_progress": {
-    "checked_at_utc": "2026-10-20T22:46:41.455706+00:00",
+    "checked_at_utc": "2026-10-20T23:16:22.249651+00:00",
     "job_id": 23047539,
-    "elapsed_observed": "5:39:35",
-    "phase": "bounded kernel build: restored-cache validation",
-    "mathlib_cache_files_downloaded": 7335,
-    "mathlib_cache_status": "Completed successfully",
-    "planned_project_modules": 12872,
-    "finished_cache_validation_batches": 21,
-    "accepted_cache_batches": 0,
-    "note": "Batch 21 was active; 21 earlier batches finished without reusable entries. This is cache validation, not a Lean proof failure. Six-hour cap ends about 23:03 UTC; preserve the persistent checkout on timeout."
+    "account": "biah-delta-cpu",
+    "state": "TIMEOUT",
+    "elapsed_seconds": 21607,
+    "billing_cores": 15,
+    "computed_core_hours": 90.02916666666667,
+    "full_verification_passed": false,
+    "phase_at_timeout": "Restored-cache validation; 32 finished failed no-build checks, batch32 interrupted",
+    "mathlib_cache_files_installed": 7335,
+    "persistent_checkout": "/projects/biah/sli54/triangle-verification/remaining-exterior-23047539/repo",
+    "archive": "hpc/results-20261020-2310/sparse-lean-exterior-timeout-23047539.tar.gz",
+    "archive_sha256": "5c1b6d3d44d101e182adbc2e591c126bb1225ca342e2d3724d64bef39c54aad1",
+    "audit_source_sha256": "956129721ba7190769a93bd755dde91ac7b4fcd15326656721cc822308cc9014",
+    "retry_job": 23065285,
+    "retry_method": "Reuse persistent checkout without Yale extraction or proof regeneration. Check dependency-ready cache batches, ordinary builds for misses, full target and unchanged audit, dependency source hashes."
   },
   "all_current_job_accounts_checked": {
-    "checked_at_utc": "2026-10-20T21:45:14.817220+00:00",
-    "method": "squeue account column and sacct JobID,Account,State",
+    "checked_at_utc": "2026-10-20T23:16:22.249651+00:00",
+    "method": "Fresh squeue account column; new retry scontrol Account and ReqTRES checked",
     "account": "biah-delta-cpu",
     "jobs": [
       23029964,
-      23047539,
       23050607,
       23050626,
       23050651,
-      23050654
+      23065285
     ]
   },
   "prepared_exterior_resumption": {
-    "status": "Prepared and locally checked; not submitted or charged",
+    "status": "Uploaded, hashes matched, shell/Python syntax checked on Delta; submitted as23065285",
     "runner": "delta-exterior-resume.sbatch",
     "scheduler": "build_ready_batches.py",
     "runner_sha256": "f08aac1ef4dc1937516a8655894ebd51f75665419f97dc2d45b36e2a14a321f6",
@@ -269,6 +275,35 @@
       "5 scheduling gate tests passed"
     ],
     "submission_gate": "Only after previous job is confirmed terminal, fresh balance covers all outstanding caps plus the new request, and no concurrent resume owns this checkout. Current 500-hour pool has only a small uncommitted margin; wait for actual freed commitments or provider approval of the extra 500.",
-    "after_success": "Replace only a still-pending failed-dependency integration job with the new exterior job in its afterok dependencies, after verifying resources and budget. Never cancel a healthy running job."
+    "after_success": "Submit final integration with afterok dependencies on the current five regional jobs, only when fresh balance covers all outstanding caps plus120hours. The previous blocked integration23050654 is already cancelled.",
+    "job_id": 23065285,
+    "control_directory": "/projects/biah/sli54/triangle-verification/exterior-resume-control-545aaa1",
+    "upload_bundle_sha256": "ed7e957b4a7883b66421141d9395273fe5f7e360a433a8f955d8f71ec1a944a8"
+  },
+  "retired_blocked_integration": [
+    {
+      "job_id": 23050654,
+      "state": "CANCELLED",
+      "elapsed_seconds": 0,
+      "previous_reason": "DependencyNeverSatisfied after exterior TIMEOUT",
+      "guard": "Fresh PENDING|DependencyNeverSatisfied plus scancel --state=PENDING",
+      "saved_request": "exterior-resume-control-545aaa1/blocked-integration-23050654.txt"
+    }
+  ],
+  "integration_budget_gate": {
+    "accepted": false,
+    "future_cap_hours": 120,
+    "current_accepted_caps_hours": 364,
+    "remaining_balance_hours": 398,
+    "uncommitted_margin_hours": 34,
+    "shortfall_if_all_caps_plus_integration": 86,
+    "policy": "Wait for confirmed extra500 approval or unused cap released by successful/ended stages before accepting integration. Never count pending approval as approved budget."
+  },
+  "retired_exterior_job": {
+    "stage": "previous exterior restore/cache validation",
+    "job_id": 23047539,
+    "observed_state": "TIMEOUT",
+    "elapsed_seconds": 21607,
+    "reason": "Six-hour wall limit exhausted during restore and cache checks; persistent checkout preserved"
   }
 }

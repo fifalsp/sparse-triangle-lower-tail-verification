@@ -13,33 +13,34 @@ The saved Yale checkpoints contain partial ABB, exterior and cover-0 builds.
 All **88 transferred archive hashes match** on Delta. The encrypted Globus
 transfer copied 89 files (28.24 GB) in 2 minutes 12 seconds.
 
-All remaining stages use `biah-delta-cpu`:
+Current Delta stages use `biah-delta-cpu`:
 
 | Stage | Delta job | Time cap | Maximum allocation hours |
 |---|---:|---:|---:|
 | Existing F1 replay | 23029964 | 5.5 hours | 88 |
 | ABB, resuming Yale cache | 23050607 | 6 hours | 90 |
-| Exterior, resuming Yale cache — running | 23047539 | 6 hours | 90 |
+| Exterior, reusing its Delta checkout | 23065285 | 6 hours | 90 |
 | Nonapex 0, resuming Yale cache | 23050626 | 4 hours | 24 |
 | Nonapex 12 | 23050651 | 12 hours | 72 |
-| Full binary64 ABB padding and current-source combined integration | 23050654 | 4 hours | 120 |
+| Full binary64 ABB padding and current-source integration — awaiting budget | — | 4 hours | 120 |
 
-ABB, both nonapex jobs and the earlier author-root check stopped during mathlib
-cache downloads. The runner now uses Delta’s system CA bundle and a separate
-download cache per job. Corrected retries are queued; integration has normal
-`afterok` dependencies on F1 and the four regional stages. The running exterior
-job was preserved; all 7,335 mathlib cache files downloaded successfully and
-its bounded build has entered restored-cache validation. [Recovery and validation](delta-tls-recovery-20261020.json).
-
-Live accounting shows **404 of 500 hours remaining**. Actual failed-job charges
-and all remaining commitments fit this balance. The additional 500-hour ACCESS
-exchange remains **under review**.
-An exterior resume runner is prepared to reuse its Delta checkout and validate
-cache entries after their imports pass. It has not been submitted; new work
-must fit the live balance after existing commitments.
-[Resume runner](delta-exterior-resume.sbatch) · [Scheduler checks](test_ready_batches.py).
+The five regional jobs are queued. Their accepted caps total **364 hours**
+against a live balance of **398 of 500 hours**. Integration will be resubmitted
+when the additional 500-hour exchange is approved or completed jobs free enough
+unused budget. The exchange remains **under review**.
 [Deployment and resources](delta-migration-plan-20261020.json) ·
 [Exchange request](delta-extra-500-exchange-20261020.json).
+
+The first exterior run reached its six-hour limit during checkpoint restoration
+and cache validation. All 7,335 mathlib cache files installed successfully;
+the full replay and axiom audit remain pending. The retry reuses that Delta
+checkout and checks cached modules after their imports pass.
+[Partial run evidence](results-20261020-2310/exterior-timeout.json) ·
+[Resume runner](delta-exterior-resume.sbatch).
+
+The earlier download failures were fixed with Delta’s system CA bundle and a
+separate download cache per job.
+[Recovery checks](delta-tls-recovery-20261020.json).
 
 Delta was busy at the latest check: 14,797 CPU cores allocated, 2,227 idle
 cores on partially occupied nodes, and 128 reserved idle cores.

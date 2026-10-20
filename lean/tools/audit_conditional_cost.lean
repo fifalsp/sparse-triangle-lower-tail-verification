@@ -1,0 +1,10 @@
+import SparseLowerTail.Section03.ConditionalCostBounds
+
+#print axioms SparseLowerTail.Section03.finite_event_markov
+#print axioms SparseLowerTail.Section03.finite_mean_lower_of_good
+#print axioms SparseLowerTail.Section03.finite_excess_mean_le
+#print axioms SparseLowerTail.Section03.finite_dependence_mean_le
+#print axioms SparseLowerTail.Section03.finite_four_bad_events_le
+#print axioms SparseLowerTail.Section03.conditional_value_baseline_bounds
+#print axioms SparseLowerTail.Section03.conditional_excess_and_dependence_means
+#print axioms SparseLowerTail.Section03.conditional_excess_cost_probability

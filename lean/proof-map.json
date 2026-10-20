@@ -2722,7 +2722,9 @@
         "SparseLowerTail/Section03/KS23RateInputs.lean",
         "SparseLowerTail/Section03/TriangleRateComparison.lean",
         "SparseLowerTail/Section03/RateSandwich.lean",
-        "SparseLowerTail/Section03/LowerTailRate.lean"
+        "SparseLowerTail/Section03/LowerTailRate.lean",
+        "SparseLowerTail/Section03/FiniteProbabilityBounds.lean",
+        "SparseLowerTail/Section03/ConditionalCostBounds.lean"
       ],
       "lean_declarations": [
         "SparseLowerTail.Section03.extendGraphEdges_coe",
@@ -2747,7 +2749,15 @@
         "SparseLowerTail.Section03.targetValue_continuousAt",
         "SparseLowerTail.Section03.targetValue_perturbations_tendsto",
         "SparseLowerTail.Section03.triangleLowerTailRate_tendsto",
-        "SparseLowerTail.Section03.triangleLowerTailRate_ratio_tendsto_one"
+        "SparseLowerTail.Section03.triangleLowerTailRate_ratio_tendsto_one",
+        "SparseLowerTail.Section03.finite_event_markov",
+        "SparseLowerTail.Section03.finite_mean_lower_of_good",
+        "SparseLowerTail.Section03.finite_excess_mean_le",
+        "SparseLowerTail.Section03.finite_dependence_mean_le",
+        "SparseLowerTail.Section03.finite_four_bad_events_le",
+        "SparseLowerTail.Section03.conditional_value_baseline_bounds",
+        "SparseLowerTail.Section03.conditional_excess_and_dependence_means",
+        "SparseLowerTail.Section03.conditional_excess_cost_probability"
       ],
       "explicit_inputs": [
         "external:KS23:theorem5",
@@ -2766,6 +2776,29 @@
         "statement_sha256": "df20d608547199ff293afc714952a9f735a27a74f205096ac592b7a394dba483",
         "proof_sha256": null,
         "source_line": 778,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      },
+      "supporting_verification_records": [
+        "data/conditional-cost-check.json"
+      ]
+    },
+    {
+      "paper_label": "s3:v0",
+      "status": "proved_quantitative_estimate",
+      "checked_scope": "The stated baseline gap 0≤V(r)−v₀≤ω/2 and v₀≤1, under the displayed scale-loss, reciprocal-n and revealed-set error bounds. Proved from the quantitative value-continuity inequality. Selection of these parameters and the full conditioned probability argument remain in thm:reduction(b).",
+      "lean_files": [
+        "SparseLowerTail/Section03/ConditionalCostBounds.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section03.conditional_value_baseline_bounds"
+      ],
+      "explicit_inputs": [],
+      "verification_record": "data/conditional-cost-check.json",
+      "baseline": {
+        "environment": "equation",
+        "statement_sha256": "bf54e87ea6f7293d595dfb7d489e1a043d8ffce024352dce589df6cde6148ff9",
+        "proof_sha256": null,
+        "source_line": 2104,
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
       }
     }

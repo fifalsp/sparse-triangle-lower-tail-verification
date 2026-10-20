@@ -1,0 +1,67 @@
+{
+  "checked_at_utc": "2026-10-20T07:43:12.264856+00:00",
+  "source_parent_commit": "9386f48c2f01bb1b9198d692d544819496c0fb23",
+  "scope": "Eight finite-law and value-baseline estimates supporting thm:reduction(b), including s3:v0. The full conditioned-structure theorem and its actual revealed-edge applications remain unfinished.",
+  "sources": [
+    {
+      "path": "SparseLowerTail/Section03/FiniteProbabilityBounds.lean",
+      "sha256": "820617651dcd732f9635bb4f776e728f83c58493ac24b8de648e71485d2d7bd6"
+    },
+    {
+      "path": "SparseLowerTail/Section03/ConditionalCostBounds.lean",
+      "sha256": "41bf1414c390972c83eed2a82e9336dd143e89d3fa8b35f1e7917650d78effe5"
+    }
+  ],
+  "checks": [
+    {
+      "command": "lake build SparseLowerTail.Section03.ConditionalCostBounds",
+      "exit_code": 0,
+      "output": "Build completed successfully (3185 jobs)."
+    },
+    {
+      "command": "lake env lean tools/audit_conditional_cost.lean",
+      "exit_code": 0,
+      "output": "'SparseLowerTail.Section03.finite_event_markov' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finite_mean_lower_of_good' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finite_excess_mean_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finite_dependence_mean_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finite_four_bad_events_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.conditional_value_baseline_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.conditional_excess_and_dependence_means' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.conditional_excess_cost_probability' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake build SparseLowerTail",
+      "exit_code": 0,
+      "output": "Built SparseLowerTail (2.8s). Build completed successfully (3636 jobs). Existing cached linter warnings were replayed."
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean Audit.lean",
+      "exit_code": 0,
+      "output": "Axiom audit passed: 24069 project declarations, 17591 theorems; only propext, Classical.choice, Quot.sound allowed.\n"
+    },
+    {
+      "command": "python3 tools/check_lean_map.py",
+      "exit_code": 0,
+      "output": "Proof-map links passed: 100 labels, 611 Lean declarations.\n"
+    }
+  ],
+  "audited_public_theorems": 8,
+  "root_project_modules": 494,
+  "root_project_declarations": 24069,
+  "root_project_theorems": 17591,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "base_source_manifest": "current-root-check-20261020-0736.json",
+  "source_manifest_changes": [
+    {
+      "module": "SparseLowerTail",
+      "sha256": "87d66bf6a52e63bdb58f9ce567edd482579678282916ab1dfc5ce34a3e7d1df2"
+    },
+    {
+      "module": "SparseLowerTail.Section03.ConditionalCostBounds",
+      "sha256": "41bf1414c390972c83eed2a82e9336dd143e89d3fa8b35f1e7917650d78effe5"
+    },
+    {
+      "module": "SparseLowerTail.Section03.FiniteProbabilityBounds",
+      "sha256": "820617651dcd732f9635bb4f776e728f83c58493ac24b8de648e71485d2d7bd6"
+    }
+  ],
+  "source_manifest_sha256": "d59aea404986c5aef7580ff903055df6c92271eb68405d493489559aee4fc488"
+}

@@ -1533,3 +1533,13 @@ All 23 new public theorems pass the axiom audit. The
 [check record](data/lower-tail-rate-check.json) records source hashes and
 checks. Conditioned structure in part (b), the remaining certificate replays,
 and the latest manuscript review remain to be completed.
+
+
+The finite-law good-event estimates for part (b) are also checked:
+Markov's inequality, the positive cost excess, the residual dependence
+entropy, the four-event union bound, and the quantitative baseline `s3:v0`.
+[ConditionalCostBounds.lean](SparseLowerTail/Section03/ConditionalCostBounds.lean)
+and its import contain eight audited public theorems. The actual
+revealed-edge law applications and the full conditioned-structure and
+rounding conclusions remain. The [combined check](data/conditional-cost-check.json)
+records their integrated root build and audit.

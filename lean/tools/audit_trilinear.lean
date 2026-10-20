@@ -1,0 +1,15 @@
+import SparseLowerTail.Section02.Trilinear
+
+#print axioms SparseLowerTail.Section02.mixedTriangle_integrable
+#print axioms SparseLowerTail.Section02.mixedTriangle_cycle
+#print axioms SparseLowerTail.Section02.mixedTriangle_swap_right
+#print axioms SparseLowerTail.Section02.mixedTriangle_permutations
+#print axioms SparseLowerTail.Section02.mixedTriangle_codegree
+#print axioms SparseLowerTail.Section02.mixedTriangle_add_left
+#print axioms SparseLowerTail.Section02.mixedTriangle_add_middle
+#print axioms SparseLowerTail.Section02.mixedTriangle_add_right
+#print axioms SparseLowerTail.Section02.signedTriangle_add_expansion
+#print axioms SparseLowerTail.Section02.abs_mixedTriangle_le_l1
+#print axioms SparseLowerTail.Section02.signedTriangle_codegree
+#print axioms SparseLowerTail.Section02.abs_signedTriangle_le
+#print axioms SparseLowerTail.triangle_eq_integral_codegree

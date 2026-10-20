@@ -1,12 +1,12 @@
 {
   "scope": "All arguments proved by the authors, including probabilistic deductions. Cited external and standard classical theorems may be explicit hypotheses; their paper-specific applications remain obligations.",
   "overleaf_url": "https://www.overleaf.com/project/6acd7ee98a5fed7d56897586",
-  "checked_at_utc": "2026-10-20T09:12:11.254059+00:00",
+  "checked_at_utc": "2026-10-20T09:34:21.289881+00:00",
   "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9",
   "certificate_tables_match": true,
   "mapped_label_changes": {
     "missing_or_renamed": 4,
-    "proof_changed": 25,
+    "proof_changed": 22,
     "statement_changed": 6
   },
   "items": [
@@ -55,9 +55,9 @@
       "source_line": 1231,
       "statement_sha256": "920bb21700acbf8b22634e341e25d0296bf536a77d78e1666295f0825aae67eb",
       "proof_sha256": "b919c212a3373b5801a6375ff3bef5bc616456805b48a88b07ef73308266f3a2",
-      "mapping_status": "needs_mapping",
-      "recorded_status": null,
-      "latest_manuscript_review": "not_yet_mapped",
+      "mapping_status": "mapped",
+      "recorded_status": "proved",
+      "latest_manuscript_review": "current_statement_and_argument_checked",
       "ownership": "author_argument_or_specialization_to_review"
     },
     {
@@ -88,7 +88,7 @@
       "proof_sha256": "8c936426d4160ca63e7fdadd4c613b5bb306e338dfeb24359a650afb6481ee08",
       "mapping_status": "mapped",
       "recorded_status": "proved",
-      "latest_manuscript_review": "proof_changed",
+      "latest_manuscript_review": "current_statement_and_argument_checked",
       "ownership": "author_argument_or_specialization_to_review"
     },
     {
@@ -169,7 +169,7 @@
       "proof_sha256": "6db636cc9a7c1a993b535fa0452f7dc7271152caaf5bd89a21538150b010951b",
       "mapping_status": "mapped",
       "recorded_status": "proved_relative_classical",
-      "latest_manuscript_review": "proof_changed",
+      "latest_manuscript_review": "current_statement_and_argument_checked",
       "ownership": "author_argument_or_specialization_to_review"
     },
     {
@@ -441,7 +441,7 @@
       "proof_sha256": "5f4a7a4937f88c22cf46ef95cb94d9f8f361e4a4276b261eb154a348a1afc650",
       "mapping_status": "mapped",
       "recorded_status": "proved",
-      "latest_manuscript_review": "proof_changed",
+      "latest_manuscript_review": "current_statement_and_argument_checked",
       "ownership": "author_argument_or_specialization_to_review"
     },
     {
@@ -499,9 +499,9 @@
       "source_line": 2772,
       "statement_sha256": "179c2008199a9922d2ff92faa54a12f531eab290961ceefa959f14ab5fafa9f9",
       "proof_sha256": "0c53df2f1270996ca79f6d8ee11962467099218075085dde561ca685cf6acf50",
-      "mapping_status": "needs_mapping",
-      "recorded_status": null,
-      "latest_manuscript_review": "not_yet_mapped",
+      "mapping_status": "mapped",
+      "recorded_status": "proved",
+      "latest_manuscript_review": "current_statement_and_argument_checked",
       "ownership": "author_argument_or_specialization_to_review"
     },
     {
@@ -529,9 +529,9 @@
       "source_line": 2866,
       "statement_sha256": "bfc9e427c3581d7bfd0fe1a68d20a705aa18575b222eed70ec03ac09a5f3f357",
       "proof_sha256": "824d15a0cfdab4b3633a69efe58cbfb880398778cd6609de2c577849c9e95761",
-      "mapping_status": "needs_mapping",
-      "recorded_status": null,
-      "latest_manuscript_review": "not_yet_mapped",
+      "mapping_status": "mapped",
+      "recorded_status": "proved",
+      "latest_manuscript_review": "current_statement_and_argument_checked",
       "ownership": "author_argument_or_specialization_to_review"
     },
     {
@@ -579,9 +579,9 @@
       "source_line": 3174,
       "statement_sha256": "93ed896f94ae93c4aeb32e28f55481438a763abaa35d4089e8b9f1dd5eae2d84",
       "proof_sha256": "2b06155e215dbd6504f355f7b81a5def9f263af5bcae49b167f979459f66cb35",
-      "mapping_status": "needs_mapping",
-      "recorded_status": null,
-      "latest_manuscript_review": "not_yet_mapped",
+      "mapping_status": "mapped",
+      "recorded_status": "proved",
+      "latest_manuscript_review": "current_statement_and_argument_checked",
       "ownership": "author_argument_or_specialization_to_review"
     },
     {
@@ -1019,9 +1019,9 @@
       "source_line": 5741,
       "statement_sha256": "d4f23327fc75c5039a1e508758344298e15219c972606d0cca89e38256f49a60",
       "proof_sha256": "f2ac173890d1a4e34679c2876bb510ac4d6b95a00c7840b0fc0061fcfaee0dd6",
-      "mapping_status": "needs_mapping",
-      "recorded_status": null,
-      "latest_manuscript_review": "not_yet_mapped",
+      "mapping_status": "mapped",
+      "recorded_status": "proved",
+      "latest_manuscript_review": "current_statement_and_argument_checked",
       "ownership": "author_argument_or_specialization_to_review"
     },
     {

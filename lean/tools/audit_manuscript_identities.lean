@@ -1,0 +1,57 @@
+import SparseLowerTail.Section02.RelabelBalanced
+import SparseLowerTail.Section04.Rescaling
+import SparseLowerTail.Section05.BranchBoundSoundness
+import SparseLowerTail.Section06.RowsCriterion
+import SparseLowerTail.Section02.Trilinear
+import SparseLowerTail.Section04.ZhaoThreshold
+import SparseLowerTail.Section05.CriticalGraphon
+
+#print axioms SparseLowerTail.Section02.mixedTriangle_integrable
+#print axioms SparseLowerTail.Section02.mixedTriangle_cycle
+#print axioms SparseLowerTail.Section02.mixedTriangle_swap_right
+#print axioms SparseLowerTail.Section02.mixedTriangle_permutations
+#print axioms SparseLowerTail.Section02.mixedTriangle_codegree
+#print axioms SparseLowerTail.Section02.mixedTriangle_add_left
+#print axioms SparseLowerTail.Section02.mixedTriangle_add_middle
+#print axioms SparseLowerTail.Section02.mixedTriangle_add_right
+#print axioms SparseLowerTail.Section02.signedTriangle_add_expansion
+#print axioms SparseLowerTail.Section02.abs_mixedTriangle_le_l1
+#print axioms SparseLowerTail.Section04.rayCost_pos
+#print axioms SparseLowerTail.Section04.zhaoR_mem_Ioo
+#print axioms SparseLowerTail.Section04.rayGap_log_zhaoR
+#print axioms SparseLowerTail.Section04.rayGap_zero_iff_zhaoR
+#print axioms SparseLowerTail.Section04.zhaoR_le_threshold
+#print axioms SparseLowerTail.Section04.zhaoR_eq_threshold_iff
+#print axioms SparseLowerTail.Section04.rayA_lt_one
+#print axioms SparseLowerTail.Section04.zhao_equal_cost_pair_iff
+#print axioms SparseLowerTail.Section04.zhao_largest_target
+#print axioms SparseLowerTail.Section05.critical_strict_bounds
+#print axioms SparseLowerTail.Section05.criticalMu_pos
+#print axioms SparseLowerTail.Section05.criticalGraphon_integrals
+#print axioms SparseLowerTail.Section05.criticalGraphon_mean_gt_threshold
+#print axioms SparseLowerTail.Section05.critical_balancedEL
+#print axioms SparseLowerTail.Section05.criticalGraphon_log_equation
+#print axioms SparseLowerTail.Section05.critical_multiplier_identity
+#print axioms SparseLowerTail.Section05.criticalGraphon_row_vertexEntropy
+#print axioms SparseLowerTail.Section05.critical_graphon_properties
+#print axioms SparseLowerTail.Section02.signedTriangle_codegree
+#print axioms SparseLowerTail.Section02.abs_signedTriangle_le
+#print axioms SparseLowerTail.triangle_eq_integral_codegree
+
+#print axioms SparseLowerTail.Section06.bipodal_of_two_restricted_rows
+#print axioms SparseLowerTail.Section06.bipodal_of_two_rows
+#print axioms SparseLowerTail.Section06.bipodal_of_row_class_eq
+
+#print axioms SparseLowerTail.Section05.branch_bound_ordered
+#print axioms SparseLowerTail.Section05.branch_bound_full_cube
+#print axioms SparseLowerTail.Section05.branch_bound_sorted_or_accepted
+
+#print axioms SparseLowerTail.Section02.halfTransport_preserving
+#print axioms SparseLowerTail.Section02.halfTransport_membership
+#print axioms SparseLowerTail.Section02.isBalanced_iff_relabel
+#print axioms SparseLowerTail.NonnegativeKernel.triangle_scale
+#print axioms SparseLowerTail.NonnegativeKernel.edgeDensity_scale
+#print axioms SparseLowerTail.NonnegativeKernel.cost_scale
+#print axioms SparseLowerTail.NonnegativeKernel.cost_scale_sub_entropy
+#print axioms SparseLowerTail.Section04.rescaling_firstVariation_right_interval
+#print axioms SparseLowerTail.Section04.rescaling_firstVariation_interval

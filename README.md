@@ -12,6 +12,7 @@ Updated October 20, 2026.
 | Python interval verification | All 42 cover regions, both family Hessian neighborhoods, and the full compact family domain; zero unresolved boxes | [Full run](certificates/release/run.json) |
 | Lean full-domain nonapex certificates | **34 of 36 regions** | [Build and axiom-audit records](hpc/results-20261020-0238/verified-regions.json) |
 | Lean full-domain apex certificates | **5 of 6 fans: F2, F3, F4, F5, F6** | [Build and axiom-audit records](hpc/results-20261020-0238/verified-regions.json) |
+| Trilinear and transition identities | Full trilinear lemma, maximum formula R(z), critical graphon identities, row criterion, and branch-and-bound soundness | [Lean build and 46 axiom audits](lean/data/manuscript-identities-check.json) |
 | Structure corollary (`thm:structure`) | Constant above threshold³, the unique balanced bipod below, and their union at coexistence, each with conditional probability →1; remaining certificate inputs explicit | [Lean build and 11 axiom audits](lean/data/conditioned-phases-check.json) |
 | Matrix rounding (`lem:rounding`) | An explicit vertex partition with imbalance ≤16δn/(b−a) and matrix cut error ≤33δ | [Lean build and 35 axiom audits](lean/data/rounding-check.json) |
 | Conditioned structure (`thm:reduction` part b) | For every ε > 0, the actual conditioned probability of proximity to a minimizer tends to one | [Full reduction build and 13 axiom audits](lean/data/conditioned-structure-check.json) |
@@ -25,7 +26,7 @@ Updated October 20, 2026.
 | Sparse Bernoulli entropy (`lem:fp`) | Uniform comparison with the sparse entropy, including the sharp quadratic upper bound | [Lean build and axiom audit](lean/data/sparse-entropy-check.json) |
 | Near-minimizer stability (`lem:stability`) | Approximate feasibility and optimality imply proximity to an actual minimizer after a measure-preserving bijection | [Lean build and axiom audit](lean/data/near-minimizers-check.json) |
 | Lean family AAA neighborhood | Nonnegativity and the unique AAA zero for every L ∈ [3.9, 9.5] | [Formalization record](lean/README.md) |
-| Current Lean project root | Section 3 proofs and nonapex job 25 integrated; full build and audit of **17,923 theorems** passed | [Root build and audit](lean/data/conditioned-phases-check.json) |
+| Current Lean project root | Section 3 proofs and nonapex job 25 integrated; full build and audit of **17,961 theorems** passed | [Root build and audit](lean/data/manuscript-identities-check.json) |
 
 Apex fan **F4** is the latest completion, bringing the full-region
 Lean total to **39 of 42**. Completed nonapex indices are 1–11 and 13–35 (indices start at zero).

@@ -175,3 +175,8 @@ import SparseLowerTail.Section03.ConditionedStructure
 import SparseLowerTail.Section03.Rounding
 import SparseLowerTail.Section03.ProbabilityRate
 import SparseLowerTail.Section03.ConditionedPhases
+import SparseLowerTail.Section02.Trilinear
+import SparseLowerTail.Section04.ZhaoThreshold
+import SparseLowerTail.Section05.CriticalGraphon
+import SparseLowerTail.Section06.RowsCriterion
+import SparseLowerTail.Section05.BranchBoundSoundness

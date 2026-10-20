@@ -1,0 +1,111 @@
+{
+  "checked_at_utc": "2026-10-20T09:34:21.289881+00:00",
+  "source_parent_commit": "3790f8077d1c46545fbfbe3199a41443fddb25d5",
+  "paper_labels": [
+    "lem:trilinear",
+    "prop:zhao",
+    "cor:Bstar",
+    "lem:rowsbipodal",
+    "lem:comp-bnb"
+  ],
+  "checked_scopes": {
+    "lem:trilinear": "Full mixed-triangle permutation invariance, signed-codegree identity, perturbation expansion, unit-bounded L¹ estimate, and general signed L² cubic bound. Kernels are actual bounded measurable real kernels, with a.e. symmetry for the permutation identities.",
+    "prop:zhao": "The explicit R(z) lies in (0,1), characterizes equal-cost nonconstant balanced pairs, is bounded by threshold and attains it exactly at transitionParameter. Proves threshold is the largest target with such a pair.",
+    "cor:Bstar": "All properties of the canonical critical balanced graphon: strict parameter bounds, positive multiplier, actual triangle/cost/mean integrals, mean above threshold, scalar and pointwise Euler equations, multiplier identity, and both pointwise row k-integral identities.",
+    "lem:rowsbipodal": "Two a.e. row profiles on the separate restricted rectangles force an actual two-block graphon. Converts the manuscript hypotheses to the proved two-row criterion; profile measurability is unnecessary.",
+    "lem:comp-bnb": "Soundness of a successful validated sorted branch-and-bound replay outside acceptance neighborhoods. Every surviving point reaches a checked leaf; empty boxes and reconstructed splits preserve coverage. Permutation invariance transfers the bound to the full cube, including repeated-coordinate boundaries."
+  },
+  "reviewed_existing_labels": {
+    "lem:relabelB": "Checked both directions for measurable half-partitions and actual measure-preserving maps. The piecewise finite nonatomic CDF transport and null endpoint handling are proved from the named classical CDF input.",
+    "lem:scaling": "Checked triangle scaling and the entropy-cost/scaled-gap identities for arbitrary bounded nonnegative kernels. Integrability and zero-value conventions are proved; no additional input is needed.",
+    "s3:rescale": "Checked the literal one-sided [0,c] inequality and two-sided [-c,c] equality. Cube-root normalization restores the triangle density and truncation gives local minimality; all derivative hypotheses match the current statement."
+  },
+  "sources": [
+    {
+      "path": "SparseLowerTail/Section02/Trilinear.lean",
+      "sha256": "cb70537f62e5f171c49aae310b145287d9aaba51fd8b1756a326b38d2b974707"
+    },
+    {
+      "path": "SparseLowerTail/Section04/ZhaoThreshold.lean",
+      "sha256": "8bf16429c5fc0377cfd13eb822a3c401f35cf3966a3f86a87f0008276e4d2e75"
+    },
+    {
+      "path": "SparseLowerTail/Section05/CriticalGraphon.lean",
+      "sha256": "4a4be7377e44384d46961ebbe31fc523114458f4bce91e6d9635a74e99b9ec4d"
+    },
+    {
+      "path": "SparseLowerTail/Section06/RowsCriterion.lean",
+      "sha256": "159fb726733b552fcbd854d6677a7eed88ecca1db79cbaeac83b4e11067ea434"
+    },
+    {
+      "path": "SparseLowerTail/Section05/BranchBoundSoundness.lean",
+      "sha256": "4c79eec0818c4e6baa8314774cc1d9bd2eea2f88e473728a94de9d516e217148"
+    }
+  ],
+  "explicit_inputs": {
+    "new_results": [],
+    "lem:relabelB": [
+      "classical:nonatomic-cdf-transport"
+    ]
+  },
+  "checks": [
+    {
+      "command": "LEAN_NUM_THREADS=1 lake build SparseLowerTail",
+      "exit_code": 0,
+      "output": "Build completed successfully (3671 jobs). Existing cached linter warnings were replayed."
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean tools/audit_manuscript_identities.lean",
+      "exit_code": 0,
+      "output": "'SparseLowerTail.Section02.mixedTriangle_integrable' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.mixedTriangle_cycle' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.mixedTriangle_swap_right' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.mixedTriangle_permutations' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.mixedTriangle_codegree' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.mixedTriangle_add_left' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.mixedTriangle_add_middle' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.mixedTriangle_add_right' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.signedTriangle_add_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.abs_mixedTriangle_le_l1' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section04.rayCost_pos' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section04.zhaoR_mem_Ioo' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section04.rayGap_log_zhaoR' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section04.rayGap_zero_iff_zhaoR' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section04.zhaoR_le_threshold' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section04.zhaoR_eq_threshold_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section04.rayA_lt_one' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section04.zhao_equal_cost_pair_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section04.zhao_largest_target' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.critical_strict_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.criticalMu_pos' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.criticalGraphon_integrals' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.criticalGraphon_mean_gt_threshold' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.critical_balancedEL' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.criticalGraphon_log_equation' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.critical_multiplier_identity' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.criticalGraphon_row_vertexEntropy' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.critical_graphon_properties' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.signedTriangle_codegree' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.abs_signedTriangle_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.triangle_eq_integral_codegree' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section06.bipodal_of_two_restricted_rows' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section06.bipodal_of_two_rows' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section06.bipodal_of_row_class_eq' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.branch_bound_ordered' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.branch_bound_full_cube' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.branch_bound_sorted_or_accepted' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.halfTransport_preserving' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.halfTransport_membership' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.isBalanced_iff_relabel' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.NonnegativeKernel.triangle_scale' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.NonnegativeKernel.edgeDensity_scale' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.NonnegativeKernel.cost_scale' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.NonnegativeKernel.cost_scale_sub_entropy' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section04.rescaling_firstVariation_right_interval' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section04.rescaling_firstVariation_interval' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean Audit.lean",
+      "exit_code": 0,
+      "output": "Axiom audit passed: 24504 project declarations, 17961 theorems; only propext, Classical.choice, Quot.sound allowed.\n"
+    },
+    {
+      "command": "python3 tools/check_lean_map.py",
+      "exit_code": 0,
+      "output": "Proof-map links passed: 108 labels, 790 Lean declarations.\n"
+    }
+  ],
+  "audited_public_theorems": 46,
+  "root_project_modules": 529,
+  "root_project_declarations": 24504,
+  "root_project_theorems": 17961,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "base_source_manifest": "conditioned-phases-check.json",
+  "source_manifest_changes": [
+    {
+      "module": "SparseLowerTail",
+      "sha256": "ed01650395fda9c8c5e064e5f79c4b1bef7fad37106538f1a9a346f5b64dbb9a"
+    },
+    {
+      "module": "SparseLowerTail.Section02.Trilinear",
+      "sha256": "cb70537f62e5f171c49aae310b145287d9aaba51fd8b1756a326b38d2b974707"
+    },
+    {
+      "module": "SparseLowerTail.Section04.ZhaoThreshold",
+      "sha256": "8bf16429c5fc0377cfd13eb822a3c401f35cf3966a3f86a87f0008276e4d2e75"
+    },
+    {
+      "module": "SparseLowerTail.Section05.BranchBoundSoundness",
+      "sha256": "4c79eec0818c4e6baa8314774cc1d9bd2eea2f88e473728a94de9d516e217148"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CriticalGraphon",
+      "sha256": "4a4be7377e44384d46961ebbe31fc523114458f4bce91e6d9635a74e99b9ec4d"
+    },
+    {
+      "module": "SparseLowerTail.Section06.RowsCriterion",
+      "sha256": "159fb726733b552fcbd854d6677a7eed88ecca1db79cbaeac83b4e11067ea434"
+    }
+  ],
+  "source_manifest_sha256": "d07261796797908defc2935e2be6dc2fdcad1648bfde850cd9edef15ecb3af20",
+  "manuscript_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+}

@@ -1644,3 +1644,14 @@ the same remaining numerical replays as the main theorem.
 
 The [check record](data/conditioned-phases-check.json) contains 11 public
 theorem audits and the full root audit of 17,923 theorems.
+
+
+### 2026-10-20 — Manuscript identities and criteria
+
+The complete trilinear lemma, the one-variable maximum characterization
+of the threshold, every pointwise identity of the critical graphon, the
+restricted-row bipodality criterion, and branch-and-bound soundness are
+checked and mapped to the current manuscript. The current relabeling,
+scaling and first-variation arguments were also reviewed against their
+proved interfaces. The [check record](data/manuscript-identities-check.json)
+contains 46 public audits and the full root audit of 17,961 theorems.

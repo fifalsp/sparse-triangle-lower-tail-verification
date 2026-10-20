@@ -913,10 +913,17 @@
       ],
       "baseline": {
         "environment": "lemma",
-        "statement": "Let $a,b\\in[0,1]$, and let $U$ be a graphon. Then $U$ is a relabeling of $B_{a,b}$ if and only if $U=B^A_{a,b}$ a.e.\\ for some measurable $A\\subset[0,1]$ with $|A|=\\frac12$.",
         "statement_sha256": "5aca6c8e76860d70941262f2d4cf76936a510960a9d8cfe5b2ae000362f52d97",
-        "proof_sha256": "1b8d5d54d144df0385993ce222b325e6d8e119583c88fbd5c0e14ad1d9f7c042",
-        "source_line": 1441
+        "proof_sha256": "6db636cc9a7c1a993b535fa0452f7dc7271152caaf5bd89a21538150b010951b",
+        "source_line": 1564,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      },
+      "latest_manuscript_review": {
+        "checked_at_utc": "2026-10-20T09:34:21.289881+00:00",
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9",
+        "result": "current_statement_and_argument_checked",
+        "note": "Checked both directions for measurable half-partitions and actual measure-preserving maps. The piecewise finite nonatomic CDF transport and null endpoint handling are proved from the named classical CDF input.",
+        "verification_record": "data/manuscript-identities-check.json"
       }
     },
     {
@@ -1019,10 +1026,17 @@
       "explicit_inputs": [],
       "baseline": {
         "environment": "lemma",
-        "statement": "Let $a>0$, $s\\ge0$, and let $W$ be a nonnegative kernel. Then $t(aW)=a^3t(W)$, \\begin{align} F(aW)&=aF(W)+(a\\log a)e(W)+1-a,\\\\ F(aW)-h(as)&=a\\big(F(W)-h(s)\\big)+(a\\log a)\\big(e(W)-s\\big). \\end{align}",
         "statement_sha256": "c1ebe758102340e51d249a229a7a01808650f011910a79b57afbd2d2061d1c74",
-        "proof_sha256": "c349f0d48b46b4ee3e9622415f8aa7bd084771a737a9a2d2cc8f13497137c70e",
-        "source_line": 1236
+        "proof_sha256": "8c936426d4160ca63e7fdadd4c613b5bb306e338dfeb24359a650afb6481ee08",
+        "source_line": 1357,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      },
+      "latest_manuscript_review": {
+        "checked_at_utc": "2026-10-20T09:34:21.289881+00:00",
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9",
+        "result": "current_statement_and_argument_checked",
+        "note": "Checked triangle scaling and the entropy-cost/scaled-gap identities for arbitrary bounded nonnegative kernels. Integrability and zero-value conventions are proved; no additional input is needed.",
+        "verification_record": "data/manuscript-identities-check.json"
       }
     },
     {
@@ -1065,10 +1079,17 @@
       "explicit_inputs": [],
       "baseline": {
         "environment": "lemma",
-        "statement": "Let $U$ be a minimizer at $r\\in(0,1)$, and let $(W_s)_{s\\in I}$ be nonnegative kernels with $W_0=U$. Suppose that $F(W_s)$, $e(W_s)$ and $t(W_s)$ are differentiable at $s=0$, from the right if $I=[0,c]$. Then $F'_0+\\frac{\\mu_U}3t'_0\\ge0$, with equality if $I=[-c,c]$.",
         "statement_sha256": "297e27b0775020b1bdefeacf964c0b5724f05210084284c2c50d55a833bcd594",
-        "proof_sha256": "fedb311603dcb4e850c0c769fbda62f3a97ce7b85cd7d205bb754b1756a90ac8",
-        "source_line": 2280
+        "proof_sha256": "5f4a7a4937f88c22cf46ef95cb94d9f8f361e4a4276b261eb154a348a1afc650",
+        "source_line": 2412,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      },
+      "latest_manuscript_review": {
+        "checked_at_utc": "2026-10-20T09:34:21.289881+00:00",
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9",
+        "result": "current_statement_and_argument_checked",
+        "note": "Checked the literal one-sided [0,c] inequality and two-sided [-c,c] equality. Cube-root normalization restores the triangle density and truncation gives local minimality; all derivative hypotheses match the current statement.",
+        "verification_record": "data/manuscript-identities-check.json"
       }
     },
     {
@@ -3068,6 +3089,146 @@
         "statement_sha256": "b8b348ad6f308de709d13e9a28cb89bdcf77b3a575724e70d44696bb351bdb9f",
         "proof_sha256": null,
         "source_line": 414,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      }
+    },
+    {
+      "paper_label": "lem:trilinear",
+      "status": "proved",
+      "checked_scope": "Full mixed-triangle permutation invariance, signed-codegree identity, perturbation expansion, unit-bounded L¹ estimate, and general signed L² cubic bound. Kernels are actual bounded measurable real kernels, with a.e. symmetry for the permutation identities.",
+      "lean_files": [
+        "SparseLowerTail/Section02/Trilinear.lean",
+        "SparseLowerTail/Section02/TriangleL2.lean",
+        "SparseLowerTail/Section08/GraphonIntegration.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section02.mixedTriangle_integrable",
+        "SparseLowerTail.Section02.mixedTriangle_cycle",
+        "SparseLowerTail.Section02.mixedTriangle_swap_right",
+        "SparseLowerTail.Section02.mixedTriangle_permutations",
+        "SparseLowerTail.Section02.mixedTriangle_codegree",
+        "SparseLowerTail.Section02.mixedTriangle_add_left",
+        "SparseLowerTail.Section02.mixedTriangle_add_middle",
+        "SparseLowerTail.Section02.mixedTriangle_add_right",
+        "SparseLowerTail.Section02.signedTriangle_add_expansion",
+        "SparseLowerTail.Section02.abs_mixedTriangle_le_l1",
+        "SparseLowerTail.Section02.signedTriangle_codegree",
+        "SparseLowerTail.Section02.abs_signedTriangle_le",
+        "SparseLowerTail.triangle_eq_integral_codegree"
+      ],
+      "explicit_inputs": [],
+      "remaining_application": [],
+      "verification_record": "data/manuscript-identities-check.json",
+      "baseline": {
+        "environment": "lemma",
+        "statement_sha256": "920bb21700acbf8b22634e341e25d0296bf536a77d78e1666295f0825aae67eb",
+        "proof_sha256": "b919c212a3373b5801a6375ff3bef5bc616456805b48a88b07ef73308266f3a2",
+        "source_line": 1231,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      }
+    },
+    {
+      "paper_label": "prop:zhao",
+      "status": "proved",
+      "checked_scope": "The explicit R(z) lies in (0,1), characterizes equal-cost nonconstant balanced pairs, is bounded by threshold and attains it exactly at transitionParameter. Proves threshold is the largest target with such a pair.",
+      "lean_files": [
+        "SparseLowerTail/Section04/ZhaoThreshold.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section04.rayCost_pos",
+        "SparseLowerTail.Section04.zhaoR_mem_Ioo",
+        "SparseLowerTail.Section04.rayGap_log_zhaoR",
+        "SparseLowerTail.Section04.rayGap_zero_iff_zhaoR",
+        "SparseLowerTail.Section04.zhaoR_le_threshold",
+        "SparseLowerTail.Section04.zhaoR_eq_threshold_iff",
+        "SparseLowerTail.Section04.rayA_lt_one",
+        "SparseLowerTail.Section04.zhao_equal_cost_pair_iff",
+        "SparseLowerTail.Section04.zhao_largest_target"
+      ],
+      "explicit_inputs": [],
+      "remaining_application": [],
+      "verification_record": "data/manuscript-identities-check.json",
+      "baseline": {
+        "environment": "proposition",
+        "statement_sha256": "179c2008199a9922d2ff92faa54a12f531eab290961ceefa959f14ab5fafa9f9",
+        "proof_sha256": "0c53df2f1270996ca79f6d8ee11962467099218075085dde561ca685cf6acf50",
+        "source_line": 2772,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      }
+    },
+    {
+      "paper_label": "cor:Bstar",
+      "status": "proved",
+      "checked_scope": "All properties of the canonical critical balanced graphon: strict parameter bounds, positive multiplier, actual triangle/cost/mean integrals, mean above threshold, scalar and pointwise Euler equations, multiplier identity, and both pointwise row k-integral identities.",
+      "lean_files": [
+        "SparseLowerTail/Section05/CriticalGraphon.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section05.critical_strict_bounds",
+        "SparseLowerTail.Section05.criticalMu_pos",
+        "SparseLowerTail.Section05.criticalGraphon_integrals",
+        "SparseLowerTail.Section05.criticalGraphon_mean_gt_threshold",
+        "SparseLowerTail.Section05.critical_balancedEL",
+        "SparseLowerTail.Section05.criticalGraphon_log_equation",
+        "SparseLowerTail.Section05.critical_multiplier_identity",
+        "SparseLowerTail.Section05.criticalGraphon_row_vertexEntropy",
+        "SparseLowerTail.Section05.critical_graphon_properties"
+      ],
+      "explicit_inputs": [],
+      "remaining_application": [],
+      "verification_record": "data/manuscript-identities-check.json",
+      "baseline": {
+        "environment": "corollary",
+        "statement_sha256": "bfc9e427c3581d7bfd0fe1a68d20a705aa18575b222eed70ec03ac09a5f3f357",
+        "proof_sha256": "824d15a0cfdab4b3633a69efe58cbfb880398778cd6609de2c577849c9e95761",
+        "source_line": 2866,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      }
+    },
+    {
+      "paper_label": "lem:rowsbipodal",
+      "status": "proved",
+      "checked_scope": "Two a.e. row profiles on the separate restricted rectangles force an actual two-block graphon. Converts the manuscript hypotheses to the proved two-row criterion; profile measurability is unnecessary.",
+      "lean_files": [
+        "SparseLowerTail/Section06/RowsCriterion.lean",
+        "SparseLowerTail/Section06/RowsBipodal.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section06.bipodal_of_two_restricted_rows",
+        "SparseLowerTail.Section06.bipodal_of_two_rows",
+        "SparseLowerTail.Section06.bipodal_of_row_class_eq"
+      ],
+      "explicit_inputs": [],
+      "remaining_application": [],
+      "verification_record": "data/manuscript-identities-check.json",
+      "baseline": {
+        "environment": "lemma",
+        "statement_sha256": "93ed896f94ae93c4aeb32e28f55481438a763abaa35d4089e8b9f1dd5eae2d84",
+        "proof_sha256": "2b06155e215dbd6504f355f7b81a5def9f263af5bcae49b167f979459f66cb35",
+        "source_line": 3174,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      }
+    },
+    {
+      "paper_label": "lem:comp-bnb",
+      "status": "proved",
+      "checked_scope": "Soundness of a successful validated sorted branch-and-bound replay outside acceptance neighborhoods. Every surviving point reaches a checked leaf; empty boxes and reconstructed splits preserve coverage. Permutation invariance transfers the bound to the full cube, including repeated-coordinate boundaries.",
+      "lean_files": [
+        "SparseLowerTail/Section05/BranchBoundSoundness.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section05.branch_bound_ordered",
+        "SparseLowerTail.Section05.branch_bound_full_cube",
+        "SparseLowerTail.Section05.branch_bound_sorted_or_accepted"
+      ],
+      "explicit_inputs": [],
+      "remaining_application": [],
+      "verification_record": "data/manuscript-identities-check.json",
+      "baseline": {
+        "environment": "lemma",
+        "statement_sha256": "d4f23327fc75c5039a1e508758344298e15219c972606d0cca89e38256f49a60",
+        "proof_sha256": "f2ac173890d1a4e34679c2876bb510ac4d6b95a00c7840b0fc0061fcfaee0dd6",
+        "source_line": 5741,
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
       }
     }

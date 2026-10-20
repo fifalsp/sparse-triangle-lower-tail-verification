@@ -58,7 +58,7 @@ the external and classical results used.
 **Remaining verification:** 2 nonapex regions, apex fan F1, the family ABB and
 exterior replays, the exact binary64 ABB neighborhood, and the combined build.
 The [cluster record](hpc/README.md) tracks running jobs and recovery.
-The [manuscript comparison](lean/manuscript-review-20261020-introduction.json)
+The [manuscript comparison](lean/manuscript-review-20261020-editorial.json)
 matches all 112 mapped labels to the current Overleaf source. The
 [inventory](lean/manuscript-coverage.json) tracks the remaining obligations.
 

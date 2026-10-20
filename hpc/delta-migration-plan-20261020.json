@@ -155,13 +155,13 @@
     "additional_core_hours": 500,
     "status": "Under Review; fresh ACCESS approved balance remains 500 hours"
   },
-  "queue_checked_at_utc": "2026-10-20T17:36:46.655213+00:00",
+  "queue_checked_at_utc": "2026-10-20T21:45:14.817220+00:00",
   "queue_observation": "Exterior RUNNING on cn055; F1 and three retries PENDING Priority; integration PENDING Dependency.",
   "live_accounting_observation": {
-    "checked_at_utc": "2026-10-20T17:36:46.655213+00:00",
-    "remaining_hours": 481,
+    "checked_at_utc": "2026-10-20T21:45:14.817220+00:00",
+    "remaining_hours": 419,
     "deposited_hours": 500,
-    "note": "Fresh accounts headers confirm Balance(Hours) 481 and Deposited(Hours) 500."
+    "note": "Fresh Delta accounts Balance(Hours) and Deposited(Hours); only biah-delta-cpu is authorized."
   },
   "retired_after_bootstrap_failure": [
     {
@@ -229,5 +229,30 @@
     }
   ],
   "runner_remote": "delta-remaining-tls.sbatch",
-  "recovery_record": "delta-tls-recovery-20261020.json"
+  "recovery_record": "delta-tls-recovery-20261020.json",
+  "exterior_progress": {
+    "checked_at_utc": "2026-10-20T21:45:14.817220+00:00",
+    "job_id": 23047539,
+    "elapsed_observed": "4:38:09",
+    "phase": "bounded kernel build: restored-cache validation",
+    "mathlib_cache_files_downloaded": 7335,
+    "mathlib_cache_status": "Completed successfully",
+    "planned_project_modules": 12872,
+    "finished_cache_validation_batches": 5,
+    "accepted_cache_batches": 0,
+    "note": "Cache batches that Lake cannot validate are scheduled for ordinary bounded builds; no full theorem or audit success yet."
+  },
+  "all_current_job_accounts_checked": {
+    "checked_at_utc": "2026-10-20T21:45:14.817220+00:00",
+    "method": "squeue account column and sacct JobID,Account,State",
+    "account": "biah-delta-cpu",
+    "jobs": [
+      23029964,
+      23047539,
+      23050607,
+      23050626,
+      23050651,
+      23050654
+    ]
+  }
 }

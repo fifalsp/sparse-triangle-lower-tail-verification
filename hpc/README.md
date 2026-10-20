@@ -28,9 +28,10 @@ ABB, both nonapex jobs and the earlier author-root check stopped during mathlib
 cache downloads. The runner now uses Delta’s system CA bundle and a separate
 download cache per job. Corrected retries are queued; integration has normal
 `afterok` dependencies on F1 and the four regional stages. The running exterior
-job was preserved. [Recovery and validation](delta-tls-recovery-20261020.json).
+job was preserved; all 7,335 mathlib cache files downloaded successfully and
+its bounded build has entered restored-cache validation. [Recovery and validation](delta-tls-recovery-20261020.json).
 
-Live accounting shows **481 of 500 hours remaining**. Actual failed-job charges
+Live accounting shows **419 of 500 hours remaining**. Actual failed-job charges
 and all remaining commitments fit this balance. The additional 500-hour ACCESS
 exchange remains **under review**.
 [Deployment and resources](delta-migration-plan-20261020.json) ·

@@ -13,7 +13,7 @@
   "submission_method": "Authenticated user Google Chrome ACCESS allocation portal",
   "justification": "The additional 500 NCSA Delta CPU core-hours will support verification of language generation in the limit for mathematical AI. We will use Lean 4 to kernel-check generated proof artifacts, replay finite certificates, and run combined theorem builds and axiom audits, with the triangle lower-tail formalization as a case study. The extra capacity will support checkpoint resumptions and necessary verification reruns.",
   "budget_policy": "Keep the confirmed 500-hour pool until provider approval of the additional 500 is verified; then reconcile actual consumption and outstanding commitments before using the enlarged pool.",
-  "provider_decision_checked_at_utc": "2026-10-20T17:36:46.655213+00:00",
+  "provider_decision_checked_at_utc": "2026-10-20T21:45:14.817220+00:00",
   "approved_pool_hours": 500,
-  "provider_evidence": "Fresh ACCESS Overview still lists the October 20 exchange Under Review and NCSA Delta CPU at 500 of 500; live Delta accounts now reflects 481 remaining from 500 deposited."
+  "provider_evidence": "Renewed ACCESS session: CIS261417 still shows the additional exchange Under Review and approved Delta500. All six current Delta jobs independently checked under biah-delta-cpu. Live Delta balance419/500."
 }

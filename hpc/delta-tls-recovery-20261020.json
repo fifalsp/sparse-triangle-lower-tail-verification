@@ -70,5 +70,10 @@
     "OpenSSL/3.0.8: error:16000069:STORE routines::unregistered scheme",
     "7335 download(s) failed",
     "Concurrent jobs using the shared download-cache/mathlib also reported missing curl.cfg."
-  ]
+  ],
+  "post_repair_observation": {
+    "checked_at_utc": "2026-10-20T21:45:14.817220+00:00",
+    "exterior_mathlib_cache": "7335 files downloaded and unpacked successfully; bounded build entered cache validation",
+    "full_lean_verification": "Still pending"
+  }
 }

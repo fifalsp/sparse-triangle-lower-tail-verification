@@ -1,0 +1,6 @@
+import SparseLowerTail.Section03.ProbabilityRate
+
+#print axioms SparseLowerTail.Section03.value_eq_entropy_iff_threshold_le
+#print axioms SparseLowerTail.Section03.threshold_le_cubeRoot_iff
+#print axioms SparseLowerTail.Section03.triangle_probability_rate
+#print axioms SparseLowerTail.Section03.triangle_probability_rate_of_remaining_replays

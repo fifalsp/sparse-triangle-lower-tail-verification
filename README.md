@@ -14,6 +14,7 @@ Updated October 20, 2026.
 | Lean full-domain apex certificates | **5 of 6 fans: F2, F3, F4, F5, F6** | [Build and axiom-audit records](hpc/results-20261020-0238/verified-regions.json) |
 | Matrix rounding (`lem:rounding`) | An explicit vertex partition with imbalance ≤16δn/(b−a) and matrix cut error ≤33δ | [Lean build and 35 axiom audits](lean/data/rounding-check.json) |
 | Conditioned structure (`thm:reduction` part b) | For every ε > 0, the actual conditioned probability of proximity to a minimizer tends to one | [Full reduction build and 13 axiom audits](lean/data/conditioned-structure-check.json) |
+| Rate corollary (`thm:rate`) | Balanced-value rate and the replica-symmetric threshold criterion, deduced from the main classification; remaining certificate inputs explicit | [Lean build and four axiom audits](lean/data/probability-rate-check.json) |
 | Probability rate (`thm:reduction` part a) | Actual triangle log probability asymptotic to (n²p/2)V(η^(1/3)), using the cited generic KS23 bounds | [Lean build and 23 axiom audits](lean/data/lower-tail-rate-check.json) |
 | Discrete variational comparison (`lem:discrete`) | Attained finite minimum, the finite lower bound, and convergence to the graphon value as n → ∞ and p → 0 | [Lean build and 70 axiom audits](lean/data/discrete-comparison-check.json) |
 | Triangle decorrelation (`lem:decorrelation`) | Revealed-edge set and conditional product-error bound, using the cited generic KS23 inputs | [Lean build and 36 axiom audits](lean/data/decorrelation-check.json) |
@@ -23,7 +24,7 @@ Updated October 20, 2026.
 | Sparse Bernoulli entropy (`lem:fp`) | Uniform comparison with the sparse entropy, including the sharp quadratic upper bound | [Lean build and axiom audit](lean/data/sparse-entropy-check.json) |
 | Near-minimizer stability (`lem:stability`) | Approximate feasibility and optimality imply proximity to an actual minimizer after a measure-preserving bijection | [Lean build and axiom audit](lean/data/near-minimizers-check.json) |
 | Lean family AAA neighborhood | Nonnegativity and the unique AAA zero for every L ∈ [3.9, 9.5] | [Formalization record](lean/README.md) |
-| Current Lean project root | Section 3 proofs and nonapex job 25 integrated; full build and audit of **17,896 theorems** passed | [Root build and audit](lean/data/rounding-check.json) |
+| Current Lean project root | Section 3 proofs and nonapex job 25 integrated; full build and audit of **17,900 theorems** passed | [Root build and audit](lean/data/probability-rate-check.json) |
 
 Apex fan **F4** is the latest completion, bringing the full-region
 Lean total to **39 of 42**. Completed nonapex indices are 1–11 and 13–35 (indices start at zero).

@@ -1,0 +1,69 @@
+{
+  "checked_at_utc": "2026-10-20T09:07:52.351738+00:00",
+  "source_parent_commit": "6ff5a756fa14d7c08f55e209a2b8a8962fae7d08",
+  "paper_label": "thm:rate",
+  "scope": "Full deduction of thm:rate from the main variational classification and the proved probability reduction: the ratio to (n²p/2)Vbal(η^(1/3)) tends to one, and the ratio to (n²p/2)h(η^(1/3)) tends to one if and only if threshold³≤η. Includes direct assembly from the remaining numerical replays, keeping these internal obligations explicit.",
+  "sources": [
+    {
+      "path": "SparseLowerTail/Section03/ProbabilityRate.lean",
+      "sha256": "71cf0a28be3da566d96177835eef3ca55ea23cb07e9fc2657d22f25bfdb95a65"
+    }
+  ],
+  "explicit_inputs": [
+    "external:KS23:theorem5",
+    "external:KS23:theorem6",
+    "external:KP26:1.6",
+    "classical:inverse-transform-sampling",
+    "classical:positive-hilbert-schmidt-spectrum",
+    "classical:dyadic-l1-approximation",
+    "classical:graphon-cut-compactness",
+    "classical:pullback-l1-approximation",
+    "classical:counting-lemma",
+    "internal:prop:critical",
+    "internal:appA3:compact"
+  ],
+  "checks": [
+    {
+      "command": "LEAN_NUM_THREADS=1 lake build SparseLowerTail",
+      "exit_code": 0,
+      "output": "Build completed successfully (3663 jobs). Existing cached linter warnings were replayed."
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean tools/audit_probability_rate.lean",
+      "exit_code": 0,
+      "output": "'SparseLowerTail.Section03.value_eq_entropy_iff_threshold_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.threshold_le_cubeRoot_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.triangle_probability_rate' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.triangle_probability_rate_of_remaining_replays' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean Audit.lean",
+      "exit_code": 0,
+      "output": "Axiom audit passed: 24431 project declarations, 17900 theorems; only propext, Classical.choice, Quot.sound allowed.\n"
+    },
+    {
+      "command": "python3 tools/check_lean_map.py",
+      "exit_code": 0,
+      "output": "Proof-map links passed: 102 labels, 745 Lean declarations.\n"
+    }
+  ],
+  "audited_public_theorems": 4,
+  "root_project_modules": 521,
+  "root_project_declarations": 24431,
+  "root_project_theorems": 17900,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "base_source_manifest": "rounding-check.json",
+  "source_manifest_changes": [
+    {
+      "module": "SparseLowerTail",
+      "sha256": "2dfbbe75c4e18f281523390d87fef6e2fff732e29b37440d6295784282e6f8d2"
+    },
+    {
+      "module": "SparseLowerTail.Section03.ProbabilityRate",
+      "sha256": "71cf0a28be3da566d96177835eef3ca55ea23cb07e9fc2657d22f25bfdb95a65"
+    }
+  ],
+  "source_manifest_sha256": "7a2ea0d7cfb6ee292bee6055b3ab1e29e958b9032ce0aaafc0a744e9887a60a8",
+  "manuscript_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+}

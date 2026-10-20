@@ -173,3 +173,4 @@ import SparseLowerTail.Section03.ConditionedStructureFinite
 import SparseLowerTail.Section03.ReductionSlack
 import SparseLowerTail.Section03.ConditionedStructure
 import SparseLowerTail.Section03.Rounding
+import SparseLowerTail.Section03.ProbabilityRate

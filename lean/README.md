@@ -1622,3 +1622,12 @@ tests give the projection deficit; exact cell-average correlations and
 sign rounding give the balance and tensor L¹ bounds. No additional
 external or classical input is required. The [check record](data/rounding-check.json)
 contains 35 public audits and the full root audit of 17,896 theorems.
+
+
+### 2026-10-20 — Probability-rate corollary
+
+The deduction of `thm:rate` is checked: the rate uses `balancedValue`, and
+the entropy-value asymptotic holds exactly when η≥threshold³. A direct
+wrapper takes the same remaining numerical replays as the main theorem's
+assembly. The [check record](data/probability-rate-check.json) contains four
+public theorem audits and a full root audit of 17,900 theorems.

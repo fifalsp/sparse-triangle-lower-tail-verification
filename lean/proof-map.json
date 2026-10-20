@@ -2984,6 +2984,44 @@
         "source_line": 2196,
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
       }
+    },
+    {
+      "paper_label": "thm:rate",
+      "status": "proved_deduction_conditional_on_remaining_replays",
+      "checked_scope": "Full deduction of thm:rate from the main variational classification and the proved probability reduction: the ratio to (n²p/2)Vbal(η^(1/3)) tends to one, and the ratio to (n²p/2)h(η^(1/3)) tends to one if and only if threshold³≤η. Includes direct assembly from the remaining numerical replays, keeping these internal obligations explicit.",
+      "lean_files": [
+        "SparseLowerTail/Section03/ProbabilityRate.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section03.value_eq_entropy_iff_threshold_le",
+        "SparseLowerTail.Section03.threshold_le_cubeRoot_iff",
+        "SparseLowerTail.Section03.triangle_probability_rate",
+        "SparseLowerTail.Section03.triangle_probability_rate_of_remaining_replays"
+      ],
+      "explicit_inputs": [
+        "external:KS23:theorem5",
+        "external:KS23:theorem6",
+        "external:KP26:1.6",
+        "classical:inverse-transform-sampling",
+        "classical:positive-hilbert-schmidt-spectrum",
+        "classical:dyadic-l1-approximation",
+        "classical:graphon-cut-compactness",
+        "classical:pullback-l1-approximation",
+        "classical:counting-lemma",
+        "internal:prop:critical",
+        "internal:appA3:compact"
+      ],
+      "remaining_application": [
+        "Discharge remaining finite certificate replays and integrate the latest combined build."
+      ],
+      "verification_record": "data/probability-rate-check.json",
+      "baseline": {
+        "environment": "theorem",
+        "statement_sha256": "13878f9c0c93bad240456e3542e72cc3146db1b8b333c16cc1b0e9d3d2dc845c",
+        "proof_sha256": null,
+        "source_line": 404,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      }
     }
   ],
   "current_manuscript_inventory": "manuscript-coverage.json"

@@ -1,0 +1,101 @@
+{
+  "source_commit": "8ecc9d41892517175d46efc84e63a5d745096db0",
+  "source_archive": "triangle-yale-source-8ecc9d4.tar.gz",
+  "source_sha256": "2378c0a843220e56b80381013bc164f150fcc025d85a38f66719ab354e79c43e",
+  "runner": "bouchet-remaining-ready.sbatch",
+  "runner_sha256": "a1272efbb6bb4cc82667db6100faa683c587e80b5c7deae27b00078255a3eac1",
+  "proof_sources_unchanged_from": "6fd1a56fbc6901566ffc7aa0cbdf19c2f89960a7",
+  "account": "pi_sl3363",
+  "regional_resources": {
+    "cpus": 8,
+    "mem": "96G",
+    "time": "24:00:00",
+    "workers": 4,
+    "lean_memory_mib": 16384,
+    "lean_threads": 1
+  },
+  "assembly_resources": {
+    "cpus": 8,
+    "mem": "192G",
+    "time": "24:00:00",
+    "workers": 3,
+    "lean_memory_mib": 49152,
+    "lean_threads": 1
+  },
+  "checked_at_utc": "2026-10-20T23:29:37.619281+00:00",
+  "status": "Yale accepted all remaining stages; matching Delta jobs cancelled while unstarted",
+  "cluster": "Yale Bouchet",
+  "project_directory": "/nfs/roberts/project/pi_sl3363/sl3363",
+  "checkpoint_directory": "/nfs/roberts/project/pi_sl3363/sl3363/triangle-migration-20261020",
+  "upload_bundle_sha256": "725db06d90e95bbeafd52778f0b164241770bf2bfba41c4f41bd34f774a0b271",
+  "maintenance_observation": "Day partition UP with 24-hour limit; CPU maintenance reservation absent; only unrelated inference reservation remained. Yale queue was empty before replacement submission.",
+  "jobs": {
+    "f1": 30082912,
+    "abb": 30082913,
+    "exterior": 30082914,
+    "cover0": 30082915,
+    "cover12": 30082916,
+    "assembly": 30082917
+  },
+  "states": {
+    "f1": "RUNNING",
+    "abb": "RUNNING",
+    "exterior": "RUNNING",
+    "cover0": "RUNNING",
+    "cover12": "RUNNING",
+    "assembly": "PENDING Dependency"
+  },
+  "assembly_afterok": [
+    30082912,
+    30082913,
+    30082914,
+    30082915,
+    30082916
+  ],
+  "retired_delta_jobs": [
+    23029964,
+    23050607,
+    23065285,
+    23050626,
+    23050651
+  ],
+  "retirement_evidence": "Fresh squeue showed all five PENDING Priority. All six Yale submissions/resources and assembly dependencies checked first. scancel --state=PENDING; sacct then confirmed all five CANCELLED with elapsed0. No healthy running job cancelled.",
+  "transfer_validation": "Upload bundle and inner source SHA256 both matched on Yale; runner SHA matched and bash -n passed.",
+  "validation": {
+    "python_syntax": "passed",
+    "shell_syntax": "passed locally and on Yale",
+    "scheduling_and_result_gate_tests": 16,
+    "proof_source_diff_from_6fd1a56": "No changed .lean files"
+  },
+  "execution": "Extract source/checkpoints and runtime only onto node-local /tmp. Regional4 single-thread Lean workers limited16GiB each; assembly3 workers limited48GiB each. Runtime cache remains a single-file staging read. Save generated sources and build cache to project storage at exit. Full target, unchanged namespace axiom audit and dependency source hashes are required for success.",
+  "verification_status": "No new full certificate claimed by submission; remaining internal full-domain proofs and combined integration still required.",
+  "queue_checked_at_utc": "2026-10-20T23:31:17.779148+00:00",
+  "nodes": {
+    "f1": "a1130u31n03",
+    "abb": "a1130u35n02",
+    "exterior": "a1130u35n02",
+    "cover0": "a1130u37n03",
+    "cover12": "a1132u11n01"
+  },
+  "bootstrap_observation": "All five regional jobs RUNNING, source archive SHA checks passed in every .out log, no initial stderr output; final integration PENDING Dependency.",
+  "live_probes": {
+    "method": "Read-only bounded srun --overlap steps within existing allocations, one CPU and256MiB, timeout30s",
+    "f1": {
+      "job_id": 30082912,
+      "work_directory": "/tmp/triangle-yale-30082912-qbwTQK",
+      "phase": "bounded_kernel_build",
+      "source_commit": "8ecc9d41892517175d46efc84e63a5d745096db0",
+      "mathlib_cache_files": 7335,
+      "mathlib_cache_status": "Completed successfully"
+    },
+    "exterior": {
+      "job_id": 30082914,
+      "work_directory": "/tmp/triangle-yale-30082914-Ke4JN9",
+      "phase": "bounded_kernel_build",
+      "checkpoint_sha256_validation": "Passed",
+      "mathlib_cache_files": 7335,
+      "mathlib_cache_status": "Completed successfully"
+    },
+    "checked_at_utc": "2026-10-20T23:32:33.321135+00:00"
+  }
+}

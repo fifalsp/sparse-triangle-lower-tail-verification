@@ -1,5 +1,5 @@
 {
-  "status": "Five regional jobs pending Priority; exterior retry reuses its Delta checkout; integration awaits sufficient budget",
+  "status": "Superseded by return migration to Yale at user request; Delta queue empty",
   "account": "biah-delta-cpu",
   "approved_pool_hours": 500,
   "yale_staging_directory": "/nfs/roberts/project/pi_sl3363/sl3363/triangle-migration-20261020",
@@ -12,8 +12,8 @@
       "job_id": 23029964,
       "maximum_allocation_hours": 88,
       "observed_billing_tres": 16000,
-      "observed_state": "PENDING",
-      "reason": "Priority",
+      "observed_state": "CANCELLED",
+      "reason": "Replaced by accepted Yale submission; elapsed0",
       "user_hold": false
     },
     {
@@ -25,8 +25,8 @@
       "maximum_allocation_hours": 90,
       "job_id": 23050607,
       "observed_billing_tres": 15000,
-      "observed_state": "PENDING",
-      "reason": "Priority",
+      "observed_state": "CANCELLED",
+      "reason": "Replaced by accepted Yale submission; elapsed0",
       "user_hold": false,
       "previous_job_id": 23047530
     },
@@ -39,8 +39,8 @@
       "maximum_allocation_hours": 90,
       "job_id": 23065285,
       "observed_billing_tres": 15000,
-      "observed_state": "PENDING",
-      "reason": "Priority",
+      "observed_state": "CANCELLED",
+      "reason": "Replaced by accepted Yale submission; elapsed0",
       "user_hold": false,
       "previous_job_id": 23047539
     },
@@ -53,8 +53,8 @@
       "maximum_allocation_hours": 24,
       "job_id": 23050626,
       "observed_billing_tres": 6000,
-      "observed_state": "PENDING",
-      "reason": "Priority",
+      "observed_state": "CANCELLED",
+      "reason": "Replaced by accepted Yale submission; elapsed0",
       "user_hold": false,
       "previous_job_id": 23047540
     },
@@ -67,8 +67,8 @@
       "maximum_allocation_hours": 72,
       "job_id": 23050651,
       "observed_billing_tres": 6000,
-      "observed_state": "PENDING",
-      "reason": "Priority",
+      "observed_state": "CANCELLED",
+      "reason": "Replaced by accepted Yale submission; elapsed0",
       "user_hold": false,
       "previous_job_id": 23047541
     },
@@ -81,14 +81,14 @@
       "maximum_allocation_hours": 120,
       "job_id": null,
       "observed_billing_tres": 30000,
-      "observed_state": "NOT_SUBMITTED",
-      "reason": "Await approved balance or freed commitments for a 120-hour cap",
+      "observed_state": "MOVED_TO_YALE",
+      "reason": "Integration accepted as Yale30082917",
       "user_hold": false,
       "previous_job_id": 23050654
     }
   ],
-  "maximum_total_allocation_hours": 364,
-  "resource_notes": "Five accepted regional caps total 364 hours within live balance398/500. The prior blocked integration was cancelled only while PENDING and unstarted. Its replacement needs a separate120-hour cap; do not submit while total outstanding would exceed balance. Extra500 remains Under Review.",
+  "maximum_total_allocation_hours": 0,
+  "resource_notes": "Historical Delta caps are retained per job for provenance. No Delta job is active or pending after the guarded return migration; outstanding Delta caps0. All remaining stages and final integration accepted on Yale.",
   "submission_policy": "After transfer validation, resume ABB/exterior with the saved caches and replace only their unstarted copies. Submit both remaining nonapex jobs in parallel and final integration with afterok dependencies. Cancel the unstarted Yale recovery and assembly only after the Delta replacement submissions are accepted. Never cancel running healthy work.",
   "verification_gates": [
     "Transfer SHA256SUMS match selected archives.",
@@ -156,8 +156,8 @@
     "additional_core_hours": 500,
     "status": "Under Review; fresh ACCESS approved balance remains 500 hours"
   },
-  "queue_checked_at_utc": "2026-10-20T23:16:22.249651+00:00",
-  "queue_observation": "F1, ABB, nonapex0, nonapex12 and exterior retry all PENDING Priority. No accepted integration job.",
+  "queue_checked_at_utc": "2026-10-20T23:29:37.619281+00:00",
+  "queue_observation": "All five Delta regional copies cancelled while PENDING, elapsed0; replacements accepted on Yale.",
   "live_accounting_observation": {
     "checked_at_utc": "2026-10-20T23:16:22.249651+00:00",
     "remaining_hours": 398,
@@ -293,11 +293,11 @@
   "integration_budget_gate": {
     "accepted": false,
     "future_cap_hours": 120,
-    "current_accepted_caps_hours": 364,
+    "current_accepted_caps_hours": 0,
     "remaining_balance_hours": 398,
     "uncommitted_margin_hours": 34,
     "shortfall_if_all_caps_plus_integration": 86,
-    "policy": "Wait for confirmed extra500 approval or unused cap released by successful/ended stages before accepting integration. Never count pending approval as approved budget."
+    "policy": "Superseded: final integration now accepted on Yale as30082917; no Delta integration request is planned."
   },
   "retired_exterior_job": {
     "stage": "previous exterior restore/cache validation",
@@ -305,5 +305,28 @@
     "observed_state": "TIMEOUT",
     "elapsed_seconds": 21607,
     "reason": "Six-hour wall limit exhausted during restore and cache checks; persistent checkout preserved"
+  },
+  "active_cluster": "Yale Bouchet",
+  "current_deployment_record": "yale-return-deployment-20261020.json",
+  "return_to_yale": {
+    "record": "yale-return-deployment-20261020.json",
+    "jobs": {
+      "f1": 30082912,
+      "abb": 30082913,
+      "exterior": 30082914,
+      "cover0": 30082915,
+      "cover12": 30082916,
+      "assembly": 30082917
+    },
+    "user_request": "Yale computing is back; move the rest of the queued jobs to Yale",
+    "retired_delta_jobs": [
+      23029964,
+      23050607,
+      23065285,
+      23050626,
+      23050651
+    ],
+    "delta_outstanding_caps_hours": 0,
+    "observation": "All five regional Yale jobs RUNNING; final integration PENDING Dependency."
   }
 }

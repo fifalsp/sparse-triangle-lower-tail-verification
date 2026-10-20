@@ -13,38 +13,30 @@ The saved Yale checkpoints contain partial ABB, exterior and cover-0 builds.
 All **88 transferred archive hashes match** on Delta. The encrypted Globus
 transfer copied 89 files (28.24 GB) in 2 minutes 12 seconds.
 
-Current Delta stages use `biah-delta-cpu`:
+All remaining stages have moved back to **Yale Bouchet**:
 
-| Stage | Delta job | Time cap | Maximum allocation hours |
-|---|---:|---:|---:|
-| Existing F1 replay | 23029964 | 5.5 hours | 88 |
-| ABB, resuming Yale cache | 23050607 | 6 hours | 90 |
-| Exterior, reusing its Delta checkout | 23065285 | 6 hours | 90 |
-| Nonapex 0, resuming Yale cache | 23050626 | 4 hours | 24 |
-| Nonapex 12 | 23050651 | 12 hours | 72 |
-| Full binary64 ABB padding and current-source integration — awaiting budget | — | 4 hours | 120 |
+| Stage | Yale job | Resources | Time cap |
+|---|---:|---|---:|
+| F1 replay | 30082912 | 8 CPUs, 96 GiB | 24 hours |
+| ABB replay | 30082913 | 8 CPUs, 96 GiB | 24 hours |
+| Exterior replay | 30082914 | 8 CPUs, 96 GiB | 24 hours |
+| Nonapex 0 | 30082915 | 8 CPUs, 96 GiB | 24 hours |
+| Nonapex 12 | 30082916 | 8 CPUs, 96 GiB | 24 hours |
+| Exact binary64 ABB radius and combined integration | 30082917 | 8 CPUs, 192 GiB | 24 hours |
 
-The five regional jobs are queued. Their accepted caps total **364 hours**
-against a live balance of **398 of 500 hours**. Integration will be resubmitted
-when the additional 500-hour exchange is approved or completed jobs free enough
-unused budget. The exchange remains **under review**.
-[Deployment and resources](delta-migration-plan-20261020.json) ·
-[Exchange request](delta-extra-500-exchange-20261020.json).
+All five regional jobs are **running**; integration has normal
+`afterok` dependencies on all five. All matching Delta copies were cancelled
+while unstarted, after Yale accepted the replacements.
+[Deployment and source hashes](yale-return-deployment-20261020.json).
 
-The first exterior run reached its six-hour limit during checkpoint restoration
-and cache validation. All 7,335 mathlib cache files installed successfully;
-the full replay and axiom audit remain pending. The retry reuses that Delta
-checkout and checks cached modules after their imports pass.
-[Partial run evidence](results-20261020-2310/exterior-timeout.json) ·
-[Resume runner](delta-exterior-resume.sbatch).
+The runner extracts checkpoints onto node-local disk, validates cached modules
+after their imports pass, and saves partial builds back to project storage.
+Every success requires the full target, unchanged axiom audit and source hashes.
+[Runner](bouchet-remaining-ready.sbatch).
 
-The earlier download failures were fixed with Delta’s system CA bundle and a
-separate download cache per job.
-[Recovery checks](delta-tls-recovery-20261020.json).
-
-Delta was busy at the latest check: 14,797 CPU cores allocated, 2,227 idle
-cores on partially occupied nodes, and 128 reserved idle cores.
-[Queue diagnostic](delta-queue-diagnostic-20261020.json).
+The previous Delta exterior run timed out during restore/cache preparation;
+its logs and checkout were preserved.
+[Partial evidence](results-20261020-2310/exterior-timeout.json).
 
 The full F1 laptop fallback continues with one low-priority worker, one Lean
 thread and an 8 GiB cap. Its live status is

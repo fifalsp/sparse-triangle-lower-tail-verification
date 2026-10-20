@@ -1,0 +1,74 @@
+{
+  "checked_at_utc": "2026-10-20T11:34:07.093437+00:00",
+  "source_parent_commit": "17c460d08aa38edb8af681ae436c5e38a9ef1ad3",
+  "scope": "All five printed coexistence enclosures are proved for the actual defined crossing, critical penalty, scalar infimum value, small target and large target. A tighter rational crossing bracket is certified by genuine penalized-gap signs. Stationary constant roots are enclosed by signs of their actual strictly increasing equation. Branch multiplier, cost and triangle-density formulas are evaluated by kernel-checked rational interval arithmetic and logarithm/exponential Taylor bounds over the entire crossing bracket. The original printed endpoint signs also follow. No external or internal certificate hypotheses are used.",
+  "sources": [
+    {
+      "path": "SparseLowerTail/Section07/PenalizedDigitsCore.lean",
+      "sha256": "544348ac6884e9a810ef055423cb892fa7dfdd624df94ced61a149050a984685"
+    },
+    {
+      "path": "SparseLowerTail/Section07/PenalizedDigits.lean",
+      "sha256": "1e4b8428a4eacc0ba52fbfe7ae6f2fc602c501d5861e7d46fd0198aa4878c0c3"
+    }
+  ],
+  "generator": {
+    "path": "tools/generate_penalized_digits.py",
+    "sha256": "32f59237bb846bd53e981f563babf25d0e80eced818f3dc9d034ff85fa9f0dd5",
+    "deterministic_regeneration": true,
+    "generated_source_sha256": "1e4b8428a4eacc0ba52fbfe7ae6f2fc602c501d5861e7d46fd0198aa4878c0c3"
+  },
+  "explicit_inputs": [],
+  "checks": [
+    {
+      "command": "LEAN_NUM_THREADS=1 lake build SparseLowerTail",
+      "exit_code": 0,
+      "output": "Build completed successfully (3721 jobs). Cached warnings replayed."
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean tools/audit_penalized_digits.lean",
+      "exit_code": 0,
+      "output": "'SparseLowerTail.Section07.constantRoot_bounds_of_signs' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.constantMinimum_stationary' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.branchPenalty_stationary' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.penalizedGap_stationary' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.kappa_mono_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.lower_log_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.lower_log' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.lower_exponent' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.lower_exp_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.lower_exp_upper' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.lower_B' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.lower_K' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.lower_data' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.lower_root_log_lower' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.lower_root_sign_lower' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.lower_root_log_upper' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.lower_root_sign_upper' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.lower_root' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.lower_gap' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.upper_log_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.upper_log' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.upper_exponent' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.upper_exp_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.upper_exp_upper' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.upper_B' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.upper_K' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.upper_data' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.upper_root_log_lower' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.upper_root_sign_lower' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.upper_root_log_upper' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.upper_root_sign_upper' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.upper_root' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.upper_gap' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.crossing_log_lower' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.crossing_log_upper' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.crossing_log' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.crossing_exponent' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.crossing_exp_lower' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.crossing_exp_upper' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.crossing_B' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.crossing_K' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.crossing_data' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.crossing_root_log_lower' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.crossing_root_sign_lower' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.crossing_root_log_upper' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.crossing_root_sign_upper' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.crossing_root' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.crossing_bracket' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.printed_crossing_bracket' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.coexistence_digits' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.printed_endpoint_signs' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section07.PenalizedDigits.printed_constants' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Numerics.log_two_bounds_40' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.penalizedGap_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.penalizedValue_at_critical' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.penalizedCrossing_spec' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean Audit.lean",
+      "exit_code": 0,
+      "output": "Axiom audit passed: 24815 project declarations, 18228 theorems; only propext, Classical.choice, Quot.sound allowed.\n"
+    },
+    {
+      "command": "python3 tools/check_lean_map.py",
+      "exit_code": 0,
+      "output": "Proof-map links passed: 109 labels, 978 Lean declarations."
+    }
+  ],
+  "audited_public_declarations": 56,
+  "new_public_theorems": 52,
+  "manuscript_reviews": {
+    "lem:penconstants": "All five printed coexistence enclosures are proved for the actual defined crossing, critical penalty, scalar infimum value, small target and large target. A tighter rational crossing bracket is certified by genuine penalized-gap signs. Stationary constant roots are enclosed by signs of their actual strictly increasing equation. Branch multiplier, cost and triangle-density formulas are evaluated by kernel-checked rational interval arithmetic and logarithm/exponential Taylor bounds over the entire crossing bracket. The original printed endpoint signs also follow. No external or internal certificate hypotheses are used."
+  },
+  "root_project_modules": 542,
+  "root_project_declarations": 24815,
+  "root_project_theorems": 18228,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "base_source_manifest": "manuscript-digits-check.json",
+  "source_manifest_changes": [
+    {
+      "module": "SparseLowerTail",
+      "sha256": "088293c61a9810c92fcf8dde2efb13bee035bdcb3041165cb358934833c37ba3"
+    },
+    {
+      "module": "SparseLowerTail.Section07.PenalizedDigitsCore",
+      "sha256": "544348ac6884e9a810ef055423cb892fa7dfdd624df94ced61a149050a984685"
+    },
+    {
+      "module": "SparseLowerTail.Section07.PenalizedDigits",
+      "sha256": "1e4b8428a4eacc0ba52fbfe7ae6f2fc602c501d5861e7d46fd0198aa4878c0c3"
+    }
+  ],
+  "source_manifest_sha256": "e69f7b0dcffcf4eb0154ed30b8dcae8841327475273d7c699fb21aabfe4bd3ab",
+  "manuscript_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+}

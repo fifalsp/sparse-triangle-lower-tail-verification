@@ -1750,3 +1750,14 @@ ranges over the whole bracket. A 40-decimal logarithm enclosure and rational
 Taylor estimates check the generated proposals. The generator reproduces the
 same source. The [record](data/manuscript-digits-check.json) contains 28 public
 audits and the full root audit of 18,170 theorems.
+
+
+### 2026-10-20 — Penalized coexistence constants
+
+All five printed brackets in `lem:penconstants` are proved for the actual
+coexistence crossing, critical penalty, scalar minimum value and two target
+densities. Genuine constant-root signs and penalized-gap signs locate the
+crossing; interval bounds then hold over the entire certified bracket. The
+proposal generator reproduces the same source. The
+[record](data/penalized-digits-check.json) contains 56 public audits and the
+full root audit of 18,228 theorems.

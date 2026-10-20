@@ -190,3 +190,4 @@ import SparseLowerTail.Section05.PaperCertificateSummary
 import SparseLowerTail.Section08.CertificateUniqueness
 import SparseLowerTail.Section08.PaperTieAndCrossing
 import SparseLowerTail.Section04.ManuscriptThresholdDigits
+import SparseLowerTail.Section07.PenalizedDigits

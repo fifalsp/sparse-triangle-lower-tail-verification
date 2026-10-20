@@ -1,0 +1,909 @@
+import SparseLowerTail.Section07.PenalizedDigitsCore
+
+/-! Generated coexistence certificates; all proposed enclosures are checked in Lean. -/
+noncomputable section
+open Set
+namespace SparseLowerTail.Section07.PenalizedDigits
+open Section04 Numerics
+set_option maxHeartbeats 4000000
+set_option maxRecDepth 8192
+theorem lower_log_lower : Bounds (-Real.log (20881150482019276033/250000000000000000000000 : ℝ)) (469518466781715605731556559630587/50000000000000000000000000000000 : ℝ) (939036933563431211463113119261177/100000000000000000000000000000000 : ℝ) := by
+  have h := Real.abs_log_sub_add_sum_range_le (x := (-5622361419519276033/15258789062500000000 : ℝ)) (by norm_num) 90
+  norm_num [Finset.sum_range_succ] at h
+  have hl := (abs_le.mp h).1
+  have hu := (abs_le.mp h).2
+  have he : Real.log (20881150482019276033/15258789062500000000 : ℝ)=14*Real.log 2+Real.log (20881150482019276033/250000000000000000000000 : ℝ) := by
+    rw [show (20881150482019276033/15258789062500000000 : ℝ)=(2:ℝ)^14*(20881150482019276033/250000000000000000000000 : ℝ) by norm_num,Real.log_mul (by norm_num) (by norm_num),Real.log_pow]
+    norm_num
+  rw [he] at hl hu
+  have h2l := log_two_bounds_40.1
+  have h2u := log_two_bounds_40.2
+  constructor <;> linarith
+
+theorem lower_log {z : ℝ} (hz : z ∈ Icc (20881150482019276033/250000000000000000000000 : ℝ) (20881150482019276033/250000000000000000000000 : ℝ)) : Bounds (branchLog z) (469518466781715605731556559630587/50000000000000000000000000000000 : ℝ) (939036933563431211463113119261177/100000000000000000000000000000000 : ℝ) := by
+  have hz0 : 0<z := lt_of_lt_of_le (by norm_num : 0<(20881150482019276033/250000000000000000000000 : ℝ)) hz.1
+  have hlo := Real.log_le_log (by norm_num : 0<(20881150482019276033/250000000000000000000000 : ℝ)) hz.1
+  have hhi := Real.log_le_log hz0 hz.2
+  have hl := lower_log_lower.1
+  have hu := lower_log_lower.2
+  rw [branchLog_eq_neg_log]
+  constructor <;> linarith
+
+theorem lower_exponent {z : ℝ} (hz : z ∈ Icc (20881150482019276033/250000000000000000000000 : ℝ) (20881150482019276033/250000000000000000000000 : ℝ)) : Bounds (2*z*branchLog z/(1-z)^2) (784457898311189318360207448348017/500000000000000000000000000000000000 : ℝ) (1568915796622378636720414896696041/1000000000000000000000000000000000000 : ℝ) := by
+  have hZ : Bounds z (20881150482019276033/250000000000000000000000 : ℝ) (20881150482019276033/250000000000000000000000 : ℝ) := hz
+  have hL := lower_log hz
+  let v1 : ℝ := (2 : ℝ)*z
+  have h1 : Bounds v1 (20881150482019276033/125000000000000000000000 : ℝ) (20881150482019276033/125000000000000000000000 : ℝ) := by
+    exact (Bounds.refl (2 : ℝ)).mul_corners hZ (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v2 : ℝ := v1*(branchLog z)
+  have h2 : Bounds v2 (156865372143295556205891327544851/100000000000000000000000000000000000 : ℝ) (392163430358238890514728318862129/250000000000000000000000000000000000 : ℝ) := by
+    exact h1.mul_corners hL (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v3 : ℝ := (1 : ℝ)-z
+  have h3 : Bounds v3 (249979118849517980723967/250000000000000000000000 : ℝ) (249979118849517980723967/250000000000000000000000 : ℝ) := by
+    exact ((Bounds.refl (1 : ℝ)).sub hZ).weaken (by norm_num) (by norm_num)
+  let v4 : ℝ := v3*v3
+  have h4 : Bounds v4 (499916478886251486517738750524306939/500000000000000000000000000000000000 : ℝ) (999832957772502973035477501048613879/1000000000000000000000000000000000000 : ℝ) := by
+    exact h3.mul_corners h3 (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v5 : ℝ := v2/v4
+  have h5 : Bounds v5 (784457898311189318360207448348017/500000000000000000000000000000000000 : ℝ) (1568915796622378636720414896696041/1000000000000000000000000000000000000 : ℝ) := by
+    exact (h2.div_pos h4 (by norm_num) (by norm_num)).weaken (by norm_num) (by norm_num)
+  have he : 2*z*branchLog z/(1-z)^2=v5 := by
+    dsimp only [v1,v2,v3,v4,v5,branchMu,branchA,branchRho,balancedTriangle]
+    ring
+  rw [he]
+  exact h5
+
+theorem lower_exp_lower : Bounds (Real.exp (-1568915796622378636720414896696041/1000000000000000000000000000000000000 : ℝ)) (998432314308371581949726753903/1000000000000000000000000000000 : ℝ) (99843231430837158194972675390303/100000000000000000000000000000000 : ℝ) := by
+  have h := Real.exp_bound (x := (-1568915796622378636720414896696041/1000000000000000000000000000000000000 : ℝ)) (by norm_num) (n := 20) (by norm_num)
+  norm_num [Finset.sum_range_succ,Nat.factorial] at h
+  have hl := (abs_le.mp h).1
+  have hu := (abs_le.mp h).2
+  constructor <;> linarith
+
+theorem lower_exp_upper : Bounds (Real.exp (-784457898311189318360207448348017/500000000000000000000000000000000000 : ℝ)) (998432314308371581949726753903/1000000000000000000000000000000 : ℝ) (99843231430837158194972675390303/100000000000000000000000000000000 : ℝ) := by
+  have h := Real.exp_bound (x := (-784457898311189318360207448348017/500000000000000000000000000000000000 : ℝ)) (by norm_num) (n := 20) (by norm_num)
+  norm_num [Finset.sum_range_succ,Nat.factorial] at h
+  have hl := (abs_le.mp h).1
+  have hu := (abs_le.mp h).2
+  constructor <;> linarith
+
+theorem lower_B {z : ℝ} (hz : z ∈ Icc (20881150482019276033/250000000000000000000000 : ℝ) (20881150482019276033/250000000000000000000000 : ℝ)) : Bounds (branchB z) (998432314308371581949726753903/1000000000000000000000000000000 : ℝ) (99843231430837158194972675390303/100000000000000000000000000000000 : ℝ) := by
+  have hE := lower_exponent hz
+  have hlo := Real.exp_le_exp.mpr (neg_le_neg hE.2)
+  have hhi := Real.exp_le_exp.mpr (neg_le_neg hE.1)
+  have he : branchB z=Real.exp (-(2*z*branchLog z/(1-z)^2)) := by unfold branchB;congr 1;ring
+  rw [← he] at hlo hhi
+  have hl := lower_exp_lower.1
+  have hu := lower_exp_upper.2
+  constructor <;> linarith
+
+theorem lower_K {z : ℝ} (hz : z ∈ Icc (20881150482019276033/250000000000000000000000 : ℝ) (20881150482019276033/250000000000000000000000 : ℝ)) : Bounds (kappa z) (3971536512722982626801501766271/100000000000000000000000000000000 : ℝ) (1985768256361491313400750883137/50000000000000000000000000000000 : ℝ) := by
+  have hlo := kappa_mono_nonneg (by norm_num : 0≤(20881150482019276033/250000000000000000000000 : ℝ)) hz.1
+  have hhi := kappa_mono_nonneg (le_trans (by norm_num : 0≤(20881150482019276033/250000000000000000000000 : ℝ)) hz.1) hz.2
+  have hl : (3971536512722982626801501766271/100000000000000000000000000000000 : ℝ)≤kappa (20881150482019276033/250000000000000000000000 : ℝ) := by
+    apply (show Odd (3:ℕ) by decide).strictMono_pow.le_iff_le.mp
+    rw [kappa_cube (by norm_num : 0≤(20881150482019276033/250000000000000000000000 : ℝ))]
+    norm_num
+  have hu : kappa (20881150482019276033/250000000000000000000000 : ℝ)≤(1985768256361491313400750883137/50000000000000000000000000000000 : ℝ) := by
+    apply (show Odd (3:ℕ) by decide).strictMono_pow.le_iff_le.mp
+    rw [kappa_cube (by norm_num : 0≤(20881150482019276033/250000000000000000000000 : ℝ))]
+    norm_num
+  exact ⟨hl.trans hlo,hhi.trans hu⟩
+
+theorem lower_data {z : ℝ} (hz : z ∈ Icc (20881150482019276033/250000000000000000000000 : ℝ) (20881150482019276033/250000000000000000000000 : ℝ)) :
+    Bounds (branchMu z) (235536369778019727537571159480983119/12500000000000000000000000000000000 : ℝ) (18842909582241578203005692758479842127/1000000000000000000000000000000000000 : ℝ) ∧
+    Bounds (branchRho z) (39653103917582069822587090750709927/1000000000000000000000000000000000000 : ℝ) (2478318994848879363911693171921317/62500000000000000000000000000000000 : ℝ) ∧
+    Bounds ((branchA z+branchB z)/2) (499257853984988158724001983979199639/1000000000000000000000000000000000000 : ℝ) (499257853984988158724001983979214641/1000000000000000000000000000000000000 : ℝ) ∧
+    Bounds (balancedTriangle (branchA z) (branchB z)) (62349297487037159960427574579287/1000000000000000000000000000000000000 : ℝ) (12469859497407431992085514915859/200000000000000000000000000000000000 : ℝ) ∧
+    Bounds (balancedPenalty (branchMu z/3) (branchA z) (branchB z)) (499958917898302159107028687168620917/1000000000000000000000000000000000000 : ℝ) (49995891789830215910702868716863607/100000000000000000000000000000000000 : ℝ) := by
+  have hZ : Bounds z (20881150482019276033/250000000000000000000000 : ℝ) (20881150482019276033/250000000000000000000000 : ℝ) := hz
+  have hL := lower_log hz
+  have hB := lower_B hz
+  have hK := lower_K hz
+  let v1 : ℝ := z*(branchB z)
+  have h1 : Bounds v1 (83393661604735498277214055399279/1000000000000000000000000000000000000 : ℝ) (41696830802367749138607027699641/500000000000000000000000000000000000 : ℝ) := by
+    exact hZ.mul_corners hB (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v2 : ℝ := (2 : ℝ)*(branchLog z)
+  have h2 : Bounds v2 (469518466781715605731556559630587/25000000000000000000000000000000 : ℝ) (939036933563431211463113119261177/50000000000000000000000000000000 : ℝ) := by
+    exact (Bounds.refl (2 : ℝ)).mul_corners hL (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v3 : ℝ := (1 : ℝ)-z
+  have h3 : Bounds v3 (249979118849517980723967/250000000000000000000000 : ℝ) (249979118849517980723967/250000000000000000000000 : ℝ) := by
+    exact ((Bounds.refl (1 : ℝ)).sub hZ).weaken (by norm_num) (by norm_num)
+  let v4 : ℝ := v3*v3
+  have h4 : Bounds v4 (499916478886251486517738750524306939/500000000000000000000000000000000000 : ℝ) (999832957772502973035477501048613879/1000000000000000000000000000000000000 : ℝ) := by
+    exact h3.mul_corners h3 (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v5 : ℝ := (branchB z)*(branchB z)
+  have h5 : Bounds v5 (498433543127585450185452830844169343/500000000000000000000000000000000000 : ℝ) (996867086255170900370905661688398593/1000000000000000000000000000000000000 : ℝ) := by
+    exact hB.mul_corners hB (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v6 : ℝ := v4*v5
+  have h6 : Bounds v6 (996700567356564365711528314751451193/1000000000000000000000000000000000000 : ℝ) (249175141839141091427882078687877773/250000000000000000000000000000000000 : ℝ) := by
+    exact h4.mul_corners h5 (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v7 : ℝ := v2/v6
+  have h7 : Bounds v7 (235536369778019727537571159480983119/12500000000000000000000000000000000 : ℝ) (18842909582241578203005692758479842127/1000000000000000000000000000000000000 : ℝ) := by
+    exact (h2.div_pos h6 (by norm_num) (by norm_num)).weaken (by norm_num) (by norm_num)
+  let v8 : ℝ := (kappa z)*(branchB z)
+  have h8 : Bounds v8 (39653103917582069822587090750709927/1000000000000000000000000000000000000 : ℝ) (2478318994848879363911693171921317/62500000000000000000000000000000000 : ℝ) := by
+    exact hK.mul_corners hB (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v9 : ℝ := v1+(branchB z)
+  have h9 : Bounds v9 (998515707969976317448003967958399279/1000000000000000000000000000000000000 : ℝ) (499257853984988158724001983979214641/500000000000000000000000000000000000 : ℝ) := by
+    exact (h1.add hB).weaken (by norm_num) (by norm_num)
+  let v10 : ℝ := v9/(2 : ℝ)
+  have h10 : Bounds v10 (499257853984988158724001983979199639/1000000000000000000000000000000000000 : ℝ) (499257853984988158724001983979214641/1000000000000000000000000000000000000 : ℝ) := by
+    exact (h9.div_pos (Bounds.refl (2 : ℝ)) (by norm_num) (by norm_num)).weaken (by norm_num) (by norm_num)
+  let v11 : ℝ := v1*v1
+  have h11 : Bounds v11 (6954502795845135641697168797/1000000000000000000000000000000000000 : ℝ) (3477251397922567820848584399/500000000000000000000000000000000000 : ℝ) := by
+    exact h1.mul_corners h1 (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v12 : ℝ := v11*v1
+  have h12 : Bounds v12 (579961452785896163718397/1000000000000000000000000000000000000 : ℝ) (289980726392948081859199/500000000000000000000000000000000000 : ℝ) := by
+    exact h11.mul_corners h1 (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v13 : ℝ := (3 : ℝ)*v1
+  have h13 : Bounds v13 (250180984814206494831642166197837/1000000000000000000000000000000000000 : ℝ) (125090492407103247415821083098923/500000000000000000000000000000000000 : ℝ) := by
+    exact (Bounds.refl (3 : ℝ)).mul_corners h1 (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v14 : ℝ := (branchB z)*(branchB z)
+  have h14 : Bounds v14 (498433543127585450185452830844169343/500000000000000000000000000000000000 : ℝ) (996867086255170900370905661688398593/1000000000000000000000000000000000000 : ℝ) := by
+    exact hB.mul_corners hB (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v15 : ℝ := v13*v14
+  have h15 : Bounds v15 (124698594684093593527907067299377/500000000000000000000000000000000000 : ℝ) (249397189368187187055814134598779/1000000000000000000000000000000000000 : ℝ) := by
+    exact h13.mul_corners h14 (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v16 : ℝ := v12+v15
+  have h16 : Bounds v16 (249397189948148639841710298317151/1000000000000000000000000000000000000 : ℝ) (249397189948148639841710298317177/1000000000000000000000000000000000000 : ℝ) := by
+    exact (h12.add h15).weaken (by norm_num) (by norm_num)
+  let v17 : ℝ := v16/(4 : ℝ)
+  have h17 : Bounds v17 (62349297487037159960427574579287/1000000000000000000000000000000000000 : ℝ) (12469859497407431992085514915859/200000000000000000000000000000000000 : ℝ) := by
+    exact (h16.div_pos (Bounds.refl (4 : ℝ)) (by norm_num) (by norm_num)).weaken (by norm_num) (by norm_num)
+  let v18 : ℝ := (1 : ℝ)-v10
+  have h18 : Bounds v18 (500742146015011841275998016020785359/1000000000000000000000000000000000000 : ℝ) (500742146015011841275998016020800361/1000000000000000000000000000000000000 : ℝ) := by
+    exact ((Bounds.refl (1 : ℝ)).sub h10).weaken (by norm_num) (by norm_num)
+  let v19 : ℝ := (2 : ℝ)*v7
+  have h19 : Bounds v19 (235536369778019727537571159480983119/6250000000000000000000000000000000 : ℝ) (18842909582241578203005692758479842127/500000000000000000000000000000000000 : ℝ) := by
+    exact (Bounds.refl (2 : ℝ)).mul_corners h7 (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v20 : ℝ := v19*v17
+  have h20 : Bounds v20 (1174842175064523253453993278246437/500000000000000000000000000000000000 : ℝ) (1174842175064523253453993278246663/500000000000000000000000000000000000 : ℝ) := by
+    exact h19.mul_corners h17 (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v21 : ℝ := v20/(3 : ℝ)
+  have h21 : Bounds v21 (783228116709682168969328852164291/1000000000000000000000000000000000000 : ℝ) (391614058354841084484664426082221/500000000000000000000000000000000000 : ℝ) := by
+    exact (h20.div_pos (Bounds.refl (3 : ℝ)) (by norm_num) (by norm_num)).weaken (by norm_num) (by norm_num)
+  let v22 : ℝ := v18-v21
+  have h22 : Bounds v22 (499958917898302159107028687168620917/1000000000000000000000000000000000000 : ℝ) (49995891789830215910702868716863607/100000000000000000000000000000000000 : ℝ) := by
+    exact (h18.sub h21).weaken (by norm_num) (by norm_num)
+  refine ⟨?_,?_,?_,?_,?_⟩
+  · have he : branchMu z=v7 := by
+      dsimp only [v1,v2,v3,v4,v5,v6,v7,v8,v9,v10,v11,v12,v13,v14,v15,v16,v17,v18,v19,v20,v21,v22,branchMu,branchA,branchRho,balancedTriangle]
+      ring
+    rw [he]
+    exact h7
+  · have he : branchRho z=v8 := by
+      dsimp only [v1,v2,v3,v4,v5,v6,v7,v8,v9,v10,v11,v12,v13,v14,v15,v16,v17,v18,v19,v20,v21,v22,branchMu,branchA,branchRho,balancedTriangle]
+    rw [he]
+    exact h8
+  · have he : (branchA z+branchB z)/2=v10 := by
+      dsimp only [v1,v2,v3,v4,v5,v6,v7,v8,v9,v10,v11,v12,v13,v14,v15,v16,v17,v18,v19,v20,v21,v22,branchMu,branchA,branchRho,balancedTriangle]
+    rw [he]
+    exact h10
+  · have he : balancedTriangle (branchA z) (branchB z)=v17 := by
+      dsimp only [v1,v2,v3,v4,v5,v6,v7,v8,v9,v10,v11,v12,v13,v14,v15,v16,v17,v18,v19,v20,v21,v22,branchMu,branchA,branchRho,balancedTriangle]
+      ring
+    rw [he]
+    exact h17
+  · have he : balancedPenalty (branchMu z/3) (branchA z) (branchB z)=v22 := by
+      rw [branchPenalty_stationary ⟨lt_of_lt_of_le (by norm_num : 0<(20881150482019276033/250000000000000000000000 : ℝ)) hz.1,lt_of_le_of_lt hz.2 (by norm_num : (20881150482019276033/250000000000000000000000 : ℝ)<1)⟩]
+      dsimp only [v1,v2,v3,v4,v5,v6,v7,v8,v9,v10,v11,v12,v13,v14,v15,v16,v17,v18,v19,v20,v21,v22,branchMu,branchA,branchRho,balancedTriangle]
+      ring
+    rw [he]
+    exact h22
+
+theorem lower_root_log_lower : Bounds (-Real.log (13267371359754468335703171/50000000000000000000000000 : ℝ)) (26534305312942391582569883973231/20000000000000000000000000000000 : ℝ) (66335763282355978956424709933079/50000000000000000000000000000000 : ℝ) := by
+  have h := Real.abs_log_sub_add_sum_range_le (x := (-767371359754468335703171/12500000000000000000000000 : ℝ)) (by norm_num) 35
+  norm_num [Finset.sum_range_succ] at h
+  have hl := (abs_le.mp h).1
+  have hu := (abs_le.mp h).2
+  have he : Real.log (13267371359754468335703171/12500000000000000000000000 : ℝ)=2*Real.log 2+Real.log (13267371359754468335703171/50000000000000000000000000 : ℝ) := by
+    rw [show (13267371359754468335703171/12500000000000000000000000 : ℝ)=(2:ℝ)^2*(13267371359754468335703171/50000000000000000000000000 : ℝ) by norm_num,Real.log_mul (by norm_num) (by norm_num),Real.log_pow]
+    norm_num
+  rw [he] at hl hu
+  have h2l := log_two_bounds_40.1
+  have h2u := log_two_bounds_40.2
+  constructor <;> linarith
+
+theorem lower_root_sign_lower {z : ℝ} (hz : z ∈ Icc (20881150482019276033/250000000000000000000000 : ℝ) (20881150482019276033/250000000000000000000000 : ℝ)) : constantEquation (branchMu z/3) (13267371359754468335703171/50000000000000000000000000 : ℝ)≤0 := by
+  have hM := (lower_data hz).1
+  let v1 : ℝ := (13267371359754468335703171/50000000000000000000000000 : ℝ)*(13267371359754468335703171/50000000000000000000000000 : ℝ)
+  have h1 : Bounds v1 (17602314279763313005833051857133749/250000000000000000000000000000000000 : ℝ) (70409257119053252023332207428534997/1000000000000000000000000000000000000 : ℝ) := by
+    exact (Bounds.refl (13267371359754468335703171/50000000000000000000000000 : ℝ)).mul_corners (Bounds.refl (13267371359754468335703171/50000000000000000000000000 : ℝ)) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v2 : ℝ := (branchMu z)*v1
+  have h2 : Bounds v2 (1326715265647119579128494003504896269/1000000000000000000000000000000000000 : ℝ) (1326715265647119579128494003504980259/1000000000000000000000000000000000000 : ℝ) := by
+    exact hM.mul_corners h1 (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v3 : ℝ := v2-(-Real.log (13267371359754468335703171/50000000000000000000000000 : ℝ))
+  have h3 : Bounds v3 (-195156683731/1000000000000000000000000000000000000 : ℝ) (-195156569741/1000000000000000000000000000000000000 : ℝ) := by
+    exact (h2.sub lower_root_log_lower).weaken (by norm_num) (by norm_num)
+  have he : constantEquation (branchMu z/3) (13267371359754468335703171/50000000000000000000000000 : ℝ)=v3 := by
+    dsimp only [v1,v2,v3]
+    unfold constantEquation
+    ring
+  rw [he]
+  exact h3.2.trans (by norm_num)
+
+theorem lower_root_log_upper : Bounds (-Real.log (5306948543901787334281269/20000000000000000000000000 : ℝ)) (132671526564711957912849408560223/100000000000000000000000000000000 : ℝ) (66335763282355978956424704280113/50000000000000000000000000000000 : ℝ) := by
+  have h := Real.abs_log_sub_add_sum_range_le (x := (-306948543901787334281269/5000000000000000000000000 : ℝ)) (by norm_num) 35
+  norm_num [Finset.sum_range_succ] at h
+  have hl := (abs_le.mp h).1
+  have hu := (abs_le.mp h).2
+  have he : Real.log (5306948543901787334281269/5000000000000000000000000 : ℝ)=2*Real.log 2+Real.log (5306948543901787334281269/20000000000000000000000000 : ℝ) := by
+    rw [show (5306948543901787334281269/5000000000000000000000000 : ℝ)=(2:ℝ)^2*(5306948543901787334281269/20000000000000000000000000 : ℝ) by norm_num,Real.log_mul (by norm_num) (by norm_num),Real.log_pow]
+    norm_num
+  rw [he] at hl hu
+  have h2l := log_two_bounds_40.1
+  have h2u := log_two_bounds_40.2
+  constructor <;> linarith
+
+theorem lower_root_sign_upper {z : ℝ} (hz : z ∈ Icc (20881150482019276033/250000000000000000000000 : ℝ) (20881150482019276033/250000000000000000000000 : ℝ)) : 0≤constantEquation (branchMu z/3) (5306948543901787334281269/20000000000000000000000000 : ℝ) := by
+  have hM := (lower_data hz).1
+  let v1 : ℝ := (5306948543901787334281269/20000000000000000000000000 : ℝ)*(5306948543901787334281269/20000000000000000000000000 : ℝ)
+  have h1 : Bounds v1 (70409257119053252023332223349380627/1000000000000000000000000000000000000 : ℝ) (17602314279763313005833055837345157/250000000000000000000000000000000000 : ℝ) := by
+    exact (Bounds.refl (5306948543901787334281269/20000000000000000000000000 : ℝ)).mul_corners (Bounds.refl (5306948543901787334281269/20000000000000000000000000 : ℝ)) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v2 : ℝ := (branchMu z)*v1
+  have h2 : Bounds v2 (1326715265647119579128494303499950967/1000000000000000000000000000000000000 : ℝ) (1326715265647119579128494303500034957/1000000000000000000000000000000000000 : ℝ) := by
+    exact hM.mul_corners h1 (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v3 : ℝ := v2-(-Real.log (5306948543901787334281269/20000000000000000000000000 : ℝ))
+  have h3 : Bounds v3 (217897690967/1000000000000000000000000000000000000 : ℝ) (217897804957/1000000000000000000000000000000000000 : ℝ) := by
+    exact (h2.sub lower_root_log_upper).weaken (by norm_num) (by norm_num)
+  have he : constantEquation (branchMu z/3) (5306948543901787334281269/20000000000000000000000000 : ℝ)=v3 := by
+    dsimp only [v1,v2,v3]
+    unfold constantEquation
+    ring
+  rw [he]
+  exact le_trans (by norm_num) h3.1
+
+theorem lower_root {z : ℝ} (hz : z ∈ Icc (20881150482019276033/250000000000000000000000 : ℝ) (20881150482019276033/250000000000000000000000 : ℝ)) : Bounds (constantRoot (branchMu z/3)) (13267371359754468335703171/50000000000000000000000000 : ℝ) (5306948543901787334281269/20000000000000000000000000 : ℝ) := by
+  have hγ : 0<branchMu z/3 := div_pos (branchMu_pos (lt_of_lt_of_le (by norm_num : 0<(20881150482019276033/250000000000000000000000 : ℝ)) hz.1) (lt_of_le_of_lt hz.2 (by norm_num : (20881150482019276033/250000000000000000000000 : ℝ)<1))) (by norm_num)
+  exact constantRoot_bounds_of_signs hγ (by norm_num) (lower_root_sign_lower hz) (lower_root_sign_upper hz) (by norm_num)
+
+theorem lower_gap : penalizedGap (20881150482019276033/250000000000000000000000 : ℝ)<0 := by
+  have hd := lower_data (z := (20881150482019276033/250000000000000000000000 : ℝ)) ⟨le_rfl,le_rfl⟩
+  have hM := hd.1
+  have hA := hd.2.2.1
+  have hT := hd.2.2.2.1
+  have hS := lower_root (z := (20881150482019276033/250000000000000000000000 : ℝ)) ⟨le_rfl,le_rfl⟩
+  let v1 : ℝ := (constantRoot (branchMu (20881150482019276033/250000000000000000000000 : ℝ)/3))-((branchA (20881150482019276033/250000000000000000000000 : ℝ)+branchB (20881150482019276033/250000000000000000000000 : ℝ))/2)
+  have h1 : Bounds v1 (-233910426789898792009938563979214641/1000000000000000000000000000000000000 : ℝ) (-233910426789898792009938533979199639/1000000000000000000000000000000000000 : ℝ) := by
+    exact (hS.sub hA).weaken (by norm_num) (by norm_num)
+  let v2 : ℝ := (2 : ℝ)*(branchMu (20881150482019276033/250000000000000000000000 : ℝ))
+  have h2 : Bounds v2 (235536369778019727537571159480983119/6250000000000000000000000000000000 : ℝ) (18842909582241578203005692758479842127/500000000000000000000000000000000000 : ℝ) := by
+    exact (Bounds.refl (2 : ℝ)).mul_corners hM (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v3 : ℝ := v2/(3 : ℝ)
+  have h3 : Bounds v3 (6280969860747192734335230919492883173/500000000000000000000000000000000000 : ℝ) (6280969860747192734335230919493280709/500000000000000000000000000000000000 : ℝ) := by
+    exact (h2.div_pos (Bounds.refl (3 : ℝ)) (by norm_num) (by norm_num)).weaken (by norm_num) (by norm_num)
+  let v4 : ℝ := (constantRoot (branchMu (20881150482019276033/250000000000000000000000 : ℝ)/3))*(constantRoot (branchMu (20881150482019276033/250000000000000000000000 : ℝ)/3))
+  have h4 : Bounds v4 (17602314279763313005833051857133749/250000000000000000000000000000000000 : ℝ) (17602314279763313005833055837345157/250000000000000000000000000000000000 : ℝ) := by
+    exact hS.mul_corners hS (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v5 : ℝ := v4*(constantRoot (branchMu (20881150482019276033/250000000000000000000000 : ℝ)/3))
+  have h5 : Bounds v5 (18682915227258310482537505602952657/1000000000000000000000000000000000000 : ℝ) (18682915227258310482537511939785799/1000000000000000000000000000000000000 : ℝ) := by
+    exact h4.mul_corners hS (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v6 : ℝ := (balancedTriangle (branchA (20881150482019276033/250000000000000000000000 : ℝ)) (branchB (20881150482019276033/250000000000000000000000 : ℝ)))-v5
+  have h6 : Bounds v6 (-1163785370610704582661067772825407/62500000000000000000000000000000000 : ℝ) (-9310282964885636661288539014186681/500000000000000000000000000000000000 : ℝ) := by
+    exact (hT.sub h5).weaken (by norm_num) (by norm_num)
+  let v7 : ℝ := v3*v6
+  have h7 : Bounds v7 (-2339104267898987920097279271424389/10000000000000000000000000000000000 : ℝ) (-116955213394949396004863923769754019/500000000000000000000000000000000000 : ℝ) := by
+    exact h3.mul_corners h6 (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v8 : ℝ := v1-v7
+  have h8 : Bounds v8 (-210716439706603/1000000000000000000000000000000000000 : ℝ) (-210606836760739/1000000000000000000000000000000000000 : ℝ) := by
+    exact (h1.sub h7).weaken (by norm_num) (by norm_num)
+  have he : penalizedGap (20881150482019276033/250000000000000000000000 : ℝ)=v8 := by
+    rw [penalizedGap_stationary (by norm_num : (20881150482019276033/250000000000000000000000 : ℝ) ∈ Ioo (0:ℝ) 1)]
+    dsimp only [v1,v2,v3,v4,v5,v6,v7,v8]
+    ring
+  rw [he]
+  exact lt_of_le_of_lt h8.2 (by norm_num)
+
+theorem upper_log_lower : Bounds (-Real.log (16704920385615420827/200000000000000000000000 : ℝ)) (939036933563431211459521363142919/100000000000000000000000000000000 : ℝ) (469518466781715605729760681571461/50000000000000000000000000000000 : ℝ) := by
+  have h := Real.abs_log_sub_add_sum_range_le (x := (-4497889135615420827/12207031250000000000 : ℝ)) (by norm_num) 90
+  norm_num [Finset.sum_range_succ] at h
+  have hl := (abs_le.mp h).1
+  have hu := (abs_le.mp h).2
+  have he : Real.log (16704920385615420827/12207031250000000000 : ℝ)=14*Real.log 2+Real.log (16704920385615420827/200000000000000000000000 : ℝ) := by
+    rw [show (16704920385615420827/12207031250000000000 : ℝ)=(2:ℝ)^14*(16704920385615420827/200000000000000000000000 : ℝ) by norm_num,Real.log_mul (by norm_num) (by norm_num),Real.log_pow]
+    norm_num
+  rw [he] at hl hu
+  have h2l := log_two_bounds_40.1
+  have h2u := log_two_bounds_40.2
+  constructor <;> linarith
+
+theorem upper_log {z : ℝ} (hz : z ∈ Icc (16704920385615420827/200000000000000000000000 : ℝ) (16704920385615420827/200000000000000000000000 : ℝ)) : Bounds (branchLog z) (939036933563431211459521363142919/100000000000000000000000000000000 : ℝ) (469518466781715605729760681571461/50000000000000000000000000000000 : ℝ) := by
+  have hz0 : 0<z := lt_of_lt_of_le (by norm_num : 0<(16704920385615420827/200000000000000000000000 : ℝ)) hz.1
+  have hlo := Real.log_le_log (by norm_num : 0<(16704920385615420827/200000000000000000000000 : ℝ)) hz.1
+  have hhi := Real.log_le_log hz0 hz.2
+  have hl := upper_log_lower.1
+  have hu := upper_log_lower.2
+  rw [branchLog_eq_neg_log]
+  constructor <;> linarith
+
+theorem upper_exponent {z : ℝ} (hz : z ∈ Icc (16704920385615420827/200000000000000000000000 : ℝ) (16704920385615420827/200000000000000000000000 : ℝ)) : Bounds (2*z*branchLog z/(1-z)^2) (784457898311189318385387468835891/500000000000000000000000000000000000 : ℝ) (1568915796622378636770774937671789/1000000000000000000000000000000000000 : ℝ) := by
+  have hZ : Bounds z (16704920385615420827/200000000000000000000000 : ℝ) (16704920385615420827/200000000000000000000000 : ℝ) := hz
+  have hL := upper_log hz
+  let v1 : ℝ := (2 : ℝ)*z
+  have h1 : Bounds v1 (16704920385615420827/100000000000000000000000 : ℝ) (16704920385615420827/100000000000000000000000 : ℝ) := by
+    exact (Bounds.refl (2 : ℝ)).mul_corners hZ (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v2 : ℝ := v1*(branchLog z)
+  have h2 : Bounds v2 (392163430358238890527313872865579/250000000000000000000000000000000000 : ℝ) (784326860716477781054627745731161/500000000000000000000000000000000000 : ℝ) := by
+    exact h1.mul_corners hL (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v3 : ℝ := (1 : ℝ)-z
+  have h3 : Bounds v3 (199983295079614384579173/200000000000000000000000 : ℝ) (199983295079614384579173/200000000000000000000000 : ℝ) := by
+    exact ((Bounds.refl (1 : ℝ)).sub hZ).weaken (by norm_num) (by norm_num)
+  let v4 : ℝ := v3*v3
+  have h4 : Bounds v4 (999832957772502973035471501549761489/1000000000000000000000000000000000000 : ℝ) (99983295777250297303547150154976149/100000000000000000000000000000000000 : ℝ) := by
+    exact h3.mul_corners h3 (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v5 : ℝ := v2/v4
+  have h5 : Bounds v5 (784457898311189318385387468835891/500000000000000000000000000000000000 : ℝ) (1568915796622378636770774937671789/1000000000000000000000000000000000000 : ℝ) := by
+    exact (h2.div_pos h4 (by norm_num) (by norm_num)).weaken (by norm_num) (by norm_num)
+  have he : 2*z*branchLog z/(1-z)^2=v5 := by
+    dsimp only [v1,v2,v3,v4,v5,branchMu,branchA,branchRho,balancedTriangle]
+    ring
+  rw [he]
+  exact h5
+
+theorem upper_exp_lower : Bounds (Real.exp (-1568915796622378636770774937671789/1000000000000000000000000000000000000 : ℝ)) (49921615715418579097483823640537/50000000000000000000000000000000 : ℝ) (99843231430837158194967647281077/100000000000000000000000000000000 : ℝ) := by
+  have h := Real.exp_bound (x := (-1568915796622378636770774937671789/1000000000000000000000000000000000000 : ℝ)) (by norm_num) (n := 20) (by norm_num)
+  norm_num [Finset.sum_range_succ,Nat.factorial] at h
+  have hl := (abs_le.mp h).1
+  have hu := (abs_le.mp h).2
+  constructor <;> linarith
+
+theorem upper_exp_upper : Bounds (Real.exp (-784457898311189318385387468835891/500000000000000000000000000000000000 : ℝ)) (49921615715418579097483823640537/50000000000000000000000000000000 : ℝ) (99843231430837158194967647281077/100000000000000000000000000000000 : ℝ) := by
+  have h := Real.exp_bound (x := (-784457898311189318385387468835891/500000000000000000000000000000000000 : ℝ)) (by norm_num) (n := 20) (by norm_num)
+  norm_num [Finset.sum_range_succ,Nat.factorial] at h
+  have hl := (abs_le.mp h).1
+  have hu := (abs_le.mp h).2
+  constructor <;> linarith
+
+theorem upper_B {z : ℝ} (hz : z ∈ Icc (16704920385615420827/200000000000000000000000 : ℝ) (16704920385615420827/200000000000000000000000 : ℝ)) : Bounds (branchB z) (49921615715418579097483823640537/50000000000000000000000000000000 : ℝ) (99843231430837158194967647281077/100000000000000000000000000000000 : ℝ) := by
+  have hE := upper_exponent hz
+  have hlo := Real.exp_le_exp.mpr (neg_le_neg hE.2)
+  have hhi := Real.exp_le_exp.mpr (neg_le_neg hE.1)
+  have he : branchB z=Real.exp (-(2*z*branchLog z/(1-z)^2)) := by unfold branchB;congr 1;ring
+  rw [← he] at hlo hhi
+  have hl := upper_exp_lower.1
+  have hu := upper_exp_upper.2
+  constructor <;> linarith
+
+theorem upper_K {z : ℝ} (hz : z ∈ Icc (16704920385615420827/200000000000000000000000 : ℝ) (16704920385615420827/200000000000000000000000 : ℝ)) : Bounds (kappa z) (3971536512722982626849051068387/100000000000000000000000000000000 : ℝ) (397153651272298262684905106839/10000000000000000000000000000000 : ℝ) := by
+  have hlo := kappa_mono_nonneg (by norm_num : 0≤(16704920385615420827/200000000000000000000000 : ℝ)) hz.1
+  have hhi := kappa_mono_nonneg (le_trans (by norm_num : 0≤(16704920385615420827/200000000000000000000000 : ℝ)) hz.1) hz.2
+  have hl : (3971536512722982626849051068387/100000000000000000000000000000000 : ℝ)≤kappa (16704920385615420827/200000000000000000000000 : ℝ) := by
+    apply (show Odd (3:ℕ) by decide).strictMono_pow.le_iff_le.mp
+    rw [kappa_cube (by norm_num : 0≤(16704920385615420827/200000000000000000000000 : ℝ))]
+    norm_num
+  have hu : kappa (16704920385615420827/200000000000000000000000 : ℝ)≤(397153651272298262684905106839/10000000000000000000000000000000 : ℝ) := by
+    apply (show Odd (3:ℕ) by decide).strictMono_pow.le_iff_le.mp
+    rw [kappa_cube (by norm_num : 0≤(16704920385615420827/200000000000000000000000 : ℝ))]
+    norm_num
+  exact ⟨hl.trans hlo,hhi.trans hu⟩
+
+theorem upper_data {z : ℝ} (hz : z ∈ Icc (16704920385615420827/200000000000000000000000 : ℝ) (16704920385615420827/200000000000000000000000 : ℝ)) :
+    Bounds (branchMu z) (9421454791120789101467815381330147553/500000000000000000000000000000000000 : ℝ) (9421454791120789101467815381330743857/500000000000000000000000000000000000 : ℝ) ∧
+    Bounds (branchRho z) (39653103917582069823059841416326083/1000000000000000000000000000000000000 : ℝ) (9913275979395517455764960354089307/250000000000000000000000000000000000 : ℝ) ∧
+    Bounds ((branchA z+branchB z)/2) (249628926992494079361989169490843497/500000000000000000000000000000000000 : ℝ) (124814463496247039680994584745425499/250000000000000000000000000000000000 : ℝ) ∧
+    Bounds (balancedTriangle (branchA z) (branchB z)) (62349297487037159962657589557353/1000000000000000000000000000000000000 : ℝ) (62349297487037159962657589557361/1000000000000000000000000000000000000 : ℝ) ∧
+    Bounds (balancedPenalty (branchMu z/3) (branchA z) (branchB z)) (499958917898302159107027231063214277/1000000000000000000000000000000000000 : ℝ) (49995891789830215910702723106322943/100000000000000000000000000000000000 : ℝ) := by
+  have hZ : Bounds z (16704920385615420827/200000000000000000000000 : ℝ) (16704920385615420827/200000000000000000000000 : ℝ) := hz
+  have hL := upper_log hz
+  have hB := upper_B hz
+  have hK := upper_K hz
+  let v1 : ℝ := z*(branchB z)
+  have h1 : Bounds v1 (20848415401183874570051288158497/250000000000000000000000000000000000 : ℝ) (10424207700591937285025644079249/125000000000000000000000000000000000 : ℝ) := by
+    exact hZ.mul_corners hB (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v2 : ℝ := (2 : ℝ)*(branchLog z)
+  have h2 : Bounds v2 (939036933563431211459521363142919/50000000000000000000000000000000 : ℝ) (469518466781715605729760681571461/25000000000000000000000000000000 : ℝ) := by
+    exact (Bounds.refl (2 : ℝ)).mul_corners hL (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v3 : ℝ := (1 : ℝ)-z
+  have h3 : Bounds v3 (199983295079614384579173/200000000000000000000000 : ℝ) (199983295079614384579173/200000000000000000000000 : ℝ) := by
+    exact ((Bounds.refl (1 : ℝ)).sub hZ).weaken (by norm_num) (by norm_num)
+  let v4 : ℝ := v3*v3
+  have h4 : Bounds v4 (999832957772502973035471501549761489/1000000000000000000000000000000000000 : ℝ) (99983295777250297303547150154976149/100000000000000000000000000000000000 : ℝ) := by
+    exact h3.mul_corners h3 (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v5 : ℝ := (branchB z)*(branchB z)
+  have h5 : Bounds v5 (996867086255170900370805257153716477/1000000000000000000000000000000000000 : ℝ) (3894012055684261329573458035756939/3906250000000000000000000000000000 : ℝ) := by
+    exact hB.mul_corners hB (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v6 : ℝ := v4*v5
+  have h6 : Bounds v6 (498350283678282182855710973142843063/500000000000000000000000000000000000 : ℝ) (39868022694262574628456877851429841/40000000000000000000000000000000000 : ℝ) := by
+    exact h4.mul_corners h5 (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v7 : ℝ := v2/v6
+  have h7 : Bounds v7 (9421454791120789101467815381330147553/500000000000000000000000000000000000 : ℝ) (9421454791120789101467815381330743857/500000000000000000000000000000000000 : ℝ) := by
+    exact (h2.div_pos h6 (by norm_num) (by norm_num)).weaken (by norm_num) (by norm_num)
+  let v8 : ℝ := (kappa z)*(branchB z)
+  have h8 : Bounds v8 (39653103917582069823059841416326083/1000000000000000000000000000000000000 : ℝ) (9913275979395517455764960354089307/250000000000000000000000000000000000 : ℝ) := by
+    exact hK.mul_corners hB (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v9 : ℝ := v1+(branchB z)
+  have h9 : Bounds v9 (249628926992494079361989169490843497/250000000000000000000000000000000000 : ℝ) (124814463496247039680994584745425499/125000000000000000000000000000000000 : ℝ) := by
+    exact (h1.add hB).weaken (by norm_num) (by norm_num)
+  let v10 : ℝ := v9/(2 : ℝ)
+  have h10 : Bounds v10 (249628926992494079361989169490843497/500000000000000000000000000000000000 : ℝ) (124814463496247039680994584745425499/250000000000000000000000000000000000 : ℝ) := by
+    exact (h9.div_pos (Bounds.refl (2 : ℝ)) (by norm_num) (by norm_num)).weaken (by norm_num) (by norm_num)
+  let v11 : ℝ := v1*v1
+  have h11 : Bounds v11 (3477251397922567821098022949/500000000000000000000000000000000000 : ℝ) (6954502795845135642196045899/1000000000000000000000000000000000000 : ℝ) := by
+    exact h1.mul_corners h1 (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v12 : ℝ := v11*v1
+  have h12 : Bounds v12 (289980726392948081890401/500000000000000000000000000000000000 : ℝ) (579961452785896163780803/1000000000000000000000000000000000000 : ℝ) := by
+    exact h11.mul_corners h1 (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v13 : ℝ := (3 : ℝ)*v1
+  have h13 : Bounds v13 (62545246203551623710153864475491/250000000000000000000000000000000000 : ℝ) (31272623101775811855076932237747/125000000000000000000000000000000000 : ℝ) := by
+    exact (Bounds.refl (3 : ℝ)).mul_corners h1 (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v14 : ℝ := (branchB z)*(branchB z)
+  have h14 : Bounds v14 (996867086255170900370805257153716477/1000000000000000000000000000000000000 : ℝ) (3894012055684261329573458035756939/3906250000000000000000000000000000 : ℝ) := by
+    exact hB.mul_corners hB (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v15 : ℝ := v13*v14
+  have h15 : Bounds v15 (249397189368187187064734194448613/1000000000000000000000000000000000000 : ℝ) (249397189368187187064734194448641/1000000000000000000000000000000000000 : ℝ) := by
+    exact h13.mul_corners h14 (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v16 : ℝ := v12+v15
+  have h16 : Bounds v16 (49879437989629727970126071645883/200000000000000000000000000000000000 : ℝ) (62349297487037159962657589557361/250000000000000000000000000000000000 : ℝ) := by
+    exact (h12.add h15).weaken (by norm_num) (by norm_num)
+  let v17 : ℝ := v16/(4 : ℝ)
+  have h17 : Bounds v17 (62349297487037159962657589557353/1000000000000000000000000000000000000 : ℝ) (62349297487037159962657589557361/1000000000000000000000000000000000000 : ℝ) := by
+    exact (h16.div_pos (Bounds.refl (4 : ℝ)) (by norm_num) (by norm_num)).weaken (by norm_num) (by norm_num)
+  let v18 : ℝ := (1 : ℝ)-v10
+  have h18 : Bounds v18 (125185536503752960319005415254574501/250000000000000000000000000000000000 : ℝ) (250371073007505920638010830509156503/500000000000000000000000000000000000 : ℝ) := by
+    exact ((Bounds.refl (1 : ℝ)).sub h10).weaken (by norm_num) (by norm_num)
+  let v19 : ℝ := (2 : ℝ)*v7
+  have h19 : Bounds v19 (9421454791120789101467815381330147553/250000000000000000000000000000000000 : ℝ) (9421454791120789101467815381330743857/250000000000000000000000000000000000 : ℝ) := by
+    exact (Bounds.refl (2 : ℝ)).mul_corners h7 (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v20 : ℝ := v19*v17
+  have h20 : Bounds v20 (234968435012904650698328986525073/100000000000000000000000000000000000 : ℝ) (2349684350129046506983289865251181/1000000000000000000000000000000000000 : ℝ) := by
+    exact h19.mul_corners h17 (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v21 : ℝ := v20/(3 : ℝ)
+  have h21 : Bounds v21 (97903514588710271124303744385447/125000000000000000000000000000000000 : ℝ) (783228116709682168994429955083727/1000000000000000000000000000000000000 : ℝ) := by
+    exact (h20.div_pos (Bounds.refl (3 : ℝ)) (by norm_num) (by norm_num)).weaken (by norm_num) (by norm_num)
+  let v22 : ℝ := v18-v21
+  have h22 : Bounds v22 (499958917898302159107027231063214277/1000000000000000000000000000000000000 : ℝ) (49995891789830215910702723106322943/100000000000000000000000000000000000 : ℝ) := by
+    exact (h18.sub h21).weaken (by norm_num) (by norm_num)
+  refine ⟨?_,?_,?_,?_,?_⟩
+  · have he : branchMu z=v7 := by
+      dsimp only [v1,v2,v3,v4,v5,v6,v7,v8,v9,v10,v11,v12,v13,v14,v15,v16,v17,v18,v19,v20,v21,v22,branchMu,branchA,branchRho,balancedTriangle]
+      ring
+    rw [he]
+    exact h7
+  · have he : branchRho z=v8 := by
+      dsimp only [v1,v2,v3,v4,v5,v6,v7,v8,v9,v10,v11,v12,v13,v14,v15,v16,v17,v18,v19,v20,v21,v22,branchMu,branchA,branchRho,balancedTriangle]
+    rw [he]
+    exact h8
+  · have he : (branchA z+branchB z)/2=v10 := by
+      dsimp only [v1,v2,v3,v4,v5,v6,v7,v8,v9,v10,v11,v12,v13,v14,v15,v16,v17,v18,v19,v20,v21,v22,branchMu,branchA,branchRho,balancedTriangle]
+    rw [he]
+    exact h10
+  · have he : balancedTriangle (branchA z) (branchB z)=v17 := by
+      dsimp only [v1,v2,v3,v4,v5,v6,v7,v8,v9,v10,v11,v12,v13,v14,v15,v16,v17,v18,v19,v20,v21,v22,branchMu,branchA,branchRho,balancedTriangle]
+      ring
+    rw [he]
+    exact h17
+  · have he : balancedPenalty (branchMu z/3) (branchA z) (branchB z)=v22 := by
+      rw [branchPenalty_stationary ⟨lt_of_lt_of_le (by norm_num : 0<(16704920385615420827/200000000000000000000000 : ℝ)) hz.1,lt_of_le_of_lt hz.2 (by norm_num : (16704920385615420827/200000000000000000000000 : ℝ)<1)⟩]
+      dsimp only [v1,v2,v3,v4,v5,v6,v7,v8,v9,v10,v11,v12,v13,v14,v15,v16,v17,v18,v19,v20,v21,v22,branchMu,branchA,branchRho,balancedTriangle]
+      ring
+    rw [he]
+    exact h22
+
+theorem upper_root_log_lower : Bounds (-Real.log (2653474271950893667144217/10000000000000000000000000 : ℝ)) (132671526564711957912714396887493/100000000000000000000000000000000 : ℝ) (16583940820588994739089299610937/12500000000000000000000000000000 : ℝ) := by
+  have h := Real.abs_log_sub_add_sum_range_le (x := (-153474271950893667144217/2500000000000000000000000 : ℝ)) (by norm_num) 35
+  norm_num [Finset.sum_range_succ] at h
+  have hl := (abs_le.mp h).1
+  have hu := (abs_le.mp h).2
+  have he : Real.log (2653474271950893667144217/2500000000000000000000000 : ℝ)=2*Real.log 2+Real.log (2653474271950893667144217/10000000000000000000000000 : ℝ) := by
+    rw [show (2653474271950893667144217/2500000000000000000000000 : ℝ)=(2:ℝ)^2*(2653474271950893667144217/10000000000000000000000000 : ℝ) by norm_num,Real.log_mul (by norm_num) (by norm_num),Real.log_pow]
+    norm_num
+  rw [he] at hl hu
+  have h2l := log_two_bounds_40.1
+  have h2u := log_two_bounds_40.2
+  constructor <;> linarith
+
+theorem upper_root_sign_lower {z : ℝ} (hz : z ∈ Icc (16704920385615420827/200000000000000000000000 : ℝ) (16704920385615420827/200000000000000000000000 : ℝ)) : constantEquation (branchMu z/3) (2653474271950893667144217/10000000000000000000000000 : ℝ)≤0 := by
+  have hM := (upper_data hz).1
+  let v1 : ℝ := (2653474271950893667144217/10000000000000000000000000 : ℝ)*(2653474271950893667144217/10000000000000000000000000 : ℝ)
+  have h1 : Bounds v1 (70409257119053252023522344780965909/1000000000000000000000000000000000000 : ℝ) (7040925711905325202352234478096591/100000000000000000000000000000000000 : ℝ) := by
+    exact (Bounds.refl (2653474271950893667144217/10000000000000000000000000 : ℝ)).mul_corners (Bounds.refl (2653474271950893667144217/10000000000000000000000000 : ℝ)) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v2 : ℝ := (branchMu z)*v1
+  have h2 : Bounds v2 (663357632823559789563571865683555107/500000000000000000000000000000000000 : ℝ) (331678816411779894781785932841798551/250000000000000000000000000000000000 : ℝ) := by
+    exact hM.mul_corners h1 (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v3 : ℝ := v2-(-Real.log (2653474271950893667144217/10000000000000000000000000 : ℝ))
+  have h3 : Bounds v3 (-118753924893/500000000000000000000000000000000000 : ℝ) (-59376933949/250000000000000000000000000000000000 : ℝ) := by
+    exact (h2.sub upper_root_log_lower).weaken (by norm_num) (by norm_num)
+  have he : constantEquation (branchMu z/3) (2653474271950893667144217/10000000000000000000000000 : ℝ)=v3 := by
+    dsimp only [v1,v2,v3]
+    unfold constantEquation
+    ring
+  rw [he]
+  exact h3.2.trans (by norm_num)
+
+theorem upper_root_log_upper : Bounds (-Real.log (26534742719508936671442173/100000000000000000000000000 : ℝ)) (132671526564711957912714385581561/100000000000000000000000000000000 : ℝ) (33167881641177989478178596395391/25000000000000000000000000000000 : ℝ) := by
+  have h := Real.abs_log_sub_add_sum_range_le (x := (-1534742719508936671442173/25000000000000000000000000 : ℝ)) (by norm_num) 35
+  norm_num [Finset.sum_range_succ] at h
+  have hl := (abs_le.mp h).1
+  have hu := (abs_le.mp h).2
+  have he : Real.log (26534742719508936671442173/25000000000000000000000000 : ℝ)=2*Real.log 2+Real.log (26534742719508936671442173/100000000000000000000000000 : ℝ) := by
+    rw [show (26534742719508936671442173/25000000000000000000000000 : ℝ)=(2:ℝ)^2*(26534742719508936671442173/100000000000000000000000000 : ℝ) by norm_num,Real.log_mul (by norm_num) (by norm_num),Real.log_pow]
+    norm_num
+  rw [he] at hl hu
+  have h2l := log_two_bounds_40.1
+  have h2u := log_two_bounds_40.2
+  constructor <;> linarith
+
+theorem upper_root_sign_upper {z : ℝ} (hz : z ∈ Icc (16704920385615420827/200000000000000000000000 : ℝ) (16704920385615420827/200000000000000000000000 : ℝ)) : 0≤constantEquation (branchMu z/3) (26534742719508936671442173/100000000000000000000000000 : ℝ) := by
+  have hM := (upper_data hz).1
+  let v1 : ℝ := (26534742719508936671442173/100000000000000000000000000 : ℝ)*(26534742719508936671442173/100000000000000000000000000 : ℝ)
+  have h1 : Bounds v1 (70409257119053252023522360701811541/1000000000000000000000000000000000000 : ℝ) (35204628559526626011761180350905771/500000000000000000000000000000000000 : ℝ) := by
+    exact (Bounds.refl (26534742719508936671442173/100000000000000000000000000 : ℝ)).mul_corners (Bounds.refl (26534742719508936671442173/100000000000000000000000000 : ℝ)) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v2 : ℝ := (branchMu z)*v1
+  have h2 : Bounds v2 (1326715265647119579127144031362164931/1000000000000000000000000000000000000 : ℝ) (1326715265647119579127144031362248921/1000000000000000000000000000000000000 : ℝ) := by
+    exact hM.mul_corners h1 (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v3 : ℝ := v2-(-Real.log (26534742719508936671442173/100000000000000000000000000 : ℝ))
+  have h3 : Bounds v3 (175546524931/1000000000000000000000000000000000000 : ℝ) (175546638921/1000000000000000000000000000000000000 : ℝ) := by
+    exact (h2.sub upper_root_log_upper).weaken (by norm_num) (by norm_num)
+  have he : constantEquation (branchMu z/3) (26534742719508936671442173/100000000000000000000000000 : ℝ)=v3 := by
+    dsimp only [v1,v2,v3]
+    unfold constantEquation
+    ring
+  rw [he]
+  exact le_trans (by norm_num) h3.1
+
+theorem upper_root {z : ℝ} (hz : z ∈ Icc (16704920385615420827/200000000000000000000000 : ℝ) (16704920385615420827/200000000000000000000000 : ℝ)) : Bounds (constantRoot (branchMu z/3)) (2653474271950893667144217/10000000000000000000000000 : ℝ) (26534742719508936671442173/100000000000000000000000000 : ℝ) := by
+  have hγ : 0<branchMu z/3 := div_pos (branchMu_pos (lt_of_lt_of_le (by norm_num : 0<(16704920385615420827/200000000000000000000000 : ℝ)) hz.1) (lt_of_le_of_lt hz.2 (by norm_num : (16704920385615420827/200000000000000000000000 : ℝ)<1))) (by norm_num)
+  exact constantRoot_bounds_of_signs hγ (by norm_num) (upper_root_sign_lower hz) (upper_root_sign_upper hz) (by norm_num)
+
+theorem upper_gap : 0<penalizedGap (16704920385615420827/200000000000000000000000 : ℝ) := by
+  have hd := upper_data (z := (16704920385615420827/200000000000000000000000 : ℝ)) ⟨le_rfl,le_rfl⟩
+  have hM := hd.1
+  have hA := hd.2.2.1
+  have hT := hd.2.2.2.1
+  have hS := upper_root (z := (16704920385615420827/200000000000000000000000 : ℝ)) ⟨le_rfl,le_rfl⟩
+  let v1 : ℝ := (constantRoot (branchMu (16704920385615420827/200000000000000000000000 : ℝ)/3))-((branchA (16704920385615420827/200000000000000000000000 : ℝ)+branchB (16704920385615420827/200000000000000000000000 : ℝ))/2)
+  have h1 : Bounds v1 (-58477606697474698002389159745425499/250000000000000000000000000000000000 : ℝ) (-116955213394949396004778304490843497/500000000000000000000000000000000000 : ℝ) := by
+    exact (hS.sub hA).weaken (by norm_num) (by norm_num)
+  let v2 : ℝ := (2 : ℝ)*(branchMu (16704920385615420827/200000000000000000000000 : ℝ))
+  have h2 : Bounds v2 (9421454791120789101467815381330147553/250000000000000000000000000000000000 : ℝ) (9421454791120789101467815381330743857/250000000000000000000000000000000000 : ℝ) := by
+    exact (Bounds.refl (2 : ℝ)).mul_corners hM (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v3 : ℝ := v2/(3 : ℝ)
+  have h3 : Bounds v3 (1256193972149438546862375384177353007/100000000000000000000000000000000000 : ℝ) (12561939721494385468623753841774325143/1000000000000000000000000000000000000 : ℝ) := by
+    exact (h2.div_pos (Bounds.refl (3 : ℝ)) (by norm_num) (by norm_num)).weaken (by norm_num) (by norm_num)
+  let v4 : ℝ := (constantRoot (branchMu (16704920385615420827/200000000000000000000000 : ℝ)/3))*(constantRoot (branchMu (16704920385615420827/200000000000000000000000 : ℝ)/3))
+  have h4 : Bounds v4 (70409257119053252023522344780965909/1000000000000000000000000000000000000 : ℝ) (35204628559526626011761180350905771/500000000000000000000000000000000000 : ℝ) := by
+    exact hS.mul_corners hS (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v5 : ℝ := v4*(constantRoot (branchMu (16704920385615420827/200000000000000000000000 : ℝ)/3))
+  have h5 : Bounds v5 (37365830454516620965226368577749/2000000000000000000000000000000000 : ℝ) (9341457613629155241306595312853821/500000000000000000000000000000000000 : ℝ) := by
+    exact h4.mul_corners hS (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v6 : ℝ := (balancedTriangle (branchA (16704920385615420827/200000000000000000000000 : ℝ)) (branchB (16704920385615420827/200000000000000000000000 : ℝ)))-v5
+  have h6 : Bounds v6 (-18620565929771273322650533036150289/1000000000000000000000000000000000000 : ℝ) (-18620565929771273322650526699317139/1000000000000000000000000000000000000 : ℝ) := by
+    exact (hT.sub h5).weaken (by norm_num) (by norm_num)
+  let v7 : ℝ := v3*v6
+  have h7 : Bounds v7 (-58477606697474698002445213894480121/250000000000000000000000000000000000 : ℝ) (-233910426789898792009780775974989623/1000000000000000000000000000000000000 : ℝ) := by
+    exact h3.mul_corners h6 (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v8 : ℝ := v1-v7
+  have h8 : Bounds v8 (224136993287627/1000000000000000000000000000000000000 : ℝ) (22424659623349/100000000000000000000000000000000000 : ℝ) := by
+    exact (h1.sub h7).weaken (by norm_num) (by norm_num)
+  have he : penalizedGap (16704920385615420827/200000000000000000000000 : ℝ)=v8 := by
+    rw [penalizedGap_stationary (by norm_num : (16704920385615420827/200000000000000000000000 : ℝ) ∈ Ioo (0:ℝ) 1)]
+    dsimp only [v1,v2,v3,v4,v5,v6,v7,v8]
+    ring
+  rw [he]
+  exact lt_of_lt_of_le (by norm_num) h8.1
+
+theorem crossing_log_lower : Bounds (-Real.log (20881150482019276033/250000000000000000000000 : ℝ)) (469518466781715605731556559630587/50000000000000000000000000000000 : ℝ) (939036933563431211463113119261177/100000000000000000000000000000000 : ℝ) := by
+  have h := Real.abs_log_sub_add_sum_range_le (x := (-5622361419519276033/15258789062500000000 : ℝ)) (by norm_num) 90
+  norm_num [Finset.sum_range_succ] at h
+  have hl := (abs_le.mp h).1
+  have hu := (abs_le.mp h).2
+  have he : Real.log (20881150482019276033/15258789062500000000 : ℝ)=14*Real.log 2+Real.log (20881150482019276033/250000000000000000000000 : ℝ) := by
+    rw [show (20881150482019276033/15258789062500000000 : ℝ)=(2:ℝ)^14*(20881150482019276033/250000000000000000000000 : ℝ) by norm_num,Real.log_mul (by norm_num) (by norm_num),Real.log_pow]
+    norm_num
+  rw [he] at hl hu
+  have h2l := log_two_bounds_40.1
+  have h2u := log_two_bounds_40.2
+  constructor <;> linarith
+
+theorem crossing_log_upper : Bounds (-Real.log (16704920385615420827/200000000000000000000000 : ℝ)) (939036933563431211459521363142919/100000000000000000000000000000000 : ℝ) (469518466781715605729760681571461/50000000000000000000000000000000 : ℝ) := by
+  have h := Real.abs_log_sub_add_sum_range_le (x := (-4497889135615420827/12207031250000000000 : ℝ)) (by norm_num) 90
+  norm_num [Finset.sum_range_succ] at h
+  have hl := (abs_le.mp h).1
+  have hu := (abs_le.mp h).2
+  have he : Real.log (16704920385615420827/12207031250000000000 : ℝ)=14*Real.log 2+Real.log (16704920385615420827/200000000000000000000000 : ℝ) := by
+    rw [show (16704920385615420827/12207031250000000000 : ℝ)=(2:ℝ)^14*(16704920385615420827/200000000000000000000000 : ℝ) by norm_num,Real.log_mul (by norm_num) (by norm_num),Real.log_pow]
+    norm_num
+  rw [he] at hl hu
+  have h2l := log_two_bounds_40.1
+  have h2u := log_two_bounds_40.2
+  constructor <;> linarith
+
+theorem crossing_log {z : ℝ} (hz : z ∈ Icc (20881150482019276033/250000000000000000000000 : ℝ) (16704920385615420827/200000000000000000000000 : ℝ)) : Bounds (branchLog z) (939036933563431211459521363142919/100000000000000000000000000000000 : ℝ) (939036933563431211463113119261177/100000000000000000000000000000000 : ℝ) := by
+  have hz0 : 0<z := lt_of_lt_of_le (by norm_num : 0<(20881150482019276033/250000000000000000000000 : ℝ)) hz.1
+  have hlo := Real.log_le_log (by norm_num : 0<(20881150482019276033/250000000000000000000000 : ℝ)) hz.1
+  have hhi := Real.log_le_log hz0 hz.2
+  have hl := crossing_log_upper.1
+  have hu := crossing_log_lower.2
+  rw [branchLog_eq_neg_log]
+  constructor <;> linarith
+
+theorem crossing_exponent {z : ℝ} (hz : z ∈ Icc (20881150482019276033/250000000000000000000000 : ℝ) (16704920385615420827/200000000000000000000000 : ℝ)) : Bounds (2*z*branchLog z/(1-z)^2) (784457898311189318357206947137611/500000000000000000000000000000000000 : ℝ) (1568915796622378636776775940092601/1000000000000000000000000000000000000 : ℝ) := by
+  have hZ : Bounds z (20881150482019276033/250000000000000000000000 : ℝ) (16704920385615420827/200000000000000000000000 : ℝ) := hz
+  have hL := crossing_log hz
+  let v1 : ℝ := (2 : ℝ)*z
+  have h1 : Bounds v1 (20881150482019276033/125000000000000000000000 : ℝ) (16704920385615420827/100000000000000000000000 : ℝ) := by
+    exact (Bounds.refl (2 : ℝ)).mul_corners hZ (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v2 : ℝ := v1*(branchLog z)
+  have h2 : Bounds v2 (156865372143295556205291327544851/100000000000000000000000000000000000 : ℝ) (784326860716477781057627745731161/500000000000000000000000000000000000 : ℝ) := by
+    exact h1.mul_corners hL (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v3 : ℝ := (1 : ℝ)-z
+  have h3 : Bounds v3 (199983295079614384579173/200000000000000000000000 : ℝ) (249979118849517980723967/250000000000000000000000 : ℝ) := by
+    exact ((Bounds.refl (1 : ℝ)).sub hZ).weaken (by norm_num) (by norm_num)
+  let v4 : ℝ := v3*v3
+  have h4 : Bounds v4 (999832957772502973035471501549761489/1000000000000000000000000000000000000 : ℝ) (999832957772502973035477501048613879/1000000000000000000000000000000000000 : ℝ) := by
+    exact h3.mul_corners h3 (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v5 : ℝ := v2/v4
+  have h5 : Bounds v5 (784457898311189318357206947137611/500000000000000000000000000000000000 : ℝ) (1568915796622378636776775940092601/1000000000000000000000000000000000000 : ℝ) := by
+    exact (h2.div_pos h4 (by norm_num) (by norm_num)).weaken (by norm_num) (by norm_num)
+  have he : 2*z*branchLog z/(1-z)^2=v5 := by
+    dsimp only [v1,v2,v3,v4,v5,branchMu,branchA,branchRho,balancedTriangle]
+    ring
+  rw [he]
+  exact h5
+
+theorem crossing_exp_lower : Bounds (Real.exp (-1568915796622378636776775940092601/1000000000000000000000000000000000000 : ℝ)) (99843231430837158194967048121601/100000000000000000000000000000000 : ℝ) (24960807857709289548741762030401/25000000000000000000000000000000 : ℝ) := by
+  have h := Real.exp_bound (x := (-1568915796622378636776775940092601/1000000000000000000000000000000000000 : ℝ)) (by norm_num) (n := 20) (by norm_num)
+  norm_num [Finset.sum_range_succ,Nat.factorial] at h
+  have hl := (abs_le.mp h).1
+  have hu := (abs_le.mp h).2
+  constructor <;> linarith
+
+theorem crossing_exp_upper : Bounds (Real.exp (-784457898311189318357206947137611/500000000000000000000000000000000000 : ℝ)) (49921615715418579097486637274887/50000000000000000000000000000000 : ℝ) (99843231430837158194973274549777/100000000000000000000000000000000 : ℝ) := by
+  have h := Real.exp_bound (x := (-784457898311189318357206947137611/500000000000000000000000000000000000 : ℝ)) (by norm_num) (n := 20) (by norm_num)
+  norm_num [Finset.sum_range_succ,Nat.factorial] at h
+  have hl := (abs_le.mp h).1
+  have hu := (abs_le.mp h).2
+  constructor <;> linarith
+
+theorem crossing_B {z : ℝ} (hz : z ∈ Icc (20881150482019276033/250000000000000000000000 : ℝ) (16704920385615420827/200000000000000000000000 : ℝ)) : Bounds (branchB z) (99843231430837158194967048121601/100000000000000000000000000000000 : ℝ) (99843231430837158194973274549777/100000000000000000000000000000000 : ℝ) := by
+  have hE := crossing_exponent hz
+  have hlo := Real.exp_le_exp.mpr (neg_le_neg hE.2)
+  have hhi := Real.exp_le_exp.mpr (neg_le_neg hE.1)
+  have he : branchB z=Real.exp (-(2*z*branchLog z/(1-z)^2)) := by unfold branchB;congr 1;ring
+  rw [← he] at hlo hhi
+  have hl := crossing_exp_lower.1
+  have hu := crossing_exp_upper.2
+  constructor <;> linarith
+
+theorem crossing_K {z : ℝ} (hz : z ∈ Icc (20881150482019276033/250000000000000000000000 : ℝ) (16704920385615420827/200000000000000000000000 : ℝ)) : Bounds (kappa z) (3971536512722982626801501766271/100000000000000000000000000000000 : ℝ) (397153651272298262684905106839/10000000000000000000000000000000 : ℝ) := by
+  have hlo := kappa_mono_nonneg (by norm_num : 0≤(20881150482019276033/250000000000000000000000 : ℝ)) hz.1
+  have hhi := kappa_mono_nonneg (le_trans (by norm_num : 0≤(20881150482019276033/250000000000000000000000 : ℝ)) hz.1) hz.2
+  have hl : (3971536512722982626801501766271/100000000000000000000000000000000 : ℝ)≤kappa (20881150482019276033/250000000000000000000000 : ℝ) := by
+    apply (show Odd (3:ℕ) by decide).strictMono_pow.le_iff_le.mp
+    rw [kappa_cube (by norm_num : 0≤(20881150482019276033/250000000000000000000000 : ℝ))]
+    norm_num
+  have hu : kappa (16704920385615420827/200000000000000000000000 : ℝ)≤(397153651272298262684905106839/10000000000000000000000000000000 : ℝ) := by
+    apply (show Odd (3:ℕ) by decide).strictMono_pow.le_iff_le.mp
+    rw [kappa_cube (by norm_num : 0≤(16704920385615420827/200000000000000000000000 : ℝ))]
+    norm_num
+  exact ⟨hl.trans hlo,hhi.trans hu⟩
+
+theorem crossing_data {z : ℝ} (hz : z ∈ Icc (20881150482019276033/250000000000000000000000 : ℝ) (16704920385615420827/200000000000000000000000 : ℝ)) :
+    Bounds (branchMu z) (4710727395560394550733348420917347631/250000000000000000000000000000000000 : ℝ) (9421454791120789101503964918735184623/500000000000000000000000000000000000 : ℝ) ∧
+    Bounds (branchRho z) (9913275979395517455646213965099857/250000000000000000000000000000000000 : ℝ) (9913275979395517455765519076667031/250000000000000000000000000000000000 : ℝ) ∧
+    Bounds ((branchA z+branchB z)/2) (499257853984988158723973845285627749/1000000000000000000000000000000000000 : ℝ) (499257853984988158724006477675278887/1000000000000000000000000000000000000 : ℝ) ∧
+    Bounds (balancedTriangle (branchA z) (branchB z)) (7793662185879644995052129045613/125000000000000000000000000000000000 : ℝ) (31174648743518579981334065885873/500000000000000000000000000000000000 : ℝ) ∧
+    Bounds (balancedPenalty (branchMu z/3) (branchA z) (branchB z)) (31247432368643884944187247171330847/62500000000000000000000000000000000 : ℝ) (62494864737287769888382495436318973/125000000000000000000000000000000000 : ℝ) := by
+  have hZ : Bounds z (20881150482019276033/250000000000000000000000 : ℝ) (16704920385615420827/200000000000000000000000 : ℝ) := hz
+  have hL := crossing_log hz
+  have hB := crossing_B hz
+  have hK := crossing_K hz
+  let v1 : ℝ := z*(branchB z)
+  have h1 : Bounds v1 (83393661604735498277209355245499/1000000000000000000000000000000000000 : ℝ) (83393661604735498280209852787773/1000000000000000000000000000000000000 : ℝ) := by
+    exact hZ.mul_corners hB (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v2 : ℝ := (2 : ℝ)*(branchLog z)
+  have h2 : Bounds v2 (939036933563431211459521363142919/50000000000000000000000000000000 : ℝ) (939036933563431211463113119261177/50000000000000000000000000000000 : ℝ) := by
+    exact (Bounds.refl (2 : ℝ)).mul_corners hL (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v3 : ℝ := (1 : ℝ)-z
+  have h3 : Bounds v3 (199983295079614384579173/200000000000000000000000 : ℝ) (249979118849517980723967/250000000000000000000000 : ℝ) := by
+    exact ((Bounds.refl (1 : ℝ)).sub hZ).weaken (by norm_num) (by norm_num)
+  let v4 : ℝ := v3*v3
+  have h4 : Bounds v4 (999832957772502973035471501549761489/1000000000000000000000000000000000000 : ℝ) (999832957772502973035477501048613879/1000000000000000000000000000000000000 : ℝ) := by
+    exact h3.mul_corners h3 (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v5 : ℝ := (branchB z)*(branchB z)
+  have h5 : Bounds v5 (996867086255170900370793292750131133/1000000000000000000000000000000000000 : ℝ) (199373417251034180074183525218400781/200000000000000000000000000000000000 : ℝ) := by
+    exact hB.mul_corners hB (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v6 : ℝ := v4*v5
+  have h6 : Bounds v6 (31146892729892636428481561996270669/31250000000000000000000000000000000 : ℝ) (973340397809144888390176051910699/976562500000000000000000000000000 : ℝ) := by
+    exact h4.mul_corners h5 (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v7 : ℝ := v2/v6
+  have h7 : Bounds v7 (4710727395560394550733348420917347631/250000000000000000000000000000000000 : ℝ) (9421454791120789101503964918735184623/500000000000000000000000000000000000 : ℝ) := by
+    exact (h2.div_pos h6 (by norm_num) (by norm_num)).weaken (by norm_num) (by norm_num)
+  let v8 : ℝ := (kappa z)*(branchB z)
+  have h8 : Bounds v8 (9913275979395517455646213965099857/250000000000000000000000000000000000 : ℝ) (9913275979395517455765519076667031/250000000000000000000000000000000000 : ℝ) := by
+    exact hK.mul_corners hB (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v9 : ℝ := v1+(branchB z)
+  have h9 : Bounds v9 (998515707969976317447947690571255499/1000000000000000000000000000000000000 : ℝ) (998515707969976317448012955350557773/1000000000000000000000000000000000000 : ℝ) := by
+    exact (h1.add hB).weaken (by norm_num) (by norm_num)
+  let v10 : ℝ := v9/(2 : ℝ)
+  have h10 : Bounds v10 (499257853984988158723973845285627749/1000000000000000000000000000000000000 : ℝ) (499257853984988158724006477675278887/1000000000000000000000000000000000000 : ℝ) := by
+    exact (h9.div_pos (Bounds.refl (2 : ℝ)) (by norm_num) (by norm_num)).weaken (by norm_num) (by norm_num)
+  let v11 : ℝ := v1*v1
+  have h11 : Bounds v11 (6954502795845135641696384871/1000000000000000000000000000000000000 : ℝ) (278180111833805425687873193/40000000000000000000000000000000000 : ℝ) := by
+    exact h1.mul_corners h1 (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v12 : ℝ := v11*v1
+  have h12 : Bounds v12 (579961452785896163718299/1000000000000000000000000000000000000 : ℝ) (579961452785896163780901/1000000000000000000000000000000000000 : ℝ) := by
+    exact h11.mul_corners h1 (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v13 : ℝ := (3 : ℝ)*v1
+  have h13 : Bounds v13 (250180984814206494831628065736497/1000000000000000000000000000000000000 : ℝ) (250180984814206494840629558363319/1000000000000000000000000000000000000 : ℝ) := by
+    exact (Bounds.refl (3 : ℝ)).mul_corners h1 (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v14 : ℝ := (branchB z)*(branchB z)
+  have h14 : Bounds v14 (996867086255170900370793292750131133/1000000000000000000000000000000000000 : ℝ) (199373417251034180074183525218400781/200000000000000000000000000000000000 : ℝ) := by
+    exact hB.mul_corners hB (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v15 : ℝ := v13*v14
+  have h15 : Bounds v15 (6234929734204679676394299143533/25000000000000000000000000000000000 : ℝ) (249397189368187187064776363306083/1000000000000000000000000000000000000 : ℝ) := by
+    exact h13.mul_corners h14 (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v16 : ℝ := v12+v15
+  have h16 : Bounds v16 (249397189948148639841668129459619/1000000000000000000000000000000000000 : ℝ) (31174648743518579981334065885873/125000000000000000000000000000000000 : ℝ) := by
+    exact (h12.add h15).weaken (by norm_num) (by norm_num)
+  let v17 : ℝ := v16/(4 : ℝ)
+  have h17 : Bounds v17 (7793662185879644995052129045613/125000000000000000000000000000000000 : ℝ) (31174648743518579981334065885873/500000000000000000000000000000000000 : ℝ) := by
+    exact (h16.div_pos (Bounds.refl (4 : ℝ)) (by norm_num) (by norm_num)).weaken (by norm_num) (by norm_num)
+  let v18 : ℝ := (1 : ℝ)-v10
+  have h18 : Bounds v18 (500742146015011841275993522324721113/1000000000000000000000000000000000000 : ℝ) (500742146015011841276026154714372251/1000000000000000000000000000000000000 : ℝ) := by
+    exact ((Bounds.refl (1 : ℝ)).sub h10).weaken (by norm_num) (by norm_num)
+  let v19 : ℝ := (2 : ℝ)*v7
+  have h19 : Bounds v19 (4710727395560394550733348420917347631/125000000000000000000000000000000000 : ℝ) (9421454791120789101503964918735184623/250000000000000000000000000000000000 : ℝ) := by
+    exact (Bounds.refl (2 : ℝ)).mul_corners h7 (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v20 : ℝ := v19*v17
+  have h20 : Bounds v20 (2349684350129046506898573671461403/1000000000000000000000000000000000000 : ℝ) (2349684350129046506992702750282681/1000000000000000000000000000000000000 : ℝ) := by
+    exact h19.mul_corners h17 (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v21 : ℝ := v20/(3 : ℝ)
+  have h21 : Bounds v21 (783228116709682168966191223820467/1000000000000000000000000000000000000 : ℝ) (783228116709682168997567583427561/1000000000000000000000000000000000000 : ℝ) := by
+    exact (h20.div_pos (Bounds.refl (3 : ℝ)) (by norm_num) (by norm_num)).weaken (by norm_num) (by norm_num)
+  let v22 : ℝ := v18-v21
+  have h22 : Bounds v22 (31247432368643884944187247171330847/62500000000000000000000000000000000 : ℝ) (62494864737287769888382495436318973/125000000000000000000000000000000000 : ℝ) := by
+    exact (h18.sub h21).weaken (by norm_num) (by norm_num)
+  refine ⟨?_,?_,?_,?_,?_⟩
+  · have he : branchMu z=v7 := by
+      dsimp only [v1,v2,v3,v4,v5,v6,v7,v8,v9,v10,v11,v12,v13,v14,v15,v16,v17,v18,v19,v20,v21,v22,branchMu,branchA,branchRho,balancedTriangle]
+      ring
+    rw [he]
+    exact h7
+  · have he : branchRho z=v8 := by
+      dsimp only [v1,v2,v3,v4,v5,v6,v7,v8,v9,v10,v11,v12,v13,v14,v15,v16,v17,v18,v19,v20,v21,v22,branchMu,branchA,branchRho,balancedTriangle]
+    rw [he]
+    exact h8
+  · have he : (branchA z+branchB z)/2=v10 := by
+      dsimp only [v1,v2,v3,v4,v5,v6,v7,v8,v9,v10,v11,v12,v13,v14,v15,v16,v17,v18,v19,v20,v21,v22,branchMu,branchA,branchRho,balancedTriangle]
+    rw [he]
+    exact h10
+  · have he : balancedTriangle (branchA z) (branchB z)=v17 := by
+      dsimp only [v1,v2,v3,v4,v5,v6,v7,v8,v9,v10,v11,v12,v13,v14,v15,v16,v17,v18,v19,v20,v21,v22,branchMu,branchA,branchRho,balancedTriangle]
+      ring
+    rw [he]
+    exact h17
+  · have he : balancedPenalty (branchMu z/3) (branchA z) (branchB z)=v22 := by
+      rw [branchPenalty_stationary ⟨lt_of_lt_of_le (by norm_num : 0<(20881150482019276033/250000000000000000000000 : ℝ)) hz.1,lt_of_le_of_lt hz.2 (by norm_num : (16704920385615420827/200000000000000000000000 : ℝ)<1)⟩]
+      dsimp only [v1,v2,v3,v4,v5,v6,v7,v8,v9,v10,v11,v12,v13,v14,v15,v16,v17,v18,v19,v20,v21,v22,branchMu,branchA,branchRho,balancedTriangle]
+      ring
+    rw [he]
+    exact h22
+
+theorem crossing_root_log_lower : Bounds (-Real.log (13267371359754468335702599/50000000000000000000000000 : ℝ)) (16583940820588994739106716399367/12500000000000000000000000000000 : ℝ) (132671526564711957912853731194939/100000000000000000000000000000000 : ℝ) := by
+  have h := Real.abs_log_sub_add_sum_range_le (x := (-767371359754468335702599/12500000000000000000000000 : ℝ)) (by norm_num) 35
+  norm_num [Finset.sum_range_succ] at h
+  have hl := (abs_le.mp h).1
+  have hu := (abs_le.mp h).2
+  have he : Real.log (13267371359754468335702599/12500000000000000000000000 : ℝ)=2*Real.log 2+Real.log (13267371359754468335702599/50000000000000000000000000 : ℝ) := by
+    rw [show (13267371359754468335702599/12500000000000000000000000 : ℝ)=(2:ℝ)^2*(13267371359754468335702599/50000000000000000000000000 : ℝ) by norm_num,Real.log_mul (by norm_num) (by norm_num),Real.log_pow]
+    norm_num
+  rw [he] at hl hu
+  have h2l := log_two_bounds_40.1
+  have h2u := log_two_bounds_40.2
+  constructor <;> linarith
+
+theorem crossing_root_sign_lower {z : ℝ} (hz : z ∈ Icc (20881150482019276033/250000000000000000000000 : ℝ) (16704920385615420827/200000000000000000000000 : ℝ)) : constantEquation (branchMu z/3) (13267371359754468335702599/50000000000000000000000000 : ℝ)≤0 := by
+  have hM := (crossing_data hz).1
+  let v1 : ℝ := (13267371359754468335702599/50000000000000000000000000 : ℝ)*(13267371359754468335702599/50000000000000000000000000 : ℝ)
+  have h1 : Bounds v1 (17602314279763313005831534069850193/250000000000000000000000000000000000 : ℝ) (70409257119053252023326136279400773/1000000000000000000000000000000000000 : ℝ) := by
+    exact (Bounds.refl (13267371359754468335702599/50000000000000000000000000 : ℝ)).mul_corners (Bounds.refl (13267371359754468335702599/50000000000000000000000000 : ℝ)) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v2 : ℝ := (branchMu z)*v1
+  have h2 : Bounds v2 (1326715265647119579123289081242984999/1000000000000000000000000000000000000 : ℝ) (331678816411779894782134279115155857/250000000000000000000000000000000000 : ℝ) := by
+    exact hM.mul_corners h1 (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v3 : ℝ := v2-(-Real.log (13267371359754468335702599/50000000000000000000000000 : ℝ))
+  have h3 : Bounds v3 (-5248230706405001/1000000000000000000000000000000000000 : ℝ) (-48872184143/250000000000000000000000000000000000 : ℝ) := by
+    exact (h2.sub crossing_root_log_lower).weaken (by norm_num) (by norm_num)
+  have he : constantEquation (branchMu z/3) (13267371359754468335702599/50000000000000000000000000 : ℝ)=v3 := by
+    dsimp only [v1,v2,v3]
+    unfold constantEquation
+    ring
+  rw [he]
+  exact h3.2.trans (by norm_num)
+
+theorem crossing_root_log_upper : Bounds (-Real.log (26534742719508936671443317/100000000000000000000000000 : ℝ)) (6633576328235597895635503712639/5000000000000000000000000000000 : ℝ) (132671526564711957912710074252783/100000000000000000000000000000000 : ℝ) := by
+  have h := Real.abs_log_sub_add_sum_range_le (x := (-1534742719508936671443317/25000000000000000000000000 : ℝ)) (by norm_num) 35
+  norm_num [Finset.sum_range_succ] at h
+  have hl := (abs_le.mp h).1
+  have hu := (abs_le.mp h).2
+  have he : Real.log (26534742719508936671443317/25000000000000000000000000 : ℝ)=2*Real.log 2+Real.log (26534742719508936671443317/100000000000000000000000000 : ℝ) := by
+    rw [show (26534742719508936671443317/25000000000000000000000000 : ℝ)=(2:ℝ)^2*(26534742719508936671443317/100000000000000000000000000 : ℝ) by norm_num,Real.log_mul (by norm_num) (by norm_num),Real.log_pow]
+    norm_num
+  rw [he] at hl hu
+  have h2l := log_two_bounds_40.1
+  have h2u := log_two_bounds_40.2
+  constructor <;> linarith
+
+theorem crossing_root_sign_upper {z : ℝ} (hz : z ∈ Icc (20881150482019276033/250000000000000000000000 : ℝ) (16704920385615420827/200000000000000000000000 : ℝ)) : 0≤constantEquation (branchMu z/3) (26534742719508936671443317/100000000000000000000000000 : ℝ) := by
+  have hM := (crossing_data hz).1
+  let v1 : ℝ := (26534742719508936671443317/100000000000000000000000000 : ℝ)*(26534742719508936671443317/100000000000000000000000000 : ℝ)
+  have h1 : Bounds v1 (17602314279763313005882107962736441/250000000000000000000000000000000000 : ℝ) (14081851423810650404705686370189153/200000000000000000000000000000000000 : ℝ) := by
+    exact (Bounds.refl (26534742719508936671443317/100000000000000000000000000 : ℝ)).mul_corners (Bounds.refl (26534742719508936671443317/100000000000000000000000000 : ℝ)) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v2 : ℝ := (branchMu z)*v1
+  have h2 : Bounds v2 (663357632823559789563550459203247583/500000000000000000000000000000000000 : ℝ) (265343053129423915826469790724826719/200000000000000000000000000000000000 : ℝ) := by
+    exact hM.mul_corners h1 (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+  let v3 : ℝ := v2-(-Real.log (26534742719508936671443317/100000000000000000000000000 : ℝ))
+  have h3 : Bounds v3 (87939332583/500000000000000000000000000000000000 : ℝ) (1049642219266719/200000000000000000000000000000000000 : ℝ) := by
+    exact (h2.sub crossing_root_log_upper).weaken (by norm_num) (by norm_num)
+  have he : constantEquation (branchMu z/3) (26534742719508936671443317/100000000000000000000000000 : ℝ)=v3 := by
+    dsimp only [v1,v2,v3]
+    unfold constantEquation
+    ring
+  rw [he]
+  exact le_trans (by norm_num) h3.1
+
+theorem crossing_root {z : ℝ} (hz : z ∈ Icc (20881150482019276033/250000000000000000000000 : ℝ) (16704920385615420827/200000000000000000000000 : ℝ)) : Bounds (constantRoot (branchMu z/3)) (13267371359754468335702599/50000000000000000000000000 : ℝ) (26534742719508936671443317/100000000000000000000000000 : ℝ) := by
+  have hγ : 0<branchMu z/3 := div_pos (branchMu_pos (lt_of_lt_of_le (by norm_num : 0<(20881150482019276033/250000000000000000000000 : ℝ)) hz.1) (lt_of_le_of_lt hz.2 (by norm_num : (16704920385615420827/200000000000000000000000 : ℝ)<1))) (by norm_num)
+  exact constantRoot_bounds_of_signs hγ (by norm_num) (crossing_root_sign_lower hz) (crossing_root_sign_upper hz) (by norm_num)
+
+def zLower : ℝ := (20881150482019276033/250000000000000000000000 : ℝ)
+def zUpper : ℝ := (16704920385615420827/200000000000000000000000 : ℝ)
+
+theorem crossing_bracket : zLower<penalizedCrossing ∧ penalizedCrossing<zUpper := by
+  constructor
+  · rcases lt_trichotomy zLower penalizedCrossing with h|h|h
+    · exact h
+    · have hh := lower_gap
+      change penalizedGap zLower<0 at hh
+      rw [h,penalizedCrossing_spec.2] at hh
+      linarith
+    · have hh := penalizedGap_pos_after_open ⟨h,lt_trans (by norm_num [zLower] : zLower<1/1000) foldPoint_bounds.1⟩
+      have hn := lower_gap
+      change penalizedGap zLower<0 at hn
+      linarith
+  · rcases lt_trichotomy penalizedCrossing zUpper with h|h|h
+    · exact h
+    · have hh := upper_gap
+      change 0<penalizedGap zUpper at hh
+      rw [← h,penalizedCrossing_spec.2] at hh
+      linarith
+    · have hh := penalizedGap_neg_before ⟨by norm_num [zUpper],h⟩
+      have hp := upper_gap
+      change 0<penalizedGap zUpper at hp
+      linarith
+
+theorem printed_crossing_bracket : (8352460192/10^14:ℝ)<penalizedCrossing ∧ penalizedCrossing<(8352460193/10^14:ℝ) := by
+  have h := crossing_bracket
+  norm_num [zLower,zUpper] at h
+  constructor <;> linarith
+
+theorem coexistence_digits :
+    Bounds criticalPenalty (6280969860/10^9) (6280969861/10^9) ∧
+    Bounds (penalizedValue criticalPenalty) (4999589178/10^10) (4999589179/10^10) ∧
+    Bounds smallTarget (3965310391/10^11) (3965310392/10^11) ∧
+    Bounds largeTarget (2653474271/10^10) (2653474272/10^10) := by
+  have hz : penalizedCrossing ∈ Icc zLower zUpper := ⟨crossing_bracket.1.le,crossing_bracket.2.le⟩
+  have hd := crossing_data hz
+  have hs := crossing_root hz
+  refine ⟨?_,?_,?_,?_⟩
+  · unfold criticalPenalty Bounds
+    constructor <;> linarith [hd.1.1,hd.1.2]
+  · rw [penalizedValue_at_critical.2]
+    exact hd.2.2.2.2.weaken (by norm_num) (by norm_num)
+  · exact hd.2.1.weaken (by norm_num) (by norm_num)
+  · exact hs.weaken (by norm_num) (by norm_num)
+
+theorem printed_endpoint_signs : penalizedGap (8352460192/10^14:ℝ)<0 ∧ 0<penalizedGap (8352460193/10^14:ℝ) := by
+  refine ⟨penalizedGap_neg_before ⟨by norm_num,printed_crossing_bracket.1⟩,?_⟩
+  exact penalizedGap_pos_after_open ⟨printed_crossing_bracket.2,lt_trans (by norm_num : (8352460193/10^14:ℝ)<1/1000) foldPoint_bounds.1⟩
+
+theorem printed_constants :
+    ((8352460192/10^14:ℝ)<penalizedCrossing ∧ penalizedCrossing<(8352460193/10^14:ℝ)) ∧
+    Bounds criticalPenalty (6280969860/10^9) (6280969861/10^9) ∧
+    Bounds (penalizedValue criticalPenalty) (4999589178/10^10) (4999589179/10^10) ∧
+    Bounds smallTarget (3965310391/10^11) (3965310392/10^11) ∧
+    Bounds largeTarget (2653474271/10^10) (2653474272/10^10) :=
+  ⟨printed_crossing_bracket,coexistence_digits⟩
+
+end SparseLowerTail.Section07.PenalizedDigits

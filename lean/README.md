@@ -1594,3 +1594,20 @@ All 36 new public theorem audits are recorded in the
 The remaining tolerance choices and eventual scalar bounds must still be
 combined to conclude asymptotic part (b); rounding and manuscript review
 also remain.
+
+
+### 2026-10-20 — Complete probabilistic reduction
+
+Both parts of `thm:reduction` are now checked. The normalized log probability
+has the stated multiplicative asymptotic. For every ε > 0, the actual
+conditioned probability of admitting a graphon minimizer and a
+measure-preserving bijection with cut error < ε tends to one.
+
+The proof chooses all finite tolerances and proves the eventual scalar
+bounds throughout n → ∞, p → 0 and √n p → ∞. Only the named external KS23
+and standard classical results are explicit hypotheses. The combined
+`triangle_reduction` theorem contains both conclusions.
+
+The [check record](data/conditioned-structure-check.json) contains 13 public
+theorem audits and the full root audit of 17,817 theorems. Rounding, the
+remaining manuscript review and certificate integration remain.

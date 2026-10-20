@@ -1,0 +1,83 @@
+{
+  "checked_at_utc": "2026-10-20T08:50:33.313896+00:00",
+  "source_parent_commit": "9760df288562fb9b1b804e2e98e3f04a41c9c3c2",
+  "paper_label": "thm:reduction",
+  "scope": "Both parts: the actual triangle log probability is asymptotic to (n²p/2)V(η^(1/3)); for every ε > 0, the actual conditioned probability of an actual graphon minimizer and a measure-preserving bijection with cut error < ε tends to one. All paper-specific finite-law estimates, tolerance choices and eventual sparse-regime bounds are proved. The cited generic KS23 and named classical results are ordinary explicit hypotheses.",
+  "sources": [
+    {
+      "path": "SparseLowerTail/Section03/ReductionLargeN.lean",
+      "sha256": "8ca97999c69cb94366129985edde84476be75e195c299a15be7147f81e9f5268"
+    },
+    {
+      "path": "SparseLowerTail/Section03/ReductionParameters.lean",
+      "sha256": "dc825f31486ca48d5ca999adb4b54bd77958487ebdca916fae5013b0316b4b9a"
+    },
+    {
+      "path": "SparseLowerTail/Section03/ConditionedStructure.lean",
+      "sha256": "7d22b7ce9e06fb9bca15a8720782179a4300486d11b207f915745855f8edf830"
+    }
+  ],
+  "explicit_inputs": [
+    "external:KS23:theorem5",
+    "external:KS23:theorem6",
+    "classical:dyadic-l1-approximation",
+    "classical:graphon-cut-compactness",
+    "classical:counting-lemma",
+    "external:KS23:lemma18",
+    "external:KS23:eq33",
+    "classical:harris-positive-association",
+    "classical:pullback-l1-approximation"
+  ],
+  "checks": [
+    {
+      "command": "LEAN_NUM_THREADS=1 lake build SparseLowerTail",
+      "exit_code": 0,
+      "output": "Build completed successfully (3655 jobs). Existing cached linter warnings were replayed."
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean tools/audit_conditioned_structure.lean",
+      "exit_code": 0,
+      "output": "'SparseLowerTail.Section03.sparse_edge_scale_tendsto_atTop' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.sparse_volume_tendsto_atTop' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.eventually_cut_prefactor_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.eventually_reduction_log_exp_bounds' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.exists_reduction_parameters' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.triangleConditionalFarMass_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.triangleConditionalFarMass_antitone' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.triangle_conditioned_structure_eventually' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.triangle_conditioned_structure_tendsto_small' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.triangle_conditioned_structure_tendsto' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.triangleConditionalCloseMass_eq' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.triangle_conditioned_structure_success_tendsto' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.triangle_reduction' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean Audit.lean",
+      "exit_code": 0,
+      "output": "Axiom audit passed: 24338 project declarations, 17817 theorems; only propext, Classical.choice, Quot.sound allowed.\n"
+    },
+    {
+      "command": "python3 tools/check_lean_map.py",
+      "exit_code": 0,
+      "output": "Proof-map links passed: 100 labels, 706 Lean declarations.\n"
+    }
+  ],
+  "audited_public_theorems": 13,
+  "root_project_modules": 513,
+  "root_project_declarations": 24338,
+  "root_project_theorems": 17817,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "base_source_manifest": "conditioned-structure-finite-check.json",
+  "source_manifest_changes": [
+    {
+      "module": "SparseLowerTail",
+      "sha256": "5a6b1209818afe3fce2fcc36d9fd098a0ffbc466f2ecefec291dc73c2d390ab8"
+    },
+    {
+      "module": "SparseLowerTail.Section03.ConditionedStructure",
+      "sha256": "7d22b7ce9e06fb9bca15a8720782179a4300486d11b207f915745855f8edf830"
+    },
+    {
+      "module": "SparseLowerTail.Section03.ReductionLargeN",
+      "sha256": "8ca97999c69cb94366129985edde84476be75e195c299a15be7147f81e9f5268"
+    },
+    {
+      "module": "SparseLowerTail.Section03.ReductionParameters",
+      "sha256": "dc825f31486ca48d5ca999adb4b54bd77958487ebdca916fae5013b0316b4b9a"
+    }
+  ],
+  "source_manifest_sha256": "8fe3b79404eb8eda8e5714e3b23d0e5b4973fb6e45d98a8decbc595f004c12e8",
+  "manuscript_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+}

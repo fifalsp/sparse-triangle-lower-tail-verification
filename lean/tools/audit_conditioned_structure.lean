@@ -1,0 +1,15 @@
+import SparseLowerTail.Section03.ConditionedStructure
+
+#print axioms SparseLowerTail.Section03.sparse_edge_scale_tendsto_atTop
+#print axioms SparseLowerTail.Section03.sparse_volume_tendsto_atTop
+#print axioms SparseLowerTail.Section03.eventually_cut_prefactor_bound
+#print axioms SparseLowerTail.Section03.eventually_reduction_log_exp_bounds
+#print axioms SparseLowerTail.Section03.exists_reduction_parameters
+#print axioms SparseLowerTail.Section03.triangleConditionalFarMass_nonneg
+#print axioms SparseLowerTail.Section03.triangleConditionalFarMass_antitone
+#print axioms SparseLowerTail.Section03.triangle_conditioned_structure_eventually
+#print axioms SparseLowerTail.Section03.triangle_conditioned_structure_tendsto_small
+#print axioms SparseLowerTail.Section03.triangle_conditioned_structure_tendsto
+#print axioms SparseLowerTail.Section03.triangleConditionalCloseMass_eq
+#print axioms SparseLowerTail.Section03.triangle_conditioned_structure_success_tendsto
+#print axioms SparseLowerTail.Section03.triangle_reduction

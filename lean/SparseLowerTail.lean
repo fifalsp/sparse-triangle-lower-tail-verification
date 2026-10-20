@@ -171,3 +171,4 @@ import SparseLowerTail.Section03.RevealedCostConcentration
 import SparseLowerTail.Section03.RevealedEntropyTransfer
 import SparseLowerTail.Section03.ConditionedStructureFinite
 import SparseLowerTail.Section03.ReductionSlack
+import SparseLowerTail.Section03.ConditionedStructure

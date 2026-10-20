@@ -31,6 +31,17 @@ four single-thread Lean workers. Its allocation is 16 CPUs, 30,000 MiB and
 5.5 hours, capped at 88 CPU core-hours on `biah-delta-cpu`; 95 core-hours
 were available before submission. The replacement remains pending for priority.
 
+The approved Delta allocation now shows **500 CPU hours** in ACCESS. Current
+source family jobs **23046543 (ABB)** and **23046544 (exterior)** are eligible
+without user holds and are waiting for priority. Their combined cap is 360
+allocation hours; including the two earlier jobs gives 454 hours. The two
+superseded held copies were cancelled before starting.
+[Deployment record](delta-family-deployment-20261020.json).
+
+A full F1 laptop fallback started at 14:09 UTC with one low-priority worker,
+one Lean thread and an 8 GiB cap. Its live status is
+`results/laptop-f1-full-20261020/status.json`. This run is still in progress.
+
 The current assembler imports the project root alongside all regional
 certificates, so the combined build includes the latest author proofs.
 [Seven runner checks passed](assembly-root-check-20261020.json). Queued job

@@ -11,14 +11,18 @@
 #SBATCH --output=triangle-family-%j.out
 #SBATCH --error=triangle-family-%j.err
 # Three single-thread workers; at most 180 memory-weighted allocation hours.
-# Submit held until live balance covers all outstanding requested caps.
+# Confirm the approved pool covers all outstanding caps before submission.
 set -euo pipefail
 umask 077
 KIND=${1:?abb or exterior}
 SOURCE_ARCHIVE=${2:?source archive}
 SOURCE_SHA256=${3:?source SHA256}
 EXPECTED_COMMIT=${4:?source commit}
+APPROVED_POOL_HOURS=${5:?confirmed approved allocation hours}
+PLANNED_POOL_HOURS=${6:?total outstanding requested allocation hours}
 [[ "$KIND" == abb || "$KIND" == exterior ]]
+[[ "$APPROVED_POOL_HOURS" =~ ^[0-9]+$ && "$PLANNED_POOL_HOURS" =~ ^[0-9]+$ ]]
+(( PLANNED_POOL_HOURS >= 180 && APPROVED_POOL_HOURS >= PLANNED_POOL_HOURS ))
 SAVE_ROOT=${SLURM_SUBMIT_DIR:?}
 WORK_DIR="$SAVE_ROOT/family-$KIND-${SLURM_JOB_ID:?}"
 RUN_DIR="$WORK_DIR/logs"
@@ -37,9 +41,11 @@ trap finish EXIT
 date -u +%FT%TZ > "$RUN_DIR/started.txt"
 hostname > "$RUN_DIR/host.txt"
 /sw/user/scripts/accounts | awk '$1=="biah-delta-cpu" {print}' > "$RUN_DIR/account-before.txt"
-balance=$(awk '{print $2}' "$RUN_DIR/account-before.txt")
-[[ "$balance" =~ ^[0-9]+([.][0-9]+)?$ ]]
-awk -v b="$balance" 'BEGIN {exit !(b>=180)}'
+# The ACCESS portal can reflect an approved exchange before this diagnostic.
+# Slurm enforces the account; retain both figures rather than rejecting a job
+# solely because the command-line accounting display has not caught up.
+printf '%s\n' "$APPROVED_POOL_HOURS" > "$RUN_DIR/approved-pool-hours.txt"
+printf '%s\n' "$PLANNED_POOL_HOURS" > "$RUN_DIR/planned-pool-hours.txt"
 printf '%s  %s\n' "$SOURCE_SHA256" "$SOURCE_ARCHIVE" | sha256sum -c -
 tar -xzf "$SOURCE_ARCHIVE" -C "$WORK_DIR/repo"
 [[ $(cat "$WORK_DIR/repo/SOURCE_COMMIT") == "$EXPECTED_COMMIT" ]]

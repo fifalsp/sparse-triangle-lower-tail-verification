@@ -183,3 +183,4 @@ import SparseLowerTail.Section05.BranchBoundSoundness
 import SparseLowerTail.Numerics.Cholesky3
 import SparseLowerTail.Numerics.BoxLowerBounds
 import SparseLowerTail.Numerics.TaylorCube
+import SparseLowerTail.Section05.CriticalApex

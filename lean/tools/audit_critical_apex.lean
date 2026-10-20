@@ -1,0 +1,29 @@
+import SparseLowerTail.Section05.CriticalApex
+
+#print axioms SparseLowerTail.Section05.criticalParameter_mem_domain
+#print axioms SparseLowerTail.Section05.critical_relaxation_multiplier
+#print axioms SparseLowerTail.Section05.criticalSupport_lt_criticalA
+#print axioms SparseLowerTail.Section05.criticalGraphon_lower
+#print axioms SparseLowerTail.Section05.triangleLaw_edge_test_of_EL
+#print axioms SparseLowerTail.Section05.triangleLaw_vertex_test_of_row
+#print axioms SparseLowerTail.Section05.criticalGraphon_relaxedLaw
+#print axioms SparseLowerTail.Section05.criticalGraphon_observable
+#print axioms SparseLowerTail.Section05.hoeffding_energy_zero_of_ae_constant
+#print axioms SparseLowerTail.Section05.criticalGraphon_hoeffding_zero
+#print axioms SparseLowerTail.Section05.criticalGraphon_certificate_expectation
+#print axioms SparseLowerTail.Section05.critical_vertex_sum
+#print axioms SparseLowerTail.Section05.critical_edgeResidual_contact
+#print axioms SparseLowerTail.Section05.critical_vertexResidual_contact
+#print axioms SparseLowerTail.Section05.critical_feature_contact
+#print axioms SparseLowerTail.Section05.critical_hoeffding_contacts
+#print axioms SparseLowerTail.Section05.critical_certificate_contact
+#print axioms SparseLowerTail.Section05.critical_apex_properties
+#print axioms SparseLowerTail.Section05.hoeffding_decomposition
+#print axioms SparseLowerTail.Section05.hoeffding_orthogonal
+#print axioms SparseLowerTail.Section05.hoeffding_energy_identity
+#print axioms SparseLowerTail.Section05.hoeffding_affine_entropy_nonneg
+#print axioms SparseLowerTail.Section05.triangleLaw_hoeffding
+#print axioms SparseLowerTail.Section05.minimizer_relaxedLaw
+#print axioms SparseLowerTail.Section05.minimizer_edge_test
+#print axioms SparseLowerTail.Section05.minimizer_vertex_test_moment
+#print axioms SparseLowerTail.Section05.hoeffdingResidual_zero_of_ae_constant

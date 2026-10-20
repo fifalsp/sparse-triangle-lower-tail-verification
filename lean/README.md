@@ -1688,3 +1688,14 @@ displayed quantitative inequalities and the strict positive margin, with
 the usual supremum and Euclidean norms. The previous apex/fan applications
 remain integrated. The [record](data/taylor-cube-check.json) contains
 15 public audits and the full root audit of 18,036 theorems.
+
+
+### 2026-10-20 — Critical apex law
+
+`lem:apex` is checked for the canonical critical graphon and its actual
+pushforward triangle law: parameter membership, exact multiplier, strict
+support endpoint, all relaxed-law constraints, zero Hoeffding expectation,
+and Ψ(P₁)+3Ψ(P₂)=0 for every certificate. The proof uses the established
+Euler equation and constant row identities. The
+[record](data/critical-apex-check.json) contains 27 public audits, two current
+manuscript reviews and the full root audit of 18,060 theorems.

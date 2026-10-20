@@ -1473,25 +1473,32 @@
       "paper_label": "lem:hoeffding",
       "baseline": {
         "environment": "lemma",
-        "statement": "Let $U$ be a graphon, let $H=g_*\\circ U$, and define $d(x)=\\int_0^1H(x,y)\\dd y$, $\\eta=\\iint H$ and $H^\\circ(x,y)=H(x,y)-d(x)-d(y)+\\eta$. Then the three terms of \\[ H(x,y)-\\eta=\\big(d(x)-\\eta\\big)+\\big(d(y)-\\eta\\big)+H^\\circ(x,y) \\] are pairwise orthogonal in $L^2([0,1]^2)$. Moreover, if $(A,B,C)$ has law $\\nu_U$, then \\[ \\E[g_*(A)^2]-2\\E[g_*(A)g_*(B)]+\\E[g_*(A)]^2=\\|H^\\circ\\|_2^2\\ge0 . \\]",
-        "statement_sha256": "8c41a6b98900fcfaa56e228f1e7c3cd3e6663ecc2b1714ec79eadd34e8db8dfc",
-        "proof_sha256": "7d99be388fa524c0cc8525c573b2b7e0ea5c6d7076da4a2848135c02052107fd",
-        "source_line": 3479
+        "statement_sha256": "17bd3de1cbe0c4e8668e6d20108892d5ec28db358b5646e9665239248a906a1c",
+        "proof_sha256": "8d7b9129a22245603bd1bc0fbb2b0ff547ce0a07dbea293305dbb9b784016fdf",
+        "source_line": 3474,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
       },
       "status": "proved",
-      "checked_scope": "Actual L2 orthogonal decomposition and residual-square identity for bounded symmetric kernels, specialized to the critical entropy observable and actual triangle law.",
+      "checked_scope": "Actual L2 orthogonal decomposition and residual-square identity for bounded symmetric kernels, specialized to the critical entropy observable and actual triangle law. Includes the explicit zero-energy conclusion for every almost-everywhere constant kernel.",
       "lean_files": [
         "SparseLowerTail/Section05/Hoeffding.lean",
-        "SparseLowerTail/Section05/TriangleLaw.lean"
+        "SparseLowerTail/Section05/TriangleLaw.lean",
+        "SparseLowerTail/Section05/CriticalApex.lean"
       ],
       "lean_declarations": [
         "SparseLowerTail.Section05.hoeffding_decomposition",
         "SparseLowerTail.Section05.hoeffding_orthogonal",
         "SparseLowerTail.Section05.hoeffding_energy_identity",
         "SparseLowerTail.Section05.hoeffding_affine_entropy_nonneg",
-        "SparseLowerTail.Section05.triangleLaw_hoeffding"
+        "SparseLowerTail.Section05.triangleLaw_hoeffding",
+        "SparseLowerTail.Section05.hoeffding_energy_zero_of_ae_constant"
       ],
-      "explicit_inputs": []
+      "explicit_inputs": [],
+      "latest_manuscript_review": {
+        "checked_at_utc": "2026-10-20T10:29:32.510201+00:00",
+        "note": "The current shared-edge energy identity and nonnegativity are checked for every bounded symmetric kernel. The last clause for an almost-everywhere constant kernel is now an explicit theorem, using the proved zero residual. The former orthogonal-decomposition theorem remains available.",
+        "audit_record": "data/critical-apex-check.json"
+      }
     },
     {
       "paper_label": "def:trilaw",
@@ -1545,10 +1552,10 @@
       "paper_label": "lem:valid",
       "baseline": {
         "environment": "lemma",
-        "statement": "Let $U$ be a minimizer at $r_*$, and let $\\pi=(e(U),F(U))$. Then $\\pi\\in\\Pi$, $\\mu_U=\\mu(\\pi)$, and $\\nu_U\\in\\mathcal T(\\pi)$.",
         "statement_sha256": "2c8053e968a1c3dc1ebbbe0463fc96ed98a8ea58e33b41dc63ebdb4f8b01a23b",
-        "proof_sha256": "e11c28808f5d7527590085548617a2e3a2ba4fdc927b7e225b673183bf3e0834",
-        "source_line": 3516
+        "proof_sha256": "2d3b825fa919158042b6c53c10dc8255f0cc8d2116b10f51e0649e3b88fcb70d",
+        "source_line": 3503,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
       },
       "status": "proved_relative_classical",
       "checked_scope": "Every actual minimizer at the critical target supplies parameter membership, the multiplier identity, and all five relaxed-law constraints. Uses proved Euler and vertex equations, not assumed internal moment identities.",
@@ -1563,7 +1570,12 @@
       ],
       "explicit_inputs": [
         "classical:inverse-transform-sampling"
-      ]
+      ],
+      "latest_manuscript_review": {
+        "checked_at_utc": "2026-10-20T10:29:32.510201+00:00",
+        "note": "The current actual-law proof is checked for parameter membership, multiplier equality, bounded Euler and vertex tests, the shared-edge Hoeffding inequality and sharp support. Existing classical inverse-transform sampling remains explicit.",
+        "audit_record": "data/critical-apex-check.json"
+      }
     },
     {
       "paper_label": "s5:gstar",
@@ -3340,6 +3352,44 @@
         "statement_sha256": "2f848ec44caf26a418eb0e57509c5ed195f8ce658d436750f3f2043e808851ba",
         "proof_sha256": "e3c2c4d2f4fde01ca593e670110b99bc9f3fe02070ef35b31c67c616bcdbe951",
         "source_line": 5680,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      }
+    },
+    {
+      "paper_label": "lem:apex",
+      "status": "proved",
+      "checked_scope": "Full critical-apex lemma for the actual canonical critical graphon and its pushforward triangle law: parameter-domain membership, the exact multiplier, support endpoint strictly below a*, all five relaxed-law constraints, zero Hoeffding expectation, and the universal certificate identity Psi(P1)+3 Psi(P2)=0. The law is constructed directly from the proved pointwise Euler equation and constant vertex-entropy rows; no unrestricted critical-minimizer hypothesis is used. Exact cancellation is proved for each of the twelve features and for both Hoeffding contact values. The certificate identity holds even for all real lambda.",
+      "lean_files": [
+        "SparseLowerTail/Section05/CriticalApex.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section05.criticalParameter_mem_domain",
+        "SparseLowerTail.Section05.critical_relaxation_multiplier",
+        "SparseLowerTail.Section05.criticalSupport_lt_criticalA",
+        "SparseLowerTail.Section05.criticalGraphon_lower",
+        "SparseLowerTail.Section05.triangleLaw_edge_test_of_EL",
+        "SparseLowerTail.Section05.triangleLaw_vertex_test_of_row",
+        "SparseLowerTail.Section05.criticalGraphon_relaxedLaw",
+        "SparseLowerTail.Section05.criticalGraphon_observable",
+        "SparseLowerTail.Section05.hoeffding_energy_zero_of_ae_constant",
+        "SparseLowerTail.Section05.criticalGraphon_hoeffding_zero",
+        "SparseLowerTail.Section05.criticalGraphon_certificate_expectation",
+        "SparseLowerTail.Section05.critical_vertex_sum",
+        "SparseLowerTail.Section05.critical_edgeResidual_contact",
+        "SparseLowerTail.Section05.critical_vertexResidual_contact",
+        "SparseLowerTail.Section05.critical_feature_contact",
+        "SparseLowerTail.Section05.critical_hoeffding_contacts",
+        "SparseLowerTail.Section05.critical_certificate_contact",
+        "SparseLowerTail.Section05.critical_apex_properties"
+      ],
+      "explicit_inputs": [],
+      "remaining_application": [],
+      "verification_record": "data/critical-apex-check.json",
+      "baseline": {
+        "environment": "lemma",
+        "statement_sha256": "ddf66011db14ab0e087e926214f85d624e4d0ee94a6cbd2e76c7470801c1ed39",
+        "proof_sha256": "1ffddac5a9e03574f47a047d0e1fcacca74e338476b3d749eccf250f6ed25eac",
+        "source_line": 3701,
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
       }
     }

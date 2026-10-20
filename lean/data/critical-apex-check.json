@@ -1,0 +1,63 @@
+{
+  "checked_at_utc": "2026-10-20T10:29:32.510201+00:00",
+  "source_parent_commit": "16a2a8521f8d33d5d4c2cb28b4fa7cd0a18bd456",
+  "paper_label": "lem:apex",
+  "scope": "Full critical-apex lemma for the actual canonical critical graphon and its pushforward triangle law: parameter-domain membership, the exact multiplier, support endpoint strictly below a*, all five relaxed-law constraints, zero Hoeffding expectation, and the universal certificate identity Psi(P1)+3 Psi(P2)=0. The law is constructed directly from the proved pointwise Euler equation and constant vertex-entropy rows; no unrestricted critical-minimizer hypothesis is used. Exact cancellation is proved for each of the twelve features and for both Hoeffding contact values. The certificate identity holds even for all real lambda.",
+  "sources": [
+    {
+      "path": "SparseLowerTail/Section05/CriticalApex.lean",
+      "sha256": "fc93b51c36b14318af009caac05e30d666cb57756e3ce21104ecadfc114bfd8c"
+    }
+  ],
+  "explicit_inputs": [],
+  "checks": [
+    {
+      "command": "LEAN_NUM_THREADS=1 lake build SparseLowerTail",
+      "exit_code": 0,
+      "output": "Build completed successfully (3708 jobs). Existing cached linter warnings were replayed."
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean tools/audit_critical_apex.lean",
+      "exit_code": 0,
+      "output": "'SparseLowerTail.Section05.criticalParameter_mem_domain' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.critical_relaxation_multiplier' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.criticalSupport_lt_criticalA' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.criticalGraphon_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.triangleLaw_edge_test_of_EL' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.triangleLaw_vertex_test_of_row' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.criticalGraphon_relaxedLaw' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.criticalGraphon_observable' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.hoeffding_energy_zero_of_ae_constant' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section05.criticalGraphon_hoeffding_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.criticalGraphon_certificate_expectation' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section05.critical_vertex_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.critical_edgeResidual_contact' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.critical_vertexResidual_contact' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.critical_feature_contact' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.critical_hoeffding_contacts' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.critical_certificate_contact' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.critical_apex_properties' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.hoeffding_decomposition' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.hoeffding_orthogonal' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.hoeffding_energy_identity' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.hoeffding_affine_entropy_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.triangleLaw_hoeffding' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.minimizer_relaxedLaw' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.minimizer_edge_test' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.minimizer_vertex_test_moment' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.hoeffdingResidual_zero_of_ae_constant' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean Audit.lean",
+      "exit_code": 0,
+      "output": "Axiom audit passed: 24628 project declarations, 18060 theorems; only propext, Classical.choice, Quot.sound allowed.\n"
+    },
+    {
+      "command": "python3 tools/check_lean_map.py",
+      "exit_code": 0,
+      "output": "Proof-map links passed: 111 labels, 851 Lean declarations."
+    }
+  ],
+  "audited_public_theorems": 27,
+  "new_public_theorems": 18,
+  "reviewed_existing_theorems": 9,
+  "manuscript_reviews": {
+    "lem:valid": "The current actual-law proof is checked for parameter membership, multiplier equality, bounded Euler and vertex tests, the shared-edge Hoeffding inequality and sharp support. Existing classical inverse-transform sampling remains explicit.",
+    "lem:hoeffding": "The current shared-edge energy identity and nonnegativity are checked for every bounded symmetric kernel. The last clause for an almost-everywhere constant kernel is now an explicit theorem, using the proved zero residual. The former orthogonal-decomposition theorem remains available."
+  },
+  "root_project_modules": 533,
+  "root_project_declarations": 24628,
+  "root_project_theorems": 18060,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "base_source_manifest": "taylor-cube-check.json",
+  "source_manifest_changes": [
+    {
+      "module": "SparseLowerTail",
+      "sha256": "6a6a81bdac71d66f600b6059f4d773cb39f9a416bd485093e2963986730b6cbd"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CriticalApex",
+      "sha256": "fc93b51c36b14318af009caac05e30d666cb57756e3ce21104ecadfc114bfd8c"
+    }
+  ],
+  "source_manifest_sha256": "698cfc1d411d2cf10e263ecb73a41360d440ecafcfe8546e1e4a4a397965476e",
+  "manuscript_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+}

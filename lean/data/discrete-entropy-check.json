@@ -51,5 +51,6 @@
   "remaining": [
     "The recovery-vector construction, asymptotic feasibility and limsup in discrete(b).",
     "Apply the discrete comparison in thm:reduction; final combined integration must include the latest proof modules."
-  ]
+  ],
+  "follow_up_record": "discrete-comparison-check.json"
 }

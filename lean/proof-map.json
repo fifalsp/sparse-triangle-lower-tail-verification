@@ -444,11 +444,12 @@
       ],
       "baseline": {
         "environment": "lemma",
-        "statement": "\\begin{enumerate}[label=(\\alph*)] \\item Let $r\\in(0,1)$. Every graphon $U$ with $t(U)\\le r^3$ satisfies $F(U)>0$. The infimum in \\eqref{eq:V} is attained. Moreover, $0<V(r)\\le h(r)<1$. \\item For $0<s<r<1$ we have $0\\le V(s)-V(r)\\le1-s/r$. In particular $V$ is nonincreasing and continuous on $(0,1)$. \\end{enumerate}",
         "statement_sha256": "bf3dbb17963fcbbe9c5a12baf51f12e7766f19d8af3b25af8733fac4234a338b",
-        "proof_sha256": "7b1f0b689b742a88c6d345379dc35476ce481738d23f32f0f2ebd38aa659e309",
-        "source_line": 1274
-      }
+        "proof_sha256": "12b254a8da4f892fb02a9d3c4620413629ced43c49bb1c379de8e8d0c01acd08",
+        "source_line": 1397,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      },
+      "verification_record": "data/section02-variational-review-20261020.json"
     },
     {
       "paper_label": "prop:euler",
@@ -976,11 +977,12 @@
       ],
       "baseline": {
         "environment": "lemma",
-        "statement": "\\begin{enumerate}[label=(\\alph*)] \\item For every graphon $W$ and $k\\ge0$, $A_kW$ is a graphon with $F(A_kW)\\le F(W)$, and $\\|A_kW-W\\|_1\\to0$ as $k\\to\\infty$. \\item If $U_n$ and $U$ are graphons with $\\|U_n-U\\|_\\cut\\to0$, then $F(U)\\le\\liminf_nF(U_n)$. \\end{enumerate}",
         "statement_sha256": "eb953d7a0132cde66bd1c195e825cae66de3884a3446857752bbff768a6208cc",
-        "proof_sha256": "6513bc7136e6a0b4b5503a50faaa729ab16e0df72d3ef29e45043d051541f558",
-        "source_line": 1195
-      }
+        "proof_sha256": "13fbe2057a86961b611a8baf16f536203c2adef5947209cc0543a8bcded1e7da",
+        "source_line": 1327,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      },
+      "verification_record": "data/section02-variational-review-20261020.json"
     },
     {
       "paper_label": "s4:eq:arbr",
@@ -2604,15 +2606,22 @@
     },
     {
       "paper_label": "lem:discrete",
-      "status": "partial_a_proved_b_in_progress",
-      "checked_scope": "Full finite-n lower bound in part (a), for the attained finite edge entropy minimum, with Bernoulli entropy nonnegativity, clipping, triangle monotonicity, exact step formulas and the six-binomial normalization. The finite entropy upper estimate in part (b) is also proved.",
+      "status": "proved_relative_classical",
+      "checked_scope": "Full finite-n lower bound and full sequence-wise upper limit for the actual attained finite edge entropy minimum. Also proves convergence of the normalized minimum for every sequence n_j tending to infinity and p_j in (0,1) tending to zero. Includes exact step formulas, clipping, finite attainment, balanced finite color copies for every n, diagonal deletion bounds, strict-slack competitors, uniform-in-p eventual feasibility and the vanishing sparse entropy correction.",
       "lean_files": [
         "SparseLowerTail/Section03/FiniteStepGraphon.lean",
         "SparseLowerTail/Section03/FiniteCliqueSums.lean",
         "SparseLowerTail/Section03/FiniteWeightedGraph.lean",
         "SparseLowerTail/Section03/DiscreteEntropyLower.lean",
         "SparseLowerTail/Section03/DiscreteEntropyUpper.lean",
-        "SparseLowerTail/Section03/FiniteTriangleAttainment.lean"
+        "SparseLowerTail/Section03/FiniteTriangleAttainment.lean",
+        "SparseLowerTail/Section03/BalancedFiniteColoring.lean",
+        "SparseLowerTail/Section03/FiniteColorSums.lean",
+        "SparseLowerTail/Section03/MatrixRecoveryBounds.lean",
+        "SparseLowerTail/Section03/RecoveryVectors.lean",
+        "SparseLowerTail/Section03/UniformStepCompetitors.lean",
+        "SparseLowerTail/Section03/DiscreteUpperLimit.lean",
+        "SparseLowerTail/Section03/DiscreteComparison.lean"
       ],
       "lean_declarations": [
         "SparseLowerTail.Section03.bernoulliEntropy_nonneg",
@@ -2629,14 +2638,50 @@
         "SparseLowerTail.Section03.finiteTrianglePhi_lower",
         "SparseLowerTail.Section03.finiteTrianglePhi_lower_cuberoot",
         "SparseLowerTail.Section03.finiteEdgeEntropy_upper",
-        "SparseLowerTail.Section03.finiteTrianglePhi_attained"
+        "SparseLowerTail.Section03.finiteTrianglePhi_attained",
+        "SparseLowerTail.Section03.sum_balancedVertexColor",
+        "SparseLowerTail.Section03.balancedColorMass_formula",
+        "SparseLowerTail.Section03.remainder_fraction_tendsto",
+        "SparseLowerTail.Section03.balancedColorMass_tendsto",
+        "SparseLowerTail.Section03.sum_finite_colors",
+        "SparseLowerTail.Section03.sum_finite_colors_pair",
+        "SparseLowerTail.Section03.sum_finite_colors_triple",
+        "SparseLowerTail.Section03.balanced_pair_average_tendsto",
+        "SparseLowerTail.Section03.balanced_triple_average_tendsto",
+        "SparseLowerTail.Section03.edgeWeightFromMatrix_pair",
+        "SparseLowerTail.Section03.edgeWeightFromMatrix_bounds",
+        "SparseLowerTail.Section03.graphEdgeMatrix_fromMatrix",
+        "SparseLowerTail.Section03.edgeStepGraphon_fromMatrix_cost_le",
+        "SparseLowerTail.Section03.edgeStepGraphon_fromMatrix_triangle_le",
+        "SparseLowerTail.Section03.recoveryWeight_bounds",
+        "SparseLowerTail.Section03.recoveryCostBound_tendsto",
+        "SparseLowerTail.Section03.recoveryTriangleBound_tendsto",
+        "SparseLowerTail.Section03.triangleSamplingRatio_tendsto",
+        "SparseLowerTail.Section03.weightedTriangleCount_const_mul",
+        "SparseLowerTail.Section03.recoveryWeight_eventually_feasible",
+        "SparseLowerTail.Section03.finiteTrianglePhi_recovery_bound",
+        "SparseLowerTail.Section03.VertexPartition.eq_of_color_eq",
+        "SparseLowerTail.Section03.dyadicPartition_eq_uniform",
+        "SparseLowerTail.Section03.averagedGraphon_eq_matrix",
+        "SparseLowerTail.Section03.triangle_dyadic_tendsto",
+        "SparseLowerTail.Section03.exists_uniform_step_competitor",
+        "SparseLowerTail.Section03.finiteTrianglePhi_nonneg",
+        "SparseLowerTail.Section03.sparse_entropy_correction_tendsto",
+        "SparseLowerTail.Section03.finiteTrianglePhi_limsup_cube",
+        "SparseLowerTail.Section03.finiteTrianglePhi_limsup",
+        "SparseLowerTail.Section03.finiteTrianglePhi_tendsto_cube",
+        "SparseLowerTail.Section03.finiteTrianglePhi_tendsto"
       ],
-      "explicit_inputs": [],
+      "explicit_inputs": [
+        "classical:dyadic-l1-approximation",
+        "classical:graphon-cut-compactness",
+        "classical:counting-lemma"
+      ],
       "remaining_application": [
-        "Recovery-vector construction, asymptotic feasibility and limsup in part (b).",
-        "Application in thm:reduction and final combined source integration."
+        "Apply the discrete comparison in thm:reduction(a).",
+        "Combine the latest proof modules with all remaining certificate replays and audit the new root."
       ],
-      "verification_record": "data/discrete-entropy-check.json",
+      "verification_record": "data/discrete-comparison-check.json",
       "baseline": {
         "environment": "lemma",
         "statement_sha256": "96c314f905bc2efffb406be03db43924a860acec7d7c145241f50d8738a5bf9b",

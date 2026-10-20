@@ -1,0 +1,14 @@
+import SparseLowerTail.Section03.DiscreteComparison
+
+#print axioms SparseLowerTail.Section02.exists_minimizing_sequence
+#print axioms SparseLowerTail.Section02.exists_minimizer
+#print axioms SparseLowerTail.Section02.value_pos_bounds
+#print axioms SparseLowerTail.Section04.cost_pos_of_feasible
+#print axioms SparseLowerTail.Section02.antitoneOn_value
+#print axioms SparseLowerTail.Section02.value_difference_bounds
+#print axioms SparseLowerTail.Section02.value_abs_sub_le
+#print axioms SparseLowerTail.Section02.continuousOn_value
+#print axioms SparseLowerTail.Section02.ClassicalDyadicL1Approximation
+#print axioms SparseLowerTail.Section02.cost_averagedGraphon_le
+#print axioms SparseLowerTail.Section02.dyadic_averaging
+#print axioms SparseLowerTail.Section02.cost_lowerSemicontinuous_cut

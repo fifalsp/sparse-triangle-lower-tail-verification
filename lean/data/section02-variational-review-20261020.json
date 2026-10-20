@@ -1,0 +1,68 @@
+{
+  "paper_labels": [
+    "lem:existence",
+    "lem:lsc"
+  ],
+  "checked_at_utc": "2026-10-20T07:09:03.840273+00:00",
+  "scope": "Reviewed the latest manuscript against the existing complete formal conclusions: graphon positivity, minimizing sequences and attainment, value bounds and continuity; actual dyadic graphons, finite-block Jensen and entropy lower semicontinuity. The statement hashes are unchanged; the revised proof text introduces no unproved conclusion.",
+  "sources": [
+    {
+      "path": "SparseLowerTail/Section02/BlockAveraging.lean",
+      "sha256": "ec5b92aab1d83d37925302b44060e5997d11d5e31c9c12a69834db3c6af15b55"
+    },
+    {
+      "path": "SparseLowerTail/Section02/EntropyContinuity.lean",
+      "sha256": "3aa6cef41ae6b3ed36c004128ccc08637980212678cf78e3b637adcac787e07e"
+    },
+    {
+      "path": "SparseLowerTail/Section02/EntropyLSC.lean",
+      "sha256": "e70a15a51a2375ce8ff82a62995b9a79224e085b902c7e6d5d199243b6b743a4"
+    },
+    {
+      "path": "SparseLowerTail/Section02/Existence.lean",
+      "sha256": "b42d5e3471c63904f5b4dae54fd2105a181b3b487dba2c5f0aea617e084e8be1"
+    },
+    {
+      "path": "SparseLowerTail/Section02/ValueContinuity.lean",
+      "sha256": "65b7cb34b50b899e618339192b71bc7982905ad47c1955f8b8241de4c21bfa6a"
+    },
+    {
+      "path": "SparseLowerTail/Section04/ActiveConstraint.lean",
+      "sha256": "395609a1c211c959099657a16b0b1b1144d957af7ccd02e676a8eb5973f0ea31"
+    }
+  ],
+  "lean_version": "4.24.0",
+  "checks": [
+    {
+      "command": "lake build SparseLowerTail.Section03.DiscreteComparison",
+      "exit_code": 0,
+      "output": "Build completed successfully (3178 jobs).\n"
+    },
+    {
+      "command": "lake env lean tools/audit_section02_variational_review.lean",
+      "exit_code": 0,
+      "output": "'SparseLowerTail.Section02.exists_minimizing_sequence' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.exists_minimizer' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.value_pos_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section04.cost_pos_of_feasible' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.antitoneOn_value' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.value_difference_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.value_abs_sub_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.continuousOn_value' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.ClassicalDyadicL1Approximation' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.cost_averagedGraphon_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.dyadic_averaging' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.cost_lowerSemicontinuous_cut' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    }
+  ],
+  "audited_declaration_count": 12,
+  "explicit_inputs": [
+    "classical:dyadic-l1-approximation",
+    "classical:graphon-cut-compactness",
+    "classical:counting-lemma"
+  ],
+  "manuscript_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9",
+  "reviewed_declarations": [
+    "SparseLowerTail.Section02.exists_minimizing_sequence",
+    "SparseLowerTail.Section02.exists_minimizer",
+    "SparseLowerTail.Section02.value_pos_bounds",
+    "SparseLowerTail.Section04.cost_pos_of_feasible",
+    "SparseLowerTail.Section02.antitoneOn_value",
+    "SparseLowerTail.Section02.value_difference_bounds",
+    "SparseLowerTail.Section02.value_abs_sub_le",
+    "SparseLowerTail.Section02.continuousOn_value",
+    "SparseLowerTail.Section02.ClassicalDyadicL1Approximation",
+    "SparseLowerTail.Section02.cost_averagedGraphon_le",
+    "SparseLowerTail.Section02.dyadic_averaging",
+    "SparseLowerTail.Section02.cost_lowerSemicontinuous_cut"
+  ]
+}

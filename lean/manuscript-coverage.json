@@ -1,12 +1,12 @@
 {
   "scope": "All arguments proved by the authors, including probabilistic deductions. Cited external and standard classical theorems may be explicit hypotheses; their paper-specific applications remain obligations.",
   "overleaf_url": "https://www.overleaf.com/project/6acd7ee98a5fed7d56897586",
-  "checked_at_utc": "2026-10-20T06:41:50.020657+00:00",
+  "checked_at_utc": "2026-10-20T07:09:03.840273+00:00",
   "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9",
   "certificate_tables_match": true,
   "mapped_label_changes": {
     "missing_or_renamed": 4,
-    "proof_changed": 27,
+    "proof_changed": 25,
     "statement_changed": 6
   },
   "items": [
@@ -77,8 +77,9 @@
       "proof_sha256": "13fbe2057a86961b611a8baf16f536203c2adef5947209cc0543a8bcded1e7da",
       "mapping_status": "mapped",
       "recorded_status": "proved_relative_classical",
-      "latest_manuscript_review": "proof_changed",
-      "ownership": "author_argument_or_specialization_to_review"
+      "latest_manuscript_review": "checked",
+      "ownership": "author_argument",
+      "verification_record": "data/section02-variational-review-20261020.json"
     },
     {
       "paper_label": "lem:scaling",
@@ -107,8 +108,9 @@
       "proof_sha256": "12b254a8da4f892fb02a9d3c4620413629ced43c49bb1c379de8e8d0c01acd08",
       "mapping_status": "mapped",
       "recorded_status": "proved_relative_classical",
-      "latest_manuscript_review": "proof_changed",
-      "ownership": "author_argument_or_specialization_to_review"
+      "latest_manuscript_review": "checked",
+      "ownership": "author_argument",
+      "verification_record": "data/section02-variational-review-20261020.json"
     },
     {
       "paper_label": "lem:bregman",
@@ -215,8 +217,8 @@
       "statement_sha256": "96c314f905bc2efffb406be03db43924a860acec7d7c145241f50d8738a5bf9b",
       "proof_sha256": "a31413d0ec43bfb3a2b4fdb06ee31de832284bdec2e4cbc1d57f754e08cee044",
       "mapping_status": "mapped",
-      "recorded_status": "partial_a_proved_b_in_progress",
-      "latest_manuscript_review": "part_a_checked_part_b_in_progress",
+      "recorded_status": "proved_relative_classical",
+      "latest_manuscript_review": "checked",
       "ownership": "author_argument",
       "lean_files": [
         "SparseLowerTail/Section03/FiniteStepGraphon.lean",
@@ -224,7 +226,14 @@
         "SparseLowerTail/Section03/FiniteWeightedGraph.lean",
         "SparseLowerTail/Section03/DiscreteEntropyLower.lean",
         "SparseLowerTail/Section03/DiscreteEntropyUpper.lean",
-        "SparseLowerTail/Section03/FiniteTriangleAttainment.lean"
+        "SparseLowerTail/Section03/FiniteTriangleAttainment.lean",
+        "SparseLowerTail/Section03/BalancedFiniteColoring.lean",
+        "SparseLowerTail/Section03/FiniteColorSums.lean",
+        "SparseLowerTail/Section03/MatrixRecoveryBounds.lean",
+        "SparseLowerTail/Section03/RecoveryVectors.lean",
+        "SparseLowerTail/Section03/UniformStepCompetitors.lean",
+        "SparseLowerTail/Section03/DiscreteUpperLimit.lean",
+        "SparseLowerTail/Section03/DiscreteComparison.lean"
       ],
       "lean_declarations": [
         "SparseLowerTail.Section03.bernoulliEntropy_nonneg",
@@ -241,13 +250,49 @@
         "SparseLowerTail.Section03.finiteTrianglePhi_lower",
         "SparseLowerTail.Section03.finiteTrianglePhi_lower_cuberoot",
         "SparseLowerTail.Section03.finiteEdgeEntropy_upper",
-        "SparseLowerTail.Section03.finiteTrianglePhi_attained"
+        "SparseLowerTail.Section03.finiteTrianglePhi_attained",
+        "SparseLowerTail.Section03.sum_balancedVertexColor",
+        "SparseLowerTail.Section03.balancedColorMass_formula",
+        "SparseLowerTail.Section03.remainder_fraction_tendsto",
+        "SparseLowerTail.Section03.balancedColorMass_tendsto",
+        "SparseLowerTail.Section03.sum_finite_colors",
+        "SparseLowerTail.Section03.sum_finite_colors_pair",
+        "SparseLowerTail.Section03.sum_finite_colors_triple",
+        "SparseLowerTail.Section03.balanced_pair_average_tendsto",
+        "SparseLowerTail.Section03.balanced_triple_average_tendsto",
+        "SparseLowerTail.Section03.edgeWeightFromMatrix_pair",
+        "SparseLowerTail.Section03.edgeWeightFromMatrix_bounds",
+        "SparseLowerTail.Section03.graphEdgeMatrix_fromMatrix",
+        "SparseLowerTail.Section03.edgeStepGraphon_fromMatrix_cost_le",
+        "SparseLowerTail.Section03.edgeStepGraphon_fromMatrix_triangle_le",
+        "SparseLowerTail.Section03.recoveryWeight_bounds",
+        "SparseLowerTail.Section03.recoveryCostBound_tendsto",
+        "SparseLowerTail.Section03.recoveryTriangleBound_tendsto",
+        "SparseLowerTail.Section03.triangleSamplingRatio_tendsto",
+        "SparseLowerTail.Section03.weightedTriangleCount_const_mul",
+        "SparseLowerTail.Section03.recoveryWeight_eventually_feasible",
+        "SparseLowerTail.Section03.finiteTrianglePhi_recovery_bound",
+        "SparseLowerTail.Section03.VertexPartition.eq_of_color_eq",
+        "SparseLowerTail.Section03.dyadicPartition_eq_uniform",
+        "SparseLowerTail.Section03.averagedGraphon_eq_matrix",
+        "SparseLowerTail.Section03.triangle_dyadic_tendsto",
+        "SparseLowerTail.Section03.exists_uniform_step_competitor",
+        "SparseLowerTail.Section03.finiteTrianglePhi_nonneg",
+        "SparseLowerTail.Section03.sparse_entropy_correction_tendsto",
+        "SparseLowerTail.Section03.finiteTrianglePhi_limsup_cube",
+        "SparseLowerTail.Section03.finiteTrianglePhi_limsup",
+        "SparseLowerTail.Section03.finiteTrianglePhi_tendsto_cube",
+        "SparseLowerTail.Section03.finiteTrianglePhi_tendsto"
       ],
-      "explicit_inputs": [],
-      "verification_record": "data/discrete-entropy-check.json",
+      "explicit_inputs": [
+        "classical:dyadic-l1-approximation",
+        "classical:graphon-cut-compactness",
+        "classical:counting-lemma"
+      ],
+      "verification_record": "data/discrete-comparison-check.json",
       "remaining_application": [
-        "Recovery-vector construction, asymptotic feasibility and limsup in part (b).",
-        "Application in thm:reduction and final combined source integration."
+        "Apply the discrete comparison in thm:reduction(a).",
+        "Combine the latest proof modules with all remaining certificate replays and audit the new root."
       ]
     },
     {

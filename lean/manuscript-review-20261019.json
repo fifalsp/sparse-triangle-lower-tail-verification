@@ -21,10 +21,6 @@
       "status": "proof_changed"
     },
     {
-      "paper_label": "lem:existence",
-      "status": "proof_changed"
-    },
-    {
       "paper_label": "prop:euler",
       "status": "proof_changed"
     },
@@ -54,10 +50,6 @@
     },
     {
       "paper_label": "lem:cut",
-      "status": "proof_changed"
-    },
-    {
-      "paper_label": "lem:lsc",
       "status": "proof_changed"
     },
     {

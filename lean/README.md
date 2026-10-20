@@ -8,12 +8,12 @@ F6 have passed Lean builds and axiom audits. The main variational theorem's
 assembly and the proof components below are checked; the remaining certificates
 and combined integration are in progress.
 
-The live Overleaf source was downloaded through Google Chrome on October 19.
+The live Overleaf source was downloaded through Google Chrome on October 20.
 Its certificate tables match the running jobs. The
 [current manuscript inventory](manuscript-coverage.json) tracks all labeled
 results, including the probabilistic rate and conditioned-structure arguments
 in Section 3. The [revision comparison](manuscript-review-20261019.json) records
-37 changed or renamed mapped labels for review. Build records below retain their
+35 changed or renamed mapped labels for review. Build records below retain their
 original manuscript baseline until the corresponding changes are checked.
 
 See [ASSUMPTIONS.md](ASSUMPTIONS.md) for named inputs and
@@ -44,14 +44,15 @@ arguments separately for future manuscript revisions.
 
 ## Completed proof components
 
-- **Finite discrete lower bound (`lem:discrete(a)`) and step identities (`s3:step`):**
-  [DiscreteEntropyLower.lean](SparseLowerTail/Section03/DiscreteEntropyLower.lean)
-  proves the finite-n lower bound for the attained finite edge entropy minimum, including
-  clipping and triangle feasibility. The exact graphon formulas include the
-  unordered multiplicities and diagonal 1/n.
-  [DiscreteEntropyUpper.lean](SparseLowerTail/Section03/DiscreteEntropyUpper.lean)
-  proves the uniform entropy upper estimate for part (b). The recovery-vector
-  limit remains. [Build and 38 declaration audits](data/discrete-entropy-check.json) passed.
+- **Discrete variational comparison (`lem:discrete`), both parts:**
+  [DiscreteComparison.lean](SparseLowerTail/Section03/DiscreteComparison.lean)
+  proves convergence of the normalized finite minimum for every sequence
+  n → ∞ and p → 0. This includes finite minimum attainment, the exact step
+  formulas (`s3:step`), clipping, the finite lower bound, and recovery vectors
+  with eventual feasibility for every large n. The recovery proof uses balanced
+  copies of the finite colors. [Build and 70 declaration audits](data/discrete-comparison-check.json) passed.
+  The latest `lem:existence` and `lem:lsc` were also
+  [reviewed with 12 declaration audits](data/section02-variational-review-20261020.json).
 
 - **Triangle decorrelation (`lem:decorrelation`):**
   [Decorrelation.lean](SparseLowerTail/Section03/Decorrelation.lean) proves the

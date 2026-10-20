@@ -1,6 +1,6 @@
 # Shorter proofs found during formalization
 
-Updated: 2026-10-19. This is a companion to the manuscript, not an edit to it.
+Updated: 2026-10-20. This is a companion to the manuscript, not an edit to it.
 Stable identifiers below survive changes to theorem numbering. The source
 snapshot and statement fingerprints are recorded in
 [the proof map](../lean/proof-map.json).
@@ -22,6 +22,7 @@ Explicit external inputs are listed in
 | PS-007 | `prop:structural`, Step 4 | Direct stationary-row coercivity closes actual small-tail bipodality | Lean checked; no insertion-minimality hypothesis for the row comparison |
 | PS-008 | `prop:family`, local AAA case | Factored Hessian reduces the full parameter range to five interval leaves | Lean checked; local cube only |
 | PS-009 | `s5:tangency`, `prop:cover` | One common determinant solves all six fan tangency systems | Lean checked; tangency only |
+| PS-010 | `lem:discrete`(b) | Balanced finite color copies replace the midpoint and bad-cell estimate | Lean checked; every vertex count, same classical inputs |
 
 ## Compact outline of the final argument
 
@@ -793,3 +794,27 @@ This is a simplification of the proof interface. All 42 full-domain numerical
 conclusions still need Lean proofs; successful search proposals and individual
 boxes do not meet this requirement. The wider endpoint checker repairs the
 B1/B2 range restriction without changing the certificate formulas.
+
+## PS-010 — Finite color copies for the discrete upper limit
+
+A fixed K-block graphon can be approximated for the two observables needed
+here by balanced copies of its colors. Write n = K m + d with d < K. Use m
+complete batches containing every color once and assign the remaining d
+vertices to color zero. Every empirical color mass tends to 1/K. Exact pair
+and triple color-sum formulas then give convergence of the entropy and
+triangle observables for every n.
+
+Deleting diagonal edges increases normalized sparse entropy by at most 1/n
+and decreases the triangle count. A strictly feasible block competitor
+therefore gives feasible finite vectors for all sufficiently large n,
+uniformly in p. The uniform Bernoulli entropy bound supplies the correction
+p/(2(1-p)), which vanishes as p tends to zero. This proves the manuscript's
+upper limit without tracking the locations of coarse-cell boundaries.
+
+The finite coloring, its exact sums, both limits, diagonal bounds, eventual
+feasibility and final sequence argument are proved in
+[DiscreteComparison.lean](../lean/SparseLowerTail/Section03/DiscreteComparison.lean)
+and its imports. The named classical inputs are the same dyadic approximation,
+compactness and triangle-counting inputs used for graphon existence. The
+[combined check](../lean/data/discrete-comparison-check.json) includes both
+parts of the discrete lemma and all 70 declaration audits.

@@ -1,0 +1,84 @@
+{
+  "paper_label": "lem:discrete",
+  "checked_at_utc": "2026-10-20T07:09:03.840273+00:00",
+  "scope": "Full finite-n lower bound and full sequence-wise upper limit for the actual attained finite edge entropy minimum. Also proves convergence of the normalized minimum for every sequence n_j tending to infinity and p_j in (0,1) tending to zero. Includes exact step formulas, clipping, finite attainment, balanced finite color copies for every n, diagonal deletion bounds, strict-slack competitors, uniform-in-p eventual feasibility and the vanishing sparse entropy correction.",
+  "sources": [
+    {
+      "path": "SparseLowerTail/Section03/FiniteStepGraphon.lean",
+      "sha256": "54f732518870d8d391e63e032f553e01744233323a75fa27abdd5aeb35f6f020"
+    },
+    {
+      "path": "SparseLowerTail/Section03/FiniteCliqueSums.lean",
+      "sha256": "901fef9a0b6e55343235169fc35259e07bda04793ab97e58fe3873095449cb1e"
+    },
+    {
+      "path": "SparseLowerTail/Section03/FiniteWeightedGraph.lean",
+      "sha256": "c22ee9212f0ed78ce57ceb80a66b9da627bf637f5f053d14b46716475d48425f"
+    },
+    {
+      "path": "SparseLowerTail/Section03/DiscreteEntropyLower.lean",
+      "sha256": "7528e3354ec94efa008243960c6c3b5d818e14a7f62858b2828a1c6463d25e37"
+    },
+    {
+      "path": "SparseLowerTail/Section03/DiscreteEntropyUpper.lean",
+      "sha256": "5060342f5f786a94a69324278164f9cbde6e0d40609d6139fd3a93a4bb70db56"
+    },
+    {
+      "path": "SparseLowerTail/Section03/FiniteTriangleAttainment.lean",
+      "sha256": "55253196ca9d8503c82532ab35519b19fbee8d281b9f9932e2afefafaff5239f"
+    },
+    {
+      "path": "SparseLowerTail/Section03/BalancedFiniteColoring.lean",
+      "sha256": "d7da3dde901cb088fc8ecfc5367875364d6751d64e45bf1f5d11af8ace8b0ab2"
+    },
+    {
+      "path": "SparseLowerTail/Section03/FiniteColorSums.lean",
+      "sha256": "b785c4afd4b4c17d6f70fc79e45434241c9ef539d2f8d9a5c10fe7d958d40962"
+    },
+    {
+      "path": "SparseLowerTail/Section03/MatrixRecoveryBounds.lean",
+      "sha256": "1ac637ea5a31ddf695d42a5ead76f4eceba70535c6f3dbcfb804099dc3efa0ee"
+    },
+    {
+      "path": "SparseLowerTail/Section03/RecoveryVectors.lean",
+      "sha256": "873b8597efdd1b3f1bbb7a312073333bc78c5b9a088caf78ea4df9611be75dfa"
+    },
+    {
+      "path": "SparseLowerTail/Section03/UniformStepCompetitors.lean",
+      "sha256": "b1ada0a58a0cc9a4136f16ce22bc77d950df448b419676b05fb67b28a714c12a"
+    },
+    {
+      "path": "SparseLowerTail/Section03/DiscreteUpperLimit.lean",
+      "sha256": "4a4756d93f34bda70b34b475eb88c2b300125f5d9c318785a0fc4eb472438516"
+    },
+    {
+      "path": "SparseLowerTail/Section03/DiscreteComparison.lean",
+      "sha256": "4e026354b0063cb02b47869275247cba3995531cc5d5440db7041c887810391b"
+    }
+  ],
+  "lean_version": "4.24.0",
+  "checks": [
+    {
+      "command": "lake build SparseLowerTail.Section03.DiscreteComparison",
+      "exit_code": 0,
+      "output": "Build completed successfully (3178 jobs).\n"
+    },
+    {
+      "command": "lake env lean tools/audit_discrete_comparison.lean",
+      "exit_code": 0,
+      "output": "'SparseLowerTail.Section03.integral_finite_coloring' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.integral_partition_pair' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.integral_partition_triple' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.matrixStepGraphon_cost' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.matrixStepGraphon_triangle' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.uniformStepGraphon_cost' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.uniformStepGraphon_triangle' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.uniformStepGraphon_cost_zero_diagonal' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.ordered_pair_fiber' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.ordered_triple_fiber' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.sum_ordered_pairs' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.sum_ordered_triples' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.graphEdgeMatrix_symm' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.graphEdgeMatrix_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.triangleEdgeSet_three' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.graphEdgeMatrix_triangle_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.weightedTriangleCount_div' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.edgeStepGraphon_cost' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.edgeStepGraphon_triangle' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.bernoulliEntropy_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.bernoulliEntropy_self' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.bernoulliEntropy_clip' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.triangleEdgeSet_edge' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.weightedTriangleCount_mono' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.six_choose_three_le_cube' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteEdgeEntropy_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.zero_finiteTriangleFeasible' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteTriangle_costs_bddBelow' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteTrianglePhi_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteTrianglePhi_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteTrianglePhi_lower_cuberoot' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.graph_edge_count_le_half_square' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteEdgeEntropy_upper' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.continuous_bernoulliEntropy' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.continuous_finiteEdgeEntropy' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.continuous_weightedTriangleCount' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteTriangle_normalize' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteTrianglePhi_attained' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.sum_balancedVertexColor' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.balancedColorMass_formula' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.remainder_fraction_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.balancedColorMass_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.sum_finite_colors' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.sum_finite_colors_pair' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.sum_finite_colors_triple' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.balanced_pair_average_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.balanced_triple_average_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.edgeWeightFromMatrix_pair' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.edgeWeightFromMatrix_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.graphEdgeMatrix_fromMatrix' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.edgeStepGraphon_fromMatrix_cost_le' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.edgeStepGraphon_fromMatrix_triangle_le' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.recoveryWeight_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.recoveryCostBound_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.recoveryTriangleBound_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.triangleSamplingRatio_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.weightedTriangleCount_const_mul' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.recoveryWeight_eventually_feasible' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.finiteTrianglePhi_recovery_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.VertexPartition.eq_of_color_eq' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.dyadicPartition_eq_uniform' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.averagedGraphon_eq_matrix' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.triangle_dyadic_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.exists_uniform_step_competitor' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteTrianglePhi_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.sparse_entropy_correction_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteTrianglePhi_limsup_cube' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteTrianglePhi_limsup' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteTrianglePhi_tendsto_cube' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteTrianglePhi_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    }
+  ],
+  "audited_theorem_count": 70,
+  "explicit_inputs": [
+    "classical:dyadic-l1-approximation",
+    "classical:graphon-cut-compactness",
+    "classical:counting-lemma"
+  ],
+  "manuscript_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9",
+  "proof_variant": "Balanced batches and leftover vertices replace the midpoint/bad-cell construction. Pair and triple color-frequency limits suffice for the cost and triangle observables. No cut-distance approximation or additional classical input is used in this replacement.",
+  "remaining_application": [
+    "Apply the discrete comparison in thm:reduction(a).",
+    "Combine the latest proof modules with all remaining certificate replays and audit the new root."
+  ]
+}

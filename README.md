@@ -12,7 +12,7 @@ Updated October 20, 2026.
 | Python interval verification | All 42 cover regions, both family Hessian neighborhoods, and the full compact family domain; zero unresolved boxes | [Full run](certificates/release/run.json) |
 | Lean full-domain nonapex certificates | **34 of 36 regions** | [Build and axiom-audit records](hpc/results-20261020-0238/verified-regions.json) |
 | Lean full-domain apex certificates | **5 of 6 fans: F2, F3, F4, F5, F6** | [Build and axiom-audit records](hpc/results-20261020-0238/verified-regions.json) |
-| Finite discrete lower bound (`lem:discrete(a)`) | Attained finite minimum, clipping, exact step-graphon formulas and the lower bound; also the entropy upper estimate for part (b) | [Lean build and 38 axiom audits](lean/data/discrete-entropy-check.json) |
+| Discrete variational comparison (`lem:discrete`) | Attained finite minimum, the finite lower bound, and convergence to the graphon value as n → ∞ and p → 0 | [Lean build and 70 axiom audits](lean/data/discrete-comparison-check.json) |
 | Triangle decorrelation (`lem:decorrelation`) | Revealed-edge set and conditional product-error bound, using the cited generic KS23 inputs | [Lean build and 36 axiom audits](lean/data/decorrelation-check.json) |
 | Cut concentration and step-kernel cut norms (`lem:cutconc`, `lem:stepcut`) | Exact exponential tail bound; matrix–graphon norm equality and binary maximizers | [Lean build and 36 axiom audits](lean/data/cut-concentration-check.json) |
 | Harris conditioning (`lem:harris`) | Increasing-event and pinned-coordinate bounds, including revealed coordinates, using the cited Harris inequality | [Lean build and 19 axiom audits](lean/data/harris-conditioning-check.json) |

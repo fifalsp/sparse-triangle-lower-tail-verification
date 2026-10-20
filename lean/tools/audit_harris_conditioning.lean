@@ -1,0 +1,21 @@
+import SparseLowerTail.Section03.HarrisConditioning
+
+#print axioms SparseLowerTail.Section03.productBernoulliMass_sum
+#print axioms SparseLowerTail.Section03.finiteEventMass_split
+#print axioms SparseLowerTail.Section03.finiteConditionedMass_event
+#print axioms SparseLowerTail.Section03.harris_increasing_decreasing
+#print axioms SparseLowerTail.Section03.harris_conditioned_event_le
+#print axioms SparseLowerTail.Section03.allTrueEvent_isUpperSet
+#print axioms SparseLowerTail.Section03.productBernoulliMass_allTrueEvent
+#print axioms SparseLowerTail.Section03.harris_conditioned_allTrue_le
+#print axioms SparseLowerTail.Section03.harris_conditioned_allTrue_le_pow
+#print axioms SparseLowerTail.Section03.mem_finiteEventSection
+#print axioms SparseLowerTail.Section03.finiteEventSection_isLowerSet
+#print axioms SparseLowerTail.Section03.conditionedProductJoint_row
+#print axioms SparseLowerTail.Section03.conditionedProductJoint_section_pos
+#print axioms SparseLowerTail.Section03.finiteConditional_conditionedProductJoint
+#print axioms SparseLowerTail.Section03.harris_revealed_allTrue_le_pow
+#print axioms SparseLowerTail.Section03.finiteHypergraphCount_monotone
+#print axioms SparseLowerTail.Section03.finiteHypergraphLowerEvent_isLowerSet
+#print axioms SparseLowerTail.Section03.jointHypergraphLowerEvent_isLowerSet
+#print axioms SparseLowerTail.Section03.hypergraph_lower_section_isLowerSet

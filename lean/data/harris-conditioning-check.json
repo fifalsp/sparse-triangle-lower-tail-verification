@@ -1,0 +1,26 @@
+{
+  "paper_label": "lem:harris",
+  "scope": "Finite Bernoulli product laws, decreasing conditioning, pinned-coordinate events, actual conditional sections after revealing coordinates, and monotonicity of hypergraph lower-tail events.",
+  "checked_at_utc": "2026-10-20T04:30:40.804451+00:00",
+  "source": "SparseLowerTail/Section03/HarrisConditioning.lean",
+  "source_sha256": "0f521d325461c1d5237973bc20dca63d6b130edd65a835bf0885c0edee9ec3fc",
+  "lean_version": "4.24.0",
+  "checks": [
+    {
+      "command": "lake build SparseLowerTail.Section03.HarrisConditioning",
+      "exit_code": 0,
+      "output": "\u2714 [3126/3126] Built SparseLowerTail.Section03.HarrisConditioning (4.0s)\nBuild completed successfully (3126 jobs).\n"
+    },
+    {
+      "command": "lake env lean tools/audit_harris_conditioning.lean",
+      "exit_code": 0,
+      "output": "'SparseLowerTail.Section03.productBernoulliMass_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteEventMass_split' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteConditionedMass_event' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.harris_increasing_decreasing' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.harris_conditioned_event_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.allTrueEvent_isUpperSet' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.productBernoulliMass_allTrueEvent' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.harris_conditioned_allTrue_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.harris_conditioned_allTrue_le_pow' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.mem_finiteEventSection' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteEventSection_isLowerSet' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.conditionedProductJoint_row' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.conditionedProductJoint_section_pos' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.finiteConditional_conditionedProductJoint' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.harris_revealed_allTrue_le_pow' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteHypergraphCount_monotone' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteHypergraphLowerEvent_isLowerSet' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.jointHypergraphLowerEvent_isLowerSet' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.hypergraph_lower_section_isLowerSet' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    }
+  ],
+  "audited_theorem_count": 19,
+  "explicit_inputs": [
+    "classical:harris-positive-association"
+  ],
+  "remaining_application": "Identify the finite edge coordinates and triangle hypergraph in thm:reduction.",
+  "manuscript_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+}

@@ -3,7 +3,7 @@
 The project formalizes the authors' arguments in the paper, with cited external
 and standard classical results supplied as explicit hypotheses.
 
-**Verified:** 29 nonapex full-domain certificates and apex fans F2, F3, F5 and
+**Verified:** 31 nonapex full-domain certificates and apex fans F2, F3, F5 and
 F6 have passed Lean builds and axiom audits. The main variational theorem's
 assembly and the proof components below are checked; the remaining certificates
 and combined integration are in progress.
@@ -43,6 +43,12 @@ the latter uses the explicit classical CDF transform in `lem:relabelB`.
 arguments separately for future manuscript revisions.
 
 ## Completed proof components
+
+- **Harris conditioning (`lem:harris`):** [HarrisConditioning.lean](SparseLowerTail/Section03/HarrisConditioning.lean)
+  proves increasing-event domination, revealed conditional sections and the
+  pinned-coordinate bound, using the cited Harris inequality as an explicit
+  hypothesis. It also proves hypergraph lower-tail events decrease under edge
+  deletion. [Target build and 19 declaration audits](data/harris-conditioning-check.json) passed.
 
 - **Conditional entropy (`lem:entropy`), both finite-law parts:**
   [ConditionedProductEntropy.lean](SparseLowerTail/Section03/ConditionedProductEntropy.lean)

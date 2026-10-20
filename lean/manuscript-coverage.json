@@ -1,7 +1,7 @@
 {
   "scope": "All arguments proved by the authors, including probabilistic deductions. Cited external and standard classical theorems may be explicit hypotheses; their paper-specific applications remain obligations.",
   "overleaf_url": "https://www.overleaf.com/project/6acd7ee98a5fed7d56897586",
-  "checked_at_utc": "2026-10-20T04:01:15.038674+00:00",
+  "checked_at_utc": "2026-10-20T04:31:38.274457+00:00",
   "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9",
   "certificate_tables_match": true,
   "mapped_label_changes": {
@@ -258,10 +258,26 @@
       "source_line": 1860,
       "statement_sha256": "aee00c5edf1217b560cac97c0c8c4abc6406da8f991b25e1b00df92310b66ed1",
       "proof_sha256": "6f70d13c98932ba4be8c375fbb103cecec9aa5c7899f53667f15633852cf0606",
-      "mapping_status": "needs_mapping",
-      "recorded_status": null,
-      "latest_manuscript_review": "not_yet_mapped",
-      "ownership": "author_argument_or_specialization_to_review"
+      "mapping_status": "mapped",
+      "recorded_status": "proved_finite_law_relative_classical",
+      "latest_manuscript_review": "checked",
+      "ownership": "author_argument",
+      "lean_files": [
+        "SparseLowerTail/Section03/HarrisConditioning.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section03.harris_conditioned_event_le",
+        "SparseLowerTail.Section03.harris_revealed_allTrue_le_pow",
+        "SparseLowerTail.Section03.jointHypergraphLowerEvent_isLowerSet",
+        "SparseLowerTail.Section03.hypergraph_lower_section_isLowerSet"
+      ],
+      "explicit_inputs": [
+        "classical:harris-positive-association"
+      ],
+      "verification_record": "data/harris-conditioning-check.json",
+      "remaining_application": [
+        "Identify the complete-graph edge coordinates and triangle hypergraph in thm:reduction."
+      ]
     },
     {
       "paper_label": "lem:decorrelation",

@@ -159,3 +159,4 @@ import SparseLowerTail.Section03.NearMinimizers
 import SparseLowerTail.Section03.SparseEntropy
 import SparseLowerTail.Section03.EntropyTransfer
 import SparseLowerTail.Section03.ConditionedProductEntropy
+import SparseLowerTail.Section03.HarrisConditioning

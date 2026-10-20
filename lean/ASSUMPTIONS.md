@@ -139,6 +139,19 @@ the final theorem's type provide that separate provenance information.
 - Concrete kernel/spectral-sum statements encode the estimates; this does not
   claim a new fully formalized general trace-class operator API.
 
+### `classical:harris-positive-association`
+
+- Reference: the Harris inequality, cited as `Har60` in manuscript `lem:harris`.
+- Exact input: `Section03.ClassicalHarrisPositiveAssociation` in
+  [HarrisConditioning.lean](SparseLowerTail/Section03/HarrisConditioning.lean).
+  For independent Bernoulli coordinates with means in [0,1], the probability
+  of the intersection of two increasing events is at least the product of
+  their probabilities.
+- Proved consequences: increasing/decreasing correlation, conditional
+  increasing-event domination, pinned-coordinate product bounds, the actual
+  conditional law after revealing coordinates, and decreasing hypergraph
+  lower-tail sections. The input is an ordinary theorem hypothesis.
+
 ## Classical infrastructure eligible to be assumed when needed
 
 Compactness and triangle counting are now encoded above. Remaining optional

@@ -2450,6 +2450,34 @@
       "remaining_application": [
         "Identify the finite edge-coordinate laws in thm:reduction and apply the proved finite-law entropy bounds."
       ]
+    },
+    {
+      "paper_label": "lem:harris",
+      "status": "proved_finite_law_relative_classical",
+      "checked_scope": "Both finite-law deductions from the general increasing-event Harris inequality: decreasing conditioning suppresses increasing events; after revealing coordinates, the constructed conditional law is a product law conditioned on its section and pinned coordinates have probability at most p to their cardinality. Hypergraph lower-tail events and their revealed sections are proved decreasing.",
+      "lean_files": [
+        "SparseLowerTail/Section03/HarrisConditioning.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section03.harris_conditioned_event_le",
+        "SparseLowerTail.Section03.harris_revealed_allTrue_le_pow",
+        "SparseLowerTail.Section03.jointHypergraphLowerEvent_isLowerSet",
+        "SparseLowerTail.Section03.hypergraph_lower_section_isLowerSet"
+      ],
+      "explicit_inputs": [
+        "classical:harris-positive-association"
+      ],
+      "remaining_application": [
+        "Identify the complete-graph edge coordinates and triangle hypergraph in thm:reduction."
+      ],
+      "verification_record": "data/harris-conditioning-check.json",
+      "baseline": {
+        "environment": "lemma",
+        "statement_sha256": "aee00c5edf1217b560cac97c0c8c4abc6406da8f991b25e1b00df92310b66ed1",
+        "proof_sha256": "6f70d13c98932ba4be8c375fbb103cecec9aa5c7899f53667f15633852cf0606",
+        "source_line": 1860,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      }
     }
   ],
   "current_manuscript_inventory": "manuscript-coverage.json"

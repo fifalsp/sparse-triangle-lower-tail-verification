@@ -2,14 +2,16 @@
 
 ## Latest verified results — October 20, 2026
 
-**33 full-region Lean builds and axiom audits have passed:** 29 nonapex
+**35 full-region Lean builds and axiom audits have passed:** 31 nonapex
 regions and apex fans F2, F3, F5 and F6. The new completions are nonapex jobs
-13 and 35. [Evidence](results-20261020-0010/verified-regions.json).
+30 and 31. [Evidence](results-20261020-0030/verified-regions.json).
 
-Nine original Yale jobs were running on 40 cores at the latest check.
+Six original Yale jobs were running on 28 cores at the latest check.
 The older Yale F1 and cover-12 jobs reached their 64 GiB memory limits;
 both have queued recovery with 192 GiB.
 [Failure and recovery record](yale-f1-failure-20261020.json).
+The ABB job reached its ten-hour limit after 4,528 of 7,459 build tasks.
+Its saved checkpoint is available to recovery. [ABB record](abb-timeout-20261020.json).
 Recovery array `30068465` and combined assembly `30068466` remain queued.
 
 Delta job **23029964** replaces job `23029368`, which reached its setup

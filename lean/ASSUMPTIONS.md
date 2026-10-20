@@ -66,6 +66,12 @@ the final theorem's type provide that separate provenance information.
   surviving-edge bound and final energy algebra. `triangle_decorrelation`
   concludes the manuscript's `lem:decorrelation` from these two inputs.
 
+The actual revealed-coordinate applications are proved in
+[RevealedCostConcentration.lean](SparseLowerTail/Section03/RevealedCostConcentration.lean)
+and its imports: exact coordinate transport, the first good-event probability,
+actual entropy budget and cost concentration. They add no external inputs.
+The Harris input listed below supplies the actual marginal bounds.
+
 ### `external:KP26:1.6`
 
 - Reference: KP26, Theorem 1.6, with the specialization justified in the paper

@@ -167,3 +167,4 @@ import SparseLowerTail.Section03.FiniteTriangleAttainment
 import SparseLowerTail.Section03.DiscreteComparison
 import SparseLowerTail.Section03.LowerTailRate
 import SparseLowerTail.Section03.ConditionalCostBounds
+import SparseLowerTail.Section03.RevealedCostConcentration

@@ -2716,7 +2716,7 @@
     {
       "paper_label": "thm:reduction",
       "status": "part_a_proved_relative_external_classical",
-      "checked_scope": "Part (a): the actual triangle lower-tail log probability divided by n²p/2 converges to V(η^(1/3)), and its ratio to (n²p/2)V(η^(1/3)) converges to one, for every sequence n→∞, p→0 and √n p→∞. All triangle hypergraph identifications, codegrees, additive-error limits and perturbation squeezing are proved. Part (b), conditioned structure, remains.",
+      "checked_scope": "Part (a): the actual triangle lower-tail log probability divided by n²p/2 converges to V(η^(1/3)), and its ratio to (n²p/2)V(η^(1/3)) converges to one, for every sequence n→∞, p→0 and √n p→∞. All triangle hypergraph identifications, codegrees, additive-error limits and perturbation squeezing are proved. Part (b), conditioned structure, remains. Part (b) support: exact revealed/unrevealed coordinate equivalence, transported conditional entropy budget, actual Harris marginal bounds, relaxed-triangle failure probability, erased-vector entropy and finite-variational baseline, actual excess-cost probability and mean dependence bound. The full conditioned cut-distance conclusion remains.",
       "lean_files": [
         "SparseLowerTail/Section03/HypergraphVariational.lean",
         "SparseLowerTail/Section03/KS23RateInputs.lean",
@@ -2724,7 +2724,13 @@
         "SparseLowerTail/Section03/RateSandwich.lean",
         "SparseLowerTail/Section03/LowerTailRate.lean",
         "SparseLowerTail/Section03/FiniteProbabilityBounds.lean",
-        "SparseLowerTail/Section03/ConditionalCostBounds.lean"
+        "SparseLowerTail/Section03/ConditionalCostBounds.lean",
+        "SparseLowerTail/Section03/RevealedCoordinates.lean",
+        "SparseLowerTail/Section03/RevealedEntropyBudget.lean",
+        "SparseLowerTail/Section03/RevealedTriangleConstraint.lean",
+        "SparseLowerTail/Section03/RevealedHarris.lean",
+        "SparseLowerTail/Section03/RevealedCost.lean",
+        "SparseLowerTail/Section03/RevealedCostConcentration.lean"
       ],
       "lean_declarations": [
         "SparseLowerTail.Section03.extendGraphEdges_coe",
@@ -2757,17 +2763,61 @@
         "SparseLowerTail.Section03.finite_four_bad_events_le",
         "SparseLowerTail.Section03.conditional_value_baseline_bounds",
         "SparseLowerTail.Section03.conditional_excess_and_dependence_means",
-        "SparseLowerTail.Section03.conditional_excess_cost_probability"
+        "SparseLowerTail.Section03.conditional_excess_cost_probability",
+        "SparseLowerTail.Section03.splitCoordinates_symm_snd",
+        "SparseLowerTail.Section03.splitCoordinates_productMass",
+        "SparseLowerTail.Section03.splitCoordinateEvent_mass",
+        "SparseLowerTail.Section03.splitCoordinates_productEventMass",
+        "SparseLowerTail.Section03.splitCoordinates_conditionedMass",
+        "SparseLowerTail.Section03.splitCoordinates_conditionedProductJoint",
+        "SparseLowerTail.Section03.splitCoordinates_rowMass",
+        "SparseLowerTail.Section03.splitCoordinates_conditioned_rowMass",
+        "SparseLowerTail.Section03.mem_revealedPatternEvent_symm",
+        "SparseLowerTail.Section03.splitCoordinates_symm_monotone",
+        "SparseLowerTail.Section03.splitCoordinateEvent_section_isLowerSet",
+        "SparseLowerTail.Section03.unrevealedConditionalLaw_nonneg",
+        "SparseLowerTail.Section03.unrevealedConditionalLaw_sum",
+        "SparseLowerTail.Section03.unrevealedConditionalLaw_zero",
+        "SparseLowerTail.Section03.unrevealedConditionalLaw_marginal_mem_unitInterval",
+        "SparseLowerTail.Section03.unrevealedConditionalLaw_dependence_nonneg",
+        "SparseLowerTail.Section03.unrevealedConditionalLaw_expect",
+        "SparseLowerTail.Section03.unrevealedConditionalLaw_marginal_true",
+        "SparseLowerTail.Section03.revealed_bernoulli_entropy_bound",
+        "SparseLowerTail.Section03.hypergraph_revealed_entropy_budget",
+        "SparseLowerTail.Section03.erasedConditionalMeans_count",
+        "SparseLowerTail.Section03.revealedConditionalMoment_sum",
+        "SparseLowerTail.Section03.hypergraph_conditional_count_le",
+        "SparseLowerTail.Section03.erasedConditionalMeans_count_le",
+        "SparseLowerTail.Section03.hypergraph_relaxed_constraint_probability",
+        "SparseLowerTail.Section03.triangle_relaxed_constraint_probability",
+        "SparseLowerTail.Section03.triangle_revealed_feasibility",
+        "SparseLowerTail.Section03.hypergraphRealCount_eq_natCast",
+        "SparseLowerTail.Section03.hypergraphRealCount_monotone",
+        "SparseLowerTail.Section03.hypergraphLowerEvent_isLowerSet",
+        "SparseLowerTail.Section03.hypergraph_unrevealed_marginal_bounds",
+        "SparseLowerTail.Section03.erasedConditionalMeans_bounds",
+        "SparseLowerTail.Section03.hypergraph_unrevealed_marginal_bounds_all",
+        "SparseLowerTail.Section03.erasedConditionalMeans_bounds_all",
+        "SparseLowerTail.Section03.unrevealedEntropyCost_nonneg",
+        "SparseLowerTail.Section03.erasedConditionalMeans_entropy",
+        "SparseLowerTail.Section03.bernoulliEntropy_zero_le_two_mul",
+        "SparseLowerTail.Section03.erasedConditionalMeans_entropy_le",
+        "SparseLowerTail.Section03.triangle_unrevealed_cost_lower",
+        "SparseLowerTail.Section03.triangle_revealed_cost_and_dependence"
       ],
       "explicit_inputs": [
         "external:KS23:theorem5",
         "external:KS23:theorem6",
         "classical:dyadic-l1-approximation",
         "classical:graphon-cut-compactness",
-        "classical:counting-lemma"
+        "classical:counting-lemma",
+        "external:KS23:lemma18",
+        "external:KS23:eq33",
+        "classical:harris-positive-association"
       ],
       "remaining_application": [
-        "Prove part (b), conditioned structure, including rounding and transfer to minimizers.",
+        "Choose the finite tolerances and pass to the asymptotic regime in part (b).",
+        "Apply product cut concentration and entropy transfer to the actual conditional laws, bound revealed edges, and combine all good events with graphon stability.",
         "Combine all author proofs with all completed certificate replays."
       ],
       "verification_record": "data/lower-tail-rate-check.json",
@@ -2779,7 +2829,8 @@
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
       },
       "supporting_verification_records": [
-        "data/conditional-cost-check.json"
+        "data/conditional-cost-check.json",
+        "data/revealed-laws-check.json"
       ]
     },
     {

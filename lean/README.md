@@ -1543,3 +1543,24 @@ and its import contain eight audited public theorems. The actual
 revealed-edge law applications and the full conditioned-structure and
 rounding conclusions remain. The [combined check](data/conditional-cost-check.json)
 records their integrated root build and audit.
+
+
+### 2026-10-20 — Actual revealed-edge laws and the first two good events
+
+The edge configuration is now split by an explicit equivalence into its
+revealed and unrevealed coordinates. The product reference, conditioning,
+revealed-pattern mass, conditional moments and entropy budget all agree
+under this equivalence. Harris gives the actual marginal bounds [0,p],
+including zero-mass patterns.
+
+For the actual triangle law, the relaxed-triangle failure probability is at
+most β/ζ. The erased vector's entropy is its unrevealed entropy cost plus
+the cost of zeroing the revealed edges, bounded by 2p per edge. The discrete
+variational lower bound then gives the cost baseline used in part (b).
+The actual excess-cost probability and the mean remaining dependence
+entropy satisfy the manuscript's bounds under its stated finite parameter
+conditions.
+
+All 40 public theorems are audited in the
+[revealed-law check](data/revealed-laws-check.json). The full conditioned
+cut-distance conclusion, parameter-limit choices, and rounding remain.

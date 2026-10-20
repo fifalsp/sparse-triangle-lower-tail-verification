@@ -1,0 +1,106 @@
+{
+  "checked_at_utc": "2026-10-20T08:09:14.531732+00:00",
+  "source_parent_commit": "f2f8da4b4c3fbe573f6cbb70fb0858f9c13592f1",
+  "paper_label": "thm:reduction",
+  "scope": "Supporting proofs for part (b), using the actual triangle revealed-pattern law: exact coordinate transport and entropy budget, Harris marginal bounds, first good-event probability, erased-vector cost baseline, excess-cost probability and mean dependence entropy. The full conditioned cut-distance conclusion remains unfinished.",
+  "sources": [
+    {
+      "path": "SparseLowerTail/Section03/RevealedCoordinates.lean",
+      "sha256": "3011f26a91ab04e062f276ae67cf88d31cc795f99e3db5a50bb6186a1d5f9943"
+    },
+    {
+      "path": "SparseLowerTail/Section03/RevealedEntropyBudget.lean",
+      "sha256": "89b4bd9ba6bf7ead64b9ac38fddc261229a84023af1cb3157d2c306a566ca96f"
+    },
+    {
+      "path": "SparseLowerTail/Section03/RevealedTriangleConstraint.lean",
+      "sha256": "b450311266b895b1dbc892f8c0b7ab2f89e47759a80e8147744fd0f75ee16c80"
+    },
+    {
+      "path": "SparseLowerTail/Section03/RevealedHarris.lean",
+      "sha256": "9f35841013cbc28e85f29a842a2a2a7b0f65cb057c23bed37e739b01fb2aac8d"
+    },
+    {
+      "path": "SparseLowerTail/Section03/RevealedCost.lean",
+      "sha256": "e6b37469133016d5739755bdd383ac3c4de3c67420fe9c328707db1295051ac5"
+    },
+    {
+      "path": "SparseLowerTail/Section03/RevealedCostConcentration.lean",
+      "sha256": "13e0bcaee83dc85ac324bd7a8a0212e3601b2324fbe437eae50ccbe2af21d2c5"
+    }
+  ],
+  "explicit_inputs": [
+    "external:KS23:lemma18",
+    "external:KS23:eq33",
+    "classical:harris-positive-association"
+  ],
+  "checks": [
+    {
+      "command": "lake build SparseLowerTail.Section03.RevealedCostConcentration",
+      "exit_code": 0,
+      "output": "Build completed successfully (3191 jobs)."
+    },
+    {
+      "command": "lake env lean tools/audit_revealed_laws.lean",
+      "exit_code": 0,
+      "output": "'SparseLowerTail.Section03.splitCoordinates_symm_snd' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.splitCoordinates_productMass' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.splitCoordinateEvent_mass' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.splitCoordinates_productEventMass' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.splitCoordinates_conditionedMass' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.splitCoordinates_conditionedProductJoint' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.splitCoordinates_rowMass' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.splitCoordinates_conditioned_rowMass' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.mem_revealedPatternEvent_symm' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.splitCoordinates_symm_monotone' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.splitCoordinateEvent_section_isLowerSet' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.unrevealedConditionalLaw_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.unrevealedConditionalLaw_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.unrevealedConditionalLaw_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.unrevealedConditionalLaw_marginal_mem_unitInterval' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.unrevealedConditionalLaw_dependence_nonneg' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.unrevealedConditionalLaw_expect' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.unrevealedConditionalLaw_marginal_true' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.revealed_bernoulli_entropy_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.hypergraph_revealed_entropy_budget' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.erasedConditionalMeans_count' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.revealedConditionalMoment_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.hypergraph_conditional_count_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.erasedConditionalMeans_count_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.hypergraph_relaxed_constraint_probability' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.triangle_relaxed_constraint_probability' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.triangle_revealed_feasibility' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.hypergraphRealCount_eq_natCast' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.hypergraphRealCount_monotone' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.hypergraphLowerEvent_isLowerSet' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.hypergraph_unrevealed_marginal_bounds' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.erasedConditionalMeans_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.hypergraph_unrevealed_marginal_bounds_all' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.erasedConditionalMeans_bounds_all' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.unrevealedEntropyCost_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.erasedConditionalMeans_entropy' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.bernoulliEntropy_zero_le_two_mul' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.erasedConditionalMeans_entropy_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.triangle_unrevealed_cost_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.triangle_revealed_cost_and_dependence' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake build SparseLowerTail",
+      "exit_code": 0,
+      "output": "Built SparseLowerTail (2.9s). Build completed successfully (3642 jobs). Existing cached linter warnings were replayed."
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean Audit.lean",
+      "exit_code": 0,
+      "output": "Axiom audit passed: 24149 project declarations, 17665 theorems; only propext, Classical.choice, Quot.sound allowed.\n"
+    },
+    {
+      "command": "python3 tools/check_lean_map.py",
+      "exit_code": 0,
+      "output": "Proof-map links passed: 100 labels, 651 Lean declarations.\n"
+    }
+  ],
+  "audited_public_theorems": 40,
+  "root_project_modules": 500,
+  "root_project_declarations": 24149,
+  "root_project_theorems": 17665,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "base_source_manifest": "conditional-cost-check.json",
+  "source_manifest_changes": [
+    {
+      "module": "SparseLowerTail",
+      "sha256": "78a6343c6571ee1ed496f975a1cf799e8626e0c85346b55866cb9af12e3bc3ee"
+    },
+    {
+      "module": "SparseLowerTail.Section03.RevealedCoordinates",
+      "sha256": "3011f26a91ab04e062f276ae67cf88d31cc795f99e3db5a50bb6186a1d5f9943"
+    },
+    {
+      "module": "SparseLowerTail.Section03.RevealedCost",
+      "sha256": "e6b37469133016d5739755bdd383ac3c4de3c67420fe9c328707db1295051ac5"
+    },
+    {
+      "module": "SparseLowerTail.Section03.RevealedCostConcentration",
+      "sha256": "13e0bcaee83dc85ac324bd7a8a0212e3601b2324fbe437eae50ccbe2af21d2c5"
+    },
+    {
+      "module": "SparseLowerTail.Section03.RevealedEntropyBudget",
+      "sha256": "89b4bd9ba6bf7ead64b9ac38fddc261229a84023af1cb3157d2c306a566ca96f"
+    },
+    {
+      "module": "SparseLowerTail.Section03.RevealedHarris",
+      "sha256": "9f35841013cbc28e85f29a842a2a2a7b0f65cb057c23bed37e739b01fb2aac8d"
+    },
+    {
+      "module": "SparseLowerTail.Section03.RevealedTriangleConstraint",
+      "sha256": "b450311266b895b1dbc892f8c0b7ab2f89e47759a80e8147744fd0f75ee16c80"
+    }
+  ],
+  "source_manifest_sha256": "d3569c6866168a1a365fc84c2434cece4de2d17c2e9c1f376545d78d2b47c32b",
+  "manuscript_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+}

@@ -1611,3 +1611,14 @@ and standard classical results are explicit hypotheses. The combined
 The [check record](data/conditioned-structure-check.json) contains 13 public
 theorem audits and the full root audit of 17,817 theorems. Rounding, the
 remaining manuscript review and certificate integration remain.
+
+
+### 2026-10-20 — Vertex partition rounding
+
+`lem:rounding` is proved for arbitrary real matrices on any equal-mass
+measurable partition, including measure-preserving pullbacks. The rounded
+vertex set has imbalance ≤16δn/(b−a) and matrix cut error ≤33δ. Two signed
+tests give the projection deficit; exact cell-average correlations and
+sign rounding give the balance and tensor L¹ bounds. No additional
+external or classical input is required. The [check record](data/rounding-check.json)
+contains 35 public audits and the full root audit of 17,896 theorems.

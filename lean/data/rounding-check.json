@@ -1,0 +1,110 @@
+{
+  "checked_at_utc": "2026-10-20T09:04:32.983098+00:00",
+  "source_parent_commit": "27be5d70195e9d2c8c64879cca3a72e57861b0c2",
+  "paper_label": "lem:rounding",
+  "scope": "Full finite rounding lemma: for every equal-mass measurable partition, arbitrary real matrix M, measurable balanced two-block set and a<b, cut proximity δ gives a vertex set with cardinality imbalance ≤16δn/(b−a) and matrix cut error ≤33δ. Includes arbitrary measure-preserving pullbacks of the canonical interval partition. No symmetry or boundedness of M is needed. All signed tests, exact cell-average identities, projection deficit, sign rounding, balance and L¹ tensor estimates are proved.",
+  "sources": [
+    {
+      "path": "SparseLowerTail/Section03/SignedCut.lean",
+      "sha256": "3414f730ae3e05fb87f7f5f47643c7d3038d3968ea712d2956a667a7384e3ea6"
+    },
+    {
+      "path": "SparseLowerTail/Section03/PartitionTests.lean",
+      "sha256": "0ee554d693a7c54396815a2eab99e7685047e5e3106e2c3ef37d3e2d5f6d99e6"
+    },
+    {
+      "path": "SparseLowerTail/Section03/CellAverages.lean",
+      "sha256": "c1ccf5fc538deaa4cffd14048defe7581fc9d46688003d7035a52222e859b98f"
+    },
+    {
+      "path": "SparseLowerTail/Section03/RankOneTests.lean",
+      "sha256": "22034634d33e1d80e22ac5494ea05437650ba1dd2fcccb84cfeeb85913b4ce59"
+    },
+    {
+      "path": "SparseLowerTail/Section03/SignRounding.lean",
+      "sha256": "9515c94aa2d876b4234bccb7837150002ee47f52a873b74e7e51751df58a2bc7"
+    },
+    {
+      "path": "SparseLowerTail/Section03/RankOneRounding.lean",
+      "sha256": "fe86551d16352b4de26569dbe501062319091804210317d0148444a33f909bcf"
+    },
+    {
+      "path": "SparseLowerTail/Section03/Rounding.lean",
+      "sha256": "7ba3e8cf1ab79cd5df01f2f3b824020f1913e7bea379ff3b2d679799c43338d2"
+    }
+  ],
+  "explicit_inputs": [],
+  "checks": [
+    {
+      "command": "LEAN_NUM_THREADS=1 lake build SparseLowerTail.Section03.Rounding",
+      "exit_code": 0,
+      "output": "Build completed successfully (3157 jobs)."
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake build SparseLowerTail",
+      "exit_code": 0,
+      "output": "Build completed successfully (3662 jobs). Existing cached linter warnings were replayed."
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean tools/audit_rounding.lean",
+      "exit_code": 0,
+      "output": "'SparseLowerTail.Section03.weightedKernel_integrable' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.abs_signed_integral_le_four_cutNorm' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.vertexStep_measurable' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.vertexStep_integrable' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.integral_vertexPartition' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.unitBound_integrable' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.integral_mul_vertexStep' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.matrixStepKernel_weighted_integral' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.vertexCellMean_abs_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.projectedVertexTest_measurable' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.projectedVertexTest_abs_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.projectedVertexTest_cell_integral' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.projectedVertexTest_integral' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.projectedVertexTest_correlation' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.matrixStepKernel_projected_test' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.boundedTest_product_integrable' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.signedRankOneKernel_integrable' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.signedRankOneKernel_test' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.projectedVertexTest_square_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.signed_projection_defect' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.partitionSign_measurable' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.partitionSign_abs' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.partitionSign_integral' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.roundedVertexTest_measurable' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.roundedCellSign_abs' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.roundedVertexTest_abs' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.roundedVertexTest_correlation' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.roundedVertexTest_integral' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.roundedVertexTest_l1_error' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.signedRankOneKernel_l1_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.roundedVertexSet_balance' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.balancedBipodKernel_rankOne' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.roundedMatrix_rankOne' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.rounding_on_partition' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.matrix_bipod_rounding' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean Audit.lean",
+      "exit_code": 0,
+      "output": "Axiom audit passed: 24427 project declarations, 17896 theorems; only propext, Classical.choice, Quot.sound allowed.\n"
+    },
+    {
+      "command": "python3 tools/check_lean_map.py",
+      "exit_code": 0,
+      "output": "Proof-map links passed: 101 labels, 741 Lean declarations.\n"
+    }
+  ],
+  "audited_public_theorems": 35,
+  "root_project_modules": 520,
+  "root_project_declarations": 24427,
+  "root_project_theorems": 17896,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "base_source_manifest": "conditioned-structure-check.json",
+  "source_manifest_changes": [
+    {
+      "module": "SparseLowerTail",
+      "sha256": "0771bdb2b65833a2e7a38c5fb34da1104b95b343f014359146a26c9dd8c4b3f8"
+    },
+    {
+      "module": "SparseLowerTail.Section03.CellAverages",
+      "sha256": "c1ccf5fc538deaa4cffd14048defe7581fc9d46688003d7035a52222e859b98f"
+    },
+    {
+      "module": "SparseLowerTail.Section03.PartitionTests",
+      "sha256": "0ee554d693a7c54396815a2eab99e7685047e5e3106e2c3ef37d3e2d5f6d99e6"
+    },
+    {
+      "module": "SparseLowerTail.Section03.RankOneRounding",
+      "sha256": "fe86551d16352b4de26569dbe501062319091804210317d0148444a33f909bcf"
+    },
+    {
+      "module": "SparseLowerTail.Section03.RankOneTests",
+      "sha256": "22034634d33e1d80e22ac5494ea05437650ba1dd2fcccb84cfeeb85913b4ce59"
+    },
+    {
+      "module": "SparseLowerTail.Section03.Rounding",
+      "sha256": "7ba3e8cf1ab79cd5df01f2f3b824020f1913e7bea379ff3b2d679799c43338d2"
+    },
+    {
+      "module": "SparseLowerTail.Section03.SignRounding",
+      "sha256": "9515c94aa2d876b4234bccb7837150002ee47f52a873b74e7e51751df58a2bc7"
+    },
+    {
+      "module": "SparseLowerTail.Section03.SignedCut",
+      "sha256": "3414f730ae3e05fb87f7f5f47643c7d3038d3968ea712d2956a667a7384e3ea6"
+    }
+  ],
+  "source_manifest_sha256": "7422a1ac5bd224f0f683430a813a140454a9449693a400bae3ac79d7f408a497",
+  "manuscript_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+}

@@ -2921,6 +2921,69 @@
         "source_line": 2104,
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
       }
+    },
+    {
+      "paper_label": "lem:rounding",
+      "status": "proved",
+      "checked_scope": "Full finite rounding lemma: for every equal-mass measurable partition, arbitrary real matrix M, measurable balanced two-block set and a<b, cut proximity δ gives a vertex set with cardinality imbalance ≤16δn/(b−a) and matrix cut error ≤33δ. Includes arbitrary measure-preserving pullbacks of the canonical interval partition. No symmetry or boundedness of M is needed. All signed tests, exact cell-average identities, projection deficit, sign rounding, balance and L¹ tensor estimates are proved.",
+      "lean_files": [
+        "SparseLowerTail/Section03/SignedCut.lean",
+        "SparseLowerTail/Section03/PartitionTests.lean",
+        "SparseLowerTail/Section03/CellAverages.lean",
+        "SparseLowerTail/Section03/RankOneTests.lean",
+        "SparseLowerTail/Section03/SignRounding.lean",
+        "SparseLowerTail/Section03/RankOneRounding.lean",
+        "SparseLowerTail/Section03/Rounding.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section03.weightedKernel_integrable",
+        "SparseLowerTail.Section03.abs_signed_integral_le_four_cutNorm",
+        "SparseLowerTail.Section03.vertexStep_measurable",
+        "SparseLowerTail.Section03.vertexStep_integrable",
+        "SparseLowerTail.Section03.integral_vertexPartition",
+        "SparseLowerTail.Section03.unitBound_integrable",
+        "SparseLowerTail.Section03.integral_mul_vertexStep",
+        "SparseLowerTail.Section03.matrixStepKernel_weighted_integral",
+        "SparseLowerTail.Section03.vertexCellMean_abs_le",
+        "SparseLowerTail.Section03.projectedVertexTest_measurable",
+        "SparseLowerTail.Section03.projectedVertexTest_abs_le",
+        "SparseLowerTail.Section03.projectedVertexTest_cell_integral",
+        "SparseLowerTail.Section03.projectedVertexTest_integral",
+        "SparseLowerTail.Section03.projectedVertexTest_correlation",
+        "SparseLowerTail.Section03.matrixStepKernel_projected_test",
+        "SparseLowerTail.Section03.boundedTest_product_integrable",
+        "SparseLowerTail.Section03.signedRankOneKernel_integrable",
+        "SparseLowerTail.Section03.signedRankOneKernel_test",
+        "SparseLowerTail.Section03.projectedVertexTest_square_bounds",
+        "SparseLowerTail.Section03.signed_projection_defect",
+        "SparseLowerTail.Section03.partitionSign_measurable",
+        "SparseLowerTail.Section03.partitionSign_abs",
+        "SparseLowerTail.Section03.partitionSign_integral",
+        "SparseLowerTail.Section03.roundedVertexTest_measurable",
+        "SparseLowerTail.Section03.roundedCellSign_abs",
+        "SparseLowerTail.Section03.roundedVertexTest_abs",
+        "SparseLowerTail.Section03.roundedVertexTest_correlation",
+        "SparseLowerTail.Section03.roundedVertexTest_integral",
+        "SparseLowerTail.Section03.roundedVertexTest_l1_error",
+        "SparseLowerTail.Section03.signedRankOneKernel_l1_le",
+        "SparseLowerTail.Section03.roundedVertexSet_balance",
+        "SparseLowerTail.Section03.balancedBipodKernel_rankOne",
+        "SparseLowerTail.Section03.roundedMatrix_rankOne",
+        "SparseLowerTail.Section03.rounding_on_partition",
+        "SparseLowerTail.Section03.matrix_bipod_rounding"
+      ],
+      "explicit_inputs": [],
+      "remaining_application": [
+        "Apply the finite rounding result in the conditioned-structure corollary."
+      ],
+      "verification_record": "data/rounding-check.json",
+      "baseline": {
+        "environment": "lemma",
+        "statement_sha256": "756b0e76b9fbd660cb52dbb2ee19a8c9eec387b027d190201a021970025851dc",
+        "proof_sha256": "5de3e1fb5b94d1c05b46e05245c89b03766d19ae73c8ef0c01a5f04199fc14b3",
+        "source_line": 2196,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      }
     }
   ],
   "current_manuscript_inventory": "manuscript-coverage.json"

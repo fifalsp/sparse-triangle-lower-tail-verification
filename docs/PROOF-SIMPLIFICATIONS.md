@@ -834,3 +834,23 @@ variational identification, codegrees and both limiting steps are proved in
 and its imports. The [check record](../lean/data/lower-tail-rate-check.json)
 audits all 23 new public theorems. This closes part (a) of `thm:reduction`;
 part (b) remains.
+
+
+## PS-012 — Two signed tests for vertex rounding
+
+For a balanced sign g and its cell average c, every step matrix M has
+identical tests against g⊗g and c⊗c. For B = ℓ + μg⊗g, these tests are
+μ and μq², where q = ∫c² = ∫gc and ∫c = ∫g = 0. The signed cut estimate
+bounds each error by 4δ, so |μ|(1−q²) ≤8δ. Since 0≤q≤1, this implies
+|μ|(1−q) ≤8δ.
+
+Rounding each c_i to its sign improves correlation with g because
+c_i²≤|c_i|. Thus the sign L¹ error is at most 1−q, its cardinality
+imbalance is at most n(1−q)/2, and its rank-one kernel error is at most
+2|μ|(1−q). These bounds imply the manuscript's constants 16 and 33
+(the cut estimate obtained here is actually 17δ). This avoids constructing
+an L² orthogonal projection or assuming cut-norm contraction. All cell
+integral identities and signed-test bounds are proved in Lean.
+
+Lean: `Section03.SignedCut`, `PartitionTests`, `CellAverages`, `RankOneTests`,
+`SignRounding`, `RankOneRounding` and `Rounding`; 35 audited public theorems.

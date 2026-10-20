@@ -1,0 +1,37 @@
+import SparseLowerTail.Section03.Rounding
+
+#print axioms SparseLowerTail.Section03.weightedKernel_integrable
+#print axioms SparseLowerTail.Section03.abs_signed_integral_le_four_cutNorm
+#print axioms SparseLowerTail.Section03.vertexStep_measurable
+#print axioms SparseLowerTail.Section03.vertexStep_integrable
+#print axioms SparseLowerTail.Section03.integral_vertexPartition
+#print axioms SparseLowerTail.Section03.unitBound_integrable
+#print axioms SparseLowerTail.Section03.integral_mul_vertexStep
+#print axioms SparseLowerTail.Section03.matrixStepKernel_weighted_integral
+#print axioms SparseLowerTail.Section03.vertexCellMean_abs_le
+#print axioms SparseLowerTail.Section03.projectedVertexTest_measurable
+#print axioms SparseLowerTail.Section03.projectedVertexTest_abs_le
+#print axioms SparseLowerTail.Section03.projectedVertexTest_cell_integral
+#print axioms SparseLowerTail.Section03.projectedVertexTest_integral
+#print axioms SparseLowerTail.Section03.projectedVertexTest_correlation
+#print axioms SparseLowerTail.Section03.matrixStepKernel_projected_test
+#print axioms SparseLowerTail.Section03.boundedTest_product_integrable
+#print axioms SparseLowerTail.Section03.signedRankOneKernel_integrable
+#print axioms SparseLowerTail.Section03.signedRankOneKernel_test
+#print axioms SparseLowerTail.Section03.projectedVertexTest_square_bounds
+#print axioms SparseLowerTail.Section03.signed_projection_defect
+#print axioms SparseLowerTail.Section03.partitionSign_measurable
+#print axioms SparseLowerTail.Section03.partitionSign_abs
+#print axioms SparseLowerTail.Section03.partitionSign_integral
+#print axioms SparseLowerTail.Section03.roundedVertexTest_measurable
+#print axioms SparseLowerTail.Section03.roundedCellSign_abs
+#print axioms SparseLowerTail.Section03.roundedVertexTest_abs
+#print axioms SparseLowerTail.Section03.roundedVertexTest_correlation
+#print axioms SparseLowerTail.Section03.roundedVertexTest_integral
+#print axioms SparseLowerTail.Section03.roundedVertexTest_l1_error
+#print axioms SparseLowerTail.Section03.signedRankOneKernel_l1_le
+#print axioms SparseLowerTail.Section03.roundedVertexSet_balance
+#print axioms SparseLowerTail.Section03.balancedBipodKernel_rankOne
+#print axioms SparseLowerTail.Section03.roundedMatrix_rankOne
+#print axioms SparseLowerTail.Section03.rounding_on_partition
+#print axioms SparseLowerTail.Section03.matrix_bipod_rounding

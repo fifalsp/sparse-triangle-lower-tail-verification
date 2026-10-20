@@ -31,6 +31,8 @@ on F1 and the four migrated regional stages. There are no user holds or start-ti
 estimates. The unstarted Yale recovery/assembly and older Delta family copies
 were cancelled after migration checks; no running job was cancelled.
 [Deployment, hashes and accepted resources](delta-migration-plan-20261020.json).
+An exchange for **500 additional CPU hours** was submitted using the project’s
+existing ACCESS credits. [Request record](delta-extra-500-exchange-20261020.json).
 
 Delta was busy at the latest check: 14,797 CPU cores allocated, 2,227 idle
 cores on partially occupied nodes, and 128 reserved idle cores.

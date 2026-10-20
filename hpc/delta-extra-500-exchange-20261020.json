@@ -1,0 +1,16 @@
+{
+  "submitted_at_utc": "2026-10-20T15:36:19.235751+00:00",
+  "project": "CIS261417",
+  "project_title": "Generation in the Limit for Verified Mathematical AI",
+  "resource": "NCSA Delta CPU",
+  "account": "biah-delta-cpu",
+  "additional_core_hours_requested": 500,
+  "access_credits_exchanged": 500,
+  "previous_confirmed_pool_hours": 500,
+  "requested_total_pool_hours": 1000,
+  "status": "Submission confirmed; provider decision not yet checked",
+  "portal_confirmation": "Your exchange request has been submitted.",
+  "submission_method": "Authenticated user Google Chrome ACCESS allocation portal",
+  "justification": "The additional 500 NCSA Delta CPU core-hours will support verification of language generation in the limit for mathematical AI. We will use Lean 4 to kernel-check generated proof artifacts, replay finite certificates, and run combined theorem builds and axiom audits, with the triangle lower-tail formalization as a case study. The extra capacity will support checkpoint resumptions and necessary verification reruns.",
+  "budget_policy": "Keep the confirmed 500-hour pool until provider approval of the additional 500 is verified; then reconcile actual consumption and outstanding commitments before using the enlarged pool."
+}

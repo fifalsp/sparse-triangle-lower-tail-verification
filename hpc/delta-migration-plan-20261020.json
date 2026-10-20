@@ -155,5 +155,10 @@
     30068466
   ],
   "replacement_safety": "Fresh states were PENDING. scancel --state=PENDING restricted cancellation to unstarted copies. All replacement submissions and their accepted resources were verified before cancelling Yale recovery/assembly. Yale queue is empty.",
-  "uncommitted_pool_hours": 10
+  "uncommitted_pool_hours": 10,
+  "additional_exchange_request": {
+    "record": "delta-extra-500-exchange-20261020.json",
+    "additional_core_hours": 500,
+    "status": "Submitted; approval not yet confirmed"
+  }
 }

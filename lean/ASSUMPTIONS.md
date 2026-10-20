@@ -1,8 +1,8 @@
 # Formalization scope and assumptions
 
 Updated 2026-10-19 following the authors' explicit instructions: assume cited
-external theorems and standard classical results; verify the paper's own new
-arguments. The final deliverable is therefore a **formal proof relative to
+external theorems and standard classical results; verify all of the paper's own arguments, including the probabilistic rate,
+conditioned structure, finite-to-graphon transfer and rounding arguments. The final deliverable is therefore a **formal proof relative to
 explicit external/classical inputs**, not a reproof of all mathematics used by
 the paper.
 

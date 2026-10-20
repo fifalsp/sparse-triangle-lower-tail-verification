@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "scope": "Main variational theorem relative to explicit cited external/classical inputs; own-paper obligations must be proved.",
+  "scope": "All arguments proved by the authors, including probabilistic deductions. Cited external and standard classical theorems may be explicit hypotheses; their paper-specific applications remain obligations.",
   "manuscript": {
     "file": "arxiv/arxiv_v1.tex",
     "sha256": "84c55a798a1fc1492f319179eec89f340d27269916acd622d54707da185e17b7",
@@ -241,7 +241,7 @@
     {
       "paper_label": "prop:smalldata",
       "status": "proved_relative_external",
-      "checked_scope": "Identifies the entire supporting range 0<r\u2264r_-, proves value equality and balanced attainment, and gives active triangle, cost, multiplier and edge data for every unrestricted minimizer. Equality rigidity is separate thm:smalltail.",
+      "checked_scope": "Identifies the entire supporting range 0<r≤r_-, proves value equality and balanced attainment, and gives active triangle, cost, multiplier and edge data for every unrestricted minimizer. Equality rigidity is separate thm:smalltail.",
       "lean_files": [
         "SparseLowerTail/Section07/SmallData.lean"
       ],
@@ -614,7 +614,7 @@
     {
       "paper_label": "thm:smalltail",
       "status": "proved_relative_to_named_inputs",
-      "checked_scope": "Complete exact classification for all graphon minimizers on 0<r\u2264smallTarget. Bipodality is derived, then balanced classification and the converse are proved. The relabeling formulation additionally uses classical nonatomic CDF transport.",
+      "checked_scope": "Complete exact classification for all graphon minimizers on 0<r≤smallTarget. Bipodality is derived, then balanced classification and the converse are proved. The relabeling formulation additionally uses classical nonatomic CDF transport.",
       "lean_files": [
         "SparseLowerTail/Section07/SmallTargetBipodal.lean",
         "SparseLowerTail/Section07/SmallTailAssembly.lean"
@@ -1912,7 +1912,7 @@
         "source_line": 4811
       },
       "status": "proved_relative_classical",
-      "checked_scope": "Actual first and second vertex variations give \u03bc=3\u03b3 and nonpositivity of the quadratic form for every mean-zero L\u00b2 function. The extension uses centered truncations and dominated convergence.",
+      "checked_scope": "Actual first and second vertex variations give μ=3γ and nonpositivity of the quadratic form for every mean-zero L² function. The extension uses centered truncations and dominated convergence.",
       "lean_files": [
         "SparseLowerTail/Section07/PenalizedMultiplier.lean",
         "SparseLowerTail/Section07/PenalizedQuadratic.lean"
@@ -1976,7 +1976,7 @@
         "source_line": 4937
       },
       "status": "proved_kernel_form_relative_classical",
-      "checked_scope": "Kernel/spectral-sum formulation of positivity, zero row, trace and diagonal bounds, degree estimates, exact cubic identity and both tail inequalities. Generic positive Hilbert\u2013Schmidt spectral expansion is an explicit classical input; every graphon-specific bound is proved internally. No general Lean trace-class operator API is claimed.",
+      "checked_scope": "Kernel/spectral-sum formulation of positivity, zero row, trace and diagonal bounds, degree estimates, exact cubic identity and both tail inequalities. Generic positive Hilbert–Schmidt spectral expansion is an explicit classical input; every graphon-specific bound is proved internally. No general Lean trace-class operator API is claimed.",
       "lean_files": [
         "SparseLowerTail/Section07/CenteredKernel.lean",
         "SparseLowerTail/Section07/DegreeBounds.lean",
@@ -2036,7 +2036,7 @@
         "source_line": 5007
       },
       "status": "proved_relative_explicit_inputs",
-      "checked_scope": "Actual measurable sign partition, both block mass bounds, exact L\u00b2 sign-error identity and bound.",
+      "checked_scope": "Actual measurable sign partition, both block mass bounds, exact L² sign-error identity and bound.",
       "lean_files": [
         "SparseLowerTail/Section07/EigenfunctionBlocks.lean"
       ],
@@ -2118,7 +2118,7 @@
     {
       "paper_label": "lem:smallparams",
       "status": "proved_relative_to_named_inputs",
-      "checked_scope": "All of (a) and (b), with the stronger p0>0.4987. Part (a) is unconditional on 0<z\u22648.36e-5. Actual minimizer instantiation of (b) uses KP26, classical sampling and a classical spectral expansion.",
+      "checked_scope": "All of (a) and (b), with the stronger p0>0.4987. Part (a) is unconditional on 0<z≤8.36e-5. Actual minimizer instantiation of (b) uses KP26, classical sampling and a classical spectral expansion.",
       "lean_files": [
         "SparseLowerTail/Section07/SmallParameterBounds.lean",
         "SparseLowerTail/Section07/SmallParameterErrors.lean",
@@ -2373,5 +2373,6 @@
         "source_line": 3785
       }
     }
-  ]
+  ],
+  "current_manuscript_inventory": "manuscript-coverage.json"
 }

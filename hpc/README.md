@@ -9,6 +9,8 @@ regions and apex fans F2, F3, F5 and F6. The new completions are nonapex jobs
 Fifteen original Yale jobs were running on 72 cores at the latest check.
 Recovery array `30068465` and combined assembly `30068466` remain queued.
 
+Delta job **23029368** is running on node `cn120`; see the
+[deployment record](delta-deployment-20261019.json).
 The [Delta runner](delta-replay.sbatch) checks the full F1 apex theorem with
 four single-thread Lean workers. Its allocation is 16 CPUs, 30,000 MiB and
 six hours, capped at 96 CPU core-hours on `biah-delta-cpu`. Sources and build

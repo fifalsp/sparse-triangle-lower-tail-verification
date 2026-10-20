@@ -29,6 +29,8 @@ the external and classical results used.
 **Remaining:** 11 nonapex regions, apex fans F1 and F4, the family ABB and
 exterior replays, and the combined build importing all completed certificates.
 The [cluster record](hpc/README.md) tracks running jobs and recovery.
+The [current manuscript inventory](lean/manuscript-coverage.json) also tracks
+the authors’ probabilistic deductions and alignment with the latest Overleaf source.
 
 ## Which parts of the paper does the code verify?
 

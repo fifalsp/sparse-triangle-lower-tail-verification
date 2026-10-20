@@ -1,15 +1,23 @@
 # Lean 4 formalization: progress toward Theorem 1.3
 
-**Status: partial formalization. The main theorem has not been proved in Lean.**
-The target is the variational theorem `thm:main` in the manuscript recorded in
-[`data/manuscript.json`](../data/manuscript.json), checked against the October 19,
-2026 PDF. This is Theorem **1.3**, not Theorem 1.8. The probabilistic sparse-LDP
-and conditional-structure results are additional, later formalization tasks.
+The project formalizes the authors' arguments in the paper, with cited external
+and standard classical results supplied as explicit hypotheses.
 
-At the authors' request, the intended proof may use **explicitly stated external
-and classical results as hypotheses**. Our own arguments remain obligations.
-See [ASSUMPTIONS.md](ASSUMPTIONS.md) for the exact scope and named inputs.
-Passing an axiom audit does not discharge an external hypothesis.
+**Verified:** 25 nonapex full-domain certificates and apex fans F2, F3, F5 and
+F6 have passed Lean builds and axiom audits. The main variational theorem's
+assembly and the proof components below are checked; the remaining certificates
+and combined integration are in progress.
+
+The live Overleaf source was downloaded through Google Chrome on October 19.
+Its certificate tables match the running jobs. The
+[current manuscript inventory](manuscript-coverage.json) tracks all labeled
+results, including the probabilistic rate and conditioned-structure arguments
+in Section 3. The [revision comparison](manuscript-review-20261019.json) records
+37 changed or renamed mapped labels for review. Build records below retain their
+original manuscript baseline until the corresponding changes are checked.
+
+See [ASSUMPTIONS.md](ASSUMPTIONS.md) for named inputs and
+[proof-map.json](proof-map.json) for declaration links.
 
 ## What the target actually says
 

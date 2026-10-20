@@ -909,7 +909,8 @@
         "SparseLowerTail/Section05/CoverJobReplay/Job35Smoke/CheckedSubtree.lean",
         "SparseLowerTail/Section05/CoverJobProgramTaylor.lean",
         "SparseLowerTail/Section05/CoverJobReplay/Job25Full/Ordered.lean",
-        "SparseLowerTail/Section05/CheckedCoverJobs.lean"
+        "SparseLowerTail/Section05/CheckedCoverJobs.lean",
+        "SparseLowerTail/Section05/ApexReplay/F1LaptopPilot.lean"
       ],
       "lean_declarations": [
         "SparseLowerTail.Section05.coverS1_vertex0_first_box",
@@ -965,7 +966,11 @@
         "SparseLowerTail.Section05.checkedNonapexJobs_positive",
         "SparseLowerTail.Section05.checkedNonapexJobs_cube_positive",
         "SparseLowerTail.Section05.nonapexJobResults_of_remaining",
-        "SparseLowerTail.Section05.criticalClassification_of_remaining_ordered_jobs"
+        "SparseLowerTail.Section05.criticalClassification_of_remaining_ordered_jobs",
+        "SparseLowerTail.Section05.ApexReplay.F1.conclusion0",
+        "SparseLowerTail.Section05.ApexReplay.F1.conclusion16000",
+        "SparseLowerTail.Section05.ApexReplay.F1.conclusion31262",
+        "SparseLowerTail.Section05.ApexReplay.F1.Coverage000.covered"
       ],
       "explicit_inputs": [],
       "baseline": {
@@ -979,6 +984,13 @@
         "kind": "proposition",
         "number": "5.17",
         "pdf_page": 41
+      },
+      "latest_laptop_pilot": {
+        "checked_at_utc": "2026-10-20T13:52:48.045821+00:00",
+        "leaves": 47,
+        "subdivision_leaves": 11,
+        "scope": "First, middle and last F1 leaf batches checked locally under the 8 GiB one-worker profile. Full F1 remains incomplete.",
+        "verification_record": "data/compact-conclusion-laptop-pilot-check.json"
       }
     },
     {
@@ -4250,6 +4262,38 @@
         "number": "A.6",
         "pdf_page": 68
       }
+    },
+    {
+      "paper_label": "appA3:compact",
+      "status": "conditional_on_full_family_replay",
+      "checked_scope": "The literal ordered compact conclusion is proved from the existing finite replay input, in the independent manuscript L coordinate: nonnegative Phi and zero if and only if the vector is the AAA or ordered ABB contact. The sorting-to-exact-contacts deduction and both converse zero identities are proved. The complete numerical leaf table and coverage remain internal obligations; this is not a completed Proposition A.5.",
+      "lean_files": [
+        "SparseLowerTail/Section08/ManuscriptCompactConclusion.lean",
+        "SparseLowerTail/Section08/FamilyCompactReplay.lean",
+        "SparseLowerTail/Section08/FamilyCompactAssembly.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Certificate.ManuscriptCompactConclusion.ordered_pattern_iff_contacts",
+        "SparseLowerTail.Certificate.ManuscriptCompactConclusion.compact_nonnegative_and_exact_zeros",
+        "SparseLowerTail.Certificate.ManuscriptCompactConclusion.compact_statement_in_L",
+        "SparseLowerTail.Certificate.ManuscriptCompactConclusion.compact_statement_of_table"
+      ],
+      "explicit_inputs": [
+        "internal:full-family-replay-table"
+      ],
+      "baseline": {
+        "environment": "proposition",
+        "statement_sha256": "4890e17c5ae5550b1281dbcd4869246bdb568cbbfcea1dbdf244a900664d5084",
+        "proof_sha256": null,
+        "source_line": 6117,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      },
+      "current_display_reference": {
+        "kind": "proposition",
+        "number": "A.5",
+        "pdf_page": 68
+      },
+      "verification_record": "data/compact-conclusion-laptop-pilot-check.json"
     }
   ],
   "current_manuscript_inventory": "manuscript-coverage.json",

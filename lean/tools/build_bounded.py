@@ -69,12 +69,19 @@ def main():
     p.add_argument('--logs',required=True,type=Path)
     p.add_argument('--workers',type=int,default=2)
     p.add_argument('--lean-threads',type=int,default=1)
+    p.add_argument('--lakefile',type=Path,help='Alternate Lake configuration, for example the capped laptop profile')
     p.add_argument('--dry-run',action='store_true')
     p.add_argument('--no-cache-precheck',action='store_true',
                    help='Use one bounded Lake invocation per project module, including cached modules')
     args = p.parse_args()
     if not 1 <= args.workers <= 8 or not 1 <= args.lean_threads <= 8:
         p.error('workers and lean-threads must be in 1..8')
+    lake = ['lake']
+    if args.lakefile is not None:
+        config = args.lakefile.resolve()
+        if not config.is_file():
+            p.error('Lake configuration does not exist: '+str(config))
+        lake += ['--file',str(config)]
     graph = dependency_graph(args.target)
     # Reject cycles before launching anything. The live scheduler repeats the
     # indegree calculation to keep its completion state separate from planning.
@@ -89,7 +96,7 @@ def main():
     logs = args.logs.resolve()
     logs.mkdir(parents=True,exist_ok=True)
     (logs/'plan.json').write_text(json.dumps({'target':args.target,'modules':len(graph),
-        'workers':args.workers,'lean_threads':args.lean_threads,
+        'workers':args.workers,'lean_threads':args.lean_threads,'lake_command':lake,
         'dependencies':{m:sorted(d) for m,d in sorted(graph.items())}},indent=2)+'\n')
     if args.dry_run:
         print(json.dumps({'phase':'plan_only','modules':len(graph),'target':args.target}))
@@ -101,7 +108,7 @@ def main():
     def check_cache(batch):
         filename = logs/f'cache-check-{len(cache_checks):04d}.log'
         with filename.open('w') as output:
-            rc = subprocess.run(['lake','--no-build','build',*batch],cwd=ROOT,env=env,
+            rc = subprocess.run([*lake,'--no-build','build',*batch],cwd=ROOT,env=env,
                                 stdout=output,stderr=subprocess.STDOUT).returncode
         cache_checks.append(dict(modules=batch,exit_code=rc,log=filename.name))
         (logs/'cache-checks.json').write_text(json.dumps(cache_checks,indent=2)+'\n')
@@ -118,7 +125,7 @@ def main():
     def run(module):
         filename = logs/(module+'.log')
         with filename.open('w') as output:
-            rc = subprocess.run(['lake','build',module],cwd=ROOT,env=env,
+            rc = subprocess.run([*lake,'build',module],cwd=ROOT,env=env,
                                 stdout=output,stderr=subprocess.STDOUT).returncode
         return rc
     def record(phase,active):

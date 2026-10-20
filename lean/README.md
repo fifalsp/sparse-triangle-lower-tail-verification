@@ -2,15 +2,15 @@
 
 Updated October 20, 2026.
 
-The current project builds **553 modules and 18,655 theorems**. The full axiom
+The current project builds **568 modules and 19,811 theorems**. The full axiom
 audit passes with only `propext`, `Classical.choice`, and `Quot.sound`.
-[Build and audit record](data/family-hessian-perturbation-check.json).
+[Build and audit record](data/compact-conclusion-laptop-pilot-check.json).
 
 The development covers the authors' variational and probabilistic arguments.
 Cited external and standard classical results are explicit hypotheses, listed
 in [ASSUMPTIONS.md](ASSUMPTIONS.md). The
-[proof map](proof-map.json) has 111 manuscript labels and 1,072 declaration
-links. The [latest manuscript comparison](manuscript-review-20261020-hessian-radius.json)
+[proof map](proof-map.json) has 112 manuscript labels and 1,080 declaration
+links. The [latest manuscript comparison](manuscript-review-20261020-compact-pilot.json)
 reports no statement or proof changes against the live Overleaf source.
 The [numbering record](../data/manuscript-numbering-20261020.json) matches all
 95 numbered results to the current PDF. The main variational theorem is
@@ -79,3 +79,22 @@ python3 tools/check_lean_map.py
 ```
 
 Historical checks are retained in [data/](data/) and Git history.
+
+
+## Quiet laptop replay
+
+The F1 sample checks 47 leaves and a complete 11-leaf subdivision under a
+one-worker, one-thread, 8 GiB Lean memory cap. The
+[record](data/compact-conclusion-laptop-pilot-check.json) also checks the
+literal Proposition A.5 deduction from the remaining finite family replay.
+
+From the repository root, a generated target can be run with:
+
+```sh
+python3 hpc/run_laptop_replay.py SparseLowerTail.Section05.ApexReplay.F1.FullCube --logs results/laptop-f1 --hours 24
+```
+
+The runner uses low priority, checks the full target, applies the unchanged
+axiom audit, and verifies that its proof sources did not change during the run.
+It allows one laptop runner at a time. Build logs retain partial progress if
+the time or memory limit is reached.

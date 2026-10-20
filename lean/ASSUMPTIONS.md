@@ -297,3 +297,12 @@ The ABB radius-transfer argument is now proved in
 contact and padded-margin conditions are checked for the 21 existing test
 leaves, including one complete subtree. The full padded leaf table remains
 an internal numerical obligation. No external hypothesis was added.
+
+
+### Literal ordered compact conclusion (Proposition A.5)
+
+`ManuscriptCompactConclusion.lean` proves the nonnegative value and exact
+two-contact zero set in the independent L coordinate. Its finite-table adapter
+keeps `internal:full-family-replay-table` explicit until all leaf inequalities
+and subdivision coverage are checked. Sorting and the converse zero identities
+are proved; no external hypothesis was added.

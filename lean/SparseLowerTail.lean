@@ -196,3 +196,5 @@ import SparseLowerTail.Section07.PenalizedEndpointProof
 import SparseLowerTail.Section05.PolygonFan
 import SparseLowerTail.Section08.ManuscriptFamilyRadius
 import SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.CheckedSubtree
+import SparseLowerTail.Section08.ManuscriptCompactConclusion
+import SparseLowerTail.Section05.ApexReplay.F1LaptopPilot

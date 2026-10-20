@@ -1,7 +1,7 @@
 {
   "scope": "All arguments proved by the authors, including probabilistic deductions. Cited external and standard classical theorems may be explicit hypotheses; their paper-specific applications remain obligations.",
   "overleaf_url": "https://www.overleaf.com/project/6acd7ee98a5fed7d56897586",
-  "checked_at_utc": "2026-10-20T13:16:17.225717+00:00",
+  "checked_at_utc": "2026-10-20T13:52:48.045821+00:00",
   "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9",
   "certificate_tables_match": true,
   "mapped_label_changes": {},
@@ -1043,10 +1043,11 @@
       "source_line": 6117,
       "statement_sha256": "4890e17c5ae5550b1281dbcd4869246bdb568cbbfcea1dbdf244a900664d5084",
       "proof_sha256": null,
-      "mapping_status": "needs_mapping",
-      "recorded_status": null,
-      "latest_manuscript_review": "not_yet_mapped",
-      "ownership": "author_argument_or_specialization_to_review"
+      "mapping_status": "mapped",
+      "recorded_status": "conditional_on_full_family_replay",
+      "latest_manuscript_review": "literal_zero_set_deduction_checked_full_numerical_replay_pending",
+      "ownership": "author_argument_or_specialization_to_review",
+      "verification_record": "data/compact-conclusion-laptop-pilot-check.json"
     },
     {
       "paper_label": "appA3:hess",

@@ -1,0 +1,239 @@
+{
+  "checked_at_utc": "2026-10-20T13:52:48.045821+00:00",
+  "source_parent_commit": "e40509237384bcec0b0bc50a442e77f6137faad1",
+  "scope": "The literal ordered compact conclusion is proved from the existing finite replay input, in the independent manuscript L coordinate: nonnegative Phi and zero if and only if the vector is the AAA or ordered ABB contact. The sorting-to-exact-contacts deduction and both converse zero identities are proved. The complete numerical leaf table and coverage remain internal obligations; this is not a completed Proposition A.5.",
+  "sources": [
+    {
+      "path": "SparseLowerTail/Section05/ApexReplay/F1/Boxes000.lean",
+      "sha256": "1f8d43a44296097907bb21165dc30e74276a2fb1a6f318a565447724e3a38de5"
+    },
+    {
+      "path": "SparseLowerTail/Section05/ApexReplay/F1/Boxes062.lean",
+      "sha256": "0a50fcfd9244b1dc92d47059f85a31231de653c0ccc803585684dc7d980251e0"
+    },
+    {
+      "path": "SparseLowerTail/Section05/ApexReplay/F1/Boxes122.lean",
+      "sha256": "d70097ed201416158693025cbe541b7981fad757521d8d824fda7a3c5fda2f74"
+    },
+    {
+      "path": "SparseLowerTail/Section05/ApexReplay/F1/Coverage000.lean",
+      "sha256": "c38e2131bcf3fd08d16d1db523875f82a32a1bea2bad5f88377defdb692e26bb"
+    },
+    {
+      "path": "SparseLowerTail/Section05/ApexReplay/F1/Endpoints0000.lean",
+      "sha256": "1d8ba11c078bd1eefc8bd3d5e0cc312a9f2be523867aaacc7bc448a835f6cb5a"
+    },
+    {
+      "path": "SparseLowerTail/Section05/ApexReplay/F1/Endpoints0001.lean",
+      "sha256": "5967792ca26cfa6269c53120a777f8c050a50c46828f4805cf43a91b49dba0a3"
+    },
+    {
+      "path": "SparseLowerTail/Section05/ApexReplay/F1/Endpoints0002.lean",
+      "sha256": "f93215c0bca26bf47e5bcf329d0dcff533ef6089112ec698478f8d59f19c076d"
+    },
+    {
+      "path": "SparseLowerTail/Section05/ApexReplay/F1/Endpoints0009.lean",
+      "sha256": "4dc6fe12b1ad5fb002f3ba81e763e3035d1c0dfd01080c2b1540199f7b515635"
+    },
+    {
+      "path": "SparseLowerTail/Section05/ApexReplay/F1/Endpoints0015.lean",
+      "sha256": "84faf4ea101d6f6a2fc399c282ff48129277b9043eddf428cc003d3a1404a347"
+    },
+    {
+      "path": "SparseLowerTail/Section05/ApexReplay/F1/Endpoints0016.lean",
+      "sha256": "abe122ebea01b9ee4b69ba678c8fd1b5d8e133f0ae6c71907ff19786663b4e1e"
+    },
+    {
+      "path": "SparseLowerTail/Section05/ApexReplay/F1/Leaves000.lean",
+      "sha256": "d520b602b3df52fd3ddd6df7753f1f3b95ca24ad1424fc6980cb87f86bebc4b9"
+    },
+    {
+      "path": "SparseLowerTail/Section05/ApexReplay/F1/Leaves1000.lean",
+      "sha256": "fbdbccb411b0925ed40d6804b89c5eba22c78ff96c86882da38412ebea0be7af"
+    },
+    {
+      "path": "SparseLowerTail/Section05/ApexReplay/F1/Leaves1953.lean",
+      "sha256": "c9c365acb651dc5d44679192306e090aff736618a5ed931c2ccf1e042ee0e6bf"
+    },
+    {
+      "path": "SparseLowerTail/Section05/ApexReplay/F1LaptopPilot.lean",
+      "sha256": "a47bd4c9909787246984bef86a16ec1266b019e2b762b01a45ab10d29f721bd5"
+    },
+    {
+      "path": "SparseLowerTail/Section08/ManuscriptCompactConclusion.lean",
+      "sha256": "f39356d43e87b30fcf38dd9b020f4a7d7c9ed64f943dc58e2cb33518cf4f74fd"
+    }
+  ],
+  "laptop_pilot": {
+    "leaves": 47,
+    "indices": [
+      [
+        0,
+        15
+      ],
+      [
+        16000,
+        16015
+      ],
+      [
+        31248,
+        31262
+      ]
+    ],
+    "complete_subtree_leaves": 11,
+    "build_status": {
+      "phase": "build_complete",
+      "target": "SparseLowerTail.Section05.ApexReplay.F1LaptopPilot",
+      "total": 176,
+      "completed": 176,
+      "cached": 162,
+      "failed": {},
+      "active": [],
+      "seconds": 165.12456037499942,
+      "workers": 1,
+      "trust_status": "Build scheduling only; final axiom audit is separate"
+    },
+    "runner_check": {
+      "target": "SparseLowerTail.Section05.ApexReplay.F1LaptopPilot",
+      "runner_pid": 39739,
+      "phase": "complete",
+      "started_at_utc": "2026-10-20T13:47:16.298420+00:00",
+      "source_parent_commit": "e40509237384bcec0b0bc50a442e77f6137faad1",
+      "workers": 1,
+      "lean_threads": 1,
+      "lean_memory_cap_mib": 8192,
+      "nice": 15,
+      "time_limit_hours": 0.25,
+      "trust_status": "Full target built and namespace-wide axiom audit passed",
+      "seconds": 14.690545042001759,
+      "max_child_rss_bytes_macos": 2825191424,
+      "last_exit_code": 0
+    },
+    "runner_audit": "Axiom audit passed: 6846 project declarations, 4683 theorems; only propext, Classical.choice, Quot.sound allowed.\n",
+    "full_F1_verified": false,
+    "generator": "tools/generate_apex_replay.py",
+    "generator_sha256": "e04a846238d0cd728dd68e2ea9fa6d5dd2c8b826f4f8a9e2636782845e4711fb",
+    "proposal_sha256": "4997d7fb0461771df324de0669d914fdffa0790f336a2cafe8f32aef8d7594a0"
+  },
+  "profile": {
+    "path": "lakefile.laptop.toml",
+    "sha256": "71fa8741678c2cc000e457f39f85baa7e8a05c862525f73d908e64d6d98f1169",
+    "weakLeanArgs": [
+      "-M8192",
+      "-j1"
+    ],
+    "preserves_existing_Lake_cache": true
+  },
+  "runner": {
+    "path": "../hpc/run_laptop_replay.py",
+    "sha256": "f80c8a9549dc7e483f06ab903a05a7a3b35264b1969348afd0c5a66f95959ace",
+    "enforces_single_runner_lock": true,
+    "source_hashes_checked_before_and_after": true
+  },
+  "checks": [
+    {
+      "command": "lake --file lakefile.laptop.toml build SparseLowerTail",
+      "exit_code": 0,
+      "output": "Build completed successfully (3748 jobs). Cached warnings replayed."
+    },
+    {
+      "command": "lake --file lakefile.laptop.toml env lean -M8192 -j1 tools/audit_laptop_f1_and_compact.lean",
+      "exit_code": 0,
+      "output": "'SparseLowerTail.Certificate.ManuscriptCompactConclusion.ordered_pattern_iff_contacts' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.ManuscriptCompactConclusion.compact_nonnegative_and_exact_zeros' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.ManuscriptCompactConclusion.compact_statement_in_L' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.ManuscriptCompactConclusion.compact_statement_of_table' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion0' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion1' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion2' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion3' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion4' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion5' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion6' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion7' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion8' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion9' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion10' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion11' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion12' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion13' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion14' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion15' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion16000' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion16001' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion16002' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion16003' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion16004' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion16005' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion16006' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion16007' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion16008' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion16009' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion16010' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion16011' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion16012' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion16013' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion16014' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion16015' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion31248' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion31249' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion31250' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion31251' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion31252' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion31253' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion31254' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion31255' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion31256' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion31257' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion31258' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion31259' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion31260' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion31261' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.conclusion31262' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.ApexReplay.F1.Coverage000.covered' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "command": "lake --file lakefile.laptop.toml env lean -M8192 -j1 Audit.lean",
+      "exit_code": 0,
+      "output": "Axiom audit passed: 27391 project declarations, 19811 theorems; only propext, Classical.choice, Quot.sound allowed.\n"
+    },
+    {
+      "command": "python3 tools/check_lean_map.py",
+      "exit_code": 0,
+      "output": "Proof-map links passed: 112 labels, 1080 Lean declarations.\n"
+    }
+  ],
+  "audited_public_declarations": 52,
+  "root_project_modules": 568,
+  "root_project_declarations": 27391,
+  "root_project_theorems": 19811,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "base_source_manifest": "family-hessian-perturbation-check.json",
+  "source_manifest_changes": [
+    {
+      "module": "SparseLowerTail",
+      "sha256": "b6a302411afc00407b5fa684d61e857d13ca47a8e98fb8c95a8424ec56f6bc16"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexReplay.F1.Boxes000",
+      "sha256": "1f8d43a44296097907bb21165dc30e74276a2fb1a6f318a565447724e3a38de5"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexReplay.F1.Boxes062",
+      "sha256": "0a50fcfd9244b1dc92d47059f85a31231de653c0ccc803585684dc7d980251e0"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexReplay.F1.Boxes122",
+      "sha256": "d70097ed201416158693025cbe541b7981fad757521d8d824fda7a3c5fda2f74"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexReplay.F1.Coverage000",
+      "sha256": "c38e2131bcf3fd08d16d1db523875f82a32a1bea2bad5f88377defdb692e26bb"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexReplay.F1.Endpoints0000",
+      "sha256": "1d8ba11c078bd1eefc8bd3d5e0cc312a9f2be523867aaacc7bc448a835f6cb5a"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexReplay.F1.Endpoints0001",
+      "sha256": "5967792ca26cfa6269c53120a777f8c050a50c46828f4805cf43a91b49dba0a3"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexReplay.F1.Endpoints0002",
+      "sha256": "f93215c0bca26bf47e5bcf329d0dcff533ef6089112ec698478f8d59f19c076d"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexReplay.F1.Endpoints0009",
+      "sha256": "4dc6fe12b1ad5fb002f3ba81e763e3035d1c0dfd01080c2b1540199f7b515635"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexReplay.F1.Endpoints0015",
+      "sha256": "84faf4ea101d6f6a2fc399c282ff48129277b9043eddf428cc003d3a1404a347"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexReplay.F1.Endpoints0016",
+      "sha256": "abe122ebea01b9ee4b69ba678c8fd1b5d8e133f0ae6c71907ff19786663b4e1e"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexReplay.F1.Leaves000",
+      "sha256": "d520b602b3df52fd3ddd6df7753f1f3b95ca24ad1424fc6980cb87f86bebc4b9"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexReplay.F1.Leaves1000",
+      "sha256": "fbdbccb411b0925ed40d6804b89c5eba22c78ff96c86882da38412ebea0be7af"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexReplay.F1.Leaves1953",
+      "sha256": "c9c365acb651dc5d44679192306e090aff736618a5ed931c2ccf1e042ee0e6bf"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexReplay.F1LaptopPilot",
+      "sha256": "a47bd4c9909787246984bef86a16ec1266b019e2b762b01a45ab10d29f721bd5"
+    },
+    {
+      "module": "SparseLowerTail.Section08.ManuscriptCompactConclusion",
+      "sha256": "f39356d43e87b30fcf38dd9b020f4a7d7c9ed64f943dc58e2cb33518cf4f74fd"
+    }
+  ],
+  "source_manifest_sha256": "a7907e6dda824a7e09a79e679a1fc60b00bcb6ec023a0f74b18ec3a9e603cb94",
+  "manuscript_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9",
+  "remaining_internal_obligations": [
+    "critical numerical certificates (two nonapex regions and F1)",
+    "full ABB/exterior compact-family replays",
+    "full padded ABB replay at the exact binary64 radius",
+    "latest-source combined integration"
+  ]
+}

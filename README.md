@@ -12,6 +12,7 @@ Updated October 20, 2026.
 | Python interval verification | All 42 cover regions, both family Hessian neighborhoods, and the full compact family domain; zero unresolved boxes | [Full run](certificates/release/run.json) |
 | Lean full-domain nonapex certificates | **34 of 36 regions** | [Build and axiom-audit records](hpc/results-20261020-0238/verified-regions.json) |
 | Lean full-domain apex certificates | **5 of 6 fans: F2, F3, F4, F5, F6** | [Build and axiom-audit records](hpc/results-20261020-0238/verified-regions.json) |
+| Polygon fan (`lem:fan`) | Ray-exit fan cover and closing-edge exclusion, including boundary cases | [Lean build and nine axiom audits](lean/data/polygon-fan-check.json) |
 | Euler equation and penalized gap | Positive unique multiplier and quantitative bounds; Δ(10⁻³)>0.028 | [Lean build and 30 axiom audits](lean/data/analytic-review-check.json) |
 | Cut metric (`lem:cut`) | Sharp weighted bound, counting bounds, bijective compactness and real-kernel pseudometric identities | [Lean build and 26 axiom audits](lean/data/kernel-cut-check.json) |
 | Penalized coexistence constants (`lem:penconstants`) | All five printed brackets for z_c, γ_c, C(γ_c), r₋ and r₊ | [Lean build and 56 axiom audits](lean/data/penalized-digits-check.json) |
@@ -38,7 +39,7 @@ Updated October 20, 2026.
 | Sparse Bernoulli entropy (`lem:fp`) | Uniform comparison with the sparse entropy, including the sharp quadratic upper bound | [Lean build and axiom audit](lean/data/sparse-entropy-check.json) |
 | Near-minimizer stability (`lem:stability`) | Approximate feasibility and optimality imply proximity to an actual minimizer after a measure-preserving bijection | [Lean build and axiom audit](lean/data/near-minimizers-check.json) |
 | Lean family AAA neighborhood | Nonnegativity and the unique AAA zero for every L ∈ [3.9, 9.5] | [Formalization record](lean/README.md) |
-| Current Lean project root | Full build and standard-axiom audit of **18,257 theorems** passed | [Root build and audit](lean/data/analytic-review-check.json) |
+| Current Lean project root | Full build and standard-axiom audit of **18,275 theorems** passed | [Root build and audit](lean/data/polygon-fan-check.json) |
 
 Apex fan **F4** is the latest completion, bringing the full-region
 Lean total to **39 of 42**. Completed nonapex indices are 1–11 and 13–35 (indices start at zero).

@@ -1781,3 +1781,12 @@ current penalized-gap endpoint argument is checked with branch penalty >0.496,
 constant minimum <0.468 from the trial s=0.3, and gap >0.028. The
 [record](data/analytic-review-check.json) contains 30 public audits, deterministic
 regeneration, and the full root audit of 18,257 theorems.
+
+
+### 2026-10-20 — Generic polygon fan
+
+The generic polygon fan lemma is checked using a compact convex polygon's
+cyclic boundary-edge presentation. The ray-exit step and the closing-triangle
+height argument are proved, including boundary-apex and degenerate-triangle
+cases. The [record](data/polygon-fan-check.json) contains nine public audits
+and the full root audit of 18,275 theorems.

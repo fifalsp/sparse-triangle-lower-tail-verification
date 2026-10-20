@@ -1,0 +1,61 @@
+{
+  "checked_at_utc": "2026-10-20T11:49:02.250948+00:00",
+  "source_parent_commit": "f7a75df61caf323bca13038da77d1854fe1d8efd",
+  "scope": "The generic fan lemma is proved for a compact convex polygon represented by its vertex list, convex hull, and exact cyclic boundary-edge presentation. From actual compactness, the ray through any non-apex point has a last point on the polygon frontier; the point lies between the apex and that exit. Boundary membership then places it in an edge triangle. A separate barycentric height argument shows that a point below the apex in the closing triangle must equal the apex, including degenerate/boundary cases. The n>=2 indexing and exclusion of the closing edge are proved. No triangle-cover conclusion is assumed in the polygon representation. Existing actual seven-vertex cover proofs remain linked.",
+  "sources": [
+    {
+      "path": "SparseLowerTail/Section05/PolygonFan.lean",
+      "sha256": "ce0dbe664c1f5fdee5310f78932820bfa64f767678f7a8d6eafcadb39fc680f3"
+    }
+  ],
+  "explicit_inputs": [],
+  "checks": [
+    {
+      "command": "LEAN_NUM_THREADS=1 lake build SparseLowerTail",
+      "exit_code": 0,
+      "output": "Build completed successfully (3726 jobs). Cached warnings replayed."
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean tools/audit_polygon_fan.lean",
+      "exit_code": 0,
+      "output": "'SparseLowerTail.Section05.Planar.compact_ray_exit' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.Planar.closing_triangle_height' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.Planar.PolygonBoundary' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.Planar.PolygonBoundary.mem_full_fan' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section05.Planar.PolygonBoundary.mem_lower_fan' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section05.CoverGeometry.mem_fan_of_outer_sides' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section05.CoverGeometry.fan_orientation' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.Planar.six_fan_cover' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.Planar.mem_triangle_of_orient' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean Audit.lean",
+      "exit_code": 0,
+      "output": "Axiom audit passed: 24877 project declarations, 18275 theorems; only propext, Classical.choice, Quot.sound allowed.\n"
+    },
+    {
+      "command": "python3 tools/check_lean_map.py",
+      "exit_code": 0,
+      "output": "Proof-map links passed: 110 labels, 1014 Lean declarations."
+    }
+  ],
+  "audited_public_declarations": 9,
+  "new_public_theorems": 4,
+  "polygon_representation": "Compact convex hull of the listed vertices, with frontier equal to the union of their cyclic consecutive segments. The fan-cover property is derived, not part of this representation.",
+  "manuscript_reviews": {
+    "lem:fan": "The generic fan lemma is proved for a compact convex polygon represented by its vertex list, convex hull, and exact cyclic boundary-edge presentation. From actual compactness, the ray through any non-apex point has a last point on the polygon frontier; the point lies between the apex and that exit. Boundary membership then places it in an edge triangle. A separate barycentric height argument shows that a point below the apex in the closing triangle must equal the apex, including degenerate/boundary cases. The n>=2 indexing and exclusion of the closing edge are proved. No triangle-cover conclusion is assumed in the polygon representation. Existing actual seven-vertex cover proofs remain linked."
+  },
+  "root_project_modules": 546,
+  "root_project_declarations": 24877,
+  "root_project_theorems": 18275,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "base_source_manifest": "analytic-review-check.json",
+  "source_manifest_changes": [
+    {
+      "module": "SparseLowerTail",
+      "sha256": "9582ac7737759660f2659e7e79fcfac9a77f88305c63b492b0b5833f2b8211aa"
+    },
+    {
+      "module": "SparseLowerTail.Section05.PolygonFan",
+      "sha256": "ce0dbe664c1f5fdee5310f78932820bfa64f767678f7a8d6eafcadb39fc680f3"
+    }
+  ],
+  "source_manifest_sha256": "cb06845934e8f80f159925d5bceb55673204374d92602b04f6e8ef4da75f27e7",
+  "manuscript_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+}

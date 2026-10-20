@@ -1,0 +1,27 @@
+import SparseLowerTail
+
+#print axioms SparseLowerTail.Section07.no_downward_crossing
+#print axioms SparseLowerTail.Section07.positive_after_upward_crossing
+#print axioms SparseLowerTail.Section07.deriv_penalizedGap_pos_at_zero
+#print axioms SparseLowerTail.Section07.penalizedCrossing_spec
+#print axioms SparseLowerTail.Section07.penalizedCrossing_lt_fold
+#print axioms SparseLowerTail.Section07.penalizedGap_zero_iff
+#print axioms SparseLowerTail.Section07.penalizedGap_neg_before
+#print axioms SparseLowerTail.Section07.penalizedGap_pos_after
+#print axioms SparseLowerTail.Section07.penalizedGap_fold_pos
+#print axioms SparseLowerTail.Certificate.integral_codegree_eq_degree_square
+#print axioms SparseLowerTail.Certificate.edgeDensity_sq_le_integral_codegree
+#print axioms SparseLowerTail.Certificate.integral_mul_log_codegree_nonpos
+#print axioms SparseLowerTail.Certificate.multiplier_difference_mul_triangle
+#print axioms SparseLowerTail.Certificate.tie_expectation_mul_triangle
+#print axioms SparseLowerTail.Certificate.tie_expectation_bound
+#print axioms SparseLowerTail.Certificate.tie_edgeDensity_eq
+#print axioms SparseLowerTail.Certificate.minimizer_balanced_of_tie_certificate
+#print axioms SparseLowerTail.Section08.middle_branch_parameter_bounds
+#print axioms SparseLowerTail.Section08.middle_branch_log_range
+#print axioms SparseLowerTail.Section08.leftBranch_le_one_fortieth
+#print axioms SparseLowerTail.Section08.middleFamilyCertificate_of_compact
+#print axioms SparseLowerTail.Section02.IsBalanced.exists_relabel
+#print axioms SparseLowerTail.Section08.penalized_crossing_all
+#print axioms SparseLowerTail.Section08.middle_tie_relabeling
+#print axioms SparseLowerTail.Section08.middle_tie_relabeling_of_compact

@@ -684,24 +684,49 @@
     {
       "paper_label": "lem:tieexclusion",
       "status": "proved_conditional_family_certificate",
-      "checked_scope": "Full actual graphon tie exclusion, with exact coefficient range and explicit pointwise certificate positivity/zero-set input. Fubini, Jensen, multiplier difference, expectation bound and final classification proved internally.",
+      "checked_scope": "Full actual graphon tie exclusion and relabeling on the exact current target interval [smallTarget,threshold]. All range, Fubini/Jensen, multiplier, expectation, sign and structure deductions are proved. Ordinary classical CDF transport supplies the relabeling map; the explicit compact-family certificate remains an internal author input.",
       "lean_files": [
-        "SparseLowerTail/Section08/TieExclusion.lean"
+        "SparseLowerTail/Section08/TieExclusion.lean",
+        "SparseLowerTail/Section08/PaperTieAndCrossing.lean",
+        "SparseLowerTail/Section08/FamilyParameterRange.lean",
+        "SparseLowerTail/Section08/ContinuationAssembly.lean",
+        "SparseLowerTail/Section08/FiniteCertificateAssembly.lean",
+        "SparseLowerTail/Section02/RelabelBalanced.lean"
       ],
       "lean_declarations": [
         "SparseLowerTail.Certificate.minimizer_balanced_of_tie_certificate",
-        "SparseLowerTail.Certificate.tie_edgeDensity_eq"
+        "SparseLowerTail.Certificate.tie_edgeDensity_eq",
+        "SparseLowerTail.Certificate.integral_codegree_eq_degree_square",
+        "SparseLowerTail.Certificate.edgeDensity_sq_le_integral_codegree",
+        "SparseLowerTail.Certificate.integral_mul_log_codegree_nonpos",
+        "SparseLowerTail.Certificate.multiplier_difference_mul_triangle",
+        "SparseLowerTail.Certificate.tie_expectation_mul_triangle",
+        "SparseLowerTail.Certificate.tie_expectation_bound",
+        "SparseLowerTail.Section08.middle_branch_parameter_bounds",
+        "SparseLowerTail.Section08.middle_branch_log_range",
+        "SparseLowerTail.Section08.leftBranch_le_one_fortieth",
+        "SparseLowerTail.Section08.middleFamilyCertificate_of_compact",
+        "SparseLowerTail.Section02.IsBalanced.exists_relabel",
+        "SparseLowerTail.Section08.middle_tie_relabeling",
+        "SparseLowerTail.Section08.middle_tie_relabeling_of_compact"
       ],
       "explicit_inputs": [
-        "internal:prop:family"
+        "internal:prop:family",
+        "classical:nonatomic-cdf-transport"
       ],
       "baseline": {
         "environment": "lemma",
-        "statement": "Let $r\\in[r_-,r_*]$, and let $U$ be a minimizer at $r$ with $F(U)=F(B_r)$ and $e(U)\\ge m_r$. Then $U$ is a relabeling of $B_r$.",
         "statement_sha256": "114712bd45ec4ed50e2e182040984b3e19e635f6288bee534845f8deb4943a5a",
-        "proof_sha256": "b3a09cd948a80dd2a7d6377e0307d7869bbcbaa87e4c0e7bc4916c8594d35585",
-        "source_line": 5549
-      }
+        "proof_sha256": "d99cba7aafded7a123039549266ceb0c1593f66537518243375aa5bfcf8e0262",
+        "source_line": 5435,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      },
+      "latest_manuscript_review": {
+        "checked_at_utc": "2026-10-20T11:18:26.422991+00:00",
+        "note": "The current target interval [smallTarget,threshold] is instantiated, its branch/logarithmic parameter bounds are derived, and the full actual graphon conclusion is obtained as a relabeling via the named ordinary classical CDF transport. Fubini/Jensen, multiplier subtraction, exact expectation comparison, coefficient signs, zero patterns and equal edge density are proved internally. Only the explicit compact-family positivity/zero-set certificate remains an internal author input.",
+        "audit_record": "data/paper-tie-check.json"
+      },
+      "verification_record": "data/paper-tie-check.json"
     },
     {
       "paper_label": "prop:cover",
@@ -1836,24 +1861,37 @@
       "paper_label": "lem:zc",
       "baseline": {
         "environment": "lemma",
-        "statement": "There is exactly one $z_c\\in(0,z_m]$ with $\\Delta(z_c)=0$. Moreover, $z_c<10^{-3}$, $\\Delta<0$ on $(0,z_c)$ and $\\Delta>0$ on $(z_c,z_m]$.",
         "statement_sha256": "37a4a53f336e3764b7850d0a119632830d07b0246ad6c3db7a3bd1de1a2e241f",
-        "proof_sha256": "1c058f778de4e1ad94311cb72a1445b335c6adf2de37e67ed6a64941fec92311",
-        "source_line": 4713
+        "proof_sha256": "91adacc14d655b458ace980240d402c2d0dbaa0695e153b9e20db33f4da327b5",
+        "source_line": 4636,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
       },
       "status": "proved",
-      "checked_scope": "Unique penalized crossing constructed below 1/1000, with full signs on the stable branch including the fold endpoint. Compact-superlevel crossing argument replaces the manuscript finite-zero-set argument.",
+      "checked_scope": "The complete current statement, including the unique zero below 1/1000, strict signs before and after it and the fold endpoint. Actual derivative/density-order and compact-superlevel arguments prove the crossing internally.",
       "lean_files": [
         "SparseLowerTail/Section07/SingleCrossing.lean",
-        "SparseLowerTail/Section07/PenalizedCrossing.lean"
+        "SparseLowerTail/Section07/PenalizedCrossing.lean",
+        "SparseLowerTail/Section08/PaperTieAndCrossing.lean"
       ],
       "lean_declarations": [
         "SparseLowerTail.Section07.penalizedCrossing_spec",
         "SparseLowerTail.Section07.penalizedGap_zero_iff",
         "SparseLowerTail.Section07.penalizedGap_neg_before",
-        "SparseLowerTail.Section07.penalizedGap_pos_after"
+        "SparseLowerTail.Section07.penalizedGap_pos_after",
+        "SparseLowerTail.Section07.no_downward_crossing",
+        "SparseLowerTail.Section07.positive_after_upward_crossing",
+        "SparseLowerTail.Section07.deriv_penalizedGap_pos_at_zero",
+        "SparseLowerTail.Section07.penalizedCrossing_lt_fold",
+        "SparseLowerTail.Section07.penalizedGap_fold_pos",
+        "SparseLowerTail.Section08.penalized_crossing_all"
       ],
-      "explicit_inputs": []
+      "explicit_inputs": [],
+      "latest_manuscript_review": {
+        "checked_at_utc": "2026-10-20T11:18:26.422991+00:00",
+        "note": "The full current crossing statement is checked together: exactly one zero below 1/1000 and strict signs on the entire stable branch, including the fold endpoint. The proof uses the already formalized compact-superlevel upward-crossing argument, together with the actual penalized derivative and density ordering, rather than an unproved finiteness assertion.",
+        "audit_record": "data/paper-tie-check.json"
+      },
+      "verification_record": "data/paper-tie-check.json"
     },
     {
       "paper_label": "cor:cover",

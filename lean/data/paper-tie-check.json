@@ -1,0 +1,64 @@
+{
+  "checked_at_utc": "2026-10-20T11:18:26.422991+00:00",
+  "source_parent_commit": "864cecfc42d5fdd750aa89d5f1588d60fe9a7e4a",
+  "scope": "Complete literal current penalized-crossing statement and actual tie-exclusion relabeling on the exact target interval, with all own analytic and parameter deductions proved. The compact-family certificate remains a visible internal author input.",
+  "sources": [
+    {
+      "path": "SparseLowerTail/Section08/PaperTieAndCrossing.lean",
+      "sha256": "19f5fd97741297efa00176ccd6b0e57244986d9a762510b4bc99dad2b06fae8c"
+    }
+  ],
+  "explicit_inputs": [
+    "classical:nonatomic-cdf-transport",
+    "internal:prop:family"
+  ],
+  "checks": [
+    {
+      "command": "LEAN_NUM_THREADS=1 lake build SparseLowerTail",
+      "exit_code": 0,
+      "output": "Build completed successfully (3717 jobs). Cached warnings and normalization suggestions replayed."
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean tools/audit_paper_tie.lean",
+      "exit_code": 0,
+      "output": "'SparseLowerTail.Section07.no_downward_crossing' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.positive_after_upward_crossing' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.deriv_penalizedGap_pos_at_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.penalizedCrossing_spec' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.penalizedCrossing_lt_fold' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.penalizedGap_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.penalizedGap_neg_before' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.penalizedGap_pos_after' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.penalizedGap_fold_pos' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Certificate.integral_codegree_eq_degree_square' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.edgeDensity_sq_le_integral_codegree' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.integral_mul_log_codegree_nonpos' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.multiplier_difference_mul_triangle' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.tie_expectation_mul_triangle' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Certificate.tie_expectation_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Certificate.tie_edgeDensity_eq' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Certificate.minimizer_balanced_of_tie_certificate' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.middle_branch_parameter_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section08.middle_branch_log_range' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section08.leftBranch_le_one_fortieth' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section08.middleFamilyCertificate_of_compact' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section02.IsBalanced.exists_relabel' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section08.penalized_crossing_all' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section08.middle_tie_relabeling' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section08.middle_tie_relabeling_of_compact' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean Audit.lean",
+      "exit_code": 0,
+      "output": "Axiom audit passed: 24726 project declarations, 18143 theorems; only propext, Classical.choice, Quot.sound allowed.\n"
+    },
+    {
+      "command": "python3 tools/check_lean_map.py",
+      "exit_code": 0,
+      "output": "Proof-map links passed: 108 labels, 905 Lean declarations."
+    }
+  ],
+  "audited_public_declarations": 25,
+  "new_public_theorems": 3,
+  "manuscript_reviews": {
+    "lem:zc": "The full current crossing statement is checked together: exactly one zero below 1/1000 and strict signs on the entire stable branch, including the fold endpoint. The proof uses the already formalized compact-superlevel upward-crossing argument, together with the actual penalized derivative and density ordering, rather than an unproved finiteness assertion.",
+    "lem:tieexclusion": "The current target interval [smallTarget,threshold] is instantiated, its branch/logarithmic parameter bounds are derived, and the full actual graphon conclusion is obtained as a relabeling via the named ordinary classical CDF transport. Fubini/Jensen, multiplier subtraction, exact expectation comparison, coefficient signs, zero patterns and equal edge density are proved internally. Only the explicit compact-family positivity/zero-set certificate remains an internal author input."
+  },
+  "root_project_modules": 538,
+  "root_project_declarations": 24726,
+  "root_project_theorems": 18143,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "base_source_manifest": "certificate-uniqueness-check.json",
+  "source_manifest_changes": [
+    {
+      "module": "SparseLowerTail",
+      "sha256": "162755d60a76d188bfcddb5632b9ccedeadaaa07b775e83214e3106d529641f3"
+    },
+    {
+      "module": "SparseLowerTail.Section08.PaperTieAndCrossing",
+      "sha256": "19f5fd97741297efa00176ccd6b0e57244986d9a762510b4bc99dad2b06fae8c"
+    }
+  ],
+  "source_manifest_sha256": "cfb0fc46115d1da86e4ce52419bb4413c4ce9f1d09f8d8ca78395f7abd1120ba",
+  "manuscript_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+}

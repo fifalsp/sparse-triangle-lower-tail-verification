@@ -1731,3 +1731,12 @@ equations with unknown coefficients, including its constant term and physical
 rescalings. All nonzero conditions are proved on the stated branch. The
 [record](data/certificate-uniqueness-check.json) contains 26 public audits
 and the full root audit of 18,140 theorems.
+
+
+### 2026-10-20 — Current crossing and tie conclusions
+
+The penalized crossing is stated with all signs through the closed fold endpoint.
+Tie exclusion is instantiated on the full target interval and yields an actual
+relabeling using classical CDF transport. Its compact-family certificate remains
+an explicit internal input. The [record](data/paper-tie-check.json) contains
+25 public audits and the full root audit of 18,143 theorems.

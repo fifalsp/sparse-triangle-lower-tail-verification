@@ -12,6 +12,7 @@ Updated October 20, 2026.
 | Python interval verification | All 42 cover regions, both family Hessian neighborhoods, and the full compact family domain; zero unresolved boxes | [Full run](certificates/release/run.json) |
 | Lean full-domain nonapex certificates | **34 of 36 regions** | [Build and axiom-audit records](hpc/results-20261020-0238/verified-regions.json) |
 | Lean full-domain apex certificates | **5 of 6 fans: F2, F3, F4, F5, F6** | [Build and axiom-audit records](hpc/results-20261020-0238/verified-regions.json) |
+| Crossing and tie exclusion | Unique penalized crossing and full-interval tie relabeling, with the family certificate input explicit | [Lean build and 25 axiom audits](lean/data/paper-tie-check.json) |
 | Certificate coefficients (`lem:certcoef`) | Printed determinant, unique coefficient solution, and the original value/partial-derivative equations | [Lean build and 26 axiom audits](lean/data/certificate-uniqueness-check.json) |
 | Certificate and support identities | All four weak-duality conclusions, sharp minimizer support data, real-block codegrees and branch contact identity | [Lean build and 52 axiom audits](lean/data/certificate-summary-check.json) |
 | Triangle patterns (`lem:patterns`) | Four-atom law, symmetric partial derivatives, and relabeling from pattern support and balanced mean | [Lean build and 20 axiom audits](lean/data/patterns-check.json) |
@@ -33,7 +34,7 @@ Updated October 20, 2026.
 | Sparse Bernoulli entropy (`lem:fp`) | Uniform comparison with the sparse entropy, including the sharp quadratic upper bound | [Lean build and axiom audit](lean/data/sparse-entropy-check.json) |
 | Near-minimizer stability (`lem:stability`) | Approximate feasibility and optimality imply proximity to an actual minimizer after a measure-preserving bijection | [Lean build and axiom audit](lean/data/near-minimizers-check.json) |
 | Lean family AAA neighborhood | Nonnegativity and the unique AAA zero for every L ∈ [3.9, 9.5] | [Formalization record](lean/README.md) |
-| Current Lean project root | Full build and standard-axiom audit of **18,140 theorems** passed | [Root build and audit](lean/data/certificate-uniqueness-check.json) |
+| Current Lean project root | Full build and standard-axiom audit of **18,143 theorems** passed | [Root build and audit](lean/data/paper-tie-check.json) |
 
 Apex fan **F4** is the latest completion, bringing the full-region
 Lean total to **39 of 42**. Completed nonapex indices are 1–11 and 13–35 (indices start at zero).

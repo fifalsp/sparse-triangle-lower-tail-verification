@@ -1,0 +1,125 @@
+{
+  "tasks": [
+    {
+      "key": "cover:12",
+      "old_job": 30049194,
+      "checkpoints": [
+        "sparse-lean-cover-checkpoint-30049194.tar.gz"
+      ]
+    },
+    {
+      "key": "apex:1",
+      "old_job": 30049908,
+      "checkpoints": [
+        "sparse-lean-apex-checkpoint-30049908.tar.gz"
+      ]
+    },
+    {
+      "key": "abb",
+      "old_job": 30052586,
+      "checkpoints": [
+        "sparse-lean-abb-live-checkpoint-30052586-2145.tar.gz",
+        "sparse-lean-abb-live-checkpoint-30052586.tar.gz"
+      ]
+    },
+    {
+      "key": "exterior",
+      "old_job": 30056868,
+      "checkpoints": [
+        "sparse-lean-exterior-checkpoint-30056868.tar.gz"
+      ]
+    },
+    {
+      "key": "cover:0",
+      "old_job": 30060676,
+      "checkpoints": [
+        "sparse-lean-cover-checkpoint-30060676.tar.gz"
+      ]
+    },
+    {
+      "key": "apex:4",
+      "old_job": 30067473,
+      "checkpoints": [
+        "sparse-lean-apex-checkpoint-30067473.tar.gz"
+      ]
+    },
+    {
+      "key": "cover:14",
+      "old_job": 30067488,
+      "checkpoints": [
+        "sparse-lean-cover-checkpoint-30067488.tar.gz"
+      ]
+    },
+    {
+      "key": "cover:30",
+      "old_job": 30067494,
+      "checkpoints": [
+        "sparse-lean-cover-checkpoint-30067494.tar.gz"
+      ]
+    },
+    {
+      "key": "cover:9",
+      "old_job": 30067478,
+      "checkpoints": [
+        "sparse-lean-cover-checkpoint-30067478.tar.gz"
+      ]
+    },
+    {
+      "key": "cover:13",
+      "old_job": 30067481,
+      "checkpoints": [
+        "sparse-lean-cover-checkpoint-30067481.tar.gz"
+      ]
+    },
+    {
+      "key": "cover:18",
+      "old_job": 30067484,
+      "checkpoints": [
+        "sparse-lean-cover-checkpoint-30067484.tar.gz"
+      ]
+    },
+    {
+      "key": "cover:19",
+      "old_job": 30067485,
+      "checkpoints": [
+        "sparse-lean-cover-checkpoint-30067485.tar.gz"
+      ]
+    },
+    {
+      "key": "cover:22",
+      "old_job": 30062736,
+      "checkpoints": [
+        "sparse-lean-cover-checkpoint-30062736.tar.gz"
+      ]
+    },
+    {
+      "key": "cover:15",
+      "old_job": 30062956,
+      "checkpoints": [
+        "sparse-lean-cover-checkpoint-30062956.tar.gz"
+      ]
+    },
+    {
+      "key": "cover:31",
+      "old_job": 30067495,
+      "checkpoints": [
+        "sparse-lean-cover-checkpoint-30067495.tar.gz"
+      ]
+    },
+    {
+      "key": "cover:34",
+      "old_job": 30067496,
+      "checkpoints": [
+        "sparse-lean-cover-checkpoint-30067496.tar.gz"
+      ]
+    },
+    {
+      "key": "cover:35",
+      "old_job": 30063541,
+      "checkpoints": [
+        "sparse-lean-cover-checkpoint-30063541.tar.gz"
+      ]
+    }
+  ],
+  "policy": "Submit after all listed originals have ended; skip every successful original. No proof success inferred from checkpoint reuse."
+}

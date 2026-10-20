@@ -396,3 +396,42 @@ A subsequent expanded queue check confirmed **43 jobs RUNNING, 200 cores
 allocated, and no pending jobs**. The increased concurrency is now an
 observed allocation, not merely a request. It does not establish additional
 proof completion; full target builds and axiom audits remain required.
+
+## October 19 evening: 27 regional proofs passed; conditional recovery
+
+The downloaded results bundle contains successful complete Lean targets and
+unchanged axiom audits for 23 nonapex jobs and fans F2, F3, F5 and F6.
+`results-20261019-evening/verified-regions.json` identifies each region, source
+revision, result hash, build counters and audit counts. The bundle is retained
+verbatim. `audit_result_archives.py` checks the evidence; it is not itself a
+kernel checker. Six failure-injection/inventory tests check that missing markers,
+bad audits, incomplete builds and nonzero exits cannot be promoted to success.
+
+Only job 25 is integrated into the default local root at this checkpoint.
+The combined main theorem remains unfinished. The two family replays have
+3,267/7,459 (ABB) and 6,947/12,872 (exterior) build modules completed, with no
+reported failures in those live snapshots. Module counts have unequal costs.
+
+`bouchet-recover.sbatch` is a conditional continuation array for the 17
+outstanding allocations. Submit it with `afterany` dependencies on all original
+jobs in `recovery-manifest-20261019.json`. Each task first checks its original
+full theorem and audit: successful work is skipped before loading dependencies.
+Unfinished work uses the current bounded generator/build path, up to eight
+single-thread workers, and revalidates any restored cache through Lake. The
+array requests 8 CPUs and 192 GiB per task, with at most eight concurrent tasks.
+It preserves generated sources and build artifacts on controlled exit. A
+scheduler kill can prevent this export; a checkpoint never counts as a proof.
+
+`bouchet-assemble.sbatch` runs after the recovery array. Its first gate requires
+all 36 nonapex, six apex, ABB and exterior build/audit records. It then imports
+only generated proof subtrees from their archives, validates/rebuilds the full
+dependency graph, and audits `CompletedReplays.mainTheorem`. The seven named
+external/classical inputs stay explicit, consistent with `lean/ASSUMPTIONS.md`.
+`ASSEMBLY_SUCCESS.txt` is written only after the combined build and audit.
+These runners are deployment machinery, not evidence of completed integration.
+
+Yale's emergency storage reservation currently holds new jobs. The existing
+allocations continue running. ACCESS Delta reports 100 approved CPU core-hours
+and a pending 400-core-hour exchange; the pending amount is not treated as
+usable capacity. The revised 500–1,200 additional core-hour / 2–4 calendar-day
+planning allowance is in `results-20261019-evening/estimate.json`.

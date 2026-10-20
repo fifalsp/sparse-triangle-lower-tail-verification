@@ -13,6 +13,25 @@ A bounded CPU verification job is also deployed on Yale Bouchet. See
 [deployment record](hpc/bouchet-run-20261019.json). Submission is not evidence
 that the remote checks have passed.
 
+## Latest CPU verification checkpoint — October 19, 2026, evening
+
+Full target builds and unchanged axiom audits have passed on Yale for **23/36
+nonapex regions and 4/6 apex fans (F2, F3, F5, F6)**. The archived evidence,
+source revisions and hashes are recorded in
+[`verified-regions.json`](hpc/results-20261019-evening/verified-regions.json).
+Reproduce the evidence inspection with
+`python3 hpc/audit_result_archives.py hpc/triangle-verification-results-20261019-2140.tar.gz --output /tmp/verified-regions.json`.
+This inspects recorded results; it does not replace a Lean kernel replay.
+
+The repository root currently integrates job 25 only. The other completed
+regional results still require source/cache import and a combined build/audit.
+**The main theorem is not yet fully discharged.** Thirteen nonapex regions,
+two apex fans, the ABB and exterior family replays, and final integration remain.
+Existing jobs continue running despite Yale's maintenance hold on new jobs.
+The [updated estimate](hpc/results-20261019-evening/estimate.json) budgets
+500–1,200 additional allocated core-hours and provisionally 2–4 calendar days,
+including maintenance and recovery; this is not a completion guarantee.
+
 ## Lean 4 progress toward the main theorem
 
 A partial Lean formalization is now in [`lean/`](lean/README.md). **Theorem 1.3
@@ -61,17 +80,16 @@ Current completion gates (remote checks and root integration are recorded separa
 | --- | --- | --- |
 | Main-theorem deduction from the two internal certificates | Proved | Supply both certificates |
 | Critical classification: 36 nonapex full-domain jobs | **1/36 integrated** | Job 25 is proved on its full ordered domain; the remaining 35 jobs still require integration |
-| Critical classification: six apex full-domain jobs | 0/6 integrated | All six were running at the last scheduler check; complete proposals are saved |
+| Critical classification: six apex full-domain jobs | 0/6 integrated; 4/6 passed on Yale | F1 and F4 plus combined integration |
 | Compact family: AAA neighborhood | Proved on the full parameter interval | None for this neighborhood |
 | Compact family: ABB neighborhood and exterior | Neither full replay integrated | Both were running at the last scheduler check |
 
 Search proposals, sample leaves, and job submissions are **not** completed gates.
-The latest successful scheduler observation was **2026-10-19 21:25 UTC**:
-43 jobs were running with 200 allocated cores. Browser access subsequently
-stopped responding, so this is a timestamped observation, not a live status.
-No job has been restarted because of that observation failure. The scheduling
-changes and job IDs are recorded in
-[the scale-up record](hpc/bouchet-parallel-scaleup-20261019.json).
+At the evening check on **2026-10-20 01:32 UTC (October 19, 9:32 p.m. EDT)**,
+17 proof jobs were running on 80 allocated cores. Twenty-seven complete regional
+build/audit records were downloaded and inspected; see the checkpoint above.
+Yale reports an emergency storage maintenance reservation on new jobs through
+an expected end of October 20. Existing running jobs were preserved.
 
 Complete proposals for all **42 critical-region jobs** are now saved with
 [raw search provenance](hpc/bouchet-complete-searches-20261019.json). Their

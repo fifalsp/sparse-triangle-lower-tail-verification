@@ -1,0 +1,44 @@
+{
+  "observed_at": "2026-10-20T01:45:00Z",
+  "critical_regions_passed": 27,
+  "critical_regions_total": 42,
+  "critical_proposal_leaves_in_passed_regions": 235849,
+  "critical_proposal_leaves_total": 629046,
+  "critical_regions_remaining": [
+    "apex:1",
+    "apex:4",
+    "cover:0",
+    "cover:12",
+    "cover:13",
+    "cover:14",
+    "cover:15",
+    "cover:18",
+    "cover:19",
+    "cover:22",
+    "cover:30",
+    "cover:31",
+    "cover:34",
+    "cover:35",
+    "cover:9"
+  ],
+  "family_abb_modules": {
+    "completed": 3267,
+    "total": 7459,
+    "seconds": 25843
+  },
+  "family_exterior_modules": {
+    "completed": 6947,
+    "total": 12872,
+    "seconds": 22563
+  },
+  "completed_region_runner_allocated_core_hours": 290.28451927270896,
+  "planning_additional_allocated_core_hours": [
+    500,
+    1200
+  ],
+  "planning_elapsed_calendar_days": [
+    2,
+    4
+  ],
+  "caveat": "Planning allowance, not a measured remaining-work total. Includes incomplete large regions, family replays, possible timeout recovery and combined integration. Yale maintenance may defer new jobs until end of October 20. No percentage claim for the main theorem. No proof errors observed in the inspected bounded family logs."
+}

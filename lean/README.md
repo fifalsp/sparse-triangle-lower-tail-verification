@@ -3,7 +3,7 @@
 The project formalizes the authors' arguments in the paper, with cited external
 and standard classical results supplied as explicit hypotheses.
 
-**Verified:** 25 nonapex full-domain certificates and apex fans F2, F3, F5 and
+**Verified:** 27 nonapex full-domain certificates and apex fans F2, F3, F5 and
 F6 have passed Lean builds and axiom audits. The main variational theorem's
 assembly and the proof components below are checked; the remaining certificates
 and combined integration are in progress.
@@ -43,6 +43,10 @@ the latter uses the explicit classical CDF transform in `lem:relabelB`.
 arguments separately for future manuscript revisions.
 
 ## Completed proof components
+
+- **Sparse Bernoulli entropy (`lem:fp`):** [SparseEntropy.lean](SparseLowerTail/Section03/SparseEntropy.lean)
+  proves the full uniform bound, including both endpoints, using the checked
+  Bregman integral remainder. [Build and three declaration audits](data/sparse-entropy-check.json) passed.
 
 - **Section 3 near-minimizer stability (`lem:stability`):** the limiting-minimizer
   argument and the uniform proximity theorem with a genuine measure-preserving

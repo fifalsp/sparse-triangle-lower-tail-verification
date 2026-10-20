@@ -2,19 +2,21 @@
 
 ## Latest verified results — October 19, 2026
 
-**29 full-region Lean builds and axiom audits have passed:** 25 nonapex
+**31 full-region Lean builds and axiom audits have passed:** 27 nonapex
 regions and apex fans F2, F3, F5 and F6. The new completions are nonapex jobs
-9 and 22. [Evidence](results-20261019-late/verified-regions.json).
+18 and 19. [Evidence](results-20261019-2330/verified-regions.json).
 
-Fifteen original Yale jobs were running on 72 cores at the latest check.
+Thirteen original Yale jobs were running on 64 cores at the latest check.
 Recovery array `30068465` and combined assembly `30068466` remain queued.
 
-Delta job **23029368** is running on node `cn120`; see the
-[deployment record](delta-deployment-20261019.json).
+Delta job **23029964** replaces job `23029368`, which reached its setup
+timeout while installing Lean on project storage. The replacement installs
+Lean on node-local disk and retains sources and build artifacts in project
+storage. [Recovery record](delta-recovery-20261019.json).
 The [Delta runner](delta-replay.sbatch) checks the full F1 apex theorem with
 four single-thread Lean workers. Its allocation is 16 CPUs, 30,000 MiB and
-six hours, capped at 96 CPU core-hours on `biah-delta-cpu`. Sources and build
-artifacts stay in project storage for resumption.
+5.5 hours, capped at 88 CPU core-hours on `biah-delta-cpu`; 95 core-hours
+were available before submission.
 
 ## Yale setup and deployment history
 

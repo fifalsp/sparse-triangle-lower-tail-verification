@@ -156,3 +156,4 @@ import SparseLowerTail.Section05.CoverJobProgramTaylor
 import SparseLowerTail.MainReplayAssembly
 import SparseLowerTail.MainRelabeling
 import SparseLowerTail.Section03.NearMinimizers
+import SparseLowerTail.Section03.SparseEntropy

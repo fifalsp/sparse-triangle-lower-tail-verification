@@ -3,9 +3,9 @@
   "job_id": 23029368,
   "account": "biah-delta-cpu",
   "partition": "cpu",
-  "observed_state": "RUNNING",
+  "observed_state": "FAILED",
   "node": "cn120",
-  "checked_at_utc": "2026-10-20T02:57:46.605812+00:00",
+  "checked_at_utc": "2026-10-20T03:27:16.531903+00:00",
   "target": "SparseLowerTail.Section05.ApexReplay.F1.FullCube",
   "source_commit": "98cbcb3",
   "source_archive_sha256": "21af0f24b456fe6d4ee91a044e8702a8821e84c5353b54309e5468604fb4e9ef",
@@ -22,5 +22,9 @@
   "available_allocation_core_hours_at_submission": 100,
   "original_yale_f1_job": 30049908,
   "reason": "Bounded F1 replay alongside the older long-running Yale F1 build; persistent Delta sources and artifacts support resumption.",
-  "submission_method": "Authenticated Google Chrome Delta OnDemand shell; source and script uploaded through OnDemand Files."
+  "submission_method": "Authenticated Google Chrome Delta OnDemand shell; source and script uploaded through OnDemand Files.",
+  "exit_code": 124,
+  "elapsed": "00:15:37",
+  "failure_stage": "Lean toolchain installation on project storage exceeded its 15-minute setup timeout",
+  "replacement_job_id": 23029964
 }

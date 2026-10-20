@@ -2398,6 +2398,27 @@
         "source_line": 1780,
         "source_sha256": "d40897b38b2e317865f06ded5fddee4892474e169955f948240eb187b9d4296e"
       }
+    },
+    {
+      "paper_label": "lem:fp",
+      "status": "proved",
+      "checked_scope": "Uniform Bernoulli relative-entropy comparison for every p in (0,1) and w in [0,1], including both endpoint values. The complementary entropy Bregman remainder proves nonnegativity and the stated quadratic and uniform upper bounds.",
+      "lean_files": [
+        "SparseLowerTail/Section03/SparseEntropy.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section03.sparse_entropy_remainder",
+        "SparseLowerTail.Section03.sparse_entropy_bounds"
+      ],
+      "explicit_inputs": [],
+      "verification_record": "data/sparse-entropy-check.json",
+      "baseline": {
+        "environment": "lemma",
+        "statement_sha256": "8dac864ef663a27c9d65c5171d7bca85828e58e902b4b615870c0aedea7ec683",
+        "proof_sha256": "03fded091bb4f52211bf3175ac448133ade8c576187cf4bdd3d03dd309b7955a",
+        "source_line": 1674,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      }
     }
   ],
   "current_manuscript_inventory": "manuscript-coverage.json"

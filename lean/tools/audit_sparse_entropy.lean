@@ -1,0 +1,5 @@
+import SparseLowerTail.Section03.SparseEntropy
+
+#print axioms SparseLowerTail.Section03.bregmanRatio_self
+#print axioms SparseLowerTail.Section03.sparse_entropy_remainder
+#print axioms SparseLowerTail.Section03.sparse_entropy_bounds

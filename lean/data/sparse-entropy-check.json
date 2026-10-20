@@ -1,0 +1,21 @@
+{
+  "checked_at_utc": "2026-10-20T03:26:32.742436+00:00",
+  "paper_label": "lem:fp",
+  "source": "SparseLowerTail/Section03/SparseEntropy.lean",
+  "source_sha256": "43356ecd6cf99ab51127d5589ccc98af4d47d1ae93448321f82f4fd0959ea76a",
+  "lean_version": "4.24.0",
+  "checks": [
+    {
+      "command": "lake build SparseLowerTail.Section03.SparseEntropy",
+      "exit_code": 0,
+      "output": "\u2714 [3120/3120] Built SparseLowerTail.Section03.SparseEntropy (3.5s)\nBuild completed successfully (3120 jobs).\n"
+    },
+    {
+      "command": "lake env lean tools/audit_sparse_entropy.lean",
+      "exit_code": 0,
+      "output": "'SparseLowerTail.Section03.bregmanRatio_self' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.sparse_entropy_remainder' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.sparse_entropy_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    }
+  ],
+  "explicit_inputs": [],
+  "manuscript_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+}

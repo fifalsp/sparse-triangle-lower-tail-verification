@@ -10,15 +10,16 @@ Updated October 19, 2026.
 | Check | Completed result | Evidence |
 | --- | --- | --- |
 | Python interval verification | All 42 cover regions, both family Hessian neighborhoods, and the full compact family domain; zero unresolved boxes | [Full run](certificates/release/run.json) |
-| Lean full-domain nonapex certificates | **25 of 36 regions** | [Build and axiom-audit records](hpc/results-20261019-late/verified-regions.json) |
-| Lean full-domain apex certificates | **4 of 6 fans: F2, F3, F5, F6** | [Build and axiom-audit records](hpc/results-20261019-late/verified-regions.json) |
+| Lean full-domain nonapex certificates | **27 of 36 regions** | [Build and axiom-audit records](hpc/results-20261019-2330/verified-regions.json) |
+| Lean full-domain apex certificates | **4 of 6 fans: F2, F3, F5, F6** | [Build and axiom-audit records](hpc/results-20261019-2330/verified-regions.json) |
+| Sparse Bernoulli entropy (`lem:fp`) | Uniform comparison with the sparse entropy, including the sharp quadratic upper bound | [Lean build and axiom audit](lean/data/sparse-entropy-check.json) |
 | Near-minimizer stability (`lem:stability`) | Approximate feasibility and optimality imply proximity to an actual minimizer after a measure-preserving bijection | [Lean build and axiom audit](lean/data/near-minimizers-check.json) |
 | Lean family AAA neighborhood | Nonnegativity and the unique AAA zero for every L ∈ [3.9, 9.5] | [Formalization record](lean/README.md) |
 | Combined Lean project | Full nonapex job 25 imported; combined build and axiom audit passed | [Integration record](hpc/bouchet-job25-completion-20261019.json) |
 
-The latest completed nonapex jobs are **9 and 22**, bringing the full-region
-Lean total to **29 of 42**. Completed nonapex indices are 1–11, 16, 17,
-20–29, 32 and 33 (indices start at zero).
+The latest completed nonapex jobs are **18 and 19**, bringing the full-region
+Lean total to **31 of 42**. Completed nonapex indices are 1–11, 16–29, 32 and
+33 (indices start at zero).
 
 The Lean development also checks the balanced phase classification, printed
 threshold intervals, Euler–Lagrange equations, local rigidity, small-target
@@ -27,7 +28,7 @@ finite certificates. The [proof map](lean/proof-map.json) links each paper
 statement to its Lean declarations; [named inputs](lean/ASSUMPTIONS.md) lists
 the external and classical results used.
 
-**Remaining:** 11 nonapex regions, apex fans F1 and F4, the family ABB and
+**Remaining:** 9 nonapex regions, apex fans F1 and F4, the family ABB and
 exterior replays, and the combined build importing all completed certificates.
 The [cluster record](hpc/README.md) tracks running jobs and recovery.
 The [current manuscript inventory](lean/manuscript-coverage.json) also tracks
@@ -74,7 +75,7 @@ be inspected with:
 
 ```sh
 python3 hpc/audit_result_archives.py \
-  hpc/triangle-verification-results-20261019-2300.tar.gz \
+  hpc/triangle-verification-results-20261019-2330.tar.gz \
   --output /tmp/verified-regions.json
 ```
 

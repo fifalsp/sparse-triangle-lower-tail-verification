@@ -1,0 +1,30 @@
+import SparseLowerTail
+
+#print axioms SparseLowerTail.Section04.digit_D_lower
+#print axioms SparseLowerTail.Section04.digit_D_upper
+#print axioms SparseLowerTail.Section04.transitionParameter_digits
+#print axioms SparseLowerTail.Section04.transition_digits
+#print axioms SparseLowerTail.Section04.threshold_digits
+#print axioms SparseLowerTail.Section04.Refined.transitionParameter_digits
+#print axioms SparseLowerTail.Section04.Refined.tight_branch_ranges
+#print axioms SparseLowerTail.Numerics.log_two_bounds_40
+#print axioms SparseLowerTail.Section04.ManuscriptDigits.digit_log_z_lower
+#print axioms SparseLowerTail.Section04.ManuscriptDigits.digit_log_t_lower
+#print axioms SparseLowerTail.Section04.ManuscriptDigits.digit_kappa_lower
+#print axioms SparseLowerTail.Section04.ManuscriptDigits.digit_normalized_lower
+#print axioms SparseLowerTail.Section04.ManuscriptDigits.digit_log_z_upper
+#print axioms SparseLowerTail.Section04.ManuscriptDigits.digit_log_t_upper
+#print axioms SparseLowerTail.Section04.ManuscriptDigits.digit_kappa_upper
+#print axioms SparseLowerTail.Section04.ManuscriptDigits.digit_normalized_upper
+#print axioms SparseLowerTail.Section04.ManuscriptDigits.digit_D_lower
+#print axioms SparseLowerTail.Section04.ManuscriptDigits.digit_D_upper
+#print axioms SparseLowerTail.Section04.ManuscriptDigits.transitionParameter_digits
+#print axioms SparseLowerTail.Section04.ManuscriptDigits.digit_log_range
+#print axioms SparseLowerTail.Section04.ManuscriptDigits.digit_kappa_range
+#print axioms SparseLowerTail.Section04.ManuscriptDigits.digit_exponent_range
+#print axioms SparseLowerTail.Section04.ManuscriptDigits.digit_exp_lower
+#print axioms SparseLowerTail.Section04.ManuscriptDigits.digit_exp_upper
+#print axioms SparseLowerTail.Section04.ManuscriptDigits.digit_branchB_range
+#print axioms SparseLowerTail.Section04.ManuscriptDigits.digit_branch_ranges
+#print axioms SparseLowerTail.Section04.ManuscriptDigits.transition_digits
+#print axioms SparseLowerTail.Section04.ManuscriptDigits.threshold_digits

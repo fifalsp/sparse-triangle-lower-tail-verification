@@ -1740,3 +1740,13 @@ Tie exclusion is instantiated on the full target interval and yields an actual
 relabeling using classical CDF transport. Its compact-family certificate remains
 an explicit internal input. The [record](data/paper-tie-check.json) contains
 25 public audits and the full root audit of 18,143 theorems.
+
+
+### 2026-10-20 — Exact current threshold bracket
+
+The exact inner bracket used in the current proof of `lem:digits`, of width
+2×10⁻²⁵, has checked strict endpoint signs and all four printed parameter
+ranges over the whole bracket. A 40-decimal logarithm enclosure and rational
+Taylor estimates check the generated proposals. The generator reproduces the
+same source. The [record](data/manuscript-digits-check.json) contains 28 public
+audits and the full root audit of 18,170 theorems.

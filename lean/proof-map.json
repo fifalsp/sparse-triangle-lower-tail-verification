@@ -355,12 +355,14 @@
     {
       "paper_label": "lem:digits",
       "status": "proved",
-      "checked_scope": "Both strict D-sign tests, strict parameter bracket and all four printed a,b,mu,r intervals. Includes rational bounds for actual threshold. Generated proposals are checked by Lean using proved Taylor estimates; generator determinism checked. An additional kernel-checked crossing bracket of width 3e-18 and tighter branch a/b/mu ranges are now available; these refinements are not yet propagated through the apex coefficient interval tables.",
+      "checked_scope": "Both printed outer D signs, the exact current proof inner D signs and strict crossing bracket of width 2e-25, all four printed parameter ranges over the entire inner bracket, and the actual variational threshold enclosure. Every analytic and rational enclosure is kernel checked. Prior wider and refined certificates remain linked.",
       "lean_files": [
         "SparseLowerTail/Numerics/Intervals.lean",
         "SparseLowerTail/Section04/ThresholdDefinitions.lean",
         "SparseLowerTail/Section04/ThresholdDigits.lean",
-        "SparseLowerTail/Section04/RefinedThresholdDigits.lean"
+        "SparseLowerTail/Section04/RefinedThresholdDigits.lean",
+        "SparseLowerTail/Numerics/PreciseLogTwo.lean",
+        "SparseLowerTail/Section04/ManuscriptThresholdDigits.lean"
       ],
       "lean_declarations": [
         "SparseLowerTail.Section04.digit_D_lower",
@@ -369,16 +371,43 @@
         "SparseLowerTail.Section04.transition_digits",
         "SparseLowerTail.Section04.threshold_digits",
         "SparseLowerTail.Section04.Refined.transitionParameter_digits",
-        "SparseLowerTail.Section04.Refined.tight_branch_ranges"
+        "SparseLowerTail.Section04.Refined.tight_branch_ranges",
+        "SparseLowerTail.Numerics.log_two_bounds_40",
+        "SparseLowerTail.Section04.ManuscriptDigits.digit_log_z_lower",
+        "SparseLowerTail.Section04.ManuscriptDigits.digit_log_t_lower",
+        "SparseLowerTail.Section04.ManuscriptDigits.digit_kappa_lower",
+        "SparseLowerTail.Section04.ManuscriptDigits.digit_normalized_lower",
+        "SparseLowerTail.Section04.ManuscriptDigits.digit_log_z_upper",
+        "SparseLowerTail.Section04.ManuscriptDigits.digit_log_t_upper",
+        "SparseLowerTail.Section04.ManuscriptDigits.digit_kappa_upper",
+        "SparseLowerTail.Section04.ManuscriptDigits.digit_normalized_upper",
+        "SparseLowerTail.Section04.ManuscriptDigits.digit_D_lower",
+        "SparseLowerTail.Section04.ManuscriptDigits.digit_D_upper",
+        "SparseLowerTail.Section04.ManuscriptDigits.transitionParameter_digits",
+        "SparseLowerTail.Section04.ManuscriptDigits.digit_log_range",
+        "SparseLowerTail.Section04.ManuscriptDigits.digit_kappa_range",
+        "SparseLowerTail.Section04.ManuscriptDigits.digit_exponent_range",
+        "SparseLowerTail.Section04.ManuscriptDigits.digit_exp_lower",
+        "SparseLowerTail.Section04.ManuscriptDigits.digit_exp_upper",
+        "SparseLowerTail.Section04.ManuscriptDigits.digit_branchB_range",
+        "SparseLowerTail.Section04.ManuscriptDigits.digit_branch_ranges",
+        "SparseLowerTail.Section04.ManuscriptDigits.transition_digits",
+        "SparseLowerTail.Section04.ManuscriptDigits.threshold_digits"
       ],
       "explicit_inputs": [],
       "baseline": {
         "environment": "lemma",
-        "statement": "Let $z_-=0.02005543105488$ and $z_+=0.02005543105489$. Then $D(z_-)>0>D(z_+)$, and hence $z_*\\in(z_-,z_+)$. Moreover \\begin{align*} a_*&\\in[0.01703401908,0.01703401909], & b_*&\\in[0.8493469443,0.8493469444],\\\\ \\mu_*&\\in[11.28627816,11.28627817], & r_*&\\in[0.2096696762,0.2096696763]. \\end{align*}",
         "statement_sha256": "734371a2e4d7d539a9f03adbcee9f4ff1d31331e86137f490f62a3fe0783f721",
-        "proof_sha256": "706f8727db8e3774f30c85c80a3a62b9acca012cae898568c017ae4aa49f7f09",
-        "source_line": 2794
-      }
+        "proof_sha256": "50296b2bed9743f9ec27a9d5d9130f07273b657aea2c4922b0fd6fa68c6d5e7f",
+        "source_line": 2838,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      },
+      "latest_manuscript_review": {
+        "checked_at_utc": "2026-10-20T11:27:09.567691+00:00",
+        "note": "The current proof uses exact inner endpoints 0.0200554310548823255291088 and 0.0200554310548823255291090. Lean now proves their strict D signs, the crossing bracket of width 2e-25, and all four printed a,b,mu,r ranges on that entire closed bracket, using a proved 40-decimal logarithm-of-two enclosure and rational Taylor certificates. The original printed outer signs and earlier refinements are preserved. The proposal generator was rerun and produced identical source.",
+        "audit_record": "data/manuscript-digits-check.json"
+      },
+      "verification_record": "data/manuscript-digits-check.json"
     },
     {
       "paper_label": "lem:active",

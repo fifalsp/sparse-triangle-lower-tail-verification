@@ -1,0 +1,78 @@
+{
+  "checked_at_utc": "2026-10-20T11:27:09.567691+00:00",
+  "source_parent_commit": "48625ba7d572a5e9c0738e8f328407d3f603107a",
+  "scope": "The current proof uses exact inner endpoints 0.0200554310548823255291088 and 0.0200554310548823255291090. Lean now proves their strict D signs, the crossing bracket of width 2e-25, and all four printed a,b,mu,r ranges on that entire closed bracket, using a proved 40-decimal logarithm-of-two enclosure and rational Taylor certificates. The original printed outer signs and earlier refinements are preserved. The proposal generator was rerun and produced identical source.",
+  "sources": [
+    {
+      "path": "SparseLowerTail/Numerics/PreciseLogTwo.lean",
+      "sha256": "2722ad74c9cd29b4910c020ae5683b9246a94c0cf8d651e62fb81f2b82f90910"
+    },
+    {
+      "path": "SparseLowerTail/Section04/ManuscriptThresholdDigits.lean",
+      "sha256": "e77c1fe667a910dbf1b48a8b13e5e1449ce8aedaed2da73f10e31da2141441bd"
+    }
+  ],
+  "generator": {
+    "path": "tools/generate_manuscript_threshold_digits.py",
+    "sha256": "b408df04876384e4911d90c4cea38d3fabf525c64b330547a1f8e17fecd99330",
+    "deterministic_regeneration": true,
+    "generated_source_sha256": "e77c1fe667a910dbf1b48a8b13e5e1449ce8aedaed2da73f10e31da2141441bd"
+  },
+  "inner_bracket": [
+    "0.0200554310548823255291088",
+    "0.0200554310548823255291090"
+  ],
+  "explicit_inputs": [],
+  "checks": [
+    {
+      "command": "LEAN_NUM_THREADS=1 lake build SparseLowerTail",
+      "exit_code": 0,
+      "output": "Build completed successfully (3719 jobs). Cached warnings replayed."
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean tools/audit_manuscript_digits.lean",
+      "exit_code": 0,
+      "output": "'SparseLowerTail.Section04.digit_D_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section04.digit_D_upper' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section04.transitionParameter_digits' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section04.transition_digits' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section04.threshold_digits' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section04.Refined.transitionParameter_digits' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section04.Refined.tight_branch_ranges' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Numerics.log_two_bounds_40' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section04.ManuscriptDigits.digit_log_z_lower' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section04.ManuscriptDigits.digit_log_t_lower' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section04.ManuscriptDigits.digit_kappa_lower' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section04.ManuscriptDigits.digit_normalized_lower' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section04.ManuscriptDigits.digit_log_z_upper' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section04.ManuscriptDigits.digit_log_t_upper' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section04.ManuscriptDigits.digit_kappa_upper' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section04.ManuscriptDigits.digit_normalized_upper' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section04.ManuscriptDigits.digit_D_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section04.ManuscriptDigits.digit_D_upper' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section04.ManuscriptDigits.transitionParameter_digits' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section04.ManuscriptDigits.digit_log_range' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section04.ManuscriptDigits.digit_kappa_range' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section04.ManuscriptDigits.digit_exponent_range' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section04.ManuscriptDigits.digit_exp_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section04.ManuscriptDigits.digit_exp_upper' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section04.ManuscriptDigits.digit_branchB_range' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section04.ManuscriptDigits.digit_branch_ranges' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section04.ManuscriptDigits.transition_digits' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section04.ManuscriptDigits.threshold_digits' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean Audit.lean",
+      "exit_code": 0,
+      "output": "Axiom audit passed: 24755 project declarations, 18170 theorems; only propext, Classical.choice, Quot.sound allowed.\n"
+    },
+    {
+      "command": "python3 tools/check_lean_map.py",
+      "exit_code": 0,
+      "output": "Proof-map links passed: 108 labels, 926 Lean declarations."
+    }
+  ],
+  "audited_public_declarations": 28,
+  "new_public_theorems": 21,
+  "manuscript_reviews": {
+    "lem:digits": "The current proof uses exact inner endpoints 0.0200554310548823255291088 and 0.0200554310548823255291090. Lean now proves their strict D signs, the crossing bracket of width 2e-25, and all four printed a,b,mu,r ranges on that entire closed bracket, using a proved 40-decimal logarithm-of-two enclosure and rational Taylor certificates. The original printed outer signs and earlier refinements are preserved. The proposal generator was rerun and produced identical source."
+  },
+  "root_project_modules": 540,
+  "root_project_declarations": 24755,
+  "root_project_theorems": 18170,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "base_source_manifest": "paper-tie-check.json",
+  "source_manifest_changes": [
+    {
+      "module": "SparseLowerTail",
+      "sha256": "19d7915503c2efcee3205aef2793f029b00eef59629b37ce7989dcf6cab7ee68"
+    },
+    {
+      "module": "SparseLowerTail.Numerics.PreciseLogTwo",
+      "sha256": "2722ad74c9cd29b4910c020ae5683b9246a94c0cf8d651e62fb81f2b82f90910"
+    },
+    {
+      "module": "SparseLowerTail.Section04.ManuscriptThresholdDigits",
+      "sha256": "e77c1fe667a910dbf1b48a8b13e5e1449ce8aedaed2da73f10e31da2141441bd"
+    }
+  ],
+  "source_manifest_sha256": "1a895d916f0c57d04b7a4716a09495cf7eb0fd2dbb48ef225f1f85529a609f9b",
+  "manuscript_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+}

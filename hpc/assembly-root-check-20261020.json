@@ -1,0 +1,27 @@
+{
+  "checked_at_utc": "2026-10-20T07:13:18.360328+00:00",
+  "scope": "The current-source certificate assembly imports the project root, so current and future author proof modules join the bounded build and the namespace-wide axiom audit.",
+  "sources": [
+    {
+      "path": "hpc/assemble_replays.py",
+      "sha256": "f24970b0c94b167aaf0fbdf60b8ccfa1d0bf5804989395f335926da677030a08"
+    },
+    {
+      "path": "hpc/test_result_gates.py",
+      "sha256": "6f516cbefca162ca0738cddd21e93f0079fb2d37ce2a7c43a3b107730b8b4dc1"
+    }
+  ],
+  "validation": {
+    "command": "python3 hpc/test_result_gates.py",
+    "tests_passed": 7,
+    "regression": "The generated CompletedReplays dependency plan includes an author module reachable only from the current root.",
+    "python_compilation": "passed"
+  },
+  "existing_queued_assembly": {
+    "job_id": "30068466",
+    "source_commit": "98cbcb3",
+    "changed": false
+  },
+  "deployment_status": "Use the updated runner with a fresh immutable source archive for the latest-source integration after the current replays; no new job submitted in this step.",
+  "full_combined_build": "Pending all regional/family replays and latest-source deployment."
+}

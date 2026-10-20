@@ -1,7 +1,8 @@
-import io,json,tarfile,tempfile,unittest
+import io,json,tarfile,tempfile,unittest,importlib.util
 from pathlib import Path
 from audit_result_archives import inspect
-from assemble_replays import REQUIRED
+from assemble_replays import REQUIRED,generate
+from unittest.mock import patch
 
 ROOT=Path(__file__).resolve().parent
 class Gates(unittest.TestCase):
@@ -31,4 +32,24 @@ class Gates(unittest.TestCase):
   with self.assertRaises(AssertionError):inspect(self.archive(lambda f:f.update({'logs/exit-code.txt':b'124'})),'test')
  def test_full_inventory_required(self):
   r=json.loads((ROOT/'results-20261019-evening/verified-regions.json').read_text());missing=REQUIRED-set(r['verified_regions']);self.assertEqual(len(missing),17);self.assertIn('abb',missing);self.assertIn('exterior',missing)
+ def test_assembly_schedules_current_author_proofs(self):
+  # A future author module imported only by the root must join the generated
+  # certificate assembly's real bounded-build dependency plan.
+  spec=importlib.util.spec_from_file_location('bounded_build',ROOT.parent/'lean/tools/build_bounded.py')
+  builder=importlib.util.module_from_spec(spec);spec.loader.exec_module(builder)
+  source=generate({f'cover:{i}':{'kind':'cover'} for i in range(36)})
+  with tempfile.TemporaryDirectory() as directory:
+   project=Path(directory)
+   for line in source.splitlines():
+    if line.startswith('import '):
+     module=line.removeprefix('import ')
+     path=project/Path(module.replace('.','/')).with_suffix('.lean')
+     path.parent.mkdir(parents=True,exist_ok=True);path.write_text('')
+   future=project/'SparseLowerTail/Section03/FutureAuthorProof.lean'
+   future.parent.mkdir(parents=True,exist_ok=True);future.write_text('')
+   (project/'SparseLowerTail.lean').write_text('import SparseLowerTail.Section03.FutureAuthorProof\n')
+   (project/'SparseLowerTail/CompletedReplays.lean').write_text(source)
+   with patch.object(builder,'ROOT',project):graph=builder.dependency_graph('SparseLowerTail.CompletedReplays')
+   self.assertIn('SparseLowerTail.Section03.FutureAuthorProof',graph)
+   self.assertIn('SparseLowerTail',graph['SparseLowerTail.CompletedReplays'])
 if __name__=='__main__':unittest.main()

@@ -7,7 +7,9 @@ ROOT=Path(__file__).resolve().parents[1]
 REQUIRED={*(f'cover:{i}' for i in range(36)),*(f'apex:{i}' for i in range(1,7)),'abb','exterior'}
 
 def generate(selected):
- imports=['SparseLowerTail.MainReplayAssembly']; nonapex=[];apex=[]
+ # Include the current root so author proofs added after the regional source
+ # snapshot participate in the combined build and namespace-wide axiom audit.
+ imports=['SparseLowerTail','SparseLowerTail.MainReplayAssembly']; nonapex=[];apex=[]
  for j in range(36):
   if selected[f'cover:{j}']['kind']=='s1':
    imports.append('SparseLowerTail.Section05.S1Replay.FullCube')

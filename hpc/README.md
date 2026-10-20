@@ -31,6 +31,11 @@ four single-thread Lean workers. Its allocation is 16 CPUs, 30,000 MiB and
 5.5 hours, capped at 88 CPU core-hours on `biah-delta-cpu`; 95 core-hours
 were available before submission. The replacement remains pending for priority.
 
+The current assembler imports the project root alongside all regional
+certificates, so the combined build includes the latest author proofs.
+[Seven runner checks passed](assembly-root-check-20261020.json). Queued job
+`30068466` uses the earlier `98cbcb3` snapshot; latest-source integration follows.
+
 ## Yale setup and deployment history
 
 The first job builds the committed Lean root on Linux, runs `Audit.lean`, and

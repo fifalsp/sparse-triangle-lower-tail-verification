@@ -20,7 +20,7 @@ Updated October 20, 2026.
 | Sparse Bernoulli entropy (`lem:fp`) | Uniform comparison with the sparse entropy, including the sharp quadratic upper bound | [Lean build and axiom audit](lean/data/sparse-entropy-check.json) |
 | Near-minimizer stability (`lem:stability`) | Approximate feasibility and optimality imply proximity to an actual minimizer after a measure-preserving bijection | [Lean build and axiom audit](lean/data/near-minimizers-check.json) |
 | Lean family AAA neighborhood | Nonnegativity and the unique AAA zero for every L ∈ [3.9, 9.5] | [Formalization record](lean/README.md) |
-| Combined Lean project | Full nonapex job 25 imported; combined build and axiom audit passed | [Integration record](hpc/bouchet-job25-completion-20261019.json) |
+| Current Lean project root | Section 3 proofs and nonapex job 25 integrated; full build and audit of **17,550 theorems** passed | [Root build and audit](lean/data/current-root-check-20261020-0715.json) |
 
 Apex fan **F4** is the latest completion, bringing the full-region
 Lean total to **39 of 42**. Completed nonapex indices are 1–11 and 13–35 (indices start at zero).

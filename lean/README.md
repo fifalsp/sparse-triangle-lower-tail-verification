@@ -16,6 +16,10 @@ in Section 3. The [revision comparison](manuscript-review-20261019.json) records
 35 changed or renamed mapped labels for review. Build records below retain their
 original manuscript baseline until the corresponding changes are checked.
 
+The [current root build and full axiom audit](data/current-root-check-20261020-0715.json)
+passed with 24,019 project declarations and 17,550 theorems, including the
+Section 3 proofs. All 98 proof-map labels and 580 declaration links resolve.
+
 See [ASSUMPTIONS.md](ASSUMPTIONS.md) for named inputs and
 [proof-map.json](proof-map.json) for declaration links.
 

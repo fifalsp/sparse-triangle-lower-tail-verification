@@ -1,0 +1,1983 @@
+{
+  "checked_at_utc": "2026-10-20T07:15:36.896806+00:00",
+  "source_commit": "c7c3cb14b32422e6840dd70dcb4b9723cb28a731",
+  "scope": "Rebuilt current project root, including all current Section 3 proof modules, and audited its full public and private project namespace.",
+  "checks": [
+    {
+      "command": "LEAN_NUM_THREADS=1 lake build SparseLowerTail",
+      "exit_code": 0,
+      "output": "Built SparseLowerTail (4.0s). Build completed successfully (3629 jobs). Existing cached linter warnings were replayed."
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean Audit.lean",
+      "exit_code": 0,
+      "output": "Axiom audit passed: 24019 project declarations, 17550 theorems; only propext, Classical.choice, Quot.sound allowed.\n"
+    },
+    {
+      "command": "python3 tools/check_lean_map.py",
+      "exit_code": 0,
+      "output": "Proof-map links passed: 98 labels, 580 Lean declarations.\n"
+    }
+  ],
+  "project_module_count": 487,
+  "project_declarations": 24019,
+  "project_theorems": 17550,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "source_manifest_sha256": "84eeb1c513cddb7a0a31e166f16e9b4fe2f48fa24b8acb17671483c91dcc71d3",
+  "source_manifest": [
+    {
+      "module": "SparseLowerTail",
+      "sha256": "cb44d2cec020e506d681d7798c50c32aef2395268e0b06c1f5b725c76a80a229"
+    },
+    {
+      "module": "SparseLowerTail.Balanced",
+      "sha256": "864ea4b40e372d6d1ef048630077e9a76709d58813ad1cf210d6c72f364e7361"
+    },
+    {
+      "module": "SparseLowerTail.BalancedExistence",
+      "sha256": "7fb7f3ae45a055a2ffb73833daf31c937a6b1873499673d3b12b720f6da60cf0"
+    },
+    {
+      "module": "SparseLowerTail.Basic",
+      "sha256": "7ca84fbe72f58d11cbd750e262894434da4c580ca6142d39ee3d6f57627d57f0"
+    },
+    {
+      "module": "SparseLowerTail.CertificateAlgebra",
+      "sha256": "dc8071490e2fb8563bd11297b8058e5f57b1b65ecc084b8b7b8490910741deb8"
+    },
+    {
+      "module": "SparseLowerTail.Continuation",
+      "sha256": "9e252952ea3c12c939417292a8a2fca5add89f1b7b40bf93066fc6a929d9a777"
+    },
+    {
+      "module": "SparseLowerTail.Foundations",
+      "sha256": "53680587bfba2f1128afb82dbe84b6a89354c0b4c80e195b24ac03ef90e10bf3"
+    },
+    {
+      "module": "SparseLowerTail.MainRelabeling",
+      "sha256": "599887de0b5459cdd0ddf87a61d2ea94ff1e63c2c055930c72fe9d67710ae6d3"
+    },
+    {
+      "module": "SparseLowerTail.MainReplayAssembly",
+      "sha256": "5aea401ab0418e43306d189f708fa445ae24046e13c4bff5df8eabe474845c78"
+    },
+    {
+      "module": "SparseLowerTail.MainStatement",
+      "sha256": "7f4ceaa36acf5989d2813d32ce73c47054b633c21f9a3012b5b2f328be5260c2"
+    },
+    {
+      "module": "SparseLowerTail.MainTheoremAssembly",
+      "sha256": "96ce0f6f91822a3f18f243c5bdcea7f51f93482720d401d6a06e356d260ac374"
+    },
+    {
+      "module": "SparseLowerTail.Numerics.BoxReplay",
+      "sha256": "aa66445b1a17597fed0d2f2f960894d0ff0fc38d3b1986f368511f4cdd6c4c29"
+    },
+    {
+      "module": "SparseLowerTail.Numerics.BoxReplayTable",
+      "sha256": "935d3fa63b14690094c23bb2bf61b9aefe473f5233d3d2d34f47190cacaf36f7"
+    },
+    {
+      "module": "SparseLowerTail.Numerics.CachedPolynomial",
+      "sha256": "d867a50390f03392725edcbd5a0c48cdd801bdbe42ae33d800a10ab56fa16606"
+    },
+    {
+      "module": "SparseLowerTail.Numerics.DyadicFiniteSum",
+      "sha256": "e070f543fd04824c1c0a3730ef2d87e8f623341d1293a59a7fa37219710b4bc3"
+    },
+    {
+      "module": "SparseLowerTail.Numerics.DyadicInterval",
+      "sha256": "40c21c4d37fa6068c36b2ac5574f414b3d465c27ba176437697af13089afc6f7"
+    },
+    {
+      "module": "SparseLowerTail.Numerics.DyadicReciprocal",
+      "sha256": "34948d9946e9f2a6bed135ead24650e04d4d15c19d3edf038d628e0928dde29e"
+    },
+    {
+      "module": "SparseLowerTail.Numerics.DyadicTaylorAxes",
+      "sha256": "a3ff1ddd039dd19b9d19491dd8b1762a5c6de598b990a42e5cf2f2f1fed6649b"
+    },
+    {
+      "module": "SparseLowerTail.Numerics.DyadicTaylorFactored",
+      "sha256": "08667462e92761aa1031c2e5c4bec4ebb6e27550149f0117f70b1a816b56d22c"
+    },
+    {
+      "module": "SparseLowerTail.Numerics.ExpEndpoints",
+      "sha256": "9b249b68b6abeb6158d9dc18b8e79325f847c210c73ec01f335d23404af75e48"
+    },
+    {
+      "module": "SparseLowerTail.Numerics.IntervalArithmetic",
+      "sha256": "b55ba6aac95b8e2404dbe3a643738f9141cfb30be06da4f5c4a81bdc463027f4"
+    },
+    {
+      "module": "SparseLowerTail.Numerics.IntervalExpr",
+      "sha256": "3d1666f3e424a9840b90f61a542ffca98a6b4202899b4d6ceed308d8a1d6117b"
+    },
+    {
+      "module": "SparseLowerTail.Numerics.IntervalMagnitudes",
+      "sha256": "7e87600af96ab1353483ffb729cced9f750a9bbca953e7ad71756dba05ae7008"
+    },
+    {
+      "module": "SparseLowerTail.Numerics.IntervalProgram",
+      "sha256": "b0a620909351596ba35b9d27fedbb1efa4c8d212446db108c08ac8f2eddb9be3"
+    },
+    {
+      "module": "SparseLowerTail.Numerics.IntervalTaylor",
+      "sha256": "d21cfc1f6e0cfaf01faa8401a75c412fc17532d9ca83bd29017ae915834dcaae"
+    },
+    {
+      "module": "SparseLowerTail.Numerics.IntervalTaylorAxes",
+      "sha256": "702413351e390da878d1ca7d368be2d505fcea78ff6b8a17e74f1e528bb6eb1a"
+    },
+    {
+      "module": "SparseLowerTail.Numerics.Intervals",
+      "sha256": "d7bc915f13820777ac727c19b10a2f85674d47e206a98654b68e137e5a0bd11b"
+    },
+    {
+      "module": "SparseLowerTail.Numerics.MatrixInterval4",
+      "sha256": "db23359ac07918c7aa5b6f37c6db710e1cd56486e9fcbc26f127b70ddb77552c"
+    },
+    {
+      "module": "SparseLowerTail.Numerics.MatrixSolutionInterval4",
+      "sha256": "9f78185dccafe35f217981eecb690c1332d942a7fa40d3f3136c435659df0066"
+    },
+    {
+      "module": "SparseLowerTail.Numerics.PolynomialSimplify",
+      "sha256": "239385c050346964322f7d898fbc6f559537cdf44f8e448fba84b9e0daf70c52"
+    },
+    {
+      "module": "SparseLowerTail.Numerics.QuadraticAxisBounds",
+      "sha256": "52e060ac0f73d1d06b589da4122efcbd25229ef5a43e6900b3d833175cc971b0"
+    },
+    {
+      "module": "SparseLowerTail.Numerics.RationalExpr",
+      "sha256": "241407c348871a15b53918d94950f40af2ea3fd6f9a6ccd336dc9e9c4103a8e6"
+    },
+    {
+      "module": "SparseLowerTail.Numerics.RationalExprCalculus",
+      "sha256": "f7d36e22119525c784d94ae9957e580709131d898b8c913a6e71adacfd9698a5"
+    },
+    {
+      "module": "SparseLowerTail.Numerics.RationalMatrix4",
+      "sha256": "29cd0317a3a2ecdea65dd97bb9d5ca767e1d3dabb09ed453486e155521c6603d"
+    },
+    {
+      "module": "SparseLowerTail.Numerics.RationalSubstitution",
+      "sha256": "c947fbd82cfddb610c94bea70604d974fec74eda431b00150c779f44c876a059"
+    },
+    {
+      "module": "SparseLowerTail.Numerics.TaylorBounds",
+      "sha256": "2e8e767e1d2467f22d70308798d8fda7d479c1ba058ffb3bf05bdf2201590fa8"
+    },
+    {
+      "module": "SparseLowerTail.Numerics.TaylorParameter",
+      "sha256": "fbd9551071c39dc7d9ba2eb51145809fcc0050bb0bf662efe8f4f9f59d118c57"
+    },
+    {
+      "module": "SparseLowerTail.Numerics.TaylorThird",
+      "sha256": "3895fa03f99738cd7d37927653fc369f6bbb705fa0af1fbc49f8d64fb20fb05b"
+    },
+    {
+      "module": "SparseLowerTail.Numerics.WideExpSmoke",
+      "sha256": "e9d94fee75056aa38fcdcfece0e7c98c7cfbe2344833fab98679feb745d6bec1"
+    },
+    {
+      "module": "SparseLowerTail.Section02.BlockAveraging",
+      "sha256": "ec5b92aab1d83d37925302b44060e5997d11d5e31c9c12a69834db3c6af15b55"
+    },
+    {
+      "module": "SparseLowerTail.Section02.BlockEntropy",
+      "sha256": "e708a18bb65c527674ff4f4691954cf1991396b61c542fd42a766e76882c9cfa"
+    },
+    {
+      "module": "SparseLowerTail.Section02.Bregman",
+      "sha256": "9277b7aa2020602da003d20c5f813d7a11dd54d2f92f40203b75644fd4681cb4"
+    },
+    {
+      "module": "SparseLowerTail.Section02.CutDistance",
+      "sha256": "0258581262fb20dcfbbd10ba0275792ccb7591fe8edfbe07ec34645eefd72ebc"
+    },
+    {
+      "module": "SparseLowerTail.Section02.CutDistanceIdentities",
+      "sha256": "8a8a2b79ab97cd51f5039700d7631feeb201877676b161b147d0e074ab999840"
+    },
+    {
+      "module": "SparseLowerTail.Section02.CutNorm",
+      "sha256": "7e7a35b14838df8f63e5e654cf22eca54f479a85b7366cb29d74dc1d8593c933"
+    },
+    {
+      "module": "SparseLowerTail.Section02.EntropyContinuity",
+      "sha256": "3aa6cef41ae6b3ed36c004128ccc08637980212678cf78e3b637adcac787e07e"
+    },
+    {
+      "module": "SparseLowerTail.Section02.EntropyLSC",
+      "sha256": "e70a15a51a2375ce8ff82a62995b9a79224e085b902c7e6d5d199243b6b743a4"
+    },
+    {
+      "module": "SparseLowerTail.Section02.Existence",
+      "sha256": "b42d5e3471c63904f5b4dae54fd2105a181b3b487dba2c5f0aea617e084e8be1"
+    },
+    {
+      "module": "SparseLowerTail.Section02.Goodman",
+      "sha256": "59e162b0f176d2311b1949ff4746e1f5db194517b3073e054828b00345914148"
+    },
+    {
+      "module": "SparseLowerTail.Section02.Isolation",
+      "sha256": "6a5fae7a23142814d32a580e9227231020014c2327710a2839b7a4a7127bbc75"
+    },
+    {
+      "module": "SparseLowerTail.Section02.MeanGap",
+      "sha256": "a1eb12a61993d688a2c420d481792364e09752305012759dca7234270bc671cc"
+    },
+    {
+      "module": "SparseLowerTail.Section02.Patterns",
+      "sha256": "9a2bac70e2b261cb5db3174a9ad5d7dee68aeb950cac5168e6d51c32a98508b2"
+    },
+    {
+      "module": "SparseLowerTail.Section02.Push",
+      "sha256": "a08a7d8bf863060a09ee036163bff83375cb5785bfacff7add9ce8281e6c83de"
+    },
+    {
+      "module": "SparseLowerTail.Section02.RelabelBalanced",
+      "sha256": "8504432db096be77ac33ff864aab93d258d800186ecc16b3de5a23d5bb483556"
+    },
+    {
+      "module": "SparseLowerTail.Section02.Relabeling",
+      "sha256": "ef70f5c0c26ffb0c48279b5a33e0fc0a0041b5579c944c993074e7a5f41ff7f1"
+    },
+    {
+      "module": "SparseLowerTail.Section02.TriangleL2",
+      "sha256": "180a0b0e3385986cb4a361b7793374cf10c2e9969da3b795d72f723b6194ecee"
+    },
+    {
+      "module": "SparseLowerTail.Section02.ValueContinuity",
+      "sha256": "65b7cb34b50b899e618339192b71bc7982905ad47c1955f8b8241de4c21bfa6a"
+    },
+    {
+      "module": "SparseLowerTail.Section02.WeightedCut",
+      "sha256": "e8222fd4309dbf9c7bfdb7b5430acce3de83629d9b3913f77aafff22b92a2377"
+    },
+    {
+      "module": "SparseLowerTail.Section03.BalancedFiniteColoring",
+      "sha256": "d7da3dde901cb088fc8ecfc5367875364d6751d64e45bf1f5d11af8ace8b0ab2"
+    },
+    {
+      "module": "SparseLowerTail.Section03.BernoulliConcentration",
+      "sha256": "2403cedc65789cdd75dc12e17ae4e4e106d6ff951be6bd45c80cd476148fa073"
+    },
+    {
+      "module": "SparseLowerTail.Section03.ConditionalEntropy",
+      "sha256": "43445290064a22f07aeff7f73d4a1b5e25090d00993b9e3e2963c24311fc1755"
+    },
+    {
+      "module": "SparseLowerTail.Section03.ConditionedProductEntropy",
+      "sha256": "92582deaaf2020d8aab0d5439d9e53d84ef8507ff10da895c34b85ec269045b5"
+    },
+    {
+      "module": "SparseLowerTail.Section03.Decorrelation",
+      "sha256": "3e6da4e3445377f05629ccf4e313ce1a1ce9e777a80116d3387076ad2307106b"
+    },
+    {
+      "module": "SparseLowerTail.Section03.DecorrelationBounds",
+      "sha256": "c34cfdb3acf4ed1ed9c455fd4c8065b871a5eb9cb8cd16493a636def16d051d8"
+    },
+    {
+      "module": "SparseLowerTail.Section03.DiscreteComparison",
+      "sha256": "4e026354b0063cb02b47869275247cba3995531cc5d5440db7041c887810391b"
+    },
+    {
+      "module": "SparseLowerTail.Section03.DiscreteEntropyLower",
+      "sha256": "7528e3354ec94efa008243960c6c3b5d818e14a7f62858b2828a1c6463d25e37"
+    },
+    {
+      "module": "SparseLowerTail.Section03.DiscreteEntropyUpper",
+      "sha256": "5060342f5f786a94a69324278164f9cbde6e0d40609d6139fd3a93a4bb70db56"
+    },
+    {
+      "module": "SparseLowerTail.Section03.DiscreteUpperLimit",
+      "sha256": "4a4756d93f34bda70b34b475eb88c2b300125f5d9c318785a0fc4eb472438516"
+    },
+    {
+      "module": "SparseLowerTail.Section03.EntropyTransfer",
+      "sha256": "d387fb2ef78c3750481133d47e7b939265baaa7d5835313bdd8fa87c0f6db93f"
+    },
+    {
+      "module": "SparseLowerTail.Section03.FiniteCliqueSums",
+      "sha256": "901fef9a0b6e55343235169fc35259e07bda04793ab97e58fe3873095449cb1e"
+    },
+    {
+      "module": "SparseLowerTail.Section03.FiniteColorSums",
+      "sha256": "b785c4afd4b4c17d6f70fc79e45434241c9ef539d2f8d9a5c10fe7d958d40962"
+    },
+    {
+      "module": "SparseLowerTail.Section03.FiniteStepGraphon",
+      "sha256": "54f732518870d8d391e63e032f553e01744233323a75fa27abdd5aeb35f6f020"
+    },
+    {
+      "module": "SparseLowerTail.Section03.FiniteTriangleAttainment",
+      "sha256": "55253196ca9d8503c82532ab35519b19fbee8d281b9f9932e2afefafaff5239f"
+    },
+    {
+      "module": "SparseLowerTail.Section03.FiniteWeightedGraph",
+      "sha256": "c22ee9212f0ed78ce57ceb80a66b9da627bf637f5f053d14b46716475d48425f"
+    },
+    {
+      "module": "SparseLowerTail.Section03.HarrisConditioning",
+      "sha256": "0f521d325461c1d5237973bc20dca63d6b130edd65a835bf0885c0edee9ec3fc"
+    },
+    {
+      "module": "SparseLowerTail.Section03.KS23Inputs",
+      "sha256": "561579a8ddb63b2ce7da548d734658416d7ab30497796de06d85948c09f1b0b5"
+    },
+    {
+      "module": "SparseLowerTail.Section03.MatrixRecoveryBounds",
+      "sha256": "1ac637ea5a31ddf695d42a5ead76f4eceba70535c6f3dbcfb804099dc3efa0ee"
+    },
+    {
+      "module": "SparseLowerTail.Section03.NearMinimizers",
+      "sha256": "cd17bc76d062f7105bd593171fab38373b1db5c112757b322dd2dc67397df6cb"
+    },
+    {
+      "module": "SparseLowerTail.Section03.ProductMarginalEntropy",
+      "sha256": "ff47655d9476652b80b484cf6d4490585eeeccfc335ea6b7c94f9216b4ed1e52"
+    },
+    {
+      "module": "SparseLowerTail.Section03.RecoveryVectors",
+      "sha256": "873b8597efdd1b3f1bbb7a312073333bc78c5b9a088caf78ea4df9611be75dfa"
+    },
+    {
+      "module": "SparseLowerTail.Section03.SparseEntropy",
+      "sha256": "43356ecd6cf99ab51127d5589ccc98af4d47d1ae93448321f82f4fd0959ea76a"
+    },
+    {
+      "module": "SparseLowerTail.Section03.StepMatrixCut",
+      "sha256": "6723109910ec211d6f1d50e24c49e604b33b648cdebb4290abf58cf7d0278556"
+    },
+    {
+      "module": "SparseLowerTail.Section03.TriangleHypergraph",
+      "sha256": "8e46d88fd67283eb0073ec8a28b5c17c3bb669962d956e1bc393e74b2dbcef3f"
+    },
+    {
+      "module": "SparseLowerTail.Section03.TriangleHypergraphCoordinates",
+      "sha256": "6d6ccd92c8113a9b51dd91dba25d2ab8f8e29bdd5e66ade097c8862b6a6b88a4"
+    },
+    {
+      "module": "SparseLowerTail.Section03.UniformStepCompetitors",
+      "sha256": "b1ada0a58a0cc9a4136f16ce22bc77d950df448b419676b05fb67b28a714c12a"
+    },
+    {
+      "module": "SparseLowerTail.Section04.ActiveConstraint",
+      "sha256": "395609a1c211c959099657a16b0b1b1144d957af7ccd02e676a8eb5973f0ea31"
+    },
+    {
+      "module": "SparseLowerTail.Section04.BalancedClassification",
+      "sha256": "d834254d3bc3fed037cc921c68751587fc1170baf87d561bb6085f227bdab082"
+    },
+    {
+      "module": "SparseLowerTail.Section04.BalancedDerivative",
+      "sha256": "aed2fbb1974da3cb65d62d866871e5fede4aca396e180d5a7ea01b6aa318cf8e"
+    },
+    {
+      "module": "SparseLowerTail.Section04.BalancedMinimizers",
+      "sha256": "ea9c92c584c20c7eba9239a7bf698ddc51640979b30c9106d1ead40325a4b9b4"
+    },
+    {
+      "module": "SparseLowerTail.Section04.BalancedPhase",
+      "sha256": "e59d7225b2c5abba93ec6281c798d31ba511e45e2e3c7311c8941ec21126925f"
+    },
+    {
+      "module": "SparseLowerTail.Section04.BalancedStationary",
+      "sha256": "15ef9a4dd0ab936c1e3ace015df1c0872271ac7ddcd03d70105deaa05c2b2c89"
+    },
+    {
+      "module": "SparseLowerTail.Section04.BipodalAlgebra",
+      "sha256": "fe23ac85dbe1b4397fefd6b7dc4d79aee8b1f542bec1daaf53510ba00f22c716"
+    },
+    {
+      "module": "SparseLowerTail.Section04.BipodalDefinitions",
+      "sha256": "03a7ccddeea18c673d4d2508c544e907d70ea592e7f82a4b6ef2ea1b553ceeec"
+    },
+    {
+      "module": "SparseLowerTail.Section04.BipodalGraphon",
+      "sha256": "e397b4965fead0cd0a2196d1992fb1f9f03dddf4a613c5abe261b54510381a3e"
+    },
+    {
+      "module": "SparseLowerTail.Section04.BipodalIntegral",
+      "sha256": "d887041cdbb498dcb17245f20878b168079b0a2fbfd9f3b9daa62e69d7e4598a"
+    },
+    {
+      "module": "SparseLowerTail.Section04.BipodalKernel",
+      "sha256": "e1363243663b8ca63c4b9a06687ce37b2aa0ace2c0cfa8ec8ad03253b723a0eb"
+    },
+    {
+      "module": "SparseLowerTail.Section04.BipodalMinimizers",
+      "sha256": "d81c0188c6899bb4741d4722940b9f6698ed2b0875d3a4c6074c70a0e7acc0d2"
+    },
+    {
+      "module": "SparseLowerTail.Section04.Branch",
+      "sha256": "5d52e83110ed5053cf9250ce6e792f9ba9503a047edd7758678dbe5e7fdf6e66"
+    },
+    {
+      "module": "SparseLowerTail.Section04.BranchInverse",
+      "sha256": "46fcc133d71dd8949892b9061e8696999e5bb707b19a7d1ef6bfb89771878b13"
+    },
+    {
+      "module": "SparseLowerTail.Section04.Codegree",
+      "sha256": "0b4e0abe0bab7f784ec0b9dd23c86c19b74e19392f60362b39ae00865a2accb9"
+    },
+    {
+      "module": "SparseLowerTail.Section04.Crossing",
+      "sha256": "24745e09ea430262099bd41a501d48bfec933a17b8f4b607e1f9b6222fe0b8c2"
+    },
+    {
+      "module": "SparseLowerTail.Section04.CrossingDelta",
+      "sha256": "5c3ca686f03cfe8c04974a412c285dca9f759320eec65b1a89719f7bdfb3eb2d"
+    },
+    {
+      "module": "SparseLowerTail.Section04.CrossingShape",
+      "sha256": "8ad42a80e0db2e5e63021c7fd2f4b41dd1890b4a22db8d59e8e6d553f4c74713"
+    },
+    {
+      "module": "SparseLowerTail.Section04.EntropyGeometry",
+      "sha256": "4f4665e6dbd92e79ae9b9dc6e0f9d19f83e2bcd8fed45eb6452aac68bb6c6561"
+    },
+    {
+      "module": "SparseLowerTail.Section04.EulerLagrange",
+      "sha256": "0ac887c3efdd7b29840d06935e2a3808f1f6e1533dd431b3b02a5a11ec263585"
+    },
+    {
+      "module": "SparseLowerTail.Section04.KernelVariational",
+      "sha256": "7ef5ef16c0db0f3ad8adaf34e16bf1d58cea9821a4afaf7818a2277db84d433a"
+    },
+    {
+      "module": "SparseLowerTail.Section04.Ray",
+      "sha256": "ffe7b7775f3ada77acbd6baf7f00808cad44bbfd3c928643380c2ebc0f3970ff"
+    },
+    {
+      "module": "SparseLowerTail.Section04.RefinedThresholdDigits",
+      "sha256": "d36b5a884f7bff96fcabe17d2b60323201b7945b434f160ea36829dbedf30e8f"
+    },
+    {
+      "module": "SparseLowerTail.Section04.Rescaling",
+      "sha256": "cfb7378e74eb0ad277dea45774ce2c3492563fb722ee9e138ce5d599f73ee4ef"
+    },
+    {
+      "module": "SparseLowerTail.Section04.ThresholdDefinitions",
+      "sha256": "5c5543be80d25bc7a5742be264194c8712d353623cbb0fe4c26b8cf9287264bc"
+    },
+    {
+      "module": "SparseLowerTail.Section04.ThresholdDigits",
+      "sha256": "0ec82c50995f6866d2ad1eb737c5b445ae1a442f8ed9ff1c51874137c531567a"
+    },
+    {
+      "module": "SparseLowerTail.Section04.Unimodal",
+      "sha256": "3a2b50486a600b8a910cc062090145167eadb8114e9a7ae69d439d1adf69e6ae"
+    },
+    {
+      "module": "SparseLowerTail.Section04.VertexIdentity",
+      "sha256": "3a2cc7aac5714253b7ee154eb084a2b8c6fd2dfe885fab06597afdd47b6fd4d2"
+    },
+    {
+      "module": "SparseLowerTail.Section04.VertexReweighting",
+      "sha256": "ba10fd4f04e7f6c6e467a20b3edb0b87ed8b06311b14f9c417ceed76265359fd"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexCalculus",
+      "sha256": "5fae7755003dc28e9676765f048aeed92cdc9fc755347d8f90e85da9e0e918d7"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexContactBox",
+      "sha256": "7751dd5c45131164a9c451e0479ddd631d45fc3ca0cd10515d70bd95ccc22313"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexContactGradients",
+      "sha256": "c21e6e265abc7483cd25b9f4bd7cbe0e86fc4ecf0a74b3f92ad5093fed438234"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexContactValues",
+      "sha256": "3f16a7cd7e25564eab509dfa155f5677250f4e45d42f5ec9ba900645f70531bb"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexCoverAssembly",
+      "sha256": "482c7b7afdd7ca2d81e401b71ce9072d429cec19003c3339b78a4dfc50644ac0"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexExpr",
+      "sha256": "c62cc376e1916782f6b7f8dadddcbf37c64a1e9c6ad89a69e5eb7e648fee584a"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexFanBoxIntervals",
+      "sha256": "8796cf723f2b777e1679fa6cc4d3be5075a89ea5eb9479f7fb41f8c781a3fe64"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexFanIntervals",
+      "sha256": "9b329a9838983e6b15d57a8813a3c0bb307eaf9949064139a79eb6284411ebef"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexFanLocal",
+      "sha256": "ce8dc11f42426ef3529fda1728f009f3304da8cd2a12eaa4c52c1bded3481a3a"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexFanTangency",
+      "sha256": "89e39f31ddf51094298596246ecc7702ef305dfd373c073e8dd4727267c99481"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexLocalBridge",
+      "sha256": "f6ebb12a494eb5454598272da95c37b888b0f91ce7a3d0e75053fbda301331dd"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexLocalIntervals",
+      "sha256": "bde5069e065ae556606bea8644ae20167ce1efcc6f6945ec1ec850222ecc59a8"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexLocalReplay.F1AAA",
+      "sha256": "2244a33b4c10cda91097b1b2b6eba8e72a6d7c79bbc236e3f6364c0b53c5d099"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexLocalReplay.F1ABB",
+      "sha256": "27fa2492bf224314e361cd69e19d81cfc3aa6cf8341a758e3f9bc7c2783304a3"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexLocalReplay.F2AAA",
+      "sha256": "43828a89bd8278bc2f27a354b03fe13869f3c1e35751eb901ee136c20ab117a2"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexLocalReplay.F2ABB",
+      "sha256": "1d662b774e48f17a647a5e42e7b4542eb4c6537d948a19234bb72ed2417299e0"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexLocalReplay.F3AAA",
+      "sha256": "387f01d55f7ef9844232a955cba6f6f3ae1185080df95c4db102e363c1a9e5ca"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexLocalReplay.F3ABB",
+      "sha256": "182ddf750da91c034fdf2b114002fb8309435866e0da1ccca01ae35729db3253"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexLocalReplay.F4AAA",
+      "sha256": "0a35282e694f96bc117e5887cf641536e392c29d4ca6b66bccc2d79a17a8fc4e"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexLocalReplay.F4ABB",
+      "sha256": "9c57839015c502a4febb92253bf221e1009a9377d34e0e929592bf1251b63c44"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexLocalReplay.F5AAA",
+      "sha256": "254e4c0103a17d158b0a29e5478b652ec13cf350b77ec757fb0a441af42d06dc"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexLocalReplay.F5ABB",
+      "sha256": "c78aefb84ddcee02d89a3814a5550c40a56976d603cf639f8cd7979815b596f1"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexLocalReplay.F6AAA",
+      "sha256": "c2e83cd30fa75a9cd646c0e1b20a5ef32ea6719316b4e5eb699e9f49d7699396"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexLocalReplay.F6ABB",
+      "sha256": "c03026dd07269cad60f4147e0e1829a0d3295263d38e3ef0b1cd9602a7338c84"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexPrimitiveIntervals",
+      "sha256": "e0665c59c822b99eedcd6e12daab348984b06987aac2cdbfbd53e9204deaaace"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexRefinedBoxIntervals",
+      "sha256": "bb1554226d280913d71ef9d487c303268131fa6561bb3caa019e5727f1b6582e"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexRefinedFanIntervals",
+      "sha256": "02db4299e0a057b51320c7174c7251f6de222691949b476745094f418c2ea9cd"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexRefinedPrimitives",
+      "sha256": "ce938c7ffe821f8f8ff47fca881e3cdc50c5af0ba86a8b438d0dd048fe5b48f6"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexRefinedSystem",
+      "sha256": "cbfab0a76cbb4a75ebbdd130fcaa02405182f401b1f359700c5579542b9f16ed"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexRefinedTaylorBox",
+      "sha256": "4662ad77806d0d6605558c67079dfbdc66804b92e64e869bde1f3c7ceb973df9"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexReplay.F1Smoke.Boxes000",
+      "sha256": "cd6b4305d730bbdb003838a57289b3d8d088d9e8fa94fb390270edb3cb2adf1e"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexReplay.F1Smoke.Boxes057",
+      "sha256": "0e651505a2c641bc4a10aed080595d5eb9c2859bcc443043f14859ae623e5d5d"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexReplay.F1Smoke.Boxes119",
+      "sha256": "5f587e494d8280e77e0021f2ff29e056d93999bd7939830666c5c7355ab01860"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexReplay.F1Smoke.CheckedLeaves",
+      "sha256": "ab935cb0f6ace8a76cb7d80260a4a4ac5c288a135ceb36276174ce628ff91b2f"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexReplay.F1Smoke.Endpoints0000",
+      "sha256": "4227df782df6dde16ebf717d23d593f7fa2ef5700bd9b03cfed8091cb8e7af3e"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexReplay.F1Smoke.Leaves000",
+      "sha256": "6b96684df7c0b03dbec471e3809d465d5a8d8a6094ee124c9d9ff6f17e2eb37b"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexReplay.F1Smoke.Leaves1907",
+      "sha256": "e8aba8f9d9b9b6ce270555cadbc6c5d8a301c60581dbf3d69306a6a1b834166e"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexReplay.F1Smoke.Leaves920",
+      "sha256": "1cd8108e7ec97547d61fcef3d64d002e44552c071c9466c736bda013d1b8f0a7"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexTangency",
+      "sha256": "d321aa9047774f3f26f9fbe77ad44a19432438643d08812b7dad1f6e9cc20bef"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexTangencyDeterminant",
+      "sha256": "bab846c7008ec88b704f7b4eeac0bd6cc856f79090a747b8f3c823f62eb87ae5"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexTangencyExpressions",
+      "sha256": "38bfe0b08cc2f228140e3467e1d24409a55a599bb03570e1eb60062342c1543b"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexTaylorIntervals",
+      "sha256": "d27d3bbaff20d079478741b21300c3955fab18c5ca70382fdf4b0e1977ae3092"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexTaylorLocal",
+      "sha256": "b889d9653e29ba6bb0fe97bdac1ac6d0a8c617d23a88089011977c54b4898180"
+    },
+    {
+      "module": "SparseLowerTail.Section05.BoxExponentialBounds",
+      "sha256": "55c2561fbf8a329a331d420bec78b03efa38c82ef7610c72aa4af1e3898fb82e"
+    },
+    {
+      "module": "SparseLowerTail.Section05.BoxSegments",
+      "sha256": "da2d2eccee0d183d79ef4add951d5dcb5c410241e7715ae0bb71d46fe058de87"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CertificateConcavity",
+      "sha256": "0b09bf31c18e4717500d37ff3e7eacd92f5836266875463031685995850f5f34"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CheckedCoverJobs",
+      "sha256": "988b7fa6461e297014431e3b92e879e45e9adeeaed48d47d24193cd89965f2ea"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverCertificate",
+      "sha256": "97d2f7f16c20a5ada94274e1dd298a955e7e460835b75919a36c3269713a6ac2"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverCoefficientData",
+      "sha256": "916ecfe2e36824fc3f02724e73e5bbbbe059ffd9594ed470777b02e006262380"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverConstantBounds",
+      "sha256": "72bd6b85263d4bf123d5a908468dc9a2bfe6d684c9ba18ae3d3679feb0a755fe"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverConstantDigits",
+      "sha256": "1b33049f3a8e9d60b88f6410ddd9aa781ff00cc10ba4a68d1d1384baa143eb01"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverDefinitions",
+      "sha256": "60ad0245512d705e03f394914acd48ead0ce833c0e430c815d0a7749b2e85348"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverFanGeometry",
+      "sha256": "35af361a1323e63abea69733ebb199d633075e79e2f2d3a7bba7ecb20861a62b"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverGenericCalculus",
+      "sha256": "4808f4f238a5810f39553f6393d38ec2b57155cb8a0434a4a755a455bfca52d7"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverGenericEnvironment",
+      "sha256": "1090de906c7e4f01a8af390bfce72448309d7c048801735d6a893e6ce11c7671"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverGenericTaylor",
+      "sha256": "624c31a929338677c85add88d71fe6d3590179a68a853458a43b9eacaa385d13"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverGeometryConstants",
+      "sha256": "83d8d245a86964cd034d62895d31eb3f9d531942768e39f82c5d5c9b19b48ab4"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverGeometryData",
+      "sha256": "83efe1fd110b0b0611545c84d9a33cbfa82ecb67b7f0ea184d2af05c2eba8d25"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobIntervals",
+      "sha256": "a8ce72b08c53179c3572ffc3bdf0d8613abef138b19cb8bda4414b6f44f9d60b"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobProgram",
+      "sha256": "20fa23d9f44dafbdb04a7f1c3909a958f82cf6abd99c33c2381c70e4bbb7baf5"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobProgramTaylor",
+      "sha256": "39adbe281f9456c473ed93a1dee35d568e57bcc45983cc901d0caab5fcc28c3f"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job00Smoke.CheckedLeaves",
+      "sha256": "a061fa568227b02ed79b47b67df05143e4157f69823b45ba558fabd31bff508b"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job00Smoke.CheckedSubtree",
+      "sha256": "51ee91316435c105161fcec9b1b1b23852ccf3e72c70804cc8f9bfc75d069fec"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job00Smoke.Coverage00000",
+      "sha256": "2c81c37482cdc29ebce2331c9498c23c5d09502dceb8294624fc813bdd762f82"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job00Smoke.Endpoints0000",
+      "sha256": "21a5e803ede422d50cb647f960ad02074ccc7b5f09ee1320e29de9d6faa2a6c0"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job00Smoke.Leaves00000",
+      "sha256": "f9cab64d58f00d7dcc704e9c1de6b185bd5ea988924dd2e348071e45ef78ac77"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job00Smoke.Leaves00997",
+      "sha256": "02943acaa15753d29f2894244f9db50ffd5ff1a8df43d8b8554127100cd91da4"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Coverage00000",
+      "sha256": "a7d0eb3692f9e4b0fe630a786b5dcc6afcae7a0b34540eed42fa4c1880afe35c"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Coverage00001",
+      "sha256": "2e6dccdc9d270a5369172e215e692e77e5115ba2d609d2812899e6cc2aa9a91e"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Coverage00002",
+      "sha256": "726cf69b6a2ffbc0f52ce41687e61a41b23f5a57583fa93ffda0b1e2ce60be98"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Coverage00003",
+      "sha256": "f7d3897d812234dab28168497663946c49cf222863b2308bfacc780d67e5db39"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Coverage00004",
+      "sha256": "2c3570d19cd27708e6d4444164315e0e2de71f8aa6c5ce3c06821680da118bbf"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Coverage00005",
+      "sha256": "678ca4845ad534157cabd3ba296de022c724b24af4b57fa2dcced9885da957b4"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Coverage00006",
+      "sha256": "252a17714f0aa46043365c0e643c474ad88434470913956b30b35451a05b76f6"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Coverage00007",
+      "sha256": "9ad7b9a5d61fb17db1c50db1e381e1f88c329f813b4bb540f5fbc823a7f60a69"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Coverage00008",
+      "sha256": "f87e0cd97a884888daa088a2a1d62c3a8989112f57cb5c1173afc03bd8f6b566"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Coverage00009",
+      "sha256": "1cb3af65b5e379867749bc41d05cefb6d59979bc172b3758bd55aab8397eb5c6"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Coverage00010",
+      "sha256": "9698537099f0ccb5aa90ebd49d2217c7da5472964d007e27bc95726fc050c136"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Coverage00011",
+      "sha256": "deb082019ecb46ac9ba53c8a05059c782f544f005a340d2d4dae0bb94bc2a98a"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Coverage00012",
+      "sha256": "1e8adb743fc2ec2ba23a2d5d3a7ad22e0e361e92d69f7d1755974fea42ebdd14"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Coverage00013",
+      "sha256": "97a9094870852b47479aa88d4d59dc3191618864f9162321fa76e8b71e385e2a"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Coverage00014",
+      "sha256": "952dd00a149f99f4a122f01799fdcbf4313df7b81e14ed6764f554888fbd1f08"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Coverage00015",
+      "sha256": "07ed8ed93ac2549b18652b46d6bf0d6998d7d8134c46eb16d0dff1e198bfad5a"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Coverage00016",
+      "sha256": "7a7ea849ff24c8c4814c3b52cb5fba83efde2e8ec22158bb780bcfbaafb5acd2"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Coverage00017",
+      "sha256": "c36a870bb5fc49e65ea1b591c9477a1726d5e78e9275ff20e3fc303dcf3fe626"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Coverage00018",
+      "sha256": "1a29d563623a20fe6bd7dc444a991670b049c764fac181e86cbd6ee67cdba646"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Coverage00019",
+      "sha256": "7bfda1c9a077faa49bafaedefca1afc2821f553b8136f4b693e0067d8a00b433"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Coverage00020",
+      "sha256": "745f1d140cc068676c2877c6a2d536055c6dd08747b020ac4ba6043731b22936"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Coverage00021",
+      "sha256": "9f1792857b9f72dcbab6f1b9c6dd6fa29a20b62c8322bb8821b3ed842ed8dd56"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Coverage00022",
+      "sha256": "f973510541c4fcaf1cfc2a610d90143be2b238fafae79f0f21103bdeb6cb6a2c"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Coverage00023",
+      "sha256": "a10e8fdbc045f6265242d34c9fd5a929c0d8ce0e699423acfa3ca51b12b84dfe"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Coverage00024",
+      "sha256": "4f530ffdb4a82b2a9bc4d1ce2ccb93f51d834a77c2e606e41865dcf2455ca9d1"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Coverage00025",
+      "sha256": "5d8cbed007a407a37141be30dd731e803bf35a5820965c403277d02b99bce31b"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Coverage00026",
+      "sha256": "2e3f89d2ac239deb8eda072a4bdebdb35dbbffb067d450bf3637a84e3b498b89"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Coverage00027",
+      "sha256": "32012c514677a559d7f61d1697ef243384f32ccb247d2cd4836c0ca1da6c1b02"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Coverage00028",
+      "sha256": "2ed20b7112ec5f33d0ad4679562ed2fe12bd32c3b5dbde17cfa648288ca804b2"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Coverage00029",
+      "sha256": "d13fd850a50442e6069289e89f1decc093352ba04fe3855656654ee588640107"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Coverage00030",
+      "sha256": "6b0c0df339b3b1071f854553c058507bb9257a1f2ed82acab3fe84281fb925f1"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Coverage00031",
+      "sha256": "cdd8f0cec93c5531e37f19372e6364b2d680020587b2ba6fd196196fcf68ee55"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Coverage00032",
+      "sha256": "e33cc25cc77502cc3f60e0513cfc93c77853f2817d6bf843d7617eaa4275f636"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Coverage00033",
+      "sha256": "ba4d88acc8e7319d410d53efa8e99d1dcf00ef41de5ebc3f879f39e8f912c52f"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Coverage00034",
+      "sha256": "3e226148b4cbc0ceab9f96fbe7806efaf29d25346faaf11aec8b4fe5ed80355f"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Coverage00035",
+      "sha256": "3e5c4818d7557c6dde82386b5848de2634339665166bf47969145d65ebd07b0b"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Coverage00036",
+      "sha256": "fc37664529d313371a9b33f54fd15df06dfdb76231dc2292f396cbdf4ee73b0c"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Coverage00037",
+      "sha256": "61b8dde8ab74a58c5ac6d6ed9d01cc3ee25393060b75c99674521f683e94640a"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Coverage00038",
+      "sha256": "dab0957b7d6ccfd864cf92a96b082b81087f5b81de37c1ef7f25c0b0c53961b5"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Coverage00039",
+      "sha256": "b5d3c61455ff45a330168ec040a2ce741071c5a82f4ba9b6f84235047e799623"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Coverage00040",
+      "sha256": "8f55669a9ffc03afd68f4f1fe4011d98acb2e2fe92b924039bcd301a44f549b2"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Coverage00041",
+      "sha256": "ea97b3854600d0d10bd93d8fdb5bc4bfce510ee77d3c6000c3c72f68397226bf"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Coverage00042",
+      "sha256": "acd9276c2399f7bb88f9985837cc6cc852e480de9ea19a12cede0c3a3c8db95d"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Endpoints0000",
+      "sha256": "15c211f34f6a95f838aaf97d0824963fb983023e5e84322e9362efc60f237256"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Endpoints0001",
+      "sha256": "e6eb19f8bc326078770ecacf90a7e6e1dcc83c61207b1f45536bba8c3e0a1545"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00000",
+      "sha256": "d6667d846c0d3ecc1970c1f9f7d19ed891cdec26c843e6ad766f8c9dc01fccde"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00001",
+      "sha256": "129f2bf06302e9b8845088558bc5ef56e15ca731826e36c0f8dd0ca9938c3508"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00002",
+      "sha256": "d95023c418de6df8b256085d266c3d504c47a6e5b99fd8ab09ba793df6fd5f93"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00003",
+      "sha256": "47f4ccb4a76c2c6cbbca9637698e50303df64c9911567bb634cf663297fe5ab6"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00004",
+      "sha256": "49b8d2be595a6854c057387090ae47b84f81b278bb3f6e7f1724f5e649742f4f"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00005",
+      "sha256": "54f4adefff2797018a2365bd0e75a58a52bde256aa390766168bde97cddd6130"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00006",
+      "sha256": "754d34609de195c9b36f0c9a131b5837c939301bbf651ff9c233404d35ffaf50"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00007",
+      "sha256": "22c561d1bb05e450e7fe5f2048b7bfc67c1a01bf236cab0a3af61a95f220d4ad"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00008",
+      "sha256": "4bf57d5e010d1df48ea698d9283295c4c9a3e0177780a2f06c6f3e2cca48a419"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00009",
+      "sha256": "3290194971d48a5734f6acb2edd56e2f133bffe9ec2115af2c9a2e1dcfb4972b"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00010",
+      "sha256": "1cdaef942ed0143c9fef08b9f56cab645ac9db004efcf1e49f82735e64dd4c66"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00011",
+      "sha256": "3be251beb32b663a2fcab640feaa3cbff68db17e148e98d95b465061641909f6"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00012",
+      "sha256": "03e693e958bec388c5e8234d35cae297a3e2b6e4cc066e4ca13d61913a338155"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00013",
+      "sha256": "e3efc2ac3691d98ceaf02ad9831c7c35d910ceb5f94f953f0c34f6be0d8c0556"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00014",
+      "sha256": "d2470b19d2ab28330cf4ce4b6863b5989e7191a30032fdc554baf63f19b501b8"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00015",
+      "sha256": "45c84f7508803ede14c39afeb1c45bb09acb1445d962ee2c3669beed44ad7743"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00016",
+      "sha256": "e26baba22c7242d6018298e5ceea59ce02a0711056524c7a3266bc41a3809a89"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00017",
+      "sha256": "126b044f24a8f66621665e93cf911daca45e05f721f21c9afb87c134bbcce2ff"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00018",
+      "sha256": "0c409f056e80f6f78c23159f0845a4f4e09b8bdac97ad2c44b180f2457fd30b8"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00019",
+      "sha256": "1aeddffc838b18189b320557133628b62fb3477e552ca6d4fd857689681643fa"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00020",
+      "sha256": "ef29fdd13b81609c1539914c83b03ef5b0168b11ffd0bd08a63d3439b326b8c2"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00021",
+      "sha256": "069c5d8887667eae36150efdaab619be76db3a8923e6155d9b6b4f79fe96418d"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00022",
+      "sha256": "f1d7ed27a2dd4b2a02d212c80f05df129f7eda62d598b4c921835aed60a5312f"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00023",
+      "sha256": "eb18405067c9fac03235358d579ea0c75e0f11c69a65a1b59b384db90c0403ba"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00024",
+      "sha256": "0b340318c60e20a49b6763ee01c33723da45fb9bbdfe697c8577744ea8bf69c0"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00025",
+      "sha256": "6f677f615783ce3b1461e5c7ec1ca83a3c28f8ad014c18d6ad233f8ba761ddeb"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00026",
+      "sha256": "2c6af8202bf4d785eb47436581703b9d417e1879ca8b4db13c40e9cafadce679"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00027",
+      "sha256": "27e338ff885a36c2c41a59786482fc66e6aa42b635265c5774e76e232ad7f181"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00028",
+      "sha256": "7c956402f2ce91774bfd74c9ab816672fccbcbfceb36ec25fccbc7bc6e1fec10"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00029",
+      "sha256": "4c1a12f5db8fc04e7df7f5ee226cc224d20145a918efbc28e0bb58d8abcd8299"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00030",
+      "sha256": "70f7882a014cbe60bcd773df8d966f707f718e66e35711de291dc51afc5c1217"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00031",
+      "sha256": "556a8b8e53e817f414abfe0a30da02f10667b23101f3ffee378b33962e1709d4"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00032",
+      "sha256": "da64fa103f5a07a8266110f432b28b47bc167935dc56e30a95ef8da0b8f89634"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00033",
+      "sha256": "479298b1aa335cdf312256924a9dda33ac6aa48551cdbd7f3420ee996a6ec117"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00034",
+      "sha256": "3a07c00c449cb81cd76f0fe9d5eb9c77457cf8ba312401a065abfe618a47989a"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00035",
+      "sha256": "4ef452be16d2df72f004943410fba240442d993174cc50df4d7dd2436f2e159f"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00036",
+      "sha256": "2bb73b4ee16f00c77b6cc6ac2575944cb2cff51f2260f082b2200c7f806a9611"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00037",
+      "sha256": "138c813c39b026918e06416ec5c731db093d98ea2e632406623a907d5005d066"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00038",
+      "sha256": "0d2d24cf019e157f7c71ae810747ca520ed7a61a5cf78ae0c608c47f3e0bfb58"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00039",
+      "sha256": "6769e70ca2515ad32592a0903410050f1274adc43866cdb3ad66349255a066b9"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00040",
+      "sha256": "f1d6b681cc161bca9bf45eb6fe53c58037dbe1212722e7d8678be32f934f04b4"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00041",
+      "sha256": "67ce4e61c0bc7ecb9ac263bd54c35f2d52b7e401f21fbf6df3e4671354274c33"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00042",
+      "sha256": "ace62c14ee0b65618c160f1d73c89b46ce88eb8d29aa40c83325790ddb606d6c"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00043",
+      "sha256": "fd3327abb681ce6e1c70e0bd609bda5e955285c274c96c8a502d4ad87eaabd8b"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00044",
+      "sha256": "1439b6ae1c3d660f62957e1a2f5593cbd07b5bab66d3e52e65eef5315109a092"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00045",
+      "sha256": "b82b090f2b6fed37c24e556d998c30be61ee01339375bb1fca85b11420f2874c"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00046",
+      "sha256": "b2698c9286b9f28f3db21011796031f982f7f17eff852fd1da8454c3a110251d"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00047",
+      "sha256": "56f786f2dd7fbbfe000455471ea622f4206f5289290c4d46757ef8442682dc4a"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00048",
+      "sha256": "350e59dffb88cf12ca153c756f1e9bb4d7193501675a42ae5712715c2b34bb0a"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00049",
+      "sha256": "8771edffbcafa0dbd2d80ef434501d866c6d101c021be9f6e91c2bfbbeb0f8cd"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00050",
+      "sha256": "c3b28bf1bac1c53050228772b1d40b17d0d2c3d68ba26b2942a110ff3b2cb094"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00051",
+      "sha256": "56d96d6ca9e47f8810eed63636cbcd28892b35506c877a2802fb3e69e6b783fe"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00052",
+      "sha256": "6022790fb535247ccb4c95895d62911f01b8cf8b29fcf055d85642ba34b6f4b8"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00053",
+      "sha256": "beb78568ffa257b3c00db2e3ce452aa67b342ad9a0979ab5972ce4a405f1c4a0"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00054",
+      "sha256": "a633bc76261d2500b18a5cc625f03ddef40ee44fa685b271f5263b2d60bca87a"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00055",
+      "sha256": "f600989b54f75984f68d6d9ec48328c47605d98050165f6a26a3afd958d01451"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00056",
+      "sha256": "0c0999bfb310ceb143028790068a06af43970010c2cc2590bf597386b3351809"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00057",
+      "sha256": "c43c6d4391ccd2b63214df2c9654ec765a777aae3c7e700301ab79afe18c69a1"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00058",
+      "sha256": "d2dfd83aba48196aeca7a2007d93db67a539eae9b1be0d3562d56580bf2b197c"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Leaves00059",
+      "sha256": "68faaea49923a38aa7dc6d9e833bafd1b45d92913c04018195bb598eef4a67ea"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job25Full.Ordered",
+      "sha256": "41ee1a4f026ea7e3a15b289b06edab9312b955d4dc673d9831975f9e94fb3737"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job35Smoke.CheckedLeaves",
+      "sha256": "2ab170ea69a1067510a9f052d4a4ed3f227f4ca341b2ea4e87e2d74c40d8f052"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job35Smoke.CheckedSubtree",
+      "sha256": "a302b6058031b662367269238f65c9446a39d235c9da0158685d20a733d639e6"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job35Smoke.Coverage00000",
+      "sha256": "8f52b6e5c7e73bedff9629f2ae1b48ede243b6081a40e606ebab45cd0bc3d6a3"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job35Smoke.Endpoints0000",
+      "sha256": "decf672d1c1c2c08165c1d0701239904f701805abbd74f56b563522af6d9e2f6"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job35Smoke.Leaves00000",
+      "sha256": "568a61ac03bd4b12c3f7408706dcad80e134c9fd6d41b6c4d3e94ba582b6c088"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job35Smoke.Leaves00779",
+      "sha256": "5e232ebc8e0c22b3a3e5061d0b1bde822e83b38cdfd99c728403b2a4d182c5c2"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobReplay.Job35Smoke.Leaves01782",
+      "sha256": "6d284bda6c81072e22633b47ee73474efa141d9bd3183bf81e566cb674dcf276"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobTaylorBox",
+      "sha256": "c05ee1d80ebbf578d2c3cec1de12eeba514bca20aac154f1031b8bbfb4b96eaf"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverJobsAssembly",
+      "sha256": "c997f01dad1e5fe5f920774df62d03be301f854457c510564c14c6da2cf18fcf"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverNearOne",
+      "sha256": "61f6ea27b2061b5e2db2962d25e3f36876c9973170832b4ded05ecee696b164b"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverPlanarCoverage",
+      "sha256": "3938517dead06a4c5585a5b1ab85078c5d3d282d41d2bcc2613c20a71aebe4ad"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverRefinedJobIntervals",
+      "sha256": "70c878d7c30a8077ee5b52c89b0f1a680ecef1ea6131c70968824df03a65adc2"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverRefinedJobTaylorBox",
+      "sha256": "62ad89fd63ae1665b4261cba283b9a5a9c78dcca21f7af2dd4ecf91aafcd523c"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverReplayTable",
+      "sha256": "54f30b00a184892fe88d1a3031161d257ed6763cda1211a97ddd9674399f2c5c"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverS1CachedTaylor",
+      "sha256": "e4684cf605513394340ab8ea7451ff0ccbd132fed4be6ae0e76bdf6ad1e97b55"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverS1ConstantCache",
+      "sha256": "ee01a9a9a298469bb835001f7f76cff86645bf8a6dc1d08842e0981f43a66085"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverS1ConstantTaylor",
+      "sha256": "ad38e965cbd990e5bc9009f6ebc9d11c1b406a61a288292733cceae4cd2f584b"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverS1DerivativeData",
+      "sha256": "c4148cfb01419f6c4a7bdb337f227ed96a2c7fe9af685d1dd0ce775cf5e34274"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverS1DyadicTaylor",
+      "sha256": "8c43e986051cbe46267a1b7040a9e760bfe9f6198c6fa29eeeab94387756938d"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverS1Environment",
+      "sha256": "24d6fc32501bfde2ba21f37c5c99a496b3f5a49b6e6915a79094f0b9f6271705"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverS1Expr",
+      "sha256": "2f16e06ba7b2b0d8696dcdb598d2b1df7d44665a7f4508fa831e562878cef741"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverS1FirstBox",
+      "sha256": "4b8a5d9a356712660da6171b8520d53207220448f0e715d8a42ae350a733b9b4"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverS1HornerData",
+      "sha256": "d7256200890fcef61531249520a9b71b30bc8f4a6c2d48d9aedec82fbb90595d"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverS1HornerTaylor",
+      "sha256": "7a2c1e05f8d77937597e55d6df93bd3683bff4640d12c3bcbfbb54b9c54f6895"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverS1Near0",
+      "sha256": "c46794a945514fa40625596795e76781e3eee817763629e4c0be5942ba3a5d27"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverS1Near1",
+      "sha256": "513232dcf9da681bfb5b43e9d483787b064090c9518dbc4bf4176f278b48403b"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverS1Near2",
+      "sha256": "aaeb6904079481ba74174587ae6c017303fddfc1db3e800b7c14b5975e61fcab"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverS1Near3",
+      "sha256": "c6a78033f37f36be8b367de8b8a7a4095c9b782373d2a90fe514bcf1af6dc40b"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverS1Near4",
+      "sha256": "42ff061f59e5ebf31ad00ebc99523f85330686786d74ff81863b2d8ff6d7ceb7"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverS1Near5",
+      "sha256": "6ceeaa5761fdd5e85138ea737199153d8eb951838661a2b8e2142ee3110f07e2"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverS1Near6",
+      "sha256": "9882d5fefffb163213b0114c86fababbeff21dc288128aee19d426a9ef370f29"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverS1Near7",
+      "sha256": "1a64c328c9fa2b24ab0c844063d45e11224ba7eccfe144980228468284cb1cbf"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverS1Program",
+      "sha256": "4e70e5d8567f46da08f1f50a01dbbe89829fcdd06b24861a5e9c55b32fcaea41"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverS1ProgramTaylor",
+      "sha256": "38146d1d43eb2f5c6bef500b8d4fd01d1cdf2cefac56069380707dba5831c81b"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverS1Regions",
+      "sha256": "fa4cfdcf9eb9633fee7214ced395598e3a22d30f214e0ed1a9b7b117d5dc8b08"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverS1Tail",
+      "sha256": "870793355e83518e282b052ddc80d59dc9661a045854c97f861bcff8d68a7763"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverS1Taylor",
+      "sha256": "cbde68bcece2ee4940f5ad85f43a4d0537bef0960e7aec5ca9c90058bb5c58c2"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverS1TaylorAxes",
+      "sha256": "e51cf9252ff80ab722a7582e3719bc7d3b02de4aeec6f408685957246c772ae4"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverS1TaylorBox",
+      "sha256": "9b333f9645a8315e969acf95a829f08f6978c959e3c2e0f52fd665383d08d3fa"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverS1TaylorLeaf",
+      "sha256": "ba4b32809601ea4590f990f93789f55ce484d14edbd5dbeb57e73471d9d63a04"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverS1TaylorSlab",
+      "sha256": "121d81193ce951d6b308d5e2b0ea17c110269331897a91179d6f2998b64372a5"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverSupportData",
+      "sha256": "3d751f2939984ad46ebdb4f688e744af715c4cd568467fb118f0bd8c89acdfc0"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverSymmetry",
+      "sha256": "93dd602b09343c332ff7a3b32e61a64c40038f973a9733b735c16c5d592ebbba"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CoverTreeReplay",
+      "sha256": "c7958230daa133396c37ae617a0867e3c102d9fb770482c6649d2de7f43eefe0"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CriticalAssembly",
+      "sha256": "bb2839ec0c306d1880c00666fbdeaa7b29bc2bb1de7771f96a22dd1bdc774d96"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CriticalCoverGeometry",
+      "sha256": "07c17b6a068246538beda320190f9bf6fe43b8a5aa15abfa1d9dbf87d4949a5c"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CriticalEnclosureBounds",
+      "sha256": "f0eb84e10858a5d61862f07418d72b42a48ad872fe50f3661de1bec83b03ae35"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CriticalEnclosureEndpoints",
+      "sha256": "476cc29c25661d68cd9f2608d637fbcf1aeafd2e98f76d28ace656b63ecd35e2"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CriticalEnclosureLeaves0",
+      "sha256": "56c5188a42e1860b0f05b31aad698e1632e1a1431d3c939b86127f06af1a7df8"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CriticalEnclosureLeaves1",
+      "sha256": "f536844e9413b343a521cae5e3ddbf1e86682dd62ac5d58190fdc82060f8e902"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CriticalEnclosureLeaves2",
+      "sha256": "c1f9ab1b1ffa2cc87617b0ad34ebc1964fa4472f5ea866209fdf6d4a66f865a5"
+    },
+    {
+      "module": "SparseLowerTail.Section05.CriticalRegion",
+      "sha256": "a1a4fce4023b9d3b98594da899a22278969545fb55f2afe158e311eac6f2181f"
+    },
+    {
+      "module": "SparseLowerTail.Section05.FiniteCover",
+      "sha256": "d8e01f864f2f719cc3494534021111b90e07a507d900717a3d397e51e7f74490"
+    },
+    {
+      "module": "SparseLowerTail.Section05.Hoeffding",
+      "sha256": "2e10d509fd8d14e3a5b47ea0eb21f9f00645f2010f35a50d27850b4b5bc5ee26"
+    },
+    {
+      "module": "SparseLowerTail.Section05.LogBoxSubdivision",
+      "sha256": "5afa12d3b057a293a4bb3d705191595c26087439ce0f3f968ca63181414e562f"
+    },
+    {
+      "module": "SparseLowerTail.Section05.MinimizerLimits",
+      "sha256": "45d7073d24a112002ddcc55418be0ba50c7a75f045b8485f5418581ca67a3e5d"
+    },
+    {
+      "module": "SparseLowerTail.Section05.OrderedBoxTightening",
+      "sha256": "6aea66e5d9c60490e9aade701de65fd065c95a9d2063d279b3076dccbce77184"
+    },
+    {
+      "module": "SparseLowerTail.Section05.PlanarConvex",
+      "sha256": "20f048f2341161b20da94acd039c1ac295e23ef3a07ebd92ce3f746f8b526c83"
+    },
+    {
+      "module": "SparseLowerTail.Section05.RelaxedLaw",
+      "sha256": "9de7e007d4b0d46a5e5b8da55eb82f5cc234ad0f92306f340d388beb78492b8f"
+    },
+    {
+      "module": "SparseLowerTail.Section05.SortedLogBoxes",
+      "sha256": "8f3c5b7c2ec640dfc1f2ff8e50152d36b88f915707a56fc03d47b1a103855ef7"
+    },
+    {
+      "module": "SparseLowerTail.Section05.StrictImprovement",
+      "sha256": "6623f0b7714eadff8ffa938ee2197cd5a44029da45b38a4add60afaf0965d5f3"
+    },
+    {
+      "module": "SparseLowerTail.Section05.SupportBounds",
+      "sha256": "fd5ebd2dae5c5d7484f935f3741403731ec4e7520eca2846f5aab6f7a3c0a19d"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ThresholdReduction",
+      "sha256": "02770d6778f80d4628cc679687b8d0636193efc5f88be1e75a358489192340ba"
+    },
+    {
+      "module": "SparseLowerTail.Section05.TriangleLaw",
+      "sha256": "82159a066d397ca4fed1bbb5b4819201c740514897b91c473a0846d8aa553d8d"
+    },
+    {
+      "module": "SparseLowerTail.Section05.TriangleLawSymmetry",
+      "sha256": "b6db135a931aceb34783a1edbecdb2eb5819b866958c3bc419b6f48c14388123"
+    },
+    {
+      "module": "SparseLowerTail.Section05.TriangleRelaxation",
+      "sha256": "00ba777d3b042cc45e40cdd3161d96ccf639c998c76b5b04f60ad438ef9d4cb7"
+    },
+    {
+      "module": "SparseLowerTail.Section06.BlockBalance",
+      "sha256": "e0818c3611582565a0bc14da7ae9a28e530ef71627644b3d554cb2f2addf1990"
+    },
+    {
+      "module": "SparseLowerTail.Section06.InsertionLemma",
+      "sha256": "b4563900d14902a15ed94025508832a505910551fb7a5bbc9d89f9c3a934226d"
+    },
+    {
+      "module": "SparseLowerTail.Section06.InsertionMeasure",
+      "sha256": "f8b8616ae418a7a87bb0ae7951f2b880a35facf63096ed2b3ccf4ab142e2e2e0"
+    },
+    {
+      "module": "SparseLowerTail.Section06.InsertionTriangle",
+      "sha256": "c1d6883c50fce8cf915f771946aa8f2bf49611e68ce305556bd043a68c0221bb"
+    },
+    {
+      "module": "SparseLowerTail.Section06.InsertionVariation",
+      "sha256": "1e16ab9051554defc2493068dc595db3f1eb7b2d9e949f67d6ffd6f61cca7c02"
+    },
+    {
+      "module": "SparseLowerTail.Section06.LocalRigidity",
+      "sha256": "46b32c2585771dbb9b10c7970ebbd6f81740a7ff609041123733067f09cb4bc4"
+    },
+    {
+      "module": "SparseLowerTail.Section06.PointwiseRepresentative",
+      "sha256": "90b266663b33894b418240d1b2c74b764aaa5d66fa576ca02280297e763ba52e"
+    },
+    {
+      "module": "SparseLowerTail.Section06.RigidityApproximation",
+      "sha256": "da266c6cc51a463d4d5c4439d8e644a6bd8cf0edd4ae1e13e78ee3996ca24204"
+    },
+    {
+      "module": "SparseLowerTail.Section06.RowPartition",
+      "sha256": "436fc2454dfedb14a458844b59bdca17f0f77bb16f81da4243c434708b9efa9c"
+    },
+    {
+      "module": "SparseLowerTail.Section06.RowRigidity",
+      "sha256": "e31ed5935b6ce662b84690e035b22958b084e1b0520cb80999ed67cc1a447e84"
+    },
+    {
+      "module": "SparseLowerTail.Section06.RowStability",
+      "sha256": "dabc49a65ee54fc16d657a5b5f53215fe68b2e18ce360a34d1e5ed8c216b8a80"
+    },
+    {
+      "module": "SparseLowerTail.Section06.RowsBipodal",
+      "sha256": "917319cbe687fbb0cc7471f3bf7d40ac23844748badb12210ab146659c072443"
+    },
+    {
+      "module": "SparseLowerTail.Section06.Stability",
+      "sha256": "c94a5b8ed9af4a46bf5b36373f4aa251dbc30d545860c4ed9629f7e2431ffc7c"
+    },
+    {
+      "module": "SparseLowerTail.Section06.TwoWell",
+      "sha256": "a0c8d0d24c33203ebfe15e9910be762f008d1b5e608fc32ac63b004aca10d3f8"
+    },
+    {
+      "module": "SparseLowerTail.Section06.TwoWellGrowth",
+      "sha256": "b079e860abaec3256efc73b289c6d666cec477236f85287b69dd1fd3679073a2"
+    },
+    {
+      "module": "SparseLowerTail.Section06.TwoWellMinima",
+      "sha256": "2b0f1bc9d4eeb3063baedc1d73a433dd4d1c6610908cfc2890d4669a63abafc5"
+    },
+    {
+      "module": "SparseLowerTail.Section06.TwoWellRows",
+      "sha256": "a777ed80d748147f338efdd5f2bf1a0c6f33bc86315dbca9785a0d3bbdad82f6"
+    },
+    {
+      "module": "SparseLowerTail.Section06.UniformApproximation",
+      "sha256": "e99fdb173fcded57d39fd752bbcdbc03e126a4b2f91c72ce3fc4ec30242e1d34"
+    },
+    {
+      "module": "SparseLowerTail.Section06.VertexInsertion",
+      "sha256": "2c8f2aa31da9c24e3120cee2c78abd41e63e1d430782b9e4bb2faab422429d1f"
+    },
+    {
+      "module": "SparseLowerTail.Section07.ApproximateEuler",
+      "sha256": "8464fe8986b1f51f5e7f94e420a4812748a6e321f59e3c8601bec31b1e89fe31"
+    },
+    {
+      "module": "SparseLowerTail.Section07.CenteredCodegree",
+      "sha256": "73cfb146acd40a61b079648bd6ca02baa252566dc5563e18064704522a773770"
+    },
+    {
+      "module": "SparseLowerTail.Section07.CenteredCubic",
+      "sha256": "fdb56d47f345594090877d1a49f22187b2f58754c9a8a3d4e43257c4df3cc499"
+    },
+    {
+      "module": "SparseLowerTail.Section07.CenteredKernel",
+      "sha256": "38eb598b539078af721c157b12a2e32566613d6ad1b27160fcc382cfc31853bf"
+    },
+    {
+      "module": "SparseLowerTail.Section07.ClassicalKernelSpectrum",
+      "sha256": "4f3ec5d738371f359608199c358287602a689d5c8bdce870ee8a4175967a8e50"
+    },
+    {
+      "module": "SparseLowerTail.Section07.CodegreeAverages",
+      "sha256": "355e06222c5a75191d97d865b4a3150a5e180fc5dab3190fd641846d9b3d78f2"
+    },
+    {
+      "module": "SparseLowerTail.Section07.CodegreeBlockEquations",
+      "sha256": "4712b3c54f6704beccc2d51512e2456bc1da84509db83b5c9dab54bc87d13f6d"
+    },
+    {
+      "module": "SparseLowerTail.Section07.ConstantRootCalculus",
+      "sha256": "a07a376e961ddd9857586ae07da3dd8b7d6e09d3d34ad9238f48e5712c167630"
+    },
+    {
+      "module": "SparseLowerTail.Section07.DegreeBounds",
+      "sha256": "165755d0c5b2e071d42ae37076b0fd5e580bb56b75bd408fe096828f2b20928c"
+    },
+    {
+      "module": "SparseLowerTail.Section07.EigenfunctionBlocks",
+      "sha256": "fd98a71846364b8c0594f3b63ebd55b5a656606ed08042126ce230c35ccc08c6"
+    },
+    {
+      "module": "SparseLowerTail.Section07.ExponentialRowEstimate",
+      "sha256": "dc71fe59f01f3e36f1c3d9905b9db5c67e6bfbaba49f7ae4254352fc9e1de1ed"
+    },
+    {
+      "module": "SparseLowerTail.Section07.ExternalReduction",
+      "sha256": "98df5d15938d9b4b157930732861ec215614d45a10e73ee8228d5c761cef89b3"
+    },
+    {
+      "module": "SparseLowerTail.Section07.Fold",
+      "sha256": "3073f0b27a4b3915fffd54bbe82fb5150f502ba4173882ca1aff818f582248ba"
+    },
+    {
+      "module": "SparseLowerTail.Section07.KernelActionCalculus",
+      "sha256": "4c6c1ae54b5fd72aee3165d5fb01a425643db5abf100b8d7b90532015f18d2bc"
+    },
+    {
+      "module": "SparseLowerTail.Section07.PenalizedCrossing",
+      "sha256": "06c10e81b9e5b4a0161593f0ddc91a7631af3e28d9acd0296bb8f288a43084e7"
+    },
+    {
+      "module": "SparseLowerTail.Section07.PenalizedGap",
+      "sha256": "d2d2bcc4813ed05a8d2ab1e9f0f6643d7b8c57102105279409ad4277adc5df0d"
+    },
+    {
+      "module": "SparseLowerTail.Section07.PenalizedHessian",
+      "sha256": "47722c2e0f6c5038f9c1d288affbdc8405e9f261b7dee4799c3bea6b57fd03ed"
+    },
+    {
+      "module": "SparseLowerTail.Section07.PenalizedMultiplier",
+      "sha256": "78d9261ddc4bcafed8ee80d90fc609ce731e9debafaa20d6482c775a407a6fe7"
+    },
+    {
+      "module": "SparseLowerTail.Section07.PenalizedPhase",
+      "sha256": "7433a09b33c1d0838db435cbe45ef4d8ccd5cd2ace754a5374e9a2fb96512fad"
+    },
+    {
+      "module": "SparseLowerTail.Section07.PenalizedQuadratic",
+      "sha256": "4e7ee09c5289eee5799a3564127cf7d520f1ff145f55dce73bb0c1cc5a893120"
+    },
+    {
+      "module": "SparseLowerTail.Section07.PenalizedScalar",
+      "sha256": "da6050b7d625669a4f70e275057a0885ed3a025854ddb9ba070c74c59645fbaa"
+    },
+    {
+      "module": "SparseLowerTail.Section07.PenalizedSecondVariation",
+      "sha256": "b11037807067e768d052bf5a6a03d2d1f07a3fc4e8b0f29b28fc13bda0e4e2f0"
+    },
+    {
+      "module": "SparseLowerTail.Section07.PenalizedUpper",
+      "sha256": "4d20343b31bfa278ca184c7ff5e6400934e612dde4ef43397507460c4bdcc461"
+    },
+    {
+      "module": "SparseLowerTail.Section07.PenalizedValue",
+      "sha256": "9e18a61a33c706da3a8ab77cb43777a79e847f7276d095d814d3988e110c0cff"
+    },
+    {
+      "module": "SparseLowerTail.Section07.ResidualAction",
+      "sha256": "22f4545d79fd4336aaca99335852e3c59f60d169005cf333c697fdf3e1fd9109"
+    },
+    {
+      "module": "SparseLowerTail.Section07.ResidualBlockMeans",
+      "sha256": "26e13aefad85da6f84d38379b57c7ca57ba34cb44429acb5c7096c64115f3dd6"
+    },
+    {
+      "module": "SparseLowerTail.Section07.ResidualCodegree",
+      "sha256": "748660529e7679b077f44641a3547bd0724d635bde96abc2beffd48411f83f3b"
+    },
+    {
+      "module": "SparseLowerTail.Section07.ResidualDegreeErrors",
+      "sha256": "3f5effd4413c5e062e3f242e0d44bb3ed48db85ac60f87a8a63db63fca35ae97"
+    },
+    {
+      "module": "SparseLowerTail.Section07.RowErrors",
+      "sha256": "1f0c03078587f41afee654fcccfb5b5aca1a62a94dc5685366f848e781f3cf14"
+    },
+    {
+      "module": "SparseLowerTail.Section07.RowMeans",
+      "sha256": "16e931ea38d7736346ac49a3b50e45ffe492535428ee7ab7a3e388c0ad668c7e"
+    },
+    {
+      "module": "SparseLowerTail.Section07.RowSeparation",
+      "sha256": "371b5ebad7dd2f59fca1f84256e7fa6e530f3bd3f15ab49b2f8544597deca86c"
+    },
+    {
+      "module": "SparseLowerTail.Section07.RowVertexBound",
+      "sha256": "b27b87a654880ab04af45aa8049354101c0aa971e257bb523203ea3809a46535"
+    },
+    {
+      "module": "SparseLowerTail.Section07.SameBlockCap",
+      "sha256": "06da5c0f7498ca70dbce1fb24f9938e4aebde53872d7a18a97c2388e61656fdb"
+    },
+    {
+      "module": "SparseLowerTail.Section07.ScalarExclusion",
+      "sha256": "2d4e0192ed9c745f4ec130d8475c1d62452ccf42d88a9bc888146019dc42afae"
+    },
+    {
+      "module": "SparseLowerTail.Section07.SetAverageCalculus",
+      "sha256": "8ae36bc9deff913c20843889d802aa3cd286771ac76bc32285789f87dc0a8c55"
+    },
+    {
+      "module": "SparseLowerTail.Section07.SetAverages",
+      "sha256": "5e998aaccae1355e1f4fe7f26b38cdf721fb608b691b6cbae7536a1f0a025c88"
+    },
+    {
+      "module": "SparseLowerTail.Section07.SignAverages",
+      "sha256": "b48b97d4ea36de353d7ea7db8076c42233ca29ee5e76c06a9af3e7cb1bcc66af"
+    },
+    {
+      "module": "SparseLowerTail.Section07.SingleCrossing",
+      "sha256": "83818bf19dc2adc0ad1910f8a6678334a184403527ab6fa78c33bc13351c19fb"
+    },
+    {
+      "module": "SparseLowerTail.Section07.SmallData",
+      "sha256": "8f6cecf831577dae8e66ffcccbcd72d854bdaba36a6bdd484cdf0545713d09fa"
+    },
+    {
+      "module": "SparseLowerTail.Section07.SmallErrorBounds",
+      "sha256": "020458e19f328e123d9070bde1b3c24e386516268fd61dbea64e9c2bbbf8a3f6"
+    },
+    {
+      "module": "SparseLowerTail.Section07.SmallErrorSums",
+      "sha256": "ef22adb231c51d3368d79da29d5904191c21d947cd032d3d1b14c1ebd6588773"
+    },
+    {
+      "module": "SparseLowerTail.Section07.SmallParameterBounds",
+      "sha256": "2a1c649aaaac7d525b3852696252bee85a719c369707ec0a7881c53ce245061e"
+    },
+    {
+      "module": "SparseLowerTail.Section07.SmallParameterErrors",
+      "sha256": "c54fc4022c0f880f8c35ed325b2a4853395610caa230a204760b20c808972aa5"
+    },
+    {
+      "module": "SparseLowerTail.Section07.SmallRigidityCoercivity",
+      "sha256": "25f26deb183d12855192dbdd937b9c44479ee0b3247d4d455375694635c8e5ce"
+    },
+    {
+      "module": "SparseLowerTail.Section07.SmallRowRigidity",
+      "sha256": "254b29eafecb40285db4d4e4080585437a54d3415b826626b7b3873d555fa9b3"
+    },
+    {
+      "module": "SparseLowerTail.Section07.SmallTailAssembly",
+      "sha256": "b4f3b49aa6e9045e46d8d49f5d3afcf6831553613b5c083fee1d5653336205ac"
+    },
+    {
+      "module": "SparseLowerTail.Section07.SmallTargetBipodal",
+      "sha256": "c84f7f22ba2591b69eed6920aa36293b5d9cc4cca03d16653ad6b4e02d5ab047"
+    },
+    {
+      "module": "SparseLowerTail.Section07.SpectralDiagonal",
+      "sha256": "7293576949bf3f4ce3a12143856a74d32d8a63f72d0d02931f76985f740da22c"
+    },
+    {
+      "module": "SparseLowerTail.Section07.SpectralEigenfunctions",
+      "sha256": "33c2fb50be54589f44cff2cdcbc5b076223a5cae84a0ca85ed505ab8a3cf2f90"
+    },
+    {
+      "module": "SparseLowerTail.Section07.SpectralQuadratic",
+      "sha256": "6b05a66da3f197fa59e4ade47a27d0ef157c7114f8d298b2ad3e71bc5eb63545"
+    },
+    {
+      "module": "SparseLowerTail.Section07.SpectralRemainder",
+      "sha256": "1e7043fbf02ab70f5d3af8b69587360a3e3fdd04ac87bb3b0bb71c25b3dff345"
+    },
+    {
+      "module": "SparseLowerTail.Section07.SpectralTail",
+      "sha256": "ba7be129fcab65d7355a6ddb014d7b4bda9b3325420911f479488c4e66aa29d9"
+    },
+    {
+      "module": "SparseLowerTail.Section08.Boundary",
+      "sha256": "14249ba2d01c3908268c76f936c4e56d5ef274b25d859099b2ffe36769286ec1"
+    },
+    {
+      "module": "SparseLowerTail.Section08.CertificateBridge",
+      "sha256": "2e2501b77d12dac5fd4f5c91d2dd037ef5bc8264ee5fb44682e815cc7398476c"
+    },
+    {
+      "module": "SparseLowerTail.Section08.CertificateExpectation",
+      "sha256": "6ded93b7ee0f4957ed037d772e5075a10f80f093dc1e8764a02b11561d7b9075"
+    },
+    {
+      "module": "SparseLowerTail.Section08.CertificateSigns",
+      "sha256": "02a972ce2bf0f9eb83e04eaa00e7c8dca06c635ec478378fe409e070d69d4b04"
+    },
+    {
+      "module": "SparseLowerTail.Section08.CertificateTail",
+      "sha256": "902a4576ec8f994623d0f6e67b986da5f149685c29ecaee03aecf15cf579b832"
+    },
+    {
+      "module": "SparseLowerTail.Section08.ContinuationAssembly",
+      "sha256": "66b69e9d15d49b13d21c34aeedc574d81e0542565efa33d935ca3be1a190da83"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyAAACover",
+      "sha256": "a56b06743970ad6de7bcef43bee8624b4d2e2201bf03f3e13bc7af2ff0c1152b"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyABBReplay.Smoke.CheckedSubtree",
+      "sha256": "4a6aeec29faa5a6679efbeda6dce84d4a8ea5d03463d7635ba7fb68b57ea8a8a"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyABBReplay.Smoke.Coverage0000",
+      "sha256": "0424d5db0d6ab469c1d7ab52fba124999a8d978f80113e9ebc3674c3dde19473"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyABBReplay.Smoke.Endpoints0000",
+      "sha256": "62963649f81c1c0942da7eaeb5529ccd46a302e4b61fe9c90cc8960730b923fe"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyABBReplay.Smoke.Leaves0000",
+      "sha256": "0fb157476084eec00a1ae0b62e99dc1ac6d9e913c66ffa674a97b5ca94e5cc4f"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyABBReplay.Smoke.Leaves3389",
+      "sha256": "c7ad0de20c2bf993de7498b04da6c2cc8b58193185aac16c88a4d5900a443f3f"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyABBReplay.Smoke.Parameter0000",
+      "sha256": "f731904a81bdde05acd864c7915dfb824fe9c0159c071ac349e17fa51f71c17e"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyABBReplay.Smoke.Parameter0001",
+      "sha256": "b1e9a2e7bb0b6c8cac62d1248a7acd5bbccf472640c8d325a7241e51ef9f8197"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyABBReplay.Smoke.Parameter0002",
+      "sha256": "f5dcaa69a13b04a72c54863d485ec4d6b12098e3b0ba8111a322e7eb7c9b5944"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyBoxIntervals",
+      "sha256": "63d7708be406d1c8f0ce143ab62c183f0b1b236261e7d9d794358853ce112b6b"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyCoefficientIntervals",
+      "sha256": "2f60bff3ed45a564cff47140fd29c526e38037633bb704fa65acedc7f4a28e75"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyCompactAssembly",
+      "sha256": "cca04c4173fefa7335f66fa4b78633c6624d6e28063dc5252cac711eb38946f1"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyCompactReplay",
+      "sha256": "ba2e76acd8ece056f4ea9bd2c7e2fae27bd097403db018a29cdd8918e2cd8cb4"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyExteriorLeaf",
+      "sha256": "7170db5599ee17536d00071fb5530c556dacb653bf6b0c19ede83d2a4f73dcfd"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyExteriorReplay.Smoke.CheckedSubtree",
+      "sha256": "2a3d5d253945ab1ecbfadafcde464ba5773e0e94e8cca72aeaf52307eb5a84a1"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyExteriorReplay.Smoke.Coverage0000",
+      "sha256": "2370a59f6ed2d4b1442c3c8a2cc7e90a70f8990190b7ca962313760ec1cfbec6"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyExteriorReplay.Smoke.Endpoints0000",
+      "sha256": "b41bfd8f0ee6b53695eb29cc5041058c70d3bf1b7b8f26d63dbb0e956660093d"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyExteriorReplay.Smoke.Leaves0000",
+      "sha256": "0dd3c36c02a1597fa1af3a42812f77d12f1cc9c67cac5d2c593905eacffcc1f8"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyExteriorReplay.Smoke.Leaves0003",
+      "sha256": "61bb08e8d02dff56821733ce51c8f650ccfcce2b0a54c2e8d5aab244a3383826"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyExteriorReplay.Smoke.Leaves0146",
+      "sha256": "82fbce98dc19770ea6319aed54c8ca119a9fcc1e0b8a7a1e232b3eaad7036fff"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyExteriorReplay.Smoke.Leaves0175",
+      "sha256": "dbf1b5ed70ec0244fd848f720a04aee2e9da16d514d529c2aeecf2a91446a801"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyExteriorReplay.Smoke.Leaves1105",
+      "sha256": "607157fa589fca29774587e1ed1edbbf8532a16323225b6d94af758b1d8164be"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyExteriorReplay.Smoke.Parameter0000",
+      "sha256": "f41d757b6fedbbd48e8dc99d88c574a963e4d23fc9953d80e3b1bfe31d4b8f5b"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyExteriorReplay.Smoke.Parameter0001",
+      "sha256": "6f2e101fa7ce7a81265b27544c261986f499e5cff531b6785d058a5f98b26642"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyExteriorReplay.Smoke.Parameter0002",
+      "sha256": "dc8fe80db3a2dc2bffeb48f5e98057efb43a2ff0815280d005881913d1140cf3"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyExteriorReplay.Smoke.Parameter0003",
+      "sha256": "dd287afd82abae320613149de76c4659ee023b7276bea17ea5a037f49c6a006e"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyExteriorReplay.Smoke.Parameter0004",
+      "sha256": "8982e24bee66e7b1c4ba995c2c0d8f0af7eda39700b7ba66d62807c40ef9594b"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyExteriorReplay.Smoke.Parameter0005",
+      "sha256": "97ef7c3d638ea1642cdc039973304f419fac95945a637cd3f7acb2c81425c988"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyExteriorReplay.Smoke.Parameter0006",
+      "sha256": "45508519e90c9f7784f8df3e7e50b86671cc64e58026821f25cec675937ea869"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyExteriorReplay.Smoke.Parameter0007",
+      "sha256": "99debc265e22ed6e5b267f9fc75ee5302dc269111e86a5c13ea5025891af3f5b"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyExteriorSmoke",
+      "sha256": "5297eae3e2f527ac6485c8544d0308a262796e16c76b99c3606b9e23e3599e46"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyExteriorTaylor",
+      "sha256": "75ad4e715e479828ed107a4a226982522f5c43ddb2678716c38568198b96e461"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyGradientParameter",
+      "sha256": "9b630c2bda721fae8590bea1b695a2378c7ba302d8e2b403a42980e07f1a2a13"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyLocalBoxIntervals",
+      "sha256": "6fab9f3ebb559e8e8bea95feff0b8e672eec630ae6e09fa9b5b56094b8ac7f52"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyLocalBridge",
+      "sha256": "53334187f8e63b9b237f9bdb7fbba7110cb74b391d9d7664e380ca028f7f413d"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyLocalCongruence",
+      "sha256": "7ac77146430ca1c2565c8c7538ce4e71475039cb4ab5cf841e065a0303841471"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyLocalContacts",
+      "sha256": "2bda765a150dbe75737c9017496fc748685e40c16a7e0779c72f8f62bc650f19"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyLocalDominance",
+      "sha256": "744571852774638eccaa34a6795493d662250ead2fa28d42872ddfdf61368ad7"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyLocalFactoredIntervals",
+      "sha256": "8ab8dd2b25dba52ba944aa01e5b607c93a6da6a3dbe84616260e52f56c6c3fd2"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyLocalFormula",
+      "sha256": "cb2bd19321782625587b854b5ca36850a91d12a9b6a636237250c3945c067187"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyLocalIntervalMatrix",
+      "sha256": "c67d7f55a68654516c7da429e4f5c21530d94b19a115643ba289b5dc5dc1e05f"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyLocalScaling",
+      "sha256": "e6b44697fd97de40b2a1b7eeb71c545444f6fab86719a3dbb0bca5cb9bb81494"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyOffsetCover",
+      "sha256": "a957db6bfe938f517a6df034205f901f561136c22e64d6dfc846aa93d2641763"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyParameterCalculus",
+      "sha256": "50e226d382ad249670ffb09982c28e09e5ffad45d311cbdad6b85d6300530106"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyParameterIntervals",
+      "sha256": "16e889a28982e1330c721e47cbf4e2edda65bc790d47f528b614747ea740b6e1"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyParameterRange",
+      "sha256": "f0a621b6256e29e1ace6e7061533e6aa9f0f2d43430f81627b8d4ec8b47fcacc"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyParameterSmoke",
+      "sha256": "fce2d9d71a2aa274156ab7be14ed405c3c665d49022b2768bb8b9a9a9e76ecd5"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyParameterTaylor",
+      "sha256": "24d47e5e6593103bb755229b4761be3badb28b9f15dcbee906e0bac5c69b6f14"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyScaledIntervals",
+      "sha256": "1bf58f1ac1fe7a30adb0fb14e861584b9c3f6cd39f9e05f877fef8234fa5e611"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyScaledSmoke",
+      "sha256": "a7fe4becb6c63196779e6a10da331b32e0de9f13ab90176fd527373993dabe4c"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyTaylorData",
+      "sha256": "ea7020818fdc00848041afb70b5bd6d183f61d3440e995929a03aae1c469b84e"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyWeightIntervals",
+      "sha256": "040823fa91c36818c1570b76713725de58f20eebd630b367bbc409c4133bc12f"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FiniteCertificateAssembly",
+      "sha256": "be41c18f2b35c4555235c45f134d5a9511b1ef1ebc8dd524f9f5ab2e64633f90"
+    },
+    {
+      "module": "SparseLowerTail.Section08.GraphonIntegration",
+      "sha256": "114b6e6064807bc2c625bd64a03f786cbe5227ff57c90e645ec3f215ca71ac92"
+    },
+    {
+      "module": "SparseLowerTail.Section08.MinimizerExpectation",
+      "sha256": "ce9fdd7d2a9e81ffffd1ec9ebcee938b3cb4fef011726ba1d400adba87b72afa"
+    },
+    {
+      "module": "SparseLowerTail.Section08.TieExclusion",
+      "sha256": "91f4a2fd450c92f405ad6d8dbc2fc90c6df2e677895c0b176a75913672822f0d"
+    },
+    {
+      "module": "SparseLowerTail.Triangle",
+      "sha256": "8e68bcf3ee66e6967a18e74935a57b05169b1dfe00adf77f510e6bbbbcf8935f"
+    }
+  ],
+  "certificate_integration": "The existing nonapex job 25 assembly is imported. CompletedReplays integration of every full nonapex/apex/family certificate is still pending.",
+  "manuscript_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+}

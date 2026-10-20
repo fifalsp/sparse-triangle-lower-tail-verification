@@ -1772,3 +1772,12 @@ into cut-norm convergence through genuine bijections. Together with the weighted
 and counting bounds, this completes all four parts of `lem:cut`. The
 [record](data/kernel-cut-check.json) contains 26 public audits and the full root
 audit of 18,244 theorems.
+
+
+### 2026-10-20 — Current Euler and gap arguments
+
+All four current Euler conclusions are checked for actual minimizers. The
+current penalized-gap endpoint argument is checked with branch penalty >0.496,
+constant minimum <0.468 from the trial s=0.3, and gap >0.028. The
+[record](data/analytic-review-check.json) contains 30 public audits, deterministic
+regeneration, and the full root audit of 18,257 theorems.

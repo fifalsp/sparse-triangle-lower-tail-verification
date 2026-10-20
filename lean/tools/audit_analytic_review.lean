@@ -1,0 +1,32 @@
+import SparseLowerTail
+
+#print axioms SparseLowerTail.Section04.minimizer_pos_ae
+#print axioms SparseLowerTail.Section04.minimizer_log_equation
+#print axioms SparseLowerTail.Section04.minimizer_multiplier_pos
+#print axioms SparseLowerTail.Section04.graphonMultiplier_integral_identity
+#print axioms SparseLowerTail.Section04.minimizer_multiplier_unique
+#print axioms SparseLowerTail.Section04.minimizer_lower_bound
+#print axioms SparseLowerTail.Section04.minimizer_codegree_lower_bound
+#print axioms SparseLowerTail.Section04.minimizer_upper_bound
+#print axioms SparseLowerTail.Section04.minimizer_upper_constant_lt_one
+#print axioms SparseLowerTail.Section07.contDiffOn_penalizedGap
+#print axioms SparseLowerTail.Section07.hasDerivAt_penalizedGap
+#print axioms SparseLowerTail.Section07.penalizedGap_zero_density_order
+#print axioms SparseLowerTail.Section07.tendsto_penalizedGap_zero
+#print axioms SparseLowerTail.Section07.penalizedGap_milli_pos
+#print axioms SparseLowerTail.Section07.EndpointProof.milli_log_lower
+#print axioms SparseLowerTail.Section07.EndpointProof.milli_log
+#print axioms SparseLowerTail.Section07.EndpointProof.milli_exponent
+#print axioms SparseLowerTail.Section07.EndpointProof.milli_exp_lower
+#print axioms SparseLowerTail.Section07.EndpointProof.milli_exp_upper
+#print axioms SparseLowerTail.Section07.EndpointProof.milli_B
+#print axioms SparseLowerTail.Section07.EndpointProof.milli_K
+#print axioms SparseLowerTail.Section07.EndpointProof.milli_data
+#print axioms SparseLowerTail.Section07.EndpointProof.trial_log
+#print axioms SparseLowerTail.Section07.EndpointProof.trial_penalty_lt
+#print axioms SparseLowerTail.Section07.EndpointProof.milli_branch_penalty_gt
+#print axioms SparseLowerTail.Section07.EndpointProof.milli_constant_minimum_lt
+#print axioms SparseLowerTail.Section07.EndpointProof.milli_gap_gt
+#print axioms SparseLowerTail.Section07.constantPenalty_min
+#print axioms SparseLowerTail.Section07.constantMinimum_stationary
+#print axioms SparseLowerTail.Section07.branchPenalty_stationary

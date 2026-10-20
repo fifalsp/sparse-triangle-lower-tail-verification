@@ -1,0 +1,67 @@
+{
+  "checked_at_utc": "2026-10-20T11:43:38.971686+00:00",
+  "source_parent_commit": "de6974470de370dba6499e095bfc3ae3ec52cdbc",
+  "scope": "Current complete Euler proposition reviewed against its internal proofs; current penalized-gap lemma reviewed with new exact endpoint comparisons and the s=0.3 trial bound.",
+  "sources": [
+    {
+      "path": "SparseLowerTail/Section07/PenalizedEndpointProof.lean",
+      "sha256": "271341ecbd88f32b65f222a536ce1f45ab07d28adb4d1c134ebd480ab2db0c4c"
+    }
+  ],
+  "generator": {
+    "path": "tools/generate_penalized_endpoint_proof.py",
+    "sha256": "4f1467fdd47dabf8dc1ea2f76cadd7cc4a4f2aba7fe5a82c194758f95485d199",
+    "deterministic_regeneration": true,
+    "generated_source_sha256": "271341ecbd88f32b65f222a536ce1f45ab07d28adb4d1c134ebd480ab2db0c4c"
+  },
+  "explicit_inputs": [],
+  "checks": [
+    {
+      "command": "LEAN_NUM_THREADS=1 lake build SparseLowerTail",
+      "exit_code": 0,
+      "output": "Build completed successfully (3724 jobs). Cached warnings replayed."
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean tools/audit_analytic_review.lean",
+      "exit_code": 0,
+      "output": "'SparseLowerTail.Section04.minimizer_pos_ae' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section04.minimizer_log_equation' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section04.minimizer_multiplier_pos' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section04.graphonMultiplier_integral_identity' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section04.minimizer_multiplier_unique' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section04.minimizer_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section04.minimizer_codegree_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section04.minimizer_upper_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section04.minimizer_upper_constant_lt_one' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.contDiffOn_penalizedGap' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.hasDerivAt_penalizedGap' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.penalizedGap_zero_density_order' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.tendsto_penalizedGap_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.penalizedGap_milli_pos' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.EndpointProof.milli_log_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.EndpointProof.milli_log' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.EndpointProof.milli_exponent' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.EndpointProof.milli_exp_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.EndpointProof.milli_exp_upper' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.EndpointProof.milli_B' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.EndpointProof.milli_K' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.EndpointProof.milli_data' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.EndpointProof.trial_log' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.EndpointProof.trial_penalty_lt' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.EndpointProof.milli_branch_penalty_gt' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section07.EndpointProof.milli_constant_minimum_lt' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section07.EndpointProof.milli_gap_gt' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.constantPenalty_min' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.constantMinimum_stationary' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section07.branchPenalty_stationary' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean Audit.lean",
+      "exit_code": 0,
+      "output": "Axiom audit passed: 24845 project declarations, 18257 theorems; only propext, Classical.choice, Quot.sound allowed.\n"
+    },
+    {
+      "command": "python3 tools/check_lean_map.py",
+      "exit_code": 0,
+      "output": "Proof-map links passed: 109 labels, 1005 Lean declarations."
+    }
+  ],
+  "audited_public_declarations": 30,
+  "new_public_theorems": 13,
+  "manuscript_reviews": {
+    "prop:euler": "All four current conclusions are checked internally for actual minimizers: positivity, Euler equation, positive unique multiplier with its literal integral identity, both quantitative kernel bounds and the positive codegree bound. The existing internal positivity/tilt proof supplies the preliminary facts that the current manuscript obtains from cited Zhao lemmas; no added hypothesis or external author conclusion is used.",
+    "lem:tie": "The current C1 gap, exact derivative, strict density order at a zero and limit -1/2 are checked by the existing analytic proofs. The updated endpoint argument is now checked with its actual stated bounds: branch penalty >0.496, constant minimum <0.468 using the trial s=0.3, and hence Delta(1/1000)>0.028. All logarithm/exponential and scalar-minimum comparisons are proved."
+  },
+  "root_project_modules": 545,
+  "root_project_declarations": 24845,
+  "root_project_theorems": 18257,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "base_source_manifest": "kernel-cut-check.json",
+  "source_manifest_changes": [
+    {
+      "module": "SparseLowerTail",
+      "sha256": "7e5d17c42ce05dc5366fa1cfb62d00e7f08da2302bcba8dea30f3fa71a6bd0f8"
+    },
+    {
+      "module": "SparseLowerTail.Section07.PenalizedEndpointProof",
+      "sha256": "271341ecbd88f32b65f222a536ce1f45ab07d28adb4d1c134ebd480ab2db0c4c"
+    }
+  ],
+  "source_manifest_sha256": "ce4eb6c44bba846016c7728cc8c143acc1d4792d1eae495912b915a5b7c78a0f",
+  "manuscript_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+}

@@ -510,11 +510,17 @@
       "explicit_inputs": [],
       "baseline": {
         "environment": "proposition",
-        "statement": "Let $U$ be a minimizer at $r\\in(0,1)$, with multiplier $\\mu_U$. \\begin{enumerate}[label=(\\alph*)] \\item $U>0$ a.e. \\item $U$ satisfies the \\emph{Euler--Lagrange equation} \\begin{equation} \\log U=-\\mu_UC_U\\quad\\text{a.e.} \\end{equation} \\item $\\mu_U>0$ and $\\mu_Ur^3=-\\iint U\\log U$. Moreover, $\\mu_U$ is the only real number $\\mu$ for which $\\log U=-\\mu C_U$ a.e. \\item $e^{-\\mu_U}\\le U\\le\\exp(-\\mu_Ue^{-2\\mu_U})<1$ and $C_U\\ge e^{-2\\mu_U}$ a.e. \\end{enumerate}",
         "statement_sha256": "c804c5420bfb5193b701f2d95580cdb6e0075076e81efa4fc4440902f72a9845",
-        "proof_sha256": "248dcba76f1b2120b71fbc81cd0a4b8e34d9066a152cf354977f489ceb5979de",
-        "source_line": 2308
-      }
+        "proof_sha256": "868a3e509562c2b2f3d5ab72ca0c704d5059517411df34002565f842a88a564d",
+        "source_line": 2357,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      },
+      "latest_manuscript_review": {
+        "checked_at_utc": "2026-10-20T11:43:38.971686+00:00",
+        "note": "All four current conclusions are checked internally for actual minimizers: positivity, Euler equation, positive unique multiplier with its literal integral identity, both quantitative kernel bounds and the positive codegree bound. The existing internal positivity/tilt proof supplies the preliminary facts that the current manuscript obtains from cited Zhao lemmas; no added hypothesis or external author conclusion is used.",
+        "audit_record": "data/analytic-review-check.json"
+      },
+      "verification_record": "data/analytic-review-check.json"
     },
     {
       "paper_label": "prop:vertex",
@@ -1738,24 +1744,44 @@
       "paper_label": "lem:tie",
       "baseline": {
         "environment": "lemma",
-        "statement": "The function $\\Delta$ is continuously differentiable on $(0,1)$, with \\begin{equation} \\Delta'(z)=\\frac{\\mu'(z)}3\\big(\\rho(z)^3-s_{\\mu(z)/3}^3\\big). \\end{equation} If $\\Delta(z)=0$, then $\\rho(z)<s_{\\mu(z)/3}$. Moreover $\\Delta(z)\\to-\\frac12$ as $z\\to0$, and $\\Delta(10^{-3})>0$.",
         "statement_sha256": "c1a8af32aa3846b86c8428bdb0db7b872e3b812bd008dc5e56a1c0e8d1d5af51",
-        "proof_sha256": "8913cc0f07603d8fb052a33a8fcebae6220ccbf00dc508f767bee1f41a5e6d33",
-        "source_line": 4672
+        "proof_sha256": "deb99883d3aa87c5938d63b322a2f73d07e6f102dedbf4f514b927601bc423e7",
+        "source_line": 4597,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
       },
       "status": "proved",
-      "checked_scope": "C1 gap, exact derivative, strict density order at a zero, limit minus one half, and proved positivity at 1/1000; no numerical output assumed.",
+      "checked_scope": "C1 gap, exact derivative, strict density order at a zero, limit -1/2, and the current proof endpoint comparisons: branch penalty >0.496 and constant minimum <0.468 from trial s=0.3, giving actual Delta(1/1000)>0.028. All arithmetic and analytic bounds proved internally.",
       "lean_files": [
-        "SparseLowerTail/Section07/PenalizedGap.lean"
+        "SparseLowerTail/Section07/PenalizedGap.lean",
+        "SparseLowerTail/Section07/PenalizedEndpointProof.lean"
       ],
       "lean_declarations": [
         "SparseLowerTail.Section07.contDiffOn_penalizedGap",
         "SparseLowerTail.Section07.hasDerivAt_penalizedGap",
         "SparseLowerTail.Section07.penalizedGap_zero_density_order",
         "SparseLowerTail.Section07.tendsto_penalizedGap_zero",
-        "SparseLowerTail.Section07.penalizedGap_milli_pos"
+        "SparseLowerTail.Section07.penalizedGap_milli_pos",
+        "SparseLowerTail.Section07.EndpointProof.milli_log_lower",
+        "SparseLowerTail.Section07.EndpointProof.milli_log",
+        "SparseLowerTail.Section07.EndpointProof.milli_exponent",
+        "SparseLowerTail.Section07.EndpointProof.milli_exp_lower",
+        "SparseLowerTail.Section07.EndpointProof.milli_exp_upper",
+        "SparseLowerTail.Section07.EndpointProof.milli_B",
+        "SparseLowerTail.Section07.EndpointProof.milli_K",
+        "SparseLowerTail.Section07.EndpointProof.milli_data",
+        "SparseLowerTail.Section07.EndpointProof.trial_log",
+        "SparseLowerTail.Section07.EndpointProof.trial_penalty_lt",
+        "SparseLowerTail.Section07.EndpointProof.milli_branch_penalty_gt",
+        "SparseLowerTail.Section07.EndpointProof.milli_constant_minimum_lt",
+        "SparseLowerTail.Section07.EndpointProof.milli_gap_gt"
       ],
-      "explicit_inputs": []
+      "explicit_inputs": [],
+      "latest_manuscript_review": {
+        "checked_at_utc": "2026-10-20T11:43:38.971686+00:00",
+        "note": "The current C1 gap, exact derivative, strict density order at a zero and limit -1/2 are checked by the existing analytic proofs. The updated endpoint argument is now checked with its actual stated bounds: branch penalty >0.496, constant minimum <0.468 using the trial s=0.3, and hence Delta(1/1000)>0.028. All logarithm/exponential and scalar-minimum comparisons are proved.",
+        "audit_record": "data/analytic-review-check.json"
+      },
+      "verification_record": "data/analytic-review-check.json"
     },
     {
       "paper_label": "lem:fold",

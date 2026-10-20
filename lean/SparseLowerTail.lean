@@ -192,3 +192,4 @@ import SparseLowerTail.Section08.PaperTieAndCrossing
 import SparseLowerTail.Section04.ManuscriptThresholdDigits
 import SparseLowerTail.Section07.PenalizedDigits
 import SparseLowerTail.Section02.BijectiveCompactness
+import SparseLowerTail.Section07.PenalizedEndpointProof

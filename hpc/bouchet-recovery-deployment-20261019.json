@@ -1,0 +1,35 @@
+{
+  "recorded_at": "2026-10-20T01:48:02.053889+00:00",
+  "source_commit": "98cbcb3",
+  "source_archive": "triangle-recovery-98cbcb3.tar.gz",
+  "source_sha256": "21af0f24b456fe6d4ee91a044e8702a8821e84c5353b54309e5468604fb4e9ef",
+  "recovery_array": 30068465,
+  "recovery_tasks": 17,
+  "max_concurrent_recovery_tasks": 8,
+  "cpus_per_recovery_task": 8,
+  "memory_gib_per_recovery_task": 192,
+  "assembly_job": 30068466,
+  "assembly_dependency": "afterany:30068465",
+  "assembly_cpus": 8,
+  "assembly_memory_gib": 256,
+  "observed_state": "Both recovery array and assembly job PENDING (Dependency)",
+  "runner_hashes": {
+    "bouchet-recover.sbatch": "7931becdb7771f0cab1516eed1ccf934d6321145ec1044e8c76bf672c0c4f630",
+    "bouchet-assemble.sbatch": "2d2843c72ed4bdf10906ef217c0eb4ef81fd3950ce550a977510c6a88752bd94"
+  },
+  "abb_live_snapshot": {
+    "path": "sparse-lean-abb-live-checkpoint-30052586-2145.tar.gz",
+    "reported_size": "3.9 GiB",
+    "caveat": "Live copy; tar reported directories changing during capture. Cache is a recovery candidate only and must pass Lake validation. No full ABB proof claimed."
+  },
+  "validation": {
+    "python_failure_injection_tests": 6,
+    "shell_syntax": "passed",
+    "full_combined_lean_build": "pending on cluster; no assembly success claimed"
+  },
+  "access": {
+    "approved_delta_core_hours": 100,
+    "additional_core_hours_pending_review": 400,
+    "login": "ACCESS account authenticated; separate NCSA computing login still required"
+  }
+}

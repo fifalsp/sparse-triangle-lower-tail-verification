@@ -435,3 +435,10 @@ allocations continue running. ACCESS Delta reports 100 approved CPU core-hours
 and a pending 400-core-hour exchange; the pending amount is not treated as
 usable capacity. The revised 500–1,200 additional core-hour / 2–4 calendar-day
 planning allowance is in `results-20261019-evening/estimate.json`.
+
+Recovery array **30068465** and final assembly **30068466** were accepted by
+Slurm after all uploaded hashes matched. Both were observed PENDING with
+dependency reasons. Deployment details are in
+[`bouchet-recovery-deployment-20261019.json`](bouchet-recovery-deployment-20261019.json).
+Submission is not a successful proof. The newer ABB live snapshot is about
+3.9 GiB and reported directory changes during capture; Lake must revalidate it.

@@ -95,7 +95,7 @@ def restore(path,kind,key):
    with dest.open('wb') as out:shutil.copyfileobj(t.extractfile(m),out)
 
 def main():
- p=argparse.ArgumentParser(description=__doc__);p.add_argument('--save',type=Path,required=True);p.add_argument('--logs',type=Path,required=True);p.add_argument('--check-only',action='store_true');a=p.parse_args();a.logs.mkdir(parents=True,exist_ok=True)
+ p=argparse.ArgumentParser(description=__doc__);p.add_argument('--save',type=Path,required=True);p.add_argument('--logs',type=Path,required=True);p.add_argument('--check-only',action='store_true');p.add_argument('--workers',type=int,choices=range(1,9),default=2);p.add_argument('--lakefile',type=Path);p.add_argument('--audit-memory-mib',type=int);a=p.parse_args();a.logs.mkdir(parents=True,exist_ok=True)
  selected={}
  for path in sorted(a.save.glob('sparse-lean-results-*.tar.gz')):
   r=inspect(path.read_bytes(),path.name)
@@ -118,10 +118,13 @@ def main():
  def run(cmd,name):
   with (a.logs/name).open('w') as out:subprocess.run(cmd,cwd=ROOT/'lean',stdout=out,stderr=subprocess.STDOUT,check=True)
  run([sys.executable,'tools/generate_family_abb_radius_replay.py','--mode','full'],'abb-radius-generation.log')
- run([sys.executable,'tools/build_bounded.py',target,'--logs',str(a.logs/'combined-build'),'--workers','2','--lean-threads','1'],'combined-build.log')
+ config_args=['--lakefile',str(a.lakefile.resolve())] if a.lakefile else []
+ run([sys.executable,'tools/build_bounded.py',target,'--logs',str(a.logs/'combined-build'),'--workers',str(a.workers),'--lean-threads','1',*config_args],'combined-build.log')
  audit=(ROOT/'lean/Audit.lean').read_text()
  if not audit.startswith('import SparseLowerTail\n'):raise ValueError('Unexpected audit header')
  audit_path=a.logs/'AuditCompleted.lean';audit_path.write_text(audit.replace('import SparseLowerTail\n','import '+target+'\n',1))
- run(['lake','env','lean',str(audit_path)],'combined-audit.log')
+ lake_args=['--file',str(a.lakefile.resolve())] if a.lakefile else []
+ memory_args=['-M'+str(a.audit_memory_mib),'-j1'] if a.audit_memory_mib else []
+ run(['lake',*lake_args,'env','lean',*memory_args,str(audit_path)],'combined-audit.log')
  (a.logs/'ASSEMBLY_SUCCESS.txt').write_text('All internal numerical certificates discharged in CompletedReplays.mainTheorem, including the binary64 ABB radius replay; the seven named external/classical inputs remain explicit.\n')
 if __name__=='__main__':main()

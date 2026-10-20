@@ -1,0 +1,35 @@
+{
+  "status": "Prepared; waiting for transfer authentication before submission",
+  "account": "biah-delta-cpu",
+  "approved_pool_hours": 500,
+  "yale_staging_directory": "/nfs/roberts/project/pi_sl3363/sl3363/triangle-migration-20261020",
+  "staging_reported_size": "27 GiB",
+  "staging_method": "Hard links to the existing verification checkpoints and result archives; original files preserved.",
+  "transfer": "Globus direct transfer to Delta, pending account-creation approval. Terms accepted with explicit user approval; creating the new Yale Globus account requires separate approval after automatic review rejected that action.",
+  "planned_resources": [
+    {"stage": "existing F1", "job_id": 23029964, "maximum_allocation_hours": 88},
+    {"stage": "existing author-root check", "job_id": 23040802, "maximum_allocation_hours": 6},
+    {"stage": "ABB with saved Yale cache", "cpus": 4, "memory_mib": 30000, "wall_hours": 6, "workers": 3, "maximum_allocation_hours": 90},
+    {"stage": "exterior with saved Yale cache", "cpus": 4, "memory_mib": 30000, "wall_hours": 6, "workers": 3, "maximum_allocation_hours": 90},
+    {"stage": "nonapex 0 with saved Yale cache", "cpus": 2, "memory_mib": 12000, "wall_hours": 4, "workers": 1, "maximum_allocation_hours": 24},
+    {"stage": "nonapex 12", "cpus": 2, "memory_mib": 12000, "wall_hours": 12, "workers": 1, "maximum_allocation_hours": 72},
+    {"stage": "padded ABB and latest-source combined integration", "cpus": 4, "memory_mib": 60000, "wall_hours": 4, "workers": 1, "maximum_allocation_hours": 120}
+  ],
+  "maximum_total_allocation_hours": 490,
+  "resource_notes": "Delta bills the greater of CPU and memory-weighted requests. Verify ReqTRES after submission; revise the plan if scheduler billing differs. These are maximum caps, not runtime predictions.",
+  "submission_policy": "After transfer validation, resume ABB/exterior with the saved caches and replace only their unstarted copies. Submit both remaining nonapex jobs in parallel and final integration with afterok dependencies. Cancel the unstarted Yale recovery and assembly only after the Delta replacement submissions are accepted. Never cancel running healthy work.",
+  "verification_gates": [
+    "Transfer SHA256SUMS match selected archives.",
+    "Lake revalidates restored cache against current proof sources.",
+    "Every full target compiles and passes the unchanged axiom audit.",
+    "Combined integration restores every required region and includes the current project root and full binary64 ABB radius replay."
+  ],
+  "runner_validation": {
+    "shell_syntax": "passed",
+    "python_compilation": "passed",
+    "existing_result_gate_tests_passed": 7,
+    "transfer_checksum_cases_passed": ["valid", "missing", "changed", "duplicate"],
+    "delta_profile_and_bounded_plan": "passed; exactly the package configuration plus one-thread memory limits"
+  },
+  "full_lean_status": "No new full theorem claimed. Existing checked author root is unchanged; the quiet full F1 laptop fallback continues while migration is prepared."
+}

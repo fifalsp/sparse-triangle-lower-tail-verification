@@ -69,7 +69,9 @@ def main():
     p.add_argument('--logs',required=True,type=Path)
     p.add_argument('--workers',type=int,default=2)
     p.add_argument('--lean-threads',type=int,default=1)
-    p.add_argument('--lakefile',type=Path,help='Alternate Lake configuration, for example the capped laptop profile')
+    p.add_argument('--lakefile',type=Path,
+                   default=os.environ.get('SPARSE_LAKEFILE'),
+                   help='Alternate Lake configuration (or SPARSE_LAKEFILE in cluster runners)')
     p.add_argument('--dry-run',action='store_true')
     p.add_argument('--no-cache-precheck',action='store_true',
                    help='Use one bounded Lake invocation per project module, including cached modules')

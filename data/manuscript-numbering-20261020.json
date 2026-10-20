@@ -1,12 +1,12 @@
 {
-  "checked_at_utc": "2026-10-20T13:30:37.114860+00:00",
+  "checked_at_utc": "2026-10-20T14:43:01.142384+00:00",
   "source": "Live Overleaf source and compiled PDF downloaded through Google Chrome",
   "overleaf_project": "https://www.overleaf.com/project/6acd7ee98a5fed7d56897586",
-  "manuscript_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9",
-  "compiled_pdf_sha256": "6ed6e825f328aff75942839dcfb59ea92137d2b008b75875df815a486cb352f4",
-  "pdf_pages": 72,
+  "manuscript_sha256": "1d12ef606844bd695d0f15a2091314129bec9b5b09d65c71988e7c0c4e1a3443",
+  "compiled_pdf_sha256": "490e5823a1766250457790402fa62ccbae7344b2c9f8052343140b35ef26b0c5",
+  "pdf_pages": 73,
   "numbered_results_checked": 95,
-  "method": "Enumerate the declared shared theorem counter, section resets and appendix numbering in the source; match every kind/number against a compiled PDF result header. Stable labels are read from the source.",
+  "method": "Enumerate the declared shared theorem counter, section resets and appendix numbering in the source; match every kind/number against its first compiled PDF statement header, excluding later subpart references. Stable labels are read from the source.",
   "results": [
     {
       "paper_label": "thm:rate",
@@ -60,13 +60,13 @@
       "paper_label": "lem:truncation",
       "kind": "lemma",
       "number": "2.5",
-      "pdf_page": 13
+      "pdf_page": 14
     },
     {
       "paper_label": "lem:existence",
       "kind": "lemma",
       "number": "2.6",
-      "pdf_page": 13
+      "pdf_page": 14
     },
     {
       "paper_label": "lem:bregman",
@@ -102,7 +102,7 @@
       "paper_label": "lem:relabelB",
       "kind": "lemma",
       "number": "2.12",
-      "pdf_page": 15
+      "pdf_page": 16
     },
     {
       "paper_label": "lem:parity",
@@ -114,7 +114,7 @@
       "paper_label": "lem:KS",
       "kind": "lemma",
       "number": "3.1",
-      "pdf_page": 16
+      "pdf_page": 17
     },
     {
       "paper_label": "lem:fp",
@@ -156,7 +156,7 @@
       "paper_label": "lem:entropy",
       "kind": "lemma",
       "number": "3.8",
-      "pdf_page": 19
+      "pdf_page": 20
     },
     {
       "paper_label": "lem:cutconc",
@@ -168,7 +168,7 @@
       "paper_label": "lem:rounding",
       "kind": "lemma",
       "number": "3.10",
-      "pdf_page": 22
+      "pdf_page": 23
     },
     {
       "paper_label": "lem:active",
@@ -210,13 +210,13 @@
       "paper_label": "thm:crossing",
       "kind": "theorem",
       "number": "4.7",
-      "pdf_page": 27
+      "pdf_page": 28
     },
     {
       "paper_label": "cor:Vbal",
       "kind": "corollary",
       "number": "4.8",
-      "pdf_page": 28
+      "pdf_page": 29
     },
     {
       "paper_label": "prop:zhao",
@@ -228,13 +228,13 @@
       "paper_label": "lem:Bderivative",
       "kind": "lemma",
       "number": "4.10",
-      "pdf_page": 29
+      "pdf_page": 30
     },
     {
       "paper_label": "lem:digits",
       "kind": "lemma",
       "number": "4.11",
-      "pdf_page": 29
+      "pdf_page": 30
     },
     {
       "paper_label": "cor:Bstar",
@@ -246,31 +246,31 @@
       "paper_label": "prop:vertex",
       "kind": "proposition",
       "number": "4.13",
-      "pdf_page": 30
+      "pdf_page": 31
     },
     {
       "paper_label": "lem:J",
       "kind": "lemma",
       "number": "4.14",
-      "pdf_page": 31
+      "pdf_page": 32
     },
     {
       "paper_label": "prop:bipodal",
       "kind": "proposition",
       "number": "4.15",
-      "pdf_page": 32
+      "pdf_page": 33
     },
     {
       "paper_label": "cor:bipodalmin",
       "kind": "corollary",
       "number": "4.16",
-      "pdf_page": 33
+      "pdf_page": 34
     },
     {
       "paper_label": "lem:rowsbipodal",
       "kind": "lemma",
       "number": "4.17",
-      "pdf_page": 33
+      "pdf_page": 34
     },
     {
       "paper_label": "lem:push",
@@ -294,7 +294,7 @@
       "paper_label": "lem:limits",
       "kind": "lemma",
       "number": "5.4",
-      "pdf_page": 34
+      "pdf_page": 35
     },
     {
       "paper_label": "lem:leftlimits",
@@ -306,25 +306,25 @@
       "paper_label": "lem:region",
       "kind": "lemma",
       "number": "5.6",
-      "pdf_page": 35
+      "pdf_page": 36
     },
     {
       "paper_label": "lem:support",
       "kind": "lemma",
       "number": "5.7",
-      "pdf_page": 35
+      "pdf_page": 36
     },
     {
       "paper_label": "def:trilaw",
       "kind": "definition",
       "number": "5.8",
-      "pdf_page": 36
+      "pdf_page": 37
     },
     {
       "paper_label": "def:relaxed",
       "kind": "definition",
       "number": "5.9",
-      "pdf_page": 36
+      "pdf_page": 37
     },
     {
       "paper_label": "lem:hoeffding",
@@ -336,7 +336,7 @@
       "paper_label": "lem:valid",
       "kind": "lemma",
       "number": "5.11",
-      "pdf_page": 37
+      "pdf_page": 38
     },
     {
       "paper_label": "def:certificate",
@@ -360,7 +360,7 @@
       "paper_label": "lem:apex",
       "kind": "lemma",
       "number": "5.15",
-      "pdf_page": 39
+      "pdf_page": 40
     },
     {
       "paper_label": "lem:taylor",
@@ -390,7 +390,7 @@
       "paper_label": "thm:twowell",
       "kind": "theorem",
       "number": "6.2",
-      "pdf_page": 43
+      "pdf_page": 44
     },
     {
       "paper_label": "thm:rigidity",
@@ -414,7 +414,7 @@
       "paper_label": "thm:smalltail",
       "kind": "theorem",
       "number": "7.1",
-      "pdf_page": 47
+      "pdf_page": 48
     },
     {
       "paper_label": "lem:fold",
@@ -438,7 +438,7 @@
       "paper_label": "lem:zc",
       "kind": "lemma",
       "number": "7.5",
-      "pdf_page": 49
+      "pdf_page": 50
     },
     {
       "paper_label": "prop:pen",
@@ -456,7 +456,7 @@
       "paper_label": "lem:order",
       "kind": "lemma",
       "number": "7.8",
-      "pdf_page": 50
+      "pdf_page": 51
     },
     {
       "paper_label": "lem:penalized",
@@ -474,7 +474,7 @@
       "paper_label": "rem:convex",
       "kind": "remark",
       "number": "7.11",
-      "pdf_page": 51
+      "pdf_page": 52
     },
     {
       "paper_label": "prop:structural",
@@ -492,25 +492,25 @@
       "paper_label": "lem:rowreduction",
       "kind": "lemma",
       "number": "7.14",
-      "pdf_page": 53
+      "pdf_page": 54
     },
     {
       "paper_label": "lem:smallparams",
       "kind": "lemma",
       "number": "7.15",
-      "pdf_page": 54
+      "pdf_page": 55
     },
     {
       "paper_label": "lem:scalar",
       "kind": "lemma",
       "number": "7.16",
-      "pdf_page": 55
+      "pdf_page": 56
     },
     {
       "paper_label": "s8:expect",
       "kind": "lemma",
       "number": "8.1",
-      "pdf_page": 57
+      "pdf_page": 58
     },
     {
       "paper_label": "lem:certcoef",
@@ -522,19 +522,19 @@
       "paper_label": "lem:certtail",
       "kind": "lemma",
       "number": "8.3",
-      "pdf_page": 59
+      "pdf_page": 60
     },
     {
       "paper_label": "prop:family",
       "kind": "proposition",
       "number": "8.4",
-      "pdf_page": 60
+      "pdf_page": 61
     },
     {
       "paper_label": "lem:tieexclusion",
       "kind": "lemma",
       "number": "8.5",
-      "pdf_page": 60
+      "pdf_page": 61
     },
     {
       "paper_label": "lem:boundary",
@@ -552,19 +552,19 @@
       "paper_label": "lem:comp-chol",
       "kind": "lemma",
       "number": "A.2",
-      "pdf_page": 63
+      "pdf_page": 64
     },
     {
       "paper_label": "lem:comp-bnb",
       "kind": "lemma",
       "number": "A.3",
-      "pdf_page": 63
+      "pdf_page": 64
     },
     {
       "paper_label": "lem:fan",
       "kind": "lemma",
       "number": "A.4",
-      "pdf_page": 65
+      "pdf_page": 66
     },
     {
       "paper_label": "appA3:compact",
@@ -576,7 +576,7 @@
       "paper_label": "appA3:hess",
       "kind": "lemma",
       "number": "A.6",
-      "pdf_page": 68
+      "pdf_page": 69
     }
   ]
 }

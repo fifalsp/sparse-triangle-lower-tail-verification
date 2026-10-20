@@ -250,11 +250,12 @@
     {
       "paper_label": "lem:certcoef",
       "status": "proved",
-      "checked_scope": "Complete stated conclusion for 0<z<=1/40: Gamma and coefficient signs, negative cbar, and genuine value/partial-derivative tangencies at all four contacts. Logarithmic numerical bounds are proved. The determinant uniqueness assertion inside the prose proof is not separately formalized; global positivity remains separate.",
+      "checked_scope": "Complete stated conclusion for 0<z<=1/40: Gamma/coefficient signs, negative cbar, and genuine value/partial-derivative tangencies at all four contacts. Also proves the current prose determinant and unique coefficient solution for independent z,L, with genuine derivatives of the unknown certificate and exact physical b^3/b^2 normalizations; all branch nonvanishing conditions discharged.",
       "lean_files": [
         "SparseLowerTail/CertificateAlgebra.lean",
         "SparseLowerTail/Section08/CertificateBridge.lean",
-        "SparseLowerTail/Section08/CertificateSigns.lean"
+        "SparseLowerTail/Section08/CertificateSigns.lean",
+        "SparseLowerTail/Section08/CertificateUniqueness.lean"
       ],
       "lean_declarations": [
         "SparseLowerTail.Certificate.value_aaa",
@@ -264,16 +265,40 @@
         "SparseLowerTail.Certificate.gradient_abb_b",
         "SparseLowerTail.Certificate.log_forty_bounds",
         "SparseLowerTail.Certificate.certificate_signs",
-        "SparseLowerTail.Certificate.certificate_contacts"
+        "SparseLowerTail.Certificate.certificate_contacts",
+        "SparseLowerTail.Certificate.contactMatrix_eq_param",
+        "SparseLowerTail.Certificate.contactMatrixParam_det",
+        "SparseLowerTail.Certificate.contactMatrix_det",
+        "SparseLowerTail.Certificate.contactCoefficients_solve",
+        "SparseLowerTail.Certificate.contactCoefficients_unique",
+        "SparseLowerTail.Certificate.contactResidual_eq",
+        "SparseLowerTail.Certificate.contactResidual_exists_unique",
+        "SparseLowerTail.Certificate.branch_contactResidual_exists_unique",
+        "SparseLowerTail.Certificate.hasDerivAt_unknownPotential",
+        "SparseLowerTail.Certificate.hasDerivAt_unknownPsi",
+        "SparseLowerTail.Certificate.contactResidual_eq_actual",
+        "SparseLowerTail.Certificate.unknownPsi_coefficients",
+        "SparseLowerTail.Certificate.branch_actual_tangency_iff",
+        "SparseLowerTail.Certificate.unknown_constant_scaling",
+        "SparseLowerTail.Certificate.unknownPhysicalPsi_scaled",
+        "SparseLowerTail.Certificate.hasDerivAt_unknownPhysicalPsi",
+        "SparseLowerTail.Certificate.unknownPhysicalPsi_swap_xy",
+        "SparseLowerTail.Certificate.branch_physical_tangency_iff"
       ],
       "explicit_inputs": [],
       "baseline": {
         "environment": "lemma",
-        "statement": "Let $0<z\\le1/40$. Then $\\Gamma<0$, $c_1,c_2,c_4>0$, $c_3<0$, and \\[ \\bar c:=c_1+c_2+\\frac{c_3m^2}{t_z}<0 . \\] Moreover $\\Psi_z$ and its gradient vanish at $(a,a,a)$ and at the three permutations of $(a,b,b)$.",
         "statement_sha256": "dde82bc350ec7f725f25c8f8ed308880fda33ffcbc8e9065419a0845151ecc2d",
-        "proof_sha256": "7c4cd0c7778f03482fcefeb1c31014185a307294e1aea51dd1456f98dc25f89f",
-        "source_line": 5354
-      }
+        "proof_sha256": "57e5151ff00597fc88d5fd63b0d8e648e8b5a279b54bacfe5b0fcefb4681c417",
+        "source_line": 5254,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      },
+      "latest_manuscript_review": {
+        "checked_at_utc": "2026-10-20T11:14:49.769896+00:00",
+        "note": "The current statement and full tangency/uniqueness argument are checked. The exact determinant is proved for independent real z,L by rational algebra. The four residuals are shown to be genuine value/partial derivatives of the unsolved certificate, with its prescribed constant term and b^3/b^2 rescalings proved. Nonvanishing conditions are discharged on the stated branch, yielding exactly the published coefficients; the existing complete signs and all four contacts remain linked.",
+        "audit_record": "data/certificate-uniqueness-check.json"
+      },
+      "verification_record": "data/certificate-uniqueness-check.json"
     },
     {
       "paper_label": "lem:unimodal",

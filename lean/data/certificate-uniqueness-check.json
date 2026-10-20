@@ -1,0 +1,60 @@
+{
+  "checked_at_utc": "2026-10-20T11:14:49.769896+00:00",
+  "source_parent_commit": "a90d87fe2aec5db53308a1d828c7cc3f7ac81ef2",
+  "scope": "The current statement and full tangency/uniqueness argument are checked. The exact determinant is proved for independent real z,L by rational algebra. The four residuals are shown to be genuine value/partial derivatives of the unsolved certificate, with its prescribed constant term and b^3/b^2 rescalings proved. Nonvanishing conditions are discharged on the stated branch, yielding exactly the published coefficients; the existing complete signs and all four contacts remain linked.",
+  "sources": [
+    {
+      "path": "SparseLowerTail/Section08/CertificateUniqueness.lean",
+      "sha256": "5b39cd223e01893537058f89f1f53d878be3dc7bf1bf8db0ded4475448ad46c1"
+    }
+  ],
+  "explicit_inputs": [],
+  "checks": [
+    {
+      "command": "LEAN_NUM_THREADS=1 lake build SparseLowerTail",
+      "exit_code": 0,
+      "output": "Build completed successfully (3716 jobs). Cached linter warnings and ring-normalization suggestions were replayed."
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean tools/audit_certificate_uniqueness.lean",
+      "exit_code": 0,
+      "output": "'SparseLowerTail.Certificate.value_aaa' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Certificate.gradient_aaa' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Certificate.value_abb' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Certificate.gradient_abb_a' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Certificate.gradient_abb_b' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Certificate.log_forty_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Certificate.certificate_signs' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Certificate.certificate_contacts' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Certificate.contactMatrix_eq_param' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Certificate.contactMatrixParam_det' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Certificate.contactMatrix_det' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Certificate.contactCoefficients_solve' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Certificate.contactCoefficients_unique' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Certificate.contactResidual_eq' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Certificate.contactResidual_exists_unique' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Certificate.branch_contactResidual_exists_unique' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.hasDerivAt_unknownPotential' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Certificate.hasDerivAt_unknownPsi' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Certificate.contactResidual_eq_actual' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Certificate.unknownPsi_coefficients' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Certificate.branch_actual_tangency_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Certificate.unknown_constant_scaling' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Certificate.unknownPhysicalPsi_scaled' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Certificate.hasDerivAt_unknownPhysicalPsi' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Certificate.unknownPhysicalPsi_swap_xy' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Certificate.branch_physical_tangency_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean Audit.lean",
+      "exit_code": 0,
+      "output": "Axiom audit passed: 24723 project declarations, 18140 theorems; only propext, Classical.choice, Quot.sound allowed.\n"
+    },
+    {
+      "command": "python3 tools/check_lean_map.py",
+      "exit_code": 0,
+      "output": "Proof-map links passed: 108 labels, 888 Lean declarations."
+    }
+  ],
+  "audited_public_declarations": 26,
+  "new_public_theorems": 18,
+  "manuscript_reviews": {
+    "lem:certcoef": "The current statement and full tangency/uniqueness argument are checked. The exact determinant is proved for independent real z,L by rational algebra. The four residuals are shown to be genuine value/partial derivatives of the unsolved certificate, with its prescribed constant term and b^3/b^2 rescalings proved. Nonvanishing conditions are discharged on the stated branch, yielding exactly the published coefficients; the existing complete signs and all four contacts remain linked."
+  },
+  "root_project_modules": 537,
+  "root_project_declarations": 24723,
+  "root_project_theorems": 18140,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "base_source_manifest": "certificate-summary-check.json",
+  "source_manifest_changes": [
+    {
+      "module": "SparseLowerTail",
+      "sha256": "52115972ae96ef6841faf9890dca6e080ab3989f62c8d2a0d41c54e6fad5f169"
+    },
+    {
+      "module": "SparseLowerTail.Section08.CertificateUniqueness",
+      "sha256": "5b39cd223e01893537058f89f1f53d878be3dc7bf1bf8db0ded4475448ad46c1"
+    }
+  ],
+  "source_manifest_sha256": "f288b5b56a2c56085bbf3f76e7bd792fe07623609b70e48bad283d69e4707bfe",
+  "manuscript_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+}

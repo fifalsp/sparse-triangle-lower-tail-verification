@@ -1721,3 +1721,13 @@ from its actual four-atom law. Four historical anchors are reconciled with their
 current locations; every previously linked declaration remains in the active map.
 The [record](data/certificate-summary-check.json) contains 52 public audits
 and the full root audit of 18,086 theorems.
+
+
+### 2026-10-20 — Coefficient determinant and uniqueness
+
+The determinant and unique rational solution in `lem:certcoef` are checked for
+independent real z and L. The system is derived from actual value and derivative
+equations with unknown coefficients, including its constant term and physical
+rescalings. All nonzero conditions are proved on the stated branch. The
+[record](data/certificate-uniqueness-check.json) contains 26 public audits
+and the full root audit of 18,140 theorems.

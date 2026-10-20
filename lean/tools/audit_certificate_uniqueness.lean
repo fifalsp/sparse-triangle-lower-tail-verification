@@ -1,0 +1,28 @@
+import SparseLowerTail
+
+#print axioms SparseLowerTail.Certificate.value_aaa
+#print axioms SparseLowerTail.Certificate.gradient_aaa
+#print axioms SparseLowerTail.Certificate.value_abb
+#print axioms SparseLowerTail.Certificate.gradient_abb_a
+#print axioms SparseLowerTail.Certificate.gradient_abb_b
+#print axioms SparseLowerTail.Certificate.log_forty_bounds
+#print axioms SparseLowerTail.Certificate.certificate_signs
+#print axioms SparseLowerTail.Certificate.certificate_contacts
+#print axioms SparseLowerTail.Certificate.contactMatrix_eq_param
+#print axioms SparseLowerTail.Certificate.contactMatrixParam_det
+#print axioms SparseLowerTail.Certificate.contactMatrix_det
+#print axioms SparseLowerTail.Certificate.contactCoefficients_solve
+#print axioms SparseLowerTail.Certificate.contactCoefficients_unique
+#print axioms SparseLowerTail.Certificate.contactResidual_eq
+#print axioms SparseLowerTail.Certificate.contactResidual_exists_unique
+#print axioms SparseLowerTail.Certificate.branch_contactResidual_exists_unique
+#print axioms SparseLowerTail.Certificate.hasDerivAt_unknownPotential
+#print axioms SparseLowerTail.Certificate.hasDerivAt_unknownPsi
+#print axioms SparseLowerTail.Certificate.contactResidual_eq_actual
+#print axioms SparseLowerTail.Certificate.unknownPsi_coefficients
+#print axioms SparseLowerTail.Certificate.branch_actual_tangency_iff
+#print axioms SparseLowerTail.Certificate.unknown_constant_scaling
+#print axioms SparseLowerTail.Certificate.unknownPhysicalPsi_scaled
+#print axioms SparseLowerTail.Certificate.hasDerivAt_unknownPhysicalPsi
+#print axioms SparseLowerTail.Certificate.unknownPhysicalPsi_swap_xy
+#print axioms SparseLowerTail.Certificate.branch_physical_tangency_iff

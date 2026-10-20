@@ -1,0 +1,75 @@
+{
+  "checked_at_utc": "2026-10-20T06:39:11.597038+00:00",
+  "cluster": "Yale Bouchet",
+  "job_id": "30064252_4",
+  "raw_job_id": "30067473",
+  "state": "COMPLETED",
+  "exit_code": "0:0",
+  "elapsed": "09:06:47",
+  "max_rss": "37101760K",
+  "cpus": 8,
+  "evidence": {
+    "archive": "sparse-lean-results-30067473.tar.gz",
+    "archive_sha256": "9d0eabc426cbc88b0e6cfe7f81123fb0d09a8ed42a97e3d06add45ef1f00e402",
+    "kind": "apex",
+    "status": {
+      "fan": 4,
+      "scope": "F4 full apex cube, nonnegativity and zero-to-pattern implication",
+      "phase": "complete",
+      "trust_status": "Full F4 apex theorem compiled and axiom audit passed",
+      "seconds": 32639.802607520018
+    },
+    "verified": true,
+    "build": {
+      "phase": "build_complete",
+      "target": "SparseLowerTail.Section05.ApexReplay.F4.FullCube",
+      "total": 4929,
+      "completed": 4929,
+      "cached": 0,
+      "failed": {},
+      "active": [],
+      "seconds": 32576.588069393765,
+      "workers": 8,
+      "trust_status": "Build scheduling only; final axiom audit is separate"
+    },
+    "source_commit": "fd69e283936b5bcfd12fa0f9bcf3df4e3f48ac71",
+    "audit_declarations": 582168,
+    "audit_theorems": 473216,
+    "key": "apex:4",
+    "proposal-sha256.txt": "b40cbaf6439750c05142330c13c36137351aee5bb829957b3a2cae2c6cb467ec  /tmp/sparse-lean-30067473.J9BmDX/repo/lean/data/apex-f4-subdivision-proposal.json",
+    "started.txt": "2026-10-19T21:23:31Z",
+    "finished.txt": "2026-10-20T06:28:55Z"
+  },
+  "bundle": "triangle-verification-results-20261020-0238.tar.gz",
+  "bundle_sha256": "8106ebf808251a9a61b6a144a9f5a048ce95ad9b90cd462252235f8f2995aa23",
+  "verified_region_count": 39,
+  "remaining_nonapex": [
+    0,
+    12
+  ],
+  "remaining_apex": [
+    "F1"
+  ],
+  "recovery_array": {
+    "job_id": "30068465",
+    "state": "PENDING",
+    "reason": "ReqNodeNotAvail, Reserved for maintenance",
+    "completed_task_behavior": "Validate existing full target and audit, then skip completed regions including F4."
+  },
+  "assembly": {
+    "job_id": "30068466",
+    "state": "PENDING",
+    "reason": "Dependency",
+    "source_commit": "98cbcb3",
+    "latest_source_followup_required": true
+  },
+  "delta": {
+    "job_id": "23029964",
+    "state": "PENDING",
+    "reason": "Priority",
+    "account": "biah-delta-cpu",
+    "cpus": 16,
+    "max_cpu_hours": 88
+  },
+  "collection": "Downloaded the completed result archive through authenticated Google Chrome. Checked full target completion and unchanged three-axiom audit locally."
+}

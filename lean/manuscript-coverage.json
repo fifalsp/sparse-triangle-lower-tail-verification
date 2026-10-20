@@ -1,7 +1,7 @@
 {
   "scope": "All arguments proved by the authors, including probabilistic deductions. Cited external and standard classical theorems may be explicit hypotheses; their paper-specific applications remain obligations.",
   "overleaf_url": "https://www.overleaf.com/project/6acd7ee98a5fed7d56897586",
-  "checked_at_utc": "2026-10-20T06:05:54.447050+00:00",
+  "checked_at_utc": "2026-10-20T06:41:50.020657+00:00",
   "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9",
   "certificate_tables_match": true,
   "mapped_label_changes": {
@@ -214,10 +214,41 @@
       "source_line": 1704,
       "statement_sha256": "96c314f905bc2efffb406be03db43924a860acec7d7c145241f50d8738a5bf9b",
       "proof_sha256": "a31413d0ec43bfb3a2b4fdb06ee31de832284bdec2e4cbc1d57f754e08cee044",
-      "mapping_status": "needs_mapping",
-      "recorded_status": null,
-      "latest_manuscript_review": "not_yet_mapped",
-      "ownership": "author_argument_or_specialization_to_review"
+      "mapping_status": "mapped",
+      "recorded_status": "partial_a_proved_b_in_progress",
+      "latest_manuscript_review": "part_a_checked_part_b_in_progress",
+      "ownership": "author_argument",
+      "lean_files": [
+        "SparseLowerTail/Section03/FiniteStepGraphon.lean",
+        "SparseLowerTail/Section03/FiniteCliqueSums.lean",
+        "SparseLowerTail/Section03/FiniteWeightedGraph.lean",
+        "SparseLowerTail/Section03/DiscreteEntropyLower.lean",
+        "SparseLowerTail/Section03/DiscreteEntropyUpper.lean",
+        "SparseLowerTail/Section03/FiniteTriangleAttainment.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section03.bernoulliEntropy_nonneg",
+        "SparseLowerTail.Section03.bernoulliEntropy_clip",
+        "SparseLowerTail.Section03.weightedTriangleCount_mono",
+        "SparseLowerTail.Section03.six_choose_three_le_cube",
+        "SparseLowerTail.Section03.FiniteTriangleFeasible",
+        "SparseLowerTail.Section03.finiteEdgeEntropy",
+        "SparseLowerTail.Section03.finiteTrianglePhi",
+        "SparseLowerTail.Section03.finiteEdgeEntropy_lower",
+        "SparseLowerTail.Section03.zero_finiteTriangleFeasible",
+        "SparseLowerTail.Section03.finiteTriangle_costs_bddBelow",
+        "SparseLowerTail.Section03.finiteTrianglePhi_le",
+        "SparseLowerTail.Section03.finiteTrianglePhi_lower",
+        "SparseLowerTail.Section03.finiteTrianglePhi_lower_cuberoot",
+        "SparseLowerTail.Section03.finiteEdgeEntropy_upper",
+        "SparseLowerTail.Section03.finiteTrianglePhi_attained"
+      ],
+      "explicit_inputs": [],
+      "verification_record": "data/discrete-entropy-check.json",
+      "remaining_application": [
+        "Recovery-vector construction, asymptotic feasibility and limsup in part (b).",
+        "Application in thm:reduction and final combined source integration."
+      ]
     },
     {
       "paper_label": "lem:stability",

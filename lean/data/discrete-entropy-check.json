@@ -1,0 +1,55 @@
+{
+  "paper_labels": [
+    "s3:step",
+    "lem:discrete",
+    "s3:Phi"
+  ],
+  "checked_at_utc": "2026-10-20T06:41:50.020657+00:00",
+  "scope": "Exact finite step-graphon entropy and triangle formulas, including unordered factors two and six and the diagonal 1/n. Full finite-n lower bound in discrete(a) for the actual discrete edge entropy infimum, with clipping, feasibility and uniform sparse entropy. Also the uniform finite entropy upper estimate used in discrete(b). The finite infimum is attained: endpoint continuity, compactness, closed feasibility and normalization of unused coordinates are proved.",
+  "sources": [
+    {
+      "path": "SparseLowerTail/Section03/FiniteStepGraphon.lean",
+      "sha256": "54f732518870d8d391e63e032f553e01744233323a75fa27abdd5aeb35f6f020"
+    },
+    {
+      "path": "SparseLowerTail/Section03/FiniteCliqueSums.lean",
+      "sha256": "901fef9a0b6e55343235169fc35259e07bda04793ab97e58fe3873095449cb1e"
+    },
+    {
+      "path": "SparseLowerTail/Section03/FiniteWeightedGraph.lean",
+      "sha256": "c22ee9212f0ed78ce57ceb80a66b9da627bf637f5f053d14b46716475d48425f"
+    },
+    {
+      "path": "SparseLowerTail/Section03/DiscreteEntropyLower.lean",
+      "sha256": "7528e3354ec94efa008243960c6c3b5d818e14a7f62858b2828a1c6463d25e37"
+    },
+    {
+      "path": "SparseLowerTail/Section03/DiscreteEntropyUpper.lean",
+      "sha256": "5060342f5f786a94a69324278164f9cbde6e0d40609d6139fd3a93a4bb70db56"
+    },
+    {
+      "path": "SparseLowerTail/Section03/FiniteTriangleAttainment.lean",
+      "sha256": "55253196ca9d8503c82532ab35519b19fbee8d281b9f9932e2afefafaff5239f"
+    }
+  ],
+  "lean_version": "4.24.0",
+  "checks": [
+    {
+      "command": "lake build SparseLowerTail.Section03.FiniteTriangleAttainment",
+      "exit_code": 0,
+      "output": "Build completed successfully (3157 jobs).\n"
+    },
+    {
+      "command": "lake env lean tools/audit_discrete_entropy.lean",
+      "exit_code": 0,
+      "output": "'SparseLowerTail.Section03.integral_finite_coloring' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.integral_partition_pair' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.integral_partition_triple' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.matrixStepGraphon_cost' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.matrixStepGraphon_triangle' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.uniformStepGraphon_cost' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.uniformStepGraphon_triangle' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.uniformStepGraphon_cost_zero_diagonal' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.ordered_pair_fiber' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.ordered_triple_fiber' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.sum_ordered_pairs' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.sum_ordered_triples' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.graphEdgeMatrix_symm' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.graphEdgeMatrix_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.triangleEdgeSet_three' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.graphEdgeMatrix_triangle_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.weightedTriangleCount_div' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.edgeStepGraphon_cost' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.edgeStepGraphon_triangle' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.bernoulliEntropy_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.bernoulliEntropy_self' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.bernoulliEntropy_clip' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.triangleEdgeSet_edge' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.weightedTriangleCount_mono' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.six_choose_three_le_cube' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteEdgeEntropy_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.zero_finiteTriangleFeasible' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteTriangle_costs_bddBelow' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteTrianglePhi_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteTrianglePhi_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteTrianglePhi_lower_cuberoot' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.graph_edge_count_le_half_square' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteEdgeEntropy_upper' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.continuous_bernoulliEntropy' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.continuous_finiteEdgeEntropy' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.continuous_weightedTriangleCount' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteTriangle_normalize' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteTrianglePhi_attained' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    }
+  ],
+  "audited_theorem_count": 38,
+  "explicit_inputs": [],
+  "manuscript_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9",
+  "remaining": [
+    "The recovery-vector construction, asymptotic feasibility and limsup in discrete(b).",
+    "Apply the discrete comparison in thm:reduction; final combined integration must include the latest proof modules."
+  ]
+}

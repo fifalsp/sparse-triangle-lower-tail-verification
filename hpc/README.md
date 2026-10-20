@@ -2,11 +2,13 @@
 
 ## Latest verified results — October 20, 2026
 
-**38 full-region Lean builds and axiom audits have passed:** 34 nonapex
-regions and apex fans F2, F3, F5 and F6. The latest completion is nonapex job
-15. [Evidence](results-20261020-0205/verified-regions.json).
+**39 full-region Lean builds and axiom audits have passed:** 34 nonapex
+regions and apex fans F2, F3, F4, F5 and F6. The latest completion is F4, with
+all 4,929 build tasks and its full declaration audit passed.
+[Evidence](results-20261020-0238/verified-regions.json).
 
-The original Yale F4 job was running on 8 cores at the latest check.
+F4 completed after 9:06:47 on 8 cores, using about 35.4 GiB maximum RSS.
+[F4 completion record](f4-completion-20261020.json).
 The older Yale F1 and cover-12 jobs reached their 64 GiB memory limits;
 both have queued recovery with 192 GiB.
 [Failure and recovery record](yale-f1-failure-20261020.json).
@@ -16,7 +18,9 @@ The exterior job reached its ten-hour limit after 11,755 of 12,872 build tasks.
 Its 2.7 GiB checkpoint is saved. [Exterior record](exterior-timeout-20261020.json).
 Cover 0 reached its ten-hour limit after 1,681 of 1,873 build tasks. Its
 510 MiB checkpoint is saved. [Cover-0 record](cover0-timeout-20261020.json).
-Recovery array `30068465` and combined assembly `30068466` remain queued.
+Recovery array `30068465` is waiting for Yale’s maintenance reservation to
+clear; combined assembly `30068466` waits on that array. Completed F4 is
+validated and skipped by recovery.
 
 Delta job **23029964** replaces job `23029368`, which reached its setup
 timeout while installing Lean on project storage. The replacement installs
@@ -25,7 +29,7 @@ storage. [Recovery record](delta-recovery-20261019.json).
 The [Delta runner](delta-replay.sbatch) checks the full F1 apex theorem with
 four single-thread Lean workers. Its allocation is 16 CPUs, 30,000 MiB and
 5.5 hours, capped at 88 CPU core-hours on `biah-delta-cpu`; 95 core-hours
-were available before submission.
+were available before submission. The replacement remains pending for priority.
 
 ## Yale setup and deployment history
 

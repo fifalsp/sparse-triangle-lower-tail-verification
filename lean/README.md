@@ -3,7 +3,7 @@
 The project formalizes the authors' arguments in the paper, with cited external
 and standard classical results supplied as explicit hypotheses.
 
-**Verified:** 31 nonapex full-domain certificates and apex fans F2, F3, F5 and
+**Verified:** 34 nonapex full-domain certificates and apex fans F2, F3, F4, F5 and
 F6 have passed Lean builds and axiom audits. The main variational theorem's
 assembly and the proof components below are checked; the remaining certificates
 and combined integration are in progress.
@@ -43,6 +43,15 @@ the latter uses the explicit classical CDF transform in `lem:relabelB`.
 arguments separately for future manuscript revisions.
 
 ## Completed proof components
+
+- **Finite discrete lower bound (`lem:discrete(a)`) and step identities (`s3:step`):**
+  [DiscreteEntropyLower.lean](SparseLowerTail/Section03/DiscreteEntropyLower.lean)
+  proves the finite-n lower bound for the attained finite edge entropy minimum, including
+  clipping and triangle feasibility. The exact graphon formulas include the
+  unordered multiplicities and diagonal 1/n.
+  [DiscreteEntropyUpper.lean](SparseLowerTail/Section03/DiscreteEntropyUpper.lean)
+  proves the uniform entropy upper estimate for part (b). The recovery-vector
+  limit remains. [Build and 38 declaration audits](data/discrete-entropy-check.json) passed.
 
 - **Triangle decorrelation (`lem:decorrelation`):**
   [Decorrelation.lean](SparseLowerTail/Section03/Decorrelation.lean) proves the

@@ -1699,3 +1699,13 @@ and Ψ(P₁)+3Ψ(P₂)=0 for every certificate. The proof uses the established
 Euler equation and constant row identities. The
 [record](data/critical-apex-check.json) contains 27 public audits, two current
 manuscript reviews and the full root audit of 18,060 theorems.
+
+
+### 2026-10-20 — Full triangle pattern lemma
+
+All three parts of `lem:patterns` are checked: the actual four-atom triangle
+law and symmetric expectation, equality of actual partial derivatives at the
+AAA/ABB contacts, and the relabeling conclusion from pattern support and
+balanced edge density. The last step uses the recorded classical nonatomic
+CDF transport. The [record](data/patterns-check.json) contains 20 public
+audits and the full root audit of 18,082 theorems.

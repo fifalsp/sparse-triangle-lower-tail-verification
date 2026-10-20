@@ -1,0 +1,68 @@
+{
+  "checked_at_utc": "2026-10-20T10:40:29.041872+00:00",
+  "source_parent_commit": "16209c00b25e8cd6d49a73905448f77e0399af7f",
+  "paper_label": "lem:patterns",
+  "scope": "All three parts of the current pattern lemma. (a) Equality of the actual balanced-graphon triangle law with the four-atom measure of weights 1/4, and the symmetric-test expectation with weights 1/4 and 3/4; tests need no global measurability after the atomic law is established. (b) Actual partial derivatives agree at the AAA and ABB contacts, from differentiability and local coordinate-swap invariance on an open domain; uses actual Frechet derivatives and coordinate basis vectors. (c) Mass one on the four allowed patterns plus balanced edge density yields an actual relabeling, through the proved measurable half partition and classical nonatomic CDF transport.",
+  "sources": [
+    {
+      "path": "SparseLowerTail/Section05/BalancedTriangleLaw.lean",
+      "sha256": "291c650644805f296a19b5045892ec90dd468845ac7ae98679e73ad0ed4f4640"
+    },
+    {
+      "path": "SparseLowerTail/Section05/PatternDerivatives.lean",
+      "sha256": "b83ab9ad43891b36632e957ab817fcb7ae953af0ac4b48ea166d1bb0bd7fd530"
+    }
+  ],
+  "explicit_inputs": [
+    "classical:nonatomic-cdf-transport"
+  ],
+  "checks": [
+    {
+      "command": "LEAN_NUM_THREADS=1 lake build SparseLowerTail",
+      "exit_code": 0,
+      "output": "Build completed successfully (3714 jobs). Existing cached linter warnings were replayed."
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean tools/audit_patterns.lean",
+      "exit_code": 0,
+      "output": "'SparseLowerTail.Section05.integral_triangleLaw_balanced' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.integral_balancedTriangleAtoms' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.triangleLaw_balanced_eq_atoms' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.integral_triangleLaw_balanced_any' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.integral_triangleLaw_balanced_symmetric' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section05.measurableSet_twoBlockPatterns' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.balanced_of_triangleLaw_twoBlockPatterns' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section05.relabeling_of_triangleLaw_twoBlockPatterns' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section05.coordinateSwap_line' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.partials_eq_of_coordinateSwap' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.partials_eq_of_coordinateSwap_on_open' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section05.partials_eq_at_AAA' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.partials_eq_at_ABB' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.partials_at_AAA_of_differentiable' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.partials_at_ABB_of_differentiable' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.AllowedPattern' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.bipodal_of_patterns' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.edgeDensity_bipodalGraphon' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.balanced_of_bipodal_edgeDensity' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.balanced_of_patterns' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean Audit.lean",
+      "exit_code": 0,
+      "output": "Axiom audit passed: 24654 project declarations, 18082 theorems; only propext, Classical.choice, Quot.sound allowed.\n"
+    },
+    {
+      "command": "python3 tools/check_lean_map.py",
+      "exit_code": 0,
+      "output": "Proof-map links passed: 111 labels, 866 Lean declarations."
+    }
+  ],
+  "audited_public_declarations": 20,
+  "new_public_theorems": 15,
+  "root_project_modules": 535,
+  "root_project_declarations": 24654,
+  "root_project_theorems": 18082,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "base_source_manifest": "critical-apex-check.json",
+  "source_manifest_changes": [
+    {
+      "module": "SparseLowerTail",
+      "sha256": "e9ec5536cf9880f9f54bb22d7d088bc2810e5572b8f0a957656d150440b2e861"
+    },
+    {
+      "module": "SparseLowerTail.Section05.BalancedTriangleLaw",
+      "sha256": "291c650644805f296a19b5045892ec90dd468845ac7ae98679e73ad0ed4f4640"
+    },
+    {
+      "module": "SparseLowerTail.Section05.PatternDerivatives",
+      "sha256": "b83ab9ad43891b36632e957ab817fcb7ae953af0ac4b48ea166d1bb0bd7fd530"
+    }
+  ],
+  "source_manifest_sha256": "93844e92c449ce37f133acc378868068e0d279d64d8eccf7bdc4b95927c5c950",
+  "manuscript_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+}

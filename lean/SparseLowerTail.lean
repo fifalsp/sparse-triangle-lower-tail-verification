@@ -184,3 +184,5 @@ import SparseLowerTail.Numerics.Cholesky3
 import SparseLowerTail.Numerics.BoxLowerBounds
 import SparseLowerTail.Numerics.TaylorCube
 import SparseLowerTail.Section05.CriticalApex
+import SparseLowerTail.Section05.BalancedTriangleLaw
+import SparseLowerTail.Section05.PatternDerivatives

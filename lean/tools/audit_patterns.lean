@@ -1,0 +1,23 @@
+import SparseLowerTail.Section05.BalancedTriangleLaw
+import SparseLowerTail.Section05.PatternDerivatives
+
+#print axioms SparseLowerTail.Section05.integral_triangleLaw_balanced
+#print axioms SparseLowerTail.Section05.integral_balancedTriangleAtoms
+#print axioms SparseLowerTail.Section05.triangleLaw_balanced_eq_atoms
+#print axioms SparseLowerTail.Section05.integral_triangleLaw_balanced_any
+#print axioms SparseLowerTail.Section05.integral_triangleLaw_balanced_symmetric
+#print axioms SparseLowerTail.Section05.measurableSet_twoBlockPatterns
+#print axioms SparseLowerTail.Section05.balanced_of_triangleLaw_twoBlockPatterns
+#print axioms SparseLowerTail.Section05.relabeling_of_triangleLaw_twoBlockPatterns
+#print axioms SparseLowerTail.Section05.coordinateSwap_line
+#print axioms SparseLowerTail.Section05.partials_eq_of_coordinateSwap
+#print axioms SparseLowerTail.Section05.partials_eq_of_coordinateSwap_on_open
+#print axioms SparseLowerTail.Section05.partials_eq_at_AAA
+#print axioms SparseLowerTail.Section05.partials_eq_at_ABB
+#print axioms SparseLowerTail.Section05.partials_at_AAA_of_differentiable
+#print axioms SparseLowerTail.Section05.partials_at_ABB_of_differentiable
+#print axioms SparseLowerTail.Section02.AllowedPattern
+#print axioms SparseLowerTail.Section02.bipodal_of_patterns
+#print axioms SparseLowerTail.Section02.edgeDensity_bipodalGraphon
+#print axioms SparseLowerTail.Section02.balanced_of_bipodal_edgeDensity
+#print axioms SparseLowerTail.Section02.balanced_of_patterns

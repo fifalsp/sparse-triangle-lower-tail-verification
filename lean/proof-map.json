@@ -1348,24 +1348,45 @@
       "paper_label": "lem:patterns",
       "baseline": {
         "environment": "lemma",
-        "statement": "Let $a,b\\in[0,1]$ with $a\\ne b$. \\begin{enumerate}[label=(\\alph*)] \\item The law $\\nu_{B_{a,b}}$ is \\begin{equation} \\nu_{B_{a,b}}=\\frac14\\big(\\delta_{(a,a,a)}+\\delta_{(a,b,b)}+\\delta_{(b,a,b)}+\\delta_{(b,b,a)}\\big). \\end{equation} Moreover, $\\E_{\\nu_{B_{a,b}}}[\\Psi]=\\frac14\\Psi(P_1)+\\frac34\\Psi(P_2)$ for every function $\\Psi$ on $\\{a,b\\}^3$ that is invariant under permutations of the coordinates. \\item Let $G\\subset\\R^3$ be an open set and let $\\Psi:G\\to\\R$. Assume that $G$ and $\\Psi$ are invariant under permutations of the coordinates and that $\\Psi$ is differentiable at $P\\in G$. If $P=(p,p,p)$, then $\\partial_1\\Psi(P)=\\partial_2\\Psi(P)=\\partial_3\\Psi(P)$. If $P=(p,p',p')$, then $\\partial_2\\Psi(P)=\\partial_3\\Psi(P)$. \\item If a graphon $U$ satisfies $\\nu_U(\\mathcal O(P_1)\\cup\\mathcal O(P_2))=1$ and $e(U)=(a+b)/2$, then $U$ is a relabeling of $B_{a,b}$. \\end{enumerate}",
-        "statement_sha256": "5a31dbb7202a5765effb655f224b3024629e23a678a59121a852414d4d0fb1b1",
-        "proof_sha256": "963fd65f9d6467a0395ade2f2a767ca351d1b64813619c0fbabd4f6893c55d3b",
-        "source_line": 3664
+        "statement_sha256": "02b80befe1f8566779230f1cddd5492bf569aa58bff7afce230979f8d421d65d",
+        "proof_sha256": "5e53eecd9766f6c0f246d57921a88a104271d22cbf6997730a2eef2b1ebcd46e",
+        "source_line": 3638,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
       },
-      "status": "partial",
-      "checked_scope": "Part (c) proved in measurable-partition form: four allowed triangle patterns plus balanced edge density force IsBalanced. Fubini constructs the partition and an actual integral identity forces mass 1/2. Relabeling equivalence and parts (a),(b) are separate obligations.",
+      "status": "proved_relative_classical",
+      "checked_scope": "All three parts of the current pattern lemma. (a) Equality of the actual balanced-graphon triangle law with the four-atom measure of weights 1/4, and the symmetric-test expectation with weights 1/4 and 3/4; tests need no global measurability after the atomic law is established. (b) Actual partial derivatives agree at the AAA and ABB contacts, from differentiability and local coordinate-swap invariance on an open domain; uses actual Frechet derivatives and coordinate basis vectors. (c) Mass one on the four allowed patterns plus balanced edge density yields an actual relabeling, through the proved measurable half partition and classical nonatomic CDF transport.",
       "lean_files": [
-        "SparseLowerTail/Section02/Patterns.lean"
+        "SparseLowerTail/Section02/Patterns.lean",
+        "SparseLowerTail/Section05/BalancedTriangleLaw.lean",
+        "SparseLowerTail/Section05/PatternDerivatives.lean"
       ],
       "lean_declarations": [
         "SparseLowerTail.Section02.AllowedPattern",
         "SparseLowerTail.Section02.bipodal_of_patterns",
         "SparseLowerTail.Section02.edgeDensity_bipodalGraphon",
         "SparseLowerTail.Section02.balanced_of_bipodal_edgeDensity",
-        "SparseLowerTail.Section02.balanced_of_patterns"
+        "SparseLowerTail.Section02.balanced_of_patterns",
+        "SparseLowerTail.Section05.integral_triangleLaw_balanced",
+        "SparseLowerTail.Section05.integral_balancedTriangleAtoms",
+        "SparseLowerTail.Section05.triangleLaw_balanced_eq_atoms",
+        "SparseLowerTail.Section05.integral_triangleLaw_balanced_any",
+        "SparseLowerTail.Section05.integral_triangleLaw_balanced_symmetric",
+        "SparseLowerTail.Section05.measurableSet_twoBlockPatterns",
+        "SparseLowerTail.Section05.balanced_of_triangleLaw_twoBlockPatterns",
+        "SparseLowerTail.Section05.relabeling_of_triangleLaw_twoBlockPatterns",
+        "SparseLowerTail.Section05.coordinateSwap_line",
+        "SparseLowerTail.Section05.partials_eq_of_coordinateSwap",
+        "SparseLowerTail.Section05.partials_eq_of_coordinateSwap_on_open",
+        "SparseLowerTail.Section05.partials_eq_at_AAA",
+        "SparseLowerTail.Section05.partials_eq_at_ABB",
+        "SparseLowerTail.Section05.partials_at_AAA_of_differentiable",
+        "SparseLowerTail.Section05.partials_at_ABB_of_differentiable"
       ],
-      "explicit_inputs": []
+      "explicit_inputs": [
+        "classical:nonatomic-cdf-transport"
+      ],
+      "verification_record": "data/patterns-check.json",
+      "remaining_application": []
     },
     {
       "paper_label": "lem:parity",

@@ -194,3 +194,4 @@ import SparseLowerTail.Section07.PenalizedDigits
 import SparseLowerTail.Section02.BijectiveCompactness
 import SparseLowerTail.Section07.PenalizedEndpointProof
 import SparseLowerTail.Section05.PolygonFan
+import SparseLowerTail.Section08.ManuscriptFamilyRadius

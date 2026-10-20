@@ -1,0 +1,74 @@
+{
+  "checked_at_utc": "2026-10-20T12:42:27.713967+00:00",
+  "source_parent_commit": "44f3a931cb5750f5a26e9efe2226dbfbee2a5aeb",
+  "scope": "The complete AAA half is proved for the exact manuscript binary64 radius 3602879701896397/36028797018963968, strictly larger than 1/10. All five existing checked numerical Hessian certificates are reused unchanged; new exact containment proofs put the larger moving cube inside their certified boxes. The actual Hessian form is positive for every nonzero vector on the entire parameter range, and the contact has nonnegative value with its unique zero throughout that larger closed cube. The ABB half at this exact radius is still an internal obligation. The existing full ABB replay targets rational radius 1/10 and remains useful for the compact/global certificate; it does not establish the larger-radius Hessian statement.",
+  "sources": [
+    {
+      "path": "SparseLowerTail/Section08/ManuscriptFamilyRadius.lean",
+      "sha256": "38378e0e4ae96fb49781454b56ff9d643f1196d6f76cb8e5b9384a49956cf6da"
+    }
+  ],
+  "generator": {
+    "path": "tools/generate_family_binary64_radius.py",
+    "sha256": "841778bf60d94db8ac9fbe3054ae2dd977e78d5bda2ca0e536be964db9aa3e40",
+    "deterministic_regeneration": true,
+    "generated_source_sha256": "38378e0e4ae96fb49781454b56ff9d643f1196d6f76cb8e5b9384a49956cf6da"
+  },
+  "explicit_inputs_for_proved_AAA_result": [],
+  "remaining_internal_obligations": [
+    "critical numerical certificates (two nonapex regions and F1)",
+    "full ABB/exterior compact-family replays",
+    "ABB Hessian at the exact binary64 radius",
+    "latest-source combined integration"
+  ],
+  "exact_radius": {
+    "rational": "3602879701896397/36028797018963968",
+    "excess_over_one_tenth": "1/180143985094819840",
+    "half_ulp_bound_proved": true
+  },
+  "checks": [
+    {
+      "command": "LEAN_NUM_THREADS=1 lake build SparseLowerTail",
+      "exit_code": 0,
+      "output": "Build completed successfully (3727 jobs). Cached warnings replayed."
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean tools/audit_family_binary64_radius.lean",
+      "exit_code": 0,
+      "output": "'SparseLowerTail.Certificate.ManuscriptFamilyRadius.binary64Radius' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.ManuscriptFamilyRadius.binary64Radius_pos' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.ManuscriptFamilyRadius.binary64Radius_error' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.ManuscriptFamilyRadius.tenth_lt_binary64Radius' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.ManuscriptFamilyRadius.binary64Radius_half_ulp' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.ManuscriptFamilyRadius.AAA0.cube_in_box' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.ManuscriptFamilyRadius.AAA0.hessian_positive' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.ManuscriptFamilyRadius.AAA1.cube_in_box' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.ManuscriptFamilyRadius.AAA1.hessian_positive' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.ManuscriptFamilyRadius.AAA2.cube_in_box' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.ManuscriptFamilyRadius.AAA2.hessian_positive' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.ManuscriptFamilyRadius.AAA3.cube_in_box' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.ManuscriptFamilyRadius.AAA3.hessian_positive' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.ManuscriptFamilyRadius.AAA4.cube_in_box' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.ManuscriptFamilyRadius.AAA4.hessian_positive' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.ManuscriptFamilyRadius.aaa_hessian_positive' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.ManuscriptFamilyRadius.aaa_local_nonnegative_and_unique_zero' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.familyHessian_symmetric' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Certificate.familyHessianForm_segment_deriv' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean Audit.lean",
+      "exit_code": 0,
+      "output": "Axiom audit passed: 24901 project declarations, 18298 theorems; only propext, Classical.choice, Quot.sound allowed.\n"
+    },
+    {
+      "command": "python3 tools/check_lean_map.py",
+      "exit_code": 0,
+      "output": "Proof-map links passed: 111 labels, 1054 Lean declarations."
+    }
+  ],
+  "audited_public_declarations": 19,
+  "new_public_theorems": 16,
+  "root_project_modules": 547,
+  "root_project_declarations": 24901,
+  "root_project_theorems": 18298,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "base_source_manifest": "final-manuscript-review-check.json",
+  "source_manifest_changes": [
+    {
+      "module": "SparseLowerTail",
+      "sha256": "5d71bb00cd94a233f3d71115e4612326a102871ee440807d8359f286a06046a3"
+    },
+    {
+      "module": "SparseLowerTail.Section08.ManuscriptFamilyRadius",
+      "sha256": "38378e0e4ae96fb49781454b56ff9d643f1196d6f76cb8e5b9384a49956cf6da"
+    }
+  ],
+  "source_manifest_sha256": "af4313ab755ac6d7bfb2bdc450a7ce519af4b7eb0986816c2b1cbff301691462",
+  "manuscript_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+}

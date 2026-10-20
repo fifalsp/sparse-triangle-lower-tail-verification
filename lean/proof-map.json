@@ -3720,6 +3720,54 @@
         "note": "The generic fan lemma is proved for a compact convex polygon represented by its vertex list, convex hull, and exact cyclic boundary-edge presentation. From actual compactness, the ray through any non-apex point has a last point on the polygon frontier; the point lies between the apex and that exit. Boundary membership then places it in an edge triangle. A separate barycentric height argument shows that a point below the apex in the closing triangle must equal the apex, including degenerate/boundary cases. The n>=2 indexing and exclusion of the closing edge are proved. No triangle-cover conclusion is assumed in the polygon representation. Existing actual seven-vertex cover proofs remain linked.",
         "audit_record": "data/polygon-fan-check.json"
       }
+    },
+    {
+      "paper_label": "appA3:hess",
+      "status": "partial_AAA_binary64_radius",
+      "checked_scope": "The complete AAA half is proved for the exact manuscript binary64 radius 3602879701896397/36028797018963968, strictly larger than 1/10. All five existing checked numerical Hessian certificates are reused unchanged; new exact containment proofs put the larger moving cube inside their certified boxes. The actual Hessian form is positive for every nonzero vector on the entire parameter range, and the contact has nonnegative value with its unique zero throughout that larger closed cube. The ABB half at this exact radius is still an internal obligation. The existing full ABB replay targets rational radius 1/10 and remains useful for the compact/global certificate; it does not establish the larger-radius Hessian statement.",
+      "lean_files": [
+        "SparseLowerTail/Section08/ManuscriptFamilyRadius.lean",
+        "SparseLowerTail/Section08/FamilyAAACover.lean",
+        "SparseLowerTail/Section08/FamilyLocalContacts.lean",
+        "SparseLowerTail/Section08/FamilyLocalBridge.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Certificate.ManuscriptFamilyRadius.binary64Radius",
+        "SparseLowerTail.Certificate.ManuscriptFamilyRadius.binary64Radius_pos",
+        "SparseLowerTail.Certificate.ManuscriptFamilyRadius.binary64Radius_error",
+        "SparseLowerTail.Certificate.ManuscriptFamilyRadius.tenth_lt_binary64Radius",
+        "SparseLowerTail.Certificate.ManuscriptFamilyRadius.binary64Radius_half_ulp",
+        "SparseLowerTail.Certificate.ManuscriptFamilyRadius.AAA0.cube_in_box",
+        "SparseLowerTail.Certificate.ManuscriptFamilyRadius.AAA0.hessian_positive",
+        "SparseLowerTail.Certificate.ManuscriptFamilyRadius.AAA1.cube_in_box",
+        "SparseLowerTail.Certificate.ManuscriptFamilyRadius.AAA1.hessian_positive",
+        "SparseLowerTail.Certificate.ManuscriptFamilyRadius.AAA2.cube_in_box",
+        "SparseLowerTail.Certificate.ManuscriptFamilyRadius.AAA2.hessian_positive",
+        "SparseLowerTail.Certificate.ManuscriptFamilyRadius.AAA3.cube_in_box",
+        "SparseLowerTail.Certificate.ManuscriptFamilyRadius.AAA3.hessian_positive",
+        "SparseLowerTail.Certificate.ManuscriptFamilyRadius.AAA4.cube_in_box",
+        "SparseLowerTail.Certificate.ManuscriptFamilyRadius.AAA4.hessian_positive",
+        "SparseLowerTail.Certificate.ManuscriptFamilyRadius.aaa_hessian_positive",
+        "SparseLowerTail.Certificate.ManuscriptFamilyRadius.aaa_local_nonnegative_and_unique_zero",
+        "SparseLowerTail.Certificate.familyHessian_symmetric",
+        "SparseLowerTail.Certificate.familyHessianForm_segment_deriv"
+      ],
+      "explicit_inputs": [
+        "internal:ABB-Hessian-at-binary64-radius"
+      ],
+      "baseline": {
+        "environment": "lemma",
+        "statement_sha256": "beb67c43b0c0cb55474c86d35dd7a4f206614bc4b153099f5e803656bd2c70bd",
+        "proof_sha256": null,
+        "source_line": 6168,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      },
+      "verification_record": "data/family-binary64-radius-check.json",
+      "latest_manuscript_review": {
+        "checked_at_utc": "2026-10-20T12:42:27.713967+00:00",
+        "note": "The complete AAA half is proved for the exact manuscript binary64 radius 3602879701896397/36028797018963968, strictly larger than 1/10. All five existing checked numerical Hessian certificates are reused unchanged; new exact containment proofs put the larger moving cube inside their certified boxes. The actual Hessian form is positive for every nonzero vector on the entire parameter range, and the contact has nonnegative value with its unique zero throughout that larger closed cube. The ABB half at this exact radius is still an internal obligation. The existing full ABB replay targets rational radius 1/10 and remains useful for the compact/global certificate; it does not establish the larger-radius Hessian statement.",
+        "audit_record": "data/family-binary64-radius-check.json"
+      }
     }
   ],
   "current_manuscript_inventory": "manuscript-coverage.json",

@@ -277,3 +277,15 @@ in [`MainRelabeling.lean`](SparseLowerTail/MainRelabeling.lean) express the
 at-transition and subcritical classifications as actual measure-preserving
 pullbacks up to almost-everywhere equality. They additionally take
 `ClassicalCDFTransport`, as does the existing partition-to-pullback bridge.
+
+
+### Exact Appendix A.3 radius
+
+The manuscript's binary64 radius is `3602879701896397/36028797018963968`,
+which exceeds `1/10` by `1/180143985094819840`.
+`Section08/ManuscriptFamilyRadius.lean` proves the complete AAA Hessian and
+unique-zero conclusions at that exact radius from the existing five interval
+certificates. The full ABB replay uses rational radius `1/10`; its conclusion
+is sufficient for the existing compact-family assembly, but the literal
+`appA3:hess` statement additionally requires the larger ABB cube. That
+extension is an internal author obligation, not an external/classical input.

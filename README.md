@@ -39,8 +39,8 @@ Updated October 20, 2026.
 | Conditional entropy (`lem:entropy`) | Entropy budget and event-probability transfer for the actual finite conditional laws and their product marginals | [Lean build and 30 axiom audits](lean/data/conditioned-product-entropy-check.json) |
 | Sparse Bernoulli entropy (`lem:fp`) | Uniform comparison with the sparse entropy, including the sharp quadratic upper bound | [Lean build and axiom audit](lean/data/sparse-entropy-check.json) |
 | Near-minimizer stability (`lem:stability`) | Approximate feasibility and optimality imply proximity to an actual minimizer after a measure-preserving bijection | [Lean build and axiom audit](lean/data/near-minimizers-check.json) |
-| Lean family AAA neighborhood | Nonnegativity and the unique AAA zero for every L ∈ [3.9, 9.5] | [Formalization record](lean/README.md) |
-| Current Lean project root | Full build and standard-axiom audit of **18,279 theorems** passed | [Root build and audit](lean/data/final-manuscript-review-check.json) |
+| Lean family AAA neighborhood | Hessian positivity, nonnegativity and the unique AAA zero for every L ∈ [3.9, 9.5], at the manuscript’s exact binary64 radius | [Lean build and 19 axiom audits](lean/data/family-binary64-radius-check.json) |
+| Current Lean project root | Full build and standard-axiom audit of **18,298 theorems** passed | [Root build and audit](lean/data/family-binary64-radius-check.json) |
 
 Apex fan **F4** is the latest completion, bringing the full-region
 Lean total to **39 of 42**. Completed nonapex indices are 1–11 and 13–35 (indices start at zero).
@@ -52,12 +52,12 @@ finite certificates. The [proof map](lean/proof-map.json) links each paper
 statement to its Lean declarations; [named inputs](lean/ASSUMPTIONS.md) lists
 the external and classical results used.
 
-**CPU work remaining:** 2 nonapex regions, apex fan F1, the family ABB and
-exterior replays, and the combined build importing all completed certificates.
+**Remaining verification:** 2 nonapex regions, apex fan F1, the family ABB and
+exterior replays, the exact binary64 ABB neighborhood, and the combined build.
 The [cluster record](hpc/README.md) tracks running jobs and recovery.
-All 110 mapped statements and their revised proofs have been reviewed against
-the current Overleaf source. The [inventory](lean/manuscript-coverage.json)
-tracks the remaining certificate obligations.
+The [manuscript comparison](lean/manuscript-review-20261020-binary64-radius.json)
+matches all 111 mapped labels to the current Overleaf source. The
+[inventory](lean/manuscript-coverage.json) tracks the remaining obligations.
 
 ## Which parts of the paper does the code verify?
 

@@ -1,0 +1,21 @@
+import SparseLowerTail
+
+#print axioms SparseLowerTail.Certificate.ManuscriptFamilyRadius.binary64Radius
+#print axioms SparseLowerTail.Certificate.ManuscriptFamilyRadius.binary64Radius_pos
+#print axioms SparseLowerTail.Certificate.ManuscriptFamilyRadius.binary64Radius_error
+#print axioms SparseLowerTail.Certificate.ManuscriptFamilyRadius.tenth_lt_binary64Radius
+#print axioms SparseLowerTail.Certificate.ManuscriptFamilyRadius.binary64Radius_half_ulp
+#print axioms SparseLowerTail.Certificate.ManuscriptFamilyRadius.AAA0.cube_in_box
+#print axioms SparseLowerTail.Certificate.ManuscriptFamilyRadius.AAA0.hessian_positive
+#print axioms SparseLowerTail.Certificate.ManuscriptFamilyRadius.AAA1.cube_in_box
+#print axioms SparseLowerTail.Certificate.ManuscriptFamilyRadius.AAA1.hessian_positive
+#print axioms SparseLowerTail.Certificate.ManuscriptFamilyRadius.AAA2.cube_in_box
+#print axioms SparseLowerTail.Certificate.ManuscriptFamilyRadius.AAA2.hessian_positive
+#print axioms SparseLowerTail.Certificate.ManuscriptFamilyRadius.AAA3.cube_in_box
+#print axioms SparseLowerTail.Certificate.ManuscriptFamilyRadius.AAA3.hessian_positive
+#print axioms SparseLowerTail.Certificate.ManuscriptFamilyRadius.AAA4.cube_in_box
+#print axioms SparseLowerTail.Certificate.ManuscriptFamilyRadius.AAA4.hessian_positive
+#print axioms SparseLowerTail.Certificate.ManuscriptFamilyRadius.aaa_hessian_positive
+#print axioms SparseLowerTail.Certificate.ManuscriptFamilyRadius.aaa_local_nonnegative_and_unique_zero
+#print axioms SparseLowerTail.Certificate.familyHessian_symmetric
+#print axioms SparseLowerTail.Certificate.familyHessianForm_segment_deriv

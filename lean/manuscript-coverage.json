@@ -1,7 +1,7 @@
 {
   "scope": "All arguments proved by the authors, including probabilistic deductions. Cited external and standard classical theorems may be explicit hypotheses; their paper-specific applications remain obligations.",
   "overleaf_url": "https://www.overleaf.com/project/6acd7ee98a5fed7d56897586",
-  "checked_at_utc": "2026-10-20T12:32:10.660005+00:00",
+  "checked_at_utc": "2026-10-20T12:42:27.713967+00:00",
   "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9",
   "certificate_tables_match": true,
   "mapped_label_changes": {},
@@ -1053,10 +1053,11 @@
       "source_line": 6168,
       "statement_sha256": "beb67c43b0c0cb55474c86d35dd7a4f206614bc4b153099f5e803656bd2c70bd",
       "proof_sha256": null,
-      "mapping_status": "needs_mapping",
-      "recorded_status": null,
-      "latest_manuscript_review": "not_yet_mapped",
-      "ownership": "author_argument_or_specialization_to_review"
+      "mapping_status": "mapped",
+      "recorded_status": "partial_AAA_binary64_radius",
+      "latest_manuscript_review": "exact_AAA_radius_checked_ABB_extension_pending",
+      "ownership": "author_argument_or_specialization_to_review",
+      "verification_record": "data/family-binary64-radius-check.json"
     }
   ]
 }

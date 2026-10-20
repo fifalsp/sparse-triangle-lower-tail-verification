@@ -1802,3 +1802,12 @@ current Overleaf source. The [record](data/final-manuscript-review-check.json)
 contains 117 public audits and the full root audit of 18,279 theorems.
 Remaining work is the critical and family numerical replays and their combined
 latest-source integration.
+
+
+### 2026-10-20 — Exact binary64 AAA radius
+
+The full AAA Hessian, nonnegativity and unique-zero conclusions now hold at
+the manuscript's exact binary64 radius, slightly larger than 1/10. The five
+numerical certificates are reused unchanged. The [record](data/family-binary64-radius-check.json)
+contains 19 public audits and the root audit of 18,298 theorems. The larger
+ABB Hessian cube still needs a checked extension of the radius-1/10 replay.

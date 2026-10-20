@@ -480,3 +480,15 @@ dependency reasons. Deployment details are in
 [`bouchet-recovery-deployment-20261019.json`](bouchet-recovery-deployment-20261019.json).
 Submission is not a successful proof. The newer ABB live snapshot is about
 3.9 GiB and reported directory changes during capture; Lake must revalidate it.
+
+
+### Latest author-proof root on Delta — October 20
+
+Job **23040802** checks source **8473e61**: the current `SparseLowerTail`
+root and its full axiom audit. Both uploaded hashes were checked before
+submission. It requests one CPU, 6000 MiB and two hours, with a maximum
+memory-weighted charge of six allocation hours. Together with the existing
+F1 replay's 88-hour cap, the pending cap is 94 of the last verified 95-hour
+balance. Both jobs were PENDING for priority, with no start estimate.
+The [deployment record](delta-author-root-20261020.json) records the source,
+runner hashes, resource adjustment and result paths.

@@ -2533,25 +2533,34 @@
     },
     {
       "paper_label": "lem:decorrelation",
-      "status": "partial_numeric_bookkeeping_proved",
-      "checked_scope": "Numerical bookkeeping only: binomial count formulas and ratio, finite vertex threshold, all three numerical codegree inequalities, p>=2/(lambda sqrt(n)), a single threshold L, energy square-root algebra and the negative-half-power identity.",
+      "status": "proved_relative_external",
+      "checked_scope": "Full triangle decorrelation lemma relative to the cited generic KS23 energy-selection and conditional-error inputs. Constructs the actual triangle hypergraph and graph-edge coordinate type, proves counts, uniformity and all codegrees, defines the actual product-conditioned law/revealed moments/energy, and proves all threshold and final energy algebra. Also proves the exact independent expectation and identifies the lower-tail event normalized by that expectation.",
       "lean_files": [
-        "SparseLowerTail/Section03/DecorrelationBounds.lean"
+        "SparseLowerTail/Section03/DecorrelationBounds.lean",
+        "SparseLowerTail/Section03/TriangleHypergraph.lean",
+        "SparseLowerTail/Section03/TriangleHypergraphCoordinates.lean",
+        "SparseLowerTail/Section03/KS23Inputs.lean",
+        "SparseLowerTail/Section03/Decorrelation.lean"
       ],
       "lean_declarations": [
-        "SparseLowerTail.Section03.triangle_edge_vertex_ratio",
-        "SparseLowerTail.Section03.triangle_numeric_codegree_bounds",
-        "SparseLowerTail.Section03.sparse_threshold_requirements",
-        "SparseLowerTail.Section03.decorrelation_error_of_energy",
-        "SparseLowerTail.Section03.exists_decorrelation_threshold",
-        "SparseLowerTail.Section03.sparse_half_power_identity"
+        "SparseLowerTail.Section03.triangle_decorrelation",
+        "SparseLowerTail.Section03.hypergraph_error_of_ks_energy",
+        "SparseLowerTail.Section03.coordinateTriangleHypergraph_codegree_condition",
+        "SparseLowerTail.Section03.coordinateTriangleHypergraph_card",
+        "SparseLowerTail.Section03.graphEdgeCoordinate_card",
+        "SparseLowerTail.Section03.hypergraphLowerLaw_sum",
+        "SparseLowerTail.Section03.revealedPatternMass_sum",
+        "SparseLowerTail.Section03.hypergraphRealCount_expectation",
+        "SparseLowerTail.Section03.hypergraphLowerEvent_eq_expected"
       ],
-      "explicit_inputs": [],
+      "explicit_inputs": [
+        "external:KS23:lemma18",
+        "external:KS23:eq33"
+      ],
       "remaining_application": [
-        "Construct the actual triangle hypergraph and identify its vertex/edge counts and maximum codegrees.",
-        "Define the actual KS23 energy and conditional error, encode the cited general hypergraph selection theorem as an explicit input, and apply it."
+        "Apply the selected revealed edge set in thm:reduction; final combined integration must include the latest proof source modules."
       ],
-      "verification_record": "data/decorrelation-bounds-check.json",
+      "verification_record": "data/decorrelation-check.json",
       "baseline": {
         "environment": "lemma",
         "statement_sha256": "0ce6bfdfaa9fd235e12b1c849b2eedb364946f5d22fb01db3d0c93122ee63136",

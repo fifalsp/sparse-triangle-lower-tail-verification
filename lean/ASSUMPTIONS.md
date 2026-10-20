@@ -23,6 +23,28 @@ the final theorem's type provide that separate provenance information.
 
 ## Explicitly encoded external and classical inputs
 
+### `external:KS23:lemma18` and `external:KS23:eq33`
+
+- Reference: Kozma–Samotij, *Lower tails via relative entropy*, Lemma 18
+  and equation (33), with energy defined in equation (32).
+  [Author's final revision](https://www.math.tau.ac.il/~samotij/papers/lower-tails-AOP-final-revision.pdf),
+  pages 21–22 (published energy argument cited at p. 686 in the manuscript).
+- Exact Lean propositions: `SparseLowerTail.Section03.KS23EnergySelection`
+  and `SparseLowerTail.Section03.KS23ConditionalErrorBound` in
+  [KS23Inputs.lean](SparseLowerTail/Section03/KS23Inputs.lean).
+- These are generic finite uniform-hypergraph statements with unit weights.
+  The first selects a small revealed vertex set with bounded covariance energy;
+  the second bounds conditional product error by that energy. Their definitions
+  use the actual product Bernoulli law, lower-tail conditioning, revealed fibers,
+  conditional moments and the weighted covariance sum from equation (32).
+- Status: **assumed external** as ordinary hypotheses. Neither input mentions
+  complete graphs, triangle counts, the sparse n-dependent threshold, or the
+  paper's triangle decorrelation conclusion.
+- Proved here: the genuine triangle hypergraph and its coordinate type, vertex
+  and edge counts, all codegree inequalities, the single threshold L, the
+  surviving-edge bound and final energy algebra. `triangle_decorrelation`
+  concludes the manuscript's `lem:decorrelation` from these two inputs.
+
 ### `external:KP26:1.6`
 
 - Reference: KP26, Theorem 1.6, with the specialization justified in the paper

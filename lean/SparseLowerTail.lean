@@ -162,3 +162,4 @@ import SparseLowerTail.Section03.ConditionedProductEntropy
 import SparseLowerTail.Section03.HarrisConditioning
 import SparseLowerTail.Section03.StepMatrixCut
 import SparseLowerTail.Section03.DecorrelationBounds
+import SparseLowerTail.Section03.Decorrelation

@@ -1,0 +1,48 @@
+{
+  "paper_label": "lem:decorrelation",
+  "checked_at_utc": "2026-10-20T06:04:38.757174+00:00",
+  "scope": "Full triangle decorrelation lemma relative to the cited generic KS23 energy-selection and conditional-error inputs. Constructs the actual triangle hypergraph and graph-edge coordinate type, proves counts, uniformity and all codegrees, defines the actual product-conditioned law/revealed moments/energy, and proves all threshold and final energy algebra. Also proves the exact independent expectation and identifies the lower-tail event normalized by that expectation.",
+  "sources": [
+    {
+      "path": "SparseLowerTail/Section03/TriangleHypergraph.lean",
+      "sha256": "8e46d88fd67283eb0073ec8a28b5c17c3bb669962d956e1bc393e74b2dbcef3f"
+    },
+    {
+      "path": "SparseLowerTail/Section03/TriangleHypergraphCoordinates.lean",
+      "sha256": "6d6ccd92c8113a9b51dd91dba25d2ab8f8e29bdd5e66ade097c8862b6a6b88a4"
+    },
+    {
+      "path": "SparseLowerTail/Section03/KS23Inputs.lean",
+      "sha256": "561579a8ddb63b2ce7da548d734658416d7ab30497796de06d85948c09f1b0b5"
+    },
+    {
+      "path": "SparseLowerTail/Section03/Decorrelation.lean",
+      "sha256": "3e6da4e3445377f05629ccf4e313ce1a1ce9e777a80116d3387076ad2307106b"
+    },
+    {
+      "path": "SparseLowerTail/Section03/DecorrelationBounds.lean",
+      "sha256": "c34cfdb3acf4ed1ed9c455fd4c8065b871a5eb9cb8cd16493a636def16d051d8"
+    }
+  ],
+  "lean_version": "4.24.0",
+  "checks": [
+    {
+      "command": "lake build SparseLowerTail.Section03.Decorrelation",
+      "exit_code": 0,
+      "output": "✔ [3150/3151] Built SparseLowerTail.Section03.KS23Inputs (4.1s)\n✔ [3151/3151] Built SparseLowerTail.Section03.Decorrelation (2.0s)\nBuild completed successfully (3151 jobs).\n"
+    },
+    {
+      "command": "lake env lean tools/audit_decorrelation.lean",
+      "exit_code": 0,
+      "output": "'SparseLowerTail.Section03.completeGraphEdges_card' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.completeGraphTriangles_card' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.biUnion_triangleEdgeSet' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.triangleEdgeSet_injective_on_triangles' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.triangleHyperedges_card' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.triangleHyperedge_uniform' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.triangleHyperedge_vertices' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.triangles_containing_edge' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.triangles_containing_edge_card' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.triangleCodegree_singleton' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.three_le_card_union_pairs' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.triangle_unique_of_two_edges' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.triangleCodegree_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.triangle_hypergraph_codegree_condition' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.graphEdgeCoordinate_card' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.projectGraphEdgeSet_injective' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.projectGraphEdgeSet_card' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.projectGraphEdgeSet_subset' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.projectGraphEdgeSet_subset_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.project_coordinateTriangleEdges' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.project_coordinateTriangleHypergraph' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.coordinateTriangleHypergraph_card' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.coordinateTriangleHypergraph_uniform' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.coordinateTriangleHypergraph_codegree' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.coordinateTriangleHypergraph_codegree_condition' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.hypergraphLowerLaw_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.ksConditionalEnergy_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.hypergraphLowerEvent_probability_pos' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.hypergraphLowerLaw_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.revealedPatternMass_eq_marginal' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.revealedPatternMass_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.booleanProduct_eq_allTrue' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.hypergraphRealCount_expectation' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.hypergraphLowerEvent_eq_expected' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.hypergraph_error_of_ks_energy' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.triangle_decorrelation' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    }
+  ],
+  "audited_theorem_count": 36,
+  "explicit_inputs": [
+    "external:KS23:lemma18",
+    "external:KS23:eq33"
+  ],
+  "external_reference": "https://www.math.tau.ac.il/~samotij/papers/lower-tails-AOP-final-revision.pdf",
+  "manuscript_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9",
+  "remaining_application": "Apply the selected revealed edge set in thm:reduction; final combined integration must include the latest proof source modules."
+}

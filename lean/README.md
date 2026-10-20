@@ -44,12 +44,12 @@ arguments separately for future manuscript revisions.
 
 ## Completed proof components
 
-- **Decorrelation bookkeeping (`lem:decorrelation`):**
-  [DecorrelationBounds.lean](SparseLowerTail/Section03/DecorrelationBounds.lean)
-  proves the binomial ratio, numerical codegree bounds, sparse threshold and
-  energy algebra. [Build and 11 audits](data/decorrelation-bounds-check.json)
-  passed. The actual triangle-hypergraph and external KS23 energy specialization
-  remain to be connected.
+- **Triangle decorrelation (`lem:decorrelation`):**
+  [Decorrelation.lean](SparseLowerTail/Section03/Decorrelation.lean) proves the
+  revealed-edge selection and conditional product-error bound using the two
+  cited generic KS23 inputs. The actual triangle hypergraph, counts, codegrees,
+  conditional laws, sparse threshold and energy algebra are proved here.
+  [Build and 36 declaration audits](data/decorrelation-check.json) passed.
 
 - **Cut concentration and step kernels (`lem:cutconc`, `lem:stepcut`):**
   [BernoulliConcentration.lean](SparseLowerTail/Section03/BernoulliConcentration.lean)

@@ -1,0 +1,34 @@
+{
+  "checked_at_utc": "2026-10-20T13:33:47.435847+00:00",
+  "hardware": {
+    "model": "MacBook Pro",
+    "chip": "Apple M4 Pro",
+    "ram_gb": 24,
+    "cpu_cores": 12
+  },
+  "benchmark": {
+    "exit_code": 0,
+    "wall_seconds": 10.249533875001362,
+    "user_seconds": 7.421814,
+    "system_seconds": 4.151282,
+    "max_rss_bytes_macos": 3332374528,
+    "workers": 1,
+    "lean_threads": 1,
+    "lean_memory_cap_mib": 8192,
+    "nice": 15,
+    "leaves": 20,
+    "scope": "Original ABB smoke leaf module only; excludes endpoint generation and full coverage assembly"
+  },
+  "measured_peak_memory_gib": 3.103515625,
+  "naive_abb_leaf_only_projection_hours": 15.438645108495107,
+  "projection_scope": "Linear extrapolation from one 20-leaf low-parameter sample. Excludes fresh endpoint and parameter proofs, coverage, padded replay, other regions and integration; not a full-job runtime estimate.",
+  "local_run_policy": {
+    "workers": 1,
+    "lean_threads": 1,
+    "nice": 15,
+    "lean_memory_cap_mib": 8192
+  },
+  "full_local_run_started": false,
+  "feasibility": "Sample fits comfortably. Full F1 and nonapex12 feasibility at this memory cap is untested; their multi-worker cluster runs exhausted 64 GiB.",
+  "cluster_caches": "Do not count Linux build artifacts as checked macOS results without validating portability and source dependencies."
+}

@@ -5,9 +5,10 @@
     "file": "arxiv/arxiv_v1.tex",
     "sha256": "84c55a798a1fc1492f319179eec89f340d27269916acd622d54707da185e17b7",
     "snapshot_date": "2026-10-19",
-    "display_number_snapshot": {
+    "baseline_display_number_snapshot": {
       "thm:main": "1.3"
-    }
+    },
+    "current_numbering_record": "../data/manuscript-numbering-20261020.json"
   },
   "entries": [
     {
@@ -50,6 +51,11 @@
         "statement_sha256": "c14cb980c240b0cffc30b3af41653aac2be9b91fae7d9b4e4f3dea6be2659d14",
         "proof_sha256": null,
         "source_line": 767
+      },
+      "current_display_reference": {
+        "kind": "theorem",
+        "number": "1.4",
+        "pdf_page": 8
       }
     },
     {
@@ -136,6 +142,11 @@
         "statement_sha256": "91d461b7be9f27468eb3c7f4b1278fc91a9275665e134119a2f29e2430e370b7",
         "proof_sha256": "fb5b2d8c1a6dff5a26686227164235b8564147b28b3a0195fa05dbaeea90fb91",
         "source_line": 2451
+      },
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "4.4",
+        "pdf_page": 26
       }
     },
     {
@@ -163,6 +174,11 @@
         "statement_sha256": "479a509475e6647775a0c865bbedbebbf9074cc654e3e8091392da02f04924b9",
         "proof_sha256": "7a19a2f2557728dbb19bd27bae5d5741998f9196d01de6a640258c5b473f472d",
         "source_line": 2537
+      },
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "4.6",
+        "pdf_page": 27
       }
     },
     {
@@ -194,6 +210,11 @@
         "statement_sha256": "b1d12cd112c7bcf432622d020d8896422683e367fcc3d41e25d84921201caed2",
         "proof_sha256": "f0b980c171832ff037d9db1caa9b8c11579ec6b0e53a7b16c30230bdff75244e",
         "source_line": 2668
+      },
+      "current_display_reference": {
+        "kind": "corollary",
+        "number": "4.8",
+        "pdf_page": 28
       }
     },
     {
@@ -245,6 +266,11 @@
         "checked_at_utc": "2026-10-20T10:02:04.219975+00:00",
         "note": "Current supporting range, scalar branch penalty, KP26 transfer, all-minimizer active triangle/cost/multiplier/edge data and supporting global penalty agree with the five mapped theorems; KP26 remains the stated external input.",
         "audit_record": "data/box-lower-bounds-check.json"
+      },
+      "current_display_reference": {
+        "kind": "proposition",
+        "number": "7.10",
+        "pdf_page": 51
       }
     },
     {
@@ -298,7 +324,12 @@
         "note": "The current statement and full tangency/uniqueness argument are checked. The exact determinant is proved for independent real z,L by rational algebra. The four residuals are shown to be genuine value/partial derivatives of the unsolved certificate, with its prescribed constant term and b^3/b^2 rescalings proved. Nonvanishing conditions are discharged on the stated branch, yielding exactly the published coefficients; the existing complete signs and all four contacts remain linked.",
         "audit_record": "data/certificate-uniqueness-check.json"
       },
-      "verification_record": "data/certificate-uniqueness-check.json"
+      "verification_record": "data/certificate-uniqueness-check.json",
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "8.2",
+        "pdf_page": 58
+      }
     },
     {
       "paper_label": "lem:unimodal",
@@ -320,6 +351,11 @@
         "statement_sha256": "1d9449e177b803e024ce49aae45c8471b84c09947a07fdf8feb45a82df906107",
         "proof_sha256": "1607f6ba32bf1bc162752acfc1ca63e0973b5eb9ce701f4c65e2217b6974de2e",
         "source_line": 2484
+      },
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "4.5",
+        "pdf_page": 26
       }
     },
     {
@@ -350,6 +386,11 @@
         "statement_sha256": "9d9fd039cca60b828a912678265f12109aa562682fd6b529caf3cb0c95394e71",
         "proof_sha256": "d08b2602733a64f643e61265d17c6fe6cd94b727fbae20dab7afc800b469ab08",
         "source_line": 2590
+      },
+      "current_display_reference": {
+        "kind": "theorem",
+        "number": "4.7",
+        "pdf_page": 27
       }
     },
     {
@@ -407,7 +448,12 @@
         "note": "The current proof uses exact inner endpoints 0.0200554310548823255291088 and 0.0200554310548823255291090. Lean now proves their strict D signs, the crossing bracket of width 2e-25, and all four printed a,b,mu,r ranges on that entire closed bracket, using a proved 40-decimal logarithm-of-two enclosure and rational Taylor certificates. The original printed outer signs and earlier refinements are preserved. The proposal generator was rerun and produced identical source.",
         "audit_record": "data/manuscript-digits-check.json"
       },
-      "verification_record": "data/manuscript-digits-check.json"
+      "verification_record": "data/manuscript-digits-check.json",
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "4.11",
+        "pdf_page": 29
+      }
     },
     {
       "paper_label": "lem:active",
@@ -429,6 +475,11 @@
         "statement_sha256": "d63d2b42ec946316341ac547750af2d0de51affa530a0705d405bcb7f5541c2a",
         "proof_sha256": "766bb1817dda6bb866b1f9ddfdb21e38f61c3d37785968cd44ca34833991816e",
         "source_line": 2254
+      },
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "4.1",
+        "pdf_page": 24
       }
     },
     {
@@ -454,6 +505,11 @@
         "statement_sha256": "6815957aba09c6ce82778f3f38e94e976a68ad96d17839d7447aaed1a505e797",
         "proof_sha256": "ae4f1545d2d0b77aa2eb2dc205c192799cf7e2d05499f361d8085f93aa1c6c37",
         "source_line": 2758
+      },
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "4.10",
+        "pdf_page": 29
       }
     },
     {
@@ -487,7 +543,12 @@
         "source_line": 1397,
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
       },
-      "verification_record": "data/section02-variational-review-20261020.json"
+      "verification_record": "data/section02-variational-review-20261020.json",
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "2.6",
+        "pdf_page": 13
+      }
     },
     {
       "paper_label": "prop:euler",
@@ -520,7 +581,12 @@
         "note": "All four current conclusions are checked internally for actual minimizers: positivity, Euler equation, positive unique multiplier with its literal integral identity, both quantitative kernel bounds and the positive codegree bound. The existing internal positivity/tilt proof supplies the preliminary facts that the current manuscript obtains from cited Zhao lemmas; no added hypothesis or external author conclusion is used.",
         "audit_record": "data/analytic-review-check.json"
       },
-      "verification_record": "data/analytic-review-check.json"
+      "verification_record": "data/analytic-review-check.json",
+      "current_display_reference": {
+        "kind": "proposition",
+        "number": "4.2",
+        "pdf_page": 24
+      }
     },
     {
       "paper_label": "prop:vertex",
@@ -549,6 +615,11 @@
         "statement_sha256": "b8169de161b4ae4425ab20c422b0beeb87646b04d947da67da5b0206209d0687",
         "proof_sha256": "15475ba0d4462250fdaa1b16c42cfddb3723a988d9f6e3a614cb28fe63bb2226",
         "source_line": 2893
+      },
+      "current_display_reference": {
+        "kind": "proposition",
+        "number": "4.13",
+        "pdf_page": 30
       }
     },
     {
@@ -572,6 +643,11 @@
         "statement_sha256": "0be89f671f2dd79e8d663bfe39df534c21dee5435f11619057fcf1aa13fb2bd2",
         "proof_sha256": "f688c12105cb692af217f8316e52e58f3bfcc8889599279241741eaa3e04a118",
         "source_line": 3039
+      },
+      "current_display_reference": {
+        "kind": "proposition",
+        "number": "4.15",
+        "pdf_page": 32
       }
     },
     {
@@ -611,7 +687,12 @@
         "note": "All three current threshold clauses and both equivalences are checked against the actual graphon proofs. The below-threshold competitor, strict improvement and exclusion of every constant minimizer are unconditional. Scaling and the at/above-threshold clauses retain the author-owned CriticalClassification input. The critical optimizer clause now has a literal measure-preserving relabeling, using only the named classical CDF input in addition. This review does not discharge the remaining critical numerical certificates.",
         "audit_record": "data/final-manuscript-review-check.json"
       },
-      "verification_record": "data/final-manuscript-review-check.json"
+      "verification_record": "data/final-manuscript-review-check.json",
+      "current_display_reference": {
+        "kind": "theorem",
+        "number": "5.3",
+        "pdf_page": 34
+      }
     },
     {
       "paper_label": "cor:open",
@@ -644,7 +725,12 @@
         "note": "The current compactness, minimizer-limit and local rigidity argument is checked; the theorem supplies an actual open target interval and exact balanced/relabeling classification.",
         "audit_record": "data/box-lower-bounds-check.json"
       },
-      "historical_anchor": "prop:stability"
+      "historical_anchor": "prop:stability",
+      "current_display_reference": {
+        "kind": "corollary",
+        "number": "6.4",
+        "pdf_page": 47
+      }
     },
     {
       "paper_label": "cor:seed",
@@ -677,7 +763,12 @@
         "note": "The same left-limit compactness argument supplies the left neighborhood. The existing internal CriticalClassification hypothesis is retained; this review does not discharge it.",
         "audit_record": "data/box-lower-bounds-check.json"
       },
-      "historical_anchor": "prop:stability"
+      "historical_anchor": "prop:stability",
+      "current_display_reference": {
+        "kind": "corollary",
+        "number": "6.5",
+        "pdf_page": 47
+      }
     },
     {
       "paper_label": "thm:smalltail",
@@ -704,6 +795,11 @@
         "statement_sha256": "1d667d60bcd1678b4db3d0e12b06a5ba1dc42bf9d7580d155a75bbed9f54a96d",
         "proof_sha256": null,
         "source_line": 4550
+      },
+      "current_display_reference": {
+        "kind": "theorem",
+        "number": "7.1",
+        "pdf_page": 47
       }
     },
     {
@@ -723,6 +819,11 @@
         "statement_sha256": "7d68d28e9177cf4e2c143d94c494f3343b9413903dceba280012d827245f4193",
         "proof_sha256": "273d87db3dcb201c97493aa2223fafc85dfed862da3538d9286db2a0d8ca08fe",
         "source_line": 5584
+      },
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "8.6",
+        "pdf_page": 61
       }
     },
     {
@@ -770,7 +871,12 @@
         "note": "The current target interval [smallTarget,threshold] is instantiated, its branch/logarithmic parameter bounds are derived, and the full actual graphon conclusion is obtained as a relabeling via the named ordinary classical CDF transport. Fubini/Jensen, multiplier subtraction, exact expectation comparison, coefficient signs, zero patterns and equal edge density are proved internally. Only the explicit compact-family positivity/zero-set certificate remains an internal author input.",
         "audit_record": "data/paper-tie-check.json"
       },
-      "verification_record": "data/paper-tie-check.json"
+      "verification_record": "data/paper-tie-check.json",
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "8.5",
+        "pdf_page": 60
+      }
     },
     {
       "paper_label": "prop:cover",
@@ -868,6 +974,11 @@
         "statement_sha256": "9388f22ca1d7ff31c57426a1381a80d1a6ac1c40e3f6061a7f9c08a67481d0f7",
         "proof_sha256": null,
         "source_line": 3987
+      },
+      "current_display_reference": {
+        "kind": "proposition",
+        "number": "5.17",
+        "pdf_page": 41
       }
     },
     {
@@ -991,7 +1102,12 @@
         "note": "The revised proof is checked against the analytic tail, strict clipping to the compact cube, ordered-domain/permutation reduction, exact zero-pattern converse and actual intermediate parameter-range proofs. The formal proof clips to 12 directly using q_a+2<12; this gives the same global conclusion and strictness outside the compact cube. The full compact-domain positivity and exact zero set remain author-owned numerical obligations: AAA is checked, while the full ABB and exterior replays remain unfinished. The conditional status is retained.",
         "audit_record": "data/final-manuscript-review-check.json"
       },
-      "verification_record": "data/final-manuscript-review-check.json"
+      "verification_record": "data/final-manuscript-review-check.json",
+      "current_display_reference": {
+        "kind": "proposition",
+        "number": "8.4",
+        "pdf_page": 60
+      }
     },
     {
       "paper_label": "lem:relabelB",
@@ -1022,6 +1138,11 @@
         "result": "current_statement_and_argument_checked",
         "note": "Checked both directions for measurable half-partitions and actual measure-preserving maps. The piecewise finite nonatomic CDF transport and null endpoint handling are proved from the named classical CDF input.",
         "verification_record": "data/manuscript-identities-check.json"
+      },
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "2.12",
+        "pdf_page": 15
       }
     },
     {
@@ -1082,7 +1203,12 @@
         "note": "All four current conclusions are checked. The sharp weighted cut bound already holds for arbitrary integrable kernels, and the literal edge/triangle counting bounds are combined. Classical compactness through vertex maps and ordinary L1 approximation by bijections now yield genuine bijective subsequence representatives with actual cut-norm convergence; this selection/convergence step is proved internally. The infimum, symmetry, triangle inequality and zero distance under arbitrary preserving pullbacks are proved on the stronger domain of arbitrary integrable real kernels. On graphons the new infimum is definitionally the existing cut distance.",
         "audit_record": "data/kernel-cut-check.json"
       },
-      "verification_record": "data/kernel-cut-check.json"
+      "verification_record": "data/kernel-cut-check.json",
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "2.2",
+        "pdf_page": 12
+      }
     },
     {
       "paper_label": "lem:lsc",
@@ -1109,7 +1235,12 @@
         "source_line": 1327,
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
       },
-      "verification_record": "data/section02-variational-review-20261020.json"
+      "verification_record": "data/section02-variational-review-20261020.json",
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "2.3",
+        "pdf_page": 13
+      }
     },
     {
       "paper_label": "s4:eq:arbr",
@@ -1157,6 +1288,11 @@
         "result": "current_statement_and_argument_checked",
         "note": "Checked triangle scaling and the entropy-cost/scaled-gap identities for arbitrary bounded nonnegative kernels. Integrability and zero-value conventions are proved; no additional input is needed.",
         "verification_record": "data/manuscript-identities-check.json"
+      },
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "2.4",
+        "pdf_page": 13
       }
     },
     {
@@ -1183,6 +1319,11 @@
         "statement_sha256": "16fb29d49443a33e34044fa464bee8de40ff23d083e5b1a190b87035efef8eb3",
         "proof_sha256": "00c3918a30be6912bc2b082c46b04b7c567500120fae270df3abb81475e98a19",
         "source_line": 1255
+      },
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "2.5",
+        "pdf_page": 13
       }
     },
     {
@@ -1210,6 +1351,11 @@
         "result": "current_statement_and_argument_checked",
         "note": "Checked the literal one-sided [0,c] inequality and two-sided [-c,c] equality. Cube-root normalization restores the triangle density and truncation gives local minimality; all derivative hypotheses match the current statement.",
         "verification_record": "data/manuscript-identities-check.json"
+      },
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "4.3",
+        "pdf_page": 25
       }
     },
     {
@@ -1249,7 +1395,12 @@
         "note": "Current actual graphon expectation identity is checked with integrability and Euler assumptions discharged as stated. Its last contact identity now also follows directly from the actual four-atom law and zero branch expectation; individual zero contact values are not assumed in that deduction.",
         "audit_record": "data/certificate-summary-check.json"
       },
-      "verification_record": "data/certificate-summary-check.json"
+      "verification_record": "data/certificate-summary-check.json",
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "8.1",
+        "pdf_page": 57
+      }
     },
     {
       "paper_label": "lem:J",
@@ -1274,6 +1425,11 @@
         "statement_sha256": "5d18522165a2ba2f2d5969c422962cc810d71c0de4c68a837672a7d80267eac4",
         "proof_sha256": "3ff898efe645f23524bcbf0ce25169b6a3483714f77c450bed3acbe7b36ce7f2",
         "source_line": 2961
+      },
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "4.14",
+        "pdf_page": 31
       }
     },
     {
@@ -1305,7 +1461,12 @@
         "note": "The current proof is checked from actual minimizers: vertex identity, bipodal stationarity, interiority and rigidity supply the balanced branch partition and equality of values. A new theorem derives the branch bounds and converts that partition into the actual measure-preserving relabeling in the statement. Only classical sampling and nonatomic CDF transport are inputs.",
         "audit_record": "data/final-manuscript-review-check.json"
       },
-      "verification_record": "data/final-manuscript-review-check.json"
+      "verification_record": "data/final-manuscript-review-check.json",
+      "current_display_reference": {
+        "kind": "corollary",
+        "number": "4.16",
+        "pdf_page": 33
+      }
     },
     {
       "paper_label": "lem:bregman",
@@ -1325,7 +1486,12 @@
         "SparseLowerTail.Section02.entropy_bregman",
         "SparseLowerTail.Section02.beta_ge_half"
       ],
-      "explicit_inputs": []
+      "explicit_inputs": [],
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "2.7",
+        "pdf_page": 14
+      }
     },
     {
       "paper_label": "lem:meangap",
@@ -1346,7 +1512,12 @@
         "SparseLowerTail.Section02.edgeDensity_gt_target",
         "SparseLowerTail.Section02.constant_of_cost_le_target"
       ],
-      "explicit_inputs": []
+      "explicit_inputs": [],
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "2.8",
+        "pdf_page": 14
+      }
     },
     {
       "paper_label": "lem:push",
@@ -1366,7 +1537,12 @@
         "SparseLowerTail.Section02.push_graphon",
         "SparseLowerTail.Section02.push_value"
       ],
-      "explicit_inputs": []
+      "explicit_inputs": [],
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "5.1",
+        "pdf_page": 34
+      }
     },
     {
       "paper_label": "prop:critical",
@@ -1400,7 +1576,12 @@
         "classical:inverse-transform-sampling",
         "internal:prop:cover",
         "internal:critical-apex-certificate"
-      ]
+      ],
+      "current_display_reference": {
+        "kind": "proposition",
+        "number": "5.2",
+        "pdf_page": 34
+      }
     },
     {
       "paper_label": "lem:isolation",
@@ -1424,7 +1605,12 @@
         "SparseLowerTail.Section02.isolatedMean_gt",
         "SparseLowerTail.Section02.continuousOn_isolatedMean"
       ],
-      "explicit_inputs": []
+      "explicit_inputs": [],
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "2.9",
+        "pdf_page": 15
+      }
     },
     {
       "paper_label": "lem:FB1",
@@ -1444,7 +1630,12 @@
         "SparseLowerTail.Section02.variance_ge_triangle_deficit",
         "SparseLowerTail.Section02.cost_ge_entropy_triangle_deficit"
       ],
-      "explicit_inputs": []
+      "explicit_inputs": [],
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "2.11",
+        "pdf_page": 15
+      }
     },
     {
       "paper_label": "lem:goodman",
@@ -1464,7 +1655,12 @@
         "SparseLowerTail.Section02.goodman",
         "SparseLowerTail.Section02.goodman_mean_bound"
       ],
-      "explicit_inputs": []
+      "explicit_inputs": [],
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "2.10",
+        "pdf_page": 15
+      }
     },
     {
       "paper_label": "lem:patterns",
@@ -1508,7 +1704,12 @@
         "classical:nonatomic-cdf-transport"
       ],
       "verification_record": "data/patterns-check.json",
-      "remaining_application": []
+      "remaining_application": [],
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "5.14",
+        "pdf_page": 39
+      }
     },
     {
       "paper_label": "lem:parity",
@@ -1530,6 +1731,11 @@
         "statement_sha256": "93d92428f45571eb77f2e0ab7f0da5a434ac4a2422c15825965fe73258cc4971",
         "proof_sha256": "e18d430b031a4b748eb1dbeeec54d9edba29df52c3b41fe454fe7cd9a1275af8",
         "source_line": 1474
+      },
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "2.13",
+        "pdf_page": 16
       }
     },
     {
@@ -1575,7 +1781,12 @@
         "note": "Current mean, positive multiplier, vertex-level identities and sharp support conclusion are checked together. The former identities corollary has moved into this lemma and its surrounding parameter discussion. Stronger cost/mean, Lambda monotonicity and mean-support inequalities remain linked.",
         "audit_record": "data/certificate-summary-check.json"
       },
-      "verification_record": "data/certificate-summary-check.json"
+      "verification_record": "data/certificate-summary-check.json",
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "5.7",
+        "pdf_page": 35
+      }
     },
     {
       "paper_label": "lem:region",
@@ -1598,7 +1809,12 @@
         "SparseLowerTail.Section05.criticalRegion_subset_parameterDomain",
         "SparseLowerTail.Section05.isCompact_criticalRegion"
       ],
-      "explicit_inputs": []
+      "explicit_inputs": [],
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "5.6",
+        "pdf_page": 35
+      }
     },
     {
       "paper_label": "lem:hoeffding",
@@ -1629,6 +1845,11 @@
         "checked_at_utc": "2026-10-20T10:29:32.510201+00:00",
         "note": "The current shared-edge energy identity and nonnegativity are checked for every bounded symmetric kernel. The last clause for an almost-everywhere constant kernel is now an explicit theorem, using the proved zero residual. The former orthogonal-decomposition theorem remains available.",
         "audit_record": "data/critical-apex-check.json"
+      },
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "5.10",
+        "pdf_page": 37
       }
     },
     {
@@ -1654,7 +1875,12 @@
         "SparseLowerTail.Section05.triangleLaw_triangle",
         "SparseLowerTail.Section05.triangleLaw_symmetric"
       ],
-      "explicit_inputs": []
+      "explicit_inputs": [],
+      "current_display_reference": {
+        "kind": "definition",
+        "number": "5.8",
+        "pdf_page": 36
+      }
     },
     {
       "paper_label": "def:relaxed",
@@ -1677,7 +1903,12 @@
         "SparseLowerTail.Section05.relaxationMultiplier",
         "SparseLowerTail.Section05.relaxationVertexMean"
       ],
-      "explicit_inputs": []
+      "explicit_inputs": [],
+      "current_display_reference": {
+        "kind": "definition",
+        "number": "5.9",
+        "pdf_page": 36
+      }
     },
     {
       "paper_label": "lem:valid",
@@ -1706,6 +1937,11 @@
         "checked_at_utc": "2026-10-20T10:29:32.510201+00:00",
         "note": "The current actual-law proof is checked for parameter membership, multiplier equality, bounded Euler and vertex tests, the shared-edge Hoeffding inequality and sharp support. Existing classical inverse-transform sampling remains explicit.",
         "audit_record": "data/critical-apex-check.json"
+      },
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "5.11",
+        "pdf_page": 37
       }
     },
     {
@@ -1762,6 +1998,11 @@
         "checked_at_utc": "2026-10-20T10:59:28.352265+00:00",
         "note": "All three current conclusions are checked: interiority and actual positive-semidefinite second variation at a minimum, complete stationary list, and stationary cost/mean identity. Surrounding constant-root differentiability, monotonicity, global minimum and derivative statements remain linked.",
         "audit_record": "data/certificate-summary-check.json"
+      },
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "7.3",
+        "pdf_page": 49
       }
     },
     {
@@ -1805,7 +2046,12 @@
         "note": "The current C1 gap, exact derivative, strict density order at a zero and limit -1/2 are checked by the existing analytic proofs. The updated endpoint argument is now checked with its actual stated bounds: branch penalty >0.496, constant minimum <0.468 using the trial s=0.3, and hence Delta(1/1000)>0.028. All logarithm/exponential and scalar-minimum comparisons are proved.",
         "audit_record": "data/analytic-review-check.json"
       },
-      "verification_record": "data/analytic-review-check.json"
+      "verification_record": "data/analytic-review-check.json",
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "7.4",
+        "pdf_page": 49
+      }
     },
     {
       "paper_label": "lem:fold",
@@ -1834,7 +2080,12 @@
         "SparseLowerTail.Section07.penalizedHessianDet_branch",
         "SparseLowerTail.Section07.penalizedMinimizer_branch_le_fold"
       ],
-      "explicit_inputs": []
+      "explicit_inputs": [],
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "7.2",
+        "pdf_page": 48
+      }
     },
     {
       "paper_label": "lem:limits",
@@ -1857,7 +2108,12 @@
       "explicit_inputs": [
         "classical:dyadic-l1-approximation",
         "classical:counting-lemma"
-      ]
+      ],
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "5.4",
+        "pdf_page": 34
+      }
     },
     {
       "paper_label": "lem:leftlimits",
@@ -1880,7 +2136,12 @@
         "classical:dyadic-l1-approximation",
         "classical:counting-lemma",
         "internal:prop:critical"
-      ]
+      ],
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "5.5",
+        "pdf_page": 35
+      }
     },
     {
       "paper_label": "eq:features",
@@ -1920,7 +2181,12 @@
         "SparseLowerTail.Section05.coverCertificate",
         "SparseLowerTail.Section05.certificateHoeffding"
       ],
-      "explicit_inputs": []
+      "explicit_inputs": [],
+      "current_display_reference": {
+        "kind": "definition",
+        "number": "5.12",
+        "pdf_page": 38
+      }
     },
     {
       "paper_label": "lem:weakdual",
@@ -1956,7 +2222,12 @@
         "note": "Current parts (a)-(d) are checked together, including exact expectation, exclusion by strict positivity, measure-one zero set and concavity on the full parameter plane. The former separate concavity lemma is now part (d); all old interpolation proofs remain linked.",
         "audit_record": "data/certificate-summary-check.json"
       },
-      "verification_record": "data/certificate-summary-check.json"
+      "verification_record": "data/certificate-summary-check.json",
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "5.13",
+        "pdf_page": 38
+      }
     },
     {
       "paper_label": "lem:zc",
@@ -1992,7 +2263,12 @@
         "note": "The full current crossing statement is checked together: exactly one zero below 1/1000 and strict signs on the entire stable branch, including the fold endpoint. The proof uses the already formalized compact-superlevel upward-crossing argument, together with the actual penalized derivative and density ordering, rather than an unproved finiteness assertion.",
         "audit_record": "data/paper-tie-check.json"
       },
-      "verification_record": "data/paper-tie-check.json"
+      "verification_record": "data/paper-tie-check.json",
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "7.5",
+        "pdf_page": 49
+      }
     },
     {
       "paper_label": "cor:cover",
@@ -2025,7 +2301,12 @@
         "note": "The revised finite-convex-cover deduction is checked: vertex coordinate bounds give the support cutoff throughout each cell; a convex combination distinct from the critical apex has positive weight off it; certificate concavity then gives strict positivity and excludes the actual relaxed law. The formal proof uses the positive finite weighted sum directly rather than extracting a common epsilon. Actual twelve-cell geometry/support are checked separately; the remaining full nonlinear vertex/apex replays remain explicit internal inputs.",
         "audit_record": "data/final-manuscript-review-check.json"
       },
-      "verification_record": "data/final-manuscript-review-check.json"
+      "verification_record": "data/final-manuscript-review-check.json",
+      "current_display_reference": {
+        "kind": "corollary",
+        "number": "5.18",
+        "pdf_page": 42
+      }
     },
     {
       "paper_label": "lem:insertion",
@@ -2052,7 +2333,12 @@
       ],
       "explicit_inputs": [
         "classical:inverse-transform-sampling"
-      ]
+      ],
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "6.1",
+        "pdf_page": 43
+      }
     },
     {
       "paper_label": "thm:twowell",
@@ -2074,7 +2360,12 @@
         "SparseLowerTail.Section06.rowFunctional_two_well_growth",
         "SparseLowerTail.Section06.rowFunctional_two_well_minima"
       ],
-      "explicit_inputs": []
+      "explicit_inputs": [],
+      "current_display_reference": {
+        "kind": "theorem",
+        "number": "6.2",
+        "pdf_page": 43
+      }
     },
     {
       "paper_label": "prop:pen",
@@ -2110,7 +2401,12 @@
         "note": "The full current scalar proposition is checked, including r_minus<r_plus, attained values and exact optimizer lists in all three regimes. The complete author-used stable stationary branch criterion is now explicit: a unique z in (0,fold] with mu(z)=3 gamma exists exactly when mu(fold)<=3 gamma, including the fold endpoint. Its order relative to z_c is equivalent to the reverse penalty order, with equality included. These assertions and the existing scalar classification use no external result.",
         "audit_record": "data/final-manuscript-review-check.json"
       },
-      "verification_record": "data/final-manuscript-review-check.json"
+      "verification_record": "data/final-manuscript-review-check.json",
+      "current_display_reference": {
+        "kind": "proposition",
+        "number": "7.6",
+        "pdf_page": 50
+      }
     },
     {
       "paper_label": "lem:order",
@@ -2134,6 +2430,11 @@
         "checked_at_utc": "2026-10-20T10:02:04.219975+00:00",
         "note": "The current strict-penalty-gap argument is proved by smallTarget_lt_threshold using the actual penalized tie, strict constant minimum and balanced classification, without numerical brackets.",
         "audit_record": "data/box-lower-bounds-check.json"
+      },
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "7.8",
+        "pdf_page": 50
       }
     },
     {
@@ -2164,6 +2465,11 @@
         "checked_at_utc": "2026-10-20T10:02:04.219975+00:00",
         "note": "Both current conclusions are checked: the multiplier from a genuine two-sided exponential tilt and the quadratic inequality from vertex variations, centered clipping and dominated convergence for all L1 tests, hence every L2 test.",
         "audit_record": "data/box-lower-bounds-check.json"
+      },
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "7.9",
+        "pdf_page": 51
       }
     },
     {
@@ -2215,7 +2521,12 @@
         "note": "The current five-step argument is checked against actual infimum-over-bijections representatives, insertion/minimal row equations, uniform functional and row estimates, measurable partitions, uniform kernel approximation and convergence of both block masses to one half. The finite-dimensional coercivity is proved through the explicit determinant margin and within-block integral bounds. Strong log monotonicity and the paired Euler equations prove equality of stationary rows, and symmetry/Fubini give bipodality. Bijective transfer returns the conclusion for the original graphons. Only classical sampling is assumed.",
         "audit_record": "data/final-manuscript-review-check.json"
       },
-      "verification_record": "data/final-manuscript-review-check.json"
+      "verification_record": "data/final-manuscript-review-check.json",
+      "current_display_reference": {
+        "kind": "theorem",
+        "number": "6.3",
+        "pdf_page": 45
+      }
     },
     {
       "paper_label": "lem:spectral",
@@ -2250,7 +2561,12 @@
         "classical:inverse-transform-sampling",
         "classical:positive-hilbert-schmidt-spectrum",
         "external:KP26:1.6"
-      ]
+      ],
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "7.13",
+        "pdf_page": 52
+      }
     },
     {
       "paper_label": "eq:s7mass",
@@ -2339,6 +2655,11 @@
         "statement_sha256": "d8fd94500a83de54f12599200aab33eef7db7831a4e6379029e8a1e54fb6082f",
         "proof_sha256": "172aefbb32deffb52e88a33580079f6d307b7a6757d091d2d0e9d133c6d9799b",
         "source_line": 5453
+      },
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "8.3",
+        "pdf_page": 59
       }
     },
     {
@@ -2376,7 +2697,12 @@
         "note": "Both current parts are checked with their actual expressions and constants: logarithmic moments, uniform branch bounds, all multiplier products, the seven codegree and three mean-error terms, and the resulting epsilon, mean error, vertex bound, block mass and degree estimates. The actual minimizer instantiation constructs SmallErrorData from proved optimizer and spectral deductions. The stronger block bound p0>0.4987 implies the printed 0.498. Only named KP26/classical inputs remain.",
         "audit_record": "data/final-manuscript-review-check.json"
       },
-      "verification_record": "data/final-manuscript-review-check.json"
+      "verification_record": "data/final-manuscript-review-check.json",
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "7.15",
+        "pdf_page": 54
+      }
     },
     {
       "paper_label": "lem:scalar",
@@ -2395,6 +2721,11 @@
         "statement_sha256": "ba1642e3ad1a768ce1692fbedc3d79c08f312718bb7d343d689d0b43676133ef",
         "proof_sha256": "cb015a7b1303430a961d3a1fe7a1f70d537e3b4836be17f46094bd00304e8eda",
         "source_line": 5168
+      },
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "7.16",
+        "pdf_page": 55
       }
     },
     {
@@ -2433,7 +2764,12 @@
         "note": "All current row conclusions and the revised derivation are checked on the actual eigenfunction sign blocks. This includes sign/deviation averages, residual block integrals, the seven-term codegree identity and averaged bounds, nonnegative surrogate codegrees, two Lipschitz exponential transfers, and the weighted-to-unweighted Jensen vertex estimate. The inputs are the cited KP26 reduction and explicit classical sampling/spectral data, not any of the three row conclusions.",
         "audit_record": "data/final-manuscript-review-check.json"
       },
-      "verification_record": "data/final-manuscript-review-check.json"
+      "verification_record": "data/final-manuscript-review-check.json",
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "7.14",
+        "pdf_page": 53
+      }
     },
     {
       "paper_label": "eq:s7rowmean",
@@ -2552,6 +2888,11 @@
         "statement_sha256": "84f3b68ae1708335b383c10765bfbd92fe1ce279e3bc2b4f9365b1af81e43790",
         "proof_sha256": "c7973ccc266baba364fdde264bcb17c300446322d36c536b4db3591f023f4f60",
         "source_line": 4908
+      },
+      "current_display_reference": {
+        "kind": "proposition",
+        "number": "7.12",
+        "pdf_page": 52
       }
     },
     {
@@ -2631,7 +2972,12 @@
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
       },
       "verification_record": "data/taylor-cube-check.json",
-      "remaining_application": []
+      "remaining_application": [],
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "5.16",
+        "pdf_page": 40
+      }
     },
     {
       "paper_label": "lem:stability",
@@ -2657,6 +3003,11 @@
         "proof_sha256": "b86e0490a07e77512df68798eaabde1a7b06be030b24dc2f5e123555dbcd9a1f",
         "source_line": 1780,
         "source_sha256": "d40897b38b2e317865f06ded5fddee4892474e169955f948240eb187b9d4296e"
+      },
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "3.4",
+        "pdf_page": 18
       }
     },
     {
@@ -2678,6 +3029,11 @@
         "proof_sha256": "03fded091bb4f52211bf3175ac448133ade8c576187cf4bdd3d03dd309b7955a",
         "source_line": 1674,
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      },
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "3.2",
+        "pdf_page": 17
       }
     },
     {
@@ -2709,7 +3065,12 @@
       },
       "remaining_application": [
         "Identify the finite edge-coordinate laws in thm:reduction and apply the proved finite-law entropy bounds."
-      ]
+      ],
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "3.8",
+        "pdf_page": 19
+      }
     },
     {
       "paper_label": "lem:harris",
@@ -2737,6 +3098,11 @@
         "proof_sha256": "6f70d13c98932ba4be8c375fbb103cecec9aa5c7899f53667f15633852cf0606",
         "source_line": 1860,
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      },
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "3.6",
+        "pdf_page": 19
       }
     },
     {
@@ -2764,6 +3130,11 @@
         "proof_sha256": "c4bec3f34632c03053a6b775d87c6e318c9dc12263a7cfe7d25c01210b205e1d",
         "source_line": 1996,
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      },
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "3.9",
+        "pdf_page": 20
       }
     },
     {
@@ -2789,6 +3160,11 @@
         "proof_sha256": "5d279eca74ec3523b3025122feb4ae2f4039275a12e4727798a7df60aba56e63",
         "source_line": 1814,
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      },
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "3.5",
+        "pdf_page": 18
       }
     },
     {
@@ -2827,6 +3203,11 @@
         "proof_sha256": "ac18efe47cd1aab4240eba730ba7a13d1f01bc7c0ca1963a2217032e3f98e0b2",
         "source_line": 1887,
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      },
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "3.7",
+        "pdf_page": 19
       }
     },
     {
@@ -2945,6 +3326,11 @@
         "proof_sha256": "a31413d0ec43bfb3a2b4fdb06ee31de832284bdec2e4cbc1d57f754e08cee044",
         "source_line": 1704,
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      },
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "3.3",
+        "pdf_page": 17
       }
     },
     {
@@ -3158,7 +3544,12 @@
         "data/revealed-laws-check.json",
         "data/revealed-transfer-check.json",
         "data/conditioned-structure-finite-check.json"
-      ]
+      ],
+      "current_display_reference": {
+        "kind": "theorem",
+        "number": "1.3",
+        "pdf_page": 7
+      }
     },
     {
       "paper_label": "s3:v0",
@@ -3239,6 +3630,11 @@
         "proof_sha256": "5de3e1fb5b94d1c05b46e05245c89b03766d19ae73c8ef0c01a5f04199fc14b3",
         "source_line": 2196,
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      },
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "3.10",
+        "pdf_page": 22
       }
     },
     {
@@ -3277,6 +3673,11 @@
         "proof_sha256": null,
         "source_line": 404,
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      },
+      "current_display_reference": {
+        "kind": "theorem",
+        "number": "1.1",
+        "pdf_page": 3
       }
     },
     {
@@ -3327,6 +3728,11 @@
         "proof_sha256": null,
         "source_line": 414,
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      },
+      "current_display_reference": {
+        "kind": "theorem",
+        "number": "1.2",
+        "pdf_page": 3
       }
     },
     {
@@ -3362,6 +3768,11 @@
         "proof_sha256": "b919c212a3373b5801a6375ff3bef5bc616456805b48a88b07ef73308266f3a2",
         "source_line": 1231,
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      },
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "2.1",
+        "pdf_page": 12
       }
     },
     {
@@ -3391,6 +3802,11 @@
         "proof_sha256": "0c53df2f1270996ca79f6d8ee11962467099218075085dde561ca685cf6acf50",
         "source_line": 2772,
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      },
+      "current_display_reference": {
+        "kind": "proposition",
+        "number": "4.9",
+        "pdf_page": 29
       }
     },
     {
@@ -3420,6 +3836,11 @@
         "proof_sha256": "824d15a0cfdab4b3633a69efe58cbfb880398778cd6609de2c577849c9e95761",
         "source_line": 2866,
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      },
+      "current_display_reference": {
+        "kind": "corollary",
+        "number": "4.12",
+        "pdf_page": 30
       }
     },
     {
@@ -3444,6 +3865,11 @@
         "proof_sha256": "2b06155e215dbd6504f355f7b81a5def9f263af5bcae49b167f979459f66cb35",
         "source_line": 3174,
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      },
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "4.17",
+        "pdf_page": 33
       }
     },
     {
@@ -3467,6 +3893,11 @@
         "proof_sha256": "f2ac173890d1a4e34679c2876bb510ac4d6b95a00c7840b0fc0061fcfaee0dd6",
         "source_line": 5741,
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      },
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "A.3",
+        "pdf_page": 63
       }
     },
     {
@@ -3502,6 +3933,11 @@
         "proof_sha256": "e9e5223b3243388f9d827ac2f025a1dc2cb91e07ced9c655b4c904d5a66026be",
         "source_line": 5705,
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      },
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "A.2",
+        "pdf_page": 63
       }
     },
     {
@@ -3540,6 +3976,11 @@
         "proof_sha256": "e3c2c4d2f4fde01ca593e670110b99bc9f3fe02070ef35b31c67c616bcdbe951",
         "source_line": 5680,
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      },
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "A.1",
+        "pdf_page": 63
       }
     },
     {
@@ -3578,6 +4019,11 @@
         "proof_sha256": "1ffddac5a9e03574f47a047d0e1fcacca74e338476b3d749eccf250f6ed25eac",
         "source_line": 3701,
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      },
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "5.15",
+        "pdf_page": 39
       }
     },
     {
@@ -3684,6 +4130,11 @@
         "checked_at_utc": "2026-10-20T11:34:07.093437+00:00",
         "note": "All five printed coexistence enclosures are proved for the actual defined crossing, critical penalty, scalar infimum value, small target and large target. A tighter rational crossing bracket is certified by genuine penalized-gap signs. Stationary constant roots are enclosed by signs of their actual strictly increasing equation. Branch multiplier, cost and triangle-density formulas are evaluated by kernel-checked rational interval arithmetic and logarithm/exponential Taylor bounds over the entire crossing bracket. The original printed endpoint signs also follow. No external or internal certificate hypotheses are used.",
         "audit_record": "data/penalized-digits-check.json"
+      },
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "7.7",
+        "pdf_page": 50
       }
     },
     {
@@ -3719,6 +4170,11 @@
         "checked_at_utc": "2026-10-20T11:49:02.250948+00:00",
         "note": "The generic fan lemma is proved for a compact convex polygon represented by its vertex list, convex hull, and exact cyclic boundary-edge presentation. From actual compactness, the ray through any non-apex point has a last point on the polygon frontier; the point lies between the apex and that exit. Boundary membership then places it in an edge triangle. A separate barycentric height argument shows that a point below the apex in the closing triangle must equal the apex, including degenerate/boundary cases. The n>=2 indexing and exclusion of the closing edge are proved. No triangle-cover conclusion is assumed in the polygon representation. Existing actual seven-vertex cover proofs remain linked.",
         "audit_record": "data/polygon-fan-check.json"
+      },
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "A.4",
+        "pdf_page": 65
       }
     },
     {
@@ -3788,6 +4244,11 @@
         "checked_at_utc": "2026-10-20T13:16:17.225717+00:00",
         "note": "The complete AAA half is proved at the exact binary64 radius. The actual scaled Hessian is proved entrywise 1000000-Lipschitz on [-1,11]^3 under explicit coefficient bounds of 1000. A checked retraction and dyadic interval padding transfer existing ABB enclosures to the binary64 cube. The 21 existing smoke leaves, including one complete 20-leaf subdivision and the final-region leaf, pass all new padded integer margins, coefficient bounds, contact bounds and radius conclusions. Full 108452-leaf ABB padding and final integration remain internal obligations.",
         "audit_record": "data/family-hessian-perturbation-check.json"
+      },
+      "current_display_reference": {
+        "kind": "lemma",
+        "number": "A.6",
+        "pdf_page": 68
       }
     }
   ],

@@ -12,6 +12,9 @@ in [ASSUMPTIONS.md](ASSUMPTIONS.md). The
 [proof map](proof-map.json) has 111 manuscript labels and 1,072 declaration
 links. The [latest manuscript comparison](manuscript-review-20261020-hessian-radius.json)
 reports no statement or proof changes against the live Overleaf source.
+The [numbering record](../data/manuscript-numbering-20261020.json) matches all
+95 numbered results to the current PDF. The main variational theorem is
+**Theorem 1.4**; the rate, structure and reduction results are **1.1–1.3**.
 
 ## Verified proof components
 

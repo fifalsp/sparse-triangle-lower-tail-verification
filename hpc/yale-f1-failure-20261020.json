@@ -1,0 +1,24 @@
+{
+  "cluster": "Yale Bouchet",
+  "job_id": 30049908,
+  "target": "SparseLowerTail.Section05.ApexReplay.F1.FullCube",
+  "checked_at_utc": "2026-10-20T04:01:15.038674+00:00",
+  "state": "OUT_OF_MEMORY",
+  "exit_code": "0:125",
+  "elapsed": "10:01:16",
+  "max_rss_kib": 67108100,
+  "verified_region": false,
+  "result_bundle": "triangle-verification-results-20261020-0000.tar.gz",
+  "result_bundle_sha256": "bd2f1df8d38883e2dc33858e6898c61642369f44f2d04b3c8e913c302cf8d2e3",
+  "recovery": {
+    "delta_job": 23029964,
+    "delta_state": "PENDING (Priority)",
+    "delta_workers": 4,
+    "delta_lean_threads": 1,
+    "yale_recovery_array": 30068465,
+    "yale_memory_gib": 192,
+    "yale_lean_threads": 1
+  },
+  "healthy_yale_jobs_remaining": 11,
+  "healthy_yale_cpus": 52
+}

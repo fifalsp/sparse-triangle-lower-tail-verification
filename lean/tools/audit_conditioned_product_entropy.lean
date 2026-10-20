@@ -1,0 +1,32 @@
+import SparseLowerTail.Section03.ConditionedProductEntropy
+
+#print axioms SparseLowerTail.Section03.finiteRowMass_nonneg
+#print axioms SparseLowerTail.Section03.finiteRowMass_zero
+#print axioms SparseLowerTail.Section03.finiteConditional_nonneg
+#print axioms SparseLowerTail.Section03.finiteConditional_sum
+#print axioms SparseLowerTail.Section03.finiteConditional_factor
+#print axioms SparseLowerTail.Section03.finite_conditional_entropy_chain
+#print axioms SparseLowerTail.Section03.finiteRelativeEntropy_nonneg
+#print axioms SparseLowerTail.Section03.expected_conditional_entropy_le
+#print axioms SparseLowerTail.Section03.finiteMarginal_nonneg
+#print axioms SparseLowerTail.Section03.finiteMarginal_expect
+#print axioms SparseLowerTail.Section03.finiteMarginal_sum
+#print axioms SparseLowerTail.Section03.mass_le_finiteMarginal
+#print axioms SparseLowerTail.Section03.finiteProductMass_nonneg
+#print axioms SparseLowerTail.Section03.finiteProductMass_pos
+#print axioms SparseLowerTail.Section03.finiteProductMass_sum
+#print axioms SparseLowerTail.Section03.productMarginals_nonneg
+#print axioms SparseLowerTail.Section03.productMarginals_sum
+#print axioms SparseLowerTail.Section03.productMarginals_support
+#print axioms SparseLowerTail.Section03.finite_product_cross_entropy
+#print axioms SparseLowerTail.Section03.product_marginal_entropy_decomposition
+#print axioms SparseLowerTail.Section03.bernoulliMass_sum
+#print axioms SparseLowerTail.Section03.bernoulliMass_pos
+#print axioms SparseLowerTail.Section03.bernoulli_marginal_entropy
+#print axioms SparseLowerTail.Section03.expected_dependence_add_marginal_entropy_le
+#print axioms SparseLowerTail.Section03.finiteConditionedMass_nonneg
+#print axioms SparseLowerTail.Section03.finiteConditionedMass_sum
+#print axioms SparseLowerTail.Section03.finiteConditionedMass_entropy
+#print axioms SparseLowerTail.Section03.conditioned_bernoulli_entropy_bound
+#print axioms SparseLowerTail.Section03.conditional_product_event_probability_le
+#print axioms SparseLowerTail.Section03.conditional_product_event_probability_zero

@@ -2422,31 +2422,34 @@
     },
     {
       "paper_label": "lem:entropy",
-      "status": "partial",
-      "checked_scope": "Part (b) for arbitrary normalized finite laws satisfying absolute continuity: finite log-sum inequality, binary grouping, log-2 lower bound, event probability bound, and null-event transfer are proved. Conditional product-marginal specialization and part (a) remain.",
+      "status": "proved_finite_law",
+      "checked_scope": "Both finite-law parts: actual conditional laws, entropy chain rule, product-of-actual-marginals decomposition and support, Bernoulli coordinate costs, conditioning cost equal to minus log event probability, and conditional event/null-event probability transfer. Random-graph coordinate identification and application remain in thm:reduction.",
       "lean_files": [
-        "SparseLowerTail/Section03/EntropyTransfer.lean"
+        "SparseLowerTail/Section03/EntropyTransfer.lean",
+        "SparseLowerTail/Section03/ConditionalEntropy.lean",
+        "SparseLowerTail/Section03/ProductMarginalEntropy.lean",
+        "SparseLowerTail/Section03/ConditionedProductEntropy.lean"
       ],
       "lean_declarations": [
-        "SparseLowerTail.Section03.finite_log_sum",
-        "SparseLowerTail.Section03.bernoulli_entropy_event_lower",
-        "SparseLowerTail.Section03.bernoulli_entropy_le_finiteRelativeEntropy",
-        "SparseLowerTail.Section03.finite_event_probability_le",
-        "SparseLowerTail.Section03.finite_event_probability_zero"
+        "SparseLowerTail.Section03.finite_conditional_entropy_chain",
+        "SparseLowerTail.Section03.product_marginal_entropy_decomposition",
+        "SparseLowerTail.Section03.finiteConditionedMass_entropy",
+        "SparseLowerTail.Section03.conditioned_bernoulli_entropy_bound",
+        "SparseLowerTail.Section03.conditional_product_event_probability_le",
+        "SparseLowerTail.Section03.conditional_product_event_probability_zero"
       ],
       "explicit_inputs": [],
-      "remaining": [
-        "Part (a): conditional chain rule and product-marginal decomposition",
-        "Conditional product-marginal law construction and absolute-continuity specialization"
-      ],
-      "verification_record": "data/entropy-transfer-check.json",
+      "verification_record": "data/conditioned-product-entropy-check.json",
       "baseline": {
         "environment": "lemma",
         "statement_sha256": "ebad897846e4ac39c7ae31cf3672ae6668cdde921f545712fd49b34bad7064b1",
         "proof_sha256": "5abba90bdfddf9dcbbe519014e73bf9a384e21ed289e4995c6431641f954aea0",
         "source_line": 1937,
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
-      }
+      },
+      "remaining_application": [
+        "Identify the finite edge-coordinate laws in thm:reduction and apply the proved finite-law entropy bounds."
+      ]
     }
   ],
   "current_manuscript_inventory": "manuscript-coverage.json"

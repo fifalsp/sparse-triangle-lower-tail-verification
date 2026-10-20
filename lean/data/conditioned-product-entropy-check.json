@@ -1,0 +1,176 @@
+{
+  "checked_at_utc": "2026-10-20T04:00:11.892561+00:00",
+  "paper_label": "lem:entropy",
+  "scope": "Both parts for actual finite conditional laws, with Bernoulli unrevealed coordinates and a conditioned product reference law.",
+  "source_sha256": {
+    "SparseLowerTail/Section03/ConditionalEntropy.lean": "43445290064a22f07aeff7f73d4a1b5e25090d00993b9e3e2963c24311fc1755",
+    "SparseLowerTail/Section03/ProductMarginalEntropy.lean": "ff47655d9476652b80b484cf6d4490585eeeccfc335ea6b7c94f9216b4ed1e52",
+    "SparseLowerTail/Section03/ConditionedProductEntropy.lean": "92582deaaf2020d8aab0d5439d9e53d84ef8507ff10da895c34b85ec269045b5"
+  },
+  "lean_version": "4.24.0",
+  "build": {
+    "command": "lake build SparseLowerTail.Section03.ConditionedProductEntropy",
+    "exit_code": 0,
+    "output": "Built SparseLowerTail.Section03.ConditionedProductEntropy (2.8s)\nBuild completed successfully (3125 jobs)."
+  },
+  "axiom_audit": {
+    "command": "lake env lean tools/audit_conditioned_product_entropy.lean",
+    "exit_code": 0,
+    "output": "'SparseLowerTail.Section03.finiteRowMass_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteRowMass_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteConditional_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteConditional_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteConditional_factor' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finite_conditional_entropy_chain' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteRelativeEntropy_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.expected_conditional_entropy_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteMarginal_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteMarginal_expect' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteMarginal_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.mass_le_finiteMarginal' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteProductMass_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteProductMass_pos' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteProductMass_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.productMarginals_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.productMarginals_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.productMarginals_support' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finite_product_cross_entropy' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.product_marginal_entropy_decomposition' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.bernoulliMass_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.bernoulliMass_pos' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.bernoulli_marginal_entropy' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.expected_dependence_add_marginal_entropy_le' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.finiteConditionedMass_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteConditionedMass_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteConditionedMass_entropy' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.conditioned_bernoulli_entropy_bound' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.conditional_product_event_probability_le' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.conditional_product_event_probability_zero' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+    "declarations": {
+      "SparseLowerTail.Section03.finiteRowMass_nonneg": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "SparseLowerTail.Section03.finiteRowMass_zero": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "SparseLowerTail.Section03.finiteConditional_nonneg": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "SparseLowerTail.Section03.finiteConditional_sum": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "SparseLowerTail.Section03.finiteConditional_factor": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "SparseLowerTail.Section03.finite_conditional_entropy_chain": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "SparseLowerTail.Section03.finiteRelativeEntropy_nonneg": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "SparseLowerTail.Section03.expected_conditional_entropy_le": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "SparseLowerTail.Section03.finiteMarginal_nonneg": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "SparseLowerTail.Section03.finiteMarginal_expect": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "SparseLowerTail.Section03.finiteMarginal_sum": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "SparseLowerTail.Section03.mass_le_finiteMarginal": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "SparseLowerTail.Section03.finiteProductMass_nonneg": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "SparseLowerTail.Section03.finiteProductMass_pos": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "SparseLowerTail.Section03.finiteProductMass_sum": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "SparseLowerTail.Section03.productMarginals_nonneg": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "SparseLowerTail.Section03.productMarginals_sum": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "SparseLowerTail.Section03.productMarginals_support": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "SparseLowerTail.Section03.finite_product_cross_entropy": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "SparseLowerTail.Section03.product_marginal_entropy_decomposition": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "SparseLowerTail.Section03.bernoulliMass_sum": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "SparseLowerTail.Section03.bernoulliMass_pos": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "SparseLowerTail.Section03.bernoulli_marginal_entropy": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "SparseLowerTail.Section03.expected_dependence_add_marginal_entropy_le": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "SparseLowerTail.Section03.finiteConditionedMass_nonneg": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "SparseLowerTail.Section03.finiteConditionedMass_sum": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "SparseLowerTail.Section03.finiteConditionedMass_entropy": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "SparseLowerTail.Section03.conditioned_bernoulli_entropy_bound": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "SparseLowerTail.Section03.conditional_product_event_probability_le": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "SparseLowerTail.Section03.conditional_product_event_probability_zero": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  },
+  "explicit_inputs": [],
+  "remaining_application": "Identify the finite edge-coordinate laws in the random-graph reduction and apply these proved general finite-law statements.",
+  "manuscript_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+}

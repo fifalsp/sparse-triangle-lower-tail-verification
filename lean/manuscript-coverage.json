@@ -1,7 +1,7 @@
 {
   "scope": "All arguments proved by the authors, including probabilistic deductions. Cited external and standard classical theorems may be explicit hypotheses; their paper-specific applications remain obligations.",
   "overleaf_url": "https://www.overleaf.com/project/6acd7ee98a5fed7d56897586",
-  "checked_at_utc": "2026-10-20T03:26:05.487233+00:00",
+  "checked_at_utc": "2026-10-20T04:01:15.038674+00:00",
   "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9",
   "certificate_tables_match": true,
   "mapped_label_changes": {
@@ -279,24 +279,27 @@
       "statement_sha256": "ebad897846e4ac39c7ae31cf3672ae6668cdde921f545712fd49b34bad7064b1",
       "proof_sha256": "5abba90bdfddf9dcbbe519014e73bf9a384e21ed289e4995c6431641f954aea0",
       "mapping_status": "mapped",
-      "recorded_status": "partial",
-      "latest_manuscript_review": "checked_part_b_finite_laws",
+      "recorded_status": "proved_finite_law",
+      "latest_manuscript_review": "checked_both_parts_finite_laws",
       "ownership": "author_argument",
       "lean_files": [
-        "SparseLowerTail/Section03/EntropyTransfer.lean"
+        "SparseLowerTail/Section03/EntropyTransfer.lean",
+        "SparseLowerTail/Section03/ConditionalEntropy.lean",
+        "SparseLowerTail/Section03/ProductMarginalEntropy.lean",
+        "SparseLowerTail/Section03/ConditionedProductEntropy.lean"
       ],
       "lean_declarations": [
-        "SparseLowerTail.Section03.finite_log_sum",
-        "SparseLowerTail.Section03.bernoulli_entropy_event_lower",
-        "SparseLowerTail.Section03.bernoulli_entropy_le_finiteRelativeEntropy",
-        "SparseLowerTail.Section03.finite_event_probability_le",
-        "SparseLowerTail.Section03.finite_event_probability_zero"
+        "SparseLowerTail.Section03.finite_conditional_entropy_chain",
+        "SparseLowerTail.Section03.product_marginal_entropy_decomposition",
+        "SparseLowerTail.Section03.finiteConditionedMass_entropy",
+        "SparseLowerTail.Section03.conditioned_bernoulli_entropy_bound",
+        "SparseLowerTail.Section03.conditional_product_event_probability_le",
+        "SparseLowerTail.Section03.conditional_product_event_probability_zero"
       ],
       "explicit_inputs": [],
-      "verification_record": "data/entropy-transfer-check.json",
-      "remaining": [
-        "Part (a): conditional chain rule and product-marginal decomposition",
-        "Conditional product-marginal law construction and absolute-continuity specialization"
+      "verification_record": "data/conditioned-product-entropy-check.json",
+      "remaining_application": [
+        "Identify the finite edge-coordinate laws in thm:reduction and apply the proved finite-law entropy bounds."
       ]
     },
     {

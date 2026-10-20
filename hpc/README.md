@@ -1,12 +1,14 @@
 # Running the Lean checks on Yale and Delta
 
-## Latest verified results — October 19, 2026
+## Latest verified results — October 20, 2026
 
-**31 full-region Lean builds and axiom audits have passed:** 27 nonapex
-regions and apex fans F2, F3, F5 and F6. The new completions are nonapex jobs
-18 and 19. [Evidence](results-20261019-2330/verified-regions.json).
+**32 full-region Lean builds and axiom audits have passed:** 28 nonapex
+regions and apex fans F2, F3, F5 and F6. The new completion is nonapex job
+35. [Evidence](results-20261020-0000/verified-regions.json).
 
-Thirteen original Yale jobs were running on 64 cores at the latest check.
+Eleven original Yale jobs were running on 52 cores at the latest check.
+The older Yale F1 job reached its 64 GiB memory limit.
+[Failure and recovery record](yale-f1-failure-20261020.json).
 Recovery array `30068465` and combined assembly `30068466` remain queued.
 
 Delta job **23029964** replaces job `23029368`, which reached its setup

@@ -3,7 +3,7 @@
 The project formalizes the authors' arguments in the paper, with cited external
 and standard classical results supplied as explicit hypotheses.
 
-**Verified:** 27 nonapex full-domain certificates and apex fans F2, F3, F5 and
+**Verified:** 28 nonapex full-domain certificates and apex fans F2, F3, F5 and
 F6 have passed Lean builds and axiom audits. The main variational theorem's
 assembly and the proof components below are checked; the remaining certificates
 and combined integration are in progress.
@@ -44,10 +44,12 @@ arguments separately for future manuscript revisions.
 
 ## Completed proof components
 
-- **Finite entropy probability transfer (`lem:entropy`(b)):** [EntropyTransfer.lean](SparseLowerTail/Section03/EntropyTransfer.lean)
-  proves grouping, the `log 2` bound, probability transfer and null-event transfer
-  for finite laws under absolute continuity. [Build and five audits](data/entropy-transfer-check.json) passed.
-  The conditional product-marginal specialization and part (a) remain.
+- **Conditional entropy (`lem:entropy`), both finite-law parts:**
+  [ConditionedProductEntropy.lean](SparseLowerTail/Section03/ConditionedProductEntropy.lean)
+  combines the actual conditional laws, entropy chain rule, product-marginal
+  decomposition, Bernoulli costs and conditioning cost. It also proves probability
+  and null-event transfer for these conditional laws. [Target build and all 30 declaration audits](data/conditioned-product-entropy-check.json) passed.
+  The edge-coordinate identification is an application in `thm:reduction`.
 
 - **Sparse Bernoulli entropy (`lem:fp`):** [SparseEntropy.lean](SparseLowerTail/Section03/SparseEntropy.lean)
   proves the full uniform bound, including both endpoints, using the checked

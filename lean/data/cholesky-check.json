@@ -1,0 +1,57 @@
+{
+  "checked_at_utc": "2026-10-20T09:41:21.531865+00:00",
+  "source_parent_commit": "daa47d0a1e607e803d108ebc86c97889ee467a70",
+  "paper_label": "lem:comp-chol",
+  "scope": "Full positive-radicand criterion for real symmetric 3×3 matrices: exact Cholesky radicands equal the rational LDL pivots, positive pivots yield an exact sum-of-squares decomposition and Matrix.PosDef. Proves the square-root enclosure rule, the literal interval-radicand statement, and an executable dyadic rational checker whose accepted input box certifies every represented matrix. Kernel-checked examples accept the identity and reject a zero pivot and an indefinite matrix.",
+  "sources": [
+    {
+      "path": "SparseLowerTail/Numerics/Cholesky3.lean",
+      "sha256": "34b8d56d3b245889e11e3c1d9c6a03f51e5c65d7f571bbfd382b39118c971221"
+    }
+  ],
+  "explicit_inputs": [],
+  "checks": [
+    {
+      "command": "LEAN_NUM_THREADS=1 lake build SparseLowerTail",
+      "exit_code": 0,
+      "output": "Build completed successfully (3705 jobs). Existing cached linter warnings were replayed."
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean tools/audit_cholesky.lean",
+      "exit_code": 0,
+      "output": "'SparseLowerTail.Numerics.sqrt_interval_enclosure' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Numerics.quadratic3_completion' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Numerics.quadratic3_pos_of_pivots' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Numerics.pivotExpr1_eval' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Numerics.pivotExpr2_eval' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Numerics.cholesky_radicands_eq' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Numerics.interval_cholesky3_sound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Numerics.cholesky3_positive_of_interval_radicands' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Numerics.symmetricMatrix3_posDef' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Numerics.interval_cholesky3_posDef' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Numerics.cholesky3_interval_radicands_posDef' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Numerics.intervalCholesky3Check_sound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Numerics.intervalCholesky3Check_identity' depends on axioms: [propext]\n'SparseLowerTail.Numerics.intervalCholesky3Check_zero' depends on axioms: [propext]\n'SparseLowerTail.Numerics.intervalCholesky3Check_indefinite' depends on axioms: [propext]\n"
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean Audit.lean",
+      "exit_code": 0,
+      "output": "Axiom audit passed: 24545 project declarations, 17994 theorems; only propext, Classical.choice, Quot.sound allowed.\n"
+    },
+    {
+      "command": "python3 tools/check_lean_map.py",
+      "exit_code": 0,
+      "output": "Proof-map links passed: 109 labels, 805 Lean declarations.\n"
+    }
+  ],
+  "audited_public_theorems": 15,
+  "root_project_modules": 530,
+  "root_project_declarations": 24545,
+  "root_project_theorems": 17994,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "base_source_manifest": "manuscript-identities-check.json",
+  "source_manifest_changes": [
+    {
+      "module": "SparseLowerTail",
+      "sha256": "036bb998a61ef8d62667d8fa12665ce0c2b82e170e6de80ad2140dc8e5fdc1f0"
+    },
+    {
+      "module": "SparseLowerTail.Numerics.Cholesky3",
+      "sha256": "34b8d56d3b245889e11e3c1d9c6a03f51e5c65d7f571bbfd382b39118c971221"
+    }
+  ],
+  "source_manifest_sha256": "7e1870263f89ae65507d102cbf2394c45358306118f04387a14d0c9fc32d4335",
+  "manuscript_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+}

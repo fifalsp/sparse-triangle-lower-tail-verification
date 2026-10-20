@@ -180,3 +180,4 @@ import SparseLowerTail.Section04.ZhaoThreshold
 import SparseLowerTail.Section05.CriticalGraphon
 import SparseLowerTail.Section06.RowsCriterion
 import SparseLowerTail.Section05.BranchBoundSoundness
+import SparseLowerTail.Numerics.Cholesky3

@@ -1655,3 +1655,14 @@ checked and mapped to the current manuscript. The current relabeling,
 scaling and first-variation arguments were also reviewed against their
 proved interfaces. The [check record](data/manuscript-identities-check.json)
 contains 46 public audits and the full root audit of 17,961 theorems.
+
+
+### 2026-10-20 — Interval Cholesky soundness
+
+`lem:comp-chol` is checked for actual real symmetric 3×3 matrices. Positive
+Cholesky radicands give an exact sum-of-squares decomposition and
+`Matrix.PosDef`. The square-root inclusion rule and an executable dyadic
+LDL checker are proved; every accepted box certifies every matrix inside it.
+Kernel-evaluated examples accept the identity and reject a zero pivot and
+an indefinite matrix. The [check record](data/cholesky-check.json) contains
+15 public audits and the full root audit of 17,994 theorems.

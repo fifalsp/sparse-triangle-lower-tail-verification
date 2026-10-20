@@ -3231,6 +3231,41 @@
         "source_line": 5741,
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
       }
+    },
+    {
+      "paper_label": "lem:comp-chol",
+      "status": "proved",
+      "checked_scope": "Full positive-radicand criterion for real symmetric 3×3 matrices: exact Cholesky radicands equal the rational LDL pivots, positive pivots yield an exact sum-of-squares decomposition and Matrix.PosDef. Proves the square-root enclosure rule, the literal interval-radicand statement, and an executable dyadic rational checker whose accepted input box certifies every represented matrix. Kernel-checked examples accept the identity and reject a zero pivot and an indefinite matrix.",
+      "lean_files": [
+        "SparseLowerTail/Numerics/Cholesky3.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Numerics.sqrt_interval_enclosure",
+        "SparseLowerTail.Numerics.quadratic3_completion",
+        "SparseLowerTail.Numerics.quadratic3_pos_of_pivots",
+        "SparseLowerTail.Numerics.pivotExpr1_eval",
+        "SparseLowerTail.Numerics.pivotExpr2_eval",
+        "SparseLowerTail.Numerics.cholesky_radicands_eq",
+        "SparseLowerTail.Numerics.interval_cholesky3_sound",
+        "SparseLowerTail.Numerics.cholesky3_positive_of_interval_radicands",
+        "SparseLowerTail.Numerics.symmetricMatrix3_posDef",
+        "SparseLowerTail.Numerics.interval_cholesky3_posDef",
+        "SparseLowerTail.Numerics.cholesky3_interval_radicands_posDef",
+        "SparseLowerTail.Numerics.intervalCholesky3Check_sound",
+        "SparseLowerTail.Numerics.intervalCholesky3Check_identity",
+        "SparseLowerTail.Numerics.intervalCholesky3Check_zero",
+        "SparseLowerTail.Numerics.intervalCholesky3Check_indefinite"
+      ],
+      "explicit_inputs": [],
+      "remaining_application": [],
+      "verification_record": "data/cholesky-check.json",
+      "baseline": {
+        "environment": "lemma",
+        "statement_sha256": "616153b3bf04454fb096ad7c1367a77083972e4b6433106f8528e7c2b427dcfe",
+        "proof_sha256": "e9e5223b3243388f9d827ac2f025a1dc2cb91e07ced9c655b4c904d5a66026be",
+        "source_line": 5705,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      }
     }
   ],
   "current_manuscript_inventory": "manuscript-coverage.json"

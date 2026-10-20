@@ -1,0 +1,59 @@
+{
+  "checked_at_utc": "2026-10-20T10:06:55.875628+00:00",
+  "source_parent_commit": "b98ad1b3f3aad4080d5f25711986cfcc40face9d",
+  "paper_label": "lem:taylor",
+  "scope": "The full quantitative lemma for an arbitrary actual function on the stated three-dimensional cube, with genuine first/second/third derivatives: Phi(P+y) >= lambda/2*|y|_2^2-S3/6*|y|_infinity^3 >= (lambda/2-delta*S3/6)*|y|_infinity^2 > 0. Proves all segment chain rules, the 27-term third-partial contraction bound, and the exact identification with the usual supremum and Euclidean norms. Third-partial enclosures and the positive-semidefinite center Hessian lower bound are the stated lemma hypotheses. The existing twelve apex/fan interval applications are retained and re-audited.",
+  "sources": [
+    {
+      "path": "SparseLowerTail/Numerics/TaylorCube.lean",
+      "sha256": "6216dec93cf0dc7676b8d98ac24f7ff2f26f394bc75826e7c5c633abd3efcd6a"
+    }
+  ],
+  "explicit_inputs": [],
+  "checks": [
+    {
+      "command": "LEAN_NUM_THREADS=1 lake build SparseLowerTail",
+      "exit_code": 0,
+      "output": "Build completed successfully (3707 jobs). Existing cached linter warnings were replayed."
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean tools/audit_taylor_cube.lean",
+      "exit_code": 0,
+      "output": "'SparseLowerTail.Numerics.infinity3_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Numerics.abs_le_infinity3' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Numerics.infinity3_eq_norm' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Numerics.infinity3_sq_le_euclideanSq3' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Numerics.euclideanSq3_eq_norm_sq' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Numerics.thirdForm3_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Numerics.qform3_eq_hessian_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Numerics.box_segment_third' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Numerics.taylor_cube_segment' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Numerics.taylor_cube_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.apexThirdForm_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.apexPhi_local_of_third_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.apexHessian_lower_of_shifted_interval' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section05.apexPhi_local_of_interval_taylor' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section05.apexFan_local_nonneg_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean Audit.lean",
+      "exit_code": 0,
+      "output": "Axiom audit passed: 24600 project declarations, 18036 theorems; only propext, Classical.choice, Quot.sound allowed.\n"
+    },
+    {
+      "command": "python3 tools/check_lean_map.py",
+      "exit_code": 0,
+      "output": "Proof-map links passed: 110 labels, 833 Lean declarations."
+    }
+  ],
+  "audited_public_theorems": 15,
+  "new_generic_public_theorems": 10,
+  "retained_apex_application_audits": 5,
+  "root_project_modules": 532,
+  "root_project_declarations": 24600,
+  "root_project_theorems": 18036,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "base_source_manifest": "box-lower-bounds-check.json",
+  "source_manifest_changes": [
+    {
+      "module": "SparseLowerTail",
+      "sha256": "c8437dc9edb9b3be062d7dfbf26c9f21e5ee65b318e1b59e38e9fe6c6d8d44f6"
+    },
+    {
+      "module": "SparseLowerTail.Numerics.TaylorCube",
+      "sha256": "6216dec93cf0dc7676b8d98ac24f7ff2f26f394bc75826e7c5c633abd3efcd6a"
+    }
+  ],
+  "source_manifest_sha256": "8aefe7199bccd7c231e714c569ade522a0de03d84754c7a6c94e5b73afb0d5a4",
+  "manuscript_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+}

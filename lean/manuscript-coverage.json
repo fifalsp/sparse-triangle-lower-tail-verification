@@ -1,12 +1,12 @@
 {
   "scope": "All arguments proved by the authors, including probabilistic deductions. Cited external and standard classical theorems may be explicit hypotheses; their paper-specific applications remain obligations.",
   "overleaf_url": "https://www.overleaf.com/project/6acd7ee98a5fed7d56897586",
-  "checked_at_utc": "2026-10-20T10:02:04.219975+00:00",
+  "checked_at_utc": "2026-10-20T10:06:55.875628+00:00",
   "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9",
   "certificate_tables_match": true,
   "mapped_label_changes": {
     "missing_or_renamed": 4,
-    "proof_changed": 17,
+    "proof_changed": 16,
     "statement_changed": 6
   },
   "items": [
@@ -710,8 +710,8 @@
       "statement_sha256": "e81b6cf2468ca640c1903331fc767a999edb4a79250a5b2c910965670bde35ad",
       "proof_sha256": "0aaf1b0b92ffd680b3eeb6e3832190d780c795ecafcb529630b131b5ef761ac2",
       "mapping_status": "mapped",
-      "recorded_status": "proved_actual_apex_application",
-      "latest_manuscript_review": "proof_changed",
+      "recorded_status": "proved",
+      "latest_manuscript_review": "current_statement_and_full_quantitative_argument_checked",
       "ownership": "author_argument_or_specialization_to_review"
     },
     {

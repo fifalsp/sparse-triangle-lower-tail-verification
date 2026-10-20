@@ -1678,3 +1678,13 @@ when the Hessian enclosure is not positive definite. The
 [check record](data/box-lower-bounds-check.json) includes 18 public audits,
 14 audits for five manuscript reviews, and the full root audit of 18,023 theorems.
 The seed corollary retains its recorded internal critical-classification input.
+
+
+### 2026-10-20 — General cube Taylor estimate
+
+`lem:taylor` now covers an arbitrary function with the stated genuine
+gradient, Hessian and third partials on the full cube. It proves both
+displayed quantitative inequalities and the strict positive margin, with
+the usual supremum and Euclidean norms. The previous apex/fan applications
+remain integrated. The [record](data/taylor-cube-check.json) contains
+15 public audits and the full root audit of 18,036 theorems.

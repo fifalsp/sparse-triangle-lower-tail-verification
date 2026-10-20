@@ -1,0 +1,18 @@
+import SparseLowerTail.Numerics.TaylorCube
+import SparseLowerTail.Section05.ApexFanLocal
+
+#print axioms SparseLowerTail.Numerics.infinity3_nonneg
+#print axioms SparseLowerTail.Numerics.abs_le_infinity3
+#print axioms SparseLowerTail.Numerics.infinity3_eq_norm
+#print axioms SparseLowerTail.Numerics.infinity3_sq_le_euclideanSq3
+#print axioms SparseLowerTail.Numerics.euclideanSq3_eq_norm_sq
+#print axioms SparseLowerTail.Numerics.thirdForm3_bound
+#print axioms SparseLowerTail.Numerics.qform3_eq_hessian_sum
+#print axioms SparseLowerTail.Numerics.box_segment_third
+#print axioms SparseLowerTail.Numerics.taylor_cube_segment
+#print axioms SparseLowerTail.Numerics.taylor_cube_lower
+#print axioms SparseLowerTail.Section05.apexThirdForm_bound
+#print axioms SparseLowerTail.Section05.apexPhi_local_of_third_bounds
+#print axioms SparseLowerTail.Section05.apexHessian_lower_of_shifted_interval
+#print axioms SparseLowerTail.Section05.apexPhi_local_of_interval_taylor
+#print axioms SparseLowerTail.Section05.apexFan_local_nonneg_zero_iff

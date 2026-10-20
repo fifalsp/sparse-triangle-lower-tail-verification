@@ -2398,14 +2398,25 @@
     },
     {
       "paper_label": "lem:taylor",
-      "status": "proved_actual_apex_application",
-      "checked_scope": "Proves the strict-positivity and unique-zero consequence for the actual apex expression on a logarithmic cube, using its exact derivatives, a center Hessian lower bound, and uniform third-partial bounds with radius times their sum less than three times the Hessian bound. Integer interval checks discharge all numerical hypotheses for twelve published fan/contact neighborhoods. This is the application's conclusion, not a formalization of the lemma for an arbitrary C3 function or its displayed infinity-norm quantitative bound.",
+      "status": "proved",
+      "checked_scope": "The full quantitative lemma for an arbitrary actual function on the stated three-dimensional cube, with genuine first/second/third derivatives: Phi(P+y) >= lambda/2*|y|_2^2-S3/6*|y|_infinity^3 >= (lambda/2-delta*S3/6)*|y|_infinity^2 > 0. Proves all segment chain rules, the 27-term third-partial contraction bound, and the exact identification with the usual supremum and Euclidean norms. Third-partial enclosures and the positive-semidefinite center Hessian lower bound are the stated lemma hypotheses. The existing twelve apex/fan interval applications are retained and re-audited.",
       "lean_files": [
+        "SparseLowerTail/Numerics/TaylorCube.lean",
         "SparseLowerTail/Section05/ApexTaylorLocal.lean",
         "SparseLowerTail/Section05/ApexTaylorIntervals.lean",
         "SparseLowerTail/Section05/ApexFanLocal.lean"
       ],
       "lean_declarations": [
+        "SparseLowerTail.Numerics.infinity3_nonneg",
+        "SparseLowerTail.Numerics.abs_le_infinity3",
+        "SparseLowerTail.Numerics.infinity3_eq_norm",
+        "SparseLowerTail.Numerics.infinity3_sq_le_euclideanSq3",
+        "SparseLowerTail.Numerics.euclideanSq3_eq_norm_sq",
+        "SparseLowerTail.Numerics.thirdForm3_bound",
+        "SparseLowerTail.Numerics.qform3_eq_hessian_sum",
+        "SparseLowerTail.Numerics.box_segment_third",
+        "SparseLowerTail.Numerics.taylor_cube_segment",
+        "SparseLowerTail.Numerics.taylor_cube_lower",
         "SparseLowerTail.Section05.apexThirdForm_bound",
         "SparseLowerTail.Section05.apexPhi_local_of_third_bounds",
         "SparseLowerTail.Section05.apexHessian_lower_of_shifted_interval",
@@ -2415,11 +2426,13 @@
       "explicit_inputs": [],
       "baseline": {
         "environment": "lemma",
-        "statement": "Let $\\Phi:\\R^3\\to\\R$ be three times continuously differentiable, let $P\\in\\R^3$ and $\\delta>0$, and let $\\mathcal C_\\delta=\\{q\\in\\R^3:|q-P|_\\infty\\le\\delta\\}$. Assume that $\\Phi(P)=0$ and $\\nabla\\Phi(P)=0$. Assume also that $\\nabla^2\\Phi(P)-\\lambda_0I$ is positive semidefinite for some $\\lambda_0>0$, and that \\[ S_3\\ge\\sum_{i,j,k=1}^3\\max_{q\\in \\mathcal C_\\delta}|\\partial_i\\partial_j\\partial_k\\Phi(q)|,\\quad \\delta S_3<3\\lambda_0 . \\] Then for every $y\\in\\R^3$ with $0<|y|_\\infty\\le\\delta$, \\[ \\Phi(P+y)\\ge\\frac{\\lambda_0}2|y|_2^2-\\frac{S_3}6|y|_\\infty^3 \\ge\\Big(\\frac{\\lambda_0}2-\\frac{\\delta S_3}6\\Big)|y|_\\infty^2>0 . \\]",
         "statement_sha256": "e81b6cf2468ca640c1903331fc767a999edb4a79250a5b2c910965670bde35ad",
-        "proof_sha256": "15e0731eeb8f85102d960c44660b8f0ea1c2833d6cd5770d50d8517293d765d4",
-        "source_line": 3785
-      }
+        "proof_sha256": "0aaf1b0b92ffd680b3eeb6e3832190d780c795ecafcb529630b131b5ef761ac2",
+        "source_line": 3753,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      },
+      "verification_record": "data/taylor-cube-check.json",
+      "remaining_application": []
     },
     {
       "paper_label": "lem:stability",

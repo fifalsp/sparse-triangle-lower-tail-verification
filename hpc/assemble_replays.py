@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Assemble all full-domain replay proofs; fail closed on any missing result."""
-import argparse, hashlib, json, re, shutil, subprocess, sys, tarfile
+import argparse, hashlib, importlib.util, json, re, shutil, subprocess, sys, tarfile
 from pathlib import Path
 from audit_result_archives import inspect
 ROOT=Path(__file__).resolve().parents[1]
@@ -95,7 +95,7 @@ def restore(path,kind,key):
    with dest.open('wb') as out:shutil.copyfileobj(t.extractfile(m),out)
 
 def main():
- p=argparse.ArgumentParser(description=__doc__);p.add_argument('--save',type=Path,required=True);p.add_argument('--logs',type=Path,required=True);p.add_argument('--check-only',action='store_true');p.add_argument('--workers',type=int,choices=range(1,9),default=2);p.add_argument('--lakefile',type=Path);p.add_argument('--audit-memory-mib',type=int);a=p.parse_args();a.logs.mkdir(parents=True,exist_ok=True)
+ p=argparse.ArgumentParser(description=__doc__);p.add_argument('--save',type=Path,required=True);p.add_argument('--logs',type=Path,required=True);p.add_argument('--check-only',action='store_true');p.add_argument('--workers',type=int,choices=range(1,9),default=2);p.add_argument('--lakefile',type=Path);p.add_argument('--audit-memory-mib',type=int);p.add_argument('--ready-batches',action='store_true');a=p.parse_args();a.logs.mkdir(parents=True,exist_ok=True)
  selected={}
  for path in sorted(a.save.glob('sparse-lean-results-*.tar.gz')):
   r=inspect(path.read_bytes(),path.name)
@@ -118,13 +118,26 @@ def main():
  def run(cmd,name):
   with (a.logs/name).open('w') as out:subprocess.run(cmd,cwd=ROOT/'lean',stdout=out,stderr=subprocess.STDOUT,check=True)
  run([sys.executable,'tools/generate_family_abb_radius_replay.py','--mode','full'],'abb-radius-generation.log')
+ loader=importlib.util.spec_from_file_location('assembly_plan',ROOT/'lean/tools/build_bounded.py')
+ bounded=importlib.util.module_from_spec(loader);loader.loader.exec_module(bounded)
+ graph=bounded.dependency_graph(target)
+ def manifest():
+  return {m:hashlib.sha256((ROOT/'lean'/Path(m.replace('.','/')).with_suffix('.lean')).read_bytes()).hexdigest() for m in sorted(graph)}
+ sources=manifest();(a.logs/'source-manifest.json').write_text(json.dumps(sources,indent=2)+'\n')
+ audit_source=(ROOT/'lean/Audit.lean').read_bytes()
  config_args=['--lakefile',str(a.lakefile.resolve())] if a.lakefile else []
- run([sys.executable,'tools/build_bounded.py',target,'--logs',str(a.logs/'combined-build'),'--workers',str(a.workers),'--lean-threads','1',*config_args],'combined-build.log')
+ if a.ready_batches:
+  if not a.lakefile:raise ValueError('Dependency-ready scheduler requires an explicit bounded Lake profile')
+  run([sys.executable,str(ROOT/'hpc/build_ready_batches.py'),'--repo',str(ROOT),'--target',target,'--logs',str(a.logs/'combined-build'),'--workers',str(a.workers),*config_args],'combined-build.log')
+ else:
+  run([sys.executable,'tools/build_bounded.py',target,'--logs',str(a.logs/'combined-build'),'--workers',str(a.workers),'--lean-threads','1',*config_args],'combined-build.log')
  audit=(ROOT/'lean/Audit.lean').read_text()
  if not audit.startswith('import SparseLowerTail\n'):raise ValueError('Unexpected audit header')
  audit_path=a.logs/'AuditCompleted.lean';audit_path.write_text(audit.replace('import SparseLowerTail\n','import '+target+'\n',1))
  lake_args=['--file',str(a.lakefile.resolve())] if a.lakefile else []
  memory_args=['-M'+str(a.audit_memory_mib),'-j1'] if a.audit_memory_mib else []
  run(['lake',*lake_args,'env','lean',*memory_args,str(audit_path)],'combined-audit.log')
+ if (ROOT/'lean/Audit.lean').read_bytes()!=audit_source or manifest()!=sources:raise ValueError('Proof source or audit policy changed during combined verification')
+ (a.logs/'source-hashes-passed.txt').write_text('All combined target dependency sources and the audit policy unchanged.\n')
  (a.logs/'ASSEMBLY_SUCCESS.txt').write_text('All internal numerical certificates discharged in CompletedReplays.mainTheorem, including the binary64 ABB radius replay; the seven named external/classical inputs remain explicit.\n')
 if __name__=='__main__':main()

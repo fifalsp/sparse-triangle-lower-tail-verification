@@ -1,140 +1,34 @@
-# The Sparse Triangle Lower Tail: computational verification
+# The Sparse Triangle Lower Tail: verification
 
-This repository contains the numerical verification used in **The Sparse Triangle
-Lower Tail: Threshold and Minimizers**, by Dong Huang and Shuangping Li.
+Computational verification and Lean 4 proofs for **The Sparse Triangle Lower
+Tail: Threshold and Minimizers**, by Dong Huang and Shuangping Li.
 
-The paper identifies **four statements that require finite computations** at the
-start of Appendix A. The table below tells you what is checked and where to find
-the code. The mathematical arguments reducing the main theorem to these checks
-are in the paper.
+## Verified results
 
-A bounded CPU verification job is also deployed on Yale Bouchet. See
-[`hpc/`](hpc/README.md) for the runner and
-[deployment record](hpc/bouchet-run-20261019.json). Submission is not evidence
-that the remote checks have passed.
+Updated October 19, 2026.
 
-## Latest CPU verification checkpoint — October 19, 2026, evening
-
-Full target builds and unchanged axiom audits have passed on Yale for **23/36
-nonapex regions and 4/6 apex fans (F2, F3, F5, F6)**. The archived evidence,
-source revisions and hashes are recorded in
-[`verified-regions.json`](hpc/results-20261019-evening/verified-regions.json).
-Reproduce the evidence inspection with
-`python3 hpc/audit_result_archives.py hpc/triangle-verification-results-20261019-2140.tar.gz --output /tmp/verified-regions.json`.
-This inspects recorded results; it does not replace a Lean kernel replay.
-
-The repository root currently integrates job 25 only. The other completed
-regional results still require source/cache import and a combined build/audit.
-**The main theorem is not yet fully discharged.** Thirteen nonapex regions,
-two apex fans, the ABB and exterior family replays, and final integration remain.
-Existing jobs continue running despite Yale's maintenance hold on new jobs.
-The [updated estimate](hpc/results-20261019-evening/estimate.json) budgets
-500–1,200 additional allocated core-hours and provisionally 2–4 calendar days,
-including maintenance and recovery; this is not a completion guarantee.
-
-## Lean 4 progress toward the main theorem
-
-A partial Lean formalization is now in [`lean/`](lean/README.md). **Theorem 1.3
-(`thm:main`) has a checked conditional assembly but is not yet fully proved in Lean.** The Python verification
-and the Lean formalization have different scopes.
-
-| Status | Progress |
-| --- | --- |
-| Proved in Lean | Entropy and triangle integrability, basic bounds, and invariance under changes on null sets. |
-| Proved in Lean | Balanced SBM cost/density formulas for arbitrary measurable equal partitions, existence of a balanced minimizing pair, and **V(r) ≤ V_SBM(r)**. |
-| Proved in Lean | Full balanced phase classification (`cor:Vbal`), including stationary branch, unimodality, actual inverse branches, unique crossing, and identification with the supremum threshold. |
-| Proved for unrestricted graphons | Active constraint (`lem:active`); strict improvement below the threshold and exclusion of all constant minimizers there (`thm:threshold`(iii)). |
-| Proved from a named external input | The full supporting range 0 < r ≤ r_−, value equality and optimizer data follow from the explicit KP26 input. |
-| Conditional main theorem | The actual graphon continuation and final theorem assembly compile. Two internal inputs remain: critical classification (cover/apex certificates) and the compact intermediate certificate family. |
-| Proved in Lean | Complete coefficient signs and value/derivative tangencies (`lem:certcoef`), including analytic substitutions and the required log 40 bounds. **Global certificate positivity remains unproved.** |
-| Proved in Lean | All printed threshold/parameter intervals (`lem:digits`); scaling, truncation and rescaled first variation; the graphon certificate expectation identity; scalar two-block rigidity. |
-| Proved in Lean | Full Euler–Lagrange proposition (`prop:euler`): positivity, unique positive multiplier, and quantitative graphon bounds. Sharp Bregman/mean-gap estimates and downward propagation (`lem:push`). |
-| Proved with an unproved internal hypothesis | The full threshold theorem follows from `CriticalClassification` (`prop:critical`). That critical classification remains to prove; it is not an external assumption. |
-| Proved relative to classical sampling | Vertex identity, sharp support bounds, and classification of every already-two-block minimizer (`prop:vertex`, `cor:bipodalmin`), in measurable-partition form. |
-| Proved in Lean | Value continuity; quantitative isolation, variance/entropy and Goodman bounds; the full boundary comparison (`lem:boundary`); triangle-pattern-to-partition rigidity. |
-| Proved relative to named classical inputs | Unrestricted minimizer existence and entropy lower semicontinuity; balanced partition/pullback equivalence; minimizer, cost, mean and multiplier convergence in cut distance. |
-| Proved in Lean | Critical parameter region; actual triangle-law symmetry and Hoeffding decomposition; certificate expectation/weak duality and parameter concavity; full scalar penalized classification and values. Relaxed-law validity uses classical sampling. |
-| Proved relative to classical sampling | Full insertion lemma: every minimizer row globally minimizes its row functional. The penalized mean-zero L² quadratic inequality is also proved. The complete functional two-well theorem is proved without external inputs. |
-| Proved in Lean | Complete local rigidity (`thm:rigidity`), including measurable row classes, uniform approximation, exact row identification and bijective relabeling transfer, relative only to classical sampling. |
-| Proved relative to named inputs | Full small-target theorem (`thm:smalltail`): every minimizer is the balanced branch, and conversely, for all 0 < r ≤ r_−. The proof derives bipodality from actual rows. |
-| Proved with explicit classical spectral input | Centered-kernel positivity, trace/diagonal and degree estimates, exact cubic identity and spectral tail inequalities. The graphon-specific estimates are proved here. |
-| Proved in Lean | The actual twelve-cell geometric cover, all 179 curved-boundary checks, and every support cutoff. Nonlinear certificate positivity remains separate. |
-| Partially checked | Actual S1 vertex-0 positivity on near-one, tail and a seventeen-leaf Taylor slab. Family local Hessian/contact calculus and exact parameter-to-coefficient enclosures are proved. Five exact interval leaves prove local nonnegativity and the unique AAA zero in a logarithmic cube of radius 0.1 for every L in [3.9,9.5]. Full-domain cover/family certificates remain unfinished. |
-| Proved relative to named inputs | All small-parameter bounds, actual row reduction and scalar exclusion (`lem:smallparams`, `lem:rowreduction`, `lem:scalar`). Exact small-target block rigidity and the full classification are now proved. |
-| Proved relative to named classical inputs | Sequential stability and openness of the balanced-classification region. The left seed follows conditional on the still-unproved critical certificate. |
-| Proved in Lean | Exact tangency coefficients for all six fan cells: one certified common determinant, unique corrections in the four missing slots, and zero values/gradients at both contacts. Positivity remains separate. |
-| Proved in Lean | All twelve apex contact neighborhoods (AAA and ABB for each fan F1–F6), at the full published radii: exact coefficient enclosures, positive shifted center Hessians, third-derivative bounds, nonnegativity and a unique contact zero. Global positivity outside these neighborhoods remains unfinished. |
-| Partially checked | A shared verifier handles all 36 nonapex jobs with their actual coefficients; positivity is checked on the small logarithmic cube [0,1/512]^3. Full-domain positivity is still required. Refined kernel-checked constants and all 24 tangency coefficients remove the recorded precision obstruction at the diagnostic samples; full exterior coverage remains unfinished. |
-| Remaining | Discharge the two internal certificate inputs: critical classification and the compact intermediate certificate. The final conditional continuation assembly is proved. |
-
-The [formalization README](lean/README.md) records the file-to-paper mapping,
-remaining dependencies, build instructions, axiom audit, and dated progress log.
-The earlier **40–45% effort estimate** is subjective, not measured theorem
-coverage. The completion gates below are the more useful progress record. [Proof issues](lean/PROOF-ISSUES.md)
-distinguish missing formal proofs from suspected mathematical errors.
-[Shorter proof notes](docs/PROOF-SIMPLIFICATIONS.md) collect complete replacement
-arguments found during formalization, with stable manuscript labels and Lean links.
-Current completion gates (remote checks and root integration are recorded separately):
-
-| Gate | Checked completion | What remains |
+| Check | Completed result | Evidence |
 | --- | --- | --- |
-| Main-theorem deduction from the two internal certificates | Proved | Supply both certificates |
-| Critical classification: 36 nonapex full-domain jobs | **1/36 integrated** | Job 25 is proved on its full ordered domain; the remaining 35 jobs still require integration |
-| Critical classification: six apex full-domain jobs | 0/6 integrated; 4/6 passed on Yale | F1 and F4 plus combined integration |
-| Compact family: AAA neighborhood | Proved on the full parameter interval | None for this neighborhood |
-| Compact family: ABB neighborhood and exterior | Neither full replay integrated | Both were running at the last scheduler check |
+| Python interval verification | All 42 cover regions, both family Hessian neighborhoods, and the full compact family domain; zero unresolved boxes | [Full run](certificates/release/run.json) |
+| Lean full-domain nonapex certificates | **25 of 36 regions** | [Build and axiom-audit records](hpc/results-20261019-late/verified-regions.json) |
+| Lean full-domain apex certificates | **4 of 6 fans: F2, F3, F5, F6** | [Build and axiom-audit records](hpc/results-20261019-late/verified-regions.json) |
+| Lean family AAA neighborhood | Nonnegativity and the unique AAA zero for every L ∈ [3.9, 9.5] | [Formalization record](lean/README.md) |
+| Combined Lean project | Full nonapex job 25 imported; combined build and axiom audit passed | [Integration record](hpc/bouchet-job25-completion-20261019.json) |
 
-Search proposals, sample leaves, and job submissions are **not** completed gates.
-At the evening check on **2026-10-20 01:32 UTC (October 19, 9:32 p.m. EDT)**,
-17 proof jobs were running on 80 allocated cores. Twenty-seven complete regional
-build/audit records were downloaded and inspected; see the checkpoint above.
-Yale reports an emergency storage maintenance reservation on new jobs through
-an expected end of October 20. Existing running jobs were preserved.
+The latest completed nonapex jobs are **9 and 22**, bringing the full-region
+Lean total to **29 of 42**. Completed nonapex indices are 1–11, 16, 17,
+20–29, 32 and 33 (indices start at zero).
 
-Complete proposals for all **42 critical-region jobs** are now saved with
-[raw search provenance](hpc/bouchet-complete-searches-20261019.json). Their
-subdivision geometry has been parsed locally; this does not establish positivity.
-Full apex array **30064252** checks fans F2–F6 with at most five concurrent
-eight-CPU jobs. The existing full F1 run remains separate.
+The Lean development also checks the balanced phase classification, printed
+threshold intervals, Euler–Lagrange equations, local rigidity, small-target
+classification, and the deduction of the main theorem from the remaining
+finite certificates. The [proof map](lean/proof-map.json) links each paper
+statement to its Lean declarations; [named inputs](lean/ASSUMPTIONS.md) lists
+the external and classical results used.
 
-Latest apex progress: a complete F1 subdivision is proposed, and five representative
-leaves plus the sorting/zero-pattern assembly pass Lean. **The full F1 replay is
-still pending**, so this does not close the critical certificate.
-
-Latest family progress: a complete 108,452-box ABB neighborhood subdivision
-is proposed for every L in [3.9,9.5]. Lean checks the scaled-Hessian verifier,
-four-dimensional coverage theorem, moving-contact bridge and two selected
-boxes. **The full ABB replay remains pending.** See the
-[dated progress record](lean/README.md#2026-10-19--full-abb-proposal-and-checked-scaled-hessian-replay).
-
-The actual parameter-derivative chain and the paper's signed Taylor lower
-bound are now proved in Lean. A kernel-checked sample encloses all seven
-coefficient derivatives through order three on L ∈ [3.9, 2503/640].
-The gradient parameter bound and complete analytic exterior Taylor inequality
-also compile, including all three scalar quadratic bounds used in the paper.
-The numerical leaf checker now proves positivity throughout one full box,
-L ∈ [39/10,2503/640] and each qᵢ ∈ [0.99,1.01], with a checked margin
-greater than 1/1000. A complete 64,646-leaf subdivision is now proposed and
-passes exact Python consistency checks. Lean proves the general assembly,
-including the equality cases after sorting, but **the full numerical replay
-is still missing**. A generated test now checks 14 actual leaves, all leaf
-types and quadratic choices, and one complete small subtree. Contact and
-coverage conclusions still require the internal ABB local theorem. The
-proposal is not a completed formal certificate.
-
-The exact 36-job nonapex and six-fan apex results now have a direct checked
-assembly into critical classification. Sharper interval bounds are available
-for every nonapex job. The endpoint checker also covers all cell cutoffs,
-including B1/B2 beyond 16, through a proved scale-32 alternative. **These
-reductions do not discharge the full numerical jobs.**
-
-The target statement quantifies over all measurable graphons, not just SBMs.
-At the authors' request, external/classical results may be explicit hypotheses;
-[ASSUMPTIONS.md](lean/ASSUMPTIONS.md) distinguishes those inputs from our own
-unproved obligations. The [stable-label proof map](lean/proof-map.json) and
-[change-checking instructions](lean/README.md#stable-links-to-the-manuscript)
-keep the code linked to the paper when its statements or numbering change.
-The log also records a [survey of graphon/cut-norm libraries](lean/README.md#2026-10-19--graphon-library-survey-user-suggestion), including a promising existing compactness development; no external library has yet been imported.
+**Remaining:** 11 nonapex regions, apex fans F1 and F4, the family ABB and
+exterior replays, and the combined build importing all completed certificates.
+The [cluster record](hpc/README.md) tracks running jobs and recovery.
 
 ## Which parts of the paper does the code verify?
 
@@ -150,30 +44,7 @@ The LaTeX labels are included so that the correspondence remains clear if the
 paper is renumbered. The exact manuscript snapshot is recorded in
 [`data/manuscript.json`](data/manuscript.json).
 
-### What is inside the two proposition checks?
-
-**Proposition 5.19** requires **42 positivity jobs**: 36 checks at the nonapex
-vertices and six checks at the fan apex. Each job has its own
-`verified_CELL_VERTEX.json` report in the [cover results directory](certificates/release/cover/).
-The exact twelve-cell inputs are in [`data/cover.json`](data/cover.json).
-The geometric covering check is recorded separately in
-[`planar_coverage.json`](certificates/release/cover/planar_coverage.json).
-
-**Proposition 8.4** includes the following two computations from Appendix A.3.
-Both are performed by [`verify_family.py`](verification/family/verify_family.py).
-
-| Appendix statement | What is verified | Relevant functions | Saved results |
-| --- | --- | --- | --- |
-| **Lemma A.6** (`appA3:hess`) | The Hessian is positive definite throughout the neighborhoods of both moving zero patterns, uniformly in L. | `local_check()` and `subdivide('local', ...)`; matrix formulas and tests in `core.hessian()` and `core.positive_definite()` | [`local1.json`](certificates/release/family/local1.json), [`local2.json`](certificates/release/family/local2.json) |
-| **Proposition A.5** (`appA3:compact`) | Nonnegativity and the exact zero set throughout L ∈ [3.9, 9.5] and 0 ≤ q₃ ≤ q₂ ≤ q₁ ≤ 12. | `subdivide('compact', ...)` and `core.compact_test()` | [`compact.json`](certificates/release/family/compact.json) |
-
-The family verifier also checks the symbolic identities and the numerical
-inequalities used in the paper's reduction from the unbounded domain to this
-compact region. See the [family guide](verification/family/README.md) for details.
-
-## Reproduce all checks
-
-After cloning or downloading this repository, open a terminal in its directory:
+## Reproduce the numerical checks
 
 ```sh
 python3 -m venv .venv
@@ -182,85 +53,37 @@ python -m pip install -r requirements.txt
 python verify.py --jobs 2
 ```
 
-Use Python 3.11 or newer; the recorded run used Python 3.14. The dependency
-versions are pinned in [`requirements.txt`](requirements.txt).
+Use Python 3.11 or newer. The command writes reports under `results/` and
+finishes with `"status": "complete"` when every check passes. The recorded full
+run took 293 seconds. Use `python verify.py --quick` for an installation check.
+Run Python with assertions enabled.
 
-The last command runs **all four groups above**, together with additional
-consistency checks. It creates a new directory under `results/`, containing a
-`run.json` summary, detailed reports, and logs. A successful full run ends with:
+The computations use FLINT/Arb interval bounds and exact rational geometry.
+Source and input hashes accompany the saved reports. The
+[manuscript comparison](certificates/manuscript-table-match.json) checks all
+twelve cells against the paper's tables.
 
-```json
-"status": "complete"
+## Reproduce the Lean checks
+
+See the [Lean build guide](lean/README.md) for the pinned toolchain, build
+commands, theorem map and axiom audit. The latest archived regional results can
+be inspected with:
+
+```sh
+python3 hpc/audit_result_archives.py \
+  hpc/triangle-verification-results-20261019-2300.tar.gz \
+  --output /tmp/verified-regions.json
 ```
 
-Any unresolved box, exhausted search budget, or failed inequality prevents this
-success status. Saved reports are not used to bypass computations. Do not use
-`python -O`, `python -OO`, or `PYTHONOPTIMIZE`, which disable assertions.
+Each completed region has a successful full-target Lean build and an axiom
+audit allowing only `propext`, `Classical.choice`, and `Quot.sound`.
 
-For a short installation/preliminary check, use `python verify.py --quick`.
-**Quick mode does not verify the full positivity statements.**
+## Code and reports
 
-## Results of the recorded run
-
-The [full run report](certificates/release/run.json) records a successful run in
-**293 seconds** on the recorded environment. All **42 cover jobs**, both family
-Hessian checks, the full family compact-domain check, and the additional
-single-apex check finished with **zero unresolved boxes**. Runtime and node
-counts may differ on another machine.
-
-The reports include source and input hashes so the results can be traced to the
-exact files used. The independent [manuscript input comparison](certificates/manuscript-table-match.json)
-confirms that all twelve cells match the paper's tables.
-
-## Further details
-
-- **How the numerical bounds are rigorous:** the programs use FLINT/Arb interval
-  enclosures and exact rational geometry. Floating-point proposals are accepted
-  only after validated arithmetic checks. See the [cover guide](verification/cover/README.md)
-  and [family guide](verification/family/README.md), including the documented
-  differences between the implementation and the paper's presentation.
-- **Additional checks:** [`verification/apex/`](verification/apex/) checks the
-  single crossing-point certificate separately. It is an extra check, not a
-  substitute for Proposition 8.4. [`check_fail_closed.py`](verification/check_fail_closed.py)
-  deliberately tests failure cases, and [`audit_family_runtime.py`](tools/audit_family_runtime.py)
-  checks the runtime formulas symbolically. See [AUDIT.md](AUDIT.md).
-- **Comparing a later paper draft:** run
-  `python tools/compare_draft.py /path/to/arxiv_v1.tex` to compare the exact
-  certificate tables. Introductory prose edits do not change these inputs.
-- **Scope:** this repository supplies the computational part of the proof. The
-  graphon arguments, analytic reductions, and external Kwan–Pham theorem are
-  supplied by the paper and its references. It is not a proof-assistant
-  formalization of the whole paper.
-
-Full nonapex **job 25** completed on Yale: all 241 modules built and the
-axiom audit passed (15,043 project declarations; 11,935 theorems). This is a
-complete region, not a sample. Its 106 generated sources are now imported into
-the root project, which passes the combined build and axiom audit;
-see the [completion record](hpc/bouchet-job25-completion-20261019.json).
-
-The stable `CheckedCoverJobs` assembly supplies completed regions automatically:
-its critical-classification theorem requires only the remaining 35 nonapex
-jobs, plus the six apex results and the named classical inputs.
-
-At the user's request, all independent full-region jobs are now eligible
-for concurrent scheduling: array throttles were raised and scheduling-only
-dependencies removed, allowing up to **200 allocated cores** across the
-remaining work. A subsequent scheduler check confirmed **43 jobs RUNNING
-with 200 cores allocated and no pending jobs**. See the [scale-up record](hpc/bouchet-parallel-scaleup-20261019.json).
-
-
-### 2026-10-19 — Main theorem connected to the remaining replay obligations
-
-[`MainReplayAssembly.lean`](lean/SparseLowerTail/MainReplayAssembly.lean)
-connects the actual `MainTheorem` to the remaining 35 nonapex proofs, all six
-apex proofs, the ABB neighborhood and the full exterior replay. Job 25 is
-supplied automatically by the checked imports. The AAA neighborhood was
-already proved. These are still internal obligations, not assumed external
-results. Completion counts have not increased.
-
-[`MainRelabeling.lean`](lean/SparseLowerTail/MainRelabeling.lean) checks the
-manuscript's literal relabeling conclusions at and below the transition,
-conditional on `MainTheorem` and the recorded classical CDF transport theorem.
-Both directions of the optimizer characterization and uniqueness of the
-subcritical scalar pair are retained. The stable `thm:main` map links these
-results independently of printed theorem numbers.
+- [Cover verification](verification/cover/README.md): geometry, support bounds,
+  coefficients, and the 42 positivity checks.
+- [Family verification](verification/family/README.md): the two Hessian
+  neighborhoods and the compact domain, uniformly in L.
+- [Lean formalization](lean/README.md): checked proofs and file-to-paper mapping.
+- [Cluster runs](hpc/README.md): deployment scripts, logs and recovery records.
+- [Audit methods](AUDIT.md) and [proof simplifications](docs/PROOF-SIMPLIFICATIONS.md).

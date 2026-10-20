@@ -1,4 +1,20 @@
-# Running the Lean checks on Yale Bouchet
+# Running the Lean checks on Yale and Delta
+
+## Latest verified results — October 19, 2026
+
+**29 full-region Lean builds and axiom audits have passed:** 25 nonapex
+regions and apex fans F2, F3, F5 and F6. The new completions are nonapex jobs
+9 and 22. [Evidence](results-20261019-late/verified-regions.json).
+
+Fifteen original Yale jobs were running on 72 cores at the latest check.
+Recovery array `30068465` and combined assembly `30068466` remain queued.
+
+The [Delta runner](delta-replay.sbatch) checks the full F1 apex theorem with
+four single-thread Lean workers. Its allocation is 16 CPUs, 30,000 MiB and
+six hours, capped at 96 CPU core-hours on `biah-delta-cpu`. Sources and build
+artifacts stay in project storage for resumption.
+
+## Yale setup and deployment history
 
 The first job builds the committed Lean root on Linux, runs `Audit.lean`, and
 independently recomputes the 40 refined apex matrix/right-hand-side intervals.

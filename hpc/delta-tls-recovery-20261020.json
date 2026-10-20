@@ -1,0 +1,74 @@
+{
+  "checked_at_utc": "2026-10-20T17:34:16.606719+00:00",
+  "account": "biah-delta-cpu",
+  "accounting_header": "Account Balance(Hours) Deposited(Hours) Project",
+  "accounting_row": "biah-delta-cpu 481 500 generation in the l...",
+  "confirmed_pool_hours": 500,
+  "live_remaining_hours": 481,
+  "failed_jobs": [
+    {
+      "job_id": 23040802,
+      "elapsed_seconds": 623,
+      "billing_cores": 3,
+      "charged_core_hours": 0.5191666666666667
+    },
+    {
+      "job_id": 23047530,
+      "elapsed_seconds": 1064,
+      "billing_cores": 15,
+      "charged_core_hours": 4.433333333333334
+    },
+    {
+      "job_id": 23047540,
+      "elapsed_seconds": 775,
+      "billing_cores": 6,
+      "charged_core_hours": 1.2916666666666667
+    },
+    {
+      "job_id": 23047541,
+      "elapsed_seconds": 629,
+      "billing_cores": 6,
+      "charged_core_hours": 1.0483333333333333
+    }
+  ],
+  "failed_job_charges": 7.2925,
+  "proposed_caps": {
+    "F1": 88,
+    "ABB_retry": 90,
+    "nonapex0_retry": 24,
+    "nonapex12_retry": 72,
+    "integration_replacement": 120,
+    "running_exterior_remaining_upper_bound": 82.48333333333333
+  },
+  "maximum_outstanding_including_all_retries": 476.48333333333335,
+  "remaining_margin_hours": 4.5166666666666515,
+  "extra_500": "Under Review; excluded from budget",
+  "approval_review_note": "Review misread 481 balance / 500 deposited as 19 remaining. Fresh accounts with headers confirms 481 remaining; all planned outstanding caps, including region12 and one replacement integration, fit this balance.",
+  "retry_jobs": {
+    "ABB": 23050607,
+    "nonapex0": 23050626,
+    "nonapex12": 23050651,
+    "integration": 23050654
+  },
+  "preserved_running_job": 23047539,
+  "cancelled_unstarted_blocked_integration": 23047560,
+  "runner_sha256": "461c89a080722855d0ffe969f9edde497cb3d45c722dcbf2a5b00060af1fe5e5",
+  "repair": [
+    "Set CURL_CA_BUNDLE and SSL_CERT_FILE to Delta system CA bundle; certificate verification remains enabled.",
+    "Use a job-specific XDG_CACHE_HOME so curl.cfg and partial files cannot race.",
+    "Preserve the running exterior job; wrap only its existing cached curl to supply the same CA bundle, original upstream binary preserved."
+  ],
+  "validation": [
+    "bash -n passed locally and on Delta",
+    "Local and remote runner SHA256 match",
+    "Static curl HTTPS HEAD returned 200 with the system CA bundle",
+    "Cached curl wrapper HTTPS HEAD returned 200",
+    "Accepted retry ReqTRES, time caps and integration afterok dependencies checked"
+  ],
+  "approval_review_resolution": "Review initially misread 481 remaining as 19 remaining. Fresh header evidence and the complete cap ledger resolved the rejection; region12 retry was then accepted without new user permission.",
+  "failure_diagnostics": [
+    "OpenSSL/3.0.8: error:16000069:STORE routines::unregistered scheme",
+    "7335 download(s) failed",
+    "Concurrent jobs using the shared download-cache/mathlib also reported missing curl.cfg."
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "status": "mapped_statements_unchanged",
+  "checked_labels": 112,
+  "source_sha256": "f2ffd6c1fe1636992a205303a068869e3a9f54c07b67f794f7437f490a1d01e5",
+  "baseline_source_sha256": "84c55a798a1fc1492f319179eec89f340d27269916acd622d54707da185e17b7",
+  "changes": [],
+  "scope": "Only mapped statements and adjacent proofs are checked; this is not mathematical verification.",
+  "checked_at_utc": "2026-10-20T17:36:46.655213+00:00",
+  "source_method": "Fresh Overleaf source downloaded in user Google Chrome",
+  "draft_update": "Introduction rewrites background on the sparsity threshold, mechanisms and cut norm; mapped statements, adjacent proofs, tables and all 95 result numbers unchanged.",
+  "numbered_results_checked": 95,
+  "numbering_status": "Source numbers unchanged; prior PDF page references retained from the previous PDF check.",
+  "remaining_internal_obligations": [
+    "critical numerical certificates (two nonapex regions and F1)",
+    "full ABB/exterior compact-family replays",
+    "full padded ABB replay at the exact binary64 radius",
+    "latest-source combined integration"
+  ]
+}

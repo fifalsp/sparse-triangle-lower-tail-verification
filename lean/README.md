@@ -10,7 +10,7 @@ The development covers the authors' variational and probabilistic arguments.
 Cited external and standard classical results are explicit hypotheses, listed
 in [ASSUMPTIONS.md](ASSUMPTIONS.md). The
 [proof map](proof-map.json) has 112 manuscript labels and 1,080 declaration
-links. The [latest manuscript comparison](manuscript-review-20261020-roadmap.json)
+links. The [latest manuscript comparison](manuscript-review-20261020-introduction.json)
 reports no statement or proof changes against the live Overleaf source.
 The [numbering record](../data/manuscript-numbering-20261020.json) matches all
 95 numbered results to the current PDF. The main variational theorem is

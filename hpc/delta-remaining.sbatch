@@ -59,7 +59,14 @@ else
   [[ -s "$TRANSFER_DIR/SHA256SUMS" ]]
 fi
 export ELAN_HOME="$RUNTIME_DIR/elan"
-export XDG_CACHE_HOME="$SAVE_ROOT/download-cache"
+# mathlib writes curl.cfg and partial downloads in this directory. Each job
+# needs its own cache even when several stages start together.
+export XDG_CACHE_HOME="$WORK_DIR/download-cache"
+# The static curl used by mathlib does not discover Red Hat's CA bundle.
+# Keep certificate verification enabled and use the system trust store.
+export CURL_CA_BUNDLE=/etc/pki/tls/certs/ca-bundle.crt
+export SSL_CERT_FILE="$CURL_CA_BUNDLE"
+[[ -r "$CURL_CA_BUNDLE" ]]
 export PATH="$ELAN_HOME/bin:$PATH"
 export LEAN_NUM_THREADS=1
 curl --fail --location --retry 3 --max-time 120 https://elan.lean-lang.org/elan-init.sh -o "$RUN_DIR/elan-init.sh"

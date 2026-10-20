@@ -1,5 +1,5 @@
 {
-  "status": "All remaining Delta stages submitted; regional jobs pending scheduler priority and final integration pending afterok dependencies",
+  "status": "Exterior running; corrected ABB and nonapex retries queued; replacement integration waits for afterok dependencies",
   "account": "biah-delta-cpu",
   "approved_pool_hours": 500,
   "yale_staging_directory": "/nfs/roberts/project/pi_sl3363/sl3363/triangle-migration-20261020",
@@ -17,26 +17,18 @@
       "user_hold": false
     },
     {
-      "stage": "existing author-root check",
-      "job_id": 23040802,
-      "maximum_allocation_hours": 6,
-      "observed_billing_tres": 3000,
-      "observed_state": "PENDING",
-      "reason": "Priority",
-      "user_hold": false
-    },
-    {
       "stage": "ABB with saved Yale cache",
       "cpus": 4,
       "memory_mib": 30000,
       "wall_hours": 6,
       "workers": 3,
       "maximum_allocation_hours": 90,
-      "job_id": 23047530,
+      "job_id": 23050607,
       "observed_billing_tres": 15000,
       "observed_state": "PENDING",
       "reason": "Priority",
-      "user_hold": false
+      "user_hold": false,
+      "previous_job_id": 23047530
     },
     {
       "stage": "exterior with saved Yale cache",
@@ -47,8 +39,8 @@
       "maximum_allocation_hours": 90,
       "job_id": 23047539,
       "observed_billing_tres": 15000,
-      "observed_state": "PENDING",
-      "reason": "Priority",
+      "observed_state": "RUNNING",
+      "reason": null,
       "user_hold": false
     },
     {
@@ -58,11 +50,12 @@
       "wall_hours": 4,
       "workers": 1,
       "maximum_allocation_hours": 24,
-      "job_id": 23047540,
+      "job_id": 23050626,
       "observed_billing_tres": 6000,
       "observed_state": "PENDING",
       "reason": "Priority",
-      "user_hold": false
+      "user_hold": false,
+      "previous_job_id": 23047540
     },
     {
       "stage": "nonapex 12",
@@ -71,11 +64,12 @@
       "wall_hours": 12,
       "workers": 1,
       "maximum_allocation_hours": 72,
-      "job_id": 23047541,
+      "job_id": 23050651,
       "observed_billing_tres": 6000,
       "observed_state": "PENDING",
       "reason": "Priority",
-      "user_hold": false
+      "user_hold": false,
+      "previous_job_id": 23047541
     },
     {
       "stage": "padded ABB and latest-source combined integration",
@@ -84,15 +78,16 @@
       "wall_hours": 4,
       "workers": 1,
       "maximum_allocation_hours": 120,
-      "job_id": 23047560,
+      "job_id": 23050654,
       "observed_billing_tres": 30000,
       "observed_state": "PENDING",
       "reason": "Dependency",
-      "user_hold": false
+      "user_hold": false,
+      "previous_job_id": 23047560
     }
   ],
-  "maximum_total_allocation_hours": 490,
-  "resource_notes": "Accepted ReqTRES billing values were checked on all stages (1000 units per normalized allocation core). Their time caps total 490 hours, including the original F1 and older author-root checks. Caps are maximum charges, not runtime estimates.",
+  "maximum_total_allocation_hours": 484,
+  "resource_notes": "Accepted full time caps now total 484 hours. The recovery ledger subtracts elapsed running-job charges and includes failed-job charges before any retry; maximum outstanding 476.4833 fits live remaining 481. The extra 500 requested hours remain under review.",
   "submission_policy": "After transfer validation, resume ABB/exterior with the saved caches and replace only their unstarted copies. Submit both remaining nonapex jobs in parallel and final integration with afterok dependencies. Cancel the unstarted Yale recovery and assembly only after the Delta replacement submissions are accepted. Never cancel running healthy work.",
   "verification_gates": [
     "Transfer SHA256SUMS match selected archives.",
@@ -112,7 +107,7 @@
     ],
     "delta_profile_and_bounded_plan": "passed; exactly the package configuration plus one-thread memory limits"
   },
-  "full_lean_status": "No new full theorem claimed. Existing checked author root is unchanged; the quiet full F1 laptop fallback continues while migration is prepared.",
+  "full_lean_status": "No new full theorem claimed; original F1 laptop fallback continues with proof dependencies unchanged.",
   "globus_transfer": {
     "task_id": "0c55e729-cc99-11f1-9108-02ffc3fa75e1",
     "source_collection": "Yale CRC Bouchet HA",
@@ -137,14 +132,14 @@
   "checked_at_utc": "2026-10-20T15:22:10.033840+00:00",
   "source_commit": "6fd1a56fbc6901566ffc7aa0cbdf19c2f89960a7",
   "source_archive_sha256": "9130db79c604d47779856c05bf5a09ba630c9409800017ac1e032b1edd4c23fe",
-  "runner_sha256": "f6779cf83847af6713dfedf1f453938d24abb9c8282767e8831b70c8898ceb66",
+  "runner_sha256": "461c89a080722855d0ffe969f9edde497cb3d45c722dcbf2a5b00060af1fe5e5",
   "source_note": "Subsequent commit 3a774f9 updates manuscript comparison and PDF references only; the Lean proof sources remain the same.",
   "assembly_afterok": [
     23029964,
-    23047530,
+    23050607,
     23047539,
-    23047540,
-    23047541
+    23050626,
+    23050651
   ],
   "superseded_unstarted_delta_jobs": [
     23046543,
@@ -155,18 +150,84 @@
     30068466
   ],
   "replacement_safety": "Fresh states were PENDING. scancel --state=PENDING restricted cancellation to unstarted copies. All replacement submissions and their accepted resources were verified before cancelling Yale recovery/assembly. Yale queue is empty.",
-  "uncommitted_pool_hours": 10,
   "additional_exchange_request": {
     "record": "delta-extra-500-exchange-20261020.json",
     "additional_core_hours": 500,
     "status": "Under Review; fresh ACCESS approved balance remains 500 hours"
   },
-  "queue_checked_at_utc": "2026-10-20T15:43:56.893626+00:00",
-  "queue_observation": "All seven jobs remain PENDING; six Priority, final integration Dependency; no start estimate.",
+  "queue_checked_at_utc": "2026-10-20T17:36:46.655213+00:00",
+  "queue_observation": "Exterior RUNNING on cn055; F1 and three retries PENDING Priority; integration PENDING Dependency.",
   "live_accounting_observation": {
-    "checked_at_utc": "2026-10-20T15:43:56.893626+00:00",
-    "remaining_hours": 95,
-    "deposited_hours": 100,
-    "note": "Delta accounts remains behind the confirmed ACCESS 500-hour approval."
-  }
+    "checked_at_utc": "2026-10-20T17:36:46.655213+00:00",
+    "remaining_hours": 481,
+    "deposited_hours": 500,
+    "note": "Fresh accounts headers confirm Balance(Hours) 481 and Deposited(Hours) 500."
+  },
+  "retired_after_bootstrap_failure": [
+    {
+      "stage": "existing author-root check",
+      "job_id": 23040802,
+      "maximum_allocation_hours": 6,
+      "observed_billing_tres": 3000,
+      "observed_state": "FAILED",
+      "reason": "mathlib dependency-cache TLS download failed",
+      "user_hold": false,
+      "exit_code": "1:0",
+      "elapsed_seconds": 623
+    },
+    {
+      "stage": "ABB with saved Yale cache",
+      "cpus": 4,
+      "memory_mib": 30000,
+      "wall_hours": 6,
+      "workers": 3,
+      "maximum_allocation_hours": 90,
+      "job_id": 23047530,
+      "observed_billing_tres": 15000,
+      "observed_state": "FAILED",
+      "reason": "mathlib dependency-cache TLS download failed",
+      "user_hold": false
+    },
+    {
+      "stage": "nonapex 0 with saved Yale cache",
+      "cpus": 2,
+      "memory_mib": 12000,
+      "wall_hours": 4,
+      "workers": 1,
+      "maximum_allocation_hours": 24,
+      "job_id": 23047540,
+      "observed_billing_tres": 6000,
+      "observed_state": "FAILED",
+      "reason": "mathlib dependency-cache TLS download failed",
+      "user_hold": false
+    },
+    {
+      "stage": "nonapex 12",
+      "cpus": 2,
+      "memory_mib": 12000,
+      "wall_hours": 12,
+      "workers": 1,
+      "maximum_allocation_hours": 72,
+      "job_id": 23047541,
+      "observed_billing_tres": 6000,
+      "observed_state": "FAILED",
+      "reason": "mathlib dependency-cache TLS download failed",
+      "user_hold": false
+    },
+    {
+      "stage": "padded ABB and latest-source combined integration",
+      "cpus": 4,
+      "memory_mib": 60000,
+      "wall_hours": 4,
+      "workers": 1,
+      "maximum_allocation_hours": 120,
+      "job_id": 23047560,
+      "observed_billing_tres": 30000,
+      "observed_state": "CANCELLED",
+      "reason": "Unstarted integration replaced after failed dependencies",
+      "user_hold": false
+    }
+  ],
+  "runner_remote": "delta-remaining-tls.sbatch",
+  "recovery_record": "delta-tls-recovery-20261020.json"
 }

@@ -13,26 +13,28 @@ The saved Yale checkpoints contain partial ABB, exterior and cover-0 builds.
 All **88 transferred archive hashes match** on Delta. The encrypted Globus
 transfer copied 89 files (28.24 GB) in 2 minutes 12 seconds.
 
-All remaining stages are now submitted to `biah-delta-cpu`:
+All remaining stages use `biah-delta-cpu`:
 
 | Stage | Delta job | Time cap | Maximum allocation hours |
 |---|---:|---:|---:|
 | Existing F1 replay | 23029964 | 5.5 hours | 88 |
-| Earlier author-root check | 23040802 | 2 hours | 6 |
-| ABB, resuming Yale cache | 23047530 | 6 hours | 90 |
-| Exterior, resuming Yale cache | 23047539 | 6 hours | 90 |
-| Nonapex 0, resuming Yale cache | 23047540 | 4 hours | 24 |
-| Nonapex 12 | 23047541 | 12 hours | 72 |
-| Full binary64 ABB padding and current-source combined integration | 23047560 | 4 hours | 120 |
+| ABB, resuming Yale cache | 23050607 | 6 hours | 90 |
+| Exterior, resuming Yale cache — running | 23047539 | 6 hours | 90 |
+| Nonapex 0, resuming Yale cache | 23050626 | 4 hours | 24 |
+| Nonapex 12 | 23050651 | 12 hours | 72 |
+| Full binary64 ABB padding and current-source combined integration | 23050654 | 4 hours | 120 |
 
-The accepted caps total **490 of the approved 500 hours**. Regional jobs are
-pending scheduler priority. Final integration has normal `afterok` dependencies
-on F1 and the four migrated regional stages. There are no user holds or start-time
-estimates. The unstarted Yale recovery/assembly and older Delta family copies
-were cancelled after migration checks; no running job was cancelled.
-[Deployment, hashes and accepted resources](delta-migration-plan-20261020.json).
-An exchange for **500 additional CPU hours** was submitted using the project’s
-existing ACCESS credits. [Request record](delta-extra-500-exchange-20261020.json).
+ABB, both nonapex jobs and the earlier author-root check stopped during mathlib
+cache downloads. The runner now uses Delta’s system CA bundle and a separate
+download cache per job. Corrected retries are queued; integration has normal
+`afterok` dependencies on F1 and the four regional stages. The running exterior
+job was preserved. [Recovery and validation](delta-tls-recovery-20261020.json).
+
+Live accounting shows **481 of 500 hours remaining**. Actual failed-job charges
+and all remaining commitments fit this balance. The additional 500-hour ACCESS
+exchange remains **under review**.
+[Deployment and resources](delta-migration-plan-20261020.json) ·
+[Exchange request](delta-extra-500-exchange-20261020.json).
 
 Delta was busy at the latest check: 14,797 CPU cores allocated, 2,227 idle
 cores on partially occupied nodes, and 128 reserved idle cores.

@@ -44,6 +44,14 @@ arguments separately for future manuscript revisions.
 
 ## Completed proof components
 
+- **Cut concentration and step kernels (`lem:cutconc`, `lem:stepcut`):**
+  [BernoulliConcentration.lean](SparseLowerTail/Section03/BernoulliConcentration.lean)
+  proves the exponential moments, signed tails and finite union bound with the
+  paper's exact constant. [StepMatrixCut.lean](SparseLowerTail/Section03/StepMatrixCut.lean)
+  proves matrix–graphon cut-norm equality, the interval-cell masses, binary
+  maximizers and invariance under any measure-preserving map. The target build
+  and [36 declaration audits](data/cut-concentration-check.json) passed.
+
 - **Harris conditioning (`lem:harris`):** [HarrisConditioning.lean](SparseLowerTail/Section03/HarrisConditioning.lean)
   proves increasing-event domination, revealed conditional sections and the
   pinned-coordinate bound, using the cited Harris inequality as an explicit

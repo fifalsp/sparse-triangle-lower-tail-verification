@@ -2478,6 +2478,58 @@
         "source_line": 1860,
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
       }
+    },
+    {
+      "paper_label": "lem:cutconc",
+      "status": "proved_product_law_and_step_kernel",
+      "checked_scope": "Full finite independent-Bernoulli cut bound for any injectively enumerated subset of loop-free graph edges: scalar and product exponential moments, Markov, both signs, 4^n rectangle tests, edge-count budget and the exact exponent 1/8. Also proved for the actual measurable equal-mass step kernel, with no external probability hypotheses.",
+      "lean_files": [
+        "SparseLowerTail/Section03/BernoulliConcentration.lean",
+        "SparseLowerTail/Section03/StepMatrixCut.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section03.bernoulli_exp_moment_le",
+        "SparseLowerTail.Section03.bernoulli_signed_tail",
+        "SparseLowerTail.Section03.bernoulli_matrix_cut_concentration",
+        "SparseLowerTail.Section03.bernoulli_step_cut_concentration"
+      ],
+      "explicit_inputs": [],
+      "remaining_application": [
+        "Apply the conditional Bernoulli means and unrevealed edge subset in thm:reduction."
+      ],
+      "verification_record": "data/cut-concentration-check.json",
+      "baseline": {
+        "environment": "lemma",
+        "statement_sha256": "849dc2d5f20087fef0251e59fc13439b10d315287625b3a7b2b02c3cd8ce0756",
+        "proof_sha256": "c4bec3f34632c03053a6b775d87c6e318c9dc12263a7cfe7d25c01210b205e1d",
+        "source_line": 1996,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      }
+    },
+    {
+      "paper_label": "lem:stepcut",
+      "status": "proved",
+      "checked_scope": "Actual Lebesgue step-kernel cut norm equals the normalized finite matrix cut norm on any equal-mass measurable partition. Constructs the canonical n-cell interval partition and proves each cell has mass 1/n. Successive cube rounding proves binary attainment; pullback partitions prove invariance under every measure-preserving map, including noninvertible maps.",
+      "lean_files": [
+        "SparseLowerTail/Section03/StepMatrixCut.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section03.matrix_cube_abs_le",
+        "SparseLowerTail.Section03.finiteMatrixCutNorm_attained",
+        "SparseLowerTail.Section03.cutNorm_matrixStepKernel",
+        "SparseLowerTail.Section03.uniformVertexPartition_mass",
+        "SparseLowerTail.Section03.cutNorm_uniform_step_comp"
+      ],
+      "explicit_inputs": [],
+      "remaining_application": [],
+      "verification_record": "data/cut-concentration-check.json",
+      "baseline": {
+        "environment": "lemma",
+        "statement_sha256": "b08bea66c47d9e64c2939ac73fb43162970d7455574d5e245d0fa6c246bad763",
+        "proof_sha256": "5d279eca74ec3523b3025122feb4ae2f4039275a12e4727798a7df60aba56e63",
+        "source_line": 1814,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      }
     }
   ],
   "current_manuscript_inventory": "manuscript-coverage.json"

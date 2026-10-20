@@ -1,0 +1,35 @@
+{
+  "paper_labels": [
+    "lem:cutconc",
+    "lem:stepcut"
+  ],
+  "checked_at_utc": "2026-10-20T05:02:43.000796+00:00",
+  "scope": "Bernoulli scalar and product exponential moments, finite Markov and union bounds, 2*4^n*exp(-epsilon^2*p*n^2/8) for any subset of simple-graph edges, and actual measurable step-kernel cut norms. Includes the canonical equal interval partition, binary maximizer, and every measure-preserving relabeling.",
+  "sources": [
+    {
+      "path": "SparseLowerTail/Section03/BernoulliConcentration.lean",
+      "sha256": "2403cedc65789cdd75dc12e17ae4e4e106d6ff951be6bd45c80cd476148fa073"
+    },
+    {
+      "path": "SparseLowerTail/Section03/StepMatrixCut.lean",
+      "sha256": "6723109910ec211d6f1d50e24c49e604b33b648cdebb4290abf58cf7d0278556"
+    }
+  ],
+  "lean_version": "4.24.0",
+  "checks": [
+    {
+      "command": "lake build SparseLowerTail.Section03.StepMatrixCut",
+      "exit_code": 0,
+      "output": "\u2714 [3146/3146] Built SparseLowerTail.Section03.StepMatrixCut (3.3s)\nBuild completed successfully (3146 jobs).\n"
+    },
+    {
+      "command": "lake env lean tools/audit_cut_concentration.lean",
+      "exit_code": 0,
+      "output": "'SparseLowerTail.Section03.bernoulliMass_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.bernoulli_exp_moment' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.bernoulli_exp_moment_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.productBernoulli_exp_moment' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.productBernoulli_exp_moment_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finite_exp_markov' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.bernoulli_signed_tail' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteEventMass_union_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.bernoulli_test_family_tail' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.rectangleEdgeCoefficient_abs_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.bernoulli_rectangle_cut_tail' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.edge_card_le_half_square' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.symmetricEdgeMatrix_symm' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.symmetricEdgeMatrix_diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.symmetricEdgeMatrix_rectangle' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteMatrixCutNorm_gt_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.bernoulli_matrix_cut_concentration' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.finite_cube_linear_round' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.matrix_cube_round' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.matrix_cube_abs_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.matrixStepKernel_integrable' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.matrixStepKernel_rectangle' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.partition_test_mem_Icc' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.matrixStepKernel_rectangle_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.cutNorm_matrixStepKernel_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.partitionBinarySet_measurable' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.partitionBinarySet_cell_mass' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.matrixStepKernel_binary_rectangle' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.cutNorm_matrixStepKernel' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.bernoulli_step_cut_concentration' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteMatrixCutNorm_attained' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.pullbackVertexPartition_mass' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.cutNorm_matrixStepKernel_comp' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.uniformVertexPartition_fiber_ae' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.uniformVertexPartition_mass' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.cutNorm_uniform_step_comp' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    }
+  ],
+  "audited_theorem_count": 36,
+  "explicit_inputs": [],
+  "manuscript_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9",
+  "remaining_application": "Apply the actual finite conditional-product law in thm:reduction; final combined regional integration must also include these new source modules."
+}

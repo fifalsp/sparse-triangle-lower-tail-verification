@@ -289,3 +289,11 @@ certificates. The full ABB replay uses rational radius `1/10`; its conclusion
 is sufficient for the existing compact-family assembly, but the literal
 `appA3:hess` statement additionally requires the larger ABB cube. That
 extension is an internal author obligation, not an external/classical input.
+
+
+The ABB radius-transfer argument is now proved in
+`Section08/FamilyHessianPerturbation.lean` and
+`Section08/FamilyHessianRadiusTransfer.lean`. Its quantitative coefficient,
+contact and padded-margin conditions are checked for the 21 existing test
+leaves, including one complete subtree. The full padded leaf table remains
+an internal numerical obligation. No external hypothesis was added.

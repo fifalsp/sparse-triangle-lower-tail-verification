@@ -40,7 +40,8 @@ Updated October 20, 2026.
 | Sparse Bernoulli entropy (`lem:fp`) | Uniform comparison with the sparse entropy, including the sharp quadratic upper bound | [Lean build and axiom audit](lean/data/sparse-entropy-check.json) |
 | Near-minimizer stability (`lem:stability`) | Approximate feasibility and optimality imply proximity to an actual minimizer after a measure-preserving bijection | [Lean build and axiom audit](lean/data/near-minimizers-check.json) |
 | Lean family AAA neighborhood | Hessian positivity, nonnegativity and the unique AAA zero for every L ∈ [3.9, 9.5], at the manuscript’s exact binary64 radius | [Lean build and 19 axiom audits](lean/data/family-binary64-radius-check.json) |
-| Current Lean project root | Full build and standard-axiom audit of **18,298 theorems** passed | [Root build and audit](lean/data/family-binary64-radius-check.json) |
+| Lean ABB radius extension | Analytic transfer to the exact binary64 radius; 21 padded test leaves and one complete subtree checked | [Lean build and 112 axiom audits](lean/data/family-hessian-perturbation-check.json) |
+| Current Lean project root | Full build and standard-axiom audit of **18,655 theorems** passed | [Root build and audit](lean/data/family-hessian-perturbation-check.json) |
 
 Apex fan **F4** is the latest completion, bringing the full-region
 Lean total to **39 of 42**. Completed nonapex indices are 1–11 and 13–35 (indices start at zero).
@@ -55,7 +56,7 @@ the external and classical results used.
 **Remaining verification:** 2 nonapex regions, apex fan F1, the family ABB and
 exterior replays, the exact binary64 ABB neighborhood, and the combined build.
 The [cluster record](hpc/README.md) tracks running jobs and recovery.
-The [manuscript comparison](lean/manuscript-review-20261020-binary64-radius.json)
+The [manuscript comparison](lean/manuscript-review-20261020-hessian-radius.json)
 matches all 111 mapped labels to the current Overleaf source. The
 [inventory](lean/manuscript-coverage.json) tracks the remaining obligations.
 

@@ -3724,12 +3724,15 @@
     {
       "paper_label": "appA3:hess",
       "status": "partial_AAA_binary64_radius",
-      "checked_scope": "The complete AAA half is proved for the exact manuscript binary64 radius 3602879701896397/36028797018963968, strictly larger than 1/10. All five existing checked numerical Hessian certificates are reused unchanged; new exact containment proofs put the larger moving cube inside their certified boxes. The actual Hessian form is positive for every nonzero vector on the entire parameter range, and the contact has nonnegative value with its unique zero throughout that larger closed cube. The ABB half at this exact radius is still an internal obligation. The existing full ABB replay targets rational radius 1/10 and remains useful for the compact/global certificate; it does not establish the larger-radius Hessian statement.",
+      "checked_scope": "The complete AAA half is proved at the exact binary64 radius. The actual scaled Hessian is proved entrywise 1000000-Lipschitz on [-1,11]^3 under explicit coefficient bounds of 1000. A checked retraction and dyadic interval padding transfer existing ABB enclosures to the binary64 cube. The 21 existing smoke leaves, including one complete 20-leaf subdivision and the final-region leaf, pass all new padded integer margins, coefficient bounds, contact bounds and radius conclusions. Full 108452-leaf ABB padding and final integration remain internal obligations.",
       "lean_files": [
         "SparseLowerTail/Section08/ManuscriptFamilyRadius.lean",
         "SparseLowerTail/Section08/FamilyAAACover.lean",
         "SparseLowerTail/Section08/FamilyLocalContacts.lean",
-        "SparseLowerTail/Section08/FamilyLocalBridge.lean"
+        "SparseLowerTail/Section08/FamilyLocalBridge.lean",
+        "SparseLowerTail/Section08/FamilyHessianPerturbation.lean",
+        "SparseLowerTail/Section08/FamilyHessianRadiusTransfer.lean",
+        "SparseLowerTail/Section08/FamilyABBRadiusReplay/Smoke/CheckedSubtree.lean"
       ],
       "lean_declarations": [
         "SparseLowerTail.Certificate.ManuscriptFamilyRadius.binary64Radius",
@@ -3750,7 +3753,25 @@
         "SparseLowerTail.Certificate.ManuscriptFamilyRadius.aaa_hessian_positive",
         "SparseLowerTail.Certificate.ManuscriptFamilyRadius.aaa_local_nonnegative_and_unique_zero",
         "SparseLowerTail.Certificate.familyHessian_symmetric",
-        "SparseLowerTail.Certificate.familyHessianForm_segment_deriv"
+        "SparseLowerTail.Certificate.familyHessianForm_segment_deriv",
+        "SparseLowerTail.Certificate.HessianPerturbation.diagonal_pair",
+        "SparseLowerTail.Certificate.HessianPerturbation.offDiagonal_pair",
+        "SparseLowerTail.Certificate.HessianPerturbation.scaled_hessian_change",
+        "SparseLowerTail.Certificate.HessianRadiusTransfer.retract_in_cube",
+        "SparseLowerTail.Certificate.HessianRadiusTransfer.retract_change",
+        "SparseLowerTail.Certificate.HessianRadiusTransfer.padded_contains",
+        "SparseLowerTail.Certificate.HessianRadiusTransfer.padded_hessian_contains",
+        "SparseLowerTail.Certificate.HessianRadiusTransfer.hessian_positive_of_retracted_enclosure",
+        "SparseLowerTail.Certificate.HessianRadiusTransfer.coefficient_bounds_of_certificate",
+        "SparseLowerTail.Certificate.HessianRadiusTransfer.bounded_contact_sound",
+        "SparseLowerTail.Certificate.HessianRadiusTransfer.abb_radius_offset_property",
+        "SparseLowerTail.Certificate.HessianRadiusTransfer.abb_hessian_of_table",
+        "SparseLowerTail.Certificate.HessianRadiusTransfer.abb_local_of_table",
+        "SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.padded_margins0",
+        "SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.radius_conclusion0",
+        "SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.padded_margins108451",
+        "SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.radius_conclusion108451",
+        "SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.Coverage0000.covered"
       ],
       "explicit_inputs": [
         "internal:ABB-Hessian-at-binary64-radius"
@@ -3762,11 +3783,11 @@
         "source_line": 6168,
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
       },
-      "verification_record": "data/family-binary64-radius-check.json",
+      "verification_record": "data/family-hessian-perturbation-check.json",
       "latest_manuscript_review": {
-        "checked_at_utc": "2026-10-20T12:42:27.713967+00:00",
-        "note": "The complete AAA half is proved for the exact manuscript binary64 radius 3602879701896397/36028797018963968, strictly larger than 1/10. All five existing checked numerical Hessian certificates are reused unchanged; new exact containment proofs put the larger moving cube inside their certified boxes. The actual Hessian form is positive for every nonzero vector on the entire parameter range, and the contact has nonnegative value with its unique zero throughout that larger closed cube. The ABB half at this exact radius is still an internal obligation. The existing full ABB replay targets rational radius 1/10 and remains useful for the compact/global certificate; it does not establish the larger-radius Hessian statement.",
-        "audit_record": "data/family-binary64-radius-check.json"
+        "checked_at_utc": "2026-10-20T13:16:17.225717+00:00",
+        "note": "The complete AAA half is proved at the exact binary64 radius. The actual scaled Hessian is proved entrywise 1000000-Lipschitz on [-1,11]^3 under explicit coefficient bounds of 1000. A checked retraction and dyadic interval padding transfer existing ABB enclosures to the binary64 cube. The 21 existing smoke leaves, including one complete 20-leaf subdivision and the final-region leaf, pass all new padded integer margins, coefficient bounds, contact bounds and radius conclusions. Full 108452-leaf ABB padding and final integration remain internal obligations.",
+        "audit_record": "data/family-hessian-perturbation-check.json"
       }
     }
   ],

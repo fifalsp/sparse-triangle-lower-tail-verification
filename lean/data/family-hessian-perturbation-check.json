@@ -1,0 +1,136 @@
+{
+  "checked_at_utc": "2026-10-20T13:16:17.225717+00:00",
+  "source_parent_commit": "cb558a7ff6acdf25a57f9deaa53cacb5e2ebc925",
+  "scope": "The complete AAA half is proved at the exact binary64 radius. The actual scaled Hessian is proved entrywise 1000000-Lipschitz on [-1,11]^3 under explicit coefficient bounds of 1000. A checked retraction and dyadic interval padding transfer existing ABB enclosures to the binary64 cube. The 21 existing smoke leaves, including one complete 20-leaf subdivision and the final-region leaf, pass all new padded integer margins, coefficient bounds, contact bounds and radius conclusions. Full 108452-leaf ABB padding and final integration remain internal obligations.",
+  "sources": [
+    {
+      "path": "SparseLowerTail/Section08/FamilyHessianPerturbation.lean",
+      "sha256": "c2c504ce0ecd04ca78ed8c1369009f3d2a5a3ad0f9312fc9120ee770a2a8cb87"
+    },
+    {
+      "path": "SparseLowerTail/Section08/FamilyHessianRadiusTransfer.lean",
+      "sha256": "f760cda20edef8ff62b8812d010095652482ab6bbfe49a1987782b228cdf6fdf"
+    },
+    {
+      "path": "SparseLowerTail/Section08/FamilyABBRadiusReplay/Smoke/CheckedSubtree.lean",
+      "sha256": "bd3ca67ba9104ca8263f93fa4cabfde3645cba4bacef237468bebed58ee72474"
+    },
+    {
+      "path": "SparseLowerTail/Section08/FamilyABBRadiusReplay/Smoke/Coverage0000.lean",
+      "sha256": "d712f19830dbc7164f53aa9347d13679c39ffc47943fdbb02fc603b2fe13b0f6"
+    },
+    {
+      "path": "SparseLowerTail/Section08/FamilyABBRadiusReplay/Smoke/Leaves0000.lean",
+      "sha256": "1894b01d7d7f36a9aa26dc6653fc41015a9d838455e951f39d7700923875f20b"
+    },
+    {
+      "path": "SparseLowerTail/Section08/FamilyABBRadiusReplay/Smoke/Leaves3389.lean",
+      "sha256": "a80cc036b1cbcded477daaa1ecc96d4b2f37304b55bef0bd10bfc3f38e91fae0"
+    }
+  ],
+  "generator": {
+    "path": "tools/generate_family_abb_radius_replay.py",
+    "sha256": "adf136779328c54ea2491451a251f363fa2d9053b3fccd9619426ba0d3c6658a",
+    "smoke_regeneration_identical": true,
+    "full_mode_status": "prepared; full generated replay and integration not run"
+  },
+  "mathematical_bounds": {
+    "analytic_box": "[-1,11]^3",
+    "coefficient_absolute_bound": 1000,
+    "entrywise_lipschitz_constant": 1000000,
+    "exact_radius": "3602879701896397/36028797018963968",
+    "retraction_coordinate_error": "1/180143985094819840",
+    "interval_padding": "1/1073741824",
+    "smoke_leaves": 21,
+    "complete_subtree_leaves": 20,
+    "full_replay_leaves": 108452
+  },
+  "explicit_inputs_for_generic_radius_transfer": [
+    "parameter/endpoint certificate validity",
+    "old rational-radius leaf enclosure and coverage",
+    "new padded integer row margins",
+    "integer coefficient bounds and rational contact bounds"
+  ],
+  "smoke_inputs_discharged_by_kernel": true,
+  "remaining_internal_obligations": [
+    "critical numerical certificates (two nonapex regions and F1)",
+    "full ABB/exterior compact-family replays",
+    "full padded ABB replay at the exact binary64 radius",
+    "latest-source combined integration"
+  ],
+  "checks": [
+    {
+      "command": "LEAN_NUM_THREADS=1 lake build SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.CheckedSubtree",
+      "exit_code": 0,
+      "output": "✔ [3216/3223] Built SparseLowerTail.Section08.FamilyHessianRadiusTransfer (3.0s)\n✔ [3219/3223] Built SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.Leaves3389 (1.9s)\n✔ [3221/3223] Built SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.Leaves0000 (4.8s)\n✔ [3222/3223] Built SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.Coverage0000 (1.7s)\n✔ [3223/3223] Built SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.CheckedSubtree (1.7s)\nBuild completed successfully (3223 jobs).\n"
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake build SparseLowerTail",
+      "exit_code": 0,
+      "output": "Build completed successfully (3733 jobs). Cached warnings replayed."
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean tools/audit_family_hessian_perturbation.lean",
+      "exit_code": 0,
+      "output": "'SparseLowerTail.Certificate.HessianPerturbation.PairedBounds.constant' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.HessianPerturbation.PairedBounds.add' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.HessianPerturbation.PairedBounds.neg' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.HessianPerturbation.PairedBounds.sub' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.HessianPerturbation.PairedBounds.mul' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.HessianPerturbation.exp_neg_bound' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.HessianPerturbation.exp_neg_change' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.HessianPerturbation.exp_neg_pair' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.HessianPerturbation.coordinate_pair' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.HessianPerturbation.coordinate_exp_pair' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.HessianPerturbation.diagonal_pair' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.HessianPerturbation.offDiagonal_pair' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.HessianPerturbation.scaled_hessian_change' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.HessianRadiusTransfer.retract_in_cube' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.HessianRadiusTransfer.retract_change' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.HessianRadiusTransfer.cube_in_analytic_box' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.HessianRadiusTransfer.retract_in_analytic_box' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.HessianRadiusTransfer.padded_contains' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.HessianRadiusTransfer.padded_hessian_contains' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.HessianRadiusTransfer.hessian_positive_of_retracted_enclosure' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.HessianRadiusTransfer.small_coefficient_sound' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.HessianRadiusTransfer.coefficient_bounds_of_certificate' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.HessianRadiusTransfer.bounded_contact_sound' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.HessianRadiusTransfer.abb_radius_offset_property' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.HessianRadiusTransfer.abb_hessian_of_table' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Certificate.HessianRadiusTransfer.abb_local_of_table' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.padded_margins0' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.small_coefficients0' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.bounded_contact0' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.radius_conclusion0' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.padded_margins1' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.small_coefficients1' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.bounded_contact1' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.radius_conclusion1' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.padded_margins2' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.small_coefficients2' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.bounded_contact2' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.radius_conclusion2' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.padded_margins3' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.small_coefficients3' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.bounded_contact3' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.radius_conclusion3' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.padded_margins4' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.small_coefficients4' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.bounded_contact4' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.radius_conclusion4' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.padded_margins5' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.small_coefficients5' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.bounded_contact5' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.radius_conclusion5' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.padded_margins6' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.small_coefficients6' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.bounded_contact6' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.radius_conclusion6' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.padded_margins7' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.small_coefficients7' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.bounded_contact7' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.radius_conclusion7' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.padded_margins8' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.small_coefficients8' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.bounded_contact8' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.radius_conclusion8' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.padded_margins9' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.small_coefficients9' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.bounded_contact9' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.radius_conclusion9' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.padded_margins10' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.small_coefficients10' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.bounded_contact10' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.radius_conclusion10' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.padded_margins11' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.small_coefficients11' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.bounded_contact11' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.radius_conclusion11' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.padded_margins12' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.small_coefficients12' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.bounded_contact12' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.radius_conclusion12' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.padded_margins13' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.small_coefficients13' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.bounded_contact13' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.radius_conclusion13' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.padded_margins14' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.small_coefficients14' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.bounded_contact14' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.radius_conclusion14' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.padded_margins15' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.small_coefficients15' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.bounded_contact15' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.radius_conclusion15' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.padded_margins16' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.small_coefficients16' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.bounded_contact16' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.radius_conclusion16' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.padded_margins17' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.small_coefficients17' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.bounded_contact17' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.radius_conclusion17' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.padded_margins18' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.small_coefficients18' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.bounded_contact18' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.radius_conclusion18' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.padded_margins19' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.small_coefficients19' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.bounded_contact19' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.radius_conclusion19' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.padded_margins108451' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.small_coefficients108451' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.bounded_contact108451' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.radius_conclusion108451' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.Coverage0000.leaf_proofs' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.Coverage0000.covered' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean Audit.lean",
+      "exit_code": 0,
+      "output": "Axiom audit passed: 25281 project declarations, 18655 theorems; only propext, Classical.choice, Quot.sound allowed.\n"
+    },
+    {
+      "command": "python3 tools/check_lean_map.py",
+      "exit_code": 0,
+      "output": "Proof-map links passed: 111 labels, 1072 Lean declarations.\n"
+    }
+  ],
+  "audited_public_declarations": 112,
+  "root_project_modules": 553,
+  "root_project_declarations": 25281,
+  "root_project_theorems": 18655,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "base_source_manifest": "family-binary64-radius-check.json",
+  "source_manifest_changes": [
+    {
+      "module": "SparseLowerTail",
+      "sha256": "fc4ee1e2164d233415ee4868f1706e97294a11c89d01c0a174f7770159b540f8"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyHessianPerturbation",
+      "sha256": "c2c504ce0ecd04ca78ed8c1369009f3d2a5a3ad0f9312fc9120ee770a2a8cb87"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyHessianRadiusTransfer",
+      "sha256": "f760cda20edef8ff62b8812d010095652482ab6bbfe49a1987782b228cdf6fdf"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.CheckedSubtree",
+      "sha256": "bd3ca67ba9104ca8263f93fa4cabfde3645cba4bacef237468bebed58ee72474"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.Coverage0000",
+      "sha256": "d712f19830dbc7164f53aa9347d13679c39ffc47943fdbb02fc603b2fe13b0f6"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.Leaves0000",
+      "sha256": "1894b01d7d7f36a9aa26dc6653fc41015a9d838455e951f39d7700923875f20b"
+    },
+    {
+      "module": "SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.Leaves3389",
+      "sha256": "a80cc036b1cbcded477daaa1ecc96d4b2f37304b55bef0bd10bfc3f38e91fae0"
+    }
+  ],
+  "source_manifest_sha256": "facb53e7dccb772272fdbc150b99e6656690b4b1caf692718979fc277347c37f",
+  "manuscript_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9",
+  "assembly_preparation": {
+    "path": "hpc/assemble_replays.py",
+    "sha256": "b0f4eb1123c091739acc93d99dd6ebd96c2fec5f7c570f3907cc70299b4161b6",
+    "checked": "Python syntax and generated assembly preview include full padded ABB imports and both binary64 conclusions",
+    "full_assembly_status": "not run; missing regional results and full padded replay remain"
+  }
+}

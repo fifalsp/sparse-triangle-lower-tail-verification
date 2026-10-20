@@ -1,0 +1,18 @@
+{
+  "trust_status": "Generated; requires Lean build and axiom audit",
+  "mode": "smoke",
+  "leaves": 21,
+  "coverage_chunks": 1,
+  "source_modules_sha256": {
+    "Leaves0000": "0fb157476084eec00a1ae0b62e99dc1ac6d9e913c66ffa674a97b5ca94e5cc4f",
+    "Leaves3389": "c7ad0de20c2bf993de7498b04da6c2cc8b58193185aac16c88a4d5900a443f3f",
+    "Coverage0000": "0424d5db0d6ab469c1d7ab52fba124999a8d978f80113e9ebc3674c3dde19473"
+  },
+  "final_module": "SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.CheckedSubtree",
+  "modules": [
+    "SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.Leaves0000",
+    "SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.Leaves3389",
+    "SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.Coverage0000",
+    "SparseLowerTail.Section08.FamilyABBRadiusReplay.Smoke.CheckedSubtree"
+  ]
+}

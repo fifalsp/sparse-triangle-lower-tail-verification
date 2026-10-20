@@ -23,7 +23,9 @@ def generate(selected):
  for i in range(1,7):
   imports.append(f'SparseLowerTail.Section05.ApexReplay.F{i}.FullCube')
   apex.append(f'  · exact ApexReplay.F{i}.ordered hq')
- imports+=['SparseLowerTail.Section08.FamilyABBReplay.Full.FullNeighborhood','SparseLowerTail.Section08.FamilyExteriorReplay.Full.CompactCertificate']
+ imports+=['SparseLowerTail.Section08.FamilyABBReplay.Full.FullNeighborhood',
+  'SparseLowerTail.Section08.FamilyABBRadiusReplay.Full.FullNeighborhood',
+  'SparseLowerTail.Section08.FamilyExteriorReplay.Full.CompactCertificate']
  return '\n'.join('import '+i for i in imports)+'''
 noncomputable section
 namespace SparseLowerTail.CompletedReplays
@@ -44,6 +46,21 @@ theorem all_apex : ApexJobResults := by
 theorem full_abb : FamilyABBLocal := by
   intro z hz hL q hq
   exact FamilyABBReplay.Full.local_nonnegative_and_unique_zero hz hL hq
+
+/-- Literal Appendix A.3 ABB Hessian at the exact binary64 radius. -/
+theorem full_abb_binary64_hessian {z : ℝ} (hz : 0<z)
+    (hL : Numerics.Bounds (branchLog z) (39/10) (19/2))
+    {q : FamilyVector} (hq : q∈familyCube (familyContactABB z)
+      ManuscriptFamilyRadius.binary64Radius)
+    {v : FamilyVector} (hv : v≠0) : 0<familyHessianForm z q v :=
+  FamilyABBRadiusReplay.Full.hessian_positive hz hL hq hv
+
+theorem full_abb_binary64_local {z : ℝ} (hz : 0<z)
+    (hL : Numerics.Bounds (branchLog z) (39/10) (19/2))
+    {q : FamilyVector} (hq : q∈familyCube (familyContactABB z)
+      ManuscriptFamilyRadius.binary64Radius) :
+    0≤familyPhi z q ∧ (familyPhi z q=0 ↔ q=familyContactABB z) :=
+  FamilyABBRadiusReplay.Full.local_nonnegative_and_unique_zero hz hL hq
 
 theorem full_compact : CompactFamilyCertificate :=
   FamilyExteriorReplay.Full.compact_certificate full_abb
@@ -100,10 +117,11 @@ def main():
  (ROOT/'lean/SparseLowerTail/CompletedReplays.lean').write_text(generate(selected))
  def run(cmd,name):
   with (a.logs/name).open('w') as out:subprocess.run(cmd,cwd=ROOT/'lean',stdout=out,stderr=subprocess.STDOUT,check=True)
+ run([sys.executable,'tools/generate_family_abb_radius_replay.py','--mode','full'],'abb-radius-generation.log')
  run([sys.executable,'tools/build_bounded.py',target,'--logs',str(a.logs/'combined-build'),'--workers','2','--lean-threads','1'],'combined-build.log')
  audit=(ROOT/'lean/Audit.lean').read_text()
  if not audit.startswith('import SparseLowerTail\n'):raise ValueError('Unexpected audit header')
  audit_path=a.logs/'AuditCompleted.lean';audit_path.write_text(audit.replace('import SparseLowerTail\n','import '+target+'\n',1))
  run(['lake','env','lean',str(audit_path)],'combined-audit.log')
- (a.logs/'ASSEMBLY_SUCCESS.txt').write_text('All internal numerical certificates discharged in CompletedReplays.mainTheorem; the seven named external/classical inputs remain explicit.\n')
+ (a.logs/'ASSEMBLY_SUCCESS.txt').write_text('All internal numerical certificates discharged in CompletedReplays.mainTheorem, including the binary64 ABB radius replay; the seven named external/classical inputs remain explicit.\n')
 if __name__=='__main__':main()

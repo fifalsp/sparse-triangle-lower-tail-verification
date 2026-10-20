@@ -12,6 +12,7 @@ Updated October 19, 2026.
 | Python interval verification | All 42 cover regions, both family Hessian neighborhoods, and the full compact family domain; zero unresolved boxes | [Full run](certificates/release/run.json) |
 | Lean full-domain nonapex certificates | **25 of 36 regions** | [Build and axiom-audit records](hpc/results-20261019-late/verified-regions.json) |
 | Lean full-domain apex certificates | **4 of 6 fans: F2, F3, F5, F6** | [Build and axiom-audit records](hpc/results-20261019-late/verified-regions.json) |
+| Near-minimizer stability (`lem:stability`) | Approximate feasibility and optimality imply proximity to an actual minimizer after a measure-preserving bijection | [Lean build and axiom audit](lean/data/near-minimizers-check.json) |
 | Lean family AAA neighborhood | Nonnegativity and the unique AAA zero for every L ∈ [3.9, 9.5] | [Formalization record](lean/README.md) |
 | Combined Lean project | Full nonapex job 25 imported; combined build and axiom audit passed | [Integration record](hpc/bouchet-job25-completion-20261019.json) |
 

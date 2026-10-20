@@ -1,0 +1,35 @@
+{
+  "checked_at_utc": "2026-10-20T03:04:59.292595+00:00",
+  "paper_label": "lem:stability",
+  "manuscript_sha256": "d40897b38b2e317865f06ded5fddee4892474e169955f948240eb187b9d4296e",
+  "source": "SparseLowerTail/Section03/NearMinimizers.lean",
+  "source_sha256": "cd17bc76d062f7105bd593171fab38373b1db5c112757b322dd2dc67397df6cb",
+  "lean_version": "4.24.0",
+  "build": {
+    "command": "lake build SparseLowerTail.Section03.NearMinimizers",
+    "exit_code": 0,
+    "output": "Built SparseLowerTail.Section03.NearMinimizers (3.9s)\nBuild completed successfully (3123 jobs)."
+  },
+  "axiom_audit": {
+    "command": "lake env lean tools/audit_near_minimizers.lean",
+    "exit_code": 0,
+    "declarations": {
+      "SparseLowerTail.Section03.minimizer_of_approximate_cut_limit": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "SparseLowerTail.Section03.near_minimizer_stability": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  },
+  "explicit_inputs": [
+    "classical:dyadic-l1-approximation",
+    "classical:graphon-cut-compactness",
+    "classical:pullback-l1-approximation",
+    "classical:counting-lemma"
+  ]
+}

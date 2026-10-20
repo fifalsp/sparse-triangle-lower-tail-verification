@@ -2372,6 +2372,32 @@
         "proof_sha256": "15e0731eeb8f85102d960c44660b8f0ea1c2833d6cd5770d50d8517293d765d4",
         "source_line": 3785
       }
+    },
+    {
+      "paper_label": "lem:stability",
+      "status": "proved_relative_classical",
+      "checked_scope": "Approximate feasibility and optimality imply cut-norm proximity to an actual minimizer after a measure-preserving bijection. Includes the limiting minimizer argument; no additional variational hypothesis.",
+      "lean_files": [
+        "SparseLowerTail/Section03/NearMinimizers.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section03.minimizer_of_approximate_cut_limit",
+        "SparseLowerTail.Section03.near_minimizer_stability"
+      ],
+      "explicit_inputs": [
+        "classical:dyadic-l1-approximation",
+        "classical:graphon-cut-compactness",
+        "classical:pullback-l1-approximation",
+        "classical:counting-lemma"
+      ],
+      "verification_record": "data/near-minimizers-check.json",
+      "baseline": {
+        "environment": "lemma",
+        "statement_sha256": "f34e4a24b5298ea6ea71fb147643d91ebab56fdeab913efa2ce5e108074f9272",
+        "proof_sha256": "b86e0490a07e77512df68798eaabde1a7b06be030b24dc2f5e123555dbcd9a1f",
+        "source_line": 1780,
+        "source_sha256": "d40897b38b2e317865f06ded5fddee4892474e169955f948240eb187b9d4296e"
+      }
     }
   ],
   "current_manuscript_inventory": "manuscript-coverage.json"

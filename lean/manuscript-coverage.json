@@ -215,10 +215,24 @@
       "source_line": 1780,
       "statement_sha256": "f34e4a24b5298ea6ea71fb147643d91ebab56fdeab913efa2ce5e108074f9272",
       "proof_sha256": "b86e0490a07e77512df68798eaabde1a7b06be030b24dc2f5e123555dbcd9a1f",
-      "mapping_status": "needs_mapping",
-      "recorded_status": null,
-      "latest_manuscript_review": "not_yet_mapped",
-      "ownership": "author_argument_or_specialization_to_review"
+      "mapping_status": "mapped",
+      "recorded_status": "proved_relative_classical",
+      "latest_manuscript_review": "checked",
+      "ownership": "author_argument",
+      "lean_files": [
+        "SparseLowerTail/Section03/NearMinimizers.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section03.minimizer_of_approximate_cut_limit",
+        "SparseLowerTail.Section03.near_minimizer_stability"
+      ],
+      "explicit_inputs": [
+        "classical:dyadic-l1-approximation",
+        "classical:graphon-cut-compactness",
+        "classical:pullback-l1-approximation",
+        "classical:counting-lemma"
+      ],
+      "verification_record": "data/near-minimizers-check.json"
     },
     {
       "paper_label": "lem:stepcut",

@@ -90,7 +90,7 @@ def compare(text: str, mapping: dict) -> dict:
             changes.append({"paper_label": key, "status": "missing_or_renamed"})
         elif now["statement_sha256"] != baseline["statement_sha256"]:
             changes.append({"paper_label": key, "status": "statement_changed",
-                            "old_statement": baseline["statement"],
+                            "old_statement": baseline.get("statement"),
                             "new_statement": now["statement"]})
         elif now["proof_sha256"] != baseline["proof_sha256"]:
             changes.append({"paper_label": key, "status": "proof_changed"})

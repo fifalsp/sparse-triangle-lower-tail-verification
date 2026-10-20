@@ -1,0 +1,4 @@
+import SparseLowerTail.Section03.NearMinimizers
+
+#print axioms SparseLowerTail.Section03.minimizer_of_approximate_cut_limit
+#print axioms SparseLowerTail.Section03.near_minimizer_stability

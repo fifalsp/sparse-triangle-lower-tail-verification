@@ -44,6 +44,12 @@ arguments separately for future manuscript revisions.
 
 ## Completed proof components
 
+- **Section 3 near-minimizer stability (`lem:stability`):** the limiting-minimizer
+  argument and the uniform proximity theorem with a genuine measure-preserving
+  bijection are proved in [NearMinimizers.lean](SparseLowerTail/Section03/NearMinimizers.lean).
+  The target build and both declaration audits passed; only the existing four
+  classical inputs are used. [Verification record](data/near-minimizers-check.json).
+
 | Paper content | Lean file / declarations | Scope |
 | --- | --- | --- |
 | h(x) = x log x − x + 1; definitions of F, t, V, and the balanced problem | [`Basic.lean`](SparseLowerTail/Basic.lean) | Definitions use actual Lebesgue integrals; h(0) = 1 is checked. |

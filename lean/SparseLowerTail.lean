@@ -155,3 +155,4 @@ import SparseLowerTail.Section05.CoverJobReplay.Job35Smoke.CheckedSubtree
 import SparseLowerTail.Section05.CoverJobProgramTaylor
 import SparseLowerTail.MainReplayAssembly
 import SparseLowerTail.MainRelabeling
+import SparseLowerTail.Section03.NearMinimizers

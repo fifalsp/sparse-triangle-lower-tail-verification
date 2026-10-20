@@ -2678,7 +2678,6 @@
         "classical:counting-lemma"
       ],
       "remaining_application": [
-        "Apply the discrete comparison in thm:reduction(a).",
         "Combine the latest proof modules with all remaining certificate replays and audit the new root."
       ],
       "verification_record": "data/discrete-comparison-check.json",
@@ -2711,6 +2710,62 @@
         "statement_sha256": "de55fc9ebcbd2c83949a132ee9e3cceb21cf9db1798eac2f0b994764206fd523",
         "proof_sha256": null,
         "source_line": 1650,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      }
+    },
+    {
+      "paper_label": "thm:reduction",
+      "status": "part_a_proved_relative_external_classical",
+      "checked_scope": "Part (a): the actual triangle lower-tail log probability divided by n²p/2 converges to V(η^(1/3)), and its ratio to (n²p/2)V(η^(1/3)) converges to one, for every sequence n→∞, p→0 and √n p→∞. All triangle hypergraph identifications, codegrees, additive-error limits and perturbation squeezing are proved. Part (b), conditioned structure, remains.",
+      "lean_files": [
+        "SparseLowerTail/Section03/HypergraphVariational.lean",
+        "SparseLowerTail/Section03/KS23RateInputs.lean",
+        "SparseLowerTail/Section03/TriangleRateComparison.lean",
+        "SparseLowerTail/Section03/RateSandwich.lean",
+        "SparseLowerTail/Section03/LowerTailRate.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section03.extendGraphEdges_coe",
+        "SparseLowerTail.Section03.finiteEdgeEntropy_eq_coordinate_sum",
+        "SparseLowerTail.Section03.coordinateTriangleEdges_injective_on_triangles",
+        "SparseLowerTail.Section03.coordinateTriangleEdges_product",
+        "SparseLowerTail.Section03.coordinateTriangle_weightedCount",
+        "SparseLowerTail.Section03.weightedTriangleCount_congr",
+        "SparseLowerTail.Section03.coordinateTriangle_weightedCount_restrict",
+        "SparseLowerTail.Section03.coordinateTrianglePhi_eq",
+        "SparseLowerTail.Section03.hypergraphWeightedCount_expectation",
+        "SparseLowerTail.Section03.hypergraphWeightedCount_constant",
+        "SparseLowerTail.Section03.hypergraphLowerTailRate_nonneg",
+        "SparseLowerTail.Section03.triangle_count_eq_unordered_count",
+        "SparseLowerTail.Section03.triangle_count_expectation",
+        "SparseLowerTail.Section03.triangleLowerTailRate_nonneg",
+        "SparseLowerTail.Section03.coordinateTriangleHypergraph_nonempty",
+        "SparseLowerTail.Section03.triangle_KS_comparison",
+        "SparseLowerTail.Section03.eventually_sparse_threshold",
+        "SparseLowerTail.Section03.triangleRateScale_tendsto_atTop",
+        "SparseLowerTail.Section03.triangleRate_sandwich",
+        "SparseLowerTail.Section03.targetValue_continuousAt",
+        "SparseLowerTail.Section03.targetValue_perturbations_tendsto",
+        "SparseLowerTail.Section03.triangleLowerTailRate_tendsto",
+        "SparseLowerTail.Section03.triangleLowerTailRate_ratio_tendsto_one"
+      ],
+      "explicit_inputs": [
+        "external:KS23:theorem5",
+        "external:KS23:theorem6",
+        "classical:dyadic-l1-approximation",
+        "classical:graphon-cut-compactness",
+        "classical:counting-lemma"
+      ],
+      "remaining_application": [
+        "Prove part (b), conditioned structure, including rounding and transfer to minimizers.",
+        "Combine all author proofs with all completed certificate replays."
+      ],
+      "verification_record": "data/lower-tail-rate-check.json",
+      "baseline": {
+        "environment": "theorem",
+        "statement_sha256": "df20d608547199ff293afc714952a9f735a27a74f205096ac592b7a394dba483",
+        "proof_sha256": null,
+        "source_line": 778,
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
       }
     }

@@ -1518,3 +1518,18 @@ or their outputs retrieved. The latest successful Slurm observation remains
 a current-state claim. No job was resubmitted or stopped because of the
 connection failure. Local storage remains at about 21 GiB free; no bulk replay
 or full remote-cache download was started locally.
+
+
+### 2026-10-20 — Probability-rate deduction
+
+`Section03.LowerTailRate` proves part (a) of `thm:reduction`: the actual
+triangle lower-tail log probability is asymptotic to (n²p/2)V(η^(1/3))
+when p → 0 and √n p → ∞. The result holds along arbitrary n → ∞ sequences.
+The generic KS23 Theorems 5 and 6 are ordinary external hypotheses; their
+triangle application and the limiting argument are proved here. The named
+graphon approximation, compactness and counting inputs are unchanged.
+
+All 23 new public theorems pass the axiom audit. The
+[check record](data/lower-tail-rate-check.json) records source hashes and
+checks. Conditioned structure in part (b), the remaining certificate replays,
+and the latest manuscript review remain to be completed.

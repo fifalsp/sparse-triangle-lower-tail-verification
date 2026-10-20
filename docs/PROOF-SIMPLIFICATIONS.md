@@ -818,3 +818,19 @@ and its imports. The named classical inputs are the same dyadic approximation,
 compactness and triangle-counting inputs used for graphon existence. The
 [combined check](../lean/data/discrete-comparison-check.json) includes both
 parts of the discrete lemma and all 70 declaration audits.
+
+## PS-011 — Use the generic KS23 bounds before taking the limit
+
+The rate deduction applies KS23 Theorems 5 and 6 to the triangle hypergraph
+and retains their additive constants. Dividing by n²p/2 makes these constants
+vanish in the sparse regime. The discrete variational limit supplies each
+fixed perturbation bound, and continuity of V lets the perturbation shrink
+to zero. This avoids a separate finite-size absorption argument while
+proving the same probability asymptotic.
+
+The generic inputs are explicit hypotheses. The triangle coordinates,
+variational identification, codegrees and both limiting steps are proved in
+[LowerTailRate.lean](../lean/SparseLowerTail/Section03/LowerTailRate.lean)
+and its imports. The [check record](../lean/data/lower-tail-rate-check.json)
+audits all 23 new public theorems. This closes part (a) of `thm:reduction`;
+part (b) remains.

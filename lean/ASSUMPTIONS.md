@@ -23,6 +23,27 @@ the final theorem's type provide that separate provenance information.
 
 ## Explicitly encoded external and classical inputs
 
+### `external:KS23:theorem5` and `external:KS23:theorem6`
+
+- Reference: Kozma–Samotij, *Lower tails via relative entropy*, Theorems 5
+  and 6, [author's final revision](https://www.math.tau.ac.il/~samotij/papers/lower-tails-AOP-final-revision.pdf),
+  pages 5–6.
+- Exact Lean propositions: `SparseLowerTail.Section03.KS23HypergraphLowerBound`
+  and `SparseLowerTail.Section03.KS23HypergraphUpperBound` in
+  [KS23RateInputs.lean](SparseLowerTail/Section03/KS23RateInputs.lean).
+  These are the unit-weight uniform-hypergraph instances, using the actual
+  product Bernoulli event probability and entropy infimum. The upper bound
+  restricts its error parameter to (0,1), so every target is nonnegative.
+- Status: **assumed external**, passed as ordinary hypotheses. The lower input
+  uses generic codegree bounds; the upper input applies Theorem 6 to increasing
+  hypergraph counts. Both retain the external additive constant C.
+- Proved here: all triangle count and codegree specializations, identification
+  of the generic entropy infimum with the finite triangle minimum, disappearance
+  of C/(n²p/2), both perturbation limits, and the resulting probability rate
+  for every sequence n → ∞, p → 0 and √n p → ∞. The graphon approximation,
+  compactness and counting inputs are listed below. The final rate does not
+  assume a triangle-specific probability comparison or an asymptotic formula.
+
 ### `external:KS23:lemma18` and `external:KS23:eq33`
 
 - Reference: Kozma–Samotij, *Lower tails via relative entropy*, Lemma 18

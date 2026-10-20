@@ -1,0 +1,55 @@
+{
+  "paper_label": "thm:reduction",
+  "checked_at_utc": "2026-10-20T07:36:12.313497+00:00",
+  "scope": "Part (a): the actual triangle lower-tail log probability divided by n²p/2 converges to V(η^(1/3)), and its ratio to (n²p/2)V(η^(1/3)) converges to one, for every sequence n→∞, p→0 and √n p→∞. All triangle hypergraph identifications, codegrees, additive-error limits and perturbation squeezing are proved. Part (b), conditioned structure, remains.",
+  "sources": [
+    {
+      "path": "SparseLowerTail/Section03/HypergraphVariational.lean",
+      "sha256": "f4c3c028bec31480ece86acf357bfb9c066c02b561a0c0c2785afa34c2feff75"
+    },
+    {
+      "path": "SparseLowerTail/Section03/KS23RateInputs.lean",
+      "sha256": "9bf6ac3be8c52eb71d9e286b8e101c1d47440aeaff2a0a469a7b59dd0e13203b"
+    },
+    {
+      "path": "SparseLowerTail/Section03/TriangleRateComparison.lean",
+      "sha256": "8f8f3846d05553dfd4efc97f30eb9847a56c8f977db860c84b22f665deb0b947"
+    },
+    {
+      "path": "SparseLowerTail/Section03/RateSandwich.lean",
+      "sha256": "c51d2551901523d5c52b0fe7b4c864291e83baba0914dbfa9dbbc769c4c28db2"
+    },
+    {
+      "path": "SparseLowerTail/Section03/LowerTailRate.lean",
+      "sha256": "2a6c42f74a8636fcdc5e3c67fd1e4d35340ee92ac50e813ef9b95810d32b40b1"
+    }
+  ],
+  "lean_version": "4.24.0",
+  "checks": [
+    {
+      "command": "lake build SparseLowerTail.Section03.LowerTailRate",
+      "exit_code": 0,
+      "output": "Build completed successfully (3183 jobs).\n"
+    },
+    {
+      "command": "lake env lean tools/audit_lower_tail_rate.lean",
+      "exit_code": 0,
+      "output": "'SparseLowerTail.Section03.extendGraphEdges_coe' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finiteEdgeEntropy_eq_coordinate_sum' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.coordinateTriangleEdges_injective_on_triangles' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.coordinateTriangleEdges_product' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.coordinateTriangle_weightedCount' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.weightedTriangleCount_congr' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.coordinateTriangle_weightedCount_restrict' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.coordinateTrianglePhi_eq' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.hypergraphWeightedCount_expectation' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.hypergraphWeightedCount_constant' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.hypergraphLowerTailRate_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.triangle_count_eq_unordered_count' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.triangle_count_expectation' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.triangleLowerTailRate_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.coordinateTriangleHypergraph_nonempty' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.triangle_KS_comparison' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.eventually_sparse_threshold' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.triangleRateScale_tendsto_atTop' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.triangleRate_sandwich' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.targetValue_continuousAt' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.targetValue_perturbations_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.triangleLowerTailRate_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.triangleLowerTailRate_ratio_tendsto_one' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    }
+  ],
+  "audited_theorem_count": 23,
+  "explicit_inputs": [
+    "external:KS23:theorem5",
+    "external:KS23:theorem6",
+    "classical:dyadic-l1-approximation",
+    "classical:graphon-cut-compactness",
+    "classical:counting-lemma"
+  ],
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "manuscript_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9",
+  "integrated_root_check": "current-root-check-20261020-0736.json"
+}

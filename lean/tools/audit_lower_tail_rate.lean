@@ -1,0 +1,25 @@
+import SparseLowerTail.Section03.LowerTailRate
+
+#print axioms SparseLowerTail.Section03.extendGraphEdges_coe
+#print axioms SparseLowerTail.Section03.finiteEdgeEntropy_eq_coordinate_sum
+#print axioms SparseLowerTail.Section03.coordinateTriangleEdges_injective_on_triangles
+#print axioms SparseLowerTail.Section03.coordinateTriangleEdges_product
+#print axioms SparseLowerTail.Section03.coordinateTriangle_weightedCount
+#print axioms SparseLowerTail.Section03.weightedTriangleCount_congr
+#print axioms SparseLowerTail.Section03.coordinateTriangle_weightedCount_restrict
+#print axioms SparseLowerTail.Section03.coordinateTrianglePhi_eq
+#print axioms SparseLowerTail.Section03.hypergraphWeightedCount_expectation
+#print axioms SparseLowerTail.Section03.hypergraphWeightedCount_constant
+#print axioms SparseLowerTail.Section03.hypergraphLowerTailRate_nonneg
+#print axioms SparseLowerTail.Section03.triangle_count_eq_unordered_count
+#print axioms SparseLowerTail.Section03.triangle_count_expectation
+#print axioms SparseLowerTail.Section03.triangleLowerTailRate_nonneg
+#print axioms SparseLowerTail.Section03.coordinateTriangleHypergraph_nonempty
+#print axioms SparseLowerTail.Section03.triangle_KS_comparison
+#print axioms SparseLowerTail.Section03.eventually_sparse_threshold
+#print axioms SparseLowerTail.Section03.triangleRateScale_tendsto_atTop
+#print axioms SparseLowerTail.Section03.triangleRate_sandwich
+#print axioms SparseLowerTail.Section03.targetValue_continuousAt
+#print axioms SparseLowerTail.Section03.targetValue_perturbations_tendsto
+#print axioms SparseLowerTail.Section03.triangleLowerTailRate_tendsto
+#print axioms SparseLowerTail.Section03.triangleLowerTailRate_ratio_tendsto_one

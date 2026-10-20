@@ -1,5 +1,6 @@
 import SparseLowerTail.Section02.Push
 import SparseLowerTail.Section04.BalancedPhase
+import SparseLowerTail.Section02.RelabelBalanced
 
 /-!
 # Reduction of the full threshold theorem to the critical classification
@@ -114,6 +115,16 @@ theorem minimizer_at_iff (hcrit : CriticalClassification) (U : Graphon) :
       · exact constant_integrals ⟨threshold_mem_Ioo.1.le, threshold_mem_Ioo.2.le⟩ hc
       · exact critical_balanced_integrals hb
     exact isMinimizer_iff.mpr ⟨hi.1.le, hi.2.trans hcrit.1.symm⟩
+
+/-- The literal critical optimizer clause, with an actual measure-preserving
+relabeling. The author-owned critical classification remains the same input. -/
+theorem minimizer_at_relabeling_iff (hcrit : CriticalClassification)
+    (hCDF : ClassicalCDFTransport) (U : Graphon) :
+    IsMinimizer threshold U ↔ IsConstant U threshold ∨
+      IsBalancedRelabeling U criticalA criticalB critical_pair_bounds.1
+        critical_pair_bounds.2 := by
+  rw [minimizer_at_iff hcrit U,
+    isBalanced_iff_relabel hCDF critical_pair_bounds.1 critical_pair_bounds.2]
 
 /-- `thm:threshold`(iii): unrestricted strict improvement below the threshold. -/
 theorem value_lt_entropy_below {r : ℝ} (hr : r ∈ Ioo (0:ℝ) threshold) :

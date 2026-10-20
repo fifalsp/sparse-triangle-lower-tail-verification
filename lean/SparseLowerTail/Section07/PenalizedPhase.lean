@@ -182,6 +182,65 @@ theorem existsUnique_penalized_parameter {γ : ℝ} (hγ : criticalPenalty<γ) :
     ⟨hw.1.1,(hw.1.2.trans penalizedCrossing_lt_fold).le⟩
     ⟨hz0,(hzc.trans penalizedCrossing_lt_fold).le⟩ (hw.2.trans he.symm)
 
+/-- The full stationary-branch existence criterion used in the phase proof,
+including equality at the fold. No minimizer is assumed. -/
+theorem existsUnique_fold_parameter_iff (γ : ℝ) :
+    (∃! z, z ∈ Ioc (0 : ℝ) foldPoint ∧ branchMu z = 3*γ) ↔
+      branchMu foldPoint ≤ 3*γ := by
+  have hfold : foldPoint ∈ Ioc (0 : ℝ) foldPoint := ⟨foldPoint_spec.1.1, le_rfl⟩
+  constructor
+  · rintro ⟨z, hz, _⟩
+    have h := strictAntiOn_branchMu_left.antitoneOn hz.1 hfold hz.1.2
+    rwa [hz.2] at h
+  · intro hγ
+    have hlarge : ∀ᶠ z in 𝓝[>] (0 : ℝ), 3*γ < branchMu z :=
+      tendsto_branchMu_zero.eventually (eventually_gt_atTop _)
+    have hsmall : ∀ᶠ z in 𝓝[>] (0 : ℝ), z < foldPoint :=
+      (eventually_lt_nhds foldPoint_spec.1.1).filter_mono nhdsWithin_le_nhds
+    obtain ⟨a, ha, haf, hμa⟩ :=
+      ((show ∀ᶠ z in 𝓝[>] (0 : ℝ), 0 < z from self_mem_nhdsWithin).and
+        (hsmall.and hlarge)).exists
+    have hc : ContinuousOn branchMu (Icc a foldPoint) := by
+      intro z hz
+      exact (hasDerivAt_branchMu
+        ⟨ha.trans_le hz.1, hz.2.trans_lt foldPoint_spec.1.2⟩).continuousAt.continuousWithinAt
+    obtain ⟨z, hz, he⟩ := intermediate_value_Icc' haf.le hc ⟨hγ, hμa.le⟩
+    refine ⟨z, ⟨⟨ha.trans_le hz.1, hz.2⟩, he⟩, ?_⟩
+    intro w hw
+    exact strictAntiOn_branchMu_left.injOn hw.1
+      ⟨ha.trans_le hz.1, hz.2⟩ (hw.2.trans he.symm)
+
+/-- The stable stationary parameter crosses z_c in the reverse order to its
+penalty, with the equality case included. -/
+theorem fold_parameter_crossing_order {γ z : ℝ}
+    (hz : z ∈ Ioc (0 : ℝ) foldPoint) (hμ : branchMu z = 3*γ) :
+    (z < penalizedCrossing ↔ criticalPenalty < γ) ∧
+      (z = penalizedCrossing ↔ γ = criticalPenalty) := by
+  have hc : penalizedCrossing ∈ Ioc (0 : ℝ) foldPoint :=
+    ⟨penalizedCrossing_spec.1.1, penalizedCrossing_lt_fold.le⟩
+  constructor
+  · constructor
+    · intro h
+      have hh := strictAntiOn_branchMu_left hz hc h
+      rw [hμ] at hh
+      dsimp only [criticalPenalty]
+      linarith
+    · intro h
+      by_contra hn
+      have hh := strictAntiOn_branchMu_left.antitoneOn hc hz (le_of_not_gt hn)
+      rw [hμ] at hh
+      dsimp only [criticalPenalty] at h
+      linarith
+  · constructor
+    · intro he
+      rw [he] at hμ
+      dsimp only [criticalPenalty]
+      linarith
+    · intro he
+      apply strictAntiOn_branchMu_left.injOn hz hc
+      rw [hμ, he, criticalPenalty]
+      ring
+
 /-- Above γ_c the supported nonconstant pair is the unique minimum. -/
 theorem penalizedMinimizer_above_critical {γ z : ℝ} (hγ : criticalPenalty<γ)
     (hz : z∈Ioo (0:ℝ) penalizedCrossing) (hμ : branchMu z=3*γ) (a b : ℝ) :

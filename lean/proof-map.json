@@ -577,10 +577,11 @@
     {
       "paper_label": "thm:threshold",
       "status": "partial_conditional",
-      "checked_scope": "Part (iii) proved without additional assumptions. All remaining conclusions deduced from explicit INTERNAL CriticalClassification (prop:critical), still unproved. Conditional reduction is not global threshold verification.",
+      "checked_scope": "Below-threshold branch improvement and exclusion of all constant minimizers are unconditional. All at/above-threshold conclusions and both threshold equivalences follow from the explicit author-owned CriticalClassification; the critical relabeling clause additionally uses classical CDF transport. The remaining critical certificates are not discharged here.",
       "lean_files": [
         "SparseLowerTail/Section05/StrictImprovement.lean",
-        "SparseLowerTail/Section05/ThresholdReduction.lean"
+        "SparseLowerTail/Section05/ThresholdReduction.lean",
+        "SparseLowerTail/Section02/RelabelBalanced.lean"
       ],
       "lean_declarations": [
         "SparseLowerTail.Section05.value_le_branchCost_lt_entropy",
@@ -591,18 +592,26 @@
         "SparseLowerTail.Section05.minimizer_above_iff",
         "SparseLowerTail.Section05.minimizer_at_iff",
         "SparseLowerTail.Section05.strict_improvement_iff",
-        "SparseLowerTail.Section05.constant_optimal_iff"
+        "SparseLowerTail.Section05.constant_optimal_iff",
+        "SparseLowerTail.Section05.minimizer_at_relabeling_iff"
       ],
       "explicit_inputs": [
-        "internal:prop:critical"
+        "internal:prop:critical",
+        "classical:nonatomic-cdf-transport"
       ],
       "baseline": {
         "environment": "theorem",
-        "statement": "The following hold. \\begin{enumerate}[label=(\\roman*)] \\item For every $r\\in(r_*,1)$, $V(r)=h(r)$, and every minimizer at $r$ equals $r$ a.e. \\item $V(r_*)=h(r_*)$, and a graphon is a minimizer at $r_*$ if and only if it equals $r_*$ a.e. or is a relabeling of $B_*$. \\item For every $r\\in(0,r_*)$, $V(r)\\le F(B_r)<h(r)$, and no minimizer at $r$ is a.e. constant. \\end{enumerate} Consequently, $V(r)<h(r)$ if and only if $r<r_*$. Moreover, the constant graphon $r$ is a minimizer at $r$ if and only if $r\\ge r_*$.",
         "statement_sha256": "59041c2a3ec4b14fb8ec58c30d883489b605c5f222d96d3af37878925793e980",
-        "proof_sha256": "e672247f9a12c6db1e2cf554ae81e60b34192f086b232e4a5814c1b00e16133d",
-        "source_line": 3205
-      }
+        "proof_sha256": "fa93efbb75c7495c740a2fe27036846fedbe91fe673aa4671296b72041149dd8",
+        "source_line": 3240,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      },
+      "latest_manuscript_review": {
+        "checked_at_utc": "2026-10-20T12:32:10.660005+00:00",
+        "note": "All three current threshold clauses and both equivalences are checked against the actual graphon proofs. The below-threshold competitor, strict improvement and exclusion of every constant minimizer are unconditional. Scaling and the at/above-threshold clauses retain the author-owned CriticalClassification input. The critical optimizer clause now has a literal measure-preserving relabeling, using only the named classical CDF input in addition. This review does not discharge the remaining critical numerical certificates.",
+        "audit_record": "data/final-manuscript-review-check.json"
+      },
+      "verification_record": "data/final-manuscript-review-check.json"
     },
     {
       "paper_label": "cor:open",
@@ -972,11 +981,17 @@
       ],
       "baseline": {
         "environment": "proposition",
-        "statement": "[computer assisted] Let $z\\in[e^{-9.5},e^{-3.9}]$, that is, $L\\in[3.9,9.5]$. Then every $(x,y,w)\\in(0,1]^3$ satisfies $\\Psi_z(x,y,w)\\ge0$. Equality holds if and only if $(x,y,w)=(a,a,a)$ or $(x,y,w)$ is a permutation of $(a,b,b)$.",
         "statement_sha256": "baa06478c39aa114121a4b481bcd7466bc618b314a449f1500a420f9c6a661cd",
-        "proof_sha256": "c2c47991a1af413b4cf2c185cf38428bff2d10bf1355e3f73e5fcedff1638869",
-        "source_line": 5511
-      }
+        "proof_sha256": "12c73da865e49c3969193594938e101ad44c9511eb0c19535b5b368b2945cf5b",
+        "source_line": 5399,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      },
+      "latest_manuscript_review": {
+        "checked_at_utc": "2026-10-20T12:32:10.660005+00:00",
+        "note": "The revised proof is checked against the analytic tail, strict clipping to the compact cube, ordered-domain/permutation reduction, exact zero-pattern converse and actual intermediate parameter-range proofs. The formal proof clips to 12 directly using q_a+2<12; this gives the same global conclusion and strictness outside the compact cube. The full compact-domain positivity and exact zero set remain author-owned numerical obligations: AAA is checked, while the full ABB and exterior replays remain unfinished. The conditional status is retained.",
+        "audit_record": "data/final-manuscript-review-check.json"
+      },
+      "verification_record": "data/final-manuscript-review-check.json"
     },
     {
       "paper_label": "lem:relabelB",
@@ -1263,25 +1278,34 @@
     },
     {
       "paper_label": "cor:bipodalmin",
-      "status": "proved_partition_form",
-      "checked_scope": "Every actual two-block minimizer below threshold has the prescribed balanced branch form and forces equality of values. All internal first-order and rigidity hypotheses discharged. Only classical sampling explicit; equivalence of partition form and relabelings is tracked separately as lem:relabelB.",
+      "status": "proved_relative_classical",
+      "checked_scope": "Actual two-block minimizers below threshold are measure-preserving relabelings of the prescribed balanced branch; unrestricted and balanced values agree. First-order, interiority and rigidity deductions are internal. Only classical sampling and nonatomic CDF transport are assumed.",
       "lean_files": [
         "SparseLowerTail/Section04/BipodalGraphon.lean",
-        "SparseLowerTail/Section04/BipodalMinimizers.lean"
+        "SparseLowerTail/Section04/BipodalMinimizers.lean",
+        "SparseLowerTail/Section02/RelabelBalanced.lean"
       ],
       "lean_declarations": [
-        "SparseLowerTail.Section04.bipodal_minimizer_classification"
+        "SparseLowerTail.Section04.bipodal_minimizer_classification",
+        "SparseLowerTail.Section04.bipodal_minimizer_relabeling"
       ],
       "explicit_inputs": [
-        "classical:inverse-transform-sampling"
+        "classical:inverse-transform-sampling",
+        "classical:nonatomic-cdf-transport"
       ],
       "baseline": {
         "environment": "corollary",
-        "statement": "Let $r\\in(0,r_*)$, and let $U$ be a minimizer at $r$ that is a two block SBM graphon. Then $U$ is a relabeling of $B_r$, and $V(r)=\\Vbal(r)$.",
         "statement_sha256": "6a36b42eda4cf685f1a8f33326de77cc884208663e1140cdac07bccab28af2ed",
-        "proof_sha256": "396f809f93940d73b8f7a23a921bc10196a9a890a47c6d4c33e38ec511f98c5e",
-        "source_line": 3104
-      }
+        "proof_sha256": "e26c221e038e81f1d643142e736344c23a6587cd90a0f6f57e36464925ab1966",
+        "source_line": 3149,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      },
+      "latest_manuscript_review": {
+        "checked_at_utc": "2026-10-20T12:32:10.660005+00:00",
+        "note": "The current proof is checked from actual minimizers: vertex identity, bipodal stationarity, interiority and rigidity supply the balanced branch partition and equality of values. A new theorem derives the branch bounds and converts that partition into the actual measure-preserving relabeling in the statement. Only classical sampling and nonatomic CDF transport are inputs.",
+        "audit_record": "data/final-manuscript-review-check.json"
+      },
+      "verification_record": "data/final-manuscript-review-check.json"
     },
     {
       "paper_label": "lem:bregman",
@@ -1974,10 +1998,10 @@
       "paper_label": "cor:cover",
       "baseline": {
         "environment": "corollary",
-        "statement": "For every $\\pi\\in\\Omega\\setminus\\{\\pi_*\\}$ the set $\\mathcal T(\\pi)$ is empty.",
         "statement_sha256": "79f9383b587cbb34fdb7d72ba3754698dad5fa339617fba5643f64bcbff01dd1",
-        "proof_sha256": "c68a9d530ea93246be372e5aa8847f3cf8d8c732a24a8b8db6e34d3f8698fafa",
-        "source_line": 4031
+        "proof_sha256": "c4606cdaf60b211ed7553da4a05c6c12af32c37671afafa1b251b58670e1cc4d",
+        "source_line": 3996,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
       },
       "status": "partial_conditional",
       "checked_scope": "Full finite-convex-cover deduction. Actual twelve-cell geometry and support fields are now supplied internally; nonlinear vertex and apex certificate inequalities remain explicit internal obligations.",
@@ -1988,11 +2012,20 @@
         "SparseLowerTail.Section05.VerifiedCertificateCell",
         "SparseLowerTail.Section05.VerifiedCertificateCover",
         "SparseLowerTail.Section05.VerifiedCertificateCover.no_relaxedLaw",
-        "SparseLowerTail.Section05.VerifiedCertificateCover.eq_criticalPoint"
+        "SparseLowerTail.Section05.VerifiedCertificateCover.eq_criticalPoint",
+        "SparseLowerTail.Section05.exists_positive_weight_off_point",
+        "SparseLowerTail.Section05.VerifiedCertificateCell.support_lower",
+        "SparseLowerTail.Section05.VerifiedCertificateCell.certificate_pos"
       ],
       "explicit_inputs": [
         "internal:prop:cover"
-      ]
+      ],
+      "latest_manuscript_review": {
+        "checked_at_utc": "2026-10-20T12:32:10.660005+00:00",
+        "note": "The revised finite-convex-cover deduction is checked: vertex coordinate bounds give the support cutoff throughout each cell; a convex combination distinct from the critical apex has positive weight off it; certificate concavity then gives strict positivity and excludes the actual relaxed law. The formal proof uses the positive finite weighted sum directly rather than extracting a common epsilon. Actual twelve-cell geometry/support are checked separately; the remaining full nonlinear vertex/apex replays remain explicit internal inputs.",
+        "audit_record": "data/final-manuscript-review-check.json"
+      },
+      "verification_record": "data/final-manuscript-review-check.json"
     },
     {
       "paper_label": "lem:insertion",
@@ -2047,13 +2080,13 @@
       "paper_label": "prop:pen",
       "baseline": {
         "environment": "proposition",
-        "statement": "We have $r_-<r_+$, and the following hold for $\\gamma>0$. \\begin{enumerate}[label=(\\alph*)] \\item If $\\gamma<\\gamma_c$, then $(s_\\gamma,s_\\gamma)$ is the unique minimizer of $\\Phi_\\gamma$, and $C(\\gamma)=C_0(\\gamma)$. \\item If $\\gamma=\\gamma_c$, then the minimizers of $\\Phi_\\gamma$ are exactly $(r_+,r_+)$ and $(a(z_c),b(z_c))$. Moreover, $C(\\gamma_c)=C_0(\\gamma_c)=\\Phi_{\\gamma_c}(a(z_c),b(z_c))$. \\item If $\\gamma>\\gamma_c$, then there is exactly one $z\\in(0,z_c)$ with $\\mu(z)=3\\gamma$, and $(a(z),b(z))$ is the unique minimizer of $\\Phi_\\gamma$. \\end{enumerate}",
         "statement_sha256": "f78576773b87595e6e061503b395c551412ce94517f5ca1bb467b17078c15495",
-        "proof_sha256": "199ee985683a23b06c38f4a7fbcd87cca995f90f359aa2de3ba374662c217e86",
-        "source_line": 4733
+        "proof_sha256": "1281934404b2b8dc9103fcef90437df16b082caca5ae2a27748d76afc282f693",
+        "source_line": 4656,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
       },
       "status": "proved",
-      "checked_scope": "Full scalar penalized phase classification and attained infimum values below, at and above the critical penalty. No KP26 reduction is used for this scalar result.",
+      "checked_scope": "Full scalar penalized classification and attained values in all three regimes, strict target order, and the exact stable-branch existence/uniqueness criterion including the fold endpoint and crossing order. No external theorem is used.",
       "lean_files": [
         "SparseLowerTail/Section07/PenalizedPhase.lean",
         "SparseLowerTail/Section07/PenalizedValue.lean"
@@ -2065,9 +2098,19 @@
         "SparseLowerTail.Section07.penalizedValue_below_critical",
         "SparseLowerTail.Section07.penalizedValue_at_critical",
         "SparseLowerTail.Section07.penalizedValue_above_critical",
-        "SparseLowerTail.Section07.penalizedValue_zero"
+        "SparseLowerTail.Section07.penalizedValue_zero",
+        "SparseLowerTail.Section07.smallTarget_lt_largeTarget",
+        "SparseLowerTail.Section07.existsUnique_penalized_parameter",
+        "SparseLowerTail.Section07.existsUnique_fold_parameter_iff",
+        "SparseLowerTail.Section07.fold_parameter_crossing_order"
       ],
-      "explicit_inputs": []
+      "explicit_inputs": [],
+      "latest_manuscript_review": {
+        "checked_at_utc": "2026-10-20T12:32:10.660005+00:00",
+        "note": "The full current scalar proposition is checked, including r_minus<r_plus, attained values and exact optimizer lists in all three regimes. The complete author-used stable stationary branch criterion is now explicit: a unique z in (0,fold] with mu(z)=3 gamma exists exactly when mu(fold)<=3 gamma, including the fold endpoint. Its order relative to z_c is equivalent to the reverse penalty order, with equality included. These assertions and the existing scalar classification use no external result.",
+        "audit_record": "data/final-manuscript-review-check.json"
+      },
+      "verification_record": "data/final-manuscript-review-check.json"
     },
     {
       "paper_label": "lem:order",
@@ -2127,10 +2170,10 @@
       "paper_label": "thm:rigidity",
       "baseline": {
         "environment": "theorem",
-        "statement": "Let $0<a<b<1$ and $\\mu>0$ satisfy \\eqref{s4:eq:EL}, and let $B=B_{a,b}$. For each $n$ let $r_n\\in(0,1)$ and let $U_n$ be a minimizer at $r_n$. Suppose that $\\delta_\\cut(U_n,B)\\to0$ and $\\mu_{U_n}\\to\\mu$. Then $U_n$ is a two block SBM graphon for all sufficiently large $n$.",
         "statement_sha256": "76f10a7128612001caa7f04d21ea001c82a0c784b7871d425a4ee9170cf1501d",
-        "proof_sha256": "4277d296e134ee2bb859188eaa068aee3cb9ea54e236da3c8976991f972ebeeb",
-        "source_line": 4317
+        "proof_sha256": "9744d96faca3daf0b4d87786da18f2d017955f664ccf44f7b137375b28ef195a",
+        "source_line": 4274,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
       },
       "status": "proved_relative_classical",
       "checked_scope": "Complete local rigidity for unrestricted graphon minimizers: actual cut-distance representatives, uniform row approximation, asymptotically balanced measurable row partition, exact stationary-row uniqueness and bijective relabeling transfer. Only classical inverse-transform sampling is assumed.",
@@ -2156,11 +2199,23 @@
         "SparseLowerTail.Section06.bipodal_of_row_class_eq",
         "SparseLowerTail.Section06.isBipodal_relabel_iff",
         "SparseLowerTail.Section06.eventually_bipodal_of_cutConverges",
-        "SparseLowerTail.Section06.eventually_bipodal_of_cutDistance"
+        "SparseLowerTail.Section06.eventually_bipodal_of_cutDistance",
+        "SparseLowerTail.Section06.log_strong_monotone",
+        "SparseLowerTail.Section06.abs_weighted_kernel_le",
+        "SparseLowerTail.Section06.exists_block_coercivity_margin",
+        "SparseLowerTail.Section06.block_coercivity",
+        "SparseLowerTail.Section06.stationary_difference_identity",
+        "SparseLowerTail.Section06.stationary_rows_eq_of_margin"
       ],
       "explicit_inputs": [
         "classical:inverse-transform-sampling"
-      ]
+      ],
+      "latest_manuscript_review": {
+        "checked_at_utc": "2026-10-20T12:32:10.660005+00:00",
+        "note": "The current five-step argument is checked against actual infimum-over-bijections representatives, insertion/minimal row equations, uniform functional and row estimates, measurable partitions, uniform kernel approximation and convergence of both block masses to one half. The finite-dimensional coercivity is proved through the explicit determinant margin and within-block integral bounds. Strong log monotonicity and the paired Euler equations prove equality of stationary rows, and symmetry/Fubini give bipodality. Bijective transfer returns the conclusion for the original graphons. Only classical sampling is assumed.",
+        "audit_record": "data/final-manuscript-review-check.json"
+      },
+      "verification_record": "data/final-manuscript-review-check.json"
     },
     {
       "paper_label": "lem:spectral",
@@ -2293,12 +2348,16 @@
       "lean_files": [
         "SparseLowerTail/Section07/SmallParameterBounds.lean",
         "SparseLowerTail/Section07/SmallParameterErrors.lean",
-        "SparseLowerTail/Section07/PenalizedUpper.lean"
+        "SparseLowerTail/Section07/PenalizedUpper.lean",
+        "SparseLowerTail/Section07/SmallErrorSums.lean"
       ],
       "lean_declarations": [
         "SparseLowerTail.Section07.small_parameter_rho_bounds",
         "SparseLowerTail.Section07.smallTarget_error_bounds",
-        "SparseLowerTail.Section07.penalizedCrossing_lt_smallUpper"
+        "SparseLowerTail.Section07.penalizedCrossing_lt_smallUpper",
+        "SparseLowerTail.Section07.small_parameter_bounds",
+        "SparseLowerTail.Section07.SmallErrorData.error_bounds",
+        "SparseLowerTail.Section07.smallTargetErrorData"
       ],
       "explicit_inputs": [
         "external:KP26:1.6",
@@ -2307,11 +2366,17 @@
       ],
       "baseline": {
         "environment": "lemma",
-        "statement": "Let $Z=8.36\\cdot10^{-5}$. \\begin{enumerate}[label=(\\alph*)] \\item Let $z\\in(0,Z]$, $m=(a(z)+b(z))/2$, $\\mu=\\mu(z)$ and $t=\\rho(z)^3$. Then $0.4992\\le m\\le\\frac12$, $\\mu\\ge18.6$, $t\\le6.3\\cdot10^{-5}$, $\\mu t\\le0.0012$, $\\mu^2t\\le0.023$ and $\\mu(\\frac12-m)\\le0.0155$. \\item In the setting of Lemma~\\ref{lem:rowreduction}, $\\varepsilon<0.114$, $E_m<0.003$, $\\bar k+1-M^{-2}<1.005$, $p_0>0.498$ and $d\\le0.5006$. \\end{enumerate}",
         "statement_sha256": "b9039ce32f870f9cdc53cf96a6e54dee41a89eb866f067433f0b1c3bd02fbab9",
-        "proof_sha256": "ea3ea681e3a5384c11c95ee8fb3d5801b2e7f201d64b38de7303338199f66fe4",
-        "source_line": 5103
-      }
+        "proof_sha256": "ab83ad82193781cd6b65957450dead9c7ba11228da1282f09ad8db315196b7c1",
+        "source_line": 5013,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      },
+      "latest_manuscript_review": {
+        "checked_at_utc": "2026-10-20T12:32:10.660005+00:00",
+        "note": "Both current parts are checked with their actual expressions and constants: logarithmic moments, uniform branch bounds, all multiplier products, the seven codegree and three mean-error terms, and the resulting epsilon, mean error, vertex bound, block mass and degree estimates. The actual minimizer instantiation constructs SmallErrorData from proved optimizer and spectral deductions. The stronger block bound p0>0.4987 implies the printed 0.498. Only named KP26/classical inputs remain.",
+        "audit_record": "data/final-manuscript-review-check.json"
+      },
+      "verification_record": "data/final-manuscript-review-check.json"
     },
     {
       "paper_label": "lem:scalar",
@@ -2339,12 +2404,17 @@
       "lean_files": [
         "SparseLowerTail/Section07/RowMeans.lean",
         "SparseLowerTail/Section07/ApproximateEuler.lean",
-        "SparseLowerTail/Section07/RowVertexBound.lean"
+        "SparseLowerTail/Section07/RowVertexBound.lean",
+        "SparseLowerTail/Section07/CodegreeAverages.lean",
+        "SparseLowerTail/Section07/CodegreeBlockEquations.lean"
       ],
       "lean_declarations": [
         "SparseLowerTail.Section07.smallTarget_rowMeans",
         "SparseLowerTail.Section07.smallTarget_approximateEuler",
-        "SparseLowerTail.Section07.smallTarget_rowVertex_bound"
+        "SparseLowerTail.Section07.smallTarget_rowVertex_bound",
+        "SparseLowerTail.Section07.smallTarget_codegree_block_errors",
+        "SparseLowerTail.Section07.smallTarget_surrogate_exponential_errors",
+        "SparseLowerTail.Section07.exponential_surrogate_transfer"
       ],
       "explicit_inputs": [
         "external:KP26:1.6",
@@ -2353,11 +2423,17 @@
       ],
       "baseline": {
         "environment": "lemma",
-        "statement": "With the constants \\eqref{eq:s7errors}, for almost every $x$, \\begin{align} |u_x-(d(x)-\\lambda\\psi(x))|&\\le E_m,\\quad |v_x-(d(x)+\\lambda\\psi(x))|\\le E_m,\\\\ |u_x-e^{-\\mu v_x/2}|&\\le\\varepsilon,\\quad |v_x-e^{-\\mu u_x/2}|\\le\\varepsilon,\\\\ \\frac{k(u_x)+k(v_x)}2&\\le\\bar k+1-M^{-2}. \\end{align}",
         "statement_sha256": "723006bb0e6991787ec347ed219d268ad7b65f4da3b11ebc3b50d54f962ec605",
-        "proof_sha256": "2b72c5359316aab90f68d012daafad0de563872bbae617d9eafdcbd6e8fb7d92",
-        "source_line": 5023
-      }
+        "proof_sha256": "42c2ce1cce7b02d2c7c066e2fb4fe5ace729d09902493015c7457fd761deda76",
+        "source_line": 4933,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      },
+      "latest_manuscript_review": {
+        "checked_at_utc": "2026-10-20T12:32:10.660005+00:00",
+        "note": "All current row conclusions and the revised derivation are checked on the actual eigenfunction sign blocks. This includes sign/deviation averages, residual block integrals, the seven-term codegree identity and averaged bounds, nonnegative surrogate codegrees, two Lipschitz exponential transfers, and the weighted-to-unweighted Jensen vertex estimate. The inputs are the cited KP26 reduction and explicit classical sampling/spectral data, not any of the three row conclusions.",
+        "audit_record": "data/final-manuscript-review-check.json"
+      },
+      "verification_record": "data/final-manuscript-review-check.json"
     },
     {
       "paper_label": "eq:s7rowmean",

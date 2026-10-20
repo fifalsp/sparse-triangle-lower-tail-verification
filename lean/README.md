@@ -1790,3 +1790,15 @@ cyclic boundary-edge presentation. The ray-exit step and the closing-triangle
 height argument are proved, including boundary-apex and degenerate-triangle
 cases. The [record](data/polygon-fan-check.json) contains nine public audits
 and the full root audit of 18,275 theorems.
+
+
+### 2026-10-20 — Current manuscript review
+
+The two-block corollary and critical threshold clause now give actual
+measure-preserving relabelings. The scalar penalized argument includes the
+exact stable-branch existence criterion, fold endpoint and crossing order.
+All eight outstanding proof revisions are reviewed; the map matches the
+current Overleaf source. The [record](data/final-manuscript-review-check.json)
+contains 117 public audits and the full root audit of 18,279 theorems.
+Remaining work is the critical and family numerical replays and their combined
+latest-source integration.

@@ -10,8 +10,8 @@ Updated October 20, 2026.
 | Check | Completed result | Evidence |
 | --- | --- | --- |
 | Python interval verification | All 42 cover regions, both family Hessian neighborhoods, and the full compact family domain; zero unresolved boxes | [Full run](certificates/release/run.json) |
-| Lean full-domain nonapex certificates | **31 of 36 regions** | [Build and axiom-audit records](hpc/results-20261020-0030/verified-regions.json) |
-| Lean full-domain apex certificates | **4 of 6 fans: F2, F3, F5, F6** | [Build and axiom-audit records](hpc/results-20261020-0030/verified-regions.json) |
+| Lean full-domain nonapex certificates | **33 of 36 regions** | [Build and axiom-audit records](hpc/results-20261020-0125/verified-regions.json) |
+| Lean full-domain apex certificates | **4 of 6 fans: F2, F3, F5, F6** | [Build and axiom-audit records](hpc/results-20261020-0125/verified-regions.json) |
 | Cut concentration and step-kernel cut norms (`lem:cutconc`, `lem:stepcut`) | Exact exponential tail bound; matrix–graphon norm equality and binary maximizers | [Lean build and 36 axiom audits](lean/data/cut-concentration-check.json) |
 | Harris conditioning (`lem:harris`) | Increasing-event and pinned-coordinate bounds, including revealed coordinates, using the cited Harris inequality | [Lean build and 19 axiom audits](lean/data/harris-conditioning-check.json) |
 | Conditional entropy (`lem:entropy`) | Entropy budget and event-probability transfer for the actual finite conditional laws and their product marginals | [Lean build and 30 axiom audits](lean/data/conditioned-product-entropy-check.json) |
@@ -20,9 +20,9 @@ Updated October 20, 2026.
 | Lean family AAA neighborhood | Nonnegativity and the unique AAA zero for every L ∈ [3.9, 9.5] | [Formalization record](lean/README.md) |
 | Combined Lean project | Full nonapex job 25 imported; combined build and axiom audit passed | [Integration record](hpc/bouchet-job25-completion-20261019.json) |
 
-The latest completed nonapex jobs are **30 and 31**, bringing the full-region
-Lean total to **35 of 42**. Completed nonapex indices are 1–11, 13, 16–33
-and 35 (indices start at zero).
+The latest completed nonapex jobs are **14 and 34**, bringing the full-region
+Lean total to **37 of 42**. Completed nonapex indices are 1–11, 13–14
+and 16–35 (indices start at zero).
 
 The Lean development also checks the balanced phase classification, printed
 threshold intervals, Euler–Lagrange equations, local rigidity, small-target
@@ -31,11 +31,11 @@ finite certificates. The [proof map](lean/proof-map.json) links each paper
 statement to its Lean declarations; [named inputs](lean/ASSUMPTIONS.md) lists
 the external and classical results used.
 
-**Remaining:** 5 nonapex regions, apex fans F1 and F4, the family ABB and
+**CPU work remaining:** 3 nonapex regions, apex fans F1 and F4, the family ABB and
 exterior replays, and the combined build importing all completed certificates.
 The [cluster record](hpc/README.md) tracks running jobs and recovery.
-The [current manuscript inventory](lean/manuscript-coverage.json) also tracks
-the authors’ probabilistic deductions and alignment with the latest Overleaf source.
+The [current manuscript inventory](lean/manuscript-coverage.json) lists
+the author arguments that still need formalization or review.
 
 ## Which parts of the paper does the code verify?
 
@@ -78,7 +78,7 @@ be inspected with:
 
 ```sh
 python3 hpc/audit_result_archives.py \
-  hpc/triangle-verification-results-20261020-0030.tar.gz \
+  hpc/triangle-verification-results-20261020-0125.tar.gz \
   --output /tmp/verified-regions.json
 ```
 

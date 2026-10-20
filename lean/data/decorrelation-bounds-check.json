@@ -1,0 +1,34 @@
+{
+  "paper_label": "lem:decorrelation",
+  "checked_at_utc": "2026-10-20T05:27:07.097533+00:00",
+  "scope": "Numerical bookkeeping only: binomial count formulas and ratio, finite vertex threshold, all three numerical codegree inequalities, p>=2/(lambda sqrt(n)), a single threshold L, energy square-root algebra and the negative-half-power identity.",
+  "source": "SparseLowerTail/Section03/DecorrelationBounds.lean",
+  "source_sha256": "c34cfdb3acf4ed1ed9c455fd4c8065b871a5eb9cb8cd16493a636def16d051d8",
+  "lean_version": "4.24.0",
+  "checks": [
+    {
+      "command": "lake build SparseLowerTail.Section03.DecorrelationBounds",
+      "exit_code": 0,
+      "output": "✔ [3147/3147] Built SparseLowerTail.Section03.DecorrelationBounds (4.0s)\nBuild completed successfully (3147 jobs).\n"
+    },
+    {
+      "command": "lake env lean tools/audit_decorrelation_bounds.lean",
+      "exit_code": 0,
+      "output": "'SparseLowerTail.Section03.triangleVertexCount_formula' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.triangle_counts_relation' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.triangleVertexCount_pos' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.triangle_edge_vertex_ratio' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.triangle_vertex_budget' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.triangle_numeric_codegree_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.sparse_threshold_requirements' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.decorrelation_sqrt_energy' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.decorrelation_error_of_energy' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.exists_decorrelation_threshold' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.sparse_half_power_identity' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    }
+  ],
+  "audited_theorem_count": 11,
+  "explicit_inputs": [],
+  "manuscript_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9",
+  "external_reference_reviewed": {
+    "url": "https://www.math.tau.ac.il/~samotij/papers/lower-tails-AOP-final-revision.pdf",
+    "items": [
+      "Definition (32), Cauchy-Schwarz (33): the factor is r-1, hence 2 for triangles",
+      "Lemma 18: generic weighted uniform-hypergraph energy selection"
+    ]
+  },
+  "remaining": [
+    "Construct the actual triangle hypergraph and identify its vertex/edge counts and maximum codegrees.",
+    "Define the actual KS23 energy and conditional error, encode the cited general hypergraph selection theorem as an explicit input, and apply it."
+  ]
+}

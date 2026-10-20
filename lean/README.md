@@ -44,6 +44,13 @@ arguments separately for future manuscript revisions.
 
 ## Completed proof components
 
+- **Decorrelation bookkeeping (`lem:decorrelation`):**
+  [DecorrelationBounds.lean](SparseLowerTail/Section03/DecorrelationBounds.lean)
+  proves the binomial ratio, numerical codegree bounds, sparse threshold and
+  energy algebra. [Build and 11 audits](data/decorrelation-bounds-check.json)
+  passed. The actual triangle-hypergraph and external KS23 energy specialization
+  remain to be connected.
+
 - **Cut concentration and step kernels (`lem:cutconc`, `lem:stepcut`):**
   [BernoulliConcentration.lean](SparseLowerTail/Section03/BernoulliConcentration.lean)
   proves the exponential moments, signed tails and finite union bound with the

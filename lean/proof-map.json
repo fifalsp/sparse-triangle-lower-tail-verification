@@ -2530,6 +2530,35 @@
         "source_line": 1814,
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
       }
+    },
+    {
+      "paper_label": "lem:decorrelation",
+      "status": "partial_numeric_bookkeeping_proved",
+      "checked_scope": "Numerical bookkeeping only: binomial count formulas and ratio, finite vertex threshold, all three numerical codegree inequalities, p>=2/(lambda sqrt(n)), a single threshold L, energy square-root algebra and the negative-half-power identity.",
+      "lean_files": [
+        "SparseLowerTail/Section03/DecorrelationBounds.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section03.triangle_edge_vertex_ratio",
+        "SparseLowerTail.Section03.triangle_numeric_codegree_bounds",
+        "SparseLowerTail.Section03.sparse_threshold_requirements",
+        "SparseLowerTail.Section03.decorrelation_error_of_energy",
+        "SparseLowerTail.Section03.exists_decorrelation_threshold",
+        "SparseLowerTail.Section03.sparse_half_power_identity"
+      ],
+      "explicit_inputs": [],
+      "remaining_application": [
+        "Construct the actual triangle hypergraph and identify its vertex/edge counts and maximum codegrees.",
+        "Define the actual KS23 energy and conditional error, encode the cited general hypergraph selection theorem as an explicit input, and apply it."
+      ],
+      "verification_record": "data/decorrelation-bounds-check.json",
+      "baseline": {
+        "environment": "lemma",
+        "statement_sha256": "0ce6bfdfaa9fd235e12b1c849b2eedb364946f5d22fb01db3d0c93122ee63136",
+        "proof_sha256": "ac18efe47cd1aab4240eba730ba7a13d1f01bc7c0ca1963a2217032e3f98e0b2",
+        "source_line": 1887,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      }
     }
   ],
   "current_manuscript_inventory": "manuscript-coverage.json"

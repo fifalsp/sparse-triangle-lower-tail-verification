@@ -1,0 +1,13 @@
+import SparseLowerTail.Section03.DecorrelationBounds
+
+#print axioms SparseLowerTail.Section03.triangleVertexCount_formula
+#print axioms SparseLowerTail.Section03.triangle_counts_relation
+#print axioms SparseLowerTail.Section03.triangleVertexCount_pos
+#print axioms SparseLowerTail.Section03.triangle_edge_vertex_ratio
+#print axioms SparseLowerTail.Section03.triangle_vertex_budget
+#print axioms SparseLowerTail.Section03.triangle_numeric_codegree_bounds
+#print axioms SparseLowerTail.Section03.sparse_threshold_requirements
+#print axioms SparseLowerTail.Section03.decorrelation_sqrt_energy
+#print axioms SparseLowerTail.Section03.decorrelation_error_of_energy
+#print axioms SparseLowerTail.Section03.exists_decorrelation_threshold
+#print axioms SparseLowerTail.Section03.sparse_half_power_identity

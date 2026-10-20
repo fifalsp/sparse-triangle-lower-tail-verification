@@ -278,10 +278,26 @@
       "source_line": 1937,
       "statement_sha256": "ebad897846e4ac39c7ae31cf3672ae6668cdde921f545712fd49b34bad7064b1",
       "proof_sha256": "5abba90bdfddf9dcbbe519014e73bf9a384e21ed289e4995c6431641f954aea0",
-      "mapping_status": "needs_mapping",
-      "recorded_status": null,
-      "latest_manuscript_review": "not_yet_mapped",
-      "ownership": "author_argument_or_specialization_to_review"
+      "mapping_status": "mapped",
+      "recorded_status": "partial",
+      "latest_manuscript_review": "checked_part_b_finite_laws",
+      "ownership": "author_argument",
+      "lean_files": [
+        "SparseLowerTail/Section03/EntropyTransfer.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section03.finite_log_sum",
+        "SparseLowerTail.Section03.bernoulli_entropy_event_lower",
+        "SparseLowerTail.Section03.bernoulli_entropy_le_finiteRelativeEntropy",
+        "SparseLowerTail.Section03.finite_event_probability_le",
+        "SparseLowerTail.Section03.finite_event_probability_zero"
+      ],
+      "explicit_inputs": [],
+      "verification_record": "data/entropy-transfer-check.json",
+      "remaining": [
+        "Part (a): conditional chain rule and product-marginal decomposition",
+        "Conditional product-marginal law construction and absolute-continuity specialization"
+      ]
     },
     {
       "paper_label": "lem:cutconc",

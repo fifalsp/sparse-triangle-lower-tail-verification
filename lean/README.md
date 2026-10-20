@@ -44,6 +44,11 @@ arguments separately for future manuscript revisions.
 
 ## Completed proof components
 
+- **Finite entropy probability transfer (`lem:entropy`(b)):** [EntropyTransfer.lean](SparseLowerTail/Section03/EntropyTransfer.lean)
+  proves grouping, the `log 2` bound, probability transfer and null-event transfer
+  for finite laws under absolute continuity. [Build and five audits](data/entropy-transfer-check.json) passed.
+  The conditional product-marginal specialization and part (a) remain.
+
 - **Sparse Bernoulli entropy (`lem:fp`):** [SparseEntropy.lean](SparseLowerTail/Section03/SparseEntropy.lean)
   proves the full uniform bound, including both endpoints, using the checked
   Bregman integral remainder. [Build and three declaration audits](data/sparse-entropy-check.json) passed.

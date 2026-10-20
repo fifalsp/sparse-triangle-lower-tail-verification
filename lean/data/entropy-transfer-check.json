@@ -1,0 +1,26 @@
+{
+  "checked_at_utc": "2026-10-20T03:31:06.046404+00:00",
+  "paper_label": "lem:entropy",
+  "part": "b, for arbitrary normalized finite laws with absolute continuity",
+  "source": "SparseLowerTail/Section03/EntropyTransfer.lean",
+  "source_sha256": "d387fb2ef78c3750481133d47e7b939265baaa7d5835313bdd8fa87c0f6db93f",
+  "lean_version": "4.24.0",
+  "checks": [
+    {
+      "command": "lake build SparseLowerTail.Section03.EntropyTransfer",
+      "exit_code": 0,
+      "output": "\u2714 [3122/3122] Built SparseLowerTail.Section03.EntropyTransfer (3.3s)\nBuild completed successfully (3122 jobs).\n"
+    },
+    {
+      "command": "lake env lean tools/audit_entropy_transfer.lean",
+      "exit_code": 0,
+      "output": "'SparseLowerTail.Section03.finite_log_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.bernoulli_entropy_event_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.bernoulli_entropy_le_finiteRelativeEntropy' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section03.finite_event_probability_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section03.finite_event_probability_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    }
+  ],
+  "explicit_inputs": [],
+  "remaining": [
+    "Part (a): conditional chain rule and product-marginal decomposition",
+    "Conditional product-marginal law construction and absolute-continuity specialization"
+  ],
+  "manuscript_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+}

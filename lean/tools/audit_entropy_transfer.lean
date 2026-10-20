@@ -1,0 +1,7 @@
+import SparseLowerTail.Section03.EntropyTransfer
+
+#print axioms SparseLowerTail.Section03.finite_log_sum
+#print axioms SparseLowerTail.Section03.bernoulli_entropy_event_lower
+#print axioms SparseLowerTail.Section03.bernoulli_entropy_le_finiteRelativeEntropy
+#print axioms SparseLowerTail.Section03.finite_event_probability_le
+#print axioms SparseLowerTail.Section03.finite_event_probability_zero

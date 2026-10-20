@@ -2419,6 +2419,34 @@
         "source_line": 1674,
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
       }
+    },
+    {
+      "paper_label": "lem:entropy",
+      "status": "partial",
+      "checked_scope": "Part (b) for arbitrary normalized finite laws satisfying absolute continuity: finite log-sum inequality, binary grouping, log-2 lower bound, event probability bound, and null-event transfer are proved. Conditional product-marginal specialization and part (a) remain.",
+      "lean_files": [
+        "SparseLowerTail/Section03/EntropyTransfer.lean"
+      ],
+      "lean_declarations": [
+        "SparseLowerTail.Section03.finite_log_sum",
+        "SparseLowerTail.Section03.bernoulli_entropy_event_lower",
+        "SparseLowerTail.Section03.bernoulli_entropy_le_finiteRelativeEntropy",
+        "SparseLowerTail.Section03.finite_event_probability_le",
+        "SparseLowerTail.Section03.finite_event_probability_zero"
+      ],
+      "explicit_inputs": [],
+      "remaining": [
+        "Part (a): conditional chain rule and product-marginal decomposition",
+        "Conditional product-marginal law construction and absolute-continuity specialization"
+      ],
+      "verification_record": "data/entropy-transfer-check.json",
+      "baseline": {
+        "environment": "lemma",
+        "statement_sha256": "ebad897846e4ac39c7ae31cf3672ae6668cdde921f545712fd49b34bad7064b1",
+        "proof_sha256": "5abba90bdfddf9dcbbe519014e73bf9a384e21ed289e4995c6431641f954aea0",
+        "source_line": 1937,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      }
     }
   ],
   "current_manuscript_inventory": "manuscript-coverage.json"

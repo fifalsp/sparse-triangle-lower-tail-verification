@@ -12,6 +12,7 @@ Updated October 19, 2026.
 | Python interval verification | All 42 cover regions, both family Hessian neighborhoods, and the full compact family domain; zero unresolved boxes | [Full run](certificates/release/run.json) |
 | Lean full-domain nonapex certificates | **27 of 36 regions** | [Build and axiom-audit records](hpc/results-20261019-2330/verified-regions.json) |
 | Lean full-domain apex certificates | **4 of 6 fans: F2, F3, F5, F6** | [Build and axiom-audit records](hpc/results-20261019-2330/verified-regions.json) |
+| Finite entropy probability transfer (`lem:entropy`(b)) | Event and null-event bounds for finite laws under absolute continuity | [Lean build and axiom audits](lean/data/entropy-transfer-check.json) |
 | Sparse Bernoulli entropy (`lem:fp`) | Uniform comparison with the sparse entropy, including the sharp quadratic upper bound | [Lean build and axiom audit](lean/data/sparse-entropy-check.json) |
 | Near-minimizer stability (`lem:stability`) | Approximate feasibility and optimality imply proximity to an actual minimizer after a measure-preserving bijection | [Lean build and axiom audit](lean/data/near-minimizers-check.json) |
 | Lean family AAA neighborhood | Nonnegativity and the unique AAA zero for every L ∈ [3.9, 9.5] | [Formalization record](lean/README.md) |

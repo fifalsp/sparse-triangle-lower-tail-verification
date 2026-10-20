@@ -159,6 +159,14 @@
   "additional_exchange_request": {
     "record": "delta-extra-500-exchange-20261020.json",
     "additional_core_hours": 500,
-    "status": "Submitted; approval not yet confirmed"
+    "status": "Under Review; fresh ACCESS approved balance remains 500 hours"
+  },
+  "queue_checked_at_utc": "2026-10-20T15:43:56.893626+00:00",
+  "queue_observation": "All seven jobs remain PENDING; six Priority, final integration Dependency; no start estimate.",
+  "live_accounting_observation": {
+    "checked_at_utc": "2026-10-20T15:43:56.893626+00:00",
+    "remaining_hours": 95,
+    "deposited_hours": 100,
+    "note": "Delta accounts remains behind the confirmed ACCESS 500-hour approval."
   }
 }

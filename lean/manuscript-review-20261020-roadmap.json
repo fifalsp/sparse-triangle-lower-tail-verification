@@ -14,5 +14,11 @@
   "draft_update": "Added an Overview proof-roadmap figure and its introductory text; mapped statements, adjacent proofs and numerical tables are unchanged.",
   "numbering_record": "../data/manuscript-numbering-20261020.json",
   "numbered_results_checked": 95,
-  "pdf_pages": 73
+  "pdf_pages": 73,
+  "latest_source_recheck": {
+    "checked_at_utc": "2026-10-20T15:43:56.893626+00:00",
+    "method": "User Google Chrome Overleaf file download",
+    "source_sha256": "1d12ef606844bd695d0f15a2091314129bec9b5b09d65c71988e7c0c4e1a3443",
+    "comparison": "Byte-identical to the previously reviewed manuscript."
+  }
 }

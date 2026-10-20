@@ -1,0 +1,69 @@
+{
+  "cluster": "NCSA Delta",
+  "checked_at_utc": "2026-10-20T14:03:48Z",
+  "account": "biah-delta-cpu",
+  "allocation": {
+    "access_project": "CIS261417",
+    "project_title": "Generation in the Limit for Verified Mathematical AI",
+    "portal_cpu_hours_remaining": 500,
+    "portal_cpu_hours_total": 500,
+    "exchange_date": "2026-10-20",
+    "exchange_status": "Approved",
+    "delta_accounts_hours_remaining": 95,
+    "delta_accounts_hours_deposited": 100,
+    "status": "Portal approval visible; Delta accounting has not yet reflected the exchange."
+  },
+  "source_commit": "9980a054e81c5166a07af53aa1c3e816a9f88ef3",
+  "source_archive": "triangle-source-9980a05.tar.gz",
+  "source_archive_bytes": 12287416,
+  "source_archive_sha256": "b9056148ef18f32cb901783558e9c46f83948369d502560078cb771b033a0089",
+  "script": "delta-family-replay.sbatch",
+  "script_sha256": "d8212009ee0b1c83ca78cb92c4361574e2f4bcbe9a70dd4b7392d44d377f232c",
+  "remote_checks": [
+    "Uploaded archive and script SHA256 values match local values.",
+    "SOURCE_COMMIT matches the source commit.",
+    "bash -n delta-family-replay.sbatch passed.",
+    "scontrol confirms the account, resource requests and user holds for both jobs."
+  ],
+  "work_directory": "/projects/biah/sli54/triangle-verification",
+  "submission_method": "Authenticated user Google Chrome, Delta OnDemand Files and shell.",
+  "jobs": [
+    {
+      "job_id": 23046439,
+      "kind": "abb",
+      "name": "triangle-abb",
+      "observed_state": "PENDING",
+      "reason": "JobHeldUser"
+    },
+    {
+      "job_id": 23046442,
+      "kind": "exterior",
+      "name": "triangle-exterior",
+      "observed_state": "PENDING",
+      "reason": "JobHeldUser"
+    }
+  ],
+  "resources_per_job": {
+    "partition": "cpu",
+    "constraint": "projects",
+    "nodes": 1,
+    "cpus": 4,
+    "memory_mib": 30000,
+    "wall_hours": 12,
+    "workers": 3,
+    "lean_threads": 1,
+    "requested_billing_tres": 15000,
+    "max_memory_weighted_allocation_hours": 180
+  },
+  "other_pending_jobs": [
+    {"job_id": 23029964, "reason": "Priority", "max_allocation_hours": 88},
+    {"job_id": 23040802, "reason": "Priority", "max_allocation_hours": 6}
+  ],
+  "release_policy": {
+    "required_balance_if_all_four_jobs_unstarted": 454,
+    "action": "Refresh live accounts and queue; release the two held jobs only when biah balance covers all outstanding caps. Recalculate after other jobs finish.",
+    "release_command": "scontrol release 23046439 23046442",
+    "held_jobs_consume_compute_hours": false
+  },
+  "verification_status": "Submitted and held; neither new replay has run. The full padded ABB replay and current-source combined integration remain subsequent obligations."
+}

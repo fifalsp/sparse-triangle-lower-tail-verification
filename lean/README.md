@@ -1761,3 +1761,14 @@ crossing; interval bounds then hold over the entire certified bracket. The
 proposal generator reproduces the same source. The
 [record](data/penalized-digits-check.json) contains 56 public audits and the
 full root audit of 18,228 theorems.
+
+
+### 2026-10-20 — Full cut-metric lemma
+
+The cut metric is proved for arbitrary integrable real kernels, including
+symmetry, the triangle inequality and zero distance under preserving pullbacks.
+Classical compactness and ordinary pullback approximation are converted internally
+into cut-norm convergence through genuine bijections. Together with the weighted
+and counting bounds, this completes all four parts of `lem:cut`. The
+[record](data/kernel-cut-check.json) contains 26 public audits and the full root
+audit of 18,244 theorems.

@@ -1,0 +1,72 @@
+{
+  "checked_at_utc": "2026-10-20T11:39:59.994763+00:00",
+  "source_parent_commit": "d6baa0455d11cae1b68e3d90e686f34271436cfc",
+  "scope": "All four current conclusions are checked. The sharp weighted cut bound already holds for arbitrary integrable kernels, and the literal edge/triangle counting bounds are combined. Classical compactness through vertex maps and ordinary L1 approximation by bijections now yield genuine bijective subsequence representatives with actual cut-norm convergence; this selection/convergence step is proved internally. The infimum, symmetry, triangle inequality and zero distance under arbitrary preserving pullbacks are proved on the stronger domain of arbitrary integrable real kernels. On graphons the new infimum is definitionally the existing cut distance.",
+  "sources": [
+    {
+      "path": "SparseLowerTail/Section02/KernelCutDistance.lean",
+      "sha256": "c641551f97bbb2e044932df2a532e039e39cd0ebc3a6e18898dcc553c54ea8f2"
+    },
+    {
+      "path": "SparseLowerTail/Section02/BijectiveCompactness.lean",
+      "sha256": "ba41c8d87c535ddc233b6ce8816a1d1ff43e59182d0c581d84b50792397218a9"
+    }
+  ],
+  "explicit_inputs": [
+    "classical:graphon-cut-compactness",
+    "classical:counting-lemma",
+    "classical:pullback-l1-approximation"
+  ],
+  "checks": [
+    {
+      "command": "LEAN_NUM_THREADS=1 lake build SparseLowerTail",
+      "exit_code": 0,
+      "output": "Build completed successfully (3723 jobs). Cached warnings replayed."
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean tools/audit_kernel_cut.lean",
+      "exit_code": 0,
+      "output": "'SparseLowerTail.Section02.kernelCutDistance' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.cutNorm' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.ClassicalGraphonCompactness' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.ClassicalTriangleCounting' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.cutDistance' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.exists_relabel_cutConverges' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.cutNorm_pullback' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.cutDistance_symm' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.cutDistance_triangle' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.cutDistance_eq_zero_of_ae' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.ClassicalPullbackApproximation' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.cutDistance_relabel_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.abs_weighted_integral_le_cutNorm' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.kernelCutDistance_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.kernelCutDistance_le_pullback' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.exists_pullback_kernelCutNorm_lt' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.cutNorm_kernel_swap' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.kernelCutDistance_symm' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.kernelCutDistance_self' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.kernelCutDistance_triangle' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.kernelCutDistance_graphon' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.kernelCutDistance_relabel_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.kernel_cut_metric' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.exists_bijective_cut_approximation' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SparseLowerTail.Section02.exists_bijective_cut_subsequence' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SparseLowerTail.Section02.cut_counting_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "command": "LEAN_NUM_THREADS=1 lake env lean Audit.lean",
+      "exit_code": 0,
+      "output": "Axiom audit passed: 24832 project declarations, 18244 theorems; only propext, Classical.choice, Quot.sound allowed.\n"
+    },
+    {
+      "command": "python3 tools/check_lean_map.py",
+      "exit_code": 0,
+      "output": "Proof-map links passed: 109 labels, 992 Lean declarations."
+    }
+  ],
+  "audited_public_declarations": 26,
+  "new_public_theorems": 13,
+  "manuscript_reviews": {
+    "lem:cut": "All four current conclusions are checked. The sharp weighted cut bound already holds for arbitrary integrable kernels, and the literal edge/triangle counting bounds are combined. Classical compactness through vertex maps and ordinary L1 approximation by bijections now yield genuine bijective subsequence representatives with actual cut-norm convergence; this selection/convergence step is proved internally. The infimum, symmetry, triangle inequality and zero distance under arbitrary preserving pullbacks are proved on the stronger domain of arbitrary integrable real kernels. On graphons the new infimum is definitionally the existing cut distance."
+  },
+  "root_project_modules": 544,
+  "root_project_declarations": 24832,
+  "root_project_theorems": 18244,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "base_source_manifest": "penalized-digits-check.json",
+  "source_manifest_changes": [
+    {
+      "module": "SparseLowerTail",
+      "sha256": "f5b5155e44cbc5eb4974b2ab431bcd67f3a818080b7d1828ae5a6c6f37e6473e"
+    },
+    {
+      "module": "SparseLowerTail.Section02.KernelCutDistance",
+      "sha256": "c641551f97bbb2e044932df2a532e039e39cd0ebc3a6e18898dcc553c54ea8f2"
+    },
+    {
+      "module": "SparseLowerTail.Section02.BijectiveCompactness",
+      "sha256": "ba41c8d87c535ddc233b6ce8816a1d1ff43e59182d0c581d84b50792397218a9"
+    }
+  ],
+  "source_manifest_sha256": "08792433b928a8509c515dba8bcfc1959eac08838da19c03ea1baeaa2da0caa3",
+  "manuscript_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+}

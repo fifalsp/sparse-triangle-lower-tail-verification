@@ -1,0 +1,28 @@
+import SparseLowerTail
+
+#print axioms SparseLowerTail.Section02.kernelCutDistance
+#print axioms SparseLowerTail.Section02.cutNorm
+#print axioms SparseLowerTail.Section02.ClassicalGraphonCompactness
+#print axioms SparseLowerTail.Section02.ClassicalTriangleCounting
+#print axioms SparseLowerTail.Section02.cutDistance
+#print axioms SparseLowerTail.Section02.exists_relabel_cutConverges
+#print axioms SparseLowerTail.Section02.cutNorm_pullback
+#print axioms SparseLowerTail.Section02.cutDistance_symm
+#print axioms SparseLowerTail.Section02.cutDistance_triangle
+#print axioms SparseLowerTail.Section02.cutDistance_eq_zero_of_ae
+#print axioms SparseLowerTail.Section02.ClassicalPullbackApproximation
+#print axioms SparseLowerTail.Section02.cutDistance_relabel_zero
+#print axioms SparseLowerTail.Section02.abs_weighted_integral_le_cutNorm
+#print axioms SparseLowerTail.Section02.kernelCutDistance_nonneg
+#print axioms SparseLowerTail.Section02.kernelCutDistance_le_pullback
+#print axioms SparseLowerTail.Section02.exists_pullback_kernelCutNorm_lt
+#print axioms SparseLowerTail.Section02.cutNorm_kernel_swap
+#print axioms SparseLowerTail.Section02.kernelCutDistance_symm
+#print axioms SparseLowerTail.Section02.kernelCutDistance_self
+#print axioms SparseLowerTail.Section02.kernelCutDistance_triangle
+#print axioms SparseLowerTail.Section02.kernelCutDistance_graphon
+#print axioms SparseLowerTail.Section02.kernelCutDistance_relabel_zero
+#print axioms SparseLowerTail.Section02.kernel_cut_metric
+#print axioms SparseLowerTail.Section02.exists_bijective_cut_approximation
+#print axioms SparseLowerTail.Section02.exists_bijective_cut_subsequence
+#print axioms SparseLowerTail.Section02.cut_counting_bounds

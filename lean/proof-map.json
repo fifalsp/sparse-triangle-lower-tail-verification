@@ -1005,14 +1005,16 @@
     },
     {
       "paper_label": "lem:cut",
-      "status": "partial",
-      "checked_scope": "Actual rectangle norm and bijective cut distance; norm pullback invariance, symmetry, triangle inequality and zero distance under AE equality proved. General measure-preserving pullback has zero distance relative to explicit classical L1 approximation by bijections. Sharp weighted test bound proved for arbitrary integrable kernels by two measurable positive-set selections; compactness currently uses the weaker vertex-map consequence.",
+      "status": "proved_relative_classical",
+      "checked_scope": "All four current parts: sharp weighted tests for arbitrary integrable kernels, literal mean/triangle counting bounds, subsequence convergence through genuine measure-preserving bijections, and symmetry/triangle/pullback-zero identities for arbitrary integrable real kernels. The new kernel infimum agrees definitionally with the graphon cut distance. Only the named classical counting, compactness and pullback-approximation inputs are used.",
       "lean_files": [
         "SparseLowerTail/Section02/CutNorm.lean",
         "SparseLowerTail/Section02/Relabeling.lean",
         "SparseLowerTail/Section02/CutDistance.lean",
         "SparseLowerTail/Section02/CutDistanceIdentities.lean",
-        "SparseLowerTail/Section02/WeightedCut.lean"
+        "SparseLowerTail/Section02/WeightedCut.lean",
+        "SparseLowerTail/Section02/KernelCutDistance.lean",
+        "SparseLowerTail/Section02/BijectiveCompactness.lean"
       ],
       "lean_declarations": [
         "SparseLowerTail.Section02.cutNorm",
@@ -1026,7 +1028,21 @@
         "SparseLowerTail.Section02.cutDistance_eq_zero_of_ae",
         "SparseLowerTail.Section02.ClassicalPullbackApproximation",
         "SparseLowerTail.Section02.cutDistance_relabel_zero",
-        "SparseLowerTail.Section02.abs_weighted_integral_le_cutNorm"
+        "SparseLowerTail.Section02.abs_weighted_integral_le_cutNorm",
+        "SparseLowerTail.Section02.kernelCutDistance",
+        "SparseLowerTail.Section02.kernelCutDistance_nonneg",
+        "SparseLowerTail.Section02.kernelCutDistance_le_pullback",
+        "SparseLowerTail.Section02.exists_pullback_kernelCutNorm_lt",
+        "SparseLowerTail.Section02.cutNorm_kernel_swap",
+        "SparseLowerTail.Section02.kernelCutDistance_symm",
+        "SparseLowerTail.Section02.kernelCutDistance_self",
+        "SparseLowerTail.Section02.kernelCutDistance_triangle",
+        "SparseLowerTail.Section02.kernelCutDistance_graphon",
+        "SparseLowerTail.Section02.kernelCutDistance_relabel_zero",
+        "SparseLowerTail.Section02.kernel_cut_metric",
+        "SparseLowerTail.Section02.exists_bijective_cut_approximation",
+        "SparseLowerTail.Section02.exists_bijective_cut_subsequence",
+        "SparseLowerTail.Section02.cut_counting_bounds"
       ],
       "explicit_inputs": [
         "classical:graphon-cut-compactness",
@@ -1035,11 +1051,17 @@
       ],
       "baseline": {
         "environment": "lemma",
-        "statement": "\\begin{enumerate}[label=(\\alph*)] \\item Let $D$ be a bounded measurable function on $[0,1]^2$. For all measurable $f,g:[0,1]\\to[0,1]$, \\[ \\Big|\\iint D(x,y)f(x)g(y)\\dd x\\dd y\\Big|\\le\\|D\\|_\\cut. \\] \\item For all graphons $U$ and $W$, $|e(U)-e(W)|\\le\\|U-W\\|_\\cut$ and $|t(U)-t(W)|\\le3\\|U-W\\|_\\cut$. \\item Every sequence of graphons has a subsequence $(U_n)$ for which there are measure preserving bijections $\\varphi_n$ of $[0,1]$ and a graphon $U$ with $\\|U_n^{\\varphi_n}-U\\|_\\cut\\to0$. \\item For all kernels $U$, $Y$ and $W$ and every measure preserving $\\varphi$, we have $\\delta_\\cut(U,W)=\\delta_\\cut(W,U)\\le\\delta_\\cut(U,Y) +\\delta_\\cut(Y,W)$ and $\\delta_\\cut(W^\\varphi,W)=0$. \\end{enumerate}",
         "statement_sha256": "b2f6aca9e5352e480be80b74c3e77e8d96405eb6d29cd37b1dc2cb84f16e9b4c",
-        "proof_sha256": "a96c27c341699324cb3d5fd17e194a2e3ce371a016ea3b3b5b145cdc80fa7397",
-        "source_line": 1112
-      }
+        "proof_sha256": "2be080da182ee3df3dc04d6daf7e2e0951c3bf5e90f5c11f33889751c4f750bc",
+        "source_line": 1259,
+        "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
+      },
+      "latest_manuscript_review": {
+        "checked_at_utc": "2026-10-20T11:39:59.994763+00:00",
+        "note": "All four current conclusions are checked. The sharp weighted cut bound already holds for arbitrary integrable kernels, and the literal edge/triangle counting bounds are combined. Classical compactness through vertex maps and ordinary L1 approximation by bijections now yield genuine bijective subsequence representatives with actual cut-norm convergence; this selection/convergence step is proved internally. The infimum, symmetry, triangle inequality and zero distance under arbitrary preserving pullbacks are proved on the stronger domain of arbitrary integrable real kernels. On graphons the new infimum is definitionally the existing cut distance.",
+        "audit_record": "data/kernel-cut-check.json"
+      },
+      "verification_record": "data/kernel-cut-check.json"
     },
     {
       "paper_label": "lem:lsc",

@@ -1,27 +1,25 @@
 {
-  "checked_at_utc": "2026-10-21T05:44:35.995300+00:00",
-  "status": "Generated-source restoration corrected; serialized family repairs accepted; F1 continues; integration dependencies updated",
+  "checked_at_utc": "2026-10-21T06:11:51.957163+00:00",
+  "status": "Pinned compiler startup fixed; both family recoveries running; F1 continues; replacement integration accepted",
   "source_commit": "8ecc9d41892517175d46efc84e63a5d745096db0",
   "proof_sources_unchanged": true,
   "account": "pi_sl3363",
   "jobs": {
     "f1": 30082912,
-    "abb": 30101730,
-    "exterior": 30101734,
-    "exterior_prior_attempt": 30101361,
-    "assembly": 30101372
+    "abb": 30104398,
+    "exterior": 30104400,
+    "assembly": 30104499
   },
   "states": {
     "f1": "RUNNING",
-    "abb": "RUNNING on c1106u07n03",
-    "exterior": "PENDING Dependency afterany30101361",
-    "exterior_prior_attempt": "RUNNING; cache-restoration fallback",
+    "abb": "RUNNING on c1102u05n01",
+    "exterior": "RUNNING on c1104u05n03",
     "assembly": "PENDING Dependency"
   },
   "assembly_afterok": [
     30082912,
-    30101730,
-    30101734
+    30104398,
+    30104400
   ],
   "completed_inputs": [
     "cover:0",
@@ -109,5 +107,30 @@
     "bytes": 332997,
     "sha256": "ee4a43a639fb89a02b9368d3931416aa5d5c0bb79faadc3844cdbf8ac9e93bfc",
     "result": "Byte-identical to reviewed source; no mapped proof or numbering changes"
-  }
+  },
+  "startup_fix": {
+    "commit": "1683386a92db4a4d69031d1aa352a32019219e1e",
+    "archive": "triangle-family-stack-v3.tar.gz",
+    "sha256": "6b79ac1578fe5e4352bf0bac483bd3f6683878ec463d6cad0af57da74becc008",
+    "reason": "Version check executed in submit directory with no default Elan toolchain; no proof compilation began.",
+    "remedy": "Read and validate checked lean-toolchain, export ELAN_TOOLCHAIN and cd into Lean project before version check.",
+    "tests": "31 tests passed including shell startup from outside project; actual pinned compiler version4.24.0 also verified outside project locally; uploaded SHA and bash syntax passed",
+    "failed_jobs": [
+      30101361,
+      30101730,
+      30101734
+    ],
+    "failed_job_exit_codes": "All1:0; elapsed15:28,10:45,5:11 respectively",
+    "evidence": "results-20261021-0605/startup-failures.json",
+    "cancelled_integration": {
+      "job": 30101372,
+      "state": "CANCELLED",
+      "elapsed": "00:00:00"
+    },
+    "proof_source_changes": false
+  },
+  "original_checkpoints_required": [
+    "sparse-lean-recovery-checkpoint-30085559.tar.gz",
+    "sparse-lean-recovery-checkpoint-30082914.tar.gz"
+  ]
 }

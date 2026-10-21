@@ -1,0 +1,29 @@
+{
+  "checked_at_utc": "2026-10-21T06:11:14.509277+00:00",
+  "bundle_sha256": "4db2bfa98e04919929fc0535f20654f979157c8336b328e247636630760ced6a",
+  "records": [
+    {
+      "archive": "sparse-lean-results-30101361.tar.gz",
+      "sha256": "1713212f528f487a3bd9ed8abe212b90cf6869745e97e1ed045a84d4c5ffba6e",
+      "phase": "Startup version check failed before proof verification",
+      "exit_code": 1,
+      "verified": false
+    },
+    {
+      "archive": "sparse-lean-results-30101730.tar.gz",
+      "sha256": "deda726946953c8f3d3e9564dce90b60574821c68acbf019f4bb4b1f918038ce",
+      "phase": "Startup version check failed before proof verification",
+      "exit_code": 1,
+      "verified": false
+    },
+    {
+      "archive": "sparse-lean-results-30101734.tar.gz",
+      "sha256": "0e8d9de6fdca518956e6c23778beb018f1adb9f0a3c7cf0969bc613885fe12ae",
+      "phase": "Startup version check failed before proof verification",
+      "exit_code": 1,
+      "verified": false
+    }
+  ],
+  "remedy": "Select checked lean/lean-toolchain explicitly and enter the Lean project before compiler version check",
+  "tests": "31 tests passed; actual pinned Lean4.24.0 selected successfully outside project locally"
+}

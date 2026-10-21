@@ -23,7 +23,7 @@
     "lean_threads": 1
   },
   "checked_at_utc": "2026-10-21T01:17:09.884985+00:00",
-  "status": "Five regional replays running on Yale; ABB scaled from4 to8 workers with verified checkpoint handoff; integration pending normal afterok dependencies",
+  "status": "Nonapex0 completed and audited; four regional replays running; combined integration pending dependencies",
   "cluster": "Yale Bouchet",
   "project_directory": "/nfs/roberts/project/pi_sl3363/sl3363",
   "checkpoint_directory": "/nfs/roberts/project/pi_sl3363/sl3363/triangle-migration-20261020",
@@ -41,7 +41,7 @@
     "f1": "RUNNING",
     "abb": "RUNNING (8 workers)",
     "exterior": "RUNNING",
-    "cover0": "RUNNING",
+    "cover0": "COMPLETED 0:0",
     "cover12": "RUNNING",
     "assembly": "PENDING Dependency"
   },
@@ -113,5 +113,6 @@
   "abb_handoff_coordinator_commit": "7e72f8e",
   "previous_abb_job": 30082913,
   "progress_record": "progress-20261021-0146.json",
-  "retired_abb_archival_complete": true
+  "retired_abb_archival_complete": true,
+  "latest_completed_region_record": "results-20261021-0250/region0-completion.json"
 }

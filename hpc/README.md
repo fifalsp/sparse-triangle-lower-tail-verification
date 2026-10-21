@@ -2,14 +2,14 @@
 
 ## Latest verified results — October 20, 2026
 
-**39 full-region Lean builds and axiom audits have passed:** 34 nonapex
-regions and apex fans F2, F3, F4, F5 and F6. The latest completion is F4, with
-all 4,929 build tasks and its full declaration audit passed.
-[Evidence](results-20261020-0238/verified-regions.json).
+**40 full-region Lean builds and axiom audits have passed:** 35 nonapex
+regions and apex fans F2–F6. The latest completion is nonapex region 0, with
+all 1,876 build modules, unchanged source hashes and its full declaration audit passed.
+[Completion record](results-20261021-0250/region0-completion.json).
 
 F4 completed after 9:06:47 on 8 cores, using about 35.4 GiB maximum RSS.
 [F4 completion record](f4-completion-20261020.json).
-The saved Yale checkpoints contain partial ABB, exterior and cover-0 builds.
+The latest region-0 checkpoint and result archive are saved on Yale.
 All **88 transferred archive hashes match** on Delta. The encrypted Globus
 transfer copied 89 files (28.24 GB) in 2 minutes 12 seconds.
 
@@ -20,13 +20,13 @@ All remaining stages have moved back to **Yale Bouchet**:
 | F1 replay | 30082912 | 8 CPUs, 96 GiB | 24 hours |
 | ABB replay (8 Lean workers) | 30085559 | 12 CPUs, 192 GiB | 24 hours |
 | Exterior replay | 30082914 | 8 CPUs, 96 GiB | 24 hours |
-| Nonapex 0 | 30082915 | 8 CPUs, 96 GiB | 24 hours |
+| Nonapex 0 — completed | 30082915 | 8 CPUs, 96 GiB | 3:23:30 elapsed |
 | Nonapex 12 | 30082916 | 8 CPUs, 96 GiB | 24 hours |
 | Exact binary64 ABB radius and combined integration | 30082917 | 8 CPUs, 192 GiB | 24 hours |
 
-All five regional replays are running. ABB now uses **eight Lean workers**;
+Four regional replays are running; nonapex region 0 completed successfully. ABB uses **eight Lean workers**;
 its checked checkpoint preserved 1,245 completed modules, and the resumed build
-has reached 1,688/7,462 with no failures. Integration has normal `afterok`
+has reached 2,564/7,462 with no failures. Integration has normal `afterok`
 dependencies on the new ABB job and the other four regions.
 [ABB scale-up and checkpoint hashes](yale-abb-scaleup-20261021.json).
 [Latest replay counters and timing estimate](progress-20261021-0146.json).

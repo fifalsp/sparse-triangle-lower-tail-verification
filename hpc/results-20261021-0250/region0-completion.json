@@ -1,0 +1,35 @@
+{
+  "checked_at_utc": "2026-10-21T02:54:47.370783+00:00",
+  "region": "cover:0",
+  "job_id": 30082915,
+  "cluster": "Yale Bouchet",
+  "source_commit": "8ecc9d41892517175d46efc84e63a5d745096db0",
+  "source_archive_sha256": "2378c0a843220e56b80381013bc164f150fcc025d85a38f66719ab354e79c43e",
+  "target": "SparseLowerTail.Section05.CoverJobReplay.Job00Full.Ordered",
+  "scheduler_state": "COMPLETED",
+  "scheduler_exit_code": "0:0",
+  "elapsed": "03:23:30",
+  "build": {
+    "phase": "build_complete",
+    "completed": 1876,
+    "total": 1876,
+    "cached": 78,
+    "failed": {},
+    "seconds": 12047.90137119405
+  },
+  "stage_status": {
+    "job": 0,
+    "phase": "complete",
+    "seconds": 12085.843032648787,
+    "trust_status": "Full regional target and unchanged axiom audit passed; all target source hashes unchanged"
+  },
+  "audit": "Axiom audit passed: 187025 project declarations, 151404 theorems; only propext, Classical.choice, Quot.sound allowed.",
+  "source_hash_validation": "Every target dependency and original audit policy unchanged, confirmed by completed runner status",
+  "result_archive": "sparse-lean-results-30082915.tar.gz",
+  "result_archive_sha256": "850a9f5cd055003de6a3fb56e9256e765eb3d57f29e266238d0ac5360a1c13b8",
+  "result_archive_size_display": "331K",
+  "checkpoint": "sparse-lean-recovery-checkpoint-30082915.tar.gz",
+  "checkpoint_size_display": "570M",
+  "evidence_method": "Read-only authenticated Chrome Yale shell: completed stage status, full build status, audit output, sacct exit0, final archive listing and result SHA256",
+  "local_archive_download": "Pending Yale file-browser login renewal; archive remains on Yale. Local archive gate has not yet been run."
+}

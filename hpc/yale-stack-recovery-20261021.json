@@ -172,5 +172,36 @@
     "missing": [],
     "method": "Read-only bounded native Chrome srun of assembly-inputs.json",
     "remaining": "Generate/check full exact binary64 ABB radius, build current-source combined target and unchanged namespace audit"
+  },
+  "integration_build_started": {
+    "checked_at_utc": "2026-10-21T07:09:40.209582+00:00",
+    "job": 30104499,
+    "state": "RUNNING",
+    "node": "c1106u07n01",
+    "work_directory": "/tmp/triangle-yale-30104499-FbBV5N",
+    "generation": {
+      "mode": "full",
+      "leaves": 108452,
+      "coverage_chunks": 3758,
+      "final_module": "SparseLowerTail.Section08.FamilyABBRadiusReplay.Full.FullNeighborhood",
+      "trust_status": "Generated; requires Lean build and axiom audit"
+    },
+    "build_snapshot": {
+      "target": "SparseLowerTail.CompletedReplays",
+      "total": 94032,
+      "completed": 940,
+      "cached": 690,
+      "failed": {},
+      "seconds": 704.9047141913325,
+      "workers": 3,
+      "phase": "building"
+    },
+    "trust_status": "No combined or exact-radius full proof accepted. Final full target, unchanged source hashes, original namespace audit, archived evidence and Slurm exit 0 remain required.",
+    "manuscript": {
+      "download": "arxiv_v1 (47).tex",
+      "bytes": 334076,
+      "sha256": "730f6183da694c7d33fce5d17b8ed98463ca4c356f21a5aaa3fc553fc9a15ce9",
+      "mapped_statement_proof_check": "All 112 labels unchanged; byte-identical to reviewed source."
+    }
   }
 }

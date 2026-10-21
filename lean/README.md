@@ -27,13 +27,13 @@ The [numbering record](../data/manuscript-numbering-20261020.json) matches all
 | Printed constants | Current threshold bracket of width 2×10⁻²⁵, all four parameter ranges and all five penalized coexistence brackets | [Threshold digits](data/manuscript-digits-check.json), [penalized digits](data/penalized-digits-check.json) |
 | Certificate identities | Coefficient determinant and uniqueness, original contact equations, support identities, triangle patterns and critical apex law | [Coefficient review](data/certificate-uniqueness-check.json), [patterns](data/patterns-check.json), [apex](data/critical-apex-check.json) |
 | Numerical proof machinery | Polygon fan, box lower bounds, cubic Taylor remainder, interval Cholesky and replay coverage | [Fan](data/polygon-fan-check.json), [box bounds](data/box-lower-bounds-check.json), [Taylor](data/taylor-cube-check.json), [Cholesky](data/cholesky-check.json) |
-| Full critical-region replays | All 36 nonapex regions and apex fans F2–F6: **41 of 42** | [Regional builds and audits](../hpc/results-20261021-0529/verified-regions.json) |
+| Full critical-region replays | All 36 nonapex regions and all six apex fans: **42 of 42** | [Regional builds and audits](../hpc/results-20261021-0620/verified-regions.json) |
 | AAA neighborhood | Hessian positivity, nonnegativity and the unique contact zero over the full parameter interval at the exact manuscript binary64 radius | [AAA radius proof](data/family-binary64-radius-check.json) |
 | ABB radius extension | Quantitative Hessian perturbation, retraction and padded-interval transfer; all 21 test leaves, including a complete 20-leaf subtree, pass the new checks | [112 declaration audits](data/family-hessian-perturbation-check.json) |
 
 ## Remaining work
 
-The remaining numerical proofs are apex fan F1, the
+The remaining numerical proofs are the
 full ABB and exterior family replays, and the full padded ABB replay at the
 exact binary64 radius. Final integration must import these results into the
 current author proofs and pass the combined build and axiom audit.

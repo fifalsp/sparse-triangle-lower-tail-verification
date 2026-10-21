@@ -38,7 +38,7 @@
     "assembly": 30104499
   },
   "states": {
-    "f1": "RUNNING",
+    "f1": "COMPLETED0:0",
     "abb": "RUNNING on c1102u05n01",
     "exterior": "RUNNING on c1104u05n03",
     "cover0": "COMPLETED 0:0",
@@ -112,6 +112,6 @@
   "previous_abb_job": 30082913,
   "progress_record": "progress-20261021-0146.json",
   "retired_abb_archival_complete": true,
-  "latest_completed_region_record": "results-20261021-0529/region12-completion.json",
+  "latest_completed_region_record": "results-20261021-0620/f1-completion.json",
   "stack_recovery_record": "yale-stack-recovery-20261021.json"
 }

@@ -10,8 +10,8 @@ Updated October 21, 2026.
 | Check | Completed result | Evidence |
 | --- | --- | --- |
 | Python interval verification | All 42 cover regions, both family Hessian neighborhoods, and the full compact family domain; zero unresolved boxes | [Full run](certificates/release/run.json) |
-| Lean full-domain nonapex certificates | **36 of 36 regions** | [Build and axiom-audit records](hpc/results-20261021-0529/verified-regions.json) |
-| Lean full-domain apex certificates | **5 of 6 fans: F2, F3, F4, F5, F6** | [Build and axiom-audit records](hpc/results-20261020-0238/verified-regions.json) |
+| Lean full-domain nonapex certificates | **36 of 36 regions** | [Build and axiom-audit records](hpc/results-20261021-0620/verified-regions.json) |
+| Lean full-domain apex certificates | **All 6 fans: F1–F6** | [Build and axiom-audit records](hpc/results-20261021-0620/verified-regions.json) |
 | Two-block minimizers and scalar phases | Actual relabeling of the balanced minimizer; full penalized phase classification and stable-branch criterion | [Lean build and 117 axiom audits](lean/data/final-manuscript-review-check.json) |
 | Lemma A.4 — Polygon fan (`lem:fan`) | Ray-exit fan cover and closing-edge exclusion, including boundary cases | [Lean build and nine axiom audits](lean/data/polygon-fan-check.json) |
 | Euler equation and penalized gap | Positive unique multiplier and quantitative bounds; Δ(10⁻³)>0.028 | [Lean build and 30 axiom audits](lean/data/analytic-review-check.json) |
@@ -45,8 +45,8 @@ Updated October 21, 2026.
 | F1 laptop sample | 47 leaves and an 11-leaf subdivision checked with one worker and an 8 GiB Lean cap | [Build and 52 declaration audits](lean/data/compact-conclusion-laptop-pilot-check.json) |
 | Current Lean project root | Full build and standard-axiom audit of **19,811 theorems** passed | [Root build and audit](lean/data/compact-conclusion-laptop-pilot-check.json) |
 
-Nonapex region **12** is the latest completion, bringing the full-region
-Lean total to **41 of 42**. All nonapex indices 0–35 are complete (indices start at zero).
+Apex fan **F1** is the latest completion, bringing the full-region Lean total
+to **42 of 42**: all 36 nonapex regions and all six apex fans.
 
 The Lean development also checks the balanced phase classification, printed
 threshold intervals, Euler–Lagrange equations, local rigidity, small-target
@@ -55,7 +55,7 @@ finite certificates. The [proof map](lean/proof-map.json) links each paper
 statement to its Lean declarations; [named inputs](lean/ASSUMPTIONS.md) lists
 the external and classical results used.
 
-**Remaining verification:** apex fan F1, the family ABB and
+**Remaining verification:** the family ABB and
 exterior replays, the exact binary64 ABB neighborhood, and the combined build.
 The [cluster record](hpc/README.md) tracks running jobs and recovery.
 The [manuscript comparison](lean/manuscript-review-20261021-links.json)

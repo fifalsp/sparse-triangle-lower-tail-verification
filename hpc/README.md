@@ -2,19 +2,18 @@
 
 ## Latest verified results — October 21, 2026
 
-**41 full-region Lean builds and axiom audits have passed:** all 36 nonapex
-regions and apex fans F2–F6. Region 12 is the latest completion: all 2,750
-modules, unchanged source hashes and an audit of 230,341 theorems passed.
-[Verified regions](results-20261021-0529/verified-regions.json).
+**42 full-region Lean builds and axiom audits have passed:** all 36 nonapex
+regions and all six apex fans. F1 is the latest completion: all 3,059
+modules, unchanged source hashes and an audit of 290,461 theorems passed.
+[Verified regions](results-20261021-0620/verified-regions.json).
 
 The remaining work runs on **Yale Bouchet**:
 
 | Stage | Yale job | Status |
 |---|---:|---|
-| F1 replay | 30082912 | Running |
 | ABB final module and audit | 30104398 | Running |
 | Exterior final module and audit | 30104400 | Running |
-| Exact binary64 ABB radius and combined integration | 30104499 | Waiting for the three jobs above |
+| Exact binary64 ABB radius and combined integration | 30104499 | Waiting for ABB and exterior |
 
 ABB completed 7,461/7,462 modules and exterior completed 12,871/12,872.
 Both final combining modules hit Lean stack overflow. The recovery jobs use

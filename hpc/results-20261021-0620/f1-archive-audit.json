@@ -1,0 +1,30 @@
+{
+  "archive": "sparse-lean-results-30082912.tar.gz",
+  "archive_sha256": "f80445fdfd2ce29bbc8c071a27508f03708ee96e66a0ae8b5027fbacd023cf0f",
+  "kind": "apex",
+  "status": {
+    "fan": 1,
+    "target": "SparseLowerTail.Section05.ApexReplay.F1.FullCube",
+    "trust_status": "Full regional target and unchanged axiom audit passed; all target source hashes unchanged",
+    "phase": "complete",
+    "seconds": 24400.763919352088
+  },
+  "verified": true,
+  "build": {
+    "target": "SparseLowerTail.Section05.ApexReplay.F1.FullCube",
+    "total": 3059,
+    "completed": 3059,
+    "cached": 0,
+    "failed": {},
+    "seconds": 24372.4384835409,
+    "workers": 4,
+    "phase": "build_complete",
+    "trust_status": "Final full target build, source hashes and axiom audit remain required"
+  },
+  "source_commit": "8ecc9d41892517175d46efc84e63a5d745096db0",
+  "audit_declarations": 357587,
+  "audit_theorems": 290461,
+  "key": "apex:1",
+  "started.txt": "2026-10-20T23:28:22Z",
+  "finished.txt": "2026-10-21T06:16:09Z"
+}

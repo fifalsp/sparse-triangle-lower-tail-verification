@@ -11,7 +11,7 @@
     "assembly": 30104499
   },
   "states": {
-    "f1": "RUNNING",
+    "f1": "COMPLETED0:0; full build, audit and source hashes passed; archive downloaded and locally validated",
     "abb": "RUNNING; pinned compiler and initial source/audit hash checks passed; full target build active",
     "exterior": "RUNNING; pinned compiler and initial source/audit hash checks passed; full target build active",
     "assembly": "PENDING Dependency"
@@ -153,5 +153,7 @@
       "initial_source_audit_policy_hash_check": "passed",
       "full_target_and_final_audit": "pending"
     }
-  }
+  },
+  "verified_critical_regions": 42,
+  "f1_completion_record": "results-20261021-0620/f1-completion.json"
 }

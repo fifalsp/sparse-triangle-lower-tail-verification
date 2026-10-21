@@ -1,0 +1,27 @@
+{
+  "checked_at_utc": "2026-10-21T06:21:01.721964+00:00",
+  "region": "apex:1",
+  "job_id": 30082912,
+  "scheduler_state": "COMPLETED",
+  "scheduler_exit_code": "0:0",
+  "elapsed": "06:50:13",
+  "result_archive": "sparse-lean-results-30082912.tar.gz",
+  "result_archive_sha256": "f80445fdfd2ce29bbc8c071a27508f03708ee96e66a0ae8b5027fbacd023cf0f",
+  "source_commit": "8ecc9d41892517175d46efc84e63a5d745096db0",
+  "build": {
+    "target": "SparseLowerTail.Section05.ApexReplay.F1.FullCube",
+    "total": 3059,
+    "completed": 3059,
+    "cached": 0,
+    "failed": {},
+    "seconds": 24372.4384835409,
+    "workers": 4,
+    "phase": "build_complete",
+    "trust_status": "Final full target build, source hashes and axiom audit remain required"
+  },
+  "audit_declarations": 357587,
+  "audit_theorems": 290461,
+  "dependency_sources": 3059,
+  "source_hash_validation": "Every dependency and audit policy unchanged; manifest and hash marker checked locally",
+  "local_archive_gate": "Passed existing inspector: full target, exit0, complete build, both success markers and namespace audit"
+}

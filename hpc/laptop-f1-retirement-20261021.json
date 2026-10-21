@@ -1,0 +1,12 @@
+{
+  "stopped_at_utc": "2026-10-21T06:22:18.172266+00:00",
+  "reason": "Superseded by Yale F1 full certificate, unchanged audit/source hashes and published result de48594",
+  "runner_pid": 41687,
+  "child_process_group": 41698,
+  "signal": "SIGTERM only to verified child process group; wrapper exited through its existing failure/cleanup path",
+  "cached_build_completed": 2784,
+  "cached_build_total": 3059,
+  "cache_and_generated_sources": "Preserved in place; no proof/cache files deleted or edited",
+  "remote_result_sha256": "f80445fdfd2ce29bbc8c071a27508f03708ee96e66a0ae8b5027fbacd023cf0f",
+  "local_run_status": "Stopped before local full-target completion; not a separate verified local certificate"
+}

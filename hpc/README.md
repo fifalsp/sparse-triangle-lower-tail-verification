@@ -36,9 +36,9 @@ The previous Delta exterior run timed out during restore/cache preparation;
 its logs and checkout were preserved.
 [Partial evidence](results-20261020-2310/exterior-timeout.json).
 
-The full F1 laptop fallback continues with one low-priority worker, one Lean
-thread and an 8 GiB cap. Its live status is
-`results/laptop-f1-full-20261020/status.json`.
+The laptop F1 fallback was stopped after Yale's full result was checked and
+published. Its 2,784 completed modules and generated sources remain cached.
+[Retirement record](laptop-f1-retirement-20261021.json).
 
 Final integration includes the latest author-proof root, all regional
 certificates, the exact binary64 ABB neighborhood, and the unchanged axiom audit.

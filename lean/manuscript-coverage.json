@@ -1,8 +1,8 @@
 {
   "scope": "All arguments proved by the authors, including probabilistic deductions. Cited external and standard classical theorems may be explicit hypotheses; their paper-specific applications remain obligations.",
   "overleaf_url": "https://www.overleaf.com/project/6acd7ee98a5fed7d56897586",
-  "checked_at_utc": "2026-10-21T15:37:09.519746+00:00",
-  "source_sha256": "268c126ac51e1d47bfaaca40a2d305d757cbcf3fd8d5206bc414e042cbb5e853",
+  "checked_at_utc": "2026-10-21T16:07:26.017434+00:00",
+  "source_sha256": "2fc55e160ec70f1c10a8684eb064faf7892ad978f9b385d165a4fb17ff27f149",
   "certificate_tables_match": true,
   "mapped_label_changes": {},
   "items": [

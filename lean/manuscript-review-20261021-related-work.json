@@ -1,15 +1,15 @@
 {
   "status": "mapped_statements_unchanged",
   "checked_labels": 112,
-  "source_sha256": "268c126ac51e1d47bfaaca40a2d305d757cbcf3fd8d5206bc414e042cbb5e853",
+  "source_sha256": "2fc55e160ec70f1c10a8684eb064faf7892ad978f9b385d165a4fb17ff27f149",
   "baseline_source_sha256": "84c55a798a1fc1492f319179eec89f340d27269916acd622d54707da185e17b7",
   "changes": [],
   "scope": "Only mapped statements and adjacent proofs are checked; this is not mathematical verification.",
-  "checked_at_utc": "2026-10-21T15:37:09.519746+00:00",
+  "checked_at_utc": "2026-10-21T16:07:26.017434+00:00",
   "source_method": "Fresh source downloaded through user Google Chrome; full source diff manually reviewed",
-  "download": "arxiv_v1 (64).tex",
-  "source_bytes": 335029,
-  "previous_reviewed_source_sha256": "e0ff981bbadb4aedfa85e5249ab0bfc02ef1b560f614de4d952743e6a72dd621",
+  "download": "arxiv_v1 (65).tex",
+  "source_bytes": 335031,
+  "previous_reviewed_source_sha256": "268c126ac51e1d47bfaaca40a2d305d757cbcf3fd8d5206bc414e042cbb5e853",
   "draft_update": "Related-work citations and externally attributed results concerning other graphs added; critical-window background and open-problem discussion revised. All changes are in related-work/open-problem prose; no mapped author statement/proof or certificate table changed.",
   "numbered_results_checked": 95,
   "numbering_status": "Section/shared-result-counter sequence unchanged; prior PDF page positions not freshly checked.",
@@ -20,5 +20,5 @@
     "full exact binary64 ABB radius replay",
     "current-source combined full target, source-hash check and original namespace axiom audit"
   ],
-  "latest_editorial_change": "Section 3 introductory roadmap rewritten with prior-work attribution and references to the existing discrete comparison, compactness reduction and rounding arguments. The mapped reduction, discrete-comparison and rounding statements and proofs remain unchanged. Full source diff reviewed; all mapped statements/proofs, table bodies, statement-label set and shared-counter sequence unchanged."
+  "latest_editorial_change": "Two red editorial TODO notes commented out. Exact full-source replacement comparison confirms no other source edit; all mapped statements/proofs, table bodies, labels and numbering counter sequence remain unchanged."
 }

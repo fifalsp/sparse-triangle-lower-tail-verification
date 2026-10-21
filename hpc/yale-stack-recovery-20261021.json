@@ -1,6 +1,6 @@
 {
-  "checked_at_utc": "2026-10-21T06:27:06.304486+00:00",
-  "status": "Pinned compiler startup fixed; both family recoveries running; F1 continues; replacement integration accepted",
+  "checked_at_utc": "2026-10-21T06:39:25.058407+00:00",
+  "status": "All42critical regions and full ABB replay verified; exterior running; combined integration pending",
   "source_commit": "8ecc9d41892517175d46efc84e63a5d745096db0",
   "proof_sources_unchanged": true,
   "account": "pi_sl3363",
@@ -12,7 +12,7 @@
   },
   "states": {
     "f1": "COMPLETED0:0; full build, audit and source hashes passed; archive downloaded and locally validated",
-    "abb": "RUNNING archival; full target, source hashes and namespace audit passed; final archive/exit pending",
+    "abb": "COMPLETED0:0; archived full build, audit and source hashes checked locally",
     "exterior": "RUNNING; pinned compiler and initial source/audit hash checks passed; full target build active",
     "assembly": "PENDING Dependency"
   },
@@ -147,7 +147,7 @@
       "seconds": 504.09198286710307,
       "audit_declarations": 2553217,
       "audit_theorems": 2098887,
-      "pipeline_acceptance": "Pending Slurm exit0 and completed result archive validation"
+      "pipeline_acceptance": "Passed Slurm exit0 and completed result archive SHA/full-gate validation"
     },
     "exterior": {
       "job": 30104400,
@@ -159,5 +159,6 @@
     }
   },
   "verified_critical_regions": 42,
-  "f1_completion_record": "results-20261021-0620/f1-completion.json"
+  "f1_completion_record": "results-20261021-0620/f1-completion.json",
+  "abb_completion_record": "results-20261021-0635/abb-completion.json"
 }

@@ -22,8 +22,8 @@
     "lean_memory_mib": 49152,
     "lean_threads": 1
   },
-  "checked_at_utc": "2026-10-21T06:11:51.957163+00:00",
-  "status": "Pinned compiler startup fixed; both family recoveries running; F1 continues; replacement integration accepted",
+  "checked_at_utc": "2026-10-21T06:39:25.058407+00:00",
+  "status": "All42critical regions and full ABB replay verified; exterior running; integration pending",
   "cluster": "Yale Bouchet",
   "project_directory": "/nfs/roberts/project/pi_sl3363/sl3363",
   "checkpoint_directory": "/nfs/roberts/project/pi_sl3363/sl3363/triangle-migration-20261020",
@@ -39,7 +39,7 @@
   },
   "states": {
     "f1": "COMPLETED0:0",
-    "abb": "RUNNING on c1102u05n01",
+    "abb": "COMPLETED0:0",
     "exterior": "RUNNING on c1104u05n03",
     "cover0": "COMPLETED 0:0",
     "cover12": "COMPLETED 0:0",
@@ -113,5 +113,6 @@
   "progress_record": "progress-20261021-0146.json",
   "retired_abb_archival_complete": true,
   "latest_completed_region_record": "results-20261021-0620/f1-completion.json",
-  "stack_recovery_record": "yale-stack-recovery-20261021.json"
+  "stack_recovery_record": "yale-stack-recovery-20261021.json",
+  "abb_completion_record": "results-20261021-0635/abb-completion.json"
 }

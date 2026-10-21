@@ -1,0 +1,29 @@
+{
+  "archive": "sparse-lean-results-30104398.tar.gz",
+  "archive_sha256": "5e5f0ff6d8112c83de1c1b65dbeaa4d165d8668866dc608d5cf3c23bfd739331",
+  "kind": "abb",
+  "status": {
+    "target": "SparseLowerTail.Section08.FamilyABBReplay.Full.FullNeighborhood",
+    "phase": "complete",
+    "trust_status": "Full regional target and unchanged axiom audit passed; all target source hashes unchanged",
+    "seconds": 504.09198286710307
+  },
+  "verified": true,
+  "build": {
+    "target": "SparseLowerTail.Section08.FamilyABBReplay.Full.FullNeighborhood",
+    "phase": "build_complete",
+    "completed": 7462,
+    "total": 7462,
+    "cached": 7461,
+    "failed": {},
+    "workers": 1,
+    "seconds": 321.0133960582316,
+    "trust_status": "Ordinary full-target Lake build passed; audit still required"
+  },
+  "source_commit": "8ecc9d41892517175d46efc84e63a5d745096db0",
+  "audit_declarations": 2553217,
+  "audit_theorems": 2098887,
+  "key": "abb",
+  "started.txt": "2026-10-21T06:12:13Z",
+  "finished.txt": "2026-10-21T06:20:38Z"
+}

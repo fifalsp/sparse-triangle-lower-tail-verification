@@ -14,7 +14,7 @@
     {
       "paper_label": "thm:main",
       "status": "conditional_assembly_two_internal_certificates",
-      "checked_scope": "Exact MainTheorem assembled with small-target classification discharged. The replay-level assembly supplies checked nonapex job 25 and exposes the remaining 35 nonapex regions, six apex fans, ABB neighborhood, and full exterior replay as INTERNAL inputs. Relabeling clauses follow using the explicit classical CDF theorem. Not a completed main theorem.",
+      "checked_scope": "Author deductions and relabeling are kernel checked from the remaining finite classifications and the named external/classical inputs. All 42 critical-region replay modules and the full ABB radius-1/10 neighborhood have now passed separate full builds, source checks and axiom audits. Exterior, the exact binary64 ABB radius and current-source combined integration remain.",
       "lean_files": [
         "SparseLowerTail/MainStatement.lean",
         "SparseLowerTail/MainTheoremAssembly.lean",
@@ -56,7 +56,11 @@
         "kind": "theorem",
         "number": "1.4",
         "pdf_page": 8
-      }
+      },
+      "replay_evidence": [
+        "../hpc/results-20261021-0620/verified-regions.json",
+        "../hpc/results-20261021-0635/abb-completion.json"
+      ]
     },
     {
       "paper_label": "eq:Bdens",
@@ -880,8 +884,8 @@
     },
     {
       "paper_label": "prop:cover",
-      "status": "partial_full_nonapex_replay_and_apex_local_complete",
-      "checked_scope": "Actual twelve-cell geometry, all 179 curved-boundary checks, and every support cutoff are proved. verifiedCover_of_positivity reduces the cover to nonlinear nonapex positivity and apex nonnegativity. S1 vertex-0 positivity is checked on near/tail subregions and a seventeen-leaf Taylor slab. The six fan coefficient vectors are solved uniquely in their four missing slots, enclosed by exact intervals, and satisfy both contact values and all six logarithmic gradient equations. Local nonnegativity and a unique contact zero are proved on all twelve published contact cubes. Global apex positivity outside those cubes and complete nonapex positivity remain unproved. A common actual-environment and Taylor-leaf checker now covers every nonapex job, using solved fan coefficients where required. All 36 jobs have checked positivity on the logarithmic cube [0,1/512]^3 only; this is not full-domain coverage. Exact rational inclusion tests now certify subdivision boxes wholly inside any of the twelve proved contact neighborhoods; they preserve the unique-zero conclusion. The sorted-to-full-cube zero-pattern implication is proved. A complete F1 subdivision has been proposed; five representative leaves pass Lean. Full coverage and all remaining leaf inequalities still require kernel replay. The support cutoff and multiplier sign are also discharged: a successful complete fan replay supplies CriticalApexCertificate directly. Refined actual primitives and solved fan coefficients now support the common checker for all 36 nonapex jobs. The exact 42-job assembly is proved, with the full numerical job results still explicit. A proved alternative range reduction extends endpoint certificates to [-32,32], covering every cell cutoff including B1/B2; old sixteen-scale data remain valid. The generic nonapex replay is exercised on ten leaves and two exact subtrees from jobs 0 and 35, including direct/Taylor leaves and the B2 cutoff above 16. Full-domain replay remains pending. Full nonapex job 25 is now kernel checked on its entire actual ordered logarithmic domain: 952 numerical leaves, 43 coverage chunks, and the final ordered theorem; its axiom audit passed on Yale. The other 35 nonapex jobs and all six full apex fans remain unintegrated. CheckedCoverJobs transfers completed regions to the full original edge cube and supplies them to the critical classification assembly; RemainingNonapexJobResults quantifies only over unfinished indices.",
+      "status": "all_regional_replays_checked_pending_combined_build",
+      "checked_scope": "The twelve-cell geometry, curved-boundary checks, support cutoffs, coefficient identities, contact calculations and Taylor estimates are proved. All 36 nonapex and six apex full-domain replay targets have passed full builds, source-hash checks and axiom audits. Joint import into the current-source combined proof remains pending.",
       "lean_files": [
         "SparseLowerTail/Section05/CoverS1FirstBox.lean",
         "SparseLowerTail/Section05/CoverS1Tail.lean",
@@ -991,12 +995,16 @@
         "subdivision_leaves": 11,
         "scope": "First, middle and last F1 leaf batches checked locally under the 8 GiB one-worker profile. Full F1 remains incomplete.",
         "verification_record": "data/compact-conclusion-laptop-pilot-check.json"
-      }
+      },
+      "replay_evidence": [
+        "../hpc/results-20261021-0620/verified-regions.json",
+        "../hpc/results-20261021-0635/abb-completion.json"
+      ]
     },
     {
       "paper_label": "prop:family",
       "status": "conditional_compact_reduction",
-      "checked_scope": "Analytic tail and exact compact-to-global reduction proved. The compact-domain positivity and zero-set certificate remain an internal hypothesis. The actual parameter interval [3.9,9.5] is proved for every intermediate target, and compact-to-middle-family assembly is complete. Exact Phi reification, local Hessian/contact calculus, congruence and diagonal scaling, and parameter-to-coefficient interval enclosure are proved; numerical compact-domain margins remain to replay. Full-parameter local AAA nonnegativity and unique zero are now proved on the closed logarithmic cube of radius 1/10, using five exact interval leaves. This does not prove the mixed-contact neighborhoods or the exterior compact domain. Signed exponential endpoints, scaled-Hessian interval replay, exact four-dimensional subdivision soundness, moving-ABB-contact enclosures and the local ABB assembly are now proved. Two selected mixed-contact boxes pass the complete Lean checker. The proposed full 108452-leaf ABB cover is not yet replayed in Lean; the full mixed neighborhood and exterior remain open formal obligations. The shared-parameter replay generator now has a checked 21-leaf smoke target, including one complete subdivision subtree. The full generator and bounded-concurrency cluster runner are prepared, but no full ABB result is asserted. Actual L-derivatives and the signed parameter Taylor bound are proved from checked rational coefficient expressions; all seven derivatives through order three are kernel checked on [39/10,2503/640]. This does not discharge the exterior cover. The actual q-gradient parameter variation and complete analytic exterior Taylor assembly (including the three scalar quadratic candidates) are proved. Numerical leaf assembly and full exterior coverage remain missing. A finite exterior-leaf checker now derives value, gradient, and Hessian bounds from checked data. One full box L in [39/10,2503/640], each q in [99/100,101/100], is kernel checked with margin greater than 1/1000. This is not a complete exterior subdivision. The exact ordered-domain assembly, permutation invariance of the zero patterns, and finite-table-to-CompactFamilyCertificate bridge are now proved. A full 64646-leaf proposal passes Python consistency checks but has not been replayed in Lean. The ABB neighborhood remains an explicit internal input to contact leaves. A generated 14-leaf smoke replay now compiles, including ten actual Taylor leaves, all three quadratic choices, both contact containment types, ordered-empty leaves, and one complete ten-leaf subtree. Contact/table conclusions retain the internal ABB premise. The full exterior replay is not yet complete.",
+      "checked_scope": "Analytic tails, the compact-to-global reduction, parameter range, coefficient/interval machinery and AAA neighborhoods are proved. The full 108452-leaf ABB logarithmic neighborhood of radius 1/10 has passed its 7462-module build, unchanged source checks and namespace audit. The exterior replay and exact binary64 ABB-radius extension remain for combined integration.",
       "lean_files": [
         "SparseLowerTail/Section08/CertificateTail.lean",
         "SparseLowerTail/Section08/FamilyParameterRange.lean",
@@ -1119,7 +1127,11 @@
         "kind": "proposition",
         "number": "8.4",
         "pdf_page": 61
-      }
+      },
+      "replay_evidence": [
+        "../hpc/results-20261021-0620/verified-regions.json",
+        "../hpc/results-20261021-0635/abb-completion.json"
+      ]
     },
     {
       "paper_label": "lem:relabelB",
@@ -1565,8 +1577,8 @@
         "proof_sha256": null,
         "source_line": 3200
       },
-      "status": "partial_conditional",
-      "checked_scope": "Actual minimizer existence, relaxation, certificate vanishing and pattern-to-partition assembly. Deduced from explicit finite cover verification plus CriticalApexCertificate; these numerical/internal obligations remain unproved. The exact 36 nonapex and six apex full-domain job hypotheses now imply CriticalClassification directly through the actual finite cover, support cutoffs, sorting, and zero-pattern assembly. These numerical hypotheses remain internal and unproved.",
+      "status": "deduction_checked_regional_inputs_verified_pending_combined_build",
+      "checked_scope": "The actual minimizer, relaxation, certificate and pattern-to-partition deductions are proved from the finite cover. All 36 nonapex and six apex full-domain inputs have separate full builds, unchanged source checks and namespace audits. The current-source combined classification assembly remains to be built with those inputs.",
       "lean_files": [
         "SparseLowerTail/Section05/ThresholdReduction.lean",
         "SparseLowerTail/Section05/CriticalAssembly.lean",
@@ -1593,7 +1605,11 @@
         "kind": "proposition",
         "number": "5.2",
         "pdf_page": 34
-      }
+      },
+      "replay_evidence": [
+        "../hpc/results-20261021-0620/verified-regions.json",
+        "../hpc/results-20261021-0635/abb-completion.json"
+      ]
     },
     {
       "paper_label": "lem:isolation",
@@ -4266,7 +4282,7 @@
     {
       "paper_label": "appA3:compact",
       "status": "conditional_on_full_family_replay",
-      "checked_scope": "The literal ordered compact conclusion is proved from the existing finite replay input, in the independent manuscript L coordinate: nonnegative Phi and zero if and only if the vector is the AAA or ordered ABB contact. The sorting-to-exact-contacts deduction and both converse zero identities are proved. The complete numerical leaf table and coverage remain internal obligations; this is not a completed Proposition A.5.",
+      "checked_scope": "The ordered nonnegativity and exact AAA/ABB contact zero-set conclusion are proved from the compact finite certificate. The full ABB radius-1/10 contact input is now built and audited. The exterior certificate and current-source combined compact conclusion remain pending.",
       "lean_files": [
         "SparseLowerTail/Section08/ManuscriptCompactConclusion.lean",
         "SparseLowerTail/Section08/FamilyCompactReplay.lean",
@@ -4293,7 +4309,11 @@
         "number": "A.5",
         "pdf_page": 68
       },
-      "verification_record": "data/compact-conclusion-laptop-pilot-check.json"
+      "verification_record": "data/compact-conclusion-laptop-pilot-check.json",
+      "replay_evidence": [
+        "../hpc/results-20261021-0620/verified-regions.json",
+        "../hpc/results-20261021-0635/abb-completion.json"
+      ]
     }
   ],
   "current_manuscript_inventory": "manuscript-coverage.json",
@@ -4428,5 +4448,23 @@
       "reviewed_at_utc": "2026-10-20T10:59:28.352265+00:00",
       "current_source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
     }
-  ]
+  ],
+  "latest_replay_progress": {
+    "checked_at_utc": "2026-10-21T06:39:25.058407+00:00",
+    "critical_regions": {
+      "nonapex": 36,
+      "apex": 6,
+      "total": 42,
+      "evidence": "../hpc/results-20261021-0620/verified-regions.json"
+    },
+    "abb_logarithmic_neighborhood": {
+      "status": "full_target_audit_and_source_hashes_passed",
+      "evidence": "../hpc/results-20261021-0635/abb-completion.json"
+    },
+    "remaining": [
+      "exterior compact family replay",
+      "exact binary64 ABB radius replay",
+      "current-source combined integration"
+    ]
+  }
 }

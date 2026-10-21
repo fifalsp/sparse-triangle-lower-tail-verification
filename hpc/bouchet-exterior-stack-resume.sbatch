@@ -7,7 +7,6 @@
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=96G
 #SBATCH --time=24:00:00
-#SBATCH --nodelist=a1130u35n02
 #SBATCH --output=triangle-exterior-stack-%j.out
 #SBATCH --error=triangle-exterior-stack-%j.err
 set -euo pipefail
@@ -21,6 +20,12 @@ RUN_DIR="$WORK_DIR/logs"
 mkdir -p "$RUN_DIR" "$WORK_DIR/control"
 printf '%s  %s\n' "$CONTROL_SHA" "$CONTROL" | sha256sum -c -
 tar -xzf "$CONTROL" -C "$WORK_DIR/control"
+# A serialized repair may follow an earlier recovery attempt. If that attempt
+# passed every existing archive gate, leave its proof and evidence authoritative.
+if [[ -f "$SAVE_ROOT/sparse-lean-results-30101361.tar.gz" ]] && python3 -c 'import sys;from pathlib import Path;sys.path.insert(0,sys.argv[1]+"/hpc");from audit_result_archives import inspect;p=Path(sys.argv[2]);r=inspect(p.read_bytes(),p.name);sys.exit(0 if r and r.get("verified") and r.get("key")=="exterior" else 10)' "$WORK_DIR/control" "$SAVE_ROOT/sparse-lean-results-30101361.tar.gz"; then
+  printf 'Earlier exterior recovery passed; no duplicate replay.\n'
+  exit 0
+fi
 # Reuse the ended allocation's persistent checkout when it is still present.
 # A complete saved checkpoint provides a fallback if /tmp was cleaned.
 if [[ -f "$PREVIOUS/repo/SOURCE_COMMIT" && -d "$PREVIOUS/runtime" ]]; then
@@ -34,7 +39,7 @@ else
   mkdir -p "$REPO" "$WORK_DIR/previous"
   printf '%s  %s\n' 2378c0a843220e56b80381013bc164f150fcc025d85a38f66719ab354e79c43e "$SAVE_ROOT/triangle-yale-source-8ecc9d4.tar.gz" | sha256sum -c -
   tar -xzf "$SAVE_ROOT/triangle-yale-source-8ecc9d4.tar.gz" -C "$REPO"
-  python3 -c 'import sys;from pathlib import Path;sys.path.insert(0,sys.argv[1]+"/hpc");from recover_replay import restore;restore(Path(sys.argv[2]),Path(sys.argv[1]))' "$REPO" "$SAVE_ROOT/sparse-lean-recovery-checkpoint-30082914.tar.gz"
+  python3 -c 'import sys;from pathlib import Path;sys.path.insert(0,sys.argv[3]+"/hpc");from restore_family_checkpoint import restore;restore(Path(sys.argv[2]),Path(sys.argv[1]),"exterior")' "$REPO" "$SAVE_ROOT/sparse-lean-recovery-checkpoint-30082914.tar.gz" "$WORK_DIR/control"
   tar -xzf "$SAVE_ROOT/sparse-lean-results-30082914.tar.gz" -C "$WORK_DIR/previous"
   tar -xzf "$SAVE_ROOT/lean-v4.24.0-linux-cache.tar.gz" -C "$WORK_DIR"
 fi

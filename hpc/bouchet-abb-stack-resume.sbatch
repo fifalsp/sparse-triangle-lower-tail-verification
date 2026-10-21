@@ -7,7 +7,6 @@
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=96G
 #SBATCH --time=24:00:00
-#SBATCH --nodelist=c1106u03n02
 #SBATCH --output=triangle-abb-stack-%j.out
 #SBATCH --error=triangle-abb-stack-%j.err
 set -euo pipefail
@@ -34,7 +33,7 @@ else
   mkdir -p "$REPO" "$WORK_DIR/previous"
   printf '%s  %s\n' 2378c0a843220e56b80381013bc164f150fcc025d85a38f66719ab354e79c43e "$SAVE_ROOT/triangle-yale-source-8ecc9d4.tar.gz" | sha256sum -c -
   tar -xzf "$SAVE_ROOT/triangle-yale-source-8ecc9d4.tar.gz" -C "$REPO"
-  python3 -c 'import sys;from pathlib import Path;sys.path.insert(0,sys.argv[1]+"/hpc");from recover_replay import restore;restore(Path(sys.argv[2]),Path(sys.argv[1]))' "$REPO" "$SAVE_ROOT/sparse-lean-recovery-checkpoint-30085559.tar.gz"
+  python3 -c 'import sys;from pathlib import Path;sys.path.insert(0,sys.argv[3]+"/hpc");from restore_family_checkpoint import restore;restore(Path(sys.argv[2]),Path(sys.argv[1]),"abb")' "$REPO" "$SAVE_ROOT/sparse-lean-recovery-checkpoint-30085559.tar.gz" "$WORK_DIR/control"
   tar -xzf "$SAVE_ROOT/sparse-lean-results-30085559.tar.gz" -C "$WORK_DIR/previous"
   tar -xzf "$SAVE_ROOT/lean-v4.24.0-linux-cache.tar.gz" -C "$WORK_DIR"
 fi

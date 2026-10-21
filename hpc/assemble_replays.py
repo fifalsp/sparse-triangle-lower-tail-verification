@@ -135,7 +135,8 @@ def main():
  if not audit.startswith('import SparseLowerTail\n'):raise ValueError('Unexpected audit header')
  audit_path=a.logs/'AuditCompleted.lean';audit_path.write_text(audit.replace('import SparseLowerTail\n','import '+target+'\n',1))
  lake_args=['--file',str(a.lakefile.resolve())] if a.lakefile else []
- memory_args=['-M'+str(a.audit_memory_mib),'-j1'] if a.audit_memory_mib else []
+ memory_args=['-s65536','-j1']
+ if a.audit_memory_mib:memory_args.insert(0,'-M'+str(a.audit_memory_mib))
  run(['lake',*lake_args,'env','lean',*memory_args,str(audit_path)],'combined-audit.log')
  if (ROOT/'lean/Audit.lean').read_bytes()!=audit_source or manifest()!=sources:raise ValueError('Proof source or audit policy changed during combined verification')
  (a.logs/'source-hashes-passed.txt').write_text('All combined target dependency sources and the audit policy unchanged.\n')

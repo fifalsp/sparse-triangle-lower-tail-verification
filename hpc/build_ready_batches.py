@@ -6,7 +6,7 @@ scheduler untouched. Every accepted cache batch must pass Lake --no-build;
 all other modules must pass an ordinary bounded Lake build.
 """
 import argparse
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, wait, FIRST_COMPLETED
 import importlib.util
 import json
 import os
@@ -32,16 +32,30 @@ def build_graph(graph, cached_candidates, check, build, workers, report):
         report(completed, reusable, {})
         pending = [m for m in ready if m not in reusable]
         with ThreadPoolExecutor(max_workers=workers) as pool:
-            # Bound each wave as well as each child process. A failed module
-            # prevents any dependent module from being considered next.
-            for offset in range(0, len(pending), workers):
-                batch = pending[offset:offset + workers]
-                codes = list(pool.map(build, batch))
-                failures = {m: rc for m, rc in zip(batch, codes) if rc}
-                completed.update(m for m, rc in zip(batch, codes) if not rc)
+            # Fill each freed worker immediately; a slow sibling must not
+            # leave the rest idle until an entire fixed-size batch finishes.
+            pending_iter = iter(pending)
+            active = {}
+            failures = {}
+            while True:
+                while len(active) < workers and not failures:
+                    name = next(pending_iter, None)
+                    if name is None:
+                        break
+                    active[pool.submit(build, name)] = name
+                if not active:
+                    break
+                done, _ = wait(active, return_when=FIRST_COMPLETED)
+                for future in done:
+                    name = active.pop(future)
+                    rc = future.result()
+                    if rc:
+                        failures[name] = rc
+                    else:
+                        completed.add(name)
                 report(completed, reusable, failures)
-                if failures:
-                    raise RuntimeError('Lean build failed: ' + repr(failures))
+            if failures:
+                raise RuntimeError('Lean build failed: ' + repr(failures))
     return completed
 
 

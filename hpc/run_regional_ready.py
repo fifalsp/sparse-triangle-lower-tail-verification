@@ -46,6 +46,7 @@ def main():
     p.add_argument('--lakefile', type=Path, required=True)
     p.add_argument('--workers', type=int, choices=range(1, 9), default=4)
     p.add_argument('--audit-sha256', required=True)
+    p.add_argument('--expected-manifest', type=Path)
     a = p.parse_args()
     spec = stage_spec(a.stage)
     logs = a.logs.resolve()
@@ -74,6 +75,10 @@ def main():
         return {m: hashlib.sha256((LEAN / Path(m.replace('.', '/')).with_suffix('.lean')).read_bytes()).hexdigest()
                 for m in sorted(graph)}
     sources = manifest()
+    if a.expected_manifest and json.loads(a.expected_manifest.read_text()) != sources:
+        raise ValueError('Resumed proof sources differ from the preserved checkpoint')
+    if a.expected_manifest:
+        (logs / 'checkpoint-source-match.txt').write_text('Regenerated target dependencies match the preserved checkpoint.\n')
     (logs / 'source-manifest.json').write_text(json.dumps(sources, indent=2)+'\n')
     record('bounded_kernel_build')
     run([sys.executable, str(ROOT / 'hpc/build_ready_batches.py'), '--repo', str(ROOT),

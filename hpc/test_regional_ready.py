@@ -34,6 +34,10 @@ class RegionalGates(unittest.TestCase):
                 if command[0] == 'lake' and failure == 'audit':
                     raise subprocess.CalledProcessError(1, command)
             argv = ['run_regional_ready.py','f1','--logs',str(logs),'--lakefile',str(profile),'--audit-sha256',audit_hash]
+            if failure == 'manifest':
+                expected = root/'expected.json'
+                expected.write_text('{}')
+                argv += ['--expected-manifest',str(expected)]
             with patch.object(runner,'ROOT',root),patch.object(runner,'LEAN',lean),patch.object(sys,'argv',argv),patch.object(runner.subprocess,'run',side_effect=execute):
                 if failure:
                     with self.assertRaises((ValueError,subprocess.CalledProcessError)):runner.main()
@@ -46,6 +50,7 @@ class RegionalGates(unittest.TestCase):
     def test_success(self): self.run_fixture()
     def test_changed_source_rejected(self): self.run_fixture('source')
     def test_changed_audit_policy_rejected(self): self.run_fixture('policy')
+    def test_checkpoint_manifest_mismatch_rejected(self): self.run_fixture('manifest')
     def test_failed_axiom_audit_rejected(self): self.run_fixture('audit')
 
 

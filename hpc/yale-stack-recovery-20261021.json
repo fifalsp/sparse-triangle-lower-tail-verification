@@ -232,5 +232,37 @@
     },
     "method": "Bounded read-only srun probe of scheduler status and generated-source/compiled-file counts in the existing allocation.",
     "trust_status": "Interim stage only: all exact-radius leaf modules compiled; coverage combiners, full replay root, combined target, unchanged source-hash check and namespace axiom audit remain pending. No full certificate accepted from these counts."
+  },
+  "integration_radius_root_build": {
+    "checked_at_utc": "2026-10-21T16:37:37.702466+00:00",
+    "job": 30104499,
+    "state": "RUNNING",
+    "elapsed": "9:53:48",
+    "node": "c1106u07n01",
+    "target": "SparseLowerTail.Section08.FamilyABBRadiusReplay.Full.FullNeighborhood",
+    "evidence_method": "Bounded read-only srun through authenticated Chrome; tail of node-local combined-build/SparseLowerTail.Section08.FamilyABBRadiusReplay.Full.FullNeighborhood.log",
+    "observed_log_tail": [
+      "Built SparseLowerTail.Section08.FamilyABBRadiusReplay.Full.FullNeighborhood (47s)",
+      "Build completed successfully (17731 jobs)."
+    ],
+    "combined_snapshot": {
+      "target": "SparseLowerTail.CompletedReplays",
+      "completed": 15977,
+      "total": 94032,
+      "cached": 8013,
+      "failed": {},
+      "seconds": 33966.92015438527,
+      "workers": 3,
+      "phase": "building"
+    },
+    "latest_activity": "Additional combined dependency cache validation (cache-check-0382.log observed).",
+    "trust_status": "Ordinary exact-radius full-root build observed successful; current-source combined target, source-hash comparison, unchanged namespace axiom audit, final archives and Slurm exit 0 remain required. This is not final certificate acceptance.",
+    "latest_manuscript_check": {
+      "download": "arxiv_v1 (66).tex",
+      "sha256": "2fc55e160ec70f1c10a8684eb064faf7892ad978f9b385d165a4fb17ff27f149",
+      "bytes": 335031,
+      "mapped_labels_unchanged": 112,
+      "byte_identical_to_reviewed65": true
+    }
   }
 }

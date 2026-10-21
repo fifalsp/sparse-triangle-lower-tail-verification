@@ -1,0 +1,21 @@
+{
+  "status": "mapped_statements_unchanged",
+  "checked_labels": 112,
+  "source_sha256": "730f6183da694c7d33fce5d17b8ed98463ca4c356f21a5aaa3fc553fc9a15ce9",
+  "baseline_source_sha256": "84c55a798a1fc1492f319179eec89f340d27269916acd622d54707da185e17b7",
+  "changes": [],
+  "scope": "Only mapped statements and adjacent proofs are checked; this is not mathematical verification.",
+  "checked_at_utc": "2026-10-21T06:16:26.996471+00:00",
+  "source_method": "Fresh source downloaded through user Google Chrome",
+  "download": "arxiv_v1 (45).tex",
+  "source_bytes": 334076,
+  "draft_update": "Repository links, Codex credit, computing acknowledgements and editorial TODO notes added. No mapped statement/proof or numerical table changed.",
+  "numbered_results_checked": 95,
+  "numbering_status": "Declared shared-counter section/result sequence unchanged; prior PDF page positions not freshly checked.",
+  "remaining_internal_obligations": [
+    "F1 critical region",
+    "ABB and exterior final combining modules and audits",
+    "full exact binary64 ABB radius replay",
+    "current-source combined integration"
+  ]
+}

@@ -103,10 +103,11 @@
     "changed": "Corrected replacement has ReqNodeList null; saved full checkpoint retained"
   },
   "manuscript_check": {
-    "download": "arxiv_v1 (44).tex",
-    "bytes": 332997,
-    "sha256": "ee4a43a639fb89a02b9368d3931416aa5d5c0bb79faadc3844cdbf8ac9e93bfc",
-    "result": "Byte-identical to reviewed source; no mapped proof or numbering changes"
+    "download": "arxiv_v1 (45).tex",
+    "bytes": 334076,
+    "sha256": "730f6183da694c7d33fce5d17b8ed98463ca4c356f21a5aaa3fc553fc9a15ce9",
+    "result": "All112mapped statements/proofs, tables and95numbered result sequence unchanged; new links/acknowledgements/editorial TODOs only",
+    "record": "../lean/manuscript-review-20261021-links.json"
   },
   "startup_fix": {
     "commit": "1683386a92db4a4d69031d1aa352a32019219e1e",

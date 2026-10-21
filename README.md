@@ -58,7 +58,7 @@ the external and classical results used.
 **Remaining verification:** apex fan F1, the family ABB and
 exterior replays, the exact binary64 ABB neighborhood, and the combined build.
 The [cluster record](hpc/README.md) tracks running jobs and recovery.
-The [manuscript comparison](lean/manuscript-review-20261020-editorial.json)
+The [manuscript comparison](lean/manuscript-review-20261021-links.json)
 matches all 112 mapped labels to the current Overleaf source. The
 [inventory](lean/manuscript-coverage.json) tracks the remaining obligations.
 

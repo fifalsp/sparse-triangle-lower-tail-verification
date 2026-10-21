@@ -33,7 +33,8 @@
   "checkpoint_memory_mib": 8192,
   "snapshot_retry": {
     "reason": "512MiB snapshot step OOM during compressed archive writing; proof workers and completed cache unaffected",
-    "recovery": "Original exact ABB coordinator resumed; failed partial preserved; retry step raised to8GiB and failure recovery now discovers/resumes old coordinator even before checkpoint metadata exists"
+    "recovery": "Original exact ABB coordinator resumed; failed partial preserved; retry step raised to8GiB and failure recovery now discovers/resumes old coordinator even before checkpoint metadata exists",
+    "failed_partial_cleanup": "Removed unusable failed partial after successful checkpoint SHA revalidated"
   },
   "coordinator_commit": "7e72f8e",
   "checkpoint": {
@@ -83,7 +84,8 @@
     "checkpoint_size_display": "4.5G",
     "result_logs": "sparse-lean-results-30082913.tar.gz",
     "result_size_display": "566K",
-    "archive_status": "Both completed archives present on Yale; old job no longer running"
+    "archive_status": "Both completed archives present on Yale; old job no longer running",
+    "checkpoint_cleanup": "Removed obsolete retired-job checkpoint at user request after validated handoff backup retention; see yale-storage-cleanup-20261021.json"
   },
   "progress_record": "progress-20261021-0146.json"
 }

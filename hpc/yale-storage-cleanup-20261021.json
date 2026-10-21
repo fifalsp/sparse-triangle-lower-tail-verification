@@ -1,0 +1,52 @@
+{
+  "checked_at_utc": "2026-10-21T03:15:09.264975+00:00",
+  "authorization": "User requested deleting safely archived and obsolete Yale files after download and GitHub publication",
+  "publication_before_cleanup": "9f8e96e",
+  "downloaded_and_verified_archive": "results-20261021-0250/sparse-lean-results-30082915.tar.gz",
+  "removed": [
+    {
+      "path": "sparse-lean-recovery-checkpoint-30082913.tar.gz",
+      "bytes": 4734080229,
+      "reason": "Retired ABB coordinator archive; validated consistent handoff checkpoint retained and replacement job running. Final integration depends on30085559, never retired30082913."
+    },
+    {
+      "path": "triangle-abb-scaleup-20261021/failed-512m-checkpoint.partial",
+      "bytes": 534054810,
+      "reason": "Incomplete failed snapshot writer output; successful replacement checkpoint retained."
+    }
+  ],
+  "removed_bytes_total": 5268135039,
+  "deletion_evidence": "Native Chrome authenticated Yale shell rm -v confirmed both exact files removed; both files had link count1",
+  "retained_checkpoint": "triangle-abb-scaleup-20261021/abb-consistent-checkpoint.tar.gz",
+  "retained_checkpoint_sha256": "ad2ea5c9168297dab1c51e5c251402d30975b2d4e8713d9641af6491abcbac0f",
+  "retained_checkpoint_check": "Fresh SHA256 on Yale matched before removal",
+  "preserved": "All running jobs, current source archive, runtime, completed region result archives and checkpoints required by combined integration",
+  "post_cleanup_jobs": {
+    "f1": {
+      "job": 30082912,
+      "completed": 1394,
+      "total": 3059,
+      "failed": {}
+    },
+    "abb": {
+      "job": 30085559,
+      "completed": 2879,
+      "total": 7462,
+      "workers": 8,
+      "failed": {}
+    },
+    "exterior": {
+      "job": 30082914,
+      "completed": 4913,
+      "total": 12872,
+      "failed": {}
+    },
+    "cover12": {
+      "job": 30082916,
+      "completed": 1179,
+      "total": 2750,
+      "failed": {}
+    }
+  },
+  "auth_status": "User signed in; native Google Chrome file-browser download and shell probes succeeded; no pending login request"
+}

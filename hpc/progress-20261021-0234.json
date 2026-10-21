@@ -1,0 +1,147 @@
+{
+  "checked_at_utc": "2026-10-21T02:35:00.444076+00:00",
+  "checked_at_new_york": "2026-10-20T22:35:00.444417-04:00",
+  "method": "Fresh authenticated Google Chrome Yale shell: squeue and read-only srun cat of five existing allocation build statuses. Mac unlocked; access restored.",
+  "source_commit": "8ecc9d41892517175d46efc84e63a5d745096db0",
+  "jobs": {
+    "f1": {
+      "job": 30082912,
+      "state": "RUNNING",
+      "completed": 1186,
+      "total": 3059,
+      "cached": 0,
+      "failed": {},
+      "builder_seconds": 11069.018944703974,
+      "workers": 4,
+      "recent_modules_per_hour": 312.16,
+      "linear_remaining_hours": 6.0,
+      "rate_basis": {
+        "previous_completed": 934,
+        "previous_builder_seconds": 8162.83206261415
+      }
+    },
+    "abb": {
+      "job": 30085559,
+      "state": "RUNNING",
+      "completed": 2340,
+      "total": 7462,
+      "cached": 1209,
+      "failed": {},
+      "builder_seconds": 4925.691882406361,
+      "workers": 8,
+      "recent_modules_per_hour": 813.71,
+      "linear_remaining_hours": 6.29,
+      "rate_basis": {
+        "previous_completed": 1688,
+        "previous_builder_seconds": 2041.115718067158
+      }
+    },
+    "exterior": {
+      "job": 30082914,
+      "state": "RUNNING",
+      "completed": 4061,
+      "total": 12872,
+      "cached": 56,
+      "failed": {},
+      "builder_seconds": 10981.769244919997,
+      "workers": 4,
+      "recent_modules_per_hour": 1286.73,
+      "linear_remaining_hours": 6.85,
+      "rate_basis": {
+        "previous_completed": 3029,
+        "previous_builder_seconds": 8094.450451955199
+      }
+    },
+    "cover0": {
+      "job": 30082915,
+      "state": "RUNNING",
+      "completed": 1114,
+      "total": 1876,
+      "cached": 78,
+      "failed": {},
+      "builder_seconds": 11004.939935625065,
+      "workers": 4,
+      "recent_modules_per_hour": 323.17,
+      "linear_remaining_hours": 2.36,
+      "rate_basis": {
+        "previous_completed": 854,
+        "previous_builder_seconds": 8108.596475017257
+      }
+    },
+    "cover12": {
+      "job": 30082916,
+      "state": "RUNNING",
+      "completed": 983,
+      "total": 2750,
+      "cached": 0,
+      "failed": {},
+      "builder_seconds": 10978.126667804085,
+      "workers": 4,
+      "recent_modules_per_hour": 289.21,
+      "linear_remaining_hours": 6.11,
+      "rate_basis": {
+        "previous_completed": 751,
+        "previous_builder_seconds": 8090.210018779151
+      }
+    }
+  },
+  "laptop_f1": {
+    "completed": 2186,
+    "total": 3059,
+    "cached": 175,
+    "failed": {},
+    "workers": 1,
+    "phase": "building"
+  },
+  "integration": {
+    "job": 30082917,
+    "state": "PENDING",
+    "reason": "Dependency",
+    "afterok": [
+      30082912,
+      30085559,
+      30082914,
+      30082915,
+      30082916
+    ],
+    "scope": "Full exact binary64 ABB padding, current-source combined theorem build and unchanged namespace axiom audit"
+  },
+  "estimate": {
+    "current_regional_replays_remaining_wall_hours": [
+      6,
+      10
+    ],
+    "overall_provisional_planning_wall_hours": [
+      12,
+      24
+    ],
+    "basis": "Fresh regional module slopes remain consistent with the earlier planning range; final full exact-radius/combined-stage runtime is not measured. Do not infer overall verification percentage from module counts.",
+    "full_stage_pilot": "21 padded ABB leaves passed previously; smoke leaf modules took4.8s for20 leaves and1.9s for final-region leaf. Full108452-leaf extrapolation is not a measured runtime.",
+    "assumptions": [
+      "Current jobs continue normally",
+      "No proof repair or new manuscript argument required",
+      "Final allocation becomes available after regional dependencies pass"
+    ],
+    "estimate_kind": "Provisional planning range, not a completion guarantee"
+  },
+  "verified_full_regional_certificates": 39,
+  "new_full_regional_successes_this_check": 0,
+  "retired_original_abb": {
+    "job": 30082913,
+    "scheduler_state": "FAILED",
+    "exit_code": "1:0",
+    "elapsed": "01:52:10",
+    "reason": "Intentional coordinator retirement after validated8-worker handoff, not a failed Lean proof",
+    "checkpoint": "sparse-lean-recovery-checkpoint-30082913.tar.gz",
+    "checkpoint_size_display": "4.5G",
+    "result_logs": "sparse-lean-results-30082913.tar.gz",
+    "result_size_display": "566K",
+    "archive_status": "Both completed archives present on Yale; old job no longer running"
+  },
+  "manuscript": {
+    "last_checked_download": "arxiv_v1 (38).tex",
+    "sha256": "ee4a43a639fb89a02b9368d3931416aa5d5c0bb79faadc3844cdbf8ac9e93bfc",
+    "status": "Byte-identical to mapped manuscript at last check;112 mapped statements/proofs and95 result numbers unchanged"
+  },
+  "storage": "GitHub stores checked sources, reports, progress and checkpoint hashes; multi-gigabyte build caches/checkpoints stay on Yale"
+}

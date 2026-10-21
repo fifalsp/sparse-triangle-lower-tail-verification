@@ -56,8 +56,12 @@ printf '%s\n' "$WORK_DIR" > "$RUN_DIR/node-work-directory.txt"
 printf '%s\n' "$REPO" > "$RUN_DIR/resumed-repository.txt"
 module load cURL/8.7.1-GCCcore-13.3.0
 export ELAN_HOME="$RUNTIME"
+export ELAN_TOOLCHAIN
+ELAN_TOOLCHAIN=$(cat "$REPO/lean/lean-toolchain")
+[[ "$ELAN_TOOLCHAIN" == leanprover/lean4:v4.24.0 ]]
 export PATH="$ELAN_HOME/bin:$PATH"
 export LEAN_NUM_THREADS=1
 ulimit -s 65536
+cd "$REPO/lean"
 lean --version > "$RUN_DIR/lean-version.txt"
 timeout --signal=TERM --kill-after=60s 20h python3 "$WORK_DIR/control/hpc/resume_abb_root.py" --repo "$REPO" --previous-logs "$OLD_LOGS" --logs "$RUN_DIR"

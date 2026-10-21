@@ -1,0 +1,27 @@
+{
+  "checked_at_utc": "2026-10-21T05:32:52.581136+00:00",
+  "region": "cover:12",
+  "job_id": 30082916,
+  "scheduler_state": "COMPLETED",
+  "scheduler_exit_code": "0:0",
+  "elapsed": "05:49:42",
+  "source_commit": "8ecc9d41892517175d46efc84e63a5d745096db0",
+  "result_archive": "sparse-lean-results-30082916.tar.gz",
+  "result_archive_sha256": "839bc47f038006f5313d84ecb894b5541ebb291701440bd59b4bfa49c4d3879c",
+  "build": {
+    "target": "SparseLowerTail.Section05.CoverJobReplay.Job12Full.Ordered",
+    "total": 2750,
+    "completed": 2750,
+    "cached": 0,
+    "failed": {},
+    "seconds": 20802.544851953164,
+    "workers": 4,
+    "phase": "build_complete",
+    "trust_status": "Final full target build, source hashes and axiom audit remain required"
+  },
+  "audit_declarations": 284167,
+  "audit_theorems": 230341,
+  "dependency_source_count": 2750,
+  "source_hash_validation": "Every target dependency and original audit policy unchanged",
+  "local_archive_gate": "Full target, exit0, both success markers, unchanged audit and source hashes passed"
+}

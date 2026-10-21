@@ -1,38 +1,29 @@
 # Running the Lean checks on Yale and Delta
 
-## Latest verified results — October 20, 2026
+## Latest verified results — October 21, 2026
 
-**40 full-region Lean builds and axiom audits have passed:** 35 nonapex
-regions and apex fans F2–F6. The latest completion is nonapex region 0, with
-all 1,876 build modules, unchanged source hashes and its full declaration audit passed.
-[Completion record](results-20261021-0250/region0-completion.json).
+**41 full-region Lean builds and axiom audits have passed:** all 36 nonapex
+regions and apex fans F2–F6. Region 12 is the latest completion: all 2,750
+modules, unchanged source hashes and an audit of 230,341 theorems passed.
+[Verified regions](results-20261021-0529/verified-regions.json).
 
-F4 completed after 9:06:47 on 8 cores, using about 35.4 GiB maximum RSS.
-[F4 completion record](f4-completion-20261020.json).
-The latest region-0 checkpoint and result archive are saved on Yale.
-All **88 transferred archive hashes match** on Delta. The encrypted Globus
-transfer copied 89 files (28.24 GB) in 2 minutes 12 seconds.
+The remaining work runs on **Yale Bouchet**:
 
-All remaining stages have moved back to **Yale Bouchet**:
+| Stage | Yale job | Status |
+|---|---:|---|
+| F1 replay | 30082912 | Running |
+| ABB final module and audit | 30101171 | Queued |
+| Exterior final module and audit | 30101361 | Running |
+| Exact binary64 ABB radius and combined integration | 30101372 | Waiting for the three jobs above |
 
-| Stage | Yale job | Resources | Time cap |
-|---|---:|---|---:|
-| F1 replay | 30082912 | 8 CPUs, 96 GiB | 24 hours |
-| ABB replay (8 Lean workers) | 30085559 | 12 CPUs, 192 GiB | 24 hours |
-| Exterior replay | 30082914 | 8 CPUs, 96 GiB | 24 hours |
-| Nonapex 0 — completed | 30082915 | 8 CPUs, 96 GiB | 3:23:30 elapsed |
-| Nonapex 12 | 30082916 | 8 CPUs, 96 GiB | 24 hours |
-| Exact binary64 ABB radius and combined integration | 30082917 | 8 CPUs, 192 GiB | 24 hours |
+ABB completed 7,461/7,462 modules and exterior completed 12,871/12,872.
+Both final combining modules hit Lean stack overflow. The recovery jobs use
+a 64 MiB stack and preserve the original sources and completed cache. Each
+retry must pass its full target, source hashes and unchanged axiom audit.
+[Recovery controls, hashes and archived logs](yale-stack-recovery-20261021.json).
 
-Four regional replays are running; nonapex region 0 completed successfully. ABB uses **eight Lean workers**;
-its checked checkpoint preserved 1,245 completed modules, and the resumed build
-has reached 2,564/7,462 with no failures. Integration has normal `afterok`
-dependencies on the new ABB job and the other four regions.
-[ABB scale-up and checkpoint hashes](yale-abb-scaleup-20261021.json).
-[Latest replay counters and timing estimate](progress-20261021-0146.json).
 All matching Delta copies were cancelled while unstarted, after Yale accepted
-the replacements.
-[Deployment and source hashes](yale-return-deployment-20261020.json).
+the replacements. [Deployment record](yale-return-deployment-20261020.json).
 
 The runner extracts checkpoints onto node-local disk, validates cached modules
 after their imports pass, and saves partial builds back to project storage.

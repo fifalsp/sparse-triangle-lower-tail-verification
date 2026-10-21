@@ -22,8 +22,8 @@
     "lean_memory_mib": 49152,
     "lean_threads": 1
   },
-  "checked_at_utc": "2026-10-21T01:17:09.884985+00:00",
-  "status": "Nonapex0 completed and audited; four regional replays running; combined integration pending dependencies",
+  "checked_at_utc": "2026-10-21T05:32:52.581136+00:00",
+  "status": "Region12 passed; ABB and exterior final-module stack recovery submitted; F1 running; integration requeued",
   "cluster": "Yale Bouchet",
   "project_directory": "/nfs/roberts/project/pi_sl3363/sl3363",
   "checkpoint_directory": "/nfs/roberts/project/pi_sl3363/sl3363/triangle-migration-20261020",
@@ -31,26 +31,24 @@
   "maintenance_observation": "Day partition UP with 24-hour limit; CPU maintenance reservation absent; only unrelated inference reservation remained. Yale queue was empty before replacement submission.",
   "jobs": {
     "f1": 30082912,
-    "abb": 30085559,
-    "exterior": 30082914,
+    "abb": 30101171,
+    "exterior": 30101361,
     "cover0": 30082915,
     "cover12": 30082916,
-    "assembly": 30082917
+    "assembly": 30101372
   },
   "states": {
     "f1": "RUNNING",
-    "abb": "RUNNING (8 workers)",
+    "abb": "PENDING Resources",
     "exterior": "RUNNING",
     "cover0": "COMPLETED 0:0",
-    "cover12": "RUNNING",
+    "cover12": "COMPLETED 0:0",
     "assembly": "PENDING Dependency"
   },
   "assembly_afterok": [
     30082912,
-    30085559,
-    30082914,
-    30082915,
-    30082916
+    30101171,
+    30101361
   ],
   "retired_delta_jobs": [
     23029964,
@@ -114,5 +112,6 @@
   "previous_abb_job": 30082913,
   "progress_record": "progress-20261021-0146.json",
   "retired_abb_archival_complete": true,
-  "latest_completed_region_record": "results-20261021-0250/region0-completion.json"
+  "latest_completed_region_record": "results-20261021-0529/region12-completion.json",
+  "stack_recovery_record": "yale-stack-recovery-20261021.json"
 }

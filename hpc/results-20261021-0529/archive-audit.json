@@ -1,0 +1,59 @@
+{
+  "bundle_sha256": "bd921762827aebb1af3a0a68e45c6a0c79c008657ca45a856a57bb35162f0928",
+  "records": [
+    {
+      "archive": "sparse-lean-results-30085559.tar.gz",
+      "archive_sha256": "6a6f1ecf32b07c02e5d8cb2d7b83233dc193137dcb3f102e056e4dbc68fd1219",
+      "kind": "abb",
+      "status": {
+        "target": "SparseLowerTail.Section08.FamilyABBReplay.Full.FullNeighborhood",
+        "trust_status": "Full target build, source hashes and unchanged axiom audit pending",
+        "phase": "bounded_kernel_build",
+        "seconds": 69.28002893878147
+      },
+      "verified": false
+    },
+    {
+      "archive": "sparse-lean-results-30082914.tar.gz",
+      "archive_sha256": "339309ee7823f446b32fc886c36550894bd3669431e64d859ce23488de6cb00c",
+      "kind": "exterior",
+      "status": {
+        "target": "SparseLowerTail.Section08.FamilyExteriorReplay.Full.CompactCertificate",
+        "trust_status": "Full target build, source hashes and unchanged axiom audit pending",
+        "phase": "bounded_kernel_build",
+        "seconds": 42.813264389988035
+      },
+      "verified": false
+    },
+    {
+      "archive": "sparse-lean-results-30082916.tar.gz",
+      "archive_sha256": "839bc47f038006f5313d84ecb894b5541ebb291701440bd59b4bfa49c4d3879c",
+      "kind": "cover",
+      "status": {
+        "job": 12,
+        "target": "SparseLowerTail.Section05.CoverJobReplay.Job12Full.Ordered",
+        "trust_status": "Full regional target and unchanged axiom audit passed; all target source hashes unchanged",
+        "phase": "complete",
+        "seconds": 20862.90861973306
+      },
+      "verified": true,
+      "build": {
+        "target": "SparseLowerTail.Section05.CoverJobReplay.Job12Full.Ordered",
+        "total": 2750,
+        "completed": 2750,
+        "cached": 0,
+        "failed": {},
+        "seconds": 20802.544851953164,
+        "workers": 4,
+        "phase": "build_complete",
+        "trust_status": "Final full target build, source hashes and axiom audit remain required"
+      },
+      "source_commit": "8ecc9d41892517175d46efc84e63a5d745096db0",
+      "audit_declarations": 284167,
+      "audit_theorems": 230341,
+      "key": "cover:12",
+      "started.txt": "2026-10-20T23:28:55Z",
+      "finished.txt": "2026-10-21T05:17:54Z"
+    }
+  ]
+}

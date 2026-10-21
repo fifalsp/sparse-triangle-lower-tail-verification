@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-10-21T01:17:09.884985+00:00",
+  "checked_at_utc": "2026-10-21T01:49:10.033958+00:00",
   "status": "Eight-worker replay running; consistent checkpoint restored and source manifest matched; handoff complete",
   "old_job": 30082913,
   "control_commit": "a5e2ad63f2d2ee184cfb46ccd51f599398e5ea80",
@@ -57,11 +57,11 @@
   ],
   "latest_build": {
     "target": "SparseLowerTail.Section08.FamilyABBReplay.Full.FullNeighborhood",
-    "completed": 1273,
+    "completed": 1688,
     "total": 7462,
     "cached": 1209,
     "failed": {},
-    "seconds": 232.61654451908544,
+    "seconds": 2041.115718067158,
     "workers": 8,
     "phase": "building"
   },
@@ -72,5 +72,18 @@
   "source_match": true,
   "checkpoint_restored": true,
   "old_coordinator_retirement": "Exact paused PID3882678 received TERM then CONT only after replacement1249>=preserved1245, source match, restored cache and afterok replacement were confirmed. Old batch remains archiving its original cache/logs; no old Lean coordinator or competing proof workers remain.",
-  "verification_status": "Partial ABB replay; full target and unchanged axiom audit still pending"
+  "verification_status": "Partial ABB replay; full target and unchanged axiom audit still pending",
+  "old_batch_archive_status": {
+    "job": 30082913,
+    "scheduler_state": "FAILED",
+    "exit_code": "1:0",
+    "elapsed": "01:52:10",
+    "reason": "Intentional coordinator retirement after validated8-worker handoff, not a failed Lean proof",
+    "checkpoint": "sparse-lean-recovery-checkpoint-30082913.tar.gz",
+    "checkpoint_size_display": "4.5G",
+    "result_logs": "sparse-lean-results-30082913.tar.gz",
+    "result_size_display": "566K",
+    "archive_status": "Both completed archives present on Yale; old job no longer running"
+  },
+  "progress_record": "progress-20261021-0146.json"
 }

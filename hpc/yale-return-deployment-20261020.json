@@ -69,7 +69,7 @@
   },
   "execution": "Extract source/checkpoints and runtime only onto node-local /tmp. Regional4 single-thread Lean workers limited16GiB each, except ABB8 workers on12CPUs192GiB; assembly3 workers limited48GiB each. Runtime cache remains a single-file staging read. Save generated sources and build cache to project storage at exit. Full target, unchanged namespace axiom audit and dependency source hashes are required for success.",
   "verification_status": "No new full certificate claimed by submission; remaining internal full-domain proofs and combined integration still required.",
-  "queue_checked_at_utc": "2026-10-21T01:17:09.884985+00:00",
+  "queue_checked_at_utc": "2026-10-21T01:49:10.033958+00:00",
   "nodes": {
     "f1": "a1130u31n03",
     "abb": "c1106u03n02",
@@ -111,5 +111,7 @@
   "abb_scaleup_record": "yale-abb-scaleup-20261021.json",
   "abb_control_commit": "a5e2ad63f2d2ee184cfb46ccd51f599398e5ea80",
   "abb_handoff_coordinator_commit": "7e72f8e",
-  "previous_abb_job": 30082913
+  "previous_abb_job": 30082913,
+  "progress_record": "progress-20261021-0146.json",
+  "retired_abb_archival_complete": true
 }

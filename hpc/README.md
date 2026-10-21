@@ -26,9 +26,10 @@ All remaining stages have moved back to **Yale Bouchet**:
 
 All five regional replays are running. ABB now uses **eight Lean workers**;
 its checked checkpoint preserved 1,245 completed modules, and the resumed build
-has reached 1,273/7,462 with no failures. Integration has normal `afterok`
+has reached 1,688/7,462 with no failures. Integration has normal `afterok`
 dependencies on the new ABB job and the other four regions.
 [ABB scale-up and checkpoint hashes](yale-abb-scaleup-20261021.json).
+[Latest replay counters and timing estimate](progress-20261021-0146.json).
 All matching Delta copies were cancelled while unstarted, after Yale accepted
 the replacements.
 [Deployment and source hashes](yale-return-deployment-20261020.json).

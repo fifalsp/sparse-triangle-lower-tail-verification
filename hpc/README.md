@@ -12,14 +12,16 @@ The remaining work runs on **Yale Bouchet**:
 | Stage | Yale job | Status |
 |---|---:|---|
 | F1 replay | 30082912 | Running |
-| ABB final module and audit | 30101171 | Queued |
-| Exterior final module and audit | 30101361 | Running |
+| ABB final module and audit | 30101730 | Queued |
+| Exterior final module and audit | 30101734 | Waiting for the preceding recovery attempt |
 | Exact binary64 ABB radius and combined integration | 30101372 | Waiting for the three jobs above |
 
 ABB completed 7,461/7,462 modules and exterior completed 12,871/12,872.
 Both final combining modules hit Lean stack overflow. The recovery jobs use
 a 64 MiB stack and preserve the original sources and completed cache. Each
 retry must pass its full target, source hashes and unchanged axiom audit.
+The corrected fallback restores generated proof sources alongside the cache;
+its 30 checks passed. Recovery jobs can use any eligible day node.
 [Recovery controls, hashes and archived logs](yale-stack-recovery-20261021.json).
 
 All matching Delta copies were cancelled while unstarted, after Yale accepted

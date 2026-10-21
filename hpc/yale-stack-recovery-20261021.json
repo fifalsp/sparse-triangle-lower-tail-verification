@@ -1,25 +1,27 @@
 {
-  "checked_at_utc": "2026-10-21T05:32:52.581136+00:00",
-  "status": "Region12 passed; ABB and exterior final-module stack recovery submitted; F1 running; integration requeued",
+  "checked_at_utc": "2026-10-21T05:43:45.912539+00:00",
+  "status": "Generated-source restoration corrected; serialized family repairs accepted; F1 continues; integration dependencies updated",
   "source_commit": "8ecc9d41892517175d46efc84e63a5d745096db0",
   "proof_sources_unchanged": true,
   "account": "pi_sl3363",
   "jobs": {
     "f1": 30082912,
-    "abb": 30101171,
-    "exterior": 30101361,
+    "abb": 30101730,
+    "exterior": 30101734,
+    "exterior_prior_attempt": 30101361,
     "assembly": 30101372
   },
   "states": {
     "f1": "RUNNING",
-    "abb": "PENDING Resources",
-    "exterior": "RUNNING",
+    "abb": "PENDING Dependency after cancelled predecessor; scheduler refresh pending",
+    "exterior": "PENDING Dependency afterany30101361",
+    "exterior_prior_attempt": "RUNNING; cache-restoration fallback",
     "assembly": "PENDING Dependency"
   },
   "assembly_afterok": [
     30082912,
-    30101171,
-    30101361
+    30101730,
+    30101734
   ],
   "completed_inputs": [
     "cover:0",
@@ -71,5 +73,39 @@
   "initial_integration_rejection": "Dependency problem with ended jobs; replacement accepted with afterok only on the three unfinished required proofs",
   "auth_status": "User signed in; native Chrome upload and download succeeded",
   "exterior_startup": "Running on original node; original /tmp checkout was cleaned, so saved full source/checkpoint restoration fallback is active. Uploaded source and control SHA checks passed.",
-  "f1_probe": "15s read-only overlap probe timed out before launch; scheduler job remains running, no proof failure inferred."
+  "f1_probe": "15s read-only overlap probe timed out before launch; scheduler job remains running, no proof failure inferred.",
+  "restoration_fix": {
+    "commit": "d4b77eefa42d41fbf8764deea868b993bcf9a924",
+    "archive": "triangle-family-stack-v2.tar.gz",
+    "sha256": "b176edd253c24753b4ab9fb450aa736bf1131e55e5d2e3e351699b2df312b6bb",
+    "reason": "Previous fallback restored cache only; generated family proof sources are not in original Git source archive. Corrected fallback restores the matching generated family subtree and cache, and then verifies every original source hash.",
+    "tests": "30 passed, including generated-source restoration, exclusion of handwritten proofs/audit and rejection of traversal paths",
+    "abb_job": 30101730,
+    "exterior_job": 30101734,
+    "exterior_serialized_afterany": 30101361,
+    "node_constraint": "Removed; both corrected jobs may use any eligible day node",
+    "proof_source_changes": false,
+    "exterior_guard": "If previous recovery30101361 passes all existing archive gates, skip duplicate proof work; otherwise restore original failed-job checkpoint. Serialized afterany prevents overlapping runners."
+  },
+  "retired_unstarted_abb": {
+    "job": 30101171,
+    "state": "CANCELLED",
+    "elapsed": "00:00:00",
+    "exit_code": "0:0",
+    "retirement": "Replacement accepted/resources checked and integration dependency updated first; scancel --state=PENDING only"
+  },
+  "abb_node_queue_observation": {
+    "before_update": "Expected start2026-10-21T13:08:12 local on fixed nodec1106u03n02",
+    "cpu_allocated": 47,
+    "cpu_total": 48,
+    "allocated_memory_mib": 289240,
+    "total_memory_mib": 376832,
+    "changed": "Corrected replacement has ReqNodeList null; saved full checkpoint retained"
+  },
+  "manuscript_check": {
+    "download": "arxiv_v1 (44).tex",
+    "bytes": 332997,
+    "sha256": "ee4a43a639fb89a02b9368d3931416aa5d5c0bb79faadc3844cdbf8ac9e93bfc",
+    "result": "Byte-identical to reviewed source; no mapped proof or numbering changes"
+  }
 }

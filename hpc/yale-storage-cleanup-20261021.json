@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-10-21T03:15:09.264975+00:00",
+  "checked_at_utc": "2026-10-21T06:14:53.620429+00:00",
   "authorization": "User requested deleting safely archived and obsolete Yale files after download and GitHub publication",
   "publication_before_cleanup": "9f8e96e",
   "downloaded_and_verified_archive": "results-20261021-0250/sparse-lean-results-30082915.tar.gz",
@@ -13,9 +13,24 @@
       "path": "triangle-abb-scaleup-20261021/failed-512m-checkpoint.partial",
       "bytes": 534054810,
       "reason": "Incomplete failed snapshot writer output; successful replacement checkpoint retained."
+    },
+    {
+      "path": "sparse-lean-recovery-checkpoint-30101361.tar.gz",
+      "bytes": 3040723177,
+      "reason": "Obsolete restored source/cache copy from failed startup; no new proof compilation. Original full proof checkpoint and published diagnostics retained."
+    },
+    {
+      "path": "sparse-lean-recovery-checkpoint-30101730.tar.gz",
+      "bytes": 9402045112,
+      "reason": "Obsolete restored source/cache copy from failed startup; no new proof compilation. Original full proof checkpoint and published diagnostics retained."
+    },
+    {
+      "path": "sparse-lean-recovery-checkpoint-30101734.tar.gz",
+      "bytes": 3059405052,
+      "reason": "Obsolete restored source/cache copy from failed startup; no new proof compilation. Original full proof checkpoint and published diagnostics retained."
     }
   ],
-  "removed_bytes_total": 5268135039,
+  "removed_bytes_total": 20770308380,
   "deletion_evidence": "Native Chrome authenticated Yale shell rm -v confirmed both exact files removed; both files had link count1",
   "retained_checkpoint": "triangle-abb-scaleup-20261021/abb-consistent-checkpoint.tar.gz",
   "retained_checkpoint_sha256": "ad2ea5c9168297dab1c51e5c251402d30975b2d4e8713d9641af6491abcbac0f",
@@ -48,5 +63,35 @@
       "failed": {}
     }
   },
-  "auth_status": "User signed in; native Google Chrome file-browser download and shell probes succeeded; no pending login request"
+  "auth_status": "User signed in; native Google Chrome file-browser download and shell probes succeeded; no pending login request",
+  "second_cleanup": {
+    "checked_at_utc": "2026-10-21T06:14:53.620429+00:00",
+    "publication_before_cleanup": "9abd3c7",
+    "downloaded_log_bundle": "results-20261021-0605/triangle-startup-errors-20261021-0605.tar.gz",
+    "bundle_sha256": "4db2bfa98e04919929fc0535f20654f979157c8336b328e247636630760ced6a",
+    "deleted": [
+      {
+        "path": "sparse-lean-recovery-checkpoint-30101361.tar.gz",
+        "bytes": 3040723177,
+        "reason": "Obsolete restored source/cache copy from failed startup; no new proof compilation. Original full proof checkpoint and published diagnostics retained."
+      },
+      {
+        "path": "sparse-lean-recovery-checkpoint-30101730.tar.gz",
+        "bytes": 9402045112,
+        "reason": "Obsolete restored source/cache copy from failed startup; no new proof compilation. Original full proof checkpoint and published diagnostics retained."
+      },
+      {
+        "path": "sparse-lean-recovery-checkpoint-30101734.tar.gz",
+        "bytes": 3059405052,
+        "reason": "Obsolete restored source/cache copy from failed startup; no new proof compilation. Original full proof checkpoint and published diagnostics retained."
+      }
+    ],
+    "retained_original_inputs": [
+      "sparse-lean-recovery-checkpoint-30085559.tar.gz",
+      "sparse-lean-recovery-checkpoint-30082914.tar.gz"
+    ],
+    "validation": "All three jobs FAILED1:0 before proof compilation. Downloaded logs show exit1, empty compiler version and no source-manifest/build/success markers. Corrected jobs read the retained original checkpoints, not these restored copies. Fresh original input sizes and current queue checked before deletion.",
+    "deletion_evidence": "Authenticated Chrome Yale shell rm -v confirmed removal of all three exact paths; no glob used; current jobs remained running",
+    "removed_bytes_total": 15502173341
+  }
 }

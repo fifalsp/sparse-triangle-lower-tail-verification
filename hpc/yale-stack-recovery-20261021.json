@@ -203,5 +203,34 @@
       "sha256": "730f6183da694c7d33fce5d17b8ed98463ca4c356f21a5aaa3fc553fc9a15ce9",
       "mapped_statement_proof_check": "All 112 labels unchanged; byte-identical to reviewed source."
     }
+  },
+  "integration_leaf_stage": {
+    "checked_at_utc": "2026-10-21T15:08:01.094413+00:00",
+    "job": 30104499,
+    "state": "RUNNING",
+    "elapsed": "8:23:51",
+    "node": "c1106u07n01",
+    "target": "SparseLowerTail.CompletedReplays",
+    "build_snapshot": {
+      "completed": 12950,
+      "total": 94032,
+      "cached": 7979,
+      "failed": {},
+      "seconds": 29387.437645274214,
+      "workers": 3,
+      "phase": "building"
+    },
+    "exact_radius_compiled_files": {
+      "Leaves": {
+        "source_modules": 3390,
+        "compiled_modules": 3390
+      },
+      "Coverage": {
+        "source_modules": 3758,
+        "compiled_modules": 806
+      }
+    },
+    "method": "Bounded read-only srun probe of scheduler status and generated-source/compiled-file counts in the existing allocation.",
+    "trust_status": "Interim stage only: all exact-radius leaf modules compiled; coverage combiners, full replay root, combined target, unchanged source-hash check and namespace axiom audit remain pending. No full certificate accepted from these counts."
   }
 }

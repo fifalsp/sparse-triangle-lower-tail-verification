@@ -1,15 +1,15 @@
 {
   "status": "mapped_statements_unchanged",
   "checked_labels": 112,
-  "source_sha256": "3f9c93e5e4e527becb564ada85c718d836d4a9dc9729876edb7dcd581522fe98",
+  "source_sha256": "e0ff981bbadb4aedfa85e5249ab0bfc02ef1b560f614de4d952743e6a72dd621",
   "baseline_source_sha256": "84c55a798a1fc1492f319179eec89f340d27269916acd622d54707da185e17b7",
   "changes": [],
   "scope": "Only mapped statements and adjacent proofs are checked; this is not mathematical verification.",
-  "checked_at_utc": "2026-10-21T14:07:58.515358+00:00",
+  "checked_at_utc": "2026-10-21T15:08:01.094413+00:00",
   "source_method": "Fresh source downloaded through user Google Chrome; full source diff manually reviewed",
-  "download": "arxiv_v1 (61).tex",
-  "source_bytes": 334641,
-  "previous_reviewed_source_sha256": "730f6183da694c7d33fce5d17b8ed98463ca4c356f21a5aaa3fc553fc9a15ce9",
+  "download": "arxiv_v1 (63).tex",
+  "source_bytes": 334643,
+  "previous_reviewed_source_sha256": "3f9c93e5e4e527becb564ada85c718d836d4a9dc9729876edb7dcd581522fe98",
   "draft_update": "Related-work citations and externally attributed results concerning other graphs added; critical-window background and open-problem discussion revised. All changes are in related-work/open-problem prose; no mapped author statement/proof or certificate table changed.",
   "numbered_results_checked": 95,
   "numbering_status": "Section/shared-result-counter sequence unchanged; prior PDF page positions not freshly checked.",
@@ -19,5 +19,6 @@
   "remaining_internal_obligations": [
     "full exact binary64 ABB radius replay",
     "current-source combined full target, source-hash check and original namespace axiom audit"
-  ]
+  ],
+  "latest_editorial_change": "Preliminaries introductory roadmap paragraph commented out and spacing changed; no new mathematical argument or dependency. Full diff reviewed; all mapped statements/proofs, table bodies, statement-label set and shared-counter sequence unchanged."
 }

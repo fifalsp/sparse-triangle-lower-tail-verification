@@ -1,11 +1,15 @@
 import unittest
 import os
+import json
 import signal
 import sys
 import tempfile
 from unittest.mock import patch
 import checkpoint_abb_scaleup as checkpoint
+import complete_abb_handoff as handoff_runner
+import subprocess
 from pathlib import Path
+from complete_abb_handoff import ready_to_retire
 from checkpoint_abb_scaleup import matching_scheduler, active_descendants
 
 class CheckpointSelection(unittest.TestCase):
@@ -17,6 +21,38 @@ class CheckpointSelection(unittest.TestCase):
             self.assertFalse(matching_scheduler(command,other))
         self.assertFalse(matching_scheduler(['python3','unrelated.py',*command[2:]],work))
         self.assertFalse(matching_scheduler(command[:-1]+[str(work/'logs/exterior-build')],work))
+
+    def test_replacement_must_validate_preserved_progress(self):
+        c={'preserved_module_count':1200}
+        p={'source_match':True,'checkpoint_restored':True,
+           'build':{'workers':8,'completed':1200,'failed':{}}}
+        self.assertTrue(ready_to_retire(p,c))
+        for key in ('source_match','checkpoint_restored'):
+            self.assertFalse(ready_to_retire(dict(p,**{key:False}),c))
+        for change in ({'workers':4},{'completed':1199},{'failed':{'leaf':1}}):
+            self.assertFalse(ready_to_retire(dict(p,build=dict(p['build'],**change)),c))
+
+    def test_snapshot_step_has_headroom_and_oom_resumes_original(self):
+        with tempfile.TemporaryDirectory() as directory:
+            handoff=Path(directory)/'handoff';handoff.mkdir()
+            (handoff/'replacement-ready.txt').write_text('456\n/tmp/triangle-yale-456-fixture\n')
+            argv=['handoff','--old-job','123','--new-job','456','--integration-job','789',
+                  '--old-work','/tmp/triangle-yale-123-fixture','--handoff',str(handoff),
+                  '--control','/checked/control']
+            calls=[]
+            def execute(command,**kwargs):
+                calls.append(command)
+                if len(calls)==1:raise subprocess.CalledProcessError(1,command)
+                return ''
+            with patch.object(sys,'argv',argv), \
+                 patch.object(handoff_runner.subprocess,'check_output',side_effect=execute):
+                with self.assertRaises(subprocess.CalledProcessError):handoff_runner.main()
+            self.assertIn('--mem=8192M',calls[0])
+            self.assertEqual(calls[1][4],'--ntasks=1')
+            self.assertIn('--jobid=123',calls[1])
+            self.assertIn('matching_scheduler',calls[1][-3])
+            self.assertEqual(json.loads((handoff/'handoff-status.json').read_text())['phase'],
+                             'handoff_needs_review')
 
     def test_failure_resumes_selected_scheduler(self):
         with tempfile.TemporaryDirectory() as directory:

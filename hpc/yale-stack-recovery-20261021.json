@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-10-21T05:43:45.912539+00:00",
+  "checked_at_utc": "2026-10-21T05:44:35.995300+00:00",
   "status": "Generated-source restoration corrected; serialized family repairs accepted; F1 continues; integration dependencies updated",
   "source_commit": "8ecc9d41892517175d46efc84e63a5d745096db0",
   "proof_sources_unchanged": true,
@@ -13,7 +13,7 @@
   },
   "states": {
     "f1": "RUNNING",
-    "abb": "PENDING Dependency after cancelled predecessor; scheduler refresh pending",
+    "abb": "RUNNING on c1106u07n03",
     "exterior": "PENDING Dependency afterany30101361",
     "exterior_prior_attempt": "RUNNING; cache-restoration fallback",
     "assembly": "PENDING Dependency"
@@ -85,7 +85,9 @@
     "exterior_serialized_afterany": 30101361,
     "node_constraint": "Removed; both corrected jobs may use any eligible day node",
     "proof_source_changes": false,
-    "exterior_guard": "If previous recovery30101361 passes all existing archive gates, skip duplicate proof work; otherwise restore original failed-job checkpoint. Serialized afterany prevents overlapping runners."
+    "exterior_guard": "If previous recovery30101361 passes all existing archive gates, skip duplicate proof work; otherwise restore original failed-job checkpoint. Serialized afterany prevents overlapping runners.",
+    "abb_running_node": "c1106u07n03",
+    "abb_afterany_predecessor": "Satisfied; dependency null and running1:25 at fresh queue check"
   },
   "retired_unstarted_abb": {
     "job": 30101171,

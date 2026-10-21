@@ -1,0 +1,23 @@
+{
+  "status": "mapped_statements_unchanged",
+  "checked_labels": 112,
+  "source_sha256": "3f9c93e5e4e527becb564ada85c718d836d4a9dc9729876edb7dcd581522fe98",
+  "baseline_source_sha256": "84c55a798a1fc1492f319179eec89f340d27269916acd622d54707da185e17b7",
+  "changes": [],
+  "scope": "Only mapped statements and adjacent proofs are checked; this is not mathematical verification.",
+  "checked_at_utc": "2026-10-21T14:07:58.515358+00:00",
+  "source_method": "Fresh source downloaded through user Google Chrome; full source diff manually reviewed",
+  "download": "arxiv_v1 (61).tex",
+  "source_bytes": 334641,
+  "previous_reviewed_source_sha256": "730f6183da694c7d33fce5d17b8ed98463ca4c356f21a5aaa3fc553fc9a15ce9",
+  "draft_update": "Related-work citations and externally attributed results concerning other graphs added; critical-window background and open-problem discussion revised. All changes are in related-work/open-problem prose; no mapped author statement/proof or certificate table changed.",
+  "numbered_results_checked": 95,
+  "numbering_status": "Section/shared-result-counter sequence unchanged; prior PDF page positions not freshly checked.",
+  "certificate_tables_unchanged": true,
+  "unmapped_statement_labels_added_or_removed": [],
+  "external_citation_review_scope": "Citations Chi26, JPPS26a and JPPS26b and the KP26 Corollary 1.2 attribution were identified in the source diff. Their external theorem contents were not independently reverified in this editorial comparison; no new dependency was introduced into the mapped triangle arguments.",
+  "remaining_internal_obligations": [
+    "full exact binary64 ABB radius replay",
+    "current-source combined full target, source-hash check and original namespace axiom audit"
+  ]
+}

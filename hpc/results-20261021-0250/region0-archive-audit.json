@@ -1,0 +1,30 @@
+{
+  "archive": "sparse-lean-results-30082915.tar.gz",
+  "archive_sha256": "850a9f5cd055003de6a3fb56e9256e765eb3d57f29e266238d0ac5360a1c13b8",
+  "kind": "cover",
+  "status": {
+    "job": 0,
+    "target": "SparseLowerTail.Section05.CoverJobReplay.Job00Full.Ordered",
+    "trust_status": "Full regional target and unchanged axiom audit passed; all target source hashes unchanged",
+    "phase": "complete",
+    "seconds": 12085.843032648787
+  },
+  "verified": true,
+  "build": {
+    "target": "SparseLowerTail.Section05.CoverJobReplay.Job00Full.Ordered",
+    "total": 1876,
+    "completed": 1876,
+    "cached": 78,
+    "failed": {},
+    "seconds": 12047.90137119405,
+    "workers": 4,
+    "phase": "build_complete",
+    "trust_status": "Final full target build, source hashes and axiom audit remain required"
+  },
+  "source_commit": "8ecc9d41892517175d46efc84e63a5d745096db0",
+  "audit_declarations": 187025,
+  "audit_theorems": 151404,
+  "key": "cover:0",
+  "started.txt": "2026-10-20T23:28:45Z",
+  "finished.txt": "2026-10-21T02:51:45Z"
+}

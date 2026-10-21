@@ -31,5 +31,8 @@
   "checkpoint": "sparse-lean-recovery-checkpoint-30082915.tar.gz",
   "checkpoint_size_display": "570M",
   "evidence_method": "Read-only authenticated Chrome Yale shell: completed stage status, full build status, audit output, sacct exit0, final archive listing and result SHA256",
-  "local_archive_download": "Pending Yale file-browser login renewal; archive remains on Yale. Local archive gate has not yet been run."
+  "local_archive_download": "Downloaded in authenticated Google Chrome; SHA256 matches live Yale checksum",
+  "checkpoint_sha256": "84028b76a36be731dedeb101f4028fdfcff60a72e3aad1dc7ec79c9afe2c7534",
+  "local_archive_gate": "Passed existing audit_result_archives.inspect; exit0, both SUCCESS markers, complete build, unchanged source-hash marker and1876-entry manifest",
+  "archive_audit_record": "region0-archive-audit.json"
 }

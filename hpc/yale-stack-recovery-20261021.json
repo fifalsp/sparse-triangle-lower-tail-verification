@@ -163,5 +163,14 @@
   "verified_critical_regions": 42,
   "f1_completion_record": "results-20261021-0620/f1-completion.json",
   "abb_completion_record": "results-20261021-0635/abb-completion.json",
-  "exterior_completion_record": "results-20261021-0635/exterior-completion.json"
+  "exterior_completion_record": "results-20261021-0635/exterior-completion.json",
+  "integration_input_gate": {
+    "checked_at_utc": "2026-10-21T06:49:54.136581+00:00",
+    "job": 30104499,
+    "state": "RUNNING on c1106u07n01",
+    "selected_base_input_keys": 44,
+    "missing": [],
+    "method": "Read-only bounded native Chrome srun of assembly-inputs.json",
+    "remaining": "Generate/check full exact binary64 ABB radius, build current-source combined target and unchanged namespace audit"
+  }
 }

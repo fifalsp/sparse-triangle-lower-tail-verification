@@ -1,24 +1,24 @@
 {
   "status": "mapped_statements_unchanged",
   "checked_labels": 112,
-  "source_sha256": "2fc55e160ec70f1c10a8684eb064faf7892ad978f9b385d165a4fb17ff27f149",
+  "source_sha256": "e87834fb5d1ebad082cdff77009e5f5ff16118459754c16205441bbe2f91ed0b",
   "baseline_source_sha256": "84c55a798a1fc1492f319179eec89f340d27269916acd622d54707da185e17b7",
   "changes": [],
   "scope": "Only mapped statements and adjacent proofs are checked; this is not mathematical verification.",
-  "checked_at_utc": "2026-10-21T16:07:26.017434+00:00",
+  "checked_at_utc": "2026-10-21T19:39:34.863690+00:00",
   "source_method": "Fresh source downloaded through user Google Chrome; full source diff manually reviewed",
-  "download": "arxiv_v1 (65).tex",
-  "source_bytes": 335031,
-  "previous_reviewed_source_sha256": "268c126ac51e1d47bfaaca40a2d305d757cbcf3fd8d5206bc414e042cbb5e853",
-  "draft_update": "Related-work citations and externally attributed results concerning other graphs added; critical-window background and open-problem discussion revised. All changes are in related-work/open-problem prose; no mapped author statement/proof or certificate table changed.",
+  "download": "arxiv_v1 (70).tex",
+  "source_bytes": 335357,
+  "previous_reviewed_source_sha256": "2fc55e160ec70f1c10a8684eb064faf7892ad978f9b385d165a4fb17ff27f149",
+  "draft_update": "Related-work/background prose and Section 3/4 introductory roadmaps revised, with editorial TODO notes commented out. No mapped author statement/proof, certificate table, statement-label set or numbered-result sequence changed.",
   "numbered_results_checked": 95,
   "numbering_status": "Section/shared-result-counter sequence unchanged; prior PDF page positions not freshly checked.",
   "certificate_tables_unchanged": true,
   "unmapped_statement_labels_added_or_removed": [],
   "external_citation_review_scope": "Citations Chi26, JPPS26a and JPPS26b and the KP26 Corollary 1.2 attribution were identified in the source diff. Their external theorem contents were not independently reverified in this editorial comparison; no new dependency was introduced into the mapped triangle arguments.",
   "remaining_internal_obligations": [
-    "full exact binary64 ABB radius replay",
+    "final combined source-hash and original namespace audit acceptance of the built exact binary64 ABB radius replay",
     "current-source combined full target, source-hash check and original namespace axiom audit"
   ],
-  "latest_editorial_change": "Two red editorial TODO notes commented out. Exact full-source replacement comparison confirms no other source edit; all mapped statements/proofs, table bodies, labels and numbering counter sequence remain unchanged."
+  "latest_editorial_change": "Section 4 introductory roadmap rewritten and expanded to explain the threshold comparison and balanced two-block minimizer classification already proved in the existing mapped results. The paragraph introducing the equal-cost equation was rephrased. Whole source diff reviewed; no mapped statement/proof, table body, statement-label set or section/result-counter sequence changed."
 }

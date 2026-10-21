@@ -1,0 +1,76 @@
+{
+  "checked_at_utc": "2026-10-21T01:17:09.884985+00:00",
+  "status": "Eight-worker replay running; consistent checkpoint restored and source manifest matched; handoff complete",
+  "old_job": 30082913,
+  "control_commit": "a5e2ad63f2d2ee184cfb46ccd51f599398e5ea80",
+  "source_commit": "8ecc9d41892517175d46efc84e63a5d745096db0",
+  "control_bundle": "triangle-abb-scaleup-control.tar.gz",
+  "control_sha256": "5559ddfc1a28717467757b685564f19942043b0af4e923588aa5bab12eb0461e",
+  "runner": "hpc/bouchet-abb-scaleup.sbatch",
+  "runner_sha256": "f8c9bbb1bc2c63c6aa250a76792c1b40110c216f89c0cf45db4095abe07cb605",
+  "new_resources": {
+    "cpus": 12,
+    "memory_gib": 192,
+    "workers": 8,
+    "lean_threads": 1,
+    "lean_memory_mib": 16384,
+    "time": "24:00:00"
+  },
+  "handoff_directory": "/nfs/roberts/project/pi_sl3363/sl3363/triangle-abb-scaleup-20261021",
+  "old_work": "/tmp/triangle-yale-30082913-IMipe7",
+  "validation": "24 scheduling, checkpoint-selection, handoff-acceptance and result-gate tests passed; bash/Python syntax passed; both uploaded hashes matched; replacement proof-source and control archive SHA256 checks passed",
+  "preservation": "Original continues until replacement ready; pause only exact ABB coordinator, let children finish, archive consistent cache and all generated proof sources with SHA256 and full dependency manifest; resume on snapshot error; retire old coordinator only after replacement source matching and cache restoration confirmed",
+  "proof_status": "Partial replay; full ABB target and unchanged axiom audit remain required",
+  "new_job": 30085559,
+  "new_node": "c1106u03n02",
+  "new_work": "/tmp/triangle-yale-30085559-BVYuNs",
+  "coordinator": {
+    "file": "hpc/complete_abb_handoff.py",
+    "sha256": "1ea4dd7c530000136b08bf8b4f29ff6febfab2dba2741a60410655477d5fc119",
+    "remote_log": "abb-scaleup-handoff-retry.log",
+    "remote_status": "triangle-abb-scaleup-20261021/handoff-status.json"
+  },
+  "checkpoint_memory_mib": 8192,
+  "snapshot_retry": {
+    "reason": "512MiB snapshot step OOM during compressed archive writing; proof workers and completed cache unaffected",
+    "recovery": "Original exact ABB coordinator resumed; failed partial preserved; retry step raised to8GiB and failure recovery now discovers/resumes old coordinator even before checkpoint metadata exists"
+  },
+  "coordinator_commit": "7e72f8e",
+  "checkpoint": {
+    "archive": "/nfs/roberts/project/pi_sl3363/sl3363/triangle-abb-scaleup-20261021/abb-consistent-checkpoint.tar.gz",
+    "archive_sha256": "ad2ea5c9168297dab1c51e5c251402d30975b2d4e8713d9641af6491abcbac0f",
+    "source_manifest_sha256": "b7b3026d77f25eab820bfbac8e1e3d48d35cdddce61c9bdae2db061dd8e8a170",
+    "preserved_module_count": 1245,
+    "source_files": 7462,
+    "total": 7462,
+    "audit_sha256": "956129721ba7190769a93bd755dde91ac7b4fcd15326656721cc822308cc9014",
+    "old_scheduler_pid": 3882678
+  },
+  "handoff_completed_at_utc": "2026-10-21T01:14:45.006523+00:00",
+  "integration_job": 30082917,
+  "integration_afterok": [
+    30082912,
+    30085559,
+    30082914,
+    30082915,
+    30082916
+  ],
+  "latest_build": {
+    "target": "SparseLowerTail.Section08.FamilyABBReplay.Full.FullNeighborhood",
+    "completed": 1273,
+    "total": 7462,
+    "cached": 1209,
+    "failed": {},
+    "seconds": 232.61654451908544,
+    "workers": 8,
+    "phase": "building"
+  },
+  "observed_process_counts": {
+    "lean": 8,
+    "lake": 8
+  },
+  "source_match": true,
+  "checkpoint_restored": true,
+  "old_coordinator_retirement": "Exact paused PID3882678 received TERM then CONT only after replacement1249>=preserved1245, source match, restored cache and afterok replacement were confirmed. Old batch remains archiving its original cache/logs; no old Lean coordinator or competing proof workers remain.",
+  "verification_status": "Partial ABB replay; full target and unchanged axiom audit still pending"
+}

@@ -22,8 +22,8 @@
     "lean_memory_mib": 49152,
     "lean_threads": 1
   },
-  "checked_at_utc": "2026-10-20T23:29:37.619281+00:00",
-  "status": "Yale accepted all remaining stages; matching Delta jobs cancelled while unstarted",
+  "checked_at_utc": "2026-10-21T01:17:09.884985+00:00",
+  "status": "Five regional replays running on Yale; ABB scaled from4 to8 workers with verified checkpoint handoff; integration pending normal afterok dependencies",
   "cluster": "Yale Bouchet",
   "project_directory": "/nfs/roberts/project/pi_sl3363/sl3363",
   "checkpoint_directory": "/nfs/roberts/project/pi_sl3363/sl3363/triangle-migration-20261020",
@@ -31,7 +31,7 @@
   "maintenance_observation": "Day partition UP with 24-hour limit; CPU maintenance reservation absent; only unrelated inference reservation remained. Yale queue was empty before replacement submission.",
   "jobs": {
     "f1": 30082912,
-    "abb": 30082913,
+    "abb": 30085559,
     "exterior": 30082914,
     "cover0": 30082915,
     "cover12": 30082916,
@@ -39,7 +39,7 @@
   },
   "states": {
     "f1": "RUNNING",
-    "abb": "RUNNING",
+    "abb": "RUNNING (8 workers)",
     "exterior": "RUNNING",
     "cover0": "RUNNING",
     "cover12": "RUNNING",
@@ -47,7 +47,7 @@
   },
   "assembly_afterok": [
     30082912,
-    30082913,
+    30085559,
     30082914,
     30082915,
     30082916
@@ -67,12 +67,12 @@
     "scheduling_and_result_gate_tests": 16,
     "proof_source_diff_from_6fd1a56": "No changed .lean files"
   },
-  "execution": "Extract source/checkpoints and runtime only onto node-local /tmp. Regional4 single-thread Lean workers limited16GiB each; assembly3 workers limited48GiB each. Runtime cache remains a single-file staging read. Save generated sources and build cache to project storage at exit. Full target, unchanged namespace axiom audit and dependency source hashes are required for success.",
+  "execution": "Extract source/checkpoints and runtime only onto node-local /tmp. Regional4 single-thread Lean workers limited16GiB each, except ABB8 workers on12CPUs192GiB; assembly3 workers limited48GiB each. Runtime cache remains a single-file staging read. Save generated sources and build cache to project storage at exit. Full target, unchanged namespace axiom audit and dependency source hashes are required for success.",
   "verification_status": "No new full certificate claimed by submission; remaining internal full-domain proofs and combined integration still required.",
-  "queue_checked_at_utc": "2026-10-20T23:31:17.779148+00:00",
+  "queue_checked_at_utc": "2026-10-21T01:17:09.884985+00:00",
   "nodes": {
     "f1": "a1130u31n03",
-    "abb": "a1130u35n02",
+    "abb": "c1106u03n02",
     "exterior": "a1130u35n02",
     "cover0": "a1130u37n03",
     "cover12": "a1132u11n01"
@@ -97,5 +97,19 @@
       "mathlib_cache_status": "Completed successfully"
     },
     "checked_at_utc": "2026-10-20T23:32:33.321135+00:00"
-  }
+  },
+  "regional_resource_overrides": {
+    "abb": {
+      "cpus": 12,
+      "mem": "192G",
+      "time": "24:00:00",
+      "workers": 8,
+      "lean_memory_mib": 16384,
+      "lean_threads": 1
+    }
+  },
+  "abb_scaleup_record": "yale-abb-scaleup-20261021.json",
+  "abb_control_commit": "a5e2ad63f2d2ee184cfb46ccd51f599398e5ea80",
+  "abb_handoff_coordinator_commit": "7e72f8e",
+  "previous_abb_job": 30082913
 }

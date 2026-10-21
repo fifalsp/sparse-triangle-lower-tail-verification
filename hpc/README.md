@@ -18,15 +18,19 @@ All remaining stages have moved back to **Yale Bouchet**:
 | Stage | Yale job | Resources | Time cap |
 |---|---:|---|---:|
 | F1 replay | 30082912 | 8 CPUs, 96 GiB | 24 hours |
-| ABB replay | 30082913 | 8 CPUs, 96 GiB | 24 hours |
+| ABB replay (8 Lean workers) | 30085559 | 12 CPUs, 192 GiB | 24 hours |
 | Exterior replay | 30082914 | 8 CPUs, 96 GiB | 24 hours |
 | Nonapex 0 | 30082915 | 8 CPUs, 96 GiB | 24 hours |
 | Nonapex 12 | 30082916 | 8 CPUs, 96 GiB | 24 hours |
 | Exact binary64 ABB radius and combined integration | 30082917 | 8 CPUs, 192 GiB | 24 hours |
 
-All five regional jobs are **running**; integration has normal
-`afterok` dependencies on all five. All matching Delta copies were cancelled
-while unstarted, after Yale accepted the replacements.
+All five regional replays are running. ABB now uses **eight Lean workers**;
+its checked checkpoint preserved 1,245 completed modules, and the resumed build
+has reached 1,273/7,462 with no failures. Integration has normal `afterok`
+dependencies on the new ABB job and the other four regions.
+[ABB scale-up and checkpoint hashes](yale-abb-scaleup-20261021.json).
+All matching Delta copies were cancelled while unstarted, after Yale accepted
+the replacements.
 [Deployment and source hashes](yale-return-deployment-20261020.json).
 
 The runner extracts checkpoints onto node-local disk, validates cached modules

@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-10-21T06:11:51.957163+00:00",
+  "checked_at_utc": "2026-10-21T06:18:32.881858+00:00",
   "status": "Pinned compiler startup fixed; both family recoveries running; F1 continues; replacement integration accepted",
   "source_commit": "8ecc9d41892517175d46efc84e63a5d745096db0",
   "proof_sources_unchanged": true,
@@ -12,8 +12,8 @@
   },
   "states": {
     "f1": "RUNNING",
-    "abb": "RUNNING on c1102u05n01",
-    "exterior": "RUNNING on c1104u05n03",
+    "abb": "RUNNING; pinned compiler and initial source/audit hash checks passed; full target build active",
+    "exterior": "RUNNING; pinned compiler and initial source/audit hash checks passed; full target build active",
     "assembly": "PENDING Dependency"
   },
   "assembly_afterok": [
@@ -133,5 +133,25 @@
   "original_checkpoints_required": [
     "sparse-lean-recovery-checkpoint-30085559.tar.gz",
     "sparse-lean-recovery-checkpoint-30082914.tar.gz"
-  ]
+  ],
+  "live_build_start": {
+    "checked_at_utc": "2026-10-21T06:18:32.881858+00:00",
+    "probe": "Read-only timeout45s srun --overlap --exact within allocation,1CPU512MiB",
+    "abb": {
+      "job": 30104398,
+      "compiler": "Lean4.24.0 x86_64-unknown-linux-gnu, commit797c613eb9b6d4ec95db23e3e00af9ac6657f24b",
+      "phase": "bounded_kernel_build",
+      "initial_manifest_sources": 7462,
+      "initial_source_audit_policy_hash_check": "passed",
+      "full_target_and_final_audit": "pending"
+    },
+    "exterior": {
+      "job": 30104400,
+      "compiler": "Lean4.24.0 x86_64-unknown-linux-gnu, commit797c613eb9b6d4ec95db23e3e00af9ac6657f24b",
+      "phase": "bounded_kernel_build",
+      "initial_manifest_sources": 12872,
+      "initial_source_audit_policy_hash_check": "passed",
+      "full_target_and_final_audit": "pending"
+    }
+  }
 }

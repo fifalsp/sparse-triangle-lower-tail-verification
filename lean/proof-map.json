@@ -14,7 +14,7 @@
     {
       "paper_label": "thm:main",
       "status": "conditional_assembly_two_internal_certificates",
-      "checked_scope": "Author deductions and relabeling are kernel checked from the remaining finite classifications and the named external/classical inputs. All 42 critical-region replay modules and the full ABB radius-1/10 neighborhood have now passed separate full builds, source checks and axiom audits. Exterior, the exact binary64 ABB radius and current-source combined integration remain.",
+      "checked_scope": "Author deductions and relabeling are kernel checked from the finite classifications and named external/classical inputs. All 42 critical-region replay modules, the full ABB radius-1/10 neighborhood and the full exterior compact table have passed separate full builds, source checks and axiom audits. The exact binary64 ABB radius and current-source combined integration remain.",
       "lean_files": [
         "SparseLowerTail/MainStatement.lean",
         "SparseLowerTail/MainTheoremAssembly.lean",
@@ -59,7 +59,8 @@
       },
       "replay_evidence": [
         "../hpc/results-20261021-0620/verified-regions.json",
-        "../hpc/results-20261021-0635/abb-completion.json"
+        "../hpc/results-20261021-0635/abb-completion.json",
+        "../hpc/results-20261021-0635/exterior-completion.json"
       ]
     },
     {
@@ -998,13 +999,14 @@
       },
       "replay_evidence": [
         "../hpc/results-20261021-0620/verified-regions.json",
-        "../hpc/results-20261021-0635/abb-completion.json"
+        "../hpc/results-20261021-0635/abb-completion.json",
+        "../hpc/results-20261021-0635/exterior-completion.json"
       ]
     },
     {
       "paper_label": "prop:family",
       "status": "conditional_compact_reduction",
-      "checked_scope": "Analytic tails, the compact-to-global reduction, parameter range, coefficient/interval machinery and AAA neighborhoods are proved. The full 108452-leaf ABB logarithmic neighborhood of radius 1/10 has passed its 7462-module build, unchanged source checks and namespace audit. The exterior replay and exact binary64 ABB-radius extension remain for combined integration.",
+      "checked_scope": "Analytic tails, compact-to-global reduction, parameter range, interval machinery and AAA neighborhoods are proved. The full ABB radius-1/10 neighborhood and all 64646 exterior leaves have passed their complete builds, unchanged source checks and namespace audits. Exact binary64 ABB-radius extension and joint current-source integration remain.",
       "lean_files": [
         "SparseLowerTail/Section08/CertificateTail.lean",
         "SparseLowerTail/Section08/FamilyParameterRange.lean",
@@ -1130,7 +1132,8 @@
       },
       "replay_evidence": [
         "../hpc/results-20261021-0620/verified-regions.json",
-        "../hpc/results-20261021-0635/abb-completion.json"
+        "../hpc/results-20261021-0635/abb-completion.json",
+        "../hpc/results-20261021-0635/exterior-completion.json"
       ]
     },
     {
@@ -1608,7 +1611,8 @@
       },
       "replay_evidence": [
         "../hpc/results-20261021-0620/verified-regions.json",
-        "../hpc/results-20261021-0635/abb-completion.json"
+        "../hpc/results-20261021-0635/abb-completion.json",
+        "../hpc/results-20261021-0635/exterior-completion.json"
       ]
     },
     {
@@ -4281,8 +4285,8 @@
     },
     {
       "paper_label": "appA3:compact",
-      "status": "conditional_on_full_family_replay",
-      "checked_scope": "The ordered nonnegativity and exact AAA/ABB contact zero-set conclusion are proved from the compact finite certificate. The full ABB radius-1/10 contact input is now built and audited. The exterior certificate and current-source combined compact conclusion remain pending.",
+      "status": "full_replay_inputs_checked_pending_combined_build",
+      "checked_scope": "The ordered nonnegativity and exact AAA/ABB contact zero-set deduction is proved. The full exterior compact replay and its full ABB contact input have separate complete builds, unchanged source checks and namespace audits. Their joint import into the current-source combined theorem remains to pass.",
       "lean_files": [
         "SparseLowerTail/Section08/ManuscriptCompactConclusion.lean",
         "SparseLowerTail/Section08/FamilyCompactReplay.lean",
@@ -4312,7 +4316,8 @@
       "verification_record": "data/compact-conclusion-laptop-pilot-check.json",
       "replay_evidence": [
         "../hpc/results-20261021-0620/verified-regions.json",
-        "../hpc/results-20261021-0635/abb-completion.json"
+        "../hpc/results-20261021-0635/abb-completion.json",
+        "../hpc/results-20261021-0635/exterior-completion.json"
       ]
     }
   ],
@@ -4450,7 +4455,7 @@
     }
   ],
   "latest_replay_progress": {
-    "checked_at_utc": "2026-10-21T06:39:25.058407+00:00",
+    "checked_at_utc": "2026-10-21T06:46:31.719669+00:00",
     "critical_regions": {
       "nonapex": 36,
       "apex": 6,
@@ -4462,9 +4467,12 @@
       "evidence": "../hpc/results-20261021-0635/abb-completion.json"
     },
     "remaining": [
-      "exterior compact family replay",
       "exact binary64 ABB radius replay",
       "current-source combined integration"
-    ]
+    ],
+    "exterior_compact_replay": {
+      "status": "full_target_audit_and_source_hashes_passed",
+      "evidence": "../hpc/results-20261021-0635/exterior-completion.json"
+    }
   }
 }

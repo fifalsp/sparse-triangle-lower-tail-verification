@@ -29,13 +29,13 @@ The [numbering record](../data/manuscript-numbering-20261020.json) matches all
 | Numerical proof machinery | Polygon fan, box lower bounds, cubic Taylor remainder, interval Cholesky and replay coverage | [Fan](data/polygon-fan-check.json), [box bounds](data/box-lower-bounds-check.json), [Taylor](data/taylor-cube-check.json), [Cholesky](data/cholesky-check.json) |
 | Full critical-region replays | All 36 nonapex regions and all six apex fans: **42 of 42** | [Regional builds and audits](../hpc/results-20261021-0620/verified-regions.json) |
 | AAA neighborhood | Hessian positivity, nonnegativity and the unique contact zero over the full parameter interval at the exact manuscript binary64 radius | [AAA radius proof](data/family-binary64-radius-check.json) |
+| Exterior compact-domain replay | Full 64,646-leaf table; 12,872 modules and unchanged audit passed | [Full exterior replay](../hpc/results-20261021-0635/exterior-completion.json) |
 | ABB logarithmic neighborhood | Nonnegativity and unique contact zero on the full radius-1/10 cube; 7,462 modules and unchanged axiom audit passed | [Full ABB replay](../hpc/results-20261021-0635/abb-completion.json) |
 | ABB radius extension | Quantitative Hessian perturbation, retraction and padded-interval transfer; all 21 test leaves, including a complete 20-leaf subtree, pass the new checks | [112 declaration audits](data/family-hessian-perturbation-check.json) |
 
 ## Remaining work
 
-The remaining numerical proofs are the exterior family replay and the
-full padded ABB replay at the
+The remaining numerical proof is the full padded ABB replay at the
 exact binary64 radius. Final integration must import these results into the
 current author proofs and pass the combined build and axiom audit.
 

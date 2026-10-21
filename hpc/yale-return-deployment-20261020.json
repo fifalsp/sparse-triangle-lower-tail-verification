@@ -22,8 +22,8 @@
     "lean_memory_mib": 49152,
     "lean_threads": 1
   },
-  "checked_at_utc": "2026-10-21T06:39:25.058407+00:00",
-  "status": "All42critical regions and full ABB replay verified; exterior running; integration pending",
+  "checked_at_utc": "2026-10-21T06:46:31.719669+00:00",
+  "status": "All42critical regions, full ABB and full exterior verified; exact-radius and combined integration running",
   "cluster": "Yale Bouchet",
   "project_directory": "/nfs/roberts/project/pi_sl3363/sl3363",
   "checkpoint_directory": "/nfs/roberts/project/pi_sl3363/sl3363/triangle-migration-20261020",
@@ -40,10 +40,10 @@
   "states": {
     "f1": "COMPLETED0:0",
     "abb": "COMPLETED0:0",
-    "exterior": "RUNNING on c1104u05n03",
+    "exterior": "COMPLETED0:0; result archive/full build/audit/source hashes locally checked",
     "cover0": "COMPLETED 0:0",
     "cover12": "COMPLETED 0:0",
-    "assembly": "PENDING Dependency"
+    "assembly": "RUNNING on c1106u07n01"
   },
   "assembly_afterok": [
     30082912,
@@ -114,5 +114,6 @@
   "retired_abb_archival_complete": true,
   "latest_completed_region_record": "results-20261021-0620/f1-completion.json",
   "stack_recovery_record": "yale-stack-recovery-20261021.json",
-  "abb_completion_record": "results-20261021-0635/abb-completion.json"
+  "abb_completion_record": "results-20261021-0635/abb-completion.json",
+  "exterior_completion_record": "results-20261021-0635/exterior-completion.json"
 }

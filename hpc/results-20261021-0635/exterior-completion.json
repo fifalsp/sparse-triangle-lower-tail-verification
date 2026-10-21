@@ -1,0 +1,28 @@
+{
+  "checked_at_utc": "2026-10-21T06:45:27.704116+00:00",
+  "kind": "exterior",
+  "job_id": 30104400,
+  "scheduler_state": "COMPLETED",
+  "scheduler_exit_code": "0:0",
+  "elapsed": "00:33:09",
+  "source_commit": "8ecc9d41892517175d46efc84e63a5d745096db0",
+  "result_archive": "sparse-lean-results-30104400.tar.gz",
+  "result_archive_sha256": "0cd41ea166b4b570c404f84bd3f5303da47a71c6f8f54deae026b445ef128004",
+  "build": {
+    "target": "SparseLowerTail.Section08.FamilyExteriorReplay.Full.CompactCertificate",
+    "phase": "build_complete",
+    "completed": 12872,
+    "total": 12872,
+    "cached": 12871,
+    "failed": {},
+    "workers": 1,
+    "seconds": 1573.719149094075,
+    "trust_status": "Ordinary full-target Lake build passed; audit still required"
+  },
+  "audit_declarations": 1116626,
+  "audit_theorems": 888079,
+  "source_dependencies": 12872,
+  "source_hashes": "Every dependency and original audit policy unchanged; original manifest and hash marker checked locally",
+  "local_archive_gate": "Passed full target, exit0, both success markers, full build and namespace audit",
+  "remaining": "Exact binary64 ABB radius and current-source combined integration"
+}

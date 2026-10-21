@@ -1,6 +1,6 @@
 {
-  "checked_at_utc": "2026-10-21T06:39:25.058407+00:00",
-  "status": "All42critical regions and full ABB replay verified; exterior running; combined integration pending",
+  "checked_at_utc": "2026-10-21T06:46:31.719669+00:00",
+  "status": "All42critical regions, full ABB and full exterior verified; exact-radius and combined integration running",
   "source_commit": "8ecc9d41892517175d46efc84e63a5d745096db0",
   "proof_sources_unchanged": true,
   "account": "pi_sl3363",
@@ -13,8 +13,8 @@
   "states": {
     "f1": "COMPLETED0:0; full build, audit and source hashes passed; archive downloaded and locally validated",
     "abb": "COMPLETED0:0; archived full build, audit and source hashes checked locally",
-    "exterior": "RUNNING; pinned compiler and initial source/audit hash checks passed; full target build active",
-    "assembly": "PENDING Dependency"
+    "exterior": "COMPLETED0:0; result archive/full build/audit/source hashes locally checked",
+    "assembly": "RUNNING on c1106u07n01"
   },
   "assembly_afterok": [
     30082912,
@@ -152,13 +152,16 @@
     "exterior": {
       "job": 30104400,
       "compiler": "Lean4.24.0 x86_64-unknown-linux-gnu, commit797c613eb9b6d4ec95db23e3e00af9ac6657f24b",
-      "phase": "bounded_kernel_build",
+      "phase": "complete",
       "initial_manifest_sources": 12872,
       "initial_source_audit_policy_hash_check": "passed",
-      "full_target_and_final_audit": "pending"
+      "full_target_and_final_audit": "Passed; final archive gates and Slurm exit0 accepted",
+      "audit_declarations": 1116626,
+      "audit_theorems": 888079
     }
   },
   "verified_critical_regions": 42,
   "f1_completion_record": "results-20261021-0620/f1-completion.json",
-  "abb_completion_record": "results-20261021-0635/abb-completion.json"
+  "abb_completion_record": "results-20261021-0635/abb-completion.json",
+  "exterior_completion_record": "results-20261021-0635/exterior-completion.json"
 }

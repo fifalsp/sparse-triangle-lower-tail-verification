@@ -40,6 +40,7 @@ Updated October 21, 2026.
 | Lemma 3.2 — Sparse Bernoulli entropy (`lem:fp`) | Uniform comparison with the sparse entropy, including the sharp quadratic upper bound | [Lean build and axiom audit](lean/data/sparse-entropy-check.json) |
 | Lemma 3.4 — Near-minimizer stability (`lem:stability`) | Approximate feasibility and optimality imply proximity to an actual minimizer after a measure-preserving bijection | [Lean build and axiom audit](lean/data/near-minimizers-check.json) |
 | Lean family AAA neighborhood | Hessian positivity, nonnegativity and the unique AAA zero for every L ∈ [3.9, 9.5], at the manuscript’s exact binary64 radius | [Lean build and 19 axiom audits](lean/data/family-binary64-radius-check.json) |
+| Exterior compact-domain replay (used in Proposition A.5) | Full 64,646-leaf table; all 12,872 modules built and audited | [Full exterior replay](hpc/results-20261021-0635/exterior-completion.json) |
 | ABB contact neighborhood (used in Proposition A.5) | Nonnegativity and unique contact zero on the full logarithmic cube of radius 1/10; all 7,462 modules built and audited | [Full ABB replay](hpc/results-20261021-0635/abb-completion.json) |
 | Lean ABB radius extension | Analytic transfer to the exact binary64 radius; 21 padded test leaves and one complete subtree checked | [Lean build and 112 axiom audits](lean/data/family-hessian-perturbation-check.json) |
 | Proposition A.5 — Ordered compact conclusion (`appA3:compact`) | Exact nonnegativity and the two-contact zero set deduced from the remaining finite replay table | [Lean build and audit](lean/data/compact-conclusion-laptop-pilot-check.json) |
@@ -56,7 +57,7 @@ finite certificates. The [proof map](lean/proof-map.json) links each paper
 statement to its Lean declarations; [named inputs](lean/ASSUMPTIONS.md) lists
 the external and classical results used.
 
-**Remaining verification:** the exterior family replay, the exact binary64 ABB neighborhood, and the combined build.
+**Remaining verification:** the exact binary64 ABB neighborhood and the combined build.
 The [cluster record](hpc/README.md) tracks running jobs and recovery.
 The [manuscript comparison](lean/manuscript-review-20261021-links.json)
 matches all 112 mapped labels to the current Overleaf source. The

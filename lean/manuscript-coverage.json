@@ -47,7 +47,8 @@
       "ownership": "author_argument_or_specialization_to_review",
       "replay_evidence": [
         "../hpc/results-20261021-0620/verified-regions.json",
-        "../hpc/results-20261021-0635/abb-completion.json"
+        "../hpc/results-20261021-0635/abb-completion.json",
+        "../hpc/results-20261021-0635/exterior-completion.json"
       ]
     },
     {
@@ -606,7 +607,8 @@
       "ownership": "author_argument_or_specialization_to_review",
       "replay_evidence": [
         "../hpc/results-20261021-0620/verified-regions.json",
-        "../hpc/results-20261021-0635/abb-completion.json"
+        "../hpc/results-20261021-0635/abb-completion.json",
+        "../hpc/results-20261021-0635/exterior-completion.json"
       ]
     },
     {
@@ -731,7 +733,8 @@
       "ownership": "author_argument_or_specialization_to_review",
       "replay_evidence": [
         "../hpc/results-20261021-0620/verified-regions.json",
-        "../hpc/results-20261021-0635/abb-completion.json"
+        "../hpc/results-20261021-0635/abb-completion.json",
+        "../hpc/results-20261021-0635/exterior-completion.json"
       ]
     },
     {
@@ -991,7 +994,8 @@
       "verification_record": "data/final-manuscript-review-check.json",
       "replay_evidence": [
         "../hpc/results-20261021-0620/verified-regions.json",
-        "../hpc/results-20261021-0635/abb-completion.json"
+        "../hpc/results-20261021-0635/abb-completion.json",
+        "../hpc/results-20261021-0635/exterior-completion.json"
       ]
     },
     {
@@ -1060,13 +1064,14 @@
       "statement_sha256": "4890e17c5ae5550b1281dbcd4869246bdb568cbbfcea1dbdf244a900664d5084",
       "proof_sha256": null,
       "mapping_status": "mapped",
-      "recorded_status": "conditional_on_full_family_replay",
+      "recorded_status": "full_replay_inputs_checked_pending_combined_build",
       "latest_manuscript_review": "literal_zero_set_deduction_checked_full_numerical_replay_pending",
       "ownership": "author_argument_or_specialization_to_review",
       "verification_record": "data/compact-conclusion-laptop-pilot-check.json",
       "replay_evidence": [
         "../hpc/results-20261021-0620/verified-regions.json",
-        "../hpc/results-20261021-0635/abb-completion.json"
+        "../hpc/results-20261021-0635/abb-completion.json",
+        "../hpc/results-20261021-0635/exterior-completion.json"
       ]
     },
     {
@@ -1082,7 +1087,7 @@
     }
   ],
   "latest_replay_progress": {
-    "checked_at_utc": "2026-10-21T06:39:25.058407+00:00",
+    "checked_at_utc": "2026-10-21T06:46:31.719669+00:00",
     "critical_regions": {
       "nonapex": 36,
       "apex": 6,
@@ -1094,9 +1099,12 @@
       "evidence": "../hpc/results-20261021-0635/abb-completion.json"
     },
     "remaining": [
-      "exterior compact family replay",
       "exact binary64 ABB radius replay",
       "current-source combined integration"
-    ]
+    ],
+    "exterior_compact_replay": {
+      "status": "full_target_audit_and_source_hashes_passed",
+      "evidence": "../hpc/results-20261021-0635/exterior-completion.json"
+    }
   }
 }

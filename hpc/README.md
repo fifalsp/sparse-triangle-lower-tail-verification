@@ -11,20 +11,20 @@ The full ABB replay also passed: all 7,462 modules, unchanged source hashes
 and an audit of 2,098,887 theorems.
 [ABB completion record](results-20261021-0635/abb-completion.json).
 
+The full exterior replay also passed: all 12,872 modules, unchanged source
+hashes and an audit of 888,079 theorems.
+[Exterior completion record](results-20261021-0635/exterior-completion.json).
+
 The remaining work runs on **Yale Bouchet**:
 
 | Stage | Yale job | Status |
 |---|---:|---|
-| Exterior final module and audit | 30104400 | Running |
-| Exact binary64 ABB radius and combined integration | 30104499 | Waiting for exterior |
+| Exact binary64 ABB radius and combined integration | 30104499 | Running |
 
-Exterior preserved 12,871 completed modules and is checking its final combining
-module with a 64 MiB stack. Every replay requires the full target, source hashes
-and unchanged axiom audit.
-The corrected fallback restores generated proof sources alongside the cache;
-its checks passed. The startup fix selects the pinned compiler explicitly;
-31 control checks passed. Recovery jobs can use any eligible day node.
-[Recovery controls, hashes and archived logs](yale-stack-recovery-20261021.json).
+The integration job generates the full exact-radius ABB replay and combines
+all verified regions and families with the author-proof root. Its build and
+namespace audit use the original source hashes and axiom policy.
+[Deployment and recovery records](yale-stack-recovery-20261021.json).
 
 All matching Delta copies were cancelled while unstarted, after Yale accepted
 the replacements. [Deployment record](yale-return-deployment-20261020.json).

@@ -65,7 +65,7 @@ def main():
     parser.add_argument('--target', required=True)
     parser.add_argument('--logs', type=Path, required=True)
     parser.add_argument('--lakefile', type=Path, required=True)
-    parser.add_argument('--workers', type=int, choices=range(1, 9), default=3)
+    parser.add_argument('--workers', type=int, choices=range(1, 33), default=3)
     args = parser.parse_args()
     root = args.repo.resolve() / 'lean'
     spec = importlib.util.spec_from_file_location('bounded_plan', root / 'tools/build_bounded.py')

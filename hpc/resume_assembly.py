@@ -86,7 +86,7 @@ def main():
     p.add_argument('--prior-result', type=Path, required=True)
     p.add_argument('--checkpoint', type=Path)
     p.add_argument('--logs', type=Path, required=True)
-    p.add_argument('--workers', type=int, choices=range(1, 9), default=6)
+    p.add_argument('--workers', type=int, choices=range(1, 33), default=6)
     p.add_argument('--memory-mib', type=int, default=49152)
     a = p.parse_args()
     repo, logs = a.repo.resolve(), a.logs.resolve()

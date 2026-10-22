@@ -1,10 +1,30 @@
 """Scheduling gates for the Delta cache-resumption path (no Lean processes)."""
 import unittest
-from threading import Event, Lock
+from threading import Barrier, Event, Lock
 from build_ready_batches import build_graph
 
 
 class ReadyBatchTests(unittest.TestCase):
+    def test_sixteen_workers_are_distinct_and_dependents_wait(self):
+        barrier, lock = Barrier(16), Lock()
+        completed, submitted = set(), []
+        graph = {f'leaf{i}': set() for i in range(16)}
+        graph['root'] = set(graph)
+        def build(name):
+            with lock:
+                self.assertNotIn(name, submitted)
+                submitted.append(name)
+                if name == 'root':
+                    self.assertEqual(len(completed), 16)
+            if name != 'root':
+                barrier.wait(timeout=3)
+                with lock:
+                    completed.add(name)
+            return 0
+        self.assertEqual(build_graph(graph, set(), lambda batch: 0, build, 16,
+                                     lambda *args: None), set(graph))
+        self.assertEqual(len(submitted), 17)
+
     def test_failed_cache_falls_back_before_dependent_check(self):
         graph = {'base': set(), 'leaf': {'base'}, 'root': {'leaf'}}
         events = []

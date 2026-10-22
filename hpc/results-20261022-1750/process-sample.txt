@@ -1,0 +1,26 @@
+    - generic: PID NLWP %CPU RSS ELAPSED COMMAND
+    - generic: 3580216 36 100 5248312 00:34 /tmp/triangle-joint-30254216-euKZJc/runtime/toolchains/leanprover--lean4---v4.24.0/bin/lean -M49152 -j2 -s65536 /tmp/triangle-joint-30254216-euKZJc/repo/lean/SparseLowerTail/
+    - generic: Section05/ApexReplay/F4/Leaves2697.lean -o /tmp/triangle-joint-30254216-euKZJc/repo/lean/.lake/build/lib/lean/SparseLowerTail/Section05/ApexReplay/F4/Leaves2697.olean -i /tmp/triangle-joint-30254216-euKZJc/repo
+    - generic: /lean/.lake/build/lib/lean/SparseLowerTail/Section05/ApexReplay/F4/Leaves2697.ilean -c /tmp/triangle-joint-30254216-euKZJc/repo/lean/.lake/build/ir/SparseLowerTail/Section05/ApexReplay/F4/Leaves2697.c --setup /
+    - generic: tmp/triangle-joint-30254216-euKZJc/repo/lean/.lake/build/ir/SparseLowerTail/Section05/ApexReplay/F4/Leaves2697.setup.json --json
+    - generic: 3580362 36 98.2 4568896 00:22 /tmp/triangle-joint-30254216-euKZJc/runtime/toolchains/leanprover--lean4---v4.24.0/bin/lean -M49152 -j2 -s65536 /tmp/triangle-joint-30254216-euKZJc/repo/lean/SparseLowerTail/
+    - generic: Section05/ApexReplay/F4/Leaves2698.lean -o /tmp/triangle-joint-30254216-euKZJc/repo/lean/.lake/build/lib/lean/SparseLowerTail/Section05/ApexReplay/F4/Leaves2698.olean -i /tmp/triangle-joint-30254216-euKZJc/repo
+    - generic: /lean/.lake/build/lib/lean/SparseLowerTail/Section05/ApexReplay/F4/Leaves2698.ilean -c /tmp/triangle-joint-30254216-euKZJc/repo/lean/.lake/build/ir/SparseLowerTail/Section05/ApexReplay/F4/Leaves2698.c --setup /
+    - generic: tmp/triangle-joint-30254216-euKZJc/repo/lean/.lake/build/ir/SparseLowerTail/Section05/ApexReplay/F4/Leaves2698.setup.json --json
+    - generic: 3580512 36 97.5 4419312 00:18 /tmp/triangle-joint-30254216-euKZJc/runtime/toolchains/leanprover--lean4---v4.24.0/bin/lean -M49152 -j2 -s65536 /tmp/triangle-joint-30254216-euKZJc/repo/lean/SparseLowerTail/
+    - generic: Section05/ApexReplay/F4/Leaves2699.lean -o /tmp/triangle-joint-30254216-euKZJc/repo/lean/.lake/build/lib/lean/SparseLowerTail/Section05/ApexReplay/F4/Leaves2699.olean -i /tmp/triangle-joint-30254216-euKZJc/repo
+    - generic: /lean/.lake/build/lib/lean/SparseLowerTail/Section05/ApexReplay/F4/Leaves2699.ilean -c /tmp/triangle-joint-30254216-euKZJc/repo/lean/.lake/build/ir/SparseLowerTail/Section05/ApexReplay/F4/Leaves2699.c --setup /
+    - generic: tmp/triangle-joint-30254216-euKZJc/repo/lean/.lake/build/ir/SparseLowerTail/Section05/ApexReplay/F4/Leaves2699.setup.json --json
+    - generic: 3580643 36 100 4310112 00:15 /tmp/triangle-joint-30254216-euKZJc/runtime/toolchains/leanprover--lean4---v4.24.0/bin/lean -M49152 -j2 -s65536 /tmp/triangle-joint-30254216-euKZJc/repo/lean/SparseLowerTail/
+    - generic: Section05/ApexReplay/F4/Leaves270.lean -o /tmp/triangle-joint-30254216-euKZJc/repo/lean/.lake/build/lib/lean/SparseLowerTail/Section05/ApexReplay/F4/Leaves270.olean -i /tmp/triangle-joint-30254216-euKZJc/repo/l
+    - generic: ean/.lake/build/lib/lean/SparseLowerTail/Section05/ApexReplay/F4/Leaves270.ilean -c /tmp/triangle-joint-30254216-euKZJc/repo/lean/.lake/build/ir/SparseLowerTail/Section05/ApexReplay/F4/Leaves270.c --setup /tmp/
+    - generic: triangle-joint-30254216-euKZJc/repo/lean/.lake/build/ir/SparseLowerTail/Section05/ApexReplay/F4/Leaves270.setup.json --json
+    - generic: 3580647 36 98.9 4270976 00:15 /tmp/triangle-joint-30254216-euKZJc/runtime/toolchains/leanprover--lean4---v4.24.0/bin/lean -M49152 -j2 -s65536 /tmp/triangle-joint-30254216-euKZJc/repo/lean/SparseLowerTail/
+    - generic: Section05/ApexReplay/F4/Leaves2700.lean -o /tmp/triangle-joint-30254216-euKZJc/repo/lean/.lake/build/lib/lean/SparseLowerTail/Section05/ApexReplay/F4/Leaves2700.olean -i /tmp/triangle-joint-30254216-euKZJc/repo
+    - generic: /lean/.lake/build/lib/lean/SparseLowerTail/Section05/ApexReplay/F4/Leaves2700.ilean -c /tmp/triangle-joint-30254216-euKZJc/repo/lean/.lake/build/ir/SparseLowerTail/Section05/ApexReplay/F4/Leaves2700.c --setup /
+    - generic: tmp/triangle-joint-30254216-euKZJc/repo/lean/.lake/build/ir/SparseLowerTail/Section05/ApexReplay/F4/Leaves2700.setup.json --json
+    - generic: "[sl3363@login1.bouchet sl3363]$"
+    - textbox
+  - button "Page down" [disabled]
+  - button "Options"
+  - generic "(32, 50)"

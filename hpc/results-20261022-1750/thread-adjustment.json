@@ -1,0 +1,16 @@
+{
+  "checked_at_utc": "20261022T214920Z",
+  "workers": 6,
+  "lean_threads": 2,
+  "previous_lean_threads": 1,
+  "allocated_cpus": 12,
+  "memory_mib_per_process": 49152,
+  "stack_kib": 65536,
+  "audit_sha256": "956129721ba7190769a93bd755dde91ac7b4fcd15326656721cc822308cc9014",
+  "source_manifest_sha256": "b14aedaa8bc2447939e456b80e112b138b16348085539f108bff0f6134514811",
+  "before_profile_sha256": "20bea5722ede9bbb7cf4926382848657d7256f74cbd1e1aa837caf7278fce549",
+  "after_profile_sha256": "37db9a3c8237a9cbc9dd827815505207904630c2a7e3aa570371d6b9b912b80e",
+  "proof_sources_written": [],
+  "audit_policy_written": false,
+  "note": "Only the weakLeanArgs thread count changed. Existing processes continue; new Lean invocations use the new thread count."
+}

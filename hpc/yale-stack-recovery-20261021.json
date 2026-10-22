@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-10-22T13:04:01.995355+00:00",
+  "checked_at_utc": "2026-10-22T21:52:00Z",
   "status": "All44 base certificates accepted; exact-radius root ordinary build passed; combined continuation30254216 running after30104499 timeout",
   "source_commit": "8ecc9d41892517175d46efc84e63a5d745096db0",
   "proof_sources_unchanged": true,
@@ -14,7 +14,7 @@
     "f1": "COMPLETED0:0; full build, audit and source hashes passed; archive downloaded and locally validated",
     "abb": "COMPLETED0:0; archived full build, audit and source hashes checked locally",
     "exterior": "COMPLETED0:0; result archive/full build/audit/source hashes locally checked",
-    "assembly": "RUNNING on a1114u24n01; six workers configured; checkpoint restoration under way; final combined/audit not accepted"
+    "assembly": "RUNNING on a1114u24n01; full checkpoint/source restoration passed; six independent workers, newly invoked Lean processes now use two threads; final combined/audit not accepted"
   },
   "assembly_afterok": [
     30082912,
@@ -299,14 +299,39 @@
     "memory_gib": 320,
     "workers": 6,
     "lean_memory_mib": 49152,
-    "lean_threads": 1,
+    "lean_threads": 2,
     "native_and_lean_stack_kib": 65536,
     "control_commit": "2bdd616e5bc4099682b8812e8831a0da7c89b4fc",
     "control_archive": "triangle-joint-control-2bdd616.tar.gz",
     "control_bytes": 7272,
     "control_sha256": "df31b2ef4693e91649b28fd23234927f65dc7775d62a21a85288537757fcb3f9",
-    "startup": "All control hashes, prior result archive and original source SHA passed; restoring full checkpoint on fresh node; stderr empty",
+    "startup": "All control hashes, prior result archive and original source SHA passed; complete checkpoint stream read and 94031 generated/source entries restored or compared; original audit policy and all prior combined dependency sources matched before build",
     "proof_sources_or_axiom_policy_changed": false,
-    "completion_claimed": false
+    "completion_claimed": false,
+    "thread_adjustment": "results-20261022-1750/thread-adjustment.json",
+    "progress_observation": {
+      "target": "SparseLowerTail.CompletedReplays",
+      "total": 94032,
+      "completed": 26215,
+      "cached": 21865,
+      "failed": {},
+      "seconds": 31244.78209336099,
+      "workers": 6,
+      "phase": "building",
+      "note": "Graph counters are not an overall completion percentage or ETA."
+    },
+    "thread_measurement": {
+      "observed_new_lean_argument": "-j2",
+      "memory_mib_per_process": 49152,
+      "stack_kib": 65536,
+      "cpu_percent_in_initial_sample": [
+        100,
+        98.2,
+        97.5,
+        100,
+        98.9
+      ],
+      "note": "New processes confirmed using -j2. Initial sampled CPU is still about one core per process; no measured speedup or doubled throughput is claimed."
+    }
   }
 }

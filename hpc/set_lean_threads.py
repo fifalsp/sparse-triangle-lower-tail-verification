@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """Atomically use spare allocated CPU cores without changing proof inputs."""
 import argparse
+import ast
 from datetime import datetime, timezone
 import hashlib
 import json
 import os
 from pathlib import Path
-import tomllib
+import re
 
 AUDIT_SHA = '956129721ba7190769a93bd755dde91ac7b4fcd15326656721cc822308cc9014'
 
@@ -16,16 +17,17 @@ def revised_profile(before, old_threads, threads, workers, allocated_cpus):
         raise ValueError('Resource counts must be positive')
     if workers * threads > allocated_cpus:
         raise ValueError('Threads exceed the existing CPU allocation')
-    parsed = tomllib.loads(before)
-    if parsed.get('weakLeanArgs') != ['-M49152', f'-j{old_threads}', '-s65536']:
+    matches = list(re.finditer(r'^weakLeanArgs\s*=\s*(\[[^\n]*\])\s*$', before, re.M))
+    if len(matches) != 1:
+        raise ValueError('Ambiguous resource profile')
+    args = ast.literal_eval(matches[0].group(1))
+    if args != ['-M49152', f'-j{old_threads}', '-s65536']:
         raise ValueError('Unexpected existing resource limits')
     token = f'"-j{old_threads}"'
     if before.count(token) != 1:
         raise ValueError('Ambiguous thread setting')
     after = before.replace(token, f'"-j{threads}"', 1)
-    actual = tomllib.loads(after)
-    actual['weakLeanArgs'] = parsed['weakLeanArgs']
-    if actual != parsed:
+    if after.replace(f'"-j{threads}"', token, 1) != before:
         raise ValueError('A setting other than the thread count changed')
     return after
 

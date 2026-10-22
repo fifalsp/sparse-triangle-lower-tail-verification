@@ -1,0 +1,43 @@
+{
+  "job": 30254216,
+  "state": "RUNNING",
+  "node": "a1114u24n01",
+  "work_directory": "/tmp/triangle-joint-30254216-euKZJc",
+  "helper_sha256": "f06890f1bf9c184be1256c236b8a2f015645daadb4e899e5a16056ea277aade0",
+  "transfer": "Authenticated Chrome shell; exact remote SHA matched before execution",
+  "adjustment_record": "thread-adjustment.json",
+  "preliminary_process_measurement": {
+    "observed_new_lean_argument": "-j2",
+    "memory_mib_per_process": 49152,
+    "stack_kib": 65536,
+    "cpu_percent_in_initial_sample": [
+      100,
+      98.2,
+      97.5,
+      100,
+      98.9
+    ],
+    "note": "New processes confirmed using -j2. Initial sampled CPU is still about one core per process; no measured speedup or doubled throughput is claimed."
+  },
+  "status": {
+    "target": "SparseLowerTail.CompletedReplays",
+    "total": 94032,
+    "completed": 26215,
+    "cached": 21865,
+    "failed": {},
+    "seconds": 31244.78209336099,
+    "workers": 6,
+    "phase": "building",
+    "note": "Graph counters are not an overall completion percentage or ETA."
+  },
+  "tests": "Four guard/reversibility tests passed. Earlier actual Lean4.24 weak-argument cache test passed with unchanged olean SHA. Compatibility fix removes Python3.11-only tomllib dependency.",
+  "attempt_note": "Initial helper invocation stopped at import tomllib before any mutation. Replaced with guarded standard-library literal parsing; corrected helper passed all guards and applied successfully.",
+  "final_acceptance_pending": [
+    "full current-source combined target",
+    "final source hash comparison",
+    "original namespace axiom audit",
+    "result archives and Slurm exit0"
+  ],
+  "completion_claimed": false,
+  "eta": "No reliable finish estimate; this evening is a goal, not a promise."
+}

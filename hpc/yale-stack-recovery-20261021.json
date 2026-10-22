@@ -1,6 +1,6 @@
 {
-  "checked_at_utc": "2026-10-21T06:46:31.719669+00:00",
-  "status": "All42critical regions, full ABB and full exterior verified; exact-radius and combined integration running",
+  "checked_at_utc": "2026-10-22T04:50:10.804419+00:00",
+  "status": "Prior combined run timed out; checkpoint continuation controls tested, not yet submitted",
   "source_commit": "8ecc9d41892517175d46efc84e63a5d745096db0",
   "proof_sources_unchanged": true,
   "account": "pi_sl3363",
@@ -14,7 +14,7 @@
     "f1": "COMPLETED0:0; full build, audit and source hashes passed; archive downloaded and locally validated",
     "abb": "COMPLETED0:0; archived full build, audit and source hashes checked locally",
     "exterior": "COMPLETED0:0; result archive/full build/audit/source hashes locally checked",
-    "assembly": "RUNNING on c1106u07n01"
+    "assembly": "FAILED 124:0 after 21:31:55; timeout, no recorded module failures; continuation not yet submitted"
   },
   "assembly_afterok": [
     30082912,
@@ -264,5 +264,28 @@
       "mapped_labels_unchanged": 112,
       "byte_identical_to_reviewed65": true
     }
+  },
+  "integration_timeout": {
+    "job": 30104499,
+    "slurm_state": "FAILED",
+    "exit_code": "124:0",
+    "elapsed": "21:31:55",
+    "combined_snapshot": {
+      "target": "SparseLowerTail.CompletedReplays",
+      "total": 94032,
+      "completed": 21908,
+      "cached": 12237,
+      "workers": 3,
+      "failed": {},
+      "seconds": 74838.2688275571,
+      "phase": "building"
+    },
+    "result_archive": "sparse-assembly-results-30104499.tar.gz",
+    "result_sha256": "b2ff0419001de74f7c16a2cac4e6fc657ea7eeda6fae826d237b1e41a76e9687",
+    "checkpoint": "sparse-lean-recovery-checkpoint-30104499.tar.gz",
+    "checkpoint_size_display": "34G",
+    "checkpoint_note": "Final atomic filename observed, full contents will be validated before fallback proof build; not downloaded locally",
+    "acceptance": "Combined target, unchanged source hashes and original audit still pending",
+    "evidence_method": "Authenticated existing Chrome shell: sacct, shared archive inventory, archived exit-code and combined status read directly; result SHA computed on Yale. Local small-result download pending expired file-browser sign-in."
   }
 }

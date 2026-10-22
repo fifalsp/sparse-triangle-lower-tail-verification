@@ -1,0 +1,11 @@
+{
+  "target": "SparseLowerTail.CompletedReplays",
+  "total": 94032,
+  "completed": 21908,
+  "cached": 12237,
+  "failed": {},
+  "seconds": 74838.2688275571,
+  "workers": 3,
+  "phase": "building",
+  "trust_status": "Final full target build, source hashes and axiom audit remain required"
+}

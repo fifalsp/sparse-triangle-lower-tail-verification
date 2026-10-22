@@ -1,6 +1,6 @@
 {
-  "checked_at_utc": "2026-10-22T04:50:10.804419+00:00",
-  "status": "Prior combined run timed out; checkpoint continuation controls tested, not yet submitted",
+  "checked_at_utc": "2026-10-22T13:04:01.995355+00:00",
+  "status": "All44 base certificates accepted; exact-radius root ordinary build passed; combined continuation30254216 running after30104499 timeout",
   "source_commit": "8ecc9d41892517175d46efc84e63a5d745096db0",
   "proof_sources_unchanged": true,
   "account": "pi_sl3363",
@@ -8,13 +8,13 @@
     "f1": 30082912,
     "abb": 30104398,
     "exterior": 30104400,
-    "assembly": 30104499
+    "assembly": 30254216
   },
   "states": {
     "f1": "COMPLETED0:0; full build, audit and source hashes passed; archive downloaded and locally validated",
     "abb": "COMPLETED0:0; archived full build, audit and source hashes checked locally",
     "exterior": "COMPLETED0:0; result archive/full build/audit/source hashes locally checked",
-    "assembly": "FAILED 124:0 after 21:31:55; timeout, no recorded module failures; continuation not yet submitted"
+    "assembly": "RUNNING on a1114u24n01; six workers configured; checkpoint restoration under way; final combined/audit not accepted"
   },
   "assembly_afterok": [
     30082912,
@@ -286,6 +286,27 @@
     "checkpoint_size_display": "34G",
     "checkpoint_note": "Final atomic filename observed, full contents will be validated before fallback proof build; not downloaded locally",
     "acceptance": "Combined target, unchanged source hashes and original audit still pending",
-    "evidence_method": "Authenticated existing Chrome shell: sacct, shared archive inventory, archived exit-code and combined status read directly; result SHA computed on Yale. Local small-result download pending expired file-browser sign-in."
+    "evidence_method": "Authenticated existing Chrome shell: sacct, shared archive inventory, archived exit-code and combined status read directly; result SHA computed on Yale. Local small-result download pending expired file-browser sign-in.",
+    "local_archive_sha_verified": true,
+    "evidence": "results-20261022-0900/assembly-timeout-and-continuation.json"
+  },
+  "integration_continuation": {
+    "job": 30254216,
+    "state": "RUNNING",
+    "node": "a1114u24n01",
+    "observed_elapsed": "1:03",
+    "cpus": 12,
+    "memory_gib": 320,
+    "workers": 6,
+    "lean_memory_mib": 49152,
+    "lean_threads": 1,
+    "native_and_lean_stack_kib": 65536,
+    "control_commit": "2bdd616e5bc4099682b8812e8831a0da7c89b4fc",
+    "control_archive": "triangle-joint-control-2bdd616.tar.gz",
+    "control_bytes": 7272,
+    "control_sha256": "df31b2ef4693e91649b28fd23234927f65dc7775d62a21a85288537757fcb3f9",
+    "startup": "All control hashes, prior result archive and original source SHA passed; restoring full checkpoint on fresh node; stderr empty",
+    "proof_sources_or_axiom_policy_changed": false,
+    "completion_claimed": false
   }
 }

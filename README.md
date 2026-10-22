@@ -5,7 +5,7 @@ Graphs**, by Dong Huang and Shuangping Li.
 
 ## Verified results
 
-Updated October 21, 2026.
+Updated October 22, 2026.
 
 | Check | Completed result | Evidence |
 | --- | --- | --- |
@@ -57,7 +57,7 @@ finite certificates. The [proof map](lean/proof-map.json) links each paper
 statement to its Lean declarations; [named inputs](lean/ASSUMPTIONS.md) lists
 the external and classical results used.
 
-**Remaining verification:** the exact binary64 ABB neighborhood and the combined build.
+**Remaining verification:** final acceptance of the exact binary64 ABB neighborhood and the combined build/audit. The full ABB radius root built successfully; the joint run timed out and continuation **30254216** is running from the preserved checkpoint ([checked record](hpc/results-20261022-0900/assembly-timeout-and-continuation.json)).
 The [cluster record](hpc/README.md) tracks running jobs and recovery.
 The [manuscript comparison](lean/manuscript-review-20261021-related-work.json)
 matches all 112 mapped labels to the current Overleaf source. The

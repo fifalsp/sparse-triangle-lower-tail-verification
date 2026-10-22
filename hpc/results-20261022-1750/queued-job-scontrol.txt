@@ -1,0 +1,12 @@
+    - generic: JobId=30320317 JobName=triangle-joint-wide UserId=sl3363(33823) GroupId=sl3363(1033823) MCS_label=N/A Priority=51324 Nice=0 Account=pi_sl3363 QOS=normal JobState=PENDING Reason=Dependency Dependency=afterany:30
+    - generic: 254216(unfulfilled) Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0 RunTime=00:00:00 TimeLimit=1-00:00:00 TimeMin=N/A SubmitTime=2026-10-22T18:02:19 EligibleTime=Unknown AccrueTime=Unknown StartTime=Unkn
+    - generic: own EndTime=Unknown Deadline=N/A SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-10-22T18:02:19 Scheduler=Main Partition=day AllocNode:Sid=b1105u44n01:4013019 ReqNodeList=(null) ExcNodeList=(null) NodeList
+    - generic: = NumNodes=1-1 NumCPUs=20 NumTasks=1 CPUs/Task=20 ReqB:S:C:T=0:0:*:1 ReqTRES=cpu=20,mem=832G,node=1,billing=55 AllocTRES=(null) Socks/Node=* NtasksPerN:B:S:C=0:0:*:1 CoreSpec=* MinCPUsNode=20 MinMemoryNode=832G
+    - generic: MinTmpDiskNode=0 Features=(null) DelayBoot=00:00:00 OverSubscribe=OK Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null) Command=/nfs/roberts/project/pi_sl3363/sl3363/triangle-joint-wide-58915ff/b
+    - generic: ouchet-assembly-wide.sbatch SubmitLine=sbatch --dependency=afterany:30254216 triangle-joint-wide-58915ff/bouchet-assembly-wide.sbatch triangle-joint-wide-58915ff WorkDir=/nfs/roberts/project/pi_sl3363/sl3363 St
+    - generic: dErr=/nfs/roberts/project/pi_sl3363/sl3363/triangle-joint-wide-30320317.err StdIn=/dev/null StdOut=/nfs/roberts/project/pi_sl3363/sl3363/triangle-joint-wide-30320317.out TresPerTask=cpu=20
+    - generic: "[sl3363@login1.bouchet sl3363]$"
+    - textbox
+  - button "Page down" [disabled]
+  - button "Options"
+  - generic "(32, 50)"

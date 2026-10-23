@@ -8,6 +8,7 @@ import unittest
 from unittest.mock import patch
 
 import continuation_gate as gate
+import drain_joint as drain
 from resume_assembly import COMMIT, REQUIRED, TARGET
 
 
@@ -45,6 +46,26 @@ class ContinuationGateTests(unittest.TestCase):
 
     def test_clean_timeout_resumes(self):
         self.assertEqual(self.fixture(), 'resume')
+
+    def test_authorized_drain_resumes_only_with_finished_active_proofs(self):
+        proof=b'Build completed successfully (3 jobs).'
+        manifest_sha=hashlib.sha256(self.manifest).hexdigest()
+        record=dict(job=drain.JOB,phase='active-proofs-drained',
+                    authorization='user-approved-six-to-sixteen-worker-handoff',
+                    manifest_sha256=manifest_sha,audit_sha256=drain.AUDIT_SHA,
+                    controller_sha256=drain.CONTROLLER_SHA,proof_processes_signalled=[],
+                    active_proofs=[dict(module='SparseLowerTail.Leaf',
+                        completed_log_sha256=hashlib.sha256(proof).hexdigest())])
+        changed={'exit-code.txt':b'1',drain.READY:json.dumps(record).encode(),
+                 'combined-build.log':b'KeyboardInterrupt',
+                 'combined-build/SparseLowerTail.Leaf.log':proof}
+        with patch.object(drain,'MANIFEST_SHA',manifest_sha):
+            self.assertEqual(self.fixture(changed,exit_code='1:0'),'resume')
+            changed['combined-build/SparseLowerTail.Leaf.log']=b'error'
+            with self.assertRaises(ValueError):self.fixture(changed,exit_code='1:0')
+
+    def test_exit_one_without_drain_evidence_is_rejected(self):
+        with self.assertRaises(ValueError):self.fixture({'exit-code.txt':b'1'},exit_code='1:0')
 
     def test_success_skips_duplicate_work(self):
         self.assertEqual(self.fixture(state='COMPLETED', exit_code='0:0', success=True), 'finished')

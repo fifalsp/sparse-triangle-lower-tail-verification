@@ -12,6 +12,7 @@ import subprocess
 import tarfile
 
 from resume_abb_root import AUDIT_SHA, stack_profile, verify_sources
+from drain_joint import validate_handoff
 
 COMMIT = '8ecc9d41892517175d46efc84e63a5d745096db0'
 TARGET = 'SparseLowerTail.CompletedReplays'
@@ -24,10 +25,16 @@ def prior_evidence(archive):
               'combined-build/status.json', 'exit-code.txt', 'source-commit.txt']
     with tarfile.open(archive, 'r:gz') as stream:
         data = {name: stream.extractfile('logs/' + name).read() for name in wanted}
+        recorded_exit = data['exit-code.txt'].strip()
+        if recorded_exit == b'1':
+            try:
+                validate_handoff(lambda name: stream.extractfile('logs/' + name).read())
+            except (KeyError, TypeError, json.JSONDecodeError) as error:
+                raise ValueError('Missing or malformed controlled handoff evidence') from error
     status = json.loads(data['combined-build/status.json'])
     inputs = json.loads(data['assembly-inputs.json'])
     sources = json.loads(data['source-manifest.json'])
-    if (data['exit-code.txt'].strip() != b'124' or status['target'] != TARGET
+    if (recorded_exit not in (b'124', b'1') or status['target'] != TARGET
             or status['failed'] or status['total'] != len(sources)
             or TARGET not in sources or inputs['missing']
             or not REQUIRED <= inputs['selected'].keys()

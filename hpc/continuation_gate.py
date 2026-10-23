@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Resume only a clean timeout; skip a finished proof and reject other failures."""
+"""Resume a clean timeout or authorized drain; reject mathematical failures."""
 import argparse
 import hashlib
 import json
@@ -30,6 +30,11 @@ def decision(archive, state, exit_code):
                 or inputs['missing'] or not REQUIRED <= inputs['selected'].keys()):
             raise ValueError('Combined dependency gate failed')
         recorded_exit = read('exit-code.txt').strip()
+        if state == 'FAILED' and exit_code == '1:0' and recorded_exit == b'1':
+            if 'logs/ASSEMBLY_SUCCESS.txt' in names:
+                raise ValueError('Contradictory handoff and success evidence')
+            prior_evidence(archive)  # Validates drained-proof logs and explicit authorization.
+            return 'resume'
         if state == 'FAILED' and exit_code == '124:0' and recorded_exit == b'124':
             if 'logs/ASSEMBLY_SUCCESS.txt' in names:
                 raise ValueError('Contradictory timeout and success evidence')

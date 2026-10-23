@@ -1,84 +1,66 @@
-# The Sparse Triangle Lower Tail: verification
+# Verification for *The Lower Tail of Triangle Counts in Sparse Random Graphs*
 
-Computational verification and Lean 4 proofs for **The Lower Tail of Triangle Counts in Sparse Random
-Graphs**, by Dong Huang and Shuangping Li.
+This repository accompanies the paper *The Lower Tail of Triangle Counts in
+Sparse Random Graphs* by Dong Huang and Shuangping Li. It contains two kinds
+of verification.
 
-## Verified results
+- **Computer-assisted proofs.** Two propositions of the paper, and the
+  numerical constants used with them, reduce to explicit inequalities for
+  functions of at most three variables and one parameter. Python programs
+  prove these inequalities in validated interval arithmetic.
+- **A Lean 4 formalization** of the paper's own arguments, including a replay
+  of the computer-assisted certificates in Lean.
 
-Updated October 22, 2026.
+Theorem and lemma numbers below refer to the current version of the paper.
+The LaTeX label of each statement is given in parentheses.
 
-| Check | Completed result | Evidence |
-| --- | --- | --- |
-| Python interval verification | All 42 cover regions, both family Hessian neighborhoods, and the full compact family domain; zero unresolved boxes | [Full run](certificates/release/run.json) |
-| Lean full-domain nonapex certificates | **36 of 36 regions** | [Build and axiom-audit records](hpc/results-20261021-0620/verified-regions.json) |
-| Lean full-domain apex certificates | **All 6 fans: F1–F6** | [Build and axiom-audit records](hpc/results-20261021-0620/verified-regions.json) |
-| Two-block minimizers and scalar phases | Actual relabeling of the balanced minimizer; full penalized phase classification and stable-branch criterion | [Lean build and 117 axiom audits](lean/data/final-manuscript-review-check.json) |
-| Lemma A.4 — Polygon fan (`lem:fan`) | Ray-exit fan cover and closing-edge exclusion, including boundary cases | [Lean build and nine axiom audits](lean/data/polygon-fan-check.json) |
-| Euler equation and penalized gap | Positive unique multiplier and quantitative bounds; Δ(10⁻³)>0.028 | [Lean build and 30 axiom audits](lean/data/analytic-review-check.json) |
-| Lemma 2.2 — Cut metric (`lem:cut`) | Sharp weighted bound, counting bounds, bijective compactness and real-kernel pseudometric identities | [Lean build and 26 axiom audits](lean/data/kernel-cut-check.json) |
-| Lemma 7.7 — Penalized coexistence constants (`lem:penconstants`) | All five printed brackets for z_c, γ_c, C(γ_c), r₋ and r₊ | [Lean build and 56 axiom audits](lean/data/penalized-digits-check.json) |
-| Lemma 4.11 — Current threshold bracket (`lem:digits`) | Exact manuscript bracket of width 2×10⁻²⁵ and all four printed parameter ranges | [Lean build and 28 axiom audits](lean/data/manuscript-digits-check.json) |
-| Crossing and tie exclusion | Unique penalized crossing and full-interval tie relabeling, with the family certificate input explicit | [Lean build and 25 axiom audits](lean/data/paper-tie-check.json) |
-| Lemma 8.2 — Certificate coefficients (`lem:certcoef`) | Printed determinant, unique coefficient solution, and the original value/partial-derivative equations | [Lean build and 26 axiom audits](lean/data/certificate-uniqueness-check.json) |
-| Certificate and support identities | All four weak-duality conclusions, sharp minimizer support data, real-block codegrees and branch contact identity | [Lean build and 52 axiom audits](lean/data/certificate-summary-check.json) |
-| Lemma 5.14 — Triangle patterns (`lem:patterns`) | Four-atom law, symmetric partial derivatives, and relabeling from pattern support and balanced mean | [Lean build and 20 axiom audits](lean/data/patterns-check.json) |
-| Lemma 5.15 — Critical apex (`lem:apex`) | The actual relaxed triangle law, sharp support, zero Hoeffding expectation, and universal two-contact certificate identity | [Lean build and 27 axiom audits](lean/data/critical-apex-check.json) |
-| Lemma 5.16 — General cube Taylor estimate (`lem:taylor`) | The full infinity-norm cubic remainder, Euclidean quadratic term, and strict positivity at the stated radius | [Lean build and 15 axiom audits](lean/data/taylor-cube-check.json) |
-| Lemma A.1 — Box lower bounds (`lem:comp-box`) | All four bounds from actual gradient and Hessian enclosures, including the quadratic supporting-plane bound | [Lean build and 18 axiom audits](lean/data/box-lower-bounds-check.json) |
-| Lemma A.2 — Interval matrix positivity (`lem:comp-chol`) | Positive-radicand criterion and a checked 3×3 interval LDL test proving every represented matrix positive definite | [Lean build and 15 axiom audits](lean/data/cholesky-check.json) |
-| Trilinear and transition identities | Full trilinear lemma, maximum formula R(z), critical graphon identities, row criterion, and branch-and-bound soundness | [Lean build and 46 axiom audits](lean/data/manuscript-identities-check.json) |
-| Theorem 1.2 — Structure corollary (`thm:structure`) | Constant above threshold³, the unique balanced bipod below, and their union at coexistence, each with conditional probability →1; remaining certificate inputs explicit | [Lean build and 11 axiom audits](lean/data/conditioned-phases-check.json) |
-| Lemma 3.10 — Matrix rounding (`lem:rounding`) | An explicit vertex partition with imbalance ≤16δn/(b−a) and matrix cut error ≤33δ | [Lean build and 35 axiom audits](lean/data/rounding-check.json) |
-| Theorem 1.3(b) — Conditioned structure (`thm:reduction`) | For every ε > 0, the actual conditioned probability of proximity to a minimizer tends to one | [Full reduction build and 13 axiom audits](lean/data/conditioned-structure-check.json) |
-| Theorem 1.1 — Rate corollary (`thm:rate`) | Balanced-value rate and the replica-symmetric threshold criterion, deduced from the main classification; remaining certificate inputs explicit | [Lean build and four axiom audits](lean/data/probability-rate-check.json) |
-| Theorem 1.3(a) — Probability rate (`thm:reduction`) | Actual triangle log probability asymptotic to (n²p/2)V(η^(1/3)), using the cited generic KS23 bounds | [Lean build and 23 axiom audits](lean/data/lower-tail-rate-check.json) |
-| Lemma 3.3 — Discrete variational comparison (`lem:discrete`) | Attained finite minimum, the finite lower bound, and convergence to the graphon value as n → ∞ and p → 0 | [Lean build and 70 axiom audits](lean/data/discrete-comparison-check.json) |
-| Lemma 3.7 — Triangle decorrelation (`lem:decorrelation`) | Revealed-edge set and conditional product-error bound, using the cited generic KS23 inputs | [Lean build and 36 axiom audits](lean/data/decorrelation-check.json) |
-| Cut concentration and step-kernel cut norms (Lemmas 3.9 and 3.5; `lem:cutconc`, `lem:stepcut`) | Exact exponential tail bound; matrix–graphon norm equality and binary maximizers | [Lean build and 36 axiom audits](lean/data/cut-concentration-check.json) |
-| Lemma 3.6 — Harris conditioning (`lem:harris`) | Increasing-event and pinned-coordinate bounds, including revealed coordinates, using the cited Harris inequality | [Lean build and 19 axiom audits](lean/data/harris-conditioning-check.json) |
-| Lemma 3.8 — Conditional entropy (`lem:entropy`) | Entropy budget and event-probability transfer for the actual finite conditional laws and their product marginals | [Lean build and 30 axiom audits](lean/data/conditioned-product-entropy-check.json) |
-| Lemma 3.2 — Sparse Bernoulli entropy (`lem:fp`) | Uniform comparison with the sparse entropy, including the sharp quadratic upper bound | [Lean build and axiom audit](lean/data/sparse-entropy-check.json) |
-| Lemma 3.4 — Near-minimizer stability (`lem:stability`) | Approximate feasibility and optimality imply proximity to an actual minimizer after a measure-preserving bijection | [Lean build and axiom audit](lean/data/near-minimizers-check.json) |
-| Lean family AAA neighborhood | Hessian positivity, nonnegativity and the unique AAA zero for every L ∈ [3.9, 9.5], at the manuscript’s exact binary64 radius | [Lean build and 19 axiom audits](lean/data/family-binary64-radius-check.json) |
-| Exterior compact-domain replay (used in Proposition A.5) | Full 64,646-leaf table; all 12,872 modules built and audited | [Full exterior replay](hpc/results-20261021-0635/exterior-completion.json) |
-| ABB contact neighborhood (used in Proposition A.5) | Nonnegativity and unique contact zero on the full logarithmic cube of radius 1/10; all 7,462 modules built and audited | [Full ABB replay](hpc/results-20261021-0635/abb-completion.json) |
-| Lean ABB radius extension | Analytic transfer to the exact binary64 radius; 21 padded test leaves and one complete subtree checked | [Lean build and 112 axiom audits](lean/data/family-hessian-perturbation-check.json) |
-| Proposition A.5 — Ordered compact conclusion (`appA3:compact`) | Exact nonnegativity and the two-contact zero set deduced from the remaining finite replay table | [Lean build and audit](lean/data/compact-conclusion-laptop-pilot-check.json) |
-| F1 laptop sample | 47 leaves and an 11-leaf subdivision checked with one worker and an 8 GiB Lean cap | [Build and 52 declaration audits](lean/data/compact-conclusion-laptop-pilot-check.json) |
-| Handwritten Lean root, before final replay assembly | Full build and standard-axiom audit of **19,811 theorems** passed | [Root build and audit](lean/data/compact-conclusion-laptop-pilot-check.json) |
+## Computer-assisted proofs
 
-Apex fan **F1** is the latest completion, bringing the full-region Lean total
-to **42 of 42**: all 36 nonapex regions and all six apex fans.
-
-The Lean development also checks the balanced phase classification, printed
-threshold intervals, Euler–Lagrange equations, local rigidity, small-target
-classification, and the deduction of the main theorem from the remaining
-finite certificates. The [proof map](lean/proof-map.json) links each paper
-statement to its Lean declarations; [named inputs](lean/ASSUMPTIONS.md) lists
-the external and classical results used.
-
-**Remaining verification:** final acceptance of the exact binary64 ABB neighborhood and the combined build/audit. The full ABB radius root built successfully. The **16-worker continuation 30320317 is running** on Yale from the preserved checkpoint after an authorized handoff; all six active predecessor proofs finished successfully ([running record](hpc/results-20261022-handoff/sixteen-worker-running.json)). Final source hashes and the original namespace audit remain required.
-The [cluster record](hpc/README.md) tracks running jobs and recovery.
-The [manuscript comparison](lean/manuscript-review-20261021-related-work.json)
-matched all 112 mapped labels to the Overleaf source reviewed on October 21. The
-[inventory](lean/manuscript-coverage.json) tracks the remaining obligations.
-
-## Which parts of the paper does the code verify?
-
-| Statement in the paper | What the computation establishes | Verification code | Saved results |
+| Statement | What the computation proves | Code | Results |
 | --- | --- | --- | --- |
-| **Lemma 4.11** — threshold constants (`lem:digits`; Appendix A.4) | Brackets the crossing point and certifies the displayed intervals for a\*, b\*, μ\*, and r\*, including **0.2096696762 < r\* < 0.2096696763**. | [`endpoint_common.py`](verification/cover/endpoint_common.py), function `setup_constants()` | [Constant enclosures](certificates/release/cover/endpoint_inputs_verified.json) |
-| **Lemma 7.7** — penalized coexistence constants (`lem:penconstants`; Appendix A.4) | Brackets the coexistence parameter and certifies the displayed values of γ_c, C(γ_c), r_−, and r_+. | [`verify_penalized_constants.py`](verification/cover/verify_penalized_constants.py) | [Penalized constants](certificates/release/cover/penalized_constants_verified.json) |
-| **Proposition 5.17** — the twelve-cell cover (`prop:cover`; Appendix A.2) | Checks that the cells cover the required region, validates their support bounds and tangency coefficients, and proves the required positivity inequalities. | [`endpoint_common.py`](verification/cover/endpoint_common.py), [`planar_coverage.py`](verification/cover/planar_coverage.py), and [`verify_endpoint.py`](verification/cover/verify_endpoint.py) | [Cover reports](certificates/release/cover/) |
-| **Proposition 8.4** — the certificate family (`prop:family`; Appendix A.3) | Verifies the certificate uniformly for **every L ∈ [3.9, 9.5]**, including its prescribed zero patterns. | [`verify_family.py`](verification/family/verify_family.py), with formulas in [`core.py`](verification/family/core.py) and exact identities in [`symbolic.py`](verification/family/symbolic.py) | [Family report](certificates/release/family/family.json) |
+| Lemma 3.11 (`lem:digits`), threshold constants | Encloses the crossing point and the printed values of $a_*$, $b_*$, $\mu_*$ and $r_*$, including $0.2096696762 < r_* < 0.2096696763$. | [`endpoint_common.py`](verification/cover/endpoint_common.py) (`setup_constants()`) | [Constant enclosures](certificates/release/cover/endpoint_inputs_verified.json) |
+| Lemma 6.7 (`lem:penconstants`), penalized constants | Encloses the coexistence parameter and the printed values of $\gamma_c$, $C(\gamma_c)$, $r_-$ and $r_+$. | [`verify_penalized_constants.py`](verification/cover/verify_penalized_constants.py) | [Penalized constants](certificates/release/cover/penalized_constants_verified.json) |
+| Proposition 4.17 (`prop:cover`), twelve-cell cover at the threshold | Checks that the twelve cells cover the region, validates their support bounds and tangency coefficients, and proves all required positivity inequalities. | [`endpoint_common.py`](verification/cover/endpoint_common.py), [`planar_coverage.py`](verification/cover/planar_coverage.py), [`verify_endpoint.py`](verification/cover/verify_endpoint.py) | [Cover reports](certificates/release/cover/) |
+| Proposition 7.4 (`prop:family`), certificate family below the threshold | Proves the certificate inequality uniformly for every $L \in [3.9, 9.5]$, with the prescribed zero patterns. | [`verify_family.py`](verification/family/verify_family.py), [`core.py`](verification/family/core.py), [`symbolic.py`](verification/family/symbolic.py) | [Family report](certificates/release/family/family.json) |
 
-All 95 numbered results were checked against the live Overleaf source and PDF
-on October 20, 2026. The [numbering record](data/manuscript-numbering-20261020.json)
-links each printed number to its stable LaTeX label and PDF page. The main
-variational result is **Theorem 1.4** (`thm:main`); the rate, structure and
-probabilistic reduction results are **Theorems 1.1, 1.2 and 1.3**, respectively.
+The full run covers all 42 cover regions, both Hessian neighborhoods of the
+family, and the compact family domain, with no unresolved boxes
+([run record](certificates/release/run.json)). A separate
+[table comparison](certificates/manuscript-table-match.json) checks the twelve
+cells against the tables printed in the paper.
 
-## Reproduce the numerical checks
+## Lean formalization
+
+The Lean development formalizes the paper's own arguments, from the
+reduction in Appendix A to the main result, Theorem 1.3 (`thm:main`), and its
+consequences, Theorems 1.1 and 1.2. It assumes the cited results of Kozma and
+Samotij and of Kwan and Pham, together with a few classical facts such as the
+Harris inequality, compactness of graphons in the cut distance, and the
+counting lemma. Each assumption enters the final theorem as an explicit
+hypothesis, and [ASSUMPTIONS.md](lean/ASSUMPTIONS.md) lists them with their
+sources. The axiom audit allows only `propext`, `Classical.choice` and
+`Quot.sound`. The [proof map](lean/proof-map.json) links each statement of the
+paper to its Lean declarations.
+
+| Part of the paper | Main statements | Build and audit records |
+| --- | --- | --- |
+| Reduction to the variational problem (Appendix A) | Theorem A.1 (`thm:reduction`), Lemmas A.3–A.10 (`lem:fp`, `lem:discrete`, `lem:stability`, `lem:stepcut`, `lem:harris`, `lem:decorrelation`, `lem:entropy`, `lem:cutconc`) | [rate](lean/data/lower-tail-rate-check.json), [structure](lean/data/conditioned-structure-check.json), [discretization](lean/data/discrete-comparison-check.json), [decorrelation](lean/data/decorrelation-check.json), [entropy](lean/data/conditioned-product-entropy-check.json), [Harris](lean/data/harris-conditioning-check.json), [cut concentration](lean/data/cut-concentration-check.json), [sparse entropy](lean/data/sparse-entropy-check.json), [near minimizers](lean/data/near-minimizers-check.json) |
+| Main theorems | Theorems 1.1 and 1.2 (`thm:rate`, `thm:structure`), Lemma A.11 (`lem:rounding`) | [rate](lean/data/probability-rate-check.json), [structure](lean/data/conditioned-phases-check.json), [rounding](lean/data/rounding-check.json) |
+| Graphon preliminaries (Section 2) | Lemmas 2.1 and 2.2 (`lem:trilinear`, `lem:cut`) and related identities | [cut metric](lean/data/kernel-cut-check.json), [identities](lean/data/manuscript-identities-check.json) |
+| Two block graphons and first order conditions (Sections 3 and 6) | Proposition 3.2 (`prop:euler`), Theorem 3.7 (`thm:crossing`), Lemma 3.11 (`lem:digits`), Proposition 6.6 (`prop:pen`), Lemma 6.7 (`lem:penconstants`) | [two block minimizers](lean/data/final-manuscript-review-check.json), [Euler–Lagrange and penalized gap](lean/data/analytic-review-check.json), [threshold constants](lean/data/manuscript-digits-check.json), [penalized constants](lean/data/penalized-digits-check.json) |
+| Certificates at the threshold (Section 4, Appendix B) | Lemmas 4.14–4.16 (`lem:patterns`, `lem:apex`, `lem:taylor`), Proposition 4.17 (`prop:cover`), Lemmas B.1, B.2 and B.4 (`lem:comp-box`, `lem:comp-chol`, `lem:fan`) | [patterns](lean/data/patterns-check.json), [apex](lean/data/critical-apex-check.json), [Taylor bound](lean/data/taylor-cube-check.json), [polygon fan](lean/data/polygon-fan-check.json), [box bounds](lean/data/box-lower-bounds-check.json), [interval Cholesky](lean/data/cholesky-check.json), [all 42 regions](hpc/results-20261021-0620/verified-regions.json) |
+| Certificates below the threshold (Section 7, Appendix B) | Lemmas 7.2 and 7.5 (`lem:certcoef`, `lem:tieexclusion`), Proposition 7.4 (`prop:family`), Proposition B.5 (`appA3:compact`) | [coefficients](lean/data/certificate-uniqueness-check.json), [weak duality](lean/data/certificate-summary-check.json), [tie exclusion](lean/data/paper-tie-check.json), [exterior replay](hpc/results-20261021-0635/exterior-completion.json), [contact neighborhood](hpc/results-20261021-0635/abb-completion.json), [radius extension](lean/data/family-hessian-perturbation-check.json), [binary64 radius](lean/data/family-binary64-radius-check.json), [compact conclusion](lean/data/compact-conclusion-laptop-pilot-check.json) |
+
+## Status
+
+All checks listed above are complete. The final combined Lean build and
+axiom audit, which includes the exact-radius contact neighborhood for
+Proposition 7.4, is running on the Yale Bouchet cluster. The
+[cluster record](hpc/README.md) has the current state of the runs, and the
+[coverage inventory](lean/manuscript-coverage.json) tracks any remaining
+obligations.
+
+## Reproducing the numerical checks
 
 ```sh
 python3 -m venv .venv
@@ -87,21 +69,18 @@ python -m pip install -r requirements.txt
 python verify.py --jobs 2
 ```
 
-Use Python 3.11 or newer. The command writes reports under `results/` and
-finishes with `"status": "complete"` when every check passes. The recorded full
-run took 293 seconds. Use `python verify.py --quick` for an installation check.
-Run Python with assertions enabled.
+Use Python 3.11 or newer, with assertions enabled. The command writes reports
+under `results/` and ends with `"status": "complete"` when every check
+passes; the recorded full run took about five minutes. For a quick
+installation check, run `python verify.py --quick`. The computations use
+FLINT/Arb ball arithmetic and exact rational geometry, and the saved reports
+include hashes of the sources and inputs.
 
-The computations use FLINT/Arb interval bounds and exact rational geometry.
-Source and input hashes accompany the saved reports. The
-[manuscript comparison](certificates/manuscript-table-match.json) checks all
-twelve cells against the paper's tables.
+## Reproducing the Lean checks
 
-## Reproduce the Lean checks
-
-See the [Lean build guide](lean/README.md) for the pinned toolchain, build
-commands, theorem map and axiom audit. The latest archived regional results can
-be inspected with:
+The [Lean build guide](lean/README.md) gives the pinned toolchain, the build
+commands, the theorem map and the axiom audit. To inspect an archived set of
+regional results, run
 
 ```sh
 python3 hpc/audit_result_archives.py \
@@ -109,15 +88,16 @@ python3 hpc/audit_result_archives.py \
   --output /tmp/verified-regions.json
 ```
 
-Each completed region has a successful full-target Lean build and an axiom
-audit allowing only `propext`, `Classical.choice`, and `Quot.sound`.
+## Repository layout
 
-## Code and reports
-
-- [Cover verification](verification/cover/README.md): geometry, support bounds,
-  coefficients, and the 42 positivity checks.
-- [Family verification](verification/family/README.md): the two Hessian
-  neighborhoods and the compact domain, uniformly in L.
-- [Lean formalization](lean/README.md): checked proofs and file-to-paper mapping.
-- [Cluster runs](hpc/README.md): deployment scripts, logs and recovery records.
-- [Audit methods](AUDIT.md) and [proof simplifications](docs/PROOF-SIMPLIFICATIONS.md).
+- [`verification/cover`](verification/cover/README.md) checks the twelve-cell
+  cover and the threshold constants.
+- [`verification/family`](verification/family/README.md) checks the
+  certificate family, uniformly in $L$.
+- [`certificates`](certificates/) holds the saved reports of the full run.
+- [`lean`](lean/README.md) holds the Lean formalization, the proof map and the
+  list of assumptions.
+- [`hpc`](hpc/README.md) holds the cluster scripts, logs and run records.
+- [`AUDIT.md`](AUDIT.md) describes how the release was reviewed, and
+  [`docs/PROOF-SIMPLIFICATIONS.md`](docs/PROOF-SIMPLIFICATIONS.md) collects
+  notes on simplified arguments.

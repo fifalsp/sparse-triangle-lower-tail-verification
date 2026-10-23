@@ -1,0 +1,20 @@
+{
+  "checked_at_utc": "2026-10-23T01:57:18.773969+00:00",
+  "authorization": "User explicitly approved the controlled switch to sixteen workers in this chat.",
+  "predecessor_job": 30254216,
+  "replacement_job": 30320317,
+  "controller_pid": 3017444,
+  "control_commit": "efc015d",
+  "control_archive": "triangle-joint-handoff-efc015d.tar.gz",
+  "control_sha256": "b1345c1738c5996d17779d04f49d2b25713550394904f7ce9b8d5d3ae9f46715",
+  "remote_hash_python_and_shell_checks": "passed",
+  "queued_control_directory": "triangle-joint-wide-58915ff now resolves to checked triangle-joint-handoff-efc015d; original timeout-only controls preserved separately",
+  "phase": "active proofs drained; checkpoint export underway",
+  "proof_processes_signalled": [],
+  "proof_sources_or_original_audit_policy_changed": false,
+  "overall_completion_claimed": false,
+  "drain_finished_at_utc": "2026-10-23T01:56:34.675626+00:00",
+  "active_proofs_finished": 6,
+  "ready_evidence": "../results-20261022-handoff/CONTROLLED_HANDOFF_READY.json",
+  "conservative_completed_before_drain": 28475
+}

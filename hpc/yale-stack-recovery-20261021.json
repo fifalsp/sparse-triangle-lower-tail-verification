@@ -1,6 +1,6 @@
 {
-  "checked_at_utc": "2026-10-22T22:03:41.273867+00:00",
-  "status": "All44 base certificates accepted; exact-radius root ordinary build passed; combined continuation30254216 running after30104499 timeout",
+  "checked_at_utc": "2026-10-23T02:04:43.143510+00:00",
+  "status": "All44 base certificates accepted; exact-radius root ordinary build passed; approved six-worker controller drain completed, checkpoint exporting for sixteen-worker job30320317",
   "source_commit": "8ecc9d41892517175d46efc84e63a5d745096db0",
   "proof_sources_unchanged": true,
   "account": "pi_sl3363",
@@ -14,7 +14,7 @@
     "f1": "COMPLETED0:0; full build, audit and source hashes passed; archive downloaded and locally validated",
     "abb": "COMPLETED0:0; archived full build, audit and source hashes checked locally",
     "exterior": "COMPLETED0:0; result archive/full build/audit/source hashes locally checked",
-    "assembly": "RUNNING on a1114u24n01; full checkpoint/source restoration passed; six independent workers, newly invoked Lean processes now use two threads; final combined/audit not accepted"
+    "assembly": "Controller drained after all six active builds passed; checkpoint export underway; sixteen-worker successor30320317 awaiting dependency; final target/audit not accepted"
   },
   "assembly_afterok": [
     30082912,
@@ -292,7 +292,7 @@
   },
   "integration_continuation": {
     "job": 30254216,
-    "state": "RUNNING",
+    "state": "ACTIVE_PROOFS_DRAINED_CHECKPOINT_EXPORT",
     "node": "a1114u24n01",
     "observed_elapsed": "1:03",
     "cpus": 12,
@@ -332,7 +332,9 @@
         98.9
       ],
       "note": "New processes confirmed using -j2. Initial sampled CPU is still about one core per process; no measured speedup or doubled throughput is claimed."
-    }
+    },
+    "intentional_handoff": "User explicitly authorized controlled switch to sixteen workers; scheduler-only SIGINT let executor finish all active subprocesses; no Lean/Lake process signalled",
+    "drain_evidence": "results-20261022-handoff/CONTROLLED_HANDOFF_READY.json"
   },
   "queued_wide_continuation": {
     "job": 30320317,
@@ -347,13 +349,13 @@
     "memory_mib_per_worker": 49152,
     "stack_kib": 65536,
     "time_limit": "24:00:00",
-    "control_commit": "58915ff",
-    "control_archive": "triangle-joint-wide-58915ff.tar.gz",
-    "control_sha256": "849de2c1ba664b6578f8231a168ff9bf84a0437d65a34b1141ef2eaa034c8ce4",
+    "control_commit": "efc015d",
+    "control_archive": "triangle-joint-handoff-efc015d.tar.gz",
+    "control_sha256": "b1345c1738c5996d17779d04f49d2b25713550394904f7ce9b8d5d3ae9f46715",
     "uploaded_all_file_hashes_and_shell_syntax_passed": true,
     "start_time": "Unknown; Slurm dependency unfulfilled",
-    "behavior": "Resume only after clean timeout with unchanged combined manifest and no failed modules; skip if predecessor fully built/audited successfully; reject other failures. Holds same global continuation lock.",
-    "current_job_not_stopped": true,
-    "immediate_handoff_authorization": "Requested because earlier user instructions prohibit stopping a healthy job; no handoff performed."
+    "behavior": "Resume after clean timeout or an authorized drain whose six active-proof logs all prove success; skip fully audited success; reject other failures. Same global lock prevents overlapping continuations.",
+    "current_job_not_stopped": false,
+    "immediate_handoff_authorization": "Explicit user authorization received; all six active proofs finished; current controller drained"
   }
 }

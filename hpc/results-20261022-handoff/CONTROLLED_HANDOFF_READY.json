@@ -1,0 +1,55 @@
+{
+  "job": "30254216",
+  "phase": "active-proofs-drained",
+  "authorization": "user-approved-six-to-sixteen-worker-handoff",
+  "started_at_utc": "2026-10-23T01:55:46.590222+00:00",
+  "controller_pid": 3017444,
+  "controller_sha256": "559ab431f061fb6561854e8d21f681174dda6016baef3975549d2385df2d06bc",
+  "manifest_sha256": "b14aedaa8bc2447939e456b80e112b138b16348085539f108bff0f6134514811",
+  "audit_sha256": "956129721ba7190769a93bd755dde91ac7b4fcd15326656721cc822308cc9014",
+  "proof_processes_signalled": [],
+  "active_proofs": [
+    {
+      "module": "SparseLowerTail.Section05.ApexReplay.F5.Leaves729",
+      "lake_pid": 3923328,
+      "completed_log_sha256": "e642d3cc76a5ac1d34c1ee4f4ba57bbee2b547000e54e2dbd02fcc85ec796e80"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexReplay.F5.Leaves726",
+      "lake_pid": 3922977,
+      "completed_log_sha256": "d5eac6396a38cfa8fef0b91b9600b225d35849de76a0b7641ead3b8f89d87f6e"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexReplay.F5.Leaves728",
+      "lake_pid": 3923138,
+      "completed_log_sha256": "a268c20cfc803f99d2ac1dad2db0c642a64e9ed3213e4478556f56fdde472c72"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexReplay.F5.Leaves730",
+      "lake_pid": 3923457,
+      "completed_log_sha256": "85cac3a725b59c26dcf3a212a908e280f7185d8505427f59b3bcdb018323be67"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexReplay.F5.Leaves727",
+      "lake_pid": 3923087,
+      "completed_log_sha256": "0d9dd47df556e88f60af6af99498dcc5c9a77789eb83a7d86d26ad2b29f93856"
+    },
+    {
+      "module": "SparseLowerTail.Section05.ApexReplay.F5.Leaves731",
+      "lake_pid": 3923543,
+      "completed_log_sha256": "4441798de08a11c12750df514f6d4d0fd35ba0e920ee66ba17cf0feb1a49ff8b"
+    }
+  ],
+  "conservative_status_before": {
+    "target": "SparseLowerTail.CompletedReplays",
+    "total": 94032,
+    "completed": 28475,
+    "cached": 21865,
+    "failed": {},
+    "seconds": 46009.87753334499,
+    "workers": 6,
+    "phase": "building",
+    "trust_status": "Final full target build, source hashes and axiom audit remain required"
+  },
+  "finished_at_utc": "2026-10-23T01:56:34.675626+00:00"
+}

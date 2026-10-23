@@ -1,6 +1,6 @@
 # Running the Lean checks on Yale and Delta
 
-## Latest verified results — October 21, 2026
+## Latest verified results and continuation — October 22, 2026
 
 **42 full-region Lean builds and axiom audits have passed:** all 36 nonapex
 regions and all six apex fans. F1 is the latest completion: all 3,059
@@ -19,12 +19,15 @@ The remaining work runs on **Yale Bouchet**:
 
 | Stage | Yale job | Status |
 |---|---:|---|
-| Exact binary64 ABB radius and combined integration | 30104499 | Running |
+| Original combined integration | 30104499 | Timed out; checkpoint preserved; radius root ordinary build passed |
+| Six-worker continuation | 30254216 | Active proofs drained successfully; saving checkpoint for approved handoff |
+| Sixteen-worker continuation | 30320317 | Queued after predecessor; full target, source hashes and original audit still required |
 
-The integration job generates the full exact-radius ABB replay and combines
+The integration generates the full exact-radius ABB replay and combines
 all verified regions and families with the author-proof root. Its build and
 namespace audit use the original source hashes and axiom policy.
 [Deployment and recovery records](yale-stack-recovery-20261021.json).
+The [authorized handoff](results-20261022-handoff/CONTROLLED_HANDOFF_READY.json) let all six active proof builds finish; no Lean or Lake process was signalled. The successor requires the unchanged source manifest, original audit, and explicit predecessor evidence before resuming. A handoff exit is not a mathematical failure or proof completion.
 
 All matching Delta copies were cancelled while unstarted, after Yale accepted
 the replacements. [Deployment record](yale-return-deployment-20261020.json).

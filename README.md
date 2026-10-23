@@ -45,7 +45,7 @@ Updated October 22, 2026.
 | Lean ABB radius extension | Analytic transfer to the exact binary64 radius; 21 padded test leaves and one complete subtree checked | [Lean build and 112 axiom audits](lean/data/family-hessian-perturbation-check.json) |
 | Proposition A.5 — Ordered compact conclusion (`appA3:compact`) | Exact nonnegativity and the two-contact zero set deduced from the remaining finite replay table | [Lean build and audit](lean/data/compact-conclusion-laptop-pilot-check.json) |
 | F1 laptop sample | 47 leaves and an 11-leaf subdivision checked with one worker and an 8 GiB Lean cap | [Build and 52 declaration audits](lean/data/compact-conclusion-laptop-pilot-check.json) |
-| Current Lean project root | Full build and standard-axiom audit of **19,811 theorems** passed | [Root build and audit](lean/data/compact-conclusion-laptop-pilot-check.json) |
+| Handwritten Lean root, before final replay assembly | Full build and standard-axiom audit of **19,811 theorems** passed | [Root build and audit](lean/data/compact-conclusion-laptop-pilot-check.json) |
 
 Apex fan **F1** is the latest completion, bringing the full-region Lean total
 to **42 of 42**: all 36 nonapex regions and all six apex fans.
@@ -57,11 +57,10 @@ finite certificates. The [proof map](lean/proof-map.json) links each paper
 statement to its Lean declarations; [named inputs](lean/ASSUMPTIONS.md) lists
 the external and classical results used.
 
-**Remaining verification:** final acceptance of the exact binary64 ABB neighborhood and the combined build/audit. The full ABB radius root built successfully; the joint run timed out and continuation **30254216** is running from the preserved checkpoint ([checked record](hpc/results-20261022-0900/assembly-timeout-and-continuation.json)).
-A **16-worker continuation (30320317)** is queued after that job and will run only if a clean timeout requires further work; it skips a successful predecessor ([checked configuration](hpc/results-20261022-1750/wide-continuation.json)).
+**Remaining verification:** final acceptance of the exact binary64 ABB neighborhood and the combined build/audit. The full ABB radius root built successfully. After all six active proofs finished, continuation **30254216** was intentionally drained at the user's request and is saving its checkpoint for the **16-worker continuation 30320317** ([handoff evidence](hpc/results-20261022-handoff/CONTROLLED_HANDOFF_READY.json)). Final source hashes and the original namespace audit remain required.
 The [cluster record](hpc/README.md) tracks running jobs and recovery.
 The [manuscript comparison](lean/manuscript-review-20261021-related-work.json)
-matches all 112 mapped labels to the current Overleaf source. The
+matched all 112 mapped labels to the Overleaf source reviewed on October 21. The
 [inventory](lean/manuscript-coverage.json) tracks the remaining obligations.
 
 ## Which parts of the paper does the code verify?

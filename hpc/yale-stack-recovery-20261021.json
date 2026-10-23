@@ -1,6 +1,6 @@
 {
-  "checked_at_utc": "2026-10-23T02:28:28.860967+00:00",
-  "status": "All44 base certificates accepted; exact-radius root ordinary build passed; sixteen-worker continuation30320317 RUNNING after authorized drain and saved checkpoint",
+  "checked_at_utc": "2026-10-23T12:37:25.807250+00:00",
+  "status": "All 44 base certificates accepted; exact-radius root ordinary build passed; continuation 30320317 actively compiling with 16 Lean processes; joint target and audit still pending",
   "source_commit": "8ecc9d41892517175d46efc84e63a5d745096db0",
   "proof_sources_unchanged": true,
   "account": "pi_sl3363",
@@ -14,7 +14,7 @@
     "f1": "COMPLETED0:0; full build, audit and source hashes passed; archive downloaded and locally validated",
     "abb": "COMPLETED0:0; archived full build, audit and source hashes checked locally",
     "exterior": "COMPLETED0:0; result archive/full build/audit/source hashes locally checked",
-    "assembly": "RUNNING on a1114u21n01; sixteen workers configured and resumer command confirmed; restoring preserved generated sources/cache; full target, final hashes and original namespace audit remain pending"
+    "assembly": "RUNNING on a1114u21n01; checkpoint restoration finished and 16 Lean processes observed active; full target, final hashes and original namespace audit remain pending"
   },
   "assembly_afterok": [
     30082912,
@@ -367,11 +367,25 @@
     "immediate_handoff_authorization": "Explicit user authorization received; all six active proofs finished; current controller drained",
     "node": "a1114u21n01",
     "node_work_directory": "/tmp/triangle-joint-30320317-6YRBV8",
-    "phase": "restoring_generated_sources_and_cache",
+    "phase": "building",
     "startup": "All uploaded control hashes, original known result SHA, controlled-handoff predecessor gate, and original source archive SHA passed; pinned runtime selected before Python resumer entered full checkpoint restoration.",
     "resumer_pid": 573907,
     "resumer_workers_argument": 16,
-    "proof_workers_already_compiling": false,
-    "completion_claimed": false
-  }
+    "proof_workers_already_compiling": true,
+    "completion_claimed": false,
+    "build_observation": {
+      "target": "SparseLowerTail.CompletedReplays",
+      "total": 94032,
+      "completed": 39578,
+      "cached": 28393,
+      "failed": {},
+      "seconds": 36764.75511023309,
+      "workers": 16,
+      "phase": "building",
+      "trust_status": "Final full target build, source hashes and axiom audit remain required"
+    },
+    "active_lean_processes": 16,
+    "latest_progress_record": "results-20261023-0837/sixteen-worker-build-progress.json"
+  },
+  "latest_integration_progress_record": "results-20261023-0837/sixteen-worker-build-progress.json"
 }

@@ -1,0 +1,45 @@
+{
+  "checked_at_utc": "2026-10-23T12:37:25.807250+00:00",
+  "checked_at_local": "2026-10-23 08:37 America/New_York",
+  "evidence_method": "User-requested read-only scheduler and bounded node probe through existing authenticated Google Chrome Yale shell; monitoring session reauthenticated by user before this check.",
+  "job": 30320317,
+  "state": "RUNNING",
+  "node": "a1114u21n01",
+  "slurm_elapsed": "10:20:06",
+  "node_work_directory": "/tmp/triangle-joint-30320317-6YRBV8",
+  "build_snapshot": {
+    "target": "SparseLowerTail.CompletedReplays",
+    "total": 94032,
+    "completed": 39578,
+    "cached": 28393,
+    "failed": {},
+    "seconds": 36764.75511023309,
+    "workers": 16,
+    "phase": "building",
+    "trust_status": "Final full target build, source hashes and axiom audit remain required"
+  },
+  "active_lean_processes": 16,
+  "active_process_evidence": "Separate timeout45s srun --overlap --exact --jobid=30320317 --ntasks=1 --cpus-per-task=1 --mem=512M pgrep -c -x lean returned 16.",
+  "startup_phase_completed": "Checkpoint restoration is complete; scheduler has entered the combined build. Existing resumer requires complete restoration and unchanged source/audit checks before launching this scheduler.",
+  "first_active_build_observation": {
+    "checked_at_utc": "2026-10-23T03:33:00+00:00",
+    "timestamp_precision": "minute",
+    "completed": 29874,
+    "cached": 28393,
+    "seconds": 4115.163204607088,
+    "active_lean_processes": 16
+  },
+  "proof_source_changes": false,
+  "axiom_policy_changes": false,
+  "overall_completion_claimed": false,
+  "remaining": [
+    "current-source joint full target",
+    "final source-hash comparison",
+    "unchanged original namespace axiom audit",
+    "success archive and Slurm exit0",
+    "fresh latest-manuscript comparison"
+  ],
+  "interpretation": "Dependency counts combine accepted cache and newly compiled modules. They are not an overall completion percentage or a guaranteed deadline. No final certificate acceptance follows from this interim snapshot.",
+  "prior_running_record": "../results-20261022-handoff/sixteen-worker-running.json",
+  "scheduled_monitoring": "remains paused; status checked only at user request"
+}

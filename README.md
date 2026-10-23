@@ -57,7 +57,7 @@ finite certificates. The [proof map](lean/proof-map.json) links each paper
 statement to its Lean declarations; [named inputs](lean/ASSUMPTIONS.md) lists
 the external and classical results used.
 
-**Remaining verification:** final acceptance of the exact binary64 ABB neighborhood and the combined build/audit. The full ABB radius root built successfully. After all six active proofs finished, continuation **30254216** was intentionally drained at the user's request and is saving its checkpoint for the **16-worker continuation 30320317** ([handoff evidence](hpc/results-20261022-handoff/CONTROLLED_HANDOFF_READY.json)). Final source hashes and the original namespace audit remain required.
+**Remaining verification:** final acceptance of the exact binary64 ABB neighborhood and the combined build/audit. The full ABB radius root built successfully. The **16-worker continuation 30320317 is running** on Yale from the preserved checkpoint after an authorized handoff; all six active predecessor proofs finished successfully ([running record](hpc/results-20261022-handoff/sixteen-worker-running.json)). Final source hashes and the original namespace audit remain required.
 The [cluster record](hpc/README.md) tracks running jobs and recovery.
 The [manuscript comparison](lean/manuscript-review-20261021-related-work.json)
 matched all 112 mapped labels to the Overleaf source reviewed on October 21. The

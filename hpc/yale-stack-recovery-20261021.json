@@ -1,6 +1,6 @@
 {
-  "checked_at_utc": "2026-10-23T02:04:43.143510+00:00",
-  "status": "All44 base certificates accepted; exact-radius root ordinary build passed; approved six-worker controller drain completed, checkpoint exporting for sixteen-worker job30320317",
+  "checked_at_utc": "2026-10-23T02:28:28.860967+00:00",
+  "status": "All44 base certificates accepted; exact-radius root ordinary build passed; sixteen-worker continuation30320317 RUNNING after authorized drain and saved checkpoint",
   "source_commit": "8ecc9d41892517175d46efc84e63a5d745096db0",
   "proof_sources_unchanged": true,
   "account": "pi_sl3363",
@@ -8,13 +8,13 @@
     "f1": 30082912,
     "abb": 30104398,
     "exterior": 30104400,
-    "assembly": 30254216
+    "assembly": 30320317
   },
   "states": {
     "f1": "COMPLETED0:0; full build, audit and source hashes passed; archive downloaded and locally validated",
     "abb": "COMPLETED0:0; archived full build, audit and source hashes checked locally",
     "exterior": "COMPLETED0:0; result archive/full build/audit/source hashes locally checked",
-    "assembly": "Controller drained after all six active builds passed; checkpoint export underway; sixteen-worker successor30320317 awaiting dependency; final target/audit not accepted"
+    "assembly": "RUNNING on a1114u21n01; sixteen workers configured and resumer command confirmed; restoring preserved generated sources/cache; full target, final hashes and original namespace audit remain pending"
   },
   "assembly_afterok": [
     30082912,
@@ -292,7 +292,7 @@
   },
   "integration_continuation": {
     "job": 30254216,
-    "state": "ACTIVE_PROOFS_DRAINED_CHECKPOINT_EXPORT",
+    "state": "INTENTIONALLY_RETIRED_AFTER_AUTHORIZED_DRAIN",
     "node": "a1114u24n01",
     "observed_elapsed": "1:03",
     "cpus": 12,
@@ -334,13 +334,21 @@
       "note": "New processes confirmed using -j2. Initial sampled CPU is still about one core per process; no measured speedup or doubled throughput is claimed."
     },
     "intentional_handoff": "User explicitly authorized controlled switch to sixteen workers; scheduler-only SIGINT let executor finish all active subprocesses; no Lean/Lake process signalled",
-    "drain_evidence": "results-20261022-handoff/CONTROLLED_HANDOFF_READY.json"
+    "drain_evidence": "results-20261022-handoff/CONTROLLED_HANDOFF_READY.json",
+    "slurm_state": "FAILED",
+    "slurm_exit_code": "1:0",
+    "elapsed": "13:15:52",
+    "retirement_note": "All six active proof subprocesses finished successfully before the scheduler-only interrupt propagated; exit1 is an intentional handoff, not an accepted independent proof or a mathematical failure.",
+    "checkpoint": "sparse-lean-recovery-checkpoint-30254216.tar.gz",
+    "checkpoint_size_observed": "34 GiB; finalized archive, no .partial suffix",
+    "result_archive": "sparse-assembly-results-30254216.tar.gz",
+    "result_sha256": "56a0e862c0f91303928d6fe39f2b972a15f894ddf6614c8029ca6825257d75c5"
   },
   "queued_wide_continuation": {
     "job": 30320317,
-    "state": "PENDING",
-    "reason": "Dependency",
-    "dependency": "afterany:30254216",
+    "state": "RUNNING",
+    "reason": null,
+    "dependency": "satisfied after predecessor ended",
     "predecessor_unchanged_and_running": true,
     "cpus": 20,
     "memory_gib": 832,
@@ -353,9 +361,17 @@
     "control_archive": "triangle-joint-handoff-efc015d.tar.gz",
     "control_sha256": "b1345c1738c5996d17779d04f49d2b25713550394904f7ce9b8d5d3ae9f46715",
     "uploaded_all_file_hashes_and_shell_syntax_passed": true,
-    "start_time": "Unknown; Slurm dependency unfulfilled",
+    "start_time": "2026-10-22 approximately22:15 America/New_York; scheduler RUNNING observed00:06:41",
     "behavior": "Resume after clean timeout or an authorized drain whose six active-proof logs all prove success; skip fully audited success; reject other failures. Same global lock prevents overlapping continuations.",
     "current_job_not_stopped": false,
-    "immediate_handoff_authorization": "Explicit user authorization received; all six active proofs finished; current controller drained"
+    "immediate_handoff_authorization": "Explicit user authorization received; all six active proofs finished; current controller drained",
+    "node": "a1114u21n01",
+    "node_work_directory": "/tmp/triangle-joint-30320317-6YRBV8",
+    "phase": "restoring_generated_sources_and_cache",
+    "startup": "All uploaded control hashes, original known result SHA, controlled-handoff predecessor gate, and original source archive SHA passed; pinned runtime selected before Python resumer entered full checkpoint restoration.",
+    "resumer_pid": 573907,
+    "resumer_workers_argument": 16,
+    "proof_workers_already_compiling": false,
+    "completion_claimed": false
   }
 }

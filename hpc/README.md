@@ -20,8 +20,8 @@ The remaining work runs on **Yale Bouchet**:
 | Stage | Yale job | Status |
 |---|---:|---|
 | Original combined integration | 30104499 | Timed out; checkpoint preserved; radius root ordinary build passed |
-| Six-worker continuation | 30254216 | Active proofs drained successfully; saving checkpoint for approved handoff |
-| Sixteen-worker continuation | 30320317 | Queued after predecessor; full target, source hashes and original audit still required |
+| Six-worker continuation | 30254216 | Intentionally retired after six active proofs finished; 34 GiB checkpoint saved |
+| Sixteen-worker continuation | 30320317 | Running on a1114u21n01 with sixteen workers configured; restoring sources/cache; final build and audit pending |
 
 The integration generates the full exact-radius ABB replay and combines
 all verified regions and families with the author-proof root. Its build and

@@ -1,0 +1,36 @@
+    - generic: "resume_assembly.py: OK"
+    - generic: "resume_abb_root.py: OK"
+    - generic: "build_ready_batches.py: OK"
+    - generic: "continuation_gate.py: OK"
+    - generic: "set_lean_threads.py: OK"
+    - generic: "drain_joint.py: OK"
+    - generic: "bouchet-assembly-wide.sbatch: OK"
+    - generic: "/nfs/roberts/project/pi_sl3363/sl3363/sparse-assembly-results-30104499.tar.gz: OK"
+    - generic: "/nfs/roberts/project/pi_sl3363/sl3363/triangle-yale-source-8ecc9d4.tar.gz: OK"
+    - generic: Restoring generated sources and cache from complete checkpoint
+    - generic: "[sl3363@login1.bouchet sl3363]$ sacct -j30254216,30320317 -X -o JobID,State,ExitCode,Elapsed,AllocCPUS"
+    - generic: JobID State ExitCode Elapsed AllocCPUS
+    - generic: "------------ ---------- -------- ---------- ----------"
+    - generic: 30254216 FAILED 1:0 13:15:52 12
+    - generic: 30320317 RUNNING 0:0 00:06:41 20
+    - generic: "[sl3363@login1.bouchet sl3363]$ wide_probe='timeout 45s srun --overlap --exact --jobid=30320317 --ntasks=1 --cpus-per-task=1 --mem=512M'"
+    - generic: "[sl3363@login1.bouchet sl3363]$ $wide_probe bash -c 'ls -d /tmp/triangle-joint-30320317-*'"
+    - generic: /tmp/triangle-joint-30320317-6YRBV8
+    - generic: "[sl3363@login1.bouchet sl3363]$"
+    - textbox
+  - button "Page down" [disabled]
+  - button "Options"
+  - generic "(32, 50)"
+    - generic: "[sl3363@login1.bouchet sl3363]$ sha256sum sparse-assembly-results-30254216.tar.gz"
+    - generic: 56a0e862c0f91303928d6fe39f2b972a15f894ddf6614c8029ca6825257d75c5 sparse-assembly-results-30254216.tar.gz
+    - generic: "[sl3363@login1.bouchet sl3363]$ $wide_probe pgrep -afu sl3363 resume_assembly.py"
+    - generic: 573906 timeout --signal=TERM --kill-after=60s 21h python3 /nfs/roberts/project/pi_sl3363/sl3363/triangle-joint-handoff-efc015d/resume_assembly.py --repo /tmp/triangle-joint-30320317-6YRBV8/repo --prior-result /
+    - generic: nfs/roberts/project/pi_sl3363/sl3363/sparse-assembly-results-30254216.tar.gz --checkpoint /nfs/roberts/project/pi_sl3363/sl3363/sparse-lean-recovery-checkpoint-30254216.tar.gz --logs /tmp/triangle-joint-3032031
+    - generic: 7-6YRBV8/logs --workers 16
+    - generic: 573907 python3 /nfs/roberts/project/pi_sl3363/sl3363/triangle-joint-handoff-efc015d/resume_assembly.py --repo /tmp/triangle-joint-30320317-6YRBV8/repo --prior-result /nfs/roberts/project/pi_sl3363/sl3363/sparse
+    - generic: "-assembly-results-30254216.tar.gz --checkpoint /nfs/roberts/project/pi_sl3363/sl3363/sparse-lean-recovery-checkpoint-30254216.tar.gz --logs /tmp/triangle-joint-30320317-6YRBV8/logs --workers 16"
+    - generic: "[sl3363@login1.bouchet sl3363]$"
+    - textbox
+  - button "Page down" [disabled]
+  - button "Options"
+  - generic "(32, 50)"

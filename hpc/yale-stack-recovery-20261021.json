@@ -1,6 +1,6 @@
 {
-  "checked_at_utc": "2026-10-24T02:48:22.128761+00:00",
-  "status": "All 44 base certificates accepted; exact-radius root ordinary build passed; sixteen-worker continuation 30496690 queued after clean timeout with finalized checkpoint 30320317",
+  "checked_at_utc": "2026-10-24T02:49:18.004447+00:00",
+  "status": "All44 base certificates accepted; exact-radius root ordinary build passed; sixteen-worker continuation30496690 RUNNING with serial successor30497291 prequeued",
   "source_commit": "8ecc9d41892517175d46efc84e63a5d745096db0",
   "proof_sources_unchanged": true,
   "account": "pi_sl3363",
@@ -14,7 +14,7 @@
     "f1": "COMPLETED0:0; full build, audit and source hashes passed; archive downloaded and locally validated",
     "abb": "COMPLETED0:0; archived full build, audit and source hashes checked locally",
     "exterior": "COMPLETED0:0; result archive/full build/audit/source hashes locally checked",
-    "assembly": "PENDING Resources; continuation 30496690 from finalized predecessor 30320317 checkpoint. No overall completion claimed."
+    "assembly": "RUNNING on a1130u07n03, startup checks passed;16workers configured; final full target, source hashes and audit pending"
   },
   "assembly_afterok": [
     30082912,
@@ -456,15 +456,37 @@
     "readme_changed": false,
     "repository_visibility_changed": false,
     "acceptance": "Not complete: final full target, unchanged source hashes, original namespace axiom audit, final archives and Slurm exit0 remain required.",
-    "monitoring": "Recurring automation remains paused."
+    "monitoring": "Recurring automation remains paused.",
+    "running_observation": {
+      "checked_at_utc": "2026-10-24T02:49:18.004447+00:00",
+      "job": 30496690,
+      "state": "RUNNING",
+      "node": "a1130u07n03",
+      "workers_configured": 16,
+      "phase": "startup; control and original archive hash checks passed",
+      "proof_workers_already_compiling": false,
+      "successor_job": 30497291,
+      "successor_state": "PENDING Dependency afterany:30496690(unfulfilled)",
+      "startup_log_tail": [
+        "resume_assembly.py: OK",
+        "resume_abb_root.py: OK",
+        "build_ready_batches.py: OK",
+        "continuation_gate.py: OK",
+        "set_lean_threads.py: OK",
+        "drain_joint.py: OK",
+        "bouchet-assembly-wide.sbatch: OK",
+        "sparse-assembly-results-30104499.tar.gz: OK",
+        "triangle-yale-source-8ecc9d4.tar.gz: OK"
+      ]
+    }
   },
   "prequeued_successor": {
-    "checked_at_utc": "2026-10-24T02:48:22.128761+00:00",
+    "checked_at_utc": "2026-10-24T02:49:18.004447+00:00",
     "purpose": "Prequeue a serial successor before the next21-hour build limit, avoiding a manual restart gap after another clean timeout.",
     "current_continuation": {
       "job": 30496690,
-      "state": "PENDING",
-      "reason": "Resources",
+      "state": "RUNNING",
+      "node": "a1130u07n03",
       "dependency": null
     },
     "prequeued_successor": {
@@ -503,6 +525,28 @@
     "proof_sources_changed": false,
     "axiom_policy_changed": false,
     "repository_visibility_changed": false,
-    "overall_completion_claimed": false
+    "overall_completion_claimed": false,
+    "running_observation": {
+      "checked_at_utc": "2026-10-24T02:49:18.004447+00:00",
+      "job": 30496690,
+      "state": "RUNNING",
+      "node": "a1130u07n03",
+      "workers_configured": 16,
+      "phase": "startup; control and original archive hash checks passed",
+      "proof_workers_already_compiling": false,
+      "successor_job": 30497291,
+      "successor_state": "PENDING Dependency afterany:30496690(unfulfilled)",
+      "startup_log_tail": [
+        "resume_assembly.py: OK",
+        "resume_abb_root.py: OK",
+        "build_ready_batches.py: OK",
+        "continuation_gate.py: OK",
+        "set_lean_threads.py: OK",
+        "drain_joint.py: OK",
+        "bouchet-assembly-wide.sbatch: OK",
+        "sparse-assembly-results-30104499.tar.gz: OK",
+        "triangle-yale-source-8ecc9d4.tar.gz: OK"
+      ]
+    }
   }
 }

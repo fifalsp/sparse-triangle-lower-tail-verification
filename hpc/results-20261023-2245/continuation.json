@@ -66,5 +66,27 @@
   "readme_changed": false,
   "repository_visibility_changed": false,
   "acceptance": "Not complete: final full target, unchanged source hashes, original namespace axiom audit, final archives and Slurm exit0 remain required.",
-  "monitoring": "Recurring automation remains paused."
+  "monitoring": "Recurring automation remains paused.",
+  "running_observation": {
+    "checked_at_utc": "2026-10-24T02:49:18.004447+00:00",
+    "job": 30496690,
+    "state": "RUNNING",
+    "node": "a1130u07n03",
+    "workers_configured": 16,
+    "phase": "startup; control and original archive hash checks passed",
+    "proof_workers_already_compiling": false,
+    "successor_job": 30497291,
+    "successor_state": "PENDING Dependency afterany:30496690(unfulfilled)",
+    "startup_log_tail": [
+      "resume_assembly.py: OK",
+      "resume_abb_root.py: OK",
+      "build_ready_batches.py: OK",
+      "continuation_gate.py: OK",
+      "set_lean_threads.py: OK",
+      "drain_joint.py: OK",
+      "bouchet-assembly-wide.sbatch: OK",
+      "sparse-assembly-results-30104499.tar.gz: OK",
+      "triangle-yale-source-8ecc9d4.tar.gz: OK"
+    ]
+  }
 }

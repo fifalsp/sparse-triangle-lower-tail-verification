@@ -13,8 +13,11 @@ set -euo pipefail
 umask 077
 CONTROL_DIR=$(realpath "${1:?checked control directory}")
 SAVE_ROOT=${SLURM_SUBMIT_DIR:?}
-PREDECESSOR=30254216
-PREVIOUS=/tmp/triangle-joint-30254216-euKZJc
+# Later continuations pass the ended predecessor and its node-local directory.
+PREDECESSOR=${2:-30320317}
+PREVIOUS=${3:-/tmp/triangle-joint-30320317-6YRBV8}
+[[ "$PREDECESSOR" =~ ^[0-9]+$ ]] || exit 2
+[[ "$PREVIOUS" == /tmp/triangle-joint-"$PREDECESSOR"-* && "$PREVIOUS" != *..* ]] || exit 2
 SOURCE_COMMIT=8ecc9d41892517175d46efc84e63a5d745096db0
 BASE_RESULT="$SAVE_ROOT/sparse-assembly-results-30104499.tar.gz"
 PRIOR_RESULT="$SAVE_ROOT/sparse-assembly-results-${PREDECESSOR}.tar.gz"

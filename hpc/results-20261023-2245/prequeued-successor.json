@@ -1,0 +1,47 @@
+{
+  "checked_at_utc": "2026-10-24T02:48:22.128761+00:00",
+  "purpose": "Prequeue a serial successor before the next21-hour build limit, avoiding a manual restart gap after another clean timeout.",
+  "current_continuation": {
+    "job": 30496690,
+    "state": "PENDING",
+    "reason": "Resources",
+    "dependency": null
+  },
+  "prequeued_successor": {
+    "job": 30497291,
+    "name": "triangle-joint-next",
+    "state": "PENDING",
+    "reason": "Dependency",
+    "dependency": "afterany:30496690(unfulfilled)",
+    "predecessor": 30496690,
+    "submitted_at_local": "2026-10-23T22:47:32 America/New_York",
+    "workers": 16,
+    "cpus": 20,
+    "memory_gib": 832,
+    "time_limit": "24:00:00",
+    "build_timeout": "21h",
+    "lean_memory_mib_per_worker": 49152,
+    "lean_threads": 1,
+    "stack_kib": 65536,
+    "account": "pi_sl3363",
+    "partition": "day",
+    "control_directory": "triangle-joint-next-7438b85",
+    "control_commit": "7438b85e",
+    "fallback_node_directory_argument": "/tmp/triangle-joint-30496690-checkpoint-fallback",
+    "restart_source": "Finalized sparse-lean-recovery-checkpoint-30496690.tar.gz; never the older30320317 snapshot."
+  },
+  "behavior": {
+    "clean_timeout": "Resume only after existing strict gates accept scheduler124:0, archive exit124, empty proof-failure map, all44base inputs and unchanged source manifest/revision.",
+    "verified_success": "Skip duplicate computation after full target, original audit and success/hash evidence pass.",
+    "unexpected_failure": "Refuse to resume; no relaxation of proof or audit gates.",
+    "serialization": "Slurm afterany plus shared global flock prevents overlapping proof runners.",
+    "scheduler_wait": "Dependency satisfaction makes the successor eligible; actual start still depends on Yale resources."
+  },
+  "evidence": "Authenticated native Chrome shell; sbatch accepted30497291 and fresh squeue/scontrol confirmed exact predecessor dependency, resource request and command arguments.",
+  "monitoring": "Recurring30-minute automation remains paused; this is a scheduler dependency, not periodic monitoring.",
+  "readme_changed": false,
+  "proof_sources_changed": false,
+  "axiom_policy_changed": false,
+  "repository_visibility_changed": false,
+  "overall_completion_claimed": false
+}

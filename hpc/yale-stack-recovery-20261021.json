@@ -1,6 +1,6 @@
 {
-  "checked_at_utc": "2026-10-23T12:37:25.807250+00:00",
-  "status": "All 44 base certificates accepted; exact-radius root ordinary build passed; continuation 30320317 actively compiling with 16 Lean processes; joint target and audit still pending",
+  "checked_at_utc": "2026-10-24T02:45:14.307453+00:00",
+  "status": "All 44 base certificates accepted; exact-radius root ordinary build passed; sixteen-worker continuation 30496690 queued after clean timeout with finalized checkpoint 30320317",
   "source_commit": "8ecc9d41892517175d46efc84e63a5d745096db0",
   "proof_sources_unchanged": true,
   "account": "pi_sl3363",
@@ -8,13 +8,13 @@
     "f1": 30082912,
     "abb": 30104398,
     "exterior": 30104400,
-    "assembly": 30320317
+    "assembly": 30496690
   },
   "states": {
     "f1": "COMPLETED0:0; full build, audit and source hashes passed; archive downloaded and locally validated",
     "abb": "COMPLETED0:0; archived full build, audit and source hashes checked locally",
     "exterior": "COMPLETED0:0; result archive/full build/audit/source hashes locally checked",
-    "assembly": "RUNNING on a1114u21n01; checkpoint restoration finished and 16 Lean processes observed active; full target, final hashes and original namespace audit remain pending"
+    "assembly": "PENDING Resources; continuation 30496690 from finalized predecessor 30320317 checkpoint. No overall completion claimed."
   },
   "assembly_afterok": [
     30082912,
@@ -346,7 +346,7 @@
   },
   "queued_wide_continuation": {
     "job": 30320317,
-    "state": "RUNNING",
+    "state": "FAILED124:0; clean timeout, checkpoint preserved",
     "reason": null,
     "dependency": "satisfied after predecessor ended",
     "predecessor_unchanged_and_running": true,
@@ -387,5 +387,75 @@
     "active_lean_processes": 16,
     "latest_progress_record": "results-20261023-0837/sixteen-worker-build-progress.json"
   },
-  "latest_integration_progress_record": "results-20261023-0837/sixteen-worker-build-progress.json"
+  "latest_integration_progress_record": "results-20261023-2245/continuation.json",
+  "wide_timeout_continuation": {
+    "checked_at_utc": "2026-10-24T02:45:14.307453+00:00",
+    "request": "User authorized checking ended Yale job and resuming from completed work after timeout.",
+    "predecessor": {
+      "job": 30320317,
+      "state": "FAILED",
+      "exit_code": "124:0",
+      "elapsed": "21:20:04",
+      "node": "a1114u21n01",
+      "termination": "Configured 21-hour build timeout; not a reported mathematical proof failure.",
+      "status": {
+        "target": "SparseLowerTail.CompletedReplays",
+        "total": 94032,
+        "completed": 51867,
+        "cached": 28393,
+        "failed": {},
+        "seconds": 75159.41944028996,
+        "workers": 16,
+        "phase": "building"
+      },
+      "result_archive": "sparse-assembly-results-30320317.tar.gz",
+      "result_sha256": "789ec60bff6319ffea82e4aa5d9501567eaafff4ba9d2b5853af0af77380ade6",
+      "result_size_observed": "8.2 MiB",
+      "checkpoint": "sparse-lean-recovery-checkpoint-30320317.tar.gz",
+      "checkpoint_size_observed": "34 GiB",
+      "checkpoint_finalized": true,
+      "checkpoint_downloaded_locally": false,
+      "full_checkpoint_stream_validation": "Required by resumer if restoration is needed; not claimed from filename alone.",
+      "strict_continuation_gate": "Passed existing continuation_gate.py with schedulerFAILED124:0; unchanged combined manifest and revision, all44base inputs, empty failure map, and recorded124 exit checked."
+    },
+    "continuation": {
+      "job": 30496690,
+      "state": "PENDING",
+      "reason": "Resources",
+      "expected_start": "Unknown; squeue --start returnedN/A",
+      "dependency": "satisfied; scontrol Dependency=(null)",
+      "submitted_at_local": "2026-10-23T22:43:24 America/New_York",
+      "workers": 16,
+      "cpus": 20,
+      "memory_gib": 832,
+      "time_limit": "24:00:00",
+      "lean_memory_mib_per_worker": 49152,
+      "lean_threads": 1,
+      "stack_kib": 65536,
+      "predecessor": 30320317,
+      "previous_node_directory": "/tmp/triangle-joint-30320317-6YRBV8",
+      "control_commit": "7438b85e",
+      "control_directory": "triangle-joint-next-7438b85",
+      "patch_archive_bytes": 2580,
+      "patch_archive_sha256": "6e025ed58fa9c7c68f3ae36530982487d179c0b236e05786f3d41adb7a986b2e",
+      "runner_sha256": "4c3011037527b486bd1cb86f1e3f76db0be2897a635b4c5a86fdac54ce540c4a",
+      "all7_control_hashes_passed_on_yale": true,
+      "remote_bash_syntax_passed": true,
+      "resource_dependency_command_workdir_checked": true
+    },
+    "local_checks": {
+      "wide_predecessor_guard_tests": 5,
+      "strict_predecessor_gate_tests": 10,
+      "checkpoint_restoration_tests": 6,
+      "bash_syntax": "passed",
+      "git_diff_check": "passed"
+    },
+    "preservation": "All successful archives, original checkpoints, and the latest finalized checkpoint retained. No healthy job cancelled or duplicate proof worker submitted. Global lock and dependency guard retained.",
+    "proof_sources_changed": false,
+    "axiom_policy_changed": false,
+    "readme_changed": false,
+    "repository_visibility_changed": false,
+    "acceptance": "Not complete: final full target, unchanged source hashes, original namespace axiom audit, final archives and Slurm exit0 remain required.",
+    "monitoring": "Recurring automation remains paused."
+  }
 }

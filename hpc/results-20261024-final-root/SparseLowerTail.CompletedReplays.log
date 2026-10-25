@@ -1,0 +1,185 @@
+⚠ [3218/3321] Replayed SparseLowerTail.Section06.InsertionVariation
+warning: SparseLowerTail/Section06/InsertionVariation.lean:55:92: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: SparseLowerTail/Section06/InsertionVariation.lean:55:105: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: SparseLowerTail/Section06/InsertionVariation.lean:61:100: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: SparseLowerTail/Section06/InsertionVariation.lean:61:113: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3329/3803] Replayed SparseLowerTail.Numerics.DyadicTaylorFactored
+warning: SparseLowerTail/Numerics/DyadicTaylorFactored.lean:87:39: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: SparseLowerTail/Numerics/DyadicTaylorFactored.lean:87:66: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3337/3803] Replayed SparseLowerTail.Numerics.TaylorThird
+warning: SparseLowerTail/Numerics/TaylorThird.lean:39:60: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: SparseLowerTail/Numerics/TaylorThird.lean:39:82: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: SparseLowerTail/Numerics/TaylorThird.lean:53:60: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: SparseLowerTail/Numerics/TaylorThird.lean:53:82: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3389/3803] Replayed SparseLowerTail.Section05.ApexTaylorLocal
+warning: SparseLowerTail/Section05/ApexTaylorLocal.lean:37:77: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: SparseLowerTail/Section05/ApexTaylorLocal.lean:37:77: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: SparseLowerTail/Section05/ApexTaylorLocal.lean:97:35: unused variable `hell`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [3405/3803] Replayed SparseLowerTail.Section05.CoverGenericCalculus
+warning: SparseLowerTail/Section05/CoverGenericCalculus.lean:37:25: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: SparseLowerTail/Section05/CoverGenericCalculus.lean:39:25: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: SparseLowerTail/Section05/CoverGenericCalculus.lean:41:25: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: SparseLowerTail/Section05/CoverGenericCalculus.lean:43:25: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: SparseLowerTail/Section05/CoverGenericCalculus.lean:45:25: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: SparseLowerTail/Section05/CoverGenericCalculus.lean:47:25: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: SparseLowerTail/Section05/CoverGenericCalculus.lean:49:58: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: SparseLowerTail/Section05/CoverGenericCalculus.lean:51:55: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: SparseLowerTail/Section05/CoverGenericCalculus.lean:53:64: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: SparseLowerTail/Section05/CoverGenericCalculus.lean:55:45: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: SparseLowerTail/Section05/CoverGenericCalculus.lean:57:45: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: SparseLowerTail/Section05/CoverGenericCalculus.lean:59:45: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: SparseLowerTail/Section05/CoverGenericCalculus.lean:61:45: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: SparseLowerTail/Section05/CoverGenericCalculus.lean:63:45: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: SparseLowerTail/Section05/CoverGenericCalculus.lean:65:45: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: SparseLowerTail/Section05/CoverGenericCalculus.lean:67:45: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: SparseLowerTail/Section05/CoverGenericCalculus.lean:69:45: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: SparseLowerTail/Section05/CoverGenericCalculus.lean:71:45: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: SparseLowerTail/Section05/CoverGenericCalculus.lean:73:45: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: SparseLowerTail/Section05/CoverGenericCalculus.lean:75:45: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: SparseLowerTail/Section05/CoverGenericCalculus.lean:77:45: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: SparseLowerTail/Section05/CoverGenericCalculus.lean:79:46: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: SparseLowerTail/Section05/CoverGenericCalculus.lean:81:46: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: SparseLowerTail/Section05/CoverGenericCalculus.lean:83:45: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3410/3803] Replayed SparseLowerTail.Section04.RefinedThresholdDigits
+warning: SparseLowerTail/Section04/RefinedThresholdDigits.lean:178:45: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: SparseLowerTail/Section04/RefinedThresholdDigits.lean:178:45: 'norm_num [digitZLower]' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: SparseLowerTail/Section04/RefinedThresholdDigits.lean:183:45: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: SparseLowerTail/Section04/RefinedThresholdDigits.lean:183:45: 'norm_num [digitZUpper]' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: SparseLowerTail/Section04/RefinedThresholdDigits.lean:304:24: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3440/3803] Replayed SparseLowerTail.Section08.FamilyParameterCalculus
+warning: SparseLowerTail/Section08/FamilyParameterCalculus.lean:28:68: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3441/3803] Replayed SparseLowerTail.Numerics.TaylorParameter
+warning: SparseLowerTail/Numerics/TaylorParameter.lean:26:58: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: SparseLowerTail/Numerics/TaylorParameter.lean:30:62: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: SparseLowerTail/Numerics/TaylorParameter.lean:86:58: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3443/3803] Replayed SparseLowerTail.Section08.FamilyParameterTaylor
+warning: SparseLowerTail/Section08/FamilyParameterTaylor.lean:34:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3448/3803] Replayed SparseLowerTail.Section08.FamilyWeightIntervals
+warning: SparseLowerTail/Section08/FamilyWeightIntervals.lean:37:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3702/3803] Replayed SparseLowerTail.Numerics.Cholesky3
+warning: SparseLowerTail/Numerics/Cholesky3.lean:12:5: unused variable `hl`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+ℹ [3713/3803] Replayed SparseLowerTail.Section08.CertificateUniqueness
+info: SparseLowerTail/Section08/CertificateUniqueness.lean:225:51: Try this:
+  ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: SparseLowerTail/Section08/CertificateUniqueness.lean:225:51: Try this:
+  ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: SparseLowerTail/Section08/CertificateUniqueness.lean:225:51: Try this:
+  ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: SparseLowerTail/Section08/CertificateUniqueness.lean:225:51: Try this:
+  ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+
+Stack overflow detected. Aborting.

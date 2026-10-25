@@ -1,6 +1,6 @@
 {
-  "checked_at_utc": "2026-10-24T02:49:18.004447+00:00",
-  "status": "All44 base certificates accepted; exact-radius root ordinary build passed; sixteen-worker continuation30496690 RUNNING with serial successor30497291 prequeued",
+  "checked_at_utc": "2026-10-25T03:22:46.994972+00:00",
+  "status": "All44 base certificates accepted; all94031 combined dependencies passed; final Lake aggregate hit stack overflow; root-only larger-stack recovery30686886 RUNNING",
   "source_commit": "8ecc9d41892517175d46efc84e63a5d745096db0",
   "proof_sources_unchanged": true,
   "account": "pi_sl3363",
@@ -8,13 +8,13 @@
     "f1": 30082912,
     "abb": 30104398,
     "exterior": 30104400,
-    "assembly": 30496690
+    "assembly": 30686886
   },
   "states": {
     "f1": "COMPLETED0:0; full build, audit and source hashes passed; archive downloaded and locally validated",
     "abb": "COMPLETED0:0; archived full build, audit and source hashes checked locally",
     "exterior": "COMPLETED0:0; result archive/full build/audit/source hashes locally checked",
-    "assembly": "RUNNING on a1130u07n03, startup checks passed;16workers configured; final full target, source hashes and audit pending"
+    "assembly": "RUNNING on a1132u31n03; restoring finalized30496690 checkpoint; larger Lake runtime stack; final target/source hashes/audit still pending"
   },
   "assembly_afterok": [
     30082912,
@@ -387,7 +387,7 @@
     "active_lean_processes": 16,
     "latest_progress_record": "results-20261023-0837/sixteen-worker-build-progress.json"
   },
-  "latest_integration_progress_record": "results-20261023-2245/continuation.json",
+  "latest_integration_progress_record": "results-20261024-final-root/root-stack-recovery.json",
   "wide_timeout_continuation": {
     "checked_at_utc": "2026-10-24T02:45:14.307453+00:00",
     "request": "User authorized checking ended Yale job and resuming from completed work after timeout.",
@@ -485,14 +485,14 @@
     "purpose": "Prequeue a serial successor before the next21-hour build limit, avoiding a manual restart gap after another clean timeout.",
     "current_continuation": {
       "job": 30496690,
-      "state": "RUNNING",
+      "state": "FAILED1:0; final Lake stack overflow",
       "node": "a1130u07n03",
       "dependency": null
     },
     "prequeued_successor": {
       "job": 30497291,
       "name": "triangle-joint-next",
-      "state": "PENDING",
+      "state": "FAILED1:0; strict predecessor guard stopped before proof work",
       "reason": "Dependency",
       "dependency": "afterany:30496690(unfulfilled)",
       "predecessor": 30496690,
@@ -548,5 +548,95 @@
         "triangle-yale-source-8ecc9d4.tar.gz: OK"
       ]
     }
+  },
+  "combined_root_stack_failure": {
+    "checked_at_utc": "2026-10-25T03:22:46.994972+00:00",
+    "predecessor": {
+      "job": 30496690,
+      "state": "FAILED",
+      "exit_code": "1:0",
+      "elapsed": "05:16:05",
+      "node": "a1130u07n03",
+      "build_snapshot": {
+        "target": "SparseLowerTail.CompletedReplays",
+        "total": 94032,
+        "completed": 94031,
+        "cached": 66743,
+        "failed": {
+          "SparseLowerTail.CompletedReplays": -6
+        },
+        "seconds": 16812.568901720922,
+        "workers": 16,
+        "phase": "build_failed",
+        "trust_status": "Final full target build, source hashes and axiom audit remain required"
+      },
+      "failure": "Final Lake process aborted with Stack overflow detected. Aborting.; all94031 preceding dependencies passed.",
+      "result_archive": "sparse-assembly-results-30496690.tar.gz",
+      "bytes": 9754933,
+      "sha256": "7d22716d18fd1c4e21ba9a689655937131f0554aeaf614ad8efbd3d6565cc76e",
+      "authenticated_chrome_download_sha_matched_yale": true,
+      "isolated_root_gate_passed_locally_and_on_yale": true,
+      "checkpoint": "sparse-lean-recovery-checkpoint-30496690.tar.gz",
+      "checkpoint_size_observed": "34 GiB; finalized filename",
+      "checkpoint_downloaded_locally": false,
+      "completed_checkpoint_restoration_evidence": {
+        "manifest_sources_restored_or_compared": 94031,
+        "complete_stream_read": true
+      }
+    },
+    "old_successor": {
+      "job": 30497291,
+      "state": "FAILED",
+      "exit_code": "1:0",
+      "elapsed": "00:00:02",
+      "node": "a1114u29n01",
+      "reason": "Existing continuation gate rejected the unexpected predecessor module failure; no proof computation started."
+    },
+    "diagnosis": "subprocess returned-6 for the Lake process itself and its log contains the literal stack-overflow abort. Prior weakLeanArgs applied only to child Lean processes; recovery also configures the Lake runtime stack through the pinned Lean --run entry point.",
+    "recovery": {
+      "job": 30686886,
+      "state": "RUNNING",
+      "node": "a1132u31n03",
+      "observed_elapsed": "00:00:24",
+      "phase": "restoring completed dependencies from finalized checkpoint",
+      "control_commit": "1158845e",
+      "control_directory": "triangle-combined-root-stack-1158845e",
+      "control_archive_bytes": 13026,
+      "control_archive_sha256": "f6e5d2288886e2e935f087dd3ed9c1b5ab66f00b367ac4f449dd58c205964adc",
+      "all9_remote_control_hashes_passed": true,
+      "remote_shell_syntax_passed": true,
+      "strict_isolated_stack_failure_gate_passed": true,
+      "cpus": 4,
+      "memory_gib": 192,
+      "memory_cap_mib": 49152,
+      "native_and_lake_and_lean_stack_kib": 262144,
+      "lean_threads": 1,
+      "full_target": "SparseLowerTail.CompletedReplays",
+      "time_limit": "24h; build controller timeout21h",
+      "full_recovery_checkpoint_crc_verification": "in progress; required before aggregate build",
+      "audit_policy": "Original namespace audit preserved; only propext, Classical.choice, Quot.sound permitted.",
+      "worker_compilation_already_confirmed": false
+    },
+    "tests": {
+      "isolated_root_failure_tests": 11,
+      "checkpoint_restoration_tests": 6,
+      "existing_continuation_gate_tests": 10,
+      "pinned_frontend_runtime_test": "Actual Lean4.24.0 launcher returned Lake5.0.0-src+797c613; includes explicit stack option applied to Lake itself.",
+      "python_and_shell_syntax": "passed"
+    },
+    "proof_source_changes": false,
+    "axiom_policy_changes": false,
+    "readme_changes": false,
+    "repository_visibility_changes": false,
+    "overall_completion_claimed": false,
+    "remaining": [
+      "successful full combined aggregate build",
+      "final source-hash verification",
+      "unchanged original namespace audit",
+      "final archives and Slurmexit0 acceptance",
+      "fresh latest-manuscript comparison"
+    ],
+    "retention": "All prior successful certificates, inputs and checkpoints preserved; no healthy runner cancelled or duplicate worker launched.",
+    "monitoring": "Recurring automation remains paused."
   }
 }

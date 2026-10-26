@@ -19,8 +19,9 @@ No proof source or axiom policy was changed by that resource control.
 [Deployment and recovery history](yale-stack-recovery-20261021.json).
 
 No further cluster runner is needed for this accepted source. Correspondence
-with the latest Overleaf main file `arxiv_v2.tex` is under review; changed
-wording and numbering have not been accepted merely from a source-map check.
+with the latest Overleaf main file `arxiv_v2.tex` is accepted after reviewing
+the changed statements, proofs and exposition and checking the exact certificate
+inputs. [Manuscript review](../lean/manuscript-review-20261026-v2.json).
 All successful regional/family inputs and recovery checkpoints remain retained.
 The duplicate laptop F1 worker remains retired.
 

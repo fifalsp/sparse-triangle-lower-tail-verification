@@ -226,10 +226,13 @@ new argument and are not covered by the permission to assume external theorems.
 [`ThresholdReduction.lean`](SparseLowerTail/Section05/ThresholdReduction.lean)
 is the paper's own `prop:critical`, stated in measurable-partition form. The
 threshold theorem has been deduced from it. `CriticalAssembly` now derives it
-from explicit finite-cover and apex-certificate hypotheses, but these internal
-positivity/geometric obligations remain unproved. It must be discharged, not retained among the final external inputs.
-Likewise certificate positivity, matching-data and continuation hypotheses
-remain internal proof obligations. The vertex identity has now been proved
+from explicit finite-cover and apex-certificate hypotheses. These internal
+positivity/geometric obligations are discharged by the completed regional
+replays and their combined integration; they are not retained among the final
+external inputs. Certificate positivity, matching-data and continuation
+hypotheses are likewise discharged in the generated combined aggregate.
+[Completion evidence](../hpc/results-20261026-combined-completion/completion.json).
+The vertex identity is proved
 relative only to the classical sampling input above. The completed
 Euler–Lagrange proposition requires none of these hypotheses.
 
@@ -258,7 +261,7 @@ checker. Changes to shared macro definitions or unmapped statements also require
 manual review. A clean comparison does not prove that a revised paper is correct.
 
 
-## Main theorem: exact remaining replay inputs
+## Main theorem: internal replay inputs and their discharge
 
 `SparseLowerTail.mainTheorem_of_remaining_replays` in
 [`MainReplayAssembly.lean`](SparseLowerTail/MainReplayAssembly.lean) separates
@@ -272,7 +275,10 @@ seven permitted external/classical inputs from four internal inputs:
   of the complete exterior replay; applying it to the preceding input removes
   the ABB premise.
 
-This theorem proves the deduction, not these four inputs. The two corollaries
+This parameterized theorem proves the deduction. The generated
+[`CompletedReplays.mainTheorem`](../hpc/results-20261026-combined-completion/CompletedReplays.lean)
+supplies all four internal inputs with proved certificates; its complete build
+and original namespace audit passed. The two corollaries
 in [`MainRelabeling.lean`](SparseLowerTail/MainRelabeling.lean) express the
 at-transition and subcritical classifications as actual measure-preserving
 pullbacks up to almost-everywhere equality. They additionally take
@@ -295,14 +301,16 @@ The ABB radius-transfer argument is now proved in
 `Section08/FamilyHessianPerturbation.lean` and
 `Section08/FamilyHessianRadiusTransfer.lean`. Its quantitative coefficient,
 contact and padded-margin conditions are checked for the 21 existing test
-leaves, including one complete subtree. The full padded leaf table remains
-an internal numerical obligation. No external hypothesis was added.
+leaves, including one complete subtree. The full padded leaf table and its
+coverage subsequently passed in the combined integration, including the exact
+binary64 ABB Hessian and unique-zero conclusions. No external hypothesis was added.
 
 
-### Literal ordered compact conclusion (Proposition A.5)
+### Literal ordered compact conclusion (current Proposition B.5)
 
 `ManuscriptCompactConclusion.lean` proves the nonnegative value and exact
 two-contact zero set in the independent L coordinate. Its finite-table adapter
-keeps `internal:full-family-replay-table` explicit until all leaf inequalities
-and subdivision coverage are checked. Sorting and the converse zero identities
-are proved; no external hypothesis was added.
+exposes `internal:full-family-replay-table` for modular builds. The completed
+combined aggregate now supplies the full finite table and subdivision coverage.
+Sorting and the converse zero identities are proved; no external hypothesis
+was added.

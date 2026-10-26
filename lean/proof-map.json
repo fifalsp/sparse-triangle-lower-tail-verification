@@ -8,13 +8,13 @@
     "baseline_display_number_snapshot": {
       "thm:main": "1.3"
     },
-    "current_numbering_record": "../data/manuscript-numbering-20261020.json"
+    "current_numbering_record": "../data/manuscript-numbering-20261026.json"
   },
   "entries": [
     {
       "paper_label": "thm:main",
       "status": "combined_build_and_original_audit_passed",
-      "checked_scope": "The full combined target discharges every recorded internal finite replay, including all42critical regions and the exact binary64 ABB radius. The original namespace audit and source hashes passed. The theorem retains the seven documented external/classical ordinary inputs; current manuscript v2 wording correspondence is under review.",
+      "checked_scope": "The full combined target discharges every recorded internal finite replay, including all42critical regions and the exact binary64 ABB radius. The original namespace audit and source hashes passed. The theorem retains the seven documented external/classical ordinary inputs; current manuscript v2 wording correspondence is accepted.",
       "lean_files": [
         "SparseLowerTail/MainStatement.lean",
         "SparseLowerTail/MainTheoremAssembly.lean",
@@ -63,7 +63,8 @@
         "../hpc/results-20261021-0635/exterior-completion.json"
       ],
       "combined_replay_evidence": "../hpc/results-20261026-combined-completion/completion.json",
-      "current_manuscript_review": "review_required"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "1.3"
     },
     {
       "paper_label": "eq:Bdens",
@@ -87,7 +88,8 @@
         "proof_sha256": null,
         "source_line": 497
       },
-      "current_manuscript_review": "review_required"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": null
     },
     {
       "paper_label": "s4:eq:EL",
@@ -107,7 +109,8 @@
         "proof_sha256": null,
         "source_line": 2413
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": null
     },
     {
       "paper_label": "eq:branch",
@@ -129,7 +132,8 @@
         "proof_sha256": null,
         "source_line": 2436
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": null
     },
     {
       "paper_label": "lem:branch",
@@ -158,7 +162,8 @@
         "number": "4.4",
         "pdf_page": 26
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "3.4"
     },
     {
       "paper_label": "lem:ray",
@@ -191,7 +196,8 @@
         "number": "4.6",
         "pdf_page": 27
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "3.6"
     },
     {
       "paper_label": "cor:Vbal",
@@ -228,7 +234,8 @@
         "number": "4.8",
         "pdf_page": 29
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "3.8"
     },
     {
       "paper_label": "eq:KP",
@@ -250,7 +257,8 @@
         "proof_sha256": null,
         "source_line": 4798
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": null
     },
     {
       "paper_label": "prop:smalldata",
@@ -286,7 +294,8 @@
         "number": "7.10",
         "pdf_page": 51
       },
-      "current_manuscript_review": "review_required"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "6.10"
     },
     {
       "paper_label": "lem:certcoef",
@@ -345,7 +354,8 @@
         "number": "8.2",
         "pdf_page": 58
       },
-      "current_manuscript_review": "review_required"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "7.2"
     },
     {
       "paper_label": "lem:unimodal",
@@ -373,7 +383,8 @@
         "number": "4.5",
         "pdf_page": 26
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "3.5"
     },
     {
       "paper_label": "thm:crossing",
@@ -409,7 +420,8 @@
         "number": "4.7",
         "pdf_page": 28
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "3.7"
     },
     {
       "paper_label": "lem:digits",
@@ -472,7 +484,8 @@
         "number": "4.11",
         "pdf_page": 30
       },
-      "current_manuscript_review": "review_required"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "3.11"
     },
     {
       "paper_label": "lem:active",
@@ -500,7 +513,8 @@
         "number": "4.1",
         "pdf_page": 24
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "3.1"
     },
     {
       "paper_label": "lem:Bderivative",
@@ -531,7 +545,8 @@
         "number": "4.10",
         "pdf_page": 30
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "3.10"
     },
     {
       "paper_label": "lem:existence",
@@ -570,7 +585,8 @@
         "number": "2.6",
         "pdf_page": 14
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "2.6"
     },
     {
       "paper_label": "prop:euler",
@@ -609,7 +625,8 @@
         "number": "4.2",
         "pdf_page": 24
       },
-      "current_manuscript_review": "review_required"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "3.2"
     },
     {
       "paper_label": "prop:vertex",
@@ -644,7 +661,8 @@
         "number": "4.13",
         "pdf_page": 31
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "3.13"
     },
     {
       "paper_label": "prop:bipodal",
@@ -673,12 +691,13 @@
         "number": "4.15",
         "pdf_page": 33
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "3.15"
     },
     {
       "paper_label": "thm:threshold",
-      "status": "partial_conditional",
-      "checked_scope": "Below-threshold branch improvement and exclusion of all constant minimizers are unconditional. All at/above-threshold conclusions and both threshold equivalences follow from the explicit author-owned CriticalClassification; the critical relabeling clause additionally uses classical CDF transport. The remaining critical certificates are not discharged here.",
+      "status": "combined_build_and_original_audit_passed",
+      "checked_scope": "All at/above-threshold classifications, threshold equivalences, critical relabeling and below-threshold improvement are included in the combined build. The former internal CriticalClassification premise is supplied by the proved full cover; only the documented external/classical inputs remain.",
       "lean_files": [
         "SparseLowerTail/Section05/StrictImprovement.lean",
         "SparseLowerTail/Section05/ThresholdReduction.lean",
@@ -707,18 +726,26 @@
         "source_line": 3240,
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
       },
-      "latest_manuscript_review": {
-        "checked_at_utc": "2026-10-20T12:32:10.660005+00:00",
-        "note": "All three current threshold clauses and both equivalences are checked against the actual graphon proofs. The below-threshold competitor, strict improvement and exclusion of every constant minimizer are unconditional. Scaling and the at/above-threshold clauses retain the author-owned CriticalClassification input. The critical optimizer clause now has a literal measure-preserving relabeling, using only the named classical CDF input in addition. This review does not discharge the remaining critical numerical certificates.",
-        "audit_record": "data/final-manuscript-review-check.json"
-      },
       "verification_record": "data/final-manuscript-review-check.json",
       "current_display_reference": {
         "kind": "theorem",
         "number": "5.3",
         "pdf_page": 34
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "4.3",
+      "historical_manuscript_reviews": [
+        {
+          "checked_at_utc": "2026-10-20T12:32:10.660005+00:00",
+          "note": "All three current threshold clauses and both equivalences are checked against the actual graphon proofs. The below-threshold competitor, strict improvement and exclusion of every constant minimizer are unconditional. Scaling and the at/above-threshold clauses retain the author-owned CriticalClassification input. The critical optimizer clause now has a literal measure-preserving relabeling, using only the named classical CDF input in addition. This review does not discharge the remaining critical numerical certificates.",
+          "audit_record": "data/final-manuscript-review-check.json"
+        }
+      ],
+      "combined_replay_evidence": "../hpc/results-20261026-combined-completion/completion.json",
+      "latest_manuscript_review": {
+        "record": "manuscript-review-20261026-v2.json",
+        "status": "reviewed_correspondence_accepted"
+      }
     },
     {
       "paper_label": "cor:open",
@@ -757,7 +784,8 @@
         "number": "6.4",
         "pdf_page": 47
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "5.4"
     },
     {
       "paper_label": "cor:seed",
@@ -797,7 +825,8 @@
         "pdf_page": 47
       },
       "combined_replay_evidence": "../hpc/results-20261026-combined-completion/completion.json",
-      "current_manuscript_review": "review_required"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "5.5"
     },
     {
       "paper_label": "thm:smalltail",
@@ -830,7 +859,8 @@
         "number": "7.1",
         "pdf_page": 48
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "6.1"
     },
     {
       "paper_label": "lem:boundary",
@@ -855,12 +885,13 @@
         "number": "8.6",
         "pdf_page": 61
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "7.6"
     },
     {
       "paper_label": "lem:tieexclusion",
-      "status": "proved_conditional_family_certificate",
-      "checked_scope": "Full actual graphon tie exclusion and relabeling on the exact current target interval [smallTarget,threshold]. All range, Fubini/Jensen, multiplier, expectation, sign and structure deductions are proved. Ordinary classical CDF transport supplies the relabeling map; the explicit compact-family certificate remains an internal author input.",
+      "status": "combined_build_and_original_audit_passed",
+      "checked_scope": "The actual graphon tie-exclusion and relabeling deductions are proved on the full intermediate range. The compact family certificate premise is supplied by the accepted full replay and combined integration.",
       "lean_files": [
         "SparseLowerTail/Section08/TieExclusion.lean",
         "SparseLowerTail/Section08/PaperTieAndCrossing.lean",
@@ -897,18 +928,26 @@
         "source_line": 5435,
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
       },
-      "latest_manuscript_review": {
-        "checked_at_utc": "2026-10-20T11:18:26.422991+00:00",
-        "note": "The current target interval [smallTarget,threshold] is instantiated, its branch/logarithmic parameter bounds are derived, and the full actual graphon conclusion is obtained as a relabeling via the named ordinary classical CDF transport. Fubini/Jensen, multiplier subtraction, exact expectation comparison, coefficient signs, zero patterns and equal edge density are proved internally. Only the explicit compact-family positivity/zero-set certificate remains an internal author input.",
-        "audit_record": "data/paper-tie-check.json"
-      },
       "verification_record": "data/paper-tie-check.json",
       "current_display_reference": {
         "kind": "lemma",
         "number": "8.5",
         "pdf_page": 61
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "7.5",
+      "historical_manuscript_reviews": [
+        {
+          "checked_at_utc": "2026-10-20T11:18:26.422991+00:00",
+          "note": "The current target interval [smallTarget,threshold] is instantiated, its branch/logarithmic parameter bounds are derived, and the full actual graphon conclusion is obtained as a relabeling via the named ordinary classical CDF transport. Fubini/Jensen, multiplier subtraction, exact expectation comparison, coefficient signs, zero patterns and equal edge density are proved internally. Only the explicit compact-family positivity/zero-set certificate remains an internal author input.",
+          "audit_record": "data/paper-tie-check.json"
+        }
+      ],
+      "combined_replay_evidence": "../hpc/results-20261026-combined-completion/completion.json",
+      "latest_manuscript_review": {
+        "record": "manuscript-review-20261026-v2.json",
+        "status": "reviewed_correspondence_accepted"
+      }
     },
     {
       "paper_label": "prop:cover",
@@ -1030,12 +1069,13 @@
         "../hpc/results-20261021-0635/exterior-completion.json"
       ],
       "combined_replay_evidence": "../hpc/results-20261026-combined-completion/completion.json",
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "4.17"
     },
     {
       "paper_label": "prop:family",
-      "status": "conditional_compact_reduction",
-      "checked_scope": "Analytic tails, compact-to-global reduction, parameter range, interval machinery and AAA neighborhoods are proved. The full ABB radius-1/10 neighborhood and all 64646 exterior leaves have passed their complete builds, unchanged source checks and namespace audits. Exact binary64 ABB-radius extension and joint current-source integration remain.",
+      "status": "combined_build_and_original_audit_passed",
+      "checked_scope": "The analytic tail, strict clipping, ordered-domain/permutation reduction, full exterior compact replay, ABB contact neighborhood and exact zero-pattern converse are proved and included in the successful combined target and original audit.",
       "lean_files": [
         "SparseLowerTail/Section08/CertificateTail.lean",
         "SparseLowerTail/Section08/FamilyParameterRange.lean",
@@ -1148,11 +1188,6 @@
         "source_line": 5399,
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
       },
-      "latest_manuscript_review": {
-        "checked_at_utc": "2026-10-20T12:32:10.660005+00:00",
-        "note": "The revised proof is checked against the analytic tail, strict clipping to the compact cube, ordered-domain/permutation reduction, exact zero-pattern converse and actual intermediate parameter-range proofs. The formal proof clips to 12 directly using q_a+2<12; this gives the same global conclusion and strictness outside the compact cube. The full compact-domain positivity and exact zero set remain author-owned numerical obligations: AAA is checked, while the full ABB and exterior replays remain unfinished. The conditional status is retained.",
-        "audit_record": "data/final-manuscript-review-check.json"
-      },
       "verification_record": "data/final-manuscript-review-check.json",
       "current_display_reference": {
         "kind": "proposition",
@@ -1164,7 +1199,20 @@
         "../hpc/results-20261021-0635/abb-completion.json",
         "../hpc/results-20261021-0635/exterior-completion.json"
       ],
-      "current_manuscript_review": "review_required"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "7.4",
+      "historical_manuscript_reviews": [
+        {
+          "checked_at_utc": "2026-10-20T12:32:10.660005+00:00",
+          "note": "The revised proof is checked against the analytic tail, strict clipping to the compact cube, ordered-domain/permutation reduction, exact zero-pattern converse and actual intermediate parameter-range proofs. The formal proof clips to 12 directly using q_a+2<12; this gives the same global conclusion and strictness outside the compact cube. The full compact-domain positivity and exact zero set remain author-owned numerical obligations: AAA is checked, while the full ABB and exterior replays remain unfinished. The conditional status is retained.",
+          "audit_record": "data/final-manuscript-review-check.json"
+        }
+      ],
+      "combined_replay_evidence": "../hpc/results-20261026-combined-completion/completion.json",
+      "latest_manuscript_review": {
+        "record": "manuscript-review-20261026-v2.json",
+        "status": "reviewed_correspondence_accepted"
+      }
     },
     {
       "paper_label": "lem:relabelB",
@@ -1201,7 +1249,8 @@
         "number": "2.12",
         "pdf_page": 16
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "2.12"
     },
     {
       "paper_label": "lem:cut",
@@ -1267,7 +1316,8 @@
         "number": "2.2",
         "pdf_page": 12
       },
-      "current_manuscript_review": "review_required"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "2.2"
     },
     {
       "paper_label": "lem:lsc",
@@ -1300,7 +1350,8 @@
         "number": "2.3",
         "pdf_page": 13
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "2.3"
     },
     {
       "paper_label": "s4:eq:arbr",
@@ -1320,7 +1371,8 @@
         "proof_sha256": null,
         "source_line": 2660
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": null
     },
     {
       "paper_label": "lem:scaling",
@@ -1355,7 +1407,8 @@
         "number": "2.4",
         "pdf_page": 13
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "2.4"
     },
     {
       "paper_label": "lem:truncation",
@@ -1387,7 +1440,8 @@
         "number": "2.5",
         "pdf_page": 14
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "2.5"
     },
     {
       "paper_label": "s3:rescale",
@@ -1420,7 +1474,8 @@
         "number": "4.3",
         "pdf_page": 25
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "3.3"
     },
     {
       "paper_label": "s8:expect",
@@ -1465,7 +1520,8 @@
         "number": "8.1",
         "pdf_page": 58
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "7.1"
     },
     {
       "paper_label": "lem:J",
@@ -1496,7 +1552,8 @@
         "number": "4.14",
         "pdf_page": 32
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "3.14"
     },
     {
       "paper_label": "cor:bipodalmin",
@@ -1533,7 +1590,8 @@
         "number": "4.16",
         "pdf_page": 34
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "3.16"
     },
     {
       "paper_label": "lem:bregman",
@@ -1559,7 +1617,8 @@
         "number": "2.7",
         "pdf_page": 14
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "2.7"
     },
     {
       "paper_label": "lem:meangap",
@@ -1586,7 +1645,8 @@
         "number": "2.8",
         "pdf_page": 14
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "2.8"
     },
     {
       "paper_label": "lem:push",
@@ -1612,7 +1672,8 @@
         "number": "5.1",
         "pdf_page": 34
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "4.1"
     },
     {
       "paper_label": "prop:critical",
@@ -1658,7 +1719,8 @@
         "../hpc/results-20261021-0635/exterior-completion.json"
       ],
       "combined_replay_evidence": "../hpc/results-20261026-combined-completion/completion.json",
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "4.2"
     },
     {
       "paper_label": "lem:isolation",
@@ -1688,7 +1750,8 @@
         "number": "2.9",
         "pdf_page": 15
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "2.9"
     },
     {
       "paper_label": "lem:FB1",
@@ -1714,7 +1777,8 @@
         "number": "2.11",
         "pdf_page": 15
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "2.11"
     },
     {
       "paper_label": "lem:goodman",
@@ -1740,7 +1804,8 @@
         "number": "2.10",
         "pdf_page": 15
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "2.10"
     },
     {
       "paper_label": "lem:patterns",
@@ -1790,7 +1855,9 @@
         "number": "5.14",
         "pdf_page": 39
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "4.14",
+      "combined_replay_evidence": "../hpc/results-20261026-combined-completion/completion.json"
     },
     {
       "paper_label": "lem:parity",
@@ -1818,7 +1885,8 @@
         "number": "2.13",
         "pdf_page": 16
       },
-      "current_manuscript_review": "review_required"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "2.13"
     },
     {
       "paper_label": "lem:support",
@@ -1869,7 +1937,8 @@
         "number": "5.7",
         "pdf_page": 36
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "4.7"
     },
     {
       "paper_label": "lem:region",
@@ -1898,7 +1967,8 @@
         "number": "5.6",
         "pdf_page": 36
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "4.6"
     },
     {
       "paper_label": "lem:hoeffding",
@@ -1935,7 +2005,8 @@
         "number": "5.10",
         "pdf_page": 37
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "4.10"
     },
     {
       "paper_label": "def:trilaw",
@@ -1966,7 +2037,8 @@
         "number": "5.8",
         "pdf_page": 37
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "4.8"
     },
     {
       "paper_label": "def:relaxed",
@@ -1995,7 +2067,8 @@
         "number": "5.9",
         "pdf_page": 37
       },
-      "current_manuscript_review": "review_required"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "4.9"
     },
     {
       "paper_label": "lem:valid",
@@ -2030,7 +2103,8 @@
         "number": "5.11",
         "pdf_page": 38
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "4.11"
     },
     {
       "paper_label": "s5:gstar",
@@ -2052,7 +2126,8 @@
         "SparseLowerTail.Section05.criticalObservable_constant_on_balanced"
       ],
       "explicit_inputs": [],
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": null
     },
     {
       "paper_label": "lem:stationary",
@@ -2093,7 +2168,8 @@
         "number": "7.3",
         "pdf_page": 49
       },
-      "current_manuscript_review": "review_required"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "6.3"
     },
     {
       "paper_label": "lem:tie",
@@ -2142,7 +2218,8 @@
         "number": "7.4",
         "pdf_page": 49
       },
-      "current_manuscript_review": "review_required"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "6.4"
     },
     {
       "paper_label": "lem:fold",
@@ -2177,7 +2254,8 @@
         "number": "7.2",
         "pdf_page": 48
       },
-      "current_manuscript_review": "review_required"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "6.2"
     },
     {
       "paper_label": "lem:limits",
@@ -2206,7 +2284,8 @@
         "number": "5.4",
         "pdf_page": 35
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "4.4"
     },
     {
       "paper_label": "lem:leftlimits",
@@ -2217,8 +2296,8 @@
         "proof_sha256": "dc3b39e32c81ac88044c12f89f472fbc5d2165cec70f794a4117fce326b39b13",
         "source_line": 3268
       },
-      "status": "partial_conditional",
-      "checked_scope": "Original subsequence/cut-distance hypothesis implies the critical balanced partition, CONDITIONAL on the still-unproved own-paper CriticalClassification. Relabeling conversion is separate.",
+      "status": "combined_build_and_original_audit_passed",
+      "checked_scope": "The subsequence/cut-distance limit argument and critical balanced-partition conclusion are proved. The CriticalClassification premise is discharged by the completed regional certificates and combined integration; the relabeling bridge retains its documented classical transport input.",
       "lean_files": [
         "SparseLowerTail/Section05/MinimizerLimits.lean"
       ],
@@ -2235,7 +2314,13 @@
         "number": "5.5",
         "pdf_page": 35
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "4.5",
+      "combined_replay_evidence": "../hpc/results-20261026-combined-completion/completion.json",
+      "latest_manuscript_review": {
+        "record": "manuscript-review-20261026-v2.json",
+        "status": "reviewed_correspondence_accepted"
+      }
     },
     {
       "paper_label": "eq:features",
@@ -2256,7 +2341,8 @@
         "SparseLowerTail.Section05.coverEdgeResidual_product_div"
       ],
       "explicit_inputs": [],
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": null
     },
     {
       "paper_label": "def:certificate",
@@ -2282,7 +2368,8 @@
         "number": "5.12",
         "pdf_page": 38
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "4.12"
     },
     {
       "paper_label": "lem:weakdual",
@@ -2324,7 +2411,8 @@
         "number": "5.13",
         "pdf_page": 38
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "4.13"
     },
     {
       "paper_label": "lem:zc",
@@ -2366,7 +2454,8 @@
         "number": "7.5",
         "pdf_page": 50
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "6.5"
     },
     {
       "paper_label": "cor:cover",
@@ -2377,8 +2466,8 @@
         "source_line": 3996,
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
       },
-      "status": "partial_conditional",
-      "checked_scope": "Full finite-convex-cover deduction. Actual twelve-cell geometry and support fields are now supplied internally; nonlinear vertex and apex certificate inequalities remain explicit internal obligations.",
+      "status": "combined_build_and_original_audit_passed",
+      "checked_scope": "The finite convex-cover deduction, twelve-cell geometry, support cutoffs and full nonlinear vertex/apex inequalities are proved and included in the successful combined target and original audit.",
       "lean_files": [
         "SparseLowerTail/Section05/FiniteCover.lean"
       ],
@@ -2394,18 +2483,26 @@
       "explicit_inputs": [
         "internal:prop:cover"
       ],
-      "latest_manuscript_review": {
-        "checked_at_utc": "2026-10-20T12:32:10.660005+00:00",
-        "note": "The revised finite-convex-cover deduction is checked: vertex coordinate bounds give the support cutoff throughout each cell; a convex combination distinct from the critical apex has positive weight off it; certificate concavity then gives strict positivity and excludes the actual relaxed law. The formal proof uses the positive finite weighted sum directly rather than extracting a common epsilon. Actual twelve-cell geometry/support are checked separately; the remaining full nonlinear vertex/apex replays remain explicit internal inputs.",
-        "audit_record": "data/final-manuscript-review-check.json"
-      },
       "verification_record": "data/final-manuscript-review-check.json",
       "current_display_reference": {
         "kind": "corollary",
         "number": "5.18",
         "pdf_page": 42
       },
-      "current_manuscript_review": "review_required"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "4.18",
+      "historical_manuscript_reviews": [
+        {
+          "checked_at_utc": "2026-10-20T12:32:10.660005+00:00",
+          "note": "The revised finite-convex-cover deduction is checked: vertex coordinate bounds give the support cutoff throughout each cell; a convex combination distinct from the critical apex has positive weight off it; certificate concavity then gives strict positivity and excludes the actual relaxed law. The formal proof uses the positive finite weighted sum directly rather than extracting a common epsilon. Actual twelve-cell geometry/support are checked separately; the remaining full nonlinear vertex/apex replays remain explicit internal inputs.",
+          "audit_record": "data/final-manuscript-review-check.json"
+        }
+      ],
+      "combined_replay_evidence": "../hpc/results-20261026-combined-completion/completion.json",
+      "latest_manuscript_review": {
+        "record": "manuscript-review-20261026-v2.json",
+        "status": "reviewed_correspondence_accepted"
+      }
     },
     {
       "paper_label": "lem:insertion",
@@ -2438,7 +2535,8 @@
         "number": "6.1",
         "pdf_page": 43
       },
-      "current_manuscript_review": "review_required"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "5.1"
     },
     {
       "paper_label": "thm:twowell",
@@ -2466,7 +2564,8 @@
         "number": "6.2",
         "pdf_page": 44
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "5.2"
     },
     {
       "paper_label": "prop:pen",
@@ -2508,7 +2607,8 @@
         "number": "7.6",
         "pdf_page": 50
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "6.6"
     },
     {
       "paper_label": "lem:order",
@@ -2538,7 +2638,8 @@
         "number": "7.8",
         "pdf_page": 51
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "6.8"
     },
     {
       "paper_label": "lem:penalized",
@@ -2574,7 +2675,8 @@
         "number": "7.9",
         "pdf_page": 51
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "6.9"
     },
     {
       "paper_label": "thm:rigidity",
@@ -2631,7 +2733,8 @@
         "number": "6.3",
         "pdf_page": 45
       },
-      "current_manuscript_review": "review_required"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "5.3"
     },
     {
       "paper_label": "lem:spectral",
@@ -2672,7 +2775,8 @@
         "number": "7.13",
         "pdf_page": 52
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "6.13"
     },
     {
       "paper_label": "eq:s7mass",
@@ -2696,7 +2800,8 @@
         "classical:positive-hilbert-schmidt-spectrum",
         "external:KP26:1.6"
       ],
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": null
     },
     {
       "paper_label": "eq:s7Rrow",
@@ -2719,7 +2824,8 @@
         "classical:inverse-transform-sampling",
         "classical:positive-hilbert-schmidt-spectrum"
       ],
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": null
     },
     {
       "paper_label": "eq:s7codeg",
@@ -2742,7 +2848,8 @@
         "classical:inverse-transform-sampling",
         "classical:positive-hilbert-schmidt-spectrum"
       ],
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": null
     },
     {
       "paper_label": "lem:certtail",
@@ -2770,7 +2877,8 @@
         "number": "8.3",
         "pdf_page": 60
       },
-      "current_manuscript_review": "review_required"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "7.3"
     },
     {
       "paper_label": "lem:smallparams",
@@ -2813,7 +2921,8 @@
         "number": "7.15",
         "pdf_page": 55
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "6.15"
     },
     {
       "paper_label": "lem:scalar",
@@ -2838,7 +2947,8 @@
         "number": "7.16",
         "pdf_page": 56
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "6.16"
     },
     {
       "paper_label": "lem:rowreduction",
@@ -2882,7 +2992,8 @@
         "number": "7.14",
         "pdf_page": 54
       },
-      "current_manuscript_review": "review_required"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "6.14"
     },
     {
       "paper_label": "eq:s7rowmean",
@@ -2906,7 +3017,8 @@
         "proof_sha256": null,
         "source_line": 5025
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": null
     },
     {
       "paper_label": "eq:s7approxeuler",
@@ -2930,7 +3042,8 @@
         "proof_sha256": null,
         "source_line": 5025
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": null
     },
     {
       "paper_label": "eq:s7approxk",
@@ -2954,7 +3067,8 @@
         "proof_sha256": null,
         "source_line": 5025
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": null
     },
     {
       "paper_label": "eq:s7EC",
@@ -2978,7 +3092,8 @@
         "proof_sha256": null,
         "source_line": 5077
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": null
     },
     {
       "paper_label": "prop:structural",
@@ -3011,12 +3126,13 @@
         "number": "7.12",
         "pdf_page": 52
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "6.12"
     },
     {
       "paper_label": "s5:tangency",
       "status": "proved_exact_logarithmic_tangencies",
-      "checked_scope": "Exact four-equation tangency construction in logarithmic coordinates, as used by Appendix app:cover. A common determinant enclosure proves invertibility for every fan RHS. Fixed slots retain their published rational values; the four missing slots are exact Cramer values. Both contact values and all logarithmic derivatives vanish. This proves tangency, not local/global nonnegativity. No separate edge-coordinate derivative API is asserted. Refined enclosures for all nine actual primitive constants are proved from the tighter crossing bracket. Refined matrix, RHS, determinant and all 24 solved-coefficient enclosures are kernel checked and bound the same exact tangency coefficients. A generic refined box positivity implication is proved; full exterior coverage remains unfinished. A factored Taylor box positivity implication also uses these refined bounds for every actual apex fan.",
+      "checked_scope": "Exact four-equation tangency construction in logarithmic coordinates, as used by Appendix app:cover. A common determinant enclosure proves invertibility for every fan RHS. Fixed slots retain their published rational values; the four missing slots are exact Cramer values. Both contact values and all logarithmic derivatives vanish. This proves tangency, not local/global nonnegativity. No separate edge-coordinate derivative API is asserted. Refined enclosures for all nine actual primitive constants are proved from the tighter crossing bracket. Refined matrix, RHS, determinant and all 24 solved-coefficient enclosures are kernel checked and bound the same exact tangency coefficients. A generic refined box positivity implication is proved; full exterior coverage is supplied by the accepted replay and combined integration. A factored Taylor box positivity implication also uses these refined bounds for every actual apex fan.",
       "lean_files": [
         "SparseLowerTail/Section05/ApexTangency.lean",
         "SparseLowerTail/Section05/ApexContactValues.lean",
@@ -3053,7 +3169,8 @@
         "proof_sha256": null,
         "source_line": 3776
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": null
     },
     {
       "paper_label": "lem:taylor",
@@ -3097,7 +3214,9 @@
         "number": "5.16",
         "pdf_page": 40
       },
-      "current_manuscript_review": "review_required"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "4.16",
+      "combined_replay_evidence": "../hpc/results-20261026-combined-completion/completion.json"
     },
     {
       "paper_label": "lem:stability",
@@ -3129,7 +3248,8 @@
         "number": "3.4",
         "pdf_page": 18
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "A.5"
     },
     {
       "paper_label": "lem:fp",
@@ -3156,7 +3276,8 @@
         "number": "3.2",
         "pdf_page": 17
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "A.3"
     },
     {
       "paper_label": "lem:entropy",
@@ -3185,15 +3306,15 @@
         "source_line": 1937,
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
       },
-      "remaining_application": [
-        "Identify the finite edge-coordinate laws in thm:reduction and apply the proved finite-law entropy bounds."
-      ],
+      "remaining_application": [],
       "current_display_reference": {
         "kind": "lemma",
         "number": "3.8",
         "pdf_page": 20
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "A.9",
+      "combined_replay_evidence": "../hpc/results-20261026-combined-completion/completion.json"
     },
     {
       "paper_label": "lem:harris",
@@ -3211,9 +3332,7 @@
       "explicit_inputs": [
         "classical:harris-positive-association"
       ],
-      "remaining_application": [
-        "Identify the complete-graph edge coordinates and triangle hypergraph in thm:reduction."
-      ],
+      "remaining_application": [],
       "verification_record": "data/harris-conditioning-check.json",
       "baseline": {
         "environment": "lemma",
@@ -3227,7 +3346,9 @@
         "number": "3.6",
         "pdf_page": 19
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "A.7",
+      "combined_replay_evidence": "../hpc/results-20261026-combined-completion/completion.json"
     },
     {
       "paper_label": "lem:cutconc",
@@ -3244,9 +3365,7 @@
         "SparseLowerTail.Section03.bernoulli_step_cut_concentration"
       ],
       "explicit_inputs": [],
-      "remaining_application": [
-        "Apply the conditional Bernoulli means and unrevealed edge subset in thm:reduction."
-      ],
+      "remaining_application": [],
       "verification_record": "data/cut-concentration-check.json",
       "baseline": {
         "environment": "lemma",
@@ -3260,7 +3379,9 @@
         "number": "3.9",
         "pdf_page": 20
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "A.10",
+      "combined_replay_evidence": "../hpc/results-20261026-combined-completion/completion.json"
     },
     {
       "paper_label": "lem:stepcut",
@@ -3291,7 +3412,9 @@
         "number": "3.5",
         "pdf_page": 18
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "A.6",
+      "combined_replay_evidence": "../hpc/results-20261026-combined-completion/completion.json"
     },
     {
       "paper_label": "lem:decorrelation",
@@ -3319,9 +3442,7 @@
         "external:KS23:lemma18",
         "external:KS23:eq33"
       ],
-      "remaining_application": [
-        "Apply the selected revealed edge set in thm:reduction; final combined integration must include the latest proof source modules."
-      ],
+      "remaining_application": [],
       "verification_record": "data/decorrelation-check.json",
       "baseline": {
         "environment": "lemma",
@@ -3335,7 +3456,9 @@
         "number": "3.7",
         "pdf_page": 19
       },
-      "current_manuscript_review": "review_required"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "A.8",
+      "combined_replay_evidence": "../hpc/results-20261026-combined-completion/completion.json"
     },
     {
       "paper_label": "s3:step",
@@ -3369,7 +3492,8 @@
         "source_line": 1699,
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": null
     },
     {
       "paper_label": "lem:discrete",
@@ -3444,9 +3568,7 @@
         "classical:graphon-cut-compactness",
         "classical:counting-lemma"
       ],
-      "remaining_application": [
-        "Combine the latest proof modules with all remaining certificate replays and audit the new root."
-      ],
+      "remaining_application": [],
       "verification_record": "data/discrete-comparison-check.json",
       "baseline": {
         "environment": "lemma",
@@ -3460,7 +3582,9 @@
         "number": "3.3",
         "pdf_page": 17
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "A.4",
+      "combined_replay_evidence": "../hpc/results-20261026-combined-completion/completion.json"
     },
     {
       "paper_label": "s3:Phi",
@@ -3485,7 +3609,8 @@
         "source_line": 1650,
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": null
     },
     {
       "paper_label": "thm:reduction",
@@ -3658,9 +3783,7 @@
         "classical:harris-positive-association",
         "classical:pullback-l1-approximation"
       ],
-      "remaining_application": [
-        "Combine all author proofs with all completed certificate replays."
-      ],
+      "remaining_application": [],
       "verification_record": "data/conditioned-structure-check.json",
       "baseline": {
         "environment": "theorem",
@@ -3680,7 +3803,9 @@
         "number": "1.3",
         "pdf_page": 7
       },
-      "current_manuscript_review": "review_required"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "A.1",
+      "combined_replay_evidence": "../hpc/results-20261026-combined-completion/completion.json"
     },
     {
       "paper_label": "s3:v0",
@@ -3701,7 +3826,8 @@
         "source_line": 2104,
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": null
     },
     {
       "paper_label": "lem:rounding",
@@ -3768,12 +3894,14 @@
         "number": "3.10",
         "pdf_page": 23
       },
-      "current_manuscript_review": "review_required"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "A.11",
+      "combined_replay_evidence": "../hpc/results-20261026-combined-completion/completion.json"
     },
     {
       "paper_label": "thm:rate",
       "status": "combined_build_and_original_audit_passed",
-      "checked_scope": "The probability reduction and rate deduction are included in the successful combined target with all internal replay inputs discharged. The original namespace audit passed; manuscript v2 statement correspondence is under review.",
+      "checked_scope": "The probability reduction and rate deduction are included in the successful combined target with all internal replay inputs discharged. The original namespace audit passed; manuscript v2 statement correspondence is accepted.",
       "lean_files": [
         "SparseLowerTail/Section03/ProbabilityRate.lean"
       ],
@@ -3796,9 +3924,7 @@
         "internal:prop:critical",
         "internal:appA3:compact"
       ],
-      "remaining_application": [
-        "Discharge remaining finite certificate replays and integrate the latest combined build."
-      ],
+      "remaining_application": [],
       "verification_record": "data/probability-rate-check.json",
       "baseline": {
         "environment": "theorem",
@@ -3813,12 +3939,13 @@
         "pdf_page": 3
       },
       "combined_replay_evidence": "../hpc/results-20261026-combined-completion/completion.json",
-      "current_manuscript_review": "review_required"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "1.1"
     },
     {
       "paper_label": "thm:structure",
       "status": "combined_build_and_original_audit_passed",
-      "checked_scope": "The actual triangle-conditioned law, all three threshold cases, matrix error and partition rounding deductions are included in the successful combined target with all internal replays discharged and the original audit passed; manuscript v2 wording correspondence is under review.",
+      "checked_scope": "The actual triangle-conditioned law, all three threshold cases, matrix error and partition rounding deductions are included in the successful combined target with all internal replays discharged and the original audit passed; manuscript v2 wording correspondence is accepted.",
       "lean_files": [
         "SparseLowerTail/Section03/StructureMatrices.lean",
         "SparseLowerTail/Section03/StructureEvents.lean",
@@ -3853,9 +3980,7 @@
         "external:KS23:eq33",
         "classical:harris-positive-association"
       ],
-      "remaining_application": [
-        "Discharge remaining finite certificate replays and integrate the latest combined build."
-      ],
+      "remaining_application": [],
       "verification_record": "data/conditioned-phases-check.json",
       "baseline": {
         "environment": "theorem",
@@ -3870,7 +3995,8 @@
         "pdf_page": 3
       },
       "combined_replay_evidence": "../hpc/results-20261026-combined-completion/completion.json",
-      "current_manuscript_review": "review_required"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "1.2"
     },
     {
       "paper_label": "lem:trilinear",
@@ -3911,7 +4037,9 @@
         "number": "2.1",
         "pdf_page": 12
       },
-      "current_manuscript_review": "review_required"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "2.1",
+      "combined_replay_evidence": "../hpc/results-20261026-combined-completion/completion.json"
     },
     {
       "paper_label": "prop:zhao",
@@ -3946,7 +4074,9 @@
         "number": "4.9",
         "pdf_page": 29
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "3.9",
+      "combined_replay_evidence": "../hpc/results-20261026-combined-completion/completion.json"
     },
     {
       "paper_label": "cor:Bstar",
@@ -3981,7 +4111,9 @@
         "number": "4.12",
         "pdf_page": 30
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "3.12",
+      "combined_replay_evidence": "../hpc/results-20261026-combined-completion/completion.json"
     },
     {
       "paper_label": "lem:rowsbipodal",
@@ -4011,7 +4143,9 @@
         "number": "4.17",
         "pdf_page": 34
       },
-      "current_manuscript_review": "review_required"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "3.17",
+      "combined_replay_evidence": "../hpc/results-20261026-combined-completion/completion.json"
     },
     {
       "paper_label": "lem:comp-bnb",
@@ -4040,7 +4174,9 @@
         "number": "A.3",
         "pdf_page": 64
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "B.3",
+      "combined_replay_evidence": "../hpc/results-20261026-combined-completion/completion.json"
     },
     {
       "paper_label": "lem:comp-chol",
@@ -4081,7 +4217,9 @@
         "number": "A.2",
         "pdf_page": 64
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "B.2",
+      "combined_replay_evidence": "../hpc/results-20261026-combined-completion/completion.json"
     },
     {
       "paper_label": "lem:comp-box",
@@ -4125,7 +4263,9 @@
         "number": "A.1",
         "pdf_page": 63
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "B.1",
+      "combined_replay_evidence": "../hpc/results-20261026-combined-completion/completion.json"
     },
     {
       "paper_label": "lem:apex",
@@ -4169,7 +4309,9 @@
         "number": "5.15",
         "pdf_page": 40
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "4.15",
+      "combined_replay_evidence": "../hpc/results-20261026-combined-completion/completion.json"
     },
     {
       "paper_label": "s4:eq:cube",
@@ -4195,7 +4337,8 @@
       },
       "verification_record": "data/certificate-summary-check.json",
       "historical_anchor": "lem:Bcodegree",
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": null
     },
     {
       "paper_label": "lem:penconstants",
@@ -4282,7 +4425,8 @@
         "number": "7.7",
         "pdf_page": 50
       },
-      "current_manuscript_review": "review_required"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "6.7"
     },
     {
       "paper_label": "lem:fan",
@@ -4323,12 +4467,13 @@
         "number": "A.4",
         "pdf_page": 66
       },
-      "current_manuscript_review": "review_required"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "B.4"
     },
     {
       "paper_label": "appA3:hess",
-      "status": "partial_AAA_binary64_radius",
-      "checked_scope": "The complete AAA half is proved at the exact binary64 radius. The actual scaled Hessian is proved entrywise 1000000-Lipschitz on [-1,11]^3 under explicit coefficient bounds of 1000. A checked retraction and dyadic interval padding transfer existing ABB enclosures to the binary64 cube. The 21 existing smoke leaves, including one complete 20-leaf subdivision and the final-region leaf, pass all new padded integer margins, coefficient bounds, contact bounds and radius conclusions. Full 108452-leaf ABB padding and final integration remain internal obligations.",
+      "status": "combined_build_and_original_audit_passed",
+      "checked_scope": "Both AAA and ABB Hessians are positive definite on the full moving cubes at the exact binary64 radius. The full108452leaf ABB radius replay and coverage are included in the accepted combined target; no internal numerical premise remains.",
       "lean_files": [
         "SparseLowerTail/Section08/ManuscriptFamilyRadius.lean",
         "SparseLowerTail/Section08/FamilyAAACover.lean",
@@ -4388,17 +4533,29 @@
         "source_sha256": "b00aa4566249914a1587f107a873468c1ed8b76ef0bc717f2766b283e7d028d9"
       },
       "verification_record": "data/family-hessian-perturbation-check.json",
-      "latest_manuscript_review": {
-        "checked_at_utc": "2026-10-20T13:16:17.225717+00:00",
-        "note": "The complete AAA half is proved at the exact binary64 radius. The actual scaled Hessian is proved entrywise 1000000-Lipschitz on [-1,11]^3 under explicit coefficient bounds of 1000. A checked retraction and dyadic interval padding transfer existing ABB enclosures to the binary64 cube. The 21 existing smoke leaves, including one complete 20-leaf subdivision and the final-region leaf, pass all new padded integer margins, coefficient bounds, contact bounds and radius conclusions. Full 108452-leaf ABB padding and final integration remain internal obligations.",
-        "audit_record": "data/family-hessian-perturbation-check.json"
-      },
       "current_display_reference": {
         "kind": "lemma",
         "number": "A.6",
         "pdf_page": 69
       },
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "B.6",
+      "historical_manuscript_reviews": [
+        {
+          "checked_at_utc": "2026-10-20T13:16:17.225717+00:00",
+          "note": "The complete AAA half is proved at the exact binary64 radius. The actual scaled Hessian is proved entrywise 1000000-Lipschitz on [-1,11]^3 under explicit coefficient bounds of 1000. A checked retraction and dyadic interval padding transfer existing ABB enclosures to the binary64 cube. The 21 existing smoke leaves, including one complete 20-leaf subdivision and the final-region leaf, pass all new padded integer margins, coefficient bounds, contact bounds and radius conclusions. Full 108452-leaf ABB padding and final integration remain internal obligations.",
+          "audit_record": "data/family-hessian-perturbation-check.json"
+        }
+      ],
+      "combined_replay_evidence": "../hpc/results-20261026-combined-completion/completion.json",
+      "latest_manuscript_review": {
+        "record": "manuscript-review-20261026-v2.json",
+        "status": "reviewed_correspondence_accepted"
+      },
+      "completed_replay_declarations": [
+        "SparseLowerTail.CompletedReplays.full_abb_binary64_hessian",
+        "SparseLowerTail.CompletedReplays.full_abb_binary64_local"
+      ]
     },
     {
       "paper_label": "appA3:compact",
@@ -4437,7 +4594,8 @@
         "../hpc/results-20261021-0635/exterior-completion.json"
       ],
       "combined_replay_evidence": "../hpc/results-20261026-combined-completion/completion.json",
-      "current_manuscript_review": "statement_and_adjacent_proof_unchanged_by_comparison"
+      "current_manuscript_review": "reviewed_correspondence_accepted",
+      "current_display_number": "B.5"
     }
   ],
   "current_manuscript_inventory": "manuscript-coverage.json",
@@ -4598,14 +4756,15 @@
       "status": "full_combined_target_source_hashes_and_original_audit_passed",
       "evidence": "../hpc/results-20261026-combined-completion/completion.json"
     },
-    "latest_manuscript_correspondence": "Review required for fresh Overleaf main arxiv_v2.tex; proof baselines preserved."
+    "latest_manuscript_correspondence": "Accepted for current Overleaf main arxiv_v2.tex; original proof baselines preserved."
   },
   "latest_manuscript_review": "manuscript-review-20261026-v2.json",
   "current_manuscript_correspondence": {
     "source": "arxiv/arxiv_v2.tex",
     "sha256": "db811b1ff857dbbf8ba8d87b3ebd3e40bc62c61ce4753da54698f4dc95c32fa1",
-    "status": "review_required",
+    "status": "reviewed_correspondence_accepted",
     "changed_mapped_anchors": 29,
-    "review": "manuscript-review-20261026-v2.json"
+    "review": "manuscript-review-20261026-v2.json",
+    "checked_at_utc": "2026-10-26T03:33:02.050700+00:00"
   }
 }

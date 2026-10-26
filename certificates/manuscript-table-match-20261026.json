@@ -1,0 +1,8 @@
+{
+  "checked_at_utc": "2026-10-26T03:33:02.050700+00:00",
+  "draft_sha256": "db811b1ff857dbbf8ba8d87b3ebd3e40bc62c61ce4753da54698f4dc95c32fa1",
+  "match": true,
+  "cells": 12,
+  "coefficient_slots": 144,
+  "method": "Existing tools/compare_draft.py exact rational and binary64 comparison against data/cover.json; includes vertices, targets, support bounds, multipliers and local radii."
+}

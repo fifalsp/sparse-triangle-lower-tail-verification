@@ -66,9 +66,10 @@ The final combined Lean build and axiom audit passed on Yale Bouchet:
 94,032 project modules and 10,450,946 theorems, with unchanged source hashes
 and the original axiom policy. This includes the exact-radius contact
 neighborhood for Proposition 7.4. The [completion record](hpc/results-20261026-combined-completion/completion.json)
-contains the checked evidence. Correspondence with the latest revised
-manuscript is still under review; the [coverage inventory](lean/manuscript-coverage.json)
-tracks that remaining work.
+contains the checked evidence. The [manuscript review](lean/manuscript-review-20261026-v2.json)
+reconciles the latest revision, including its changed numbering and exact
+certificate inputs. All internal proof and replay obligations are discharged;
+the cited external and classical hypotheses remain explicit.
 
 ## Reproducing the numerical checks
 

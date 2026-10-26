@@ -1,20 +1,22 @@
 # Lean verification
 
-Updated October 21, 2026.
+Updated October 26, 2026.
 
-The current project builds **568 modules and 19,811 theorems**. The full axiom
-audit passes with only `propext`, `Classical.choice`, and `Quot.sound`.
-[Build and audit record](data/compact-conclusion-laptop-pilot-check.json).
+The full combined project built **94,032 modules**, and its original namespace
+audit passed **10,450,946 theorems** with only `propext`, `Classical.choice`,
+and `Quot.sound`. All source hashes are unchanged.
+[Build and audit record](../hpc/results-20261026-combined-completion/completion.json).
 
 The development covers the authors' variational and probabilistic arguments.
 Cited external and standard classical results are explicit hypotheses, listed
 in [ASSUMPTIONS.md](ASSUMPTIONS.md). The
 [proof map](proof-map.json) has 112 manuscript labels and 1,080 declaration
-links. The [latest manuscript comparison](manuscript-review-20261021-related-work.json)
-reports no statement or proof changes against the live Overleaf source.
-The [numbering record](../data/manuscript-numbering-20261020.json) matches all
-95 numbered results to the current PDF. The main variational theorem is
-**Theorem 1.4**; the rate, structure and reduction results are **1.1–1.3**.
+links. The [latest manuscript review](manuscript-review-20261026-v2.json)
+reconciles all changed statements and proofs with the existing Lean results;
+the original textual baselines are preserved. The
+[source numbering record](../data/manuscript-numbering-20261026.json) covers all
+95 numbered results. The main variational theorem is **Theorem 1.3**;
+the rate and structure results are **1.1–1.2**, and the reduction is **A.1**.
 
 ## Verified proof components
 
@@ -33,18 +35,22 @@ The [numbering record](../data/manuscript-numbering-20261020.json) matches all
 | ABB logarithmic neighborhood | Nonnegativity and unique contact zero on the full radius-1/10 cube; 7,462 modules and unchanged axiom audit passed | [Full ABB replay](../hpc/results-20261021-0635/abb-completion.json) |
 | ABB radius extension | Quantitative Hessian perturbation, retraction and padded-interval transfer; all 21 test leaves, including a complete 20-leaf subtree, pass the new checks | [112 declaration audits](data/family-hessian-perturbation-check.json) |
 
-## Remaining work
+## Completed integration
 
-The remaining numerical proof is the full padded ABB replay at the
-exact binary64 radius. Final integration must import these results into the
-current author proofs and pass the combined build and axiom audit.
+The full padded ABB replay at the exact binary64 radius and its joint import
+with every regional and family certificate passed the combined build,
+unchanged source-hash checks and original axiom audit in Yale job **30819618**.
 
 [MainReplayAssembly.lean](SparseLowerTail/MainReplayAssembly.lean) proves the
-main variational theorem from the remaining critical and compact-family
+main variational theorem from explicit critical and compact-family
 certificates. [MainStatement.lean](SparseLowerTail/MainStatement.lean) gives its
 statement over all measurable graphons. The
 [manuscript inventory](manuscript-coverage.json) and
-[cluster record](../hpc/README.md) track the outstanding obligations.
+[cluster record](../hpc/README.md) record their discharge. The
+[generated aggregate](../hpc/results-20261026-combined-completion/CompletedReplays.lean)
+is byte-identical to the source in the accepted manifest and supplies all
+internal finite premises. Its main theorem retains seven named external and
+classical inputs.
 
 ## Build and audit
 
@@ -82,14 +88,16 @@ python3 tools/check_lean_map.py
 Historical checks are retained in [data/](data/) and Git history.
 
 
-## Quiet laptop replay
+## Historical laptop replay
 
-The F1 sample checks 47 leaves and a complete 11-leaf subdivision under a
+The F1 sample checked 47 leaves and a complete 11-leaf subdivision under a
 one-worker, one-thread, 8 GiB Lean memory cap. The
 [record](data/compact-conclusion-laptop-pilot-check.json) also checks the
 literal Proposition A.5 deduction from the remaining finite family replay.
 
-From the repository root, a generated target can be run with:
+The duplicate laptop worker is permanently retired; its cached work is
+retained. The earlier command is recorded here for reproducibility and should
+not be restarted for this verification:
 
 ```sh
 python3 hpc/run_laptop_replay.py SparseLowerTail.Section05.ApexReplay.F1.FullCube --logs results/laptop-f1 --hours 24

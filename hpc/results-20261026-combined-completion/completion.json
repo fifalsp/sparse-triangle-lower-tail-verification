@@ -41,8 +41,12 @@
   "proof_sources_changed": false,
   "original_axiom_policy_changed": false,
   "remaining_internal_replays": [],
-  "manuscript_review_status": "Current Overleaf main arxiv_v2.tex downloaded; 29 map differences require editorial and statement correspondence review before overall manuscript completion. No further cluster job needed for accepted source.",
-  "overall_completion_claimed": false,
+  "manuscript_review_status": "Current Overleaf main arxiv_v2.tex correspondence accepted; all changed statements/proofs and certificate tables reviewed.",
+  "overall_completion_claimed": true,
   "retention": "All successful inputs and checkpoints retained. No cleanup performed.",
-  "proof_map_link_check": "Passed:112 labels,1080 Lean declarations."
+  "proof_map_link_check": "Passed:112 labels,1080 Lean declarations.",
+  "manuscript_sha256": "db811b1ff857dbbf8ba8d87b3ebd3e40bc62c61ce4753da54698f4dc95c32fa1",
+  "manuscript_review": "../../lean/manuscript-review-20261026-v2.json",
+  "generated_aggregate_source_sha256": "46d360ca4731a419a776950271f446078988ce75e7f2f549c60ca34a511c4612",
+  "generated_aggregate_source_matches_accepted_manifest": true
 }

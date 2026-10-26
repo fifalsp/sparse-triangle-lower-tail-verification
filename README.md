@@ -26,15 +26,19 @@ The LaTeX label of each statement is given in parentheses.
 The full run covers all 42 cover regions, both Hessian neighborhoods of the
 family, and the compact family domain, with no unresolved boxes
 ([run record](certificates/release/run.json)). A separate
-[table comparison](certificates/manuscript-table-match.json) checks the twelve
-cells against the tables printed in the paper.
+[table comparison](certificates/manuscript-table-match-20261026.json) checks the
+twelve cells against the tables printed in the current version of the paper.
 
 ## Lean formalization
 
 The Lean source is in [`lean/SparseLowerTail`](lean/SparseLowerTail). The
 main theorem is stated in
-[`MainStatement.lean`](lean/SparseLowerTail/MainStatement.lean) and assembled
-in [`MainTheoremAssembly.lean`](lean/SparseLowerTail/MainTheoremAssembly.lean).
+[`MainStatement.lean`](lean/SparseLowerTail/MainStatement.lean), and the
+generated file [`CompletedReplays.lean`](hpc/results-20261026-combined-completion/CompletedReplays.lean)
+proves it from the paper's arguments and all certificate replays. These
+replays make up most of the 94,032 modules in the final build. The scripts in
+[`lean/tools`](lean/tools) generate them from the saved certificates, so the
+repository contains only samples of them.
 The folders `Section02` to `Section08` follow the section numbering of an
 earlier draft of the paper. In the current version `Section03` is Appendix A,
 the folders `Section04` to `Section08` are Sections 3 to 7, and `Numerics`
@@ -54,22 +58,25 @@ paper to its Lean declarations.
 | Part of the paper | Main statements | Lean code | Build and audit records |
 | --- | --- | --- | --- |
 | Reduction to the variational problem (Appendix A) | Theorem A.1 (`thm:reduction`), Lemmas A.3–A.10 (`lem:fp`, `lem:discrete`, `lem:stability`, `lem:stepcut`, `lem:harris`, `lem:decorrelation`, `lem:entropy`, `lem:cutconc`) | [`Section03/`](lean/SparseLowerTail/Section03), [`LowerTailRate.lean`](lean/SparseLowerTail/Section03/LowerTailRate.lean), [`ConditionedStructure.lean`](lean/SparseLowerTail/Section03/ConditionedStructure.lean), [`DiscreteComparison.lean`](lean/SparseLowerTail/Section03/DiscreteComparison.lean), [`Decorrelation.lean`](lean/SparseLowerTail/Section03/Decorrelation.lean), [`ConditionedProductEntropy.lean`](lean/SparseLowerTail/Section03/ConditionedProductEntropy.lean), [`HarrisConditioning.lean`](lean/SparseLowerTail/Section03/HarrisConditioning.lean) | [rate](lean/data/lower-tail-rate-check.json), [structure](lean/data/conditioned-structure-check.json), [discretization](lean/data/discrete-comparison-check.json), [decorrelation](lean/data/decorrelation-check.json), [entropy](lean/data/conditioned-product-entropy-check.json), [Harris](lean/data/harris-conditioning-check.json), [cut concentration](lean/data/cut-concentration-check.json), [sparse entropy](lean/data/sparse-entropy-check.json), [near minimizers](lean/data/near-minimizers-check.json) |
-| Main theorems | Theorems 1.1 and 1.2 (`thm:rate`, `thm:structure`), Lemma A.11 (`lem:rounding`) | [`MainStatement.lean`](lean/SparseLowerTail/MainStatement.lean), [`MainTheoremAssembly.lean`](lean/SparseLowerTail/MainTheoremAssembly.lean), [`ProbabilityRate.lean`](lean/SparseLowerTail/Section03/ProbabilityRate.lean), [`ConditionedPhases.lean`](lean/SparseLowerTail/Section03/ConditionedPhases.lean), [`Rounding.lean`](lean/SparseLowerTail/Section03/Rounding.lean) | [rate](lean/data/probability-rate-check.json), [structure](lean/data/conditioned-phases-check.json), [rounding](lean/data/rounding-check.json) |
+| Main theorems | Theorems 1.1 and 1.2 (`thm:rate`, `thm:structure`), Lemma A.11 (`lem:rounding`) | [`MainStatement.lean`](lean/SparseLowerTail/MainStatement.lean), [`MainTheoremAssembly.lean`](lean/SparseLowerTail/MainTheoremAssembly.lean), [`CompletedReplays.lean`](hpc/results-20261026-combined-completion/CompletedReplays.lean), [`ProbabilityRate.lean`](lean/SparseLowerTail/Section03/ProbabilityRate.lean), [`ConditionedPhases.lean`](lean/SparseLowerTail/Section03/ConditionedPhases.lean), [`Rounding.lean`](lean/SparseLowerTail/Section03/Rounding.lean) | [rate](lean/data/probability-rate-check.json), [structure](lean/data/conditioned-phases-check.json), [rounding](lean/data/rounding-check.json), [combined build](hpc/results-20261026-combined-completion/completion.json) |
 | Graphon preliminaries (Section 2) | Lemmas 2.1 and 2.2 (`lem:trilinear`, `lem:cut`) and related identities | [`Section02/`](lean/SparseLowerTail/Section02), [`Trilinear.lean`](lean/SparseLowerTail/Section02/Trilinear.lean), [`CutNorm.lean`](lean/SparseLowerTail/Section02/CutNorm.lean), [`CutDistance.lean`](lean/SparseLowerTail/Section02/CutDistance.lean) | [cut metric](lean/data/kernel-cut-check.json), [identities](lean/data/manuscript-identities-check.json) |
 | Two block graphons and first order conditions (Sections 3 and 6) | Proposition 3.2 (`prop:euler`), Theorem 3.7 (`thm:crossing`), Lemma 3.11 (`lem:digits`), Proposition 6.6 (`prop:pen`), Lemma 6.7 (`lem:penconstants`) | [`Section04/`](lean/SparseLowerTail/Section04), [`EulerLagrange.lean`](lean/SparseLowerTail/Section04/EulerLagrange.lean), [`Crossing.lean`](lean/SparseLowerTail/Section04/Crossing.lean), [`ManuscriptThresholdDigits.lean`](lean/SparseLowerTail/Section04/ManuscriptThresholdDigits.lean), [`PenalizedValue.lean`](lean/SparseLowerTail/Section07/PenalizedValue.lean), [`PenalizedDigits.lean`](lean/SparseLowerTail/Section07/PenalizedDigits.lean) | [two block minimizers](lean/data/final-manuscript-review-check.json), [Euler–Lagrange and penalized gap](lean/data/analytic-review-check.json), [threshold constants](lean/data/manuscript-digits-check.json), [penalized constants](lean/data/penalized-digits-check.json) |
 | Certificates at the threshold (Section 4, Appendix B) | Lemmas 4.14–4.16 (`lem:patterns`, `lem:apex`, `lem:taylor`), Proposition 4.17 (`prop:cover`), Lemmas B.1, B.2 and B.4 (`lem:comp-box`, `lem:comp-chol`, `lem:fan`) | [`Section05/`](lean/SparseLowerTail/Section05), [`PatternDerivatives.lean`](lean/SparseLowerTail/Section05/PatternDerivatives.lean), [`CriticalApex.lean`](lean/SparseLowerTail/Section05/CriticalApex.lean), [`ApexTaylorLocal.lean`](lean/SparseLowerTail/Section05/ApexTaylorLocal.lean), [`ApexCoverAssembly.lean`](lean/SparseLowerTail/Section05/ApexCoverAssembly.lean), [`PolygonFan.lean`](lean/SparseLowerTail/Section05/PolygonFan.lean), [`BoxLowerBounds.lean`](lean/SparseLowerTail/Numerics/BoxLowerBounds.lean), [`Cholesky3.lean`](lean/SparseLowerTail/Numerics/Cholesky3.lean) | [patterns](lean/data/patterns-check.json), [apex](lean/data/critical-apex-check.json), [Taylor bound](lean/data/taylor-cube-check.json), [polygon fan](lean/data/polygon-fan-check.json), [box bounds](lean/data/box-lower-bounds-check.json), [interval Cholesky](lean/data/cholesky-check.json), [all 42 regions](hpc/results-20261021-0620/verified-regions.json) |
-| Certificates below the threshold (Section 7, Appendix B) | Lemmas 7.2 and 7.5 (`lem:certcoef`, `lem:tieexclusion`), Proposition 7.4 (`prop:family`), Proposition B.5 (`appA3:compact`) | [`Section08/`](lean/SparseLowerTail/Section08), [`CertificateUniqueness.lean`](lean/SparseLowerTail/Section08/CertificateUniqueness.lean), [`TieExclusion.lean`](lean/SparseLowerTail/Section08/TieExclusion.lean), [`FiniteCertificateAssembly.lean`](lean/SparseLowerTail/Section08/FiniteCertificateAssembly.lean), [`FamilyCompactAssembly.lean`](lean/SparseLowerTail/Section08/FamilyCompactAssembly.lean), [`ManuscriptCompactConclusion.lean`](lean/SparseLowerTail/Section08/ManuscriptCompactConclusion.lean) | [coefficients](lean/data/certificate-uniqueness-check.json), [weak duality](lean/data/certificate-summary-check.json), [tie exclusion](lean/data/paper-tie-check.json), [exterior replay](hpc/results-20261021-0635/exterior-completion.json), [contact neighborhood](hpc/results-20261021-0635/abb-completion.json), [radius extension](lean/data/family-hessian-perturbation-check.json), [binary64 radius](lean/data/family-binary64-radius-check.json), [compact conclusion](lean/data/compact-conclusion-laptop-pilot-check.json) |
+| Certificates below the threshold (Section 7, Appendix B) | Lemmas 7.2 and 7.5 (`lem:certcoef`, `lem:tieexclusion`), Proposition 7.4 (`prop:family`), Proposition B.5 (`appA3:compact`) | [`Section08/`](lean/SparseLowerTail/Section08), [`CertificateUniqueness.lean`](lean/SparseLowerTail/Section08/CertificateUniqueness.lean), [`TieExclusion.lean`](lean/SparseLowerTail/Section08/TieExclusion.lean), [`FiniteCertificateAssembly.lean`](lean/SparseLowerTail/Section08/FiniteCertificateAssembly.lean), [`FamilyCompactAssembly.lean`](lean/SparseLowerTail/Section08/FamilyCompactAssembly.lean), [`ManuscriptCompactConclusion.lean`](lean/SparseLowerTail/Section08/ManuscriptCompactConclusion.lean) | [coefficients](lean/data/certificate-uniqueness-check.json), [weak duality](lean/data/certificate-summary-check.json), [tie exclusion](lean/data/paper-tie-check.json), [exterior replay](hpc/results-20261021-0635/exterior-completion.json), [contact neighborhood](hpc/results-20261021-0635/abb-completion.json), [radius extension](lean/data/family-hessian-perturbation-check.json), [binary64 radius](lean/data/family-binary64-radius-check.json), [compact conclusion and combined build](hpc/results-20261026-combined-completion/completion.json) |
 
 ## Status
 
-The final combined Lean build and axiom audit passed on Yale Bouchet:
-94,032 project modules and 10,450,946 theorems, with unchanged source hashes
-and the original axiom policy. This includes the exact-radius contact
-neighborhood for Proposition 7.4. The [completion record](hpc/results-20261026-combined-completion/completion.json)
-contains the checked evidence. The [manuscript review](lean/manuscript-review-20261026-v2.json)
-reconciles the latest revision, including its changed numbering and exact
-certificate inputs. All internal proof and replay obligations are discharged;
-the cited external and classical hypotheses remain explicit.
+All verification is complete. The final combined Lean build and axiom audit
+passed on the Yale Bouchet cluster. It built 94,032 project modules and
+audited 10,450,946 theorems with unchanged source hashes and the original
+axiom policy, and it includes all 42 critical regions, the full family
+replays and the exact-radius contact neighborhood for Proposition 7.4. The
+[completion record](hpc/results-20261026-combined-completion/completion.json)
+contains the evidence. The
+[manuscript review](lean/manuscript-review-20261026-v2.json) checks the Lean
+results against the current version of the paper, including its numbering
+and the certificate inputs. No internal proof or replay obligation remains,
+and the cited external and classical results remain explicit hypotheses.
 
 ## Reproducing the numerical checks
 
@@ -90,14 +97,12 @@ include hashes of the sources and inputs.
 ## Reproducing the Lean checks
 
 The [Lean build guide](lean/README.md) gives the pinned toolchain, the build
-commands, the theorem map and the axiom audit. To inspect an archived set of
-regional results, run
-
-```sh
-python3 hpc/audit_result_archives.py \
-  hpc/triangle-verification-results-20261020-0238.tar.gz \
-  --output /tmp/verified-regions.json
-```
+commands, the theorem map and the axiom audit. Building the root target
+`SparseLowerTail` checks the paper's arguments and samples of the certificate
+replays on a single machine. The full replays were built on the Yale Bouchet
+cluster, where [`hpc/assemble_replays.py`](hpc/assemble_replays.py) generated
+the final combined target from the regional results. The
+[cluster record](hpc/README.md) has the scripts and the job history.
 
 ## Repository layout
 

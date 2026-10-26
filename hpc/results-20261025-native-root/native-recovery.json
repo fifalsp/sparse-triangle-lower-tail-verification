@@ -1,0 +1,73 @@
+{
+  "checked_at_utc": "2026-10-26T01:15:32.221864+00:00",
+  "previous_recovery": {
+    "job": 30686886,
+    "state": "FAILED",
+    "exit_code": "1:0",
+    "elapsed": "00:35:37",
+    "node": "a1132u31n03",
+    "last_stage": "Checkpoint restoration finished; aggregate launcher returned1 before audit.",
+    "combined_build_log": "unreachable code",
+    "result_archive": "sparse-assembly-results-30686886.tar.gz",
+    "result_sha256_on_yale": "7175290d291ae8d53e653c08f2a82706705fc33720079f0b8396a25f7688cedb",
+    "small_archive_downloaded_locally": false,
+    "evidence_method": "Existing authenticated Chrome native shell: sacct, stdout/stderr tails, archived combined-build.log and sha256sum. Archive retained on Yale."
+  },
+  "recovery": {
+    "job": 30819618,
+    "state": "RUNNING",
+    "node": "a1132u35n01",
+    "observed_elapsed": "00:00:15",
+    "phase": "restoring completed dependencies from finalized checkpoint",
+    "control_commit": "9b666f61",
+    "control_directory": "triangle-native-root-9b666f61",
+    "control_patch_bytes": 5078,
+    "control_patch_sha256": "ee1040212faa454bdf8ba3b43cbd0692320d19bebaf5af6431efcec15e87e97b",
+    "all9_control_hashes_passed_on_yale": true,
+    "remote_bash_syntax_passed": true,
+    "known_base_and_original_source_archive_sha_passed": true,
+    "cpus": 4,
+    "allocation_memory_gib": 192,
+    "child_lean_memory_mib": 49152,
+    "native_stack_kib": 262144,
+    "lean_stack_kib": 262144,
+    "lake_task_pool_workers": 0,
+    "child_lean_threads": 1,
+    "time_limit": "24h; controller timeout21h",
+    "controller_behavior": "Use pinned native Lake directly; LEAN_NUM_THREADS=0 executes Lake tasks synchronously on the enlarged native main-thread stack. Child Lean builds and original audit retain explicit-j1/-s262144 resource arguments. No interpreter frontend is used.",
+    "input_evidence_job": 30496690,
+    "input_checkpoint": "sparse-lean-recovery-checkpoint-30496690.tar.gz",
+    "input_choice": "This is the preserved checkpoint with all94031 completed dependency checks and the isolated original Lake stack abort.30686886 only restored it and failed its launcher; no later aggregate success is claimed. Its own saved files also remain retained.",
+    "scheduled_after": "afterany30686886; predecessor already ended",
+    "shared_exclusion_lock": "triangle-joint-resume.lock",
+    "audit_started": false,
+    "full_checkpoint_validation": "In progress; original full-stream CRC and source checks remain required before build."
+  },
+  "local_validation": {
+    "isolated_root_recovery_tests": 11,
+    "checkpoint_restore_tests": 6,
+    "unchanged_generic_continuation_gate_tests": 10,
+    "native_smoke_test": "Actually built a fresh control module and then passed Lake--no-build cache validation under pinned Lean4.24.0 with LEAN_NUM_THREADS=0.",
+    "shell_syntax": "passed",
+    "diff_check": "passed"
+  },
+  "completed_dependency_checkpoint": {
+    "completed": 94031,
+    "total": 94032,
+    "cached": 66743,
+    "only_failed_target": "SparseLowerTail.CompletedReplays"
+  },
+  "proof_sources_changed": false,
+  "original_axiom_policy_changed": false,
+  "readme_changed": false,
+  "repository_visibility_changed": false,
+  "overall_completion_claimed": false,
+  "remaining": [
+    "successful final combined aggregate",
+    "unchanged source hashes",
+    "original namespace axiom audit",
+    "final archived evidence and Slurmexit0",
+    "latest manuscript comparison"
+  ],
+  "monitoring": "Recurring automation remains paused."
+}

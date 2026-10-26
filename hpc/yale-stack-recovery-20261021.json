@@ -1,6 +1,6 @@
 {
-  "checked_at_utc": "2026-10-25T03:22:46.994972+00:00",
-  "status": "All44 base certificates accepted; all94031 combined dependencies passed; final Lake aggregate hit stack overflow; root-only larger-stack recovery30686886 RUNNING",
+  "checked_at_utc": "2026-10-26T01:15:32.221864+00:00",
+  "status": "All94031 combined dependencies passed; aggregate and audit remain pending; native Lake recovery30819618 RUNNING after interpreter recovery30686886 failed",
   "source_commit": "8ecc9d41892517175d46efc84e63a5d745096db0",
   "proof_sources_unchanged": true,
   "account": "pi_sl3363",
@@ -8,13 +8,13 @@
     "f1": 30082912,
     "abb": 30104398,
     "exterior": 30104400,
-    "assembly": 30686886
+    "assembly": 30819618
   },
   "states": {
     "f1": "COMPLETED0:0; full build, audit and source hashes passed; archive downloaded and locally validated",
     "abb": "COMPLETED0:0; archived full build, audit and source hashes checked locally",
     "exterior": "COMPLETED0:0; result archive/full build/audit/source hashes locally checked",
-    "assembly": "RUNNING on a1132u31n03; restoring finalized30496690 checkpoint; larger Lake runtime stack; final target/source hashes/audit still pending"
+    "assembly": "RUNNING on a1132u35n01, restoring retained dependency checkpoint; native Lake synchronous mode; original source and audit gates unchanged"
   },
   "assembly_afterok": [
     30082912,
@@ -387,7 +387,7 @@
     "active_lean_processes": 16,
     "latest_progress_record": "results-20261023-0837/sixteen-worker-build-progress.json"
   },
-  "latest_integration_progress_record": "results-20261024-final-root/root-stack-recovery.json",
+  "latest_integration_progress_record": "results-20261025-native-root/native-recovery.json",
   "wide_timeout_continuation": {
     "checked_at_utc": "2026-10-24T02:45:14.307453+00:00",
     "request": "User authorized checking ended Yale job and resuming from completed work after timeout.",
@@ -595,7 +595,7 @@
     "diagnosis": "subprocess returned-6 for the Lake process itself and its log contains the literal stack-overflow abort. Prior weakLeanArgs applied only to child Lean processes; recovery also configures the Lake runtime stack through the pinned Lean --run entry point.",
     "recovery": {
       "job": 30686886,
-      "state": "RUNNING",
+      "state": "FAILED1:0 after00:35:37; launcher reported unreachable code; audit did not start",
       "node": "a1132u31n03",
       "observed_elapsed": "00:00:24",
       "phase": "restoring completed dependencies from finalized checkpoint",
@@ -637,6 +637,79 @@
       "fresh latest-manuscript comparison"
     ],
     "retention": "All prior successful certificates, inputs and checkpoints preserved; no healthy runner cancelled or duplicate worker launched.",
+    "monitoring": "Recurring automation remains paused."
+  },
+  "native_lake_root_recovery": {
+    "checked_at_utc": "2026-10-26T01:15:32.221864+00:00",
+    "previous_recovery": {
+      "job": 30686886,
+      "state": "FAILED",
+      "exit_code": "1:0",
+      "elapsed": "00:35:37",
+      "node": "a1132u31n03",
+      "last_stage": "Checkpoint restoration finished; aggregate launcher returned1 before audit.",
+      "combined_build_log": "unreachable code",
+      "result_archive": "sparse-assembly-results-30686886.tar.gz",
+      "result_sha256_on_yale": "7175290d291ae8d53e653c08f2a82706705fc33720079f0b8396a25f7688cedb",
+      "small_archive_downloaded_locally": false,
+      "evidence_method": "Existing authenticated Chrome native shell: sacct, stdout/stderr tails, archived combined-build.log and sha256sum. Archive retained on Yale."
+    },
+    "recovery": {
+      "job": 30819618,
+      "state": "RUNNING",
+      "node": "a1132u35n01",
+      "observed_elapsed": "00:00:15",
+      "phase": "restoring completed dependencies from finalized checkpoint",
+      "control_commit": "9b666f61",
+      "control_directory": "triangle-native-root-9b666f61",
+      "control_patch_bytes": 5078,
+      "control_patch_sha256": "ee1040212faa454bdf8ba3b43cbd0692320d19bebaf5af6431efcec15e87e97b",
+      "all9_control_hashes_passed_on_yale": true,
+      "remote_bash_syntax_passed": true,
+      "known_base_and_original_source_archive_sha_passed": true,
+      "cpus": 4,
+      "allocation_memory_gib": 192,
+      "child_lean_memory_mib": 49152,
+      "native_stack_kib": 262144,
+      "lean_stack_kib": 262144,
+      "lake_task_pool_workers": 0,
+      "child_lean_threads": 1,
+      "time_limit": "24h; controller timeout21h",
+      "controller_behavior": "Use pinned native Lake directly; LEAN_NUM_THREADS=0 executes Lake tasks synchronously on the enlarged native main-thread stack. Child Lean builds and original audit retain explicit-j1/-s262144 resource arguments. No interpreter frontend is used.",
+      "input_evidence_job": 30496690,
+      "input_checkpoint": "sparse-lean-recovery-checkpoint-30496690.tar.gz",
+      "input_choice": "This is the preserved checkpoint with all94031 completed dependency checks and the isolated original Lake stack abort.30686886 only restored it and failed its launcher; no later aggregate success is claimed. Its own saved files also remain retained.",
+      "scheduled_after": "afterany30686886; predecessor already ended",
+      "shared_exclusion_lock": "triangle-joint-resume.lock",
+      "audit_started": false,
+      "full_checkpoint_validation": "In progress; original full-stream CRC and source checks remain required before build."
+    },
+    "local_validation": {
+      "isolated_root_recovery_tests": 11,
+      "checkpoint_restore_tests": 6,
+      "unchanged_generic_continuation_gate_tests": 10,
+      "native_smoke_test": "Actually built a fresh control module and then passed Lake--no-build cache validation under pinned Lean4.24.0 with LEAN_NUM_THREADS=0.",
+      "shell_syntax": "passed",
+      "diff_check": "passed"
+    },
+    "completed_dependency_checkpoint": {
+      "completed": 94031,
+      "total": 94032,
+      "cached": 66743,
+      "only_failed_target": "SparseLowerTail.CompletedReplays"
+    },
+    "proof_sources_changed": false,
+    "original_axiom_policy_changed": false,
+    "readme_changed": false,
+    "repository_visibility_changed": false,
+    "overall_completion_claimed": false,
+    "remaining": [
+      "successful final combined aggregate",
+      "unchanged source hashes",
+      "original namespace axiom audit",
+      "final archived evidence and Slurmexit0",
+      "latest manuscript comparison"
+    ],
     "monitoring": "Recurring automation remains paused."
   }
 }

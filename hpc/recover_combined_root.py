@@ -51,9 +51,10 @@ def evidence(archive, state='FAILED', exit_code='1:0'):
     return data, validate_data(data, state, exit_code)
 
 
-def lake_command(frontend, profile, memory, stack):
-    return ['lean', '-M' + str(memory), '-s' + str(stack), '--run', str(frontend),
-            '--file', str(profile)]
+def lake_command(profile, memory, stack):
+    if memory != 49152 or stack != 262144:
+        raise ValueError('Unexpected native Lake resource profile')
+    return ['lake', '--file', str(profile)]
 
 
 def main():
@@ -96,8 +97,7 @@ def main():
     if profile.exists() and profile.read_text() != expected:
         raise ValueError('Existing recovery resource profile differs')
     profile.write_text(expected)
-    frontend = Path(__file__).with_name('lake_stack_frontend.lean').resolve()
-    lake = lake_command(frontend, profile, args.memory_mib, args.stack_kib)
+    lake = lake_command(profile, args.memory_mib, args.stack_kib)
     build = logs / 'combined-build'
     build.mkdir()
     start = time.monotonic()
@@ -108,14 +108,14 @@ def main():
         (build / 'status.json').write_text(json.dumps(status, indent=2) + '\n')
     def run(command, filename):
         with (logs / filename).open('w') as out:
-            result = subprocess.run(command, cwd=lean, env=dict(os.environ, LEAN_NUM_THREADS='1'),
+            result = subprocess.run(command, cwd=lean, env=dict(os.environ, LEAN_NUM_THREADS='0'),
                                     stdout=out, stderr=subprocess.STDOUT)
         if result.returncode:
             status.update(phase='build_failed', failed={TARGET: result.returncode})
             record()
             raise subprocess.CalledProcessError(result.returncode, command)
     record()
-    print('Building final aggregate with 256MiB Lake and Lean stacks', flush=True)
+    print('Building final aggregate with native Lake, synchronous tasks and 256MiB native/Lean stacks', flush=True)
     run([*lake, 'build', TARGET], 'combined-build.log')
     status.update(completed=TOTAL, phase='build_complete')
     record()

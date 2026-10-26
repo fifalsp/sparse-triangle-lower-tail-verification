@@ -84,10 +84,11 @@ export ELAN_TOOLCHAIN
 ELAN_TOOLCHAIN=$(cat "$REPO/lean/lean-toolchain")
 [[ "$ELAN_TOOLCHAIN" == leanprover/lean4:v4.24.0 ]]
 export PATH="$ELAN_HOME/bin:$PATH"
-export LEAN_NUM_THREADS=1
+export LEAN_NUM_THREADS=0
 ulimit -s 262144
 cd "$REPO/lean"
 lean --version > "$RUN_DIR/lean-version.txt"
 # One ordinary aggregate build, then the original namespace audit.
-# Lake itself runs through the pinned Lean runtime with a larger stack.
+# Native Lake runs without task-pool workers, on the larger main-thread stack.
+# Child Lean compilation and audit retain explicit -j1 and -s262144 bounds.
 timeout --signal=TERM --kill-after=60s 21h python3 "$CONTROL_DIR/recover_combined_root.py" --repo "$REPO" --prior-result "$PRIOR_RESULT" "${checkpoint_args[@]}" --logs "$RUN_DIR"

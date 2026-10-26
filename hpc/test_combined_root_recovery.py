@@ -1,6 +1,8 @@
 import copy
 import hashlib
 import json
+import os
+import tempfile
 from pathlib import Path
 import subprocess
 import unittest
@@ -74,21 +76,27 @@ class CombinedRootRecoveryTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.validate(self.data, state='COMPLETED', exit_code='0:0')
 
-    def test_stack_option_applies_to_lake_runtime_itself(self):
-        self.assertEqual(recovery.lake_command(Path('/control/frontend.lean'),
-            Path('/repo/profile.toml'), 49152, 262144),
-            ['lean', '-M49152', '-s262144', '--run', '/control/frontend.lean',
-             '--file', '/repo/profile.toml'])
+    def test_uses_native_lake_without_interpreter(self):
+        self.assertEqual(recovery.lake_command(Path('/repo/profile.toml'), 49152, 262144),
+                         ['lake', '--file', '/repo/profile.toml'])
 
-    def test_actual_pinned_frontend_starts(self):
-        lean = Path.home() / '.elan/toolchains/leanprover--lean4---v4.24.0/bin/lean'
-        if not lean.exists():
+    def test_actual_pinned_native_build_and_cache_check(self):
+        runtime = Path.home() / '.elan/toolchains/leanprover--lean4---v4.24.0/bin'
+        lake = runtime / 'lake'
+        if not lake.exists():
             self.skipTest('Pinned local runtime unavailable')
-        frontend = Path(recovery.__file__).with_name('lake_stack_frontend.lean')
-        result = subprocess.run([str(lean), '-s262144', '--run', str(frontend),
-                                 '--version'], capture_output=True, text=True, timeout=30)
-        self.assertEqual(result.returncode, 0, result.stderr)
-        self.assertIn('Lean version 4.24.0', result.stdout)
+        with tempfile.TemporaryDirectory() as directory:
+            p = Path(directory)
+            (p / 'lean-toolchain').write_text('leanprover/lean4:v4.24.0\n')
+            (p / 'lakefile.toml').write_text('name="native_serial_control"\n'
+                'defaultTargets=["Probe"]\n[[lean_lib]]\nname="Probe"\n')
+            (p / 'Probe.lean').write_text('def resourceControlProbe : Nat := 1\n')
+            env = dict(os.environ, LEAN_NUM_THREADS='0',
+                       PATH=str(runtime) + os.pathsep + os.environ['PATH'])
+            for flags in (['build', 'Probe'], ['--no-build', 'build', 'Probe']):
+                result = subprocess.run([str(lake), *flags], cwd=p, env=env,
+                    capture_output=True, text=True, timeout=30)
+                self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 
 
 if __name__ == '__main__':

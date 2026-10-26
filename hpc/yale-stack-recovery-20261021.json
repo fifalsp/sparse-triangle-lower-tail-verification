@@ -1,6 +1,6 @@
 {
-  "checked_at_utc": "2026-10-26T01:15:32.221864+00:00",
-  "status": "All94031 combined dependencies passed; aggregate and audit remain pending; native Lake recovery30819618 RUNNING after interpreter recovery30686886 failed",
+  "checked_at_utc": "2026-10-26T02:32:20.491787+00:00",
+  "status": "Combined Lean target, unchanged source hashes and original namespace axiom audit accepted for job30819618; current Overleaf v2 manuscript correspondence review remains.",
   "source_commit": "8ecc9d41892517175d46efc84e63a5d745096db0",
   "proof_sources_unchanged": true,
   "account": "pi_sl3363",
@@ -14,7 +14,7 @@
     "f1": "COMPLETED0:0; full build, audit and source hashes passed; archive downloaded and locally validated",
     "abb": "COMPLETED0:0; archived full build, audit and source hashes checked locally",
     "exterior": "COMPLETED0:0; result archive/full build/audit/source hashes locally checked",
-    "assembly": "RUNNING on a1132u35n01, restoring retained dependency checkpoint; native Lake synchronous mode; original source and audit gates unchanged"
+    "assembly": "COMPLETED0:0 elapsed00:50:24;94032modules,12502485declarations/10450946theorems audit passed; downloaded result SHA/full gates accepted"
   },
   "assembly_afterok": [
     30082912,
@@ -711,5 +711,54 @@
       "latest manuscript comparison"
     ],
     "monitoring": "Recurring automation remains paused."
-  }
+  },
+  "combined_completion": {
+    "checked_at_utc": "2026-10-26T02:32:20.491787+00:00",
+    "job": 30819618,
+    "slurm_state": "COMPLETED",
+    "slurm_exit_code": "0:0",
+    "slurm_elapsed": "00:50:24",
+    "node": "a1132u35n01",
+    "target": "SparseLowerTail.CompletedReplays",
+    "completed_project_modules": 94032,
+    "total_project_modules": 94032,
+    "lake_jobs": 97211,
+    "final_module_seconds": 69,
+    "aggregate_build_seconds": 97.18772379308939,
+    "full_target_passed": true,
+    "source_hashes_unchanged": true,
+    "source_commit": "8ecc9d41892517175d46efc84e63a5d745096db0",
+    "source_manifest_sha256": "b14aedaa8bc2447939e456b80e112b138b16348085539f108bff0f6134514811",
+    "original_audit_sha256": "956129721ba7190769a93bd755dde91ac7b4fcd15326656721cc822308cc9014",
+    "original_audit_policy_exact_match_except_import": true,
+    "audit_passed": true,
+    "audit_project_declarations": 12502485,
+    "audit_theorems": 10450946,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "base_input_keys": 44,
+    "missing_base_inputs": [],
+    "archive": "sparse-assembly-results-30819618.tar.gz",
+    "archive_bytes": 4088914,
+    "archive_sha256": "1e909290f7a3b7ac0eebc67d0a0ae2615292e99ca858b3b4a753faa53b3dd8c1",
+    "sha_matches_authenticated_chrome_download_and_yale": true,
+    "full_gzip_crc_passed": true,
+    "existing_combined_acceptance_gate": "finished",
+    "restoration": {
+      "manifest_sources_restored_or_compared": 94031,
+      "complete_stream_read": true
+    },
+    "scheduler_evidence_method": "Fresh existing authenticated Chrome shell sacct; COMPLETED0:0 elapsed00:50:24. SHA read on Yale and compared with downloaded archive.",
+    "proof_sources_changed": false,
+    "original_axiom_policy_changed": false,
+    "remaining_internal_replays": [],
+    "manuscript_review_status": "Current Overleaf main arxiv_v2.tex downloaded; 29 map differences require editorial and statement correspondence review before overall manuscript completion. No further cluster job needed for accepted source.",
+    "overall_completion_claimed": false,
+    "retention": "All successful inputs and checkpoints retained. No cleanup performed.",
+    "proof_map_link_check": "Passed:112 labels,1080 Lean declarations."
+  },
+  "completion_record": "results-20261026-combined-completion/completion.json"
 }

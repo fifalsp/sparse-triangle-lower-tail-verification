@@ -1,52 +1,28 @@
 # Running the Lean checks on Yale and Delta
 
-## Latest verified results and continuation — October 22, 2026
+## Latest verified results — October 26, 2026
 
-**42 full-region Lean builds and axiom audits have passed:** all 36 nonapex
-regions and all six apex fans. F1 is the latest completion: all 3,059
-modules, unchanged source hashes and an audit of 290,461 theorems passed.
-[Verified regions](results-20261021-0620/verified-regions.json).
+The combined target `SparseLowerTail.CompletedReplays` passed in Yale job
+**30819618**, which completed with exit **0:0** in **00:50:24**. All **94,032**
+project modules are built, the original dependency sources are unchanged,
+and the original namespace audit passed: **12,502,485 declarations** and
+**10,450,946 theorems**, allowing only `propext`, `Classical.choice` and
+`Quot.sound`. The downloaded result archive matches its SHA256 on Yale;
+the existing combined acceptance gate and exact audit-policy comparison passed.
+[Completion evidence](results-20261026-combined-completion/completion.json).
 
-The full ABB replay also passed: all 7,462 modules, unchanged source hashes
-and an audit of 2,098,887 theorems.
-[ABB completion record](results-20261021-0635/abb-completion.json).
+This includes all 42 critical regions, the full ABB and exterior family
+replays, the exact binary64 ABB radius replay, and the author-proof root.
+The original 94,031 successful dependency checks were preserved; the final
+aggregate built with native Lake synchronous tasks on the enlarged stack.
+No proof source or axiom policy was changed by that resource control.
+[Deployment and recovery history](yale-stack-recovery-20261021.json).
 
-The full exterior replay also passed: all 12,872 modules, unchanged source
-hashes and an audit of 888,079 theorems.
-[Exterior completion record](results-20261021-0635/exterior-completion.json).
-
-The remaining work runs on **Yale Bouchet**:
-
-| Stage | Yale job | Status |
-|---|---:|---|
-| Original combined integration | 30104499 | Timed out; checkpoint preserved; radius root ordinary build passed |
-| Six-worker continuation | 30254216 | Intentionally retired after six active proofs finished; 34 GiB checkpoint saved |
-| Sixteen-worker continuation | 30320317 | Running on a1114u21n01 with sixteen workers configured; restoring sources/cache; final build and audit pending |
-
-The integration generates the full exact-radius ABB replay and combines
-all verified regions and families with the author-proof root. Its build and
-namespace audit use the original source hashes and axiom policy.
-[Deployment and recovery records](yale-stack-recovery-20261021.json).
-The [authorized handoff](results-20261022-handoff/CONTROLLED_HANDOFF_READY.json) let all six active proof builds finish; no Lean or Lake process was signalled. The successor requires the unchanged source manifest, original audit, and explicit predecessor evidence before resuming. A handoff exit is not a mathematical failure or proof completion.
-
-All matching Delta copies were cancelled while unstarted, after Yale accepted
-the replacements. [Deployment record](yale-return-deployment-20261020.json).
-
-The runner extracts checkpoints onto node-local disk, validates cached modules
-after their imports pass, and saves partial builds back to project storage.
-Every success requires the full target, unchanged axiom audit and source hashes.
-[Runner](bouchet-remaining-ready.sbatch).
-
-The previous Delta exterior run timed out during restore/cache preparation;
-its logs and checkout were preserved.
-[Partial evidence](results-20261020-2310/exterior-timeout.json).
-
-The laptop F1 fallback was stopped after Yale's full result was checked and
-published. Its 2,784 completed modules and generated sources remain cached.
-[Retirement record](laptop-f1-retirement-20261021.json).
-
-Final integration includes the latest author-proof root, all regional
-certificates, the exact binary64 ABB neighborhood, and the unchanged axiom audit.
+No further cluster runner is needed for this accepted source. Correspondence
+with the latest Overleaf main file `arxiv_v2.tex` is under review; changed
+wording and numbering have not been accepted merely from a source-map check.
+All successful regional/family inputs and recovery checkpoints remain retained.
+The duplicate laptop F1 worker remains retired.
 
 ## Yale setup and deployment history
 

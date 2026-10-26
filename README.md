@@ -62,12 +62,13 @@ paper to its Lean declarations.
 
 ## Status
 
-All checks listed above are complete. The final combined Lean build and
-axiom audit, which includes the exact-radius contact neighborhood for
-Proposition 7.4, is running on the Yale Bouchet cluster. The
-[cluster record](hpc/README.md) has the current state of the runs, and the
-[coverage inventory](lean/manuscript-coverage.json) tracks any remaining
-obligations.
+The final combined Lean build and axiom audit passed on Yale Bouchet:
+94,032 project modules and 10,450,946 theorems, with unchanged source hashes
+and the original axiom policy. This includes the exact-radius contact
+neighborhood for Proposition 7.4. The [completion record](hpc/results-20261026-combined-completion/completion.json)
+contains the checked evidence. Correspondence with the latest revised
+manuscript is still under review; the [coverage inventory](lean/manuscript-coverage.json)
+tracks that remaining work.
 
 ## Reproducing the numerical checks
 

@@ -1,0 +1,10 @@
+{
+  "target": "SparseLowerTail.CompletedReplays",
+  "total": 94032,
+  "completed": 94032,
+  "failed": {},
+  "workers": 1,
+  "phase": "build_complete",
+  "trust_status": "Full target, source hashes and original audit pending",
+  "seconds": 97.18772379308939
+}
